@@ -1,0 +1,4 @@
+who:蒙奕锟，陈欢，万兴，金小枫
+when:第一周
+what:讨论决定开发哪一个项目
+arrived solutions:开发Gitmining
