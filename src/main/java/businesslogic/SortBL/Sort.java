@@ -1,7 +1,7 @@
-package Util;
+package businesslogic.SortBL;
 
 /**
  * Created by moeyui on 2016/3/6 0006.
  */
-public enum BranchInfo {
+public class Sort {
 }
