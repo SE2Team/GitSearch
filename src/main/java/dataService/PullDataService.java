@@ -1,13 +1,15 @@
-package businesslogicService;
+package dataService;
 
+import Util.Item;
 import Util.PullInfo;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
  * Created by moeyui on 2016/3/6 0006.
  */
-public interface PullBLService {
+public interface PullDataService {
     /**
      * 查询单个项目的Pull Request内容,一页50个
      *
@@ -15,7 +17,7 @@ public interface PullBLService {
      * @param reponame
      * @return
      */
-    Iterator<String> getPulls(String userName, String reponame);
+    ArrayList<String> getPulls(String userName, String reponame);
 
     /**
      * 查询单个项目的Pull Request编号,一页50个
@@ -24,7 +26,7 @@ public interface PullBLService {
      * @param reponame
      * @return
      */
-    Iterator<Integer> getPullNum(String userName, String reponame);
+    ArrayList<Integer> getPullNum(String userName, String reponame);
 
     /**
      * 查询某个Pull Request的某项信息
@@ -63,8 +65,8 @@ public interface PullBLService {
      *
      * @param userName
      * @param reponame
-     * @param info
+     * @param item
      * @return
      */
-    String getPullInfo(String userName, String reponame, int number, PullInfo info);
+    String getPullInfo(String userName, String reponame, int number, Item item);
 }
