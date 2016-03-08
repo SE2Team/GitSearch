@@ -1,16 +1,15 @@
-package presentation.searchui;
+package presentation.repoCheckui;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class SearchFrame extends JFrame{
+public class repCheckFrame extends JFrame{
 
-	public SearchFrame() {
-		
+	public repCheckFrame() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
-		this.setSize(800, 640);// 设置窗体大小
+		this.setSize(450, 650);// 设置窗体大小
 		this.setResizable(false);// 不允许用户改变窗体大小
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screen = toolkit.getScreenSize();
@@ -18,8 +17,7 @@ public class SearchFrame extends JFrame{
 		int y = (screen.height - this.getHeight()) / 2;
 		this.setLocation(x, y - 20);	
 		
-		
-		this.add(new SearchPanel());
+		this.add(new repCheckPanel());
 		this.setVisible(true);
 	}
 

@@ -6,7 +6,7 @@ import presentation.searchui.SearchFrame;
  */
 public class Test {
     public static void main(String[] args) {
-//    	new SearchFrame();
-        new HomeFrame();
+    	new SearchFrame();
+//        new HomeFrame();
     }
 }

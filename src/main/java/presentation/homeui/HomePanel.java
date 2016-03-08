@@ -17,9 +17,12 @@ public class HomePanel extends JPanel{
 	private MyButton searchUser,searchRep;
 	private MyJTextField jtf_search;
 	
-	int x=100,y=200,jb_w = 100,h=35,jtf_w=300;
+	int x=85,y=200,jb_w = 100,h=35,jtf_w=300;
 	
 	public void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.setColor(Color.white);
+		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		Image logo = new ImageIcon("Images/Logo.jpg").getImage();
 		g.drawImage(logo, 250, 120, 200,50,this);
 	}
@@ -34,7 +37,7 @@ public class HomePanel extends JPanel{
 		this.add(jtf_search);
 		this.add(searchUser);
 		this.add(searchRep);
-		
+		this.setBackground(Color.WHITE);
 	}
 
 }

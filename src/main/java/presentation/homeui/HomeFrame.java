@@ -18,11 +18,10 @@ public class HomeFrame extends JFrame {
 		int y = (screen.height - this.getHeight()) / 2;
 		this.setLocation(x, y - 20);
 		
-		this.setVisible(true);
-		
 		homePanel = new HomePanel();
 		this.add(homePanel);
 		
+		this.setVisible(true);
 	}
 	
 }
