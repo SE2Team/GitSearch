@@ -1,6 +1,4 @@
-package vo;
-
-import po.UserVO;
+package po;
 
 import java.util.ArrayList;
 

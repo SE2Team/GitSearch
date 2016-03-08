@@ -12,11 +12,14 @@ import java.util.Iterator;
  * Created by moeyui on 2016/3/6 0006.
  */
 public class SortController implements SortBLService {
-    public Iterator<UserVO> sort(Iterator<UserVO> itr, User_Sort sort) {
-        return null;
+
+    Sort sort=new Sort();
+
+    public Iterator<UserVO> sort(Iterator<UserVO> itr, User_Sort feature) {
+        return sort.sort(itr, feature);
     }
 
-    public Iterator<RepositoryVO> sort(Iterator<RepositoryVO> itr, Repository_Sort sort) {
-        return null;
+    public Iterator<RepositoryVO> sort(Iterator<RepositoryVO> itr, Repository_Sort feature) {
+        return sort.sort(itr, feature);
     }
 }
