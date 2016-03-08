@@ -1,6 +1,6 @@
 package vo;
 
-import po.UserVO;
+import po.UserPO;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryVO {
-    public RepositoryVO(String description, String language, ArrayList<UserVO> contributors, ArrayList<UserVO>
+    public RepositoryVO(String description, String language, ArrayList<UserPO> contributors, ArrayList<UserPO>
             collaborators, ArrayList<RepositoryVO> forks) {
         this.description = description;
         this.language = language;
@@ -22,8 +22,8 @@ public class RepositoryVO {
 
     String description;
     String language;
-    ArrayList<UserVO> contributors;
-    ArrayList<UserVO> collaborators;
+    ArrayList<UserPO> contributors;
+    ArrayList<UserPO> collaborators;
     ArrayList<RepositoryVO> forks;
 
     public String getLanguage() {
@@ -42,19 +42,19 @@ public class RepositoryVO {
         this.description = description;
     }
 
-    public ArrayList<UserVO> getContributors() {
+    public ArrayList<UserPO> getContributors() {
         return contributors;
     }
 
-    public void setContributors(ArrayList<UserVO> contributors) {
+    public void setContributors(ArrayList<UserPO> contributors) {
         this.contributors = contributors;
     }
 
-    public ArrayList<UserVO> getCollaborators() {
+    public ArrayList<UserPO> getCollaborators() {
         return collaborators;
     }
 
-    public void setCollaborators(ArrayList<UserVO> collaborators) {
+    public void setCollaborators(ArrayList<UserPO> collaborators) {
         this.collaborators = collaborators;
     }
 

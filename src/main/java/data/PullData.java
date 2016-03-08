@@ -2,7 +2,6 @@ package data;
 
 import java.util.ArrayList;
 
-import Util.Item;
 import dataService.PullDataService;
 
 public class PullData implements PullDataService {
@@ -27,9 +26,11 @@ public class PullData implements PullDataService {
 		return null;
 	}
 
-	public String getPullInfo(String userName, String reponame, int number, Item item) {
+	
+	public String getPullInfo(String userName, String reponame, int number, Util.PullInfo info) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

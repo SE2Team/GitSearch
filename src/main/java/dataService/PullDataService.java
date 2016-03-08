@@ -1,6 +1,5 @@
 package dataService;
 
-import Util.Item;
 import Util.PullInfo;
 
 import java.util.ArrayList;
@@ -68,5 +67,5 @@ public interface PullDataService {
      * @param item
      * @return
      */
-    String getPullInfo(String userName, String reponame, int number, Item item);
+    String getPullInfo(String userName, String reponame, int number,PullInfo info );
 }

@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class getData {
+public class GetData {
 		public ArrayList<String> getString(String str1) throws IOException{
 			ArrayList<String> list=new ArrayList<String>();
 			URL url = new URL(str1);

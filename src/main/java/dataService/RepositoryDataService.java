@@ -4,6 +4,7 @@ import Util.*;
 import po.RepositoryPO;
 import vo.RepositoryVO;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -11,9 +12,9 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 public interface RepositoryDataService {
-    ArrayList<RepositoryVO> getRepositories();
+    ArrayList<RepositoryPO> getRepositories();
 
-    ArrayList<String> getRepositoriesNames();
+    ArrayList<String> getRepositoriesNames() throws IOException;
 
     RepositoryPO checkRepository(String userName, String reponame);
 

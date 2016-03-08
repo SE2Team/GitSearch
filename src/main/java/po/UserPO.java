@@ -5,16 +5,16 @@ import java.util.ArrayList;
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
-public class UserVO {
+public class UserPO {
     String name;
     String register;
-    ArrayList<RepositoryVO> contribute;
-    ArrayList<RepositoryVO> creat;
+    ArrayList<RepositoryPO> contribute;
+    ArrayList<RepositoryPO> creat;
 
-    public UserVO() {
+    public UserPO() {
     }
 
-    public UserVO(String name, String register, ArrayList<RepositoryVO> contribute, ArrayList<RepositoryVO> creat) {
+    public UserPO(String name, String register, ArrayList<RepositoryPO> contribute, ArrayList<RepositoryPO> creat) {
         this.name = name;
         this.register = register;
         this.contribute = contribute;
@@ -37,19 +37,19 @@ public class UserVO {
         this.register = register;
     }
 
-    public ArrayList<RepositoryVO> getContribute() {
+    public ArrayList<RepositoryPO> getContribute() {
         return contribute;
     }
 
-    public void setContribute(ArrayList<RepositoryVO> contribute) {
+    public void setContribute(ArrayList<RepositoryPO> contribute) {
         this.contribute = contribute;
     }
 
-    public ArrayList<RepositoryVO> getCreat() {
+    public ArrayList<RepositoryPO> getCreat() {
         return creat;
     }
 
-    public void setCreat(ArrayList<RepositoryVO> creat) {
+    public void setCreat(ArrayList<RepositoryPO> creat) {
         this.creat = creat;
     }
 }

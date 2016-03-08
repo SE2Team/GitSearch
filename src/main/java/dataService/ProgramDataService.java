@@ -7,7 +7,7 @@ import Util.BranchInfo;
 import Util.ForkInfo;
 import Util.ProgramInfo;
 import Util.PullInfo;
-import po.ProgramPO;
+import po.RepositoryPO;
 import po.UserPO;
 
 
@@ -16,11 +16,11 @@ import po.UserPO;
  */
 public interface ProgramDataService {
 	
-	ArrayList<ProgramPO> getPrograms();
+	ArrayList<RepositoryPO> getPrograms();
 
     ArrayList<String> getProgramsNames();
 
-    ProgramPO checkProgram(String userName, String reponame);
+    RepositoryPO checkProgram(String userName, String reponame);
 
     Map<String, Integer> languagesOfProgram(String userName, String reponame);
 
@@ -30,11 +30,11 @@ public interface ProgramDataService {
 
     ArrayList<String> getContributors(String userName, String reponame);
 
-    ArrayList<ProgramPO> getBranches(String userName, String reponame);
+    ArrayList<RepositoryPO> getBranches(String userName, String reponame);
 
     ArrayList<String> NamesOfBranches(String userName, String reponame);
 
-    ProgramPO checkBranch(String userName, String reponame);
+    RepositoryPO checkBranch(String userName, String reponame);
 
     /**
      * 查询单个项目的某个版本的某项信息
@@ -53,7 +53,7 @@ public interface ProgramDataService {
      * @param reponame 项目名
      * @return
      */
-    ArrayList<ProgramPO> getForks(String userName, String reponame);
+    ArrayList<RepositoryPO> getForks(String userName, String reponame);
 
     /**
      * 查询单个项目的所有fork项目的全称
@@ -71,7 +71,7 @@ public interface ProgramDataService {
      * @param reponame 项目名
      * @return
      */
-    ProgramPO checkForks(String userName, String reponame);
+    RepositoryPO checkForks(String userName, String reponame);
 
     /**
      * 查询某个fork项目的某项信息

@@ -13,7 +13,7 @@ import dataService.IssuesDataService;
 import dataService.PullDataService;
 import dataService.RepositoryDataService;
 import dataService.UserDataService;
-import po.RepositoryPO;
+
 
 /**
  * Created by moeyui on 2016/3/5 0005.
