@@ -1,6 +1,4 @@
-package vo;
-
-import po.RepositoryVO;
+package po;
 
 import java.util.ArrayList;
 
