@@ -1,6 +1,5 @@
 package businesslogicService;
 
-import Util.Item;
 import Util.PullInfo;
 
 import java.util.Iterator;
@@ -64,8 +63,8 @@ public interface PullBLService {
      *
      * @param userName
      * @param reponame
-     * @param item
+     * @param info
      * @return
      */
-    String getPullInfo(String userName, String reponame, int number, Item item);
+    String getPullInfo(String userName, String reponame, int number, PullInfo info);
 }
