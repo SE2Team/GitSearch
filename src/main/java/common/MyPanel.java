@@ -16,7 +16,11 @@ public class MyPanel extends JPanel{
 //	}
 	
 	public MyPanel(int x,int y, int w,int h) {
+		this();
 		this.setBounds(x, y, w, h);
 	}
 
+	public MyPanel() {
+
+	}
 }

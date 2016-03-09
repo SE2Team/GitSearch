@@ -17,5 +17,4 @@ public class userCheckPanel extends JPanel{
 		
 		this.add(jp_basicInfo);
 	}
-
 }
