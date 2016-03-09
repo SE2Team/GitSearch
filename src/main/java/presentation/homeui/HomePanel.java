@@ -9,8 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import common.MyButton;
-import common.MyJTextField;
+import presentation.common.MyButton;
+import presentation.common.MyJTextField;
 
 public class HomePanel extends JPanel{
 
@@ -21,8 +21,6 @@ public class HomePanel extends JPanel{
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		g.setColor(Color.white);
-		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		Image logo = new ImageIcon("Images/Logo.jpg").getImage();
 		g.drawImage(logo, 250, 120, 200,50,this);
 	}
@@ -31,8 +29,10 @@ public class HomePanel extends JPanel{
 		this.setLayout(null);
 		jtf_search = new MyJTextField(x, y, jtf_w, h);
 
-		searchRep = new MyButton("搜索项目", x+jtf_w+jb_w, y, jb_w, h);
-		searchUser = new MyButton("搜索用户",x+jtf_w,y,jb_w,h);
+		searchRep = new MyButton("搜索项目");
+		searchRep.setBounds(x+jtf_w+jb_w, y, jb_w, h);
+		searchUser = new MyButton("搜索用户");
+		searchUser.setBounds(x+jtf_w,y,jb_w,h);
 		repaint();
 		this.add(jtf_search);
 		this.add(searchUser);

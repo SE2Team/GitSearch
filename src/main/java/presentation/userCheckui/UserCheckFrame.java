@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-public class userCheckFrame extends JFrame{
+public class UserCheckFrame extends JFrame{
 	BasicInfoPanel basicInfoPanel;
 	UserRepo userRepo;
     ContributeRepo crepo;
@@ -16,11 +16,12 @@ public class userCheckFrame extends JFrame{
 	int width=600,height=400;
     UserVO vo;
 
-	public userCheckFrame() {
+	public UserCheckFrame() {
         vo=test_getUser();
 
 		ax=0;
 		ay=0;
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
 		this.setSize(width, height);// 设置窗体大小
 		this.setResizable(false);// 不允许用户改变窗体大小

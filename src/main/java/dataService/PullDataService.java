@@ -67,5 +67,5 @@ public interface PullDataService {
      * @param info
      * @return
      */
-    String getPullInfo(String userName, String reponame, int number, PullInfo info);
+    String getPullInfo(String userName, String reponame, int number,PullInfo info );
 }

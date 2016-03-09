@@ -1,8 +1,6 @@
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-import presentation.homeui.HomeFrame;
 import presentation.repoCheckui.RepCheckFrame;
-import presentation.searchui.SearchFrame;
-import presentation.userCheckui.userCheckFrame;
+import presentation.userCheckui.UserCheckFrame;
 
 import javax.swing.*;
 
@@ -18,6 +16,6 @@ public class Test {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        new RepCheckFrame();
+        new UserCheckFrame();
     }
 }

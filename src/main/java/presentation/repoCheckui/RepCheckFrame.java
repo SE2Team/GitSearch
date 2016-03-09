@@ -6,6 +6,7 @@ import vo.UserVO;
 import java.awt.*;
 import java.util.ArrayList;
 
+
 import javax.swing.*;
 
 public class RepCheckFrame extends JFrame{
@@ -21,10 +22,13 @@ public class RepCheckFrame extends JFrame{
     JLabel title;
 
 	public RepCheckFrame() {
-        vo=test_getRepo();
-        ax=0;
-        ay=0;
+        vo = test_getRepo();
+        ax = 0;
+        ay = 0;
         this.setLayout(null);
+
+
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
 		this.setSize(WIDTH, HEIGHT);// 设置窗体大小
 		this.setResizable(false);// 不允许用户改变窗体大小
@@ -42,6 +46,11 @@ public class RepCheckFrame extends JFrame{
         this.add(repoInfo);
         this.add(languages);
         this.add(contributors);
+
+
+		this.setLocation(x, y - 20);	
+		
+		this.add(new RepCheckPanel());
 
 		this.setVisible(true);
 	}
