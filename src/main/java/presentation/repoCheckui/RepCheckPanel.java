@@ -2,9 +2,9 @@ package presentation.repoCheckui;
 
 import javax.swing.JPanel;
 
-public class repCheckPanel extends JPanel{
+public class RepCheckPanel extends JPanel{
 
-	public repCheckPanel() {
+	public RepCheckPanel() {
 		
 	}
 

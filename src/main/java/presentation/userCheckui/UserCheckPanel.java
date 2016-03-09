@@ -2,14 +2,14 @@ package presentation.userCheckui;
 
 import javax.swing.JPanel;
 
-import common.MyPanel;
+import presentation.common.MyPanel;
 
-public class userCheckPanel extends JPanel{
+public class UserCheckPanel extends JPanel{
 
 	private MyPanel jp_basicInfo;
 	
 	int x=20,y=20,basic_w=250,basic_h=350;
-	public userCheckPanel() {
+	public UserCheckPanel() {
 		
 		this.setLayout(null);
 		
