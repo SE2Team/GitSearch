@@ -1,10 +1,7 @@
 package presentation.userCheckui;
 
-import businesslogic.RepositoryBL.Repository;
 import common.MyPanel;
-import po.RepositoryPO;
 import vo.RepositoryVO;
-import vo.UserVO;
 
 import javax.swing.*;
 import java.awt.*;

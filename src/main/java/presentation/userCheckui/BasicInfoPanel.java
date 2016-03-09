@@ -1,7 +1,6 @@
 package presentation.userCheckui;
 
 import common.MyPanel;
-import javafx.scene.layout.GridPane;
 import vo.UserVO;
 
 import javax.swing.*;
@@ -19,7 +18,7 @@ public class BasicInfoPanel extends MyPanel {
     JLabel followers;
     JLabel following;
     UserVO vo;
-    public BasicInfoPanel(int x, int y, int w, int h,UserVO vo) {
+    public BasicInfoPanel(int x, int y, int w, int h, UserVO vo) {
         super(x, y, w, h);
         this.vo=vo;
         init();

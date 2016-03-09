@@ -1,6 +1,5 @@
 package presentation.userCheckui;
 
-import po.UserPO;
 import vo.RepositoryVO;
 import vo.UserVO;
 
@@ -34,7 +33,6 @@ public class userCheckFrame extends JFrame{
         this.setLayout(null);
 //        FlowLayout layout=new FlowLayout();
 
-		this.add(new userCheckPanel());
 		basicInfoPanel=new BasicInfoPanel(ax,ay,width/3,400,vo);
 		userRepo=new UserRepo(width/3,ay,width-width/3,height/2,vo);
         crepo=new ContributeRepo(width/3,height/2,width-width/3,height/2,vo.getContribute());
@@ -59,7 +57,7 @@ public class userCheckFrame extends JFrame{
 		this.setVisible(true);
 	}
 
-    private vo.UserVO test_getUser(){
+    private UserVO test_getUser(){
         ArrayList<RepositoryVO> arrayList=new ArrayList<RepositoryVO>();
         arrayList.add(new RepositoryVO("repo1","test","",new ArrayList<UserVO>(),
                 new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
@@ -80,7 +78,7 @@ public class userCheckFrame extends JFrame{
                 new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
         arrayList2.add(new RepositoryVO("crepo4","test","",new ArrayList<UserVO>(),
                 new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        return new vo.UserVO("meng yikun","2015-12-12",arrayList,arrayList);
+        return new UserVO("meng yikun","2015-12-12",arrayList,arrayList);
     }
 
 }

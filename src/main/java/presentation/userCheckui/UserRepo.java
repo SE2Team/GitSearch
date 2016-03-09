@@ -17,7 +17,7 @@ public class UserRepo extends MyPanel{
     JLabel more;
     UserVO vo;
 
-    public UserRepo(int x, int y, int w, int h,UserVO vo) {
+    public UserRepo(int x, int y, int w, int h, UserVO vo) {
         super(x, y, w, h);
         this.vo=vo;
         init();
@@ -33,7 +33,7 @@ public class UserRepo extends MyPanel{
 
         this.setAlignmentY(50);
         more=new JLabel("more...");
-        title=new JLabel("Repository:");
+        title=new JLabel("UserVO:");
 
         repos =new ArrayList<JLabel>();
         this.add(title);
