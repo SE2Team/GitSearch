@@ -16,6 +16,6 @@ public class Test {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        new UserCheckFrame();
+        new RepCheckFrame();
     }
 }
