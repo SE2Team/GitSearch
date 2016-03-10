@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,6 +16,8 @@ import presentation.common.MyButton;
 import presentation.common.MyJTextField;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
+import presentation.repoCheckui.RepCheckFrame;
+import presentation.userCheckui.UserCheckFrame;
 
 
 public class SearchPanel extends JPanel {
@@ -22,7 +26,9 @@ public class SearchPanel extends JPanel {
 	private MyJTextField jtf_search;
 	private MyButton userSearch, repSearch;
 	// 项目筛选面板、用户筛选面板、项目排序面板、用户排序面板
-	private MyPanel jp_repFiltrate, jp_userFiltrate, jp_repSort, jp_userSort;
+	private MyPanel jp_repFiltrate, jp_userFiltrate;
+	private RepSortPanel jp_repSort;
+	private UserSortPanel jp_userSort;
 	// 筛选条件、用户排序、项目排序label
 	private MyLabel jl_filtrate, jl_userSort, jl_repSort;
 
@@ -60,7 +66,15 @@ public class SearchPanel extends JPanel {
 				h);
 		jp_repSort = new RepSortPanel(j_x, 3 * y + 3 * h + jpRepFil_h, jp_w,
 				jpRepSort_h);
-
+		jp_repSort.getTable().addMouseListener(new MouseAdapter() {
+			 public void mouseClicked(MouseEvent e){
+				 
+			 }
+		});
+		if(jp_repSort.getTable().getSelectedRow()!=-1){
+			new RepCheckFrame();
+		}
+		
 		// 用户排序面板
 		jl_userSort = new MyLabel("用户排序", j_x, 3 * y + 2 * h + jpUserFil_h,
 				jb_w, h);

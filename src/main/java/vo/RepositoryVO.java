@@ -12,16 +12,30 @@ import java.util.ArrayList;
 public class RepositoryVO {
 
 
-    public RepositoryVO(String name,String description, String language, ArrayList<UserVO> contributors, ArrayList<UserVO>
+    public RepositoryVO(String name, String description, String language, ArrayList<UserVO> contributors,
+                        ArrayList<UserVO> collaborators, ArrayList<RepositoryVO> forks, int stars,
+                        int followers, int subs) {
+        this.name = name;
+        this.description = description;
+        this.language = language;
+        this.contributors = contributors;
+        this.collaborators = collaborators;
+        this.forks = forks;
+        this.stars = stars;
+        this.followers = followers;
+        this.subs = subs;
+    }
+
+    @Deprecated
+    public RepositoryVO(String name, String description, String language, ArrayList<UserVO> contributors, ArrayList<UserVO>
             collaborators, ArrayList<RepositoryVO> forks) {
-        this.name=name;
         this.description = description;
         this.language = language;
         this.contributors = contributors;
         this.collaborators = collaborators;
         this.forks = forks;
     }
-
+    @Deprecated
     public RepositoryVO() {
     }
     String name;
@@ -30,6 +44,10 @@ public class RepositoryVO {
     ArrayList<UserVO> contributors;
     ArrayList<UserVO> collaborators;
     ArrayList<RepositoryVO> forks;
+    int stars;
+    int followers;
+    int subs;//关注人数
+
 
     public String getName() {
         return name;
@@ -38,6 +56,7 @@ public class RepositoryVO {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public String getLanguage() {
         return language;
@@ -77,5 +96,29 @@ public class RepositoryVO {
 
     public void setForks(ArrayList<RepositoryVO> forks) {
         this.forks = forks;
+    }
+
+    public int getStars() {
+        return stars;
+    }
+
+    public void setStars(int stars) {
+        this.stars = stars;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
+
+    public int getSubs() {
+        return subs;
+    }
+
+    public void setSubs(int subs) {
+        this.subs = subs;
     }
 }

@@ -1,5 +1,6 @@
 package dataService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Util.UserInfo;
@@ -16,9 +17,10 @@ public interface UserDataService {
      *
      * @param user
      * @return
+	 * @throws IOException 
      */
-    ArrayList<String> CheckUser(User user);
 
+    ArrayList<UserPO> CheckUser(User user) throws IOException;
 
     /**
      * 查询某个user的某项信息（这里的user是项目中contributor或collaborator的登录名）
@@ -36,47 +38,41 @@ public interface UserDataService {
     /**
      * 查询单个项目的点赞者,一页50个
      *
-     * @param user
      * @param userName
      * @param reponame String stargazers
-     * @param pageNum
      * @return
      */
-    ArrayList<UserPO> getStargazers(User user, String userName, String reponame, int pageNum);
+    ArrayList<UserPO> getStargazers( String userName, String reponame);
 
     /**
      * 查询单个项目的点赞者登录名,一页50个
      *
-     * @param user
      * @param userName
      * @param reponame
-     * @param pageNum
      * @return
+     * @throws IOException 
      */
 
-    ArrayList<String> getStargazerNames(User user, String userName, String reponame, int pageNum);
+    ArrayList<String> getStargazerNames(String userName, String reponame) throws IOException;
 
     /**
      * 查询单个项目的订阅者,一页50个
      *
-     * @param user
      * @param userName
      * @param reponame
-     * @param pageNum
      * @return
      */
-    ArrayList<String> getSubscribers(User user, String userName, String reponame, int pageNum);
+    ArrayList<UserPO> getSubscribers( String userName, String reponame);
 
     /**
      * 查询单个项目的订阅者登录名,一页50个
      *
-     * @param user
      * @param userName
      * @param reponame
-     * @param pageNum
      * @return
+     * @throws IOException 
      */
-    ArrayList<String> NamesOfSubscriber(User user, String userName, String reponame, int pageNum);
+    ArrayList<String> NamesOfSubscriber(String userName, String reponame) throws IOException;
 
     /**
      * 按关键字搜索用户
