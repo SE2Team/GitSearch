@@ -5,9 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
-public class RepositoryVO {
-    public RepositoryVO(String description, String language, ArrayList<UserVO> contributors, ArrayList<UserVO>
-            collaborators, ArrayList<RepositoryVO> forks) {
+public class RepositoryPO {
+    public RepositoryPO(String name, String description, String language, ArrayList<UserPO> contributors, ArrayList<UserPO>
+            collaborators, ArrayList<RepositoryPO> forks) {
         this.description = description;
         this.language = language;
         this.contributors = contributors;
@@ -15,14 +15,23 @@ public class RepositoryVO {
         this.forks = forks;
     }
 
-    public RepositoryVO() {
+    public RepositoryPO() {
     }
-
+    String name;
     String description;
     String language;
-    ArrayList<UserVO> contributors;
-    ArrayList<UserVO> collaborators;
-    ArrayList<RepositoryVO> forks;
+    ArrayList<UserPO> contributors;
+    ArrayList<UserPO> collaborators;
+    ArrayList<RepositoryPO> forks;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
     public String getLanguage() {
         return language;
@@ -40,27 +49,27 @@ public class RepositoryVO {
         this.description = description;
     }
 
-    public ArrayList<UserVO> getContributors() {
+    public ArrayList<UserPO> getContributors() {
         return contributors;
     }
 
-    public void setContributors(ArrayList<UserVO> contributors) {
+    public void setContributors(ArrayList<UserPO> contributors) {
         this.contributors = contributors;
     }
 
-    public ArrayList<UserVO> getCollaborators() {
+    public ArrayList<UserPO> getCollaborators() {
         return collaborators;
     }
 
-    public void setCollaborators(ArrayList<UserVO> collaborators) {
+    public void setCollaborators(ArrayList<UserPO> collaborators) {
         this.collaborators = collaborators;
     }
 
-    public ArrayList<RepositoryVO> getForks() {
+    public ArrayList<RepositoryPO> getForks() {
         return forks;
     }
 
-    public void setForks(ArrayList<RepositoryVO> forks) {
+    public void setForks(ArrayList<RepositoryPO> forks) {
         this.forks = forks;
     }
 }

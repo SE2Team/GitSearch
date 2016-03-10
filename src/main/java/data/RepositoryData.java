@@ -1,25 +1,42 @@
 package data;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
-import vo.RepositoryVO;
+
 
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryData implements RepositoryDataService {
-
-	public ArrayList<RepositoryVO> getRepositories() {
+	
+	static String string="http://www.gitmining.net/api/repository";
+	/**
+	 * 
+	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
+	 * 
+	 */
+	public ArrayList<RepositoryPO> getRepositories() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public ArrayList<String> getRepositoriesNames() {
+	
+	/**
+	 * 
+	 * 所有项目全称列表（项目全称=owner登录名/项目名），返回值为String类型的数组
+	 * @throws IOException 
+	 * 
+	 */
+	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		String str1="http://www.gitmining.net/api/repository/names";
+		ArrayList<String> list;
+			list = new GetData().getString(str1);
+	
+		return list;
 	}
 
 	public RepositoryPO checkRepository(String userName, String reponame) {
