@@ -38,15 +38,15 @@ public class BasicInfoPanel extends MyPanel {
         following=new JLabel();
         followers=new JLabel();
 //        regTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        nameLabel.setText("Username here!");
+        nameLabel.setText(vo.getName());
 //        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
         desLabel.setText("user info here!");
 //        desLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        companyLabel.setText("Company:NJU");
+        companyLabel.setText(vo.getCompany());
 //        companyLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        followers.setText("Followers:");
-        following.setText("Following:");
-        emailLabel.setText("Email:");
+        followers.setText("Followers:"+vo.getFollowers());
+        following.setText("Following:"+vo.getFollowing());
+        emailLabel.setText("Email:"+vo.getEmail());
 
         regTimeLabel.setText("注册时间：2012-2-22");
         GridLayout layout=new GridLayout(8,1);
