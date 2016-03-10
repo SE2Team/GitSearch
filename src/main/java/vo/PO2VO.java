@@ -11,36 +11,15 @@ import java.util.Iterator;
  */
 public class PO2VO {
     public static RepositoryVO convert(RepositoryPO po){
-        return new RepositoryVO(po.getName(),po.getDescription(),po.getLanguage(),convert_users(po.getContributors()),
-                convert_users(po.getContributors()),
-                convert_repos(po.getForks()),po.getStars(),po.getFollowers(),po.getSubs());
+        return new RepositoryVO(po.getName(), po.getId(), po.getOwner_type(), po.getHtml_url(), po.getDescription(),
+                po.getFork(), po.getCreated(), po.getUpdated(), po.getPushed(), po.getSize(), po.getStargazers(),
+                po.getLanguage(), po.getForks(), po.getContributor(), po.getOpen_issues(), po.getSubscribers_count());
     }
 
     public static  UserVO convert (UserPO po){
-        return new UserVO(po.getName(),po.getRegTime(),po.getFollowers(),po.getFollowing(),po.getEmail(),po.getCompany()
-        ,convert_repos(po.getContribute()),convert_repos(po.getContribute()));
-    }
-    public static ArrayList<RepositoryVO> convert_repos(ArrayList<RepositoryPO> pos){
-        ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
-
-        //只转换字符串
-        for(RepositoryPO po:pos){
-            vos.add(new RepositoryVO(po.getName(),po.getDescription(),po.getLanguage(),null,null,null
-            ,po.getStars(),po.getFollowers(),po.getSubs()));
-        }
-
-        return vos;
+        return new UserVO(po.getId(), po.getLogin(), po.getType(), po.getName(), po.getCompany()
+                , po.getEmail(), po.getRepos(), po.getGists(), po.getFollowers(), po.getFollowing(), po.getCreated()
+                , po.getUpdated());
     }
 
-    public static ArrayList<UserVO> convert_users(ArrayList<UserPO> pos){
-        ArrayList<UserVO> vos=new ArrayList<UserVO>();
-
-        //只转换字符串
-        for(UserPO po:pos){
-            vos.add(new UserVO(po.getName(),po.getRegTime(),po.getFollowers(),po.getFollowing(),po.getEmail(),
-                    po.getCompany(),null,null));
-        }
-
-        return vos;
-    }
 }

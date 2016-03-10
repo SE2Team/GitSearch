@@ -17,13 +17,13 @@ public interface UserBLService {
      * @param user
      * @return
      */
-    Iterator<UserVO> CheckUser(User user) throws IOException;
+    UserVO CheckUser(String user) throws IOException;
 
 
     /**
      * 查询某个user的某项信息（这里的user是项目中contributor或collaborator的登录名）
      *
-     * @param user
+     * @param name
      * @param info item可接受的参数有：
      *             id,login,type,name
      *             company,blog,location,email,bio
@@ -31,7 +31,7 @@ public interface UserBLService {
      *             created_at,updated_at
      * @return
      */
-    String UserInfo(User user, UserInfo info);
+    String UserInfo(String name, UserInfo info) throws IOException;
 
     /**
      * 查询单个项目的点赞者,一页50个
@@ -40,7 +40,7 @@ public interface UserBLService {
      * @param reponame String stargazers
      * @return
      */
-    Iterator<UserVO> getStargazers(String userName, String reponame);
+    Iterator<String> getStargazers(String userName, String reponame) throws IOException;
 
     /**
      * 查询单个项目的点赞者登录名,一页50个

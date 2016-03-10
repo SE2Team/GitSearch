@@ -12,15 +12,16 @@ import java.util.Iterator;
  */
 public class UserController implements UserBLService{
     User user=new User();
-    public Iterator<UserVO> CheckUser(User user) throws IOException {
-        return user.CheckUser(user);
+
+    public UserVO CheckUser(String name) throws IOException {
+        return user.checkUser(name);
     }
 
-    public String UserInfo(User user, UserInfo info) {
-        return user.UserInfo(user, info);
+    public String UserInfo(String name, UserInfo info) throws IOException {
+        return user.UserInfo(name, info);
     }
 
-    public Iterator<UserVO> getStargazers(String userName, String reponame) {
+    public Iterator<String> getStargazers(String userName, String reponame) throws IOException {
         return user.getStargazers(userName, reponame);
     }
 

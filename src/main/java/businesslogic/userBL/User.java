@@ -18,24 +18,20 @@ import java.util.Iterator;
 public class User {
     DataFatoryService factory=new DataFactory();
     UserDataService data=factory.getUserDataService();
-    public Iterator<UserVO> CheckUser(User user) throws IOException {
-        ArrayList<UserVO> vos=new ArrayList<UserVO>();
-        for (UserPO po:data.CheckUser(user)){
-            vos.add(PO2VO.convert(po));
-        }
-        return vos.iterator();
+
+    public UserVO checkUser(String name) throws IOException {
+
+        return PO2VO.convert(data.CheckUser(name));
     }
 
-    public String UserInfo(User user, UserInfo info) {
+    public String UserInfo(String user, UserInfo info) throws IOException {
         return data.UserInfo(user, info);
     }
 
-    public Iterator<UserVO> getStargazers(String userName, String reponame) {
+    public Iterator<String> getStargazers(String userName, String reponame) throws IOException {
         ArrayList<UserVO> vos=new ArrayList<UserVO>();
-        for (UserPO po:data.getStargazers(userName, reponame)){
-            vos.add(PO2VO.convert(po));
-        }
-        return vos.iterator();
+
+        return data.getStargazers(userName, reponame).iterator();
     }
 
     public Iterator<String> getStargazerNames(String userName, String reponame) throws IOException {
