@@ -16,8 +16,8 @@ public class UserCheckFrame extends JFrame{
 	int width=600,height=400;
     UserVO vo;
 
-	public UserCheckFrame() {
-        vo=test_getUser();
+	public UserCheckFrame(UserVO vo) {
+        this.vo=vo;
 
 		ax=0;
 		ay=0;
