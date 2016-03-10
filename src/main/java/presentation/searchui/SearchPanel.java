@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import Util.SearchType;
 import presentation.common.MyButton;
 import presentation.common.MyJTextField;
 import presentation.common.MyLabel;
@@ -30,7 +31,7 @@ public class SearchPanel extends JPanel {
 					jpUserSort_h = 400,
 			jpRepSort_h = 300;
 
-	public SearchPanel() {
+	public SearchPanel(SearchType type) {
 
 		this.setLayout(null);
 
@@ -57,7 +58,7 @@ public class SearchPanel extends JPanel {
 		// 项目排序面板
 		jl_repSort = new MyLabel("项目排序", j_x, 3 * y + 2 * h + jpRepFil_h, jb_w,
 				h);
-		jp_repSort = new RepSortPanel(j_x, 4 * y + 3 * h + jpRepFil_h, jp_w,
+		jp_repSort = new RepSortPanel(j_x, 3 * y + 3 * h + jpRepFil_h, jp_w,
 				jpRepSort_h);
 
 		// 用户排序面板
@@ -71,15 +72,17 @@ public class SearchPanel extends JPanel {
 		this.add(repSearch);
 		this.add(jl_filtrate);
 
-		// this.add(jp_repFiltrate);
-		this.add(jp_userFiltrate);
-
-		// this.add(jl_repSort);
-		this.add(jl_userSort);
-
-		// this.add(jp_repSort);
-		this.add(jp_userSort);
-
+		if(type==SearchType.SearchRep){
+			this.add(jp_repFiltrate);
+			this.add(jl_repSort);
+			this.add(jp_repSort);
+		}
+		else{
+			this.add(jp_userFiltrate);
+			this.add(jl_userSort);
+			this.add(jp_userSort);
+		}
+		
 		this.setBackground(Color.WHITE);
 	}
 

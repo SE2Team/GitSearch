@@ -3,8 +3,13 @@ package presentation.homeui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+
+import Util.SearchType;
+import presentation.searchui.SearchFrame;
 
 public class HomeFrame extends JFrame {
 	private HomePanel homePanel;
@@ -19,6 +24,22 @@ public class HomeFrame extends JFrame {
 		this.setLocation(x, y - 20);
 		
 		homePanel = new HomePanel();
+		
+		//两个搜索按钮的监听
+		homePanel.getSearchRep().addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new SearchFrame(SearchType.SearchRep);
+			}
+		});
+		homePanel.getSearchUser().addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				new SearchFrame(SearchType.SearchUser);
+			}
+		});
 		this.add(homePanel);
 		
 		this.setVisible(true);

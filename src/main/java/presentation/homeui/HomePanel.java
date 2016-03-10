@@ -33,12 +33,7 @@ public class HomePanel extends JPanel{
 
 		searchRep = new MyButton("搜索项目");
 		searchRep.setBounds(x+jtf_w+jb_w, y, jb_w, h);
-		searchRep.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent e) {
-				performRep();
-			}
-		});
+		
 		searchUser = new MyButton("搜索用户");
 		searchUser.setBounds(x+jtf_w,y,jb_w,h);
 		repaint();
@@ -48,13 +43,20 @@ public class HomePanel extends JPanel{
 		this.setBackground(Color.WHITE);
 	}
 
-//	public MyButton getSearchRep(){
-//		
-//	}
-	/**
-	 * 搜索项目按钮的监听实现
+	/***
+	 * 获取搜索项目按钮
+	 * @return
 	 */
-	public void performRep(){
-		
+	public MyButton getSearchRep(){
+		return searchRep;
 	}
+	
+	/***
+	 * 获取搜索用户按钮
+	 * @return
+	 */
+	public MyButton getSearchUser(){
+		return searchUser;
+	}
+	
 }

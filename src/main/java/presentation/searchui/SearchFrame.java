@@ -5,9 +5,11 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import Util.SearchType;
+
 public class SearchFrame extends JFrame{
 
-	public SearchFrame() {
+	public SearchFrame(SearchType type) {
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
 		this.setSize(800, 640);// 设置窗体大小
@@ -19,7 +21,7 @@ public class SearchFrame extends JFrame{
 		this.setLocation(x, y - 20);	
 		
 		
-		this.add(new SearchPanel());
+		this.add(new SearchPanel(type));
 		this.setVisible(true);
 	}
 
