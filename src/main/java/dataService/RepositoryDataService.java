@@ -12,11 +12,11 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 public interface RepositoryDataService {
-    ArrayList<RepositoryPO> getRepositories();
+    ArrayList<RepositoryPO> getRepositories() throws IOException;
 
     ArrayList<String> getRepositoriesNames() throws IOException;
 
-    RepositoryPO checkRepository(String userName, String reponame);
+    RepositoryPO checkRepository(String userName, String reponame) throws IOException;
 
     Map<String, Integer> languagesOfRepository(String userName, String reponame);
 

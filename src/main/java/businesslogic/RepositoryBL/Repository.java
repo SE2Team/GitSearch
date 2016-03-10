@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class Repository {
     private DataFatoryService factory=new DataFactory();
-    public Iterator<RepositoryVO> getRepositories() {
+    public Iterator<RepositoryVO> getRepositories() throws IOException {
         ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
         for(RepositoryPO po:factory.getRepositoryDataService().getRepositories()){
             vos.add(PO2VO.convert(po));
@@ -35,7 +35,7 @@ public class Repository {
         return itr;
     }
 
-    public RepositoryVO checkRepository(String userName, String reponame) {
+    public RepositoryVO checkRepository(String userName, String reponame) throws IOException {
         return PO2VO.convert(factory.getRepositoryDataService().checkRepository(userName, reponame));
     }
 
@@ -47,7 +47,7 @@ public class Repository {
         return null;
     }
 
-    public RepositoryVO Search(String name) {
+    public RepositoryVO Search(String name) throws IOException {
         Iterator<RepositoryVO> itr=getRepositories();
         while(itr.hasNext()){
             RepositoryVO vo=itr.next();

@@ -7,6 +7,7 @@ import dataService.UserDataService;
 import po.UserPO;
 import vo.UserVO;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,12 +17,12 @@ import java.util.Iterator;
 public class User {
     DataFatoryService factory=new DataFactory();
     UserDataService data=factory.getUserDataService();
-    public Iterator<UserVO> CheckUser(User user) {
+    public Iterator<UserVO> CheckUser(User user) throws IOException {
         ArrayList<UserVO> vos=new ArrayList<UserVO>();
         for (UserPO po:data.CheckUser(user)){
             
         }
-        return data;
+        return vos.iterator();
     }
 
     public String UserInfo(User user, UserInfo info) {

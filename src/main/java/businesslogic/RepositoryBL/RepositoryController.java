@@ -4,6 +4,7 @@ import Util.RepositoryInfo;
 import businesslogicService.RepositoryBLService;
 import vo.RepositoryVO;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -12,7 +13,7 @@ import java.util.Map;
  */
 public class RepositoryController implements RepositoryBLService {
     Repository repository;
-    public Iterator<RepositoryVO> getRepositories() {
+    public Iterator<RepositoryVO> getRepositories() throws IOException {
         return repository.getRepositories();
     }
 
@@ -20,7 +21,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.getRepositoriesNames();
     }
 
-    public RepositoryVO checkRepository(String userName, String reponame) {
+    public RepositoryVO checkRepository(String userName, String reponame) throws IOException {
         return repository.checkRepository(userName, reponame);
     }
 
@@ -32,7 +33,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.RepositoryInfo(userName, reponame, info);
     }
 
-    public RepositoryVO Search(String name) {
+    public RepositoryVO Search(String name) throws IOException {
         return repository.Search(name);
     }
 
