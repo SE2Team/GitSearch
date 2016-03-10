@@ -9,18 +9,34 @@ import java.util.ArrayList;
  */
 public class UserVO {
     String name;
-    String register;
+    String regTime;
+    int followers,following;
+    String email;
+    String company;
     ArrayList<RepositoryVO> contribute;
-    ArrayList<RepositoryVO> creat;
+    ArrayList<RepositoryVO> repos;
 
+    @Deprecated
     public UserVO() {
     }
-
-    public UserVO(String name, String register, ArrayList<RepositoryVO> contribute, ArrayList<RepositoryVO> creat) {
+    @Deprecated
+    public UserVO(String name, String regTime, ArrayList<RepositoryVO> contribute, ArrayList<RepositoryVO> repos) {
         this.name = name;
-        this.register = register;
+        this.regTime = regTime;
         this.contribute = contribute;
-        this.creat = creat;
+        this.repos = repos;
+    }
+
+    public UserVO(String name, String regTime, int followers, int following, String email, String company,
+                  ArrayList<RepositoryVO> contribute, ArrayList<RepositoryVO> repos) {
+        this.name = name;
+        this.regTime = regTime;
+        this.followers = followers;
+        this.following = following;
+        this.email = email;
+        this.company = company;
+        this.contribute = contribute;
+        this.repos = repos;
     }
 
     public String getName() {
@@ -31,12 +47,12 @@ public class UserVO {
         this.name = name;
     }
 
-    public String getRegister() {
-        return register;
+    public String getRegTime() {
+        return regTime;
     }
 
-    public void setRegister(String register) {
-        this.register = register;
+    public void setRegTime(String regTime) {
+        this.regTime = regTime;
     }
 
     public ArrayList<RepositoryVO> getContribute() {
@@ -47,11 +63,44 @@ public class UserVO {
         this.contribute = contribute;
     }
 
-    public ArrayList<RepositoryVO> getCreat() {
-        return creat;
+    public ArrayList<RepositoryVO> getRepos() {
+        return repos;
     }
 
-    public void setCreat(ArrayList<RepositoryVO> creat) {
-        this.creat = creat;
+
+    public void setRepos(ArrayList<RepositoryVO> repos) {
+        this.repos = repos;
+    }
+
+    public int getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(int followers) {
+        this.followers = followers;
+    }
+
+    public int getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(int following) {
+        this.following = following;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }
