@@ -28,6 +28,9 @@ public class GetData {
 	        connection.disconnect();
 	        String s1=sb.toString();
 	        String[] s2=s1.split(",");
+	        s2[0]=s2[0].substring(1);
+	        int length=s2.length-1;
+	        s2[length]=s2[length].substring(0, s2[length].length()-1);
 	        for(int i=0;i<s2.length;i++){
 	        	list.add(s2[i]);
 	        }
