@@ -3,6 +3,8 @@ package presentation.homeui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -31,6 +33,12 @@ public class HomePanel extends JPanel{
 
 		searchRep = new MyButton("搜索项目");
 		searchRep.setBounds(x+jtf_w+jb_w, y, jb_w, h);
+		searchRep.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				performRep();
+			}
+		});
 		searchUser = new MyButton("搜索用户");
 		searchUser.setBounds(x+jtf_w,y,jb_w,h);
 		repaint();
@@ -40,4 +48,10 @@ public class HomePanel extends JPanel{
 		this.setBackground(Color.WHITE);
 	}
 
+	/**
+	 * 搜索项目按钮的监听实现
+	 */
+	public void performRep(){
+		
+	}
 }
