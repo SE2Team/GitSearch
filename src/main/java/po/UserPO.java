@@ -1,104 +1,97 @@
 package po;
 
-import java.util.ArrayList;
+
 
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
+//id,login,type,name
+
+//company,blog,location,email,bio
+
+//public_repos,public_gists,followers,following
+
+//created_at,updated_at
 public class UserPO {
-    String name;
-    String regTime;
-    int followers,following;
-    String email;
-    String company;
-    ArrayList<RepositoryPO> contribute;
-    ArrayList<RepositoryPO> repos;
+	int id=0;
+	String login="";
+	String type="";
+	String name="";
+	String company="";
+	String email="";
+	String public_repos="";
+	int public_gists=0;
+	int  followers=0;
+	int following=0;
+	String created_at="";
+	String updated_at="";
 
-    @Deprecated
-    public UserPO() {
-    }
-    @Deprecated
-    public UserPO(String name, String regTime, ArrayList<RepositoryPO> contribute, ArrayList<RepositoryPO> repos) {
-        this.name = name;
-        this.regTime = regTime;
-        this.contribute = contribute;
-        this.repos = repos;
-    }
+	public UserPO(int id, String login, String type, String name, String company, String email,
+			 String public_repos, int public_gists, int followers, int following, String created_at,
+			String updated_at) {
+			this.id=id;
+			this.login=login;
+			this.type=type;
+			this.name=name;
+			this.company=company;
+			this.email=email;
+			this.public_gists=public_gists;
+			this.public_repos=public_repos;
+			this.followers=followers;
+			this.following=following;
+			this.created_at=created_at;
+			this.updated_at=updated_at;
+	}
+	
+	public String getUpdated(){
+		return this.updated_at;
+	}
+	
+	public String getCreated(){
+		return this.created_at;
+	}
+	
+	public int getFollowing(){
+		return this.following;
+	}
+	
+	public int getFollowers(){
+		return this.followers;
+	}
+	
+	public String getRepos(){
+		return this.public_repos;
+	}
+	
+	public int getGists(){
+		return this.public_gists;
+	}
+	
 
-    public UserPO(String name, String regTime, int followers, int following, String email, String company,
-                  ArrayList<RepositoryPO> contribute, ArrayList<RepositoryPO> repos) {
-        this.name = name;
-        this.regTime = regTime;
-        this.followers = followers;
-        this.following = following;
-        this.email = email;
-        this.company = company;
-        this.contribute = contribute;
-        this.repos = repos;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(String regTime) {
-        this.regTime = regTime;
-    }
-
-    public ArrayList<RepositoryPO> getContribute() {
-        return contribute;
-    }
-
-    public void setContribute(ArrayList<RepositoryPO> contribute) {
-        this.contribute = contribute;
-    }
-
-    public ArrayList<RepositoryPO> getRepos() {
-        return repos;
-    }
-
-
-    public void setRepos(ArrayList<RepositoryPO> repos) {
-        this.repos = repos;
-    }
-
-    public int getFollowers() {
-        return followers;
-    }
-
-    public void setFollowers(int followers) {
-        this.followers = followers;
-    }
-
-    public int getFollowing() {
-        return following;
-    }
-
-    public void setFollowing(int following) {
-        this.following = following;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
+	
+	public String getEmail(){
+		return this.email;
+	}
+	
+	
+	public String getCompany(){
+		return this.company;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public String getType(){
+		return this.type;
+	}
+	
+	public String getLogin(){
+		return this.login;
+	}
+	
+	public int getId(){
+		return this.id;
+	}
+	
 }
