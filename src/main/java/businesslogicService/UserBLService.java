@@ -16,7 +16,7 @@ public interface UserBLService {
      * @param user
      * @return
      */
-    Iterator<String> CheckUser(User user);
+    Iterator<UserVO> CheckUser(User user);
 
 
     /**

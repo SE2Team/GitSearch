@@ -19,7 +19,7 @@ import dataService.UserDataService;
  * Created by moeyui on 2016/3/5 0005.
  */
 public class DataFactory implements DataFatoryService{
-    public RepositoryDataService getProgramDataService() {
+    public RepositoryDataService getRepositoryDataService() {
         return new RepositoryData();
     }
 
@@ -28,8 +28,7 @@ public class DataFactory implements DataFatoryService{
     }
     
     public BranchDataService getBranchDataService (){
-    	return new BranchData() ;	
-			
+    	return new BranchData() ;
     }
     
     public CollaboratorsDataService getCollaboratorsDataService(){

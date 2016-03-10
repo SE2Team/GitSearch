@@ -11,28 +11,29 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryController implements RepositoryBLService {
+    Repository repository;
     public Iterator<RepositoryVO> getRepositories() {
-        return null;
+        return repository.getRepositories();
     }
 
     public Iterator<String> getRepositoriesNames() {
-        return null;
+        return repository.getRepositoriesNames();
     }
 
     public RepositoryVO checkRepository(String userName, String reponame) {
-        return null;
+        return repository.checkRepository(userName, reponame);
     }
 
     public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
-        return null;
+        return repository.languagesOfRepository(userName, reponame);
     }
 
     public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {
-        return null;
+        return repository.RepositoryInfo(userName, reponame, info);
     }
 
     public RepositoryVO Search(String name) {
-        return null;
+        return repository.Search(name);
     }
 
 

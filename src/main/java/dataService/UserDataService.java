@@ -17,7 +17,7 @@ public interface UserDataService {
      * @param user
      * @return
      */
-    ArrayList<String> CheckUser(User user);
+    ArrayList<UserPO> CheckUser(User user);
 
 
     /**

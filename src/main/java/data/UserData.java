@@ -11,7 +11,7 @@ import po.UserPO;
  */
 public class UserData implements UserDataService{
 
-	public ArrayList<String> CheckUser(User user) {
+	public ArrayList<UserPO> CheckUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

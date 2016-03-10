@@ -10,7 +10,8 @@ import java.util.Iterator;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class UserController implements UserBLService{
-    public Iterator<String> CheckUser(User user) {
+    User user=new User();
+    public Iterator<UserVO> CheckUser(User user) {
         return null;
     }
 
