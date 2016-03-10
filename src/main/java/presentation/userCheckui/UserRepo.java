@@ -42,7 +42,7 @@ public class UserRepo extends MyPanel{
         //
 
         //根据vo的内容来决定显示多少个repo，最多显示5个
-        for(RepositoryVO rvo:vo.getCreat()){
+        for(RepositoryVO rvo:vo.getRepos()){
             repos.add(new JLabel(rvo.getName()));
             System.out.println(rvo.getName());
             if (repos.size()>=5){
