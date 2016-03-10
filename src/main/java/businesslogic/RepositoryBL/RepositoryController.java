@@ -33,7 +33,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.RepositoryInfo(userName, reponame, info);
     }
 
-    public RepositoryVO Search(String name) throws IOException {
+    public Iterator<RepositoryVO> Search(String name) throws IOException {
         return repository.Search(name);
     }
 

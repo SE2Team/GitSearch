@@ -140,8 +140,13 @@ public class RepositoryData implements RepositoryDataService {
 		return null;
 	}
 
-	public ArrayList<RepositoryPO> Search(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<RepositoryPO> Search(String name) throws IOException {
+		ArrayList<RepositoryPO> pos = new ArrayList<RepositoryPO>();
+		for (RepositoryPO po : getRepositories()) {
+			if (po.getName().contains(name)) {
+				pos.add(po);
+			}
+		}
+		return pos;
 	}
 }

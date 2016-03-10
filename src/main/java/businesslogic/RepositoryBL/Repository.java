@@ -47,15 +47,14 @@ public class Repository {
         return null;
     }
 
-    public RepositoryVO Search(String name) throws IOException {
-        Iterator<RepositoryVO> itr=getRepositories();
-        while(itr.hasNext()){
-            RepositoryVO vo=itr.next();
-            if(name.equals(vo.getName())){
-                return vo;
-            }
+    public Iterator<RepositoryVO> Search(String name) throws IOException {
+        ArrayList<RepositoryPO> pos = factory.getRepositoryDataService().Search(name);
+        ArrayList<RepositoryVO> vos = new ArrayList<RepositoryVO>();
+        for (RepositoryPO po :
+                pos) {
+            vos.add(PO2VO.convert(po));
         }
-        return null;
+        return vos.iterator();
     }
 
 }

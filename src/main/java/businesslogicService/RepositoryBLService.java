@@ -21,7 +21,7 @@ public interface RepositoryBLService {
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 
-    RepositoryVO Search(String name) throws IOException;
+    Iterator<RepositoryVO> Search(String name) throws IOException;
 
 
 
