@@ -1,6 +1,6 @@
 package presentation.userCheckui;
 
-import common.MyPanel;
+import presentation.common.MyPanel;
 import vo.UserVO;
 
 import javax.swing.*;
@@ -25,6 +25,7 @@ public class BasicInfoPanel extends MyPanel {
     }
 
     public BasicInfoPanel() {
+    	super();
         init();
     }
 

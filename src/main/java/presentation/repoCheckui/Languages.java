@@ -1,6 +1,6 @@
 package presentation.repoCheckui;
 
-import common.MyPanel;
+import presentation.common.MyPanel;
 import vo.RepositoryVO;
 
 import javax.swing.*;

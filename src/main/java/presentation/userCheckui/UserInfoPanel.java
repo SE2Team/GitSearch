@@ -1,6 +1,6 @@
 package presentation.userCheckui;
 
-import common.MyPanel;
+import presentation.common.MyPanel;
 
 import java.awt.*;
 

@@ -1,6 +1,6 @@
 package presentation.repoCheckui;
 
-import common.MyPanel;
+import presentation.common.MyPanel;
 import vo.RepositoryVO;
 
 import javax.swing.*;
@@ -90,18 +90,6 @@ public class RepoInfo extends MyPanel{
         }
 
     }
-    class borad extends MyPanel{
-        JLabel stars;
-        public borad(int x, int y, int w, int h) {
-            super(x, y, w, h);
-        }
-
-        public borad() {
-
-        }
-        void innerInit(){
-
-        }
-    }
+    
 
 }

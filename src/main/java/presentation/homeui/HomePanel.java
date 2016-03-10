@@ -48,6 +48,9 @@ public class HomePanel extends JPanel{
 		this.setBackground(Color.WHITE);
 	}
 
+//	public MyButton getSearchRep(){
+//		
+//	}
 	/**
 	 * 搜索项目按钮的监听实现
 	 */
