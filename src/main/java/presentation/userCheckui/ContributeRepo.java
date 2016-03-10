@@ -1,9 +1,11 @@
 package presentation.userCheckui;
 
+import presentation.common.MyFont;
 import presentation.common.MyPanel;
 import vo.RepositoryVO;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -27,23 +29,25 @@ public class ContributeRepo extends MyPanel{
     }
 
     private void init(){
-        title=new JLabel("Contribute Repository:");
+        title=new JLabel("Contributed Repository");
+        title.setFont(MyFont.Comic2);
         more=new JLabel("More...");
         this.setLayout(new GridLayout(7,1));
 
         this.add(title);
 
         int count=0;
-        for(RepositoryVO vo:array){
-            this.add(new JLabel(vo.getName()));
-            count++;
-            if(count>=5){
-                this.add(more);
-                break;
-            }
-        }
+//        for(RepositoryVO vo:array){
+//            this.add(new JLabel(vo.getName()));
+//            count++;
+//            if(count>=5){
+//                this.add(more);
+//                break;
+//            }
+//        }
 
-
+        this.setBackground(Color.white);
+        this.setBorder(BorderFactory.createEtchedBorder());
     }
-
+    
 }

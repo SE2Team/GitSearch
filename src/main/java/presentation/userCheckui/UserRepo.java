@@ -1,10 +1,12 @@
 package presentation.userCheckui;
 
+import presentation.common.MyFont;
 import presentation.common.MyPanel;
 import vo.RepositoryVO;
 import vo.UserVO;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -33,7 +35,8 @@ public class UserRepo extends MyPanel{
 
         this.setAlignmentY(50);
         more=new JLabel("more...");
-        title=new JLabel("UserVO:");
+        title=new JLabel("Owning Repositoty");
+        title.setFont(MyFont.Comic2);
 
         repos =new ArrayList<JLabel>();
         this.add(title);
@@ -42,19 +45,20 @@ public class UserRepo extends MyPanel{
         //
 
         //根据vo的内容来决定显示多少个repo，最多显示5个
-        for(RepositoryVO rvo:vo.getRepos()){
-            repos.add(new JLabel(rvo.getName()));
-            System.out.println(rvo.getName());
-            if (repos.size()>=5){
-                this.add(more);
-                break;
-            }
-        }
+//        for(RepositoryVO rvo:vo.getRepos()){
+//            repos.add(new JLabel(rvo.getName()));
+//            System.out.println(rvo.getName());
+//            if (repos.size()>=5){
+//                this.add(more);
+//                break;
+//            }
+//        }
 
         for(JLabel jLabel:repos){
             this.add(jLabel);
         }
 
+        this.setBackground(Color.white);
         this.setBorder(BorderFactory.createEtchedBorder());
 
     }

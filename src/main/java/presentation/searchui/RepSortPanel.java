@@ -3,12 +3,18 @@ package presentation.searchui;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.io.IOException;
+import java.util.Iterator;
 
 import javax.swing.JTable;
 
+import businesslogic.RepositoryBL.RepositoryController;
+import businesslogicService.RepositoryBLService;
 import presentation.common.MyColor;
+import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.common.MyRecButton;
+import vo.RepositoryVO;
 
 /***
  * 项目排序面板
@@ -20,8 +26,10 @@ public class RepSortPanel extends MyPanel{
 	
 	private MyRecButton general,star,fork,contributor;
 	private JTable sortTable;
+	private MyLabel front,next,num;
+	int n=1;
 	int L_x=0,L_y=0,width=150,height=30;
-	int table_h=this.getHeight()-height-1,row_h=40;
+	int table_h=this.getHeight()-height-30,row_h=40;
 	int row_num = table_h/row_h;
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -52,13 +60,52 @@ public class RepSortPanel extends MyPanel{
 		sortTable.setShowVerticalLines(false);
 		sortTable.setBounds(L_x+1, L_y+height, this.getWidth()-2, table_h);
 		sortTable.setRowHeight(row_h);
+		
+		
+//		RepositoryBLService bl;
+//		bl = new RepositoryController();
+//		Iterator<RepositoryVO> ite = null;
+//		int i=0;
+//		try {
+//			ite=bl.getRepositories();
+//			if(ite!=null){
+//				while(ite.hasNext()){
+//					RepositoryVO repoVO = ite.next();
+//					sortTable.setValueAt("a", 0, 0);
+//					i++;
+//				}
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		int jl_h=20;
+		int addy=(this.getHeight()-table_h-height-jl_h)/2;
+		
+		front = new MyLabel("上一页");
+		front.setBounds(230,L_y+height+table_h+addy,50,jl_h);
+		num = new MyLabel(n+"");
+		num.setBounds(295, L_y+height+table_h+addy, 25, jl_h);
+		next = new MyLabel("下一页");
+		next.setBounds(320,L_y+height+table_h+addy,50,jl_h);
+		
 		this.add(general);
 		this.add(star);
 		this.add(fork);
 		this.add(contributor);
 		this.add(sortTable);
+		this.add(front);
+		this.add(num);
+		this.add(next);
+		
+		this.setBackground(Color.white);
 	}
 	
+	/***
+	 * 获取表格
+	 * @return
+	 */
 	public JTable getTable(){
 		return sortTable;
 	}

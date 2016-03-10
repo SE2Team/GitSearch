@@ -1,9 +1,11 @@
 package presentation.repoCheckui;
 
+import presentation.common.MyFont;
 import presentation.common.MyPanel;
 import vo.RepositoryVO;
 
 import javax.swing.*;
+
 import java.awt.*;
 
 /**
@@ -24,13 +26,17 @@ public class Languages extends MyPanel{
     }
 
     private void init() {
-//        this.setBackground(Color.cyan);
+        this.setBackground(Color.white);
         this.setLayout(null);
         title=new JLabel("Language static");
-        title.setBounds(marX,0,WIDTH,20);
+        title.setFont(MyFont.Comic2);
+        title.setBounds(marX,5,WIDTH,30);
         mainLang=new JLabel("Main Language:"+vo.getLanguage());
+        mainLang.setFont(MyFont.Shruti18);
         mainLang.setBounds(marX,50,WIDTH,20);
         this.add(title);
-        this.add(mainLang);
+//        this.add(mainLang);
+        this.setBorder(BorderFactory.createEtchedBorder());
+
     }
 }

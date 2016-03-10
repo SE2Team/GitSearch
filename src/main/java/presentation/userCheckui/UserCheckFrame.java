@@ -13,7 +13,7 @@ public class UserCheckFrame extends JFrame{
 	UserRepo userRepo;
     ContributeRepo crepo;
 	int ax,ay,z,a;
-	int width=600,height=400;
+	int width=600,height=400,h=370;
     UserVO vo;
 
 	public UserCheckFrame(UserVO vo) {
@@ -33,10 +33,9 @@ public class UserCheckFrame extends JFrame{
         this.setTitle("GitSearch");
         this.setLayout(null);
 //        FlowLayout layout=new FlowLayout();
-
 		basicInfoPanel=new BasicInfoPanel(ax,ay,width/3,400,vo);
-		userRepo=new UserRepo(width/3,ay,width-width/3,height/2,vo);
-        crepo=new ContributeRepo(width/3,height/2,width-width/3,height/2,vo.getContribute());
+		userRepo=new UserRepo(width/3,ay,width-width/3,h/2,vo);
+        crepo=new ContributeRepo(width/3,h/2,width-width/3,h/2,vo.getContribute());
 
 		this.add(basicInfoPanel);
 		this.add(userRepo);

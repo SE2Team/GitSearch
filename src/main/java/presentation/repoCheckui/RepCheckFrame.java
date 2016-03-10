@@ -22,6 +22,7 @@ public class RepCheckFrame extends JFrame{
     JLabel title;
 
 	public RepCheckFrame() {
+//		this.vo =test_getRepo();
         vo = test_getRepo();
         ax = 0;
         ay = 0;

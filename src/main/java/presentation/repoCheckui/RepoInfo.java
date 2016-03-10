@@ -1,9 +1,12 @@
 package presentation.repoCheckui;
 
+import presentation.common.MyFont;
 import presentation.common.MyPanel;
 import vo.RepositoryVO;
 
 import javax.swing.*;
+
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -34,15 +37,13 @@ public class RepoInfo extends MyPanel{
 
     void init(){
 
-
+    	this.setBackground(Color.white);
         this.setLayout(null);
 
         title=new JLabel("Repository name here");
         title.setHorizontalAlignment(SwingConstants.CENTER);
-
-
-
-        title.setBounds(0,0,WIDTH,50);
+        title.setFont(MyFont.Arial22);
+        title.setBounds(0,10,WIDTH,30);
 
 
 //        title.setBounds(WIDTH/2-100,0,200,50);
@@ -52,43 +53,55 @@ public class RepoInfo extends MyPanel{
     }
 
     void initBoard(){
-        stars=new JLabel("stars");
-        forks=new JLabel("forks");
-        subscribers=new JLabel("subscribers");
-        contributors=new JLabel("contributors");
-        boardLabel1=new ArrayList<JLabel>();
-        boardLabel1.add(stars);
-        boardLabel1.add(forks);
-        boardLabel1.add(subscribers);
-        boardLabel1.add(contributors);
-
-        int bx=0;
-        int by=50;
-        for(int i=0;i<boardLabel1.size();i++){
-            boardLabel1.get(i).setHorizontalAlignment(SwingConstants.CENTER);
-            boardLabel1.get(i).setBounds(i*WIDTH/4,by,WIDTH/4,50);
-        }
+    	int bx=80,by=40,jl_w=45,jl_h=30,addx=3,addy=20;
+        stars=new JLabel("stars",JLabel.CENTER);
+        stars.setFont(MyFont.weiruan);
+        stars.setBounds(bx,by,jl_w,jl_h);
+        
+        forks=new JLabel("forks",JLabel.CENTER);
+        forks.setFont(MyFont.weiruan);
+        forks.setBounds(bx+jl_w+addx,by,jl_w,jl_h);
+        
+        subscribers=new JLabel("subscribers",JLabel.CENTER);
+        subscribers.setFont(MyFont.weiruan);
+        subscribers.setBounds(bx+2*jl_w+2*addx,by,2*jl_w,jl_h);
+        
+        contributors=new JLabel("contributors",JLabel.CENTER);
+        contributors.setFont(MyFont.weiruan);
+        contributors.setBounds(bx+4*jl_w+3*addx,by,2*jl_w+15,jl_h);
+        
+       
+        stars_num=new JLabel("0",JLabel.CENTER);
+        stars_num.setFont(MyFont.weiruan);
+        stars_num.setBounds(bx,by+addy,jl_w,jl_h);
+        
+        forks_num=new JLabel("0",JLabel.CENTER);
+        forks_num.setFont(MyFont.weiruan);
+        forks_num.setBounds(bx+jl_w+addx,by+addy,jl_w,jl_h);
+        
+        subscribers_num=new JLabel("0",JLabel.CENTER);
+        subscribers_num.setFont(MyFont.weiruan);
+        subscribers_num.setBounds(bx+2*jl_w+2*addx,by+addy,2*jl_w,jl_h);
+        
+        contributors_num=new JLabel("0",JLabel.CENTER);
+        contributors_num.setFont(MyFont.weiruan);
+        contributors_num.setBounds(bx+4*jl_w+3*addx,by+addy,2*jl_w+15,jl_h);
+        
+//        boardLabel2=new ArrayList<JLabel>();
+//        boardLabel2.add(stars_num);
+//        boardLabel2.add(forks_num);
+//        boardLabel2.add(subscribers_num);
+//        boardLabel2.add(contributors_num);
+        
         this.add(stars);
         this.add(forks);
         this.add(subscribers);
         this.add(contributors);
-
-        stars_num=new JLabel("0");
-        forks_num=new JLabel("0");
-        subscribers_num=new JLabel("0");
-        contributors_num=new JLabel("0");
-        boardLabel2=new ArrayList<JLabel>();
-        boardLabel2.add(stars_num);
-        boardLabel2.add(forks_num);
-        boardLabel2.add(subscribers_num);
-        boardLabel2.add(contributors_num);
-
-        for(int j=0;j<boardLabel2.size();j++){
-            boardLabel2.get(j).setHorizontalAlignment(SwingConstants.CENTER);
-            boardLabel2.get(j).setBounds(j*WIDTH/4,by+20,WIDTH/4,50);
-            this.add(boardLabel2.get(j));
-        }
-
+        this.add(stars_num);
+        this.add(forks_num);
+        this.add(subscribers_num);
+        this.add(contributors_num);
+        this.setBorder(BorderFactory.createEtchedBorder());
     }
     
 

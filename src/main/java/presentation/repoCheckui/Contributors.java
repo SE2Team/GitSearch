@@ -1,9 +1,12 @@
 package presentation.repoCheckui;
 
+import presentation.common.MyFont;
 import presentation.common.MyPanel;
 import vo.UserVO;
 
 import javax.swing.*;
+
+import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -25,8 +28,12 @@ public class Contributors extends MyPanel{
 
     private void init() {
         this.setLayout(null);
-        title=new JLabel("Contributors:");
-        title.setBounds(marX,0,WIDTH,20);
+        this.setBackground(Color.white);
+        this.setBorder(BorderFactory.createEtchedBorder());
+        title=new JLabel("Contributors");
+        title.setFont(MyFont.Comic2);
+        title.setBounds(marX,0,WIDTH,30);
+        this.add(title);
         more=new JLabel("More...");
         more.setBounds(marX,5*20,WIDTH,20);
         int count=0;//不能显示超过5个
@@ -37,7 +44,7 @@ public class Contributors extends MyPanel{
             }
         }
         for(int i=0;i<jLabels.size();i++){
-            jLabels.get(i).setBounds(marX,20*(i+1),WIDTH,20);
+            jLabels.get(i).setBounds(marX,30*(i+1),WIDTH,30);
             this.add(jLabels.get(i));
             if(i>=5){
                 this.add(more);
