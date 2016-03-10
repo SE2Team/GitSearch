@@ -17,10 +17,15 @@ public class RepositoryData implements RepositoryDataService {
 	/**
 	 * 
 	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
+	 * @throws IOException 
 	 * 
 	 */
-	public ArrayList<RepositoryPO> getRepositories() {
+	public ArrayList<RepositoryPO> getRepositories() throws IOException{
 		// TODO Auto-generated method stub
+		String str1=string;
+		ArrayList<String> list=new ArrayList<String>();
+		list = new GetData().getString(str1);
+		ArrayList<RepositoryPO> list1=new ArrayList<RepositoryPO>();
 		return null;
 	}
 	
@@ -32,15 +37,18 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-		String str1="http://www.gitmining.net/api/repository/names";
-		ArrayList<String> list;
-			list = new GetData().getString(str1);
+		String str1=string+"/names";
+		ArrayList<String> list=new ArrayList<String>();
+		list = new GetData().getString(str1);
 	
 		return list;
 	}
 
-	public RepositoryPO checkRepository(String userName, String reponame) {
+	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
+		String str1=string+"/"+userName+"/"+reponame;
+		ArrayList<String> list=new ArrayList<String>();
+		list = new GetData().getString(str1);
 		return null;
 	}
 
