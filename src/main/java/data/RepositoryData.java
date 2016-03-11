@@ -100,7 +100,6 @@ public class RepositoryData implements RepositoryDataService {
 			
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
-				System.out.println(obj.getString("full_name"));
 			}else{
 				name="";
 			}
@@ -121,7 +120,7 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File( "/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
 		BufferedReader br = new BufferedReader(fr);
 		String temp ;
 		ArrayList<String> list=new ArrayList<String>();
@@ -134,7 +133,6 @@ public class RepositoryData implements RepositoryDataService {
 	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
 	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-	
 	for(int j=0;j<list.size();j++){
 		String[] s=list.get(j).getName().split("/");
 		if(s[0].equals(userName)&&s[1].equals(reponame)){
@@ -148,9 +146,42 @@ public class RepositoryData implements RepositoryDataService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	/**
+	 * 
+	 * 查询某个fork项目的某项信息
+	 * @throws IOException 
+	 * 
+	 */
+	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
+		JSONObject obj = new JSONObject();
+		FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
+		BufferedReader br = new BufferedReader(fr);
+		String string = br.readLine();
+		JSONArray obj1 = new JSONArray(string);
+		for (int i = 0; i < obj1.length(); i++) {
+			obj = (JSONObject) obj1.get(i);
+			if (obj.has("full_name")) {
+				if (obj.getString("full_name").equals(userName + "/" + reponame)) {
+					if (info.toString().equals("fork") && obj.has("fork")) {
+						return obj.getBoolean("fork") + "";
+					}
+				} else if (info.toString().equals("id") || info.toString().equals("size")
+						|| info.toString().equals("forks") || info.toString().equals("stargazers_count")
+						|| info.toString().equals("open_issues") || info.toString().equals("subscribers_count")) {
+					if (obj.has(info.toString())) {
+						return obj.getInt(info.toString()) + "";
+					}
+				} else {
+					if (obj.has(info.toString())) {
+						return obj.getString(info.toString());
+					}
+				}
+			}
 
-	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) {
-		// TODO Auto-generated method stub
+		}
+
 		return null;
 	}
 
@@ -170,30 +201,30 @@ public class RepositoryData implements RepositoryDataService {
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		if(sort==Repository_Sort.contributor){
 		
-		for(int j=0;j<list.size();j++){
-			for(int i=j;i<list.size();i++){
-				if(list.get(i).getContributor()<=list.get(i+1).getContributor()){
-					RepositoryPO temp=list.get(i);
-					list.set(i, list.get(i+1));
+		for(int j=0;j<list.size()-1;j++){
+			for(int i=j;i<list.size()-1;i++){
+				if(list.get(j).getContributor()<=list.get(i+1).getContributor()){
+					RepositoryPO temp=list.get(j);
+					list.set(j, list.get(i+1));
 					list.set(i+1, temp);
 					
 					}
 				}
 			}
 		}else if(sort==Repository_Sort.fork){
-			for(int j=0;j<list.size();j++){
-				for(int i=j;i<list.size();i++){
-					if(list.get(i).getForks()<=list.get(i+1).getForks()){
-						RepositoryPO temp=list.get(i);
-						list.set(i, list.get(i+1));
+			for(int j=0;j<list.size()-1;j++){
+				for(int i=j;i<list.size()-1;i++){
+					if(list.get(j).getForks()<=list.get(i+1).getForks()){
+						RepositoryPO temp=list.get(j);
+						list.set(j, list.get(i+1));
 						list.set(i+1, temp);
 						
-					}
+						}
 					}
 				}
 		}else if(sort==Repository_Sort.star){
-			for(int j=0;j<list.size();j++){
-				for(int i=j;i<list.size();i++){
+			for(int j=0;j<list.size()-1;j++){
+				for(int i=j;i<list.size()-1;i++){
 					if(list.get(i).getStargazers()<=list.get(i+1).getStargazers()){
 						RepositoryPO temp=list.get(i);
 						list.set(i, list.get(i+1));
