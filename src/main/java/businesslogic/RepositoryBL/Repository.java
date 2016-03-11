@@ -1,6 +1,7 @@
 package businesslogic.RepositoryBL;
 
 import Util.RepositoryInfo;
+import Util.Repository_Sort;
 import data.DataFactory;
 import dataService.DataFatoryService;
 import po.RepositoryPO;
@@ -57,4 +58,13 @@ public class Repository {
         return vos.iterator();
     }
 
+    public Iterator<RepositoryVO> sort(Repository_Sort repository_sort) throws IOException {
+        ArrayList<RepositoryPO> pos = factory.getRepositoryDataService().sort(repository_sort);
+        ArrayList<RepositoryVO> vos = new ArrayList<RepositoryVO>();
+        for (RepositoryPO po : pos) {
+            vos.add(PO2VO.convert(po));
+        }
+        return vos.iterator();
+
+    }
 }
