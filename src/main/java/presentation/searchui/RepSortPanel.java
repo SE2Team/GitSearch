@@ -69,13 +69,13 @@ public class RepSortPanel extends MyPanel{
 		sortPanel.setBorder(BorderFactory.createEtchedBorder());
 		sortPanel.setLayout(new GridLayout(subPanelNum,1));
 		sortPanel.setBackground(Color.WHITE);
-		
-//		RepositoryBLService bl;
-//		bl = new RepositoryController();
-//		Iterator<RepositoryVO> ite = null;
-//		int i=0;
-//		try {
-//			ite=bl.getRepositories();
+
+        RepositoryBLService bl;
+        bl = new RepositoryController();
+        Iterator<RepositoryVO> ite = null;
+        int i = 0;
+        try {
+            ite = bl.getRepositories();
 //			if(ite!=null){
 //				while(ite.hasNext()){
 //					RepositoryVO repoVO = ite.next();
@@ -83,12 +83,16 @@ public class RepSortPanel extends MyPanel{
 //					i++;
 //				}
 //			}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		int jl_h=20;
+            while (ite.hasNext() && i < 6) {
+                this.add(new RepInfoSubPanel(ite.next(), width, subPabel_h));
+                i++;
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        int jl_h=20;
 		int addy=(this.getHeight()-sortPanel_h-height-jl_h)/2;
 		
 		front = new MyLabel("上一页");
