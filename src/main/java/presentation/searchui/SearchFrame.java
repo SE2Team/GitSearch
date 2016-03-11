@@ -9,7 +9,8 @@ import Util.SearchType;
 
 public class SearchFrame extends JFrame{
 	static JFrame j;
-
+	static SearchPanel s_panel;
+	
 	public SearchFrame(SearchType type) {
 		j=this;
 		
@@ -22,11 +23,14 @@ public class SearchFrame extends JFrame{
 		int y = (screen.height - this.getHeight()) / 2;
 		this.setLocation(x, y - 20);	
 		
-		
-		this.add(new SearchPanel(type));
+		s_panel = new SearchPanel(type);
+		this.add(s_panel);
 		this.setVisible(true);
 	}
 	
+	public static SearchPanel getPanel(){
+		return s_panel;
+	}
 	public static JFrame getSearch(){
 		return j;
 	}

@@ -229,7 +229,6 @@ public class RepositoryData implements RepositoryDataService {
 						RepositoryPO temp=list.get(j);
 						list.set(j, list.get(i+1));
 						list.set(i+1, temp);
-						
 						}
 					}
 				}

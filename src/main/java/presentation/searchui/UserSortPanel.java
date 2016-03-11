@@ -160,6 +160,17 @@ public class UserSortPanel extends MyPanel{
 		label.setForeground(Color.black);
 	}
 	
+	private void setSortPanel(ArrayList<UserVO> vos,int i) {
+		System.out.println(vos.size());
+		if(i>0&&i<vos.size()/subPanelNum+2){
+			sortPanel.removeAll();
+			for(int j=0;j<subPanelNum&&(subPanelNum*(i-1)+j)<vos.size();j++){
+				sortPanel.add(new UserInfoSubPanel(vos.get(subPanelNum*(i-1)+j), sortPanel.getWidth(),subPanel_h));
+			}
+		}
+		SearchFrame.getSearch().setVisible(true);
+	}
+
 	/***
 	 * 设置每一页的项目信息
 	 * @param i
@@ -173,5 +184,12 @@ public class UserSortPanel extends MyPanel{
 			}
 		}
 		SearchFrame.getSearch().setVisible(true);
+	}
+	
+	public void performUserSearch(ArrayList<UserVO> uvos){
+		this.vos = uvos;
+		n=1;
+		sum.setText(vos.size()+"");
+		this.setSortPanel(uvos,n);
 	}
 }

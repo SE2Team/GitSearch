@@ -309,31 +309,39 @@ public class RepSortPanel extends MyPanel {
 		label.setForeground(Color.black);
 	}
 
+	private void setSortPanel(ArrayList<RepositoryVO> vos,int i) {
+		if (i > 0 && i < vos.size() / subPanelNum + 2) {
+			sortPanel.removeAll();
+			for(int j = 0; j < subPanelNum
+					&& (subPanelNum * (i - 1) + j) < vos.size(); j++) {
+				sortPanel.add(new RepInfoSubPanel(vos.get(subPanelNum * (i - 1)
+						+ j), sortPanel.getWidth(), subPanel_h));
+			}
+		}
+		SearchFrame.getSearch().setVisible(true);
+	}
+	
 	/***
 	 * 设置每一页的项目信息
 	 * 
 	 * @param i
 	 */
 	private void setSortPanel(int i) {
-
-		
 		if (i > 0 && i < vos.size() / subPanelNum + 2) {
 			sortPanel.removeAll();
-//			sortPanel.repaint();
 			for(int j = 0; j < subPanelNum
 					&& (subPanelNum * (i - 1) + j) < vos.size(); j++) {
 				sortPanel.add(new RepInfoSubPanel(vos.get(subPanelNum * (i - 1)
 						+ j), sortPanel.getWidth(), subPanel_h));
-//				System.out.println(vos.get(subPanelNum * (i - 1)
-//						+ j).getName());
 			}
 		}
-//		sortPanel.repaint();
-//		this.repaint();
-
-//		SearchPanel.j.repaint();
-//		this.setVisible(true);
 		SearchFrame.getSearch().setVisible(true);
-		
+	}
+	
+	public void performRepSearch(ArrayList<RepositoryVO> rvos){
+		this.vos = rvos;
+		n=1;
+		sum.setText(vos.size()+"");
+		this.setSortPanel(vos, n);	
 	}
 }

@@ -15,7 +15,7 @@ public class RepositoryVO {
     String owner_type;
     String html_url;
     String description;
-    String fork;
+    boolean fork;
     String created;
     String updated;
     String pushed;
@@ -27,7 +27,7 @@ public class RepositoryVO {
     int open_issues = 0;
     int subscribers_count = 0;
 
-    public RepositoryVO(String name, int id, String owner_type, String html_url, String description, String fork,
+    public RepositoryVO(String name, int id, String owner_type, String html_url, String description, boolean fork,
                         String created, String updated, String pushed, int size, int stargazers_count,
                         String language, int forks, int contributor, int open_issues, int subscribers_count) {
         this.name = name;
@@ -68,7 +68,7 @@ public class RepositoryVO {
         return description;
     }
 
-    public String getFork() {
+    public boolean getFork() {
         return fork;
     }
 

@@ -20,7 +20,7 @@ public interface RepositoryDataService {
 
     Map<String, Integer> languagesOfRepository(String userName, String reponame);
 
-    String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
+    String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 
     ArrayList<RepositoryPO> Search(String name) throws IOException;
 

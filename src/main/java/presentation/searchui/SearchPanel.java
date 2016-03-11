@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -15,6 +19,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.userBL.UserController;
+import businesslogicService.RepositoryBLService;
+import businesslogicService.UserBLService;
 import Util.SearchType;
 import presentation.common.MyButton;
 import presentation.common.MyJTextField;
@@ -22,6 +30,8 @@ import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.repoCheckui.RepCheckFrame;
 import presentation.userCheckui.UserCheckFrame;
+import vo.RepositoryVO;
+import vo.UserVO;
 
 public class SearchPanel extends JPanel {
 	
@@ -37,6 +47,11 @@ public class SearchPanel extends JPanel {
 	// 筛选条件、用户排序、项目排序label
 	private MyLabel jl_filtrate, jl_userSort, jl_repSort;
 
+	private UserBLService userBL = new UserController();
+	private RepositoryBLService repBL = new RepositoryController();
+	ArrayList<UserVO> uvos;
+	ArrayList<RepositoryVO> rvos;
+	
 	int x = 100, y = 15, j_x = 50, jtf_w = 400, jb_w = 100,
 			jp_w = 800 - 2 * j_x, h = 35, jpRepFil_h = 130, jpUserFil_h = 40,
 			jpUserSort_h = 400, jpRepSort_h = 300;
@@ -96,32 +111,14 @@ public class SearchPanel extends JPanel {
 
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				initUserFilPanel();
-				SearchPanel.this.remove(jl_repSort);
-				SearchPanel.this.remove(jp_repFiltrate);
-				SearchPanel.this.remove(jp_repSort);
-				SearchPanel.this.add(jp_userFiltrate);
-				SearchPanel.this.add(jl_userSort);
-				SearchPanel.this.add(jp_userSort);
-
-				jp_userFiltrate.repaint();
-				repaint();
-				SearchFrame.getSearch().setVisible(true);
+				performUserSearch();
 			}
 		});
 		repSearch.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				SearchPanel.this.remove(jp_userFiltrate);
-				SearchPanel.this.remove(jl_userSort);
-				SearchPanel.this.remove(jp_userSort);
-				SearchPanel.this.add(jp_repFiltrate);
-				SearchPanel.this.add(jl_repSort);
-				SearchPanel.this.add(jp_repSort);
-				jp_userFiltrate.repaint();
-				repaint();
-				SearchFrame.getSearch().setVisible(true);
+				performRepSearch();
 			}
 		});
 
@@ -129,6 +126,84 @@ public class SearchPanel extends JPanel {
 		SearchFrame.getSearch().setVisible(true);
 	}
 
+	/***
+	 * 用户搜索按钮监听事件
+	 */
+	public void performUserSearch(){
+		initUserFilPanel();
+		SearchPanel.this.remove(jl_repSort);
+		SearchPanel.this.remove(jp_repFiltrate);
+		SearchPanel.this.remove(jp_repSort);
+		SearchPanel.this.add(jp_userFiltrate);
+		SearchPanel.this.add(jl_userSort);
+		
+		if(jtf_search.getText().trim().equals("")){
+			SearchPanel.this.add(jp_userSort);
+		}
+		else{
+			uvos = new ArrayList<UserVO>();
+			Iterator<UserVO> itr = null;
+			try {
+				itr = userBL.search(jtf_search.getText().trim());
+				while(itr.hasNext()){
+					uvos.add(itr.next());
+				}
+				jp_userSort.performUserSearch(uvos);
+				SearchPanel.this.add(jp_userSort);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		jp_userFiltrate.repaint();
+		repaint();
+		SearchFrame.getSearch().setVisible(true);
+	}
+	
+	/***
+	 * 项目搜索按钮监听事件
+	 */
+	public void performRepSearch(){
+		initRepFilPanel();
+		SearchPanel.this.remove(jl_userSort);
+		SearchPanel.this.remove(jp_userFiltrate);
+		SearchPanel.this.remove(jp_userSort);
+		
+		SearchPanel.this.add(jp_repFiltrate);
+		SearchPanel.this.add(jl_repSort);
+		
+		if(jtf_search.getText().trim().equals("")){
+			SearchPanel.this.add(jp_repSort);
+		}
+		else{
+			rvos = new ArrayList<RepositoryVO>();
+			Iterator<RepositoryVO> itr = null;
+			try {
+				itr = repBL.Search(jtf_search.getText().trim());
+				while(itr.hasNext()){
+					rvos.add(itr.next());
+				}
+				jp_repSort.performRepSearch(rvos);
+				SearchPanel.this.add(jp_repSort);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		jp_userFiltrate.repaint();
+		repaint();
+		SearchFrame.getSearch().setVisible(true);
+	}
 	/***
 	 * 初始化项目筛选面板
 	 */

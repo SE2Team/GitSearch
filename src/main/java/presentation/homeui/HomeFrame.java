@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 
 import Util.SearchType;
 import presentation.searchui.SearchFrame;
+import presentation.searchui.SearchPanel;
 
 public class HomeFrame extends JFrame {
 	private HomePanel homePanel;
@@ -30,14 +31,17 @@ public class HomeFrame extends JFrame {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new SearchFrame(SearchType.SearchRep);
+				SearchFrame sf = new SearchFrame(SearchType.SearchRep);
+				sf.getPanel().performRepSearch();
 			}
 		});
 		homePanel.getSearchUser().addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				dispose();
-				new SearchFrame(SearchType.SearchUser);
+				SearchFrame sf = new SearchFrame(SearchType.SearchUser);
+				sf.getPanel().performUserSearch();
+//				new SearchFrame(SearchType.SearchUser);
 			}
 		});
 		this.add(homePanel);
