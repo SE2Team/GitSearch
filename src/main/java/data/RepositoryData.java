@@ -29,7 +29,6 @@ public class RepositoryData implements RepositoryDataService {
 	 * 
 	 */
 	public ArrayList<RepositoryPO> getRepositories() throws IOException{
-		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
 		FileReader fr = new FileReader(new File( "src/main/java/txtData/users.json"));
@@ -96,7 +95,8 @@ public class RepositoryData implements RepositoryDataService {
 			}else{
 				name="";
 			}
-			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") , obj.getString("type"), 
+			System.out.println(name);
+			RepositoryPO po = new RepositoryPO(name, obj.getInt("id"), obj.getString("type"),
 					obj.getString("html_url"), s1, s2, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
 					s4,forks ,issues_count,subscribers_count ,contributor);

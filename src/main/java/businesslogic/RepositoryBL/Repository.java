@@ -21,6 +21,7 @@ public class Repository {
     public Iterator<RepositoryVO> getRepositories() throws IOException {
         ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
         for(RepositoryPO po:factory.getRepositoryDataService().getRepositories()){
+//            System.out.println(po.getName());
             vos.add(PO2VO.convert(po));
         }
         return vos.iterator();

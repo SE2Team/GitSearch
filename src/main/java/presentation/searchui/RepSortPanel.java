@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.swing.BorderFactory;
@@ -29,11 +30,14 @@ public class RepSortPanel extends MyPanel{
 	
 	private MyRecButton general,star,fork,contributor;
 //	private JTable sortTable;
+private ArrayList<RepositoryVO> vos = new ArrayList<RepositoryVO>();
 	private MyLabel front,next,num;
 	private MyPanel sortPanel;
 	int n=1;
-	int L_x=0,L_y=0,width=150,height=30;
-	int sortPanel_h=this.getHeight()-height-30,subPabel_h=40;
+	int i = 0;//记录当前页数
+
+	int L_x = 0, L_y = 0, width = 150, height = 30;
+	int sortPanel_h = this.getHeight() - height - 30, subPabel_h = 60;
 	int subPanelNum = sortPanel_h/subPabel_h;
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -73,7 +77,6 @@ public class RepSortPanel extends MyPanel{
         RepositoryBLService bl;
         bl = new RepositoryController();
         Iterator<RepositoryVO> ite = null;
-        int i = 0;
         try {
             ite = bl.getRepositories();
 //			if(ite!=null){
@@ -83,16 +86,21 @@ public class RepSortPanel extends MyPanel{
 //					i++;
 //				}
 //			}
-            while (ite.hasNext() && i < 6) {
-                this.add(new RepInfoSubPanel(ite.next(), width, subPabel_h));
-                i++;
-            }
+			while (ite.hasNext() && i < subPanelNum) {
+				i++;
+//                System.out.println(ite.next().getName());
+				RepositoryVO vo = ite.next();
+				vos.add(vo);
+				sortPanel.add(new RepInfoSubPanel(vo, sortPanel.getWidth(), subPabel_h));
+			}
+
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        int jl_h=20;
+//        setSortPanel(i);//初始化列表
+		int jl_h=20;
 		int addy=(this.getHeight()-sortPanel_h-height-jl_h)/2;
 		
 		front = new MyLabel("上一页");
@@ -123,4 +131,12 @@ public class RepSortPanel extends MyPanel{
 //		return sortTable;
 //	}
 
+	private void setSortPanel(int i) {
+		sortPanel.removeAll();
+//        for(int j=i*6;j<(i+1)*6&&j<vos.size();j++){
+//            System.out.println(vos.get(j).getName());
+//            sortPanel.add(new RepInfoSubPanel(vos.get(j),sortPanel.getWidth(),sortPanel_h));
+//        }
+//		sortPanel.add(new RepInfoSubPanel(vos.get(i),sortPanel.getWidth(),sortPanel_h));
+	}
 }

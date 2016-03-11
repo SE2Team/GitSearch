@@ -13,7 +13,7 @@ public class RepInfoSubPanel extends JPanel{
 	public RepInfoSubPanel(RepositoryVO rvo,int w,int h) {
 		this.setLayout(null);
 		this.setSize(w,h);
-		int x=105,y=h/3,jl_w=50,jl_h=30,addx=5,addy=20;
+		int x = 105, y = h / 6, jl_w = 50, jl_h = 30, addx = 5, addy = 20;
 
 		jl_repName = new JLabel(rvo.getName());
 		jl_repName.setFont(MyFont.Arial20);
