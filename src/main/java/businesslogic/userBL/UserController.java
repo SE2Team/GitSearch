@@ -4,6 +4,7 @@ import Util.UserInfo;
 import businesslogicService.UserBLService;
 import vo.UserVO;
 
+import java.io.IOException;
 import java.util.Iterator;
 
 /**
@@ -11,31 +12,29 @@ import java.util.Iterator;
  */
 public class UserController implements UserBLService{
     User user=new User();
-    public Iterator<UserVO> CheckUser(User user) {
-        return null;
+
+    public UserVO CheckUser(String name) throws IOException {
+        return user.checkUser(name);
     }
 
-    public String UserInfo(User user, UserInfo info) {
-        return null;
+    public String UserInfo(String name, UserInfo info) throws IOException {
+        return user.UserInfo(name, info);
     }
 
-    public Iterator<UserVO> getStargazers(User user, String userName, String reponame, int pageNum) {
-        return null;
+    public Iterator<String> getStargazers(String userName, String reponame) throws IOException {
+        return user.getStargazers(userName, reponame);
     }
 
-    public Iterator<String> getStargazerNames(User user, String userName, String reponame, int pageNum) {
-        return null;
+    public Iterator<String> getStargazerNames(String userName, String reponame) throws IOException {
+        return user.getStargazerNames(userName, reponame);
     }
 
-    public Iterator<String> getSubscribers(User user, String userName, String reponame, int pageNum) {
-        return null;
+    public Iterator<UserVO> getSubscribers(String userName, String reponame) {
+        return user.getSubscribers(userName, reponame);
     }
 
-    public Iterator<String> NamesOfSubscriber(User user, String userName, String reponame, int pageNum) {
-        return null;
+    public Iterator<String> NamesOfSubscriber(String userName, String reponame) throws IOException {
+        return user.NamesOfSubscriber(userName,reponame);
     }
 
-    public UserVO search(String name) {
-        return null;
-    }
 }

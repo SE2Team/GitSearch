@@ -12,7 +12,7 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryController implements RepositoryBLService {
-    Repository repository;
+    Repository repository = new Repository();
     public Iterator<RepositoryVO> getRepositories() throws IOException {
         return repository.getRepositories();
     }
@@ -33,7 +33,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.RepositoryInfo(userName, reponame, info);
     }
 
-    public RepositoryVO Search(String name) throws IOException {
+    public Iterator<RepositoryVO> Search(String name) throws IOException {
         return repository.Search(name);
     }
 

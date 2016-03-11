@@ -58,7 +58,7 @@ public class BasicInfoPanel extends MyPanel {
 //        followers.setText();
 //        following.setText();
         
-        regTimeLabel=new JLabel("Joined on 2011/11/11"+vo.getRegTime(),JLabel.CENTER);
+        regTimeLabel=new JLabel("Joined on 2011/11/11"+vo.getCreated_at(),JLabel.CENTER);
         regTimeLabel.setFont(MyFont.Shruti18);
         regTimeLabel.setBounds(bx, by+3*height+addy, width, height);
        

@@ -36,4 +36,23 @@ public class GetData {
 	        }
 			return list;
 		}
+		
+		public String getString1(String str1) throws IOException{
+			URL url = new URL(str1);
+	        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	        connection.connect();
+	        InputStream inputStream = connection.getInputStream();
+	      
+	        Reader reader = new InputStreamReader(inputStream, "UTF-8");
+	        BufferedReader bufferedReader = new BufferedReader(reader);
+	        StringBuffer sb = new StringBuffer();
+	        String str=null;
+	        while ((str = bufferedReader.readLine()) != null) {
+				sb.append(str);
+	        }
+	        reader.close();
+	        connection.disconnect();
+	        String s1=sb.toString();
+	        return s1;
+		}
 }

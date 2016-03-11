@@ -22,13 +22,7 @@ public interface RepositoryDataService {
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 
-    RepositoryPO Search(String name);
-
-
-
-
-
-
+    ArrayList<RepositoryPO> Search(String name) throws IOException;
 
 
 }

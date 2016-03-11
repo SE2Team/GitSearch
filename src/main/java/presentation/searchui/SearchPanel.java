@@ -67,11 +67,11 @@ public class SearchPanel extends JPanel {
 		jp_repSort = new RepSortPanel(j_x, 3 * y + 3 * h + jpRepFil_h, jp_w,
 				jpRepSort_h);
 		
-		jp_repSort.getTable().addMouseListener(new MouseAdapter() {
-			 public void mouseClicked(MouseEvent e){
-				 new RepCheckFrame();
-			 }
-		});
+//		jp_repSort.getTable().addMouseListener(new MouseAdapter() {
+//			 public void mouseClicked(MouseEvent e){
+//				 new RepCheckFrame();
+//			 }
+//		});
 
 		
 		// 用户排序面板
@@ -79,11 +79,11 @@ public class SearchPanel extends JPanel {
 				jb_w, h);
 		jp_userSort = new UserSortPanel(j_x, 3 * y + 3 * h + jpUserFil_h, jp_w,
 				jpUserSort_h);
-		jp_userSort.getTable().addMouseListener(new MouseAdapter() {
-			 public void mouseClicked(MouseEvent e){
-				// new UserCheckFrame(jp_userSort.vo);
-			 }
-		});
+//		jp_userSort.getTable().addMouseListener(new MouseAdapter() {
+//			 public void mouseClicked(MouseEvent e){
+//				// new UserCheckFrame(jp_userSort.vo);
+//			 }
+//		});
 
 		this.add(jtf_search);
 		this.add(userSearch);

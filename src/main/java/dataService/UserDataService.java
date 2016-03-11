@@ -1,5 +1,6 @@
 package dataService;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public interface UserDataService {
 	 * @throws IOException 
      */
 
-    ArrayList<UserPO> CheckUser(User user) throws IOException;
+	UserPO CheckUser(String user) throws IOException;
 
     /**
      * 查询某个user的某项信息（这里的user是项目中contributor或collaborator的登录名）
@@ -32,8 +33,10 @@ public interface UserDataService {
      *             public_repos,public_gists,followers,following
      *             created_at,updated_at
      * @return
+     * @throws FileNotFoundException 
+     * @throws IOException 
      */
-    String UserInfo(User user, UserInfo info);
+    String UserInfo(String user, UserInfo info) throws FileNotFoundException, IOException;
 
     /**
      * 查询单个项目的点赞者,一页50个
@@ -41,8 +44,9 @@ public interface UserDataService {
      * @param userName
      * @param reponame String stargazers
      * @return
+     * @throws IOException 
      */
-    ArrayList<UserPO> getStargazers( String userName, String reponame);
+    ArrayList<String> getStargazers( String userName, String reponame) throws IOException;
 
     /**
      * 查询单个项目的点赞者登录名,一页50个
@@ -79,5 +83,5 @@ public interface UserDataService {
      * @param name 关键字
      * @return
      */
-    UserPO search(String name);
+    ArrayList<UserPO> search(String name);
 }

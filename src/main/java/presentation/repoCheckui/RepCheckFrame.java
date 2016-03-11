@@ -23,7 +23,7 @@ public class RepCheckFrame extends JFrame{
 
 	public RepCheckFrame() {
 //		this.vo =test_getRepo();
-        vo = test_getRepo();
+//        vo = test_getRepo();
         ax = 0;
         ay = 0;
         this.setLayout(null);
@@ -43,7 +43,7 @@ public class RepCheckFrame extends JFrame{
         title=new JLabel("Meng");
         repoInfo=new RepoInfo(ax,ay,WIDTH,HEIGHT/3,vo);
         languages=new Languages(0,HEIGHT/3,WIDTH,HEIGHT/3,vo);
-        contributors=new Contributors(0,2*HEIGHT/3,WIDTH,HEIGHT/3,vo.getContributors());
+//        contributors=new Contributors(0,2*HEIGHT/3,WIDTH,HEIGHT/3,vo.getContributors());
         this.add(repoInfo);
         this.add(languages);
         this.add(contributors);
@@ -56,17 +56,17 @@ public class RepCheckFrame extends JFrame{
 		this.setVisible(true);
 	}
 
-    RepositoryVO test_getRepo(){
-        ArrayList<UserVO> arrayList=new ArrayList<UserVO>();
-        arrayList.add(new UserVO("meng yikun","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new UserVO("jing xiaofeng","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new UserVO("chen huan","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new UserVO("wan xin","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new UserVO("prinz eagun","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
-
-        RepositoryVO repositoryVO=new RepositoryVO("testRepo","no description","java",arrayList
-        ,arrayList,new ArrayList<RepositoryVO>());
-        return repositoryVO;
-    }
+//    RepositoryVO test_getRepo(){
+//        ArrayList<UserVO> arrayList=new ArrayList<UserVO>();
+//        arrayList.add(new UserVO("meng yikun","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new UserVO("jing xiaofeng","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new UserVO("chen huan","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new UserVO("wan xin","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new UserVO("prinz eagun","2015-12-12",new ArrayList<RepositoryVO>(),new ArrayList<RepositoryVO>()));
+//
+//        RepositoryVO repositoryVO=new RepositoryVO("testRepo","no description","java",arrayList
+//        ,arrayList,new ArrayList<RepositoryVO>());
+//        return repositoryVO;
+//    }
 
 }

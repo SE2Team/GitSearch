@@ -35,7 +35,7 @@ public class UserCheckFrame extends JFrame{
 //        FlowLayout layout=new FlowLayout();
 		basicInfoPanel=new BasicInfoPanel(ax,ay,width/3,400,vo);
 		userRepo=new UserRepo(width/3,ay,width-width/3,h/2,vo);
-        crepo=new ContributeRepo(width/3,h/2,width-width/3,h/2,vo.getContribute());
+//TODO        crepo=new ContributeRepo(width/3,h/2,width-width/3,h/2,vo.get);
 
 		this.add(basicInfoPanel);
 		this.add(userRepo);
@@ -57,28 +57,28 @@ public class UserCheckFrame extends JFrame{
 		this.setVisible(true);
 	}
 
-    private UserVO test_getUser(){
-        ArrayList<RepositoryVO> arrayList=new ArrayList<RepositoryVO>();
-        arrayList.add(new RepositoryVO("repo1","test","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-
-        arrayList.add(new RepositoryVO("repo2","test2","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new RepositoryVO("repo3","test3","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        arrayList.add(new RepositoryVO("repo4","test4","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        ArrayList<RepositoryVO> arrayList2=new ArrayList<RepositoryVO>();
-        arrayList2.add(new RepositoryVO("crepo1","test","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-
-        arrayList2.add(new RepositoryVO("crepo2","test","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        arrayList2.add(new RepositoryVO("crepo3","test","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        arrayList2.add(new RepositoryVO("crepo4","test","",new ArrayList<UserVO>(),
-                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
-        return new UserVO("meng yikun","2015-12-12",arrayList,arrayList);
-    }
+//    private UserVO test_getUser(){
+//        ArrayList<RepositoryVO> arrayList=new ArrayList<RepositoryVO>();
+//        arrayList.add(new RepositoryVO("repo1","test","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//
+//        arrayList.add(new RepositoryVO("repo2","test2","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new RepositoryVO("repo3","test3","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList.add(new RepositoryVO("repo4","test4","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        ArrayList<RepositoryVO> arrayList2=new ArrayList<RepositoryVO>();
+//        arrayList2.add(new RepositoryVO("crepo1","test","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//
+//        arrayList2.add(new RepositoryVO("crepo2","test","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList2.add(new RepositoryVO("crepo3","test","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        arrayList2.add(new RepositoryVO("crepo4","test","",new ArrayList<UserVO>(),
+//                new ArrayList<UserVO>(),new ArrayList<RepositoryVO>()));
+//        return new UserVO("meng yikun","2015-12-12",arrayList,arrayList);
+//    }
 
 }
