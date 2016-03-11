@@ -13,4 +13,6 @@ public class MyFont {
 	public static final Font Comic = new Font("Comic Sans MS",Font.PLAIN, 22);
 	public static final Font Comic2 = new Font("Comic Sans MS",Font.PLAIN, 20);
 	public static final Font weiruan = new Font("微软雅黑",Font.PLAIN, 16);
+	public static final Font Calibri = new Font("Calibri Light",Font.PLAIN, 18);
+	public static final Font Calibri2 = new Font("Calibri Light",Font.PLAIN, 20);
 }

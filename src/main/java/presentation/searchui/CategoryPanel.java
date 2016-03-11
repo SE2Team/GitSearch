@@ -1,8 +1,10 @@
 package presentation.searchui;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import presentation.common.MyButton;
+import presentation.common.MyFont;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 
@@ -18,8 +20,12 @@ public class CategoryPanel extends MyPanel{
 	
 	public CategoryPanel(int x, int y, int w, int h) {
 		super(x, y, w, h);
+		FlowLayout flow = new FlowLayout(FlowLayout.LEFT,15,5);
+		this.setLayout(flow);
+		this.setBackground(Color.WHITE);
 		
-		jl_category = new MyLabel("类别");
+		jl_category = new MyLabel("Categoty");
+		jl_category.setFont(MyFont.Calibri2);
 		jb1 = new MyButton("ActiveRecord");
 		jb2 = new MyButton("App");
 		jb3 = new MyButton("CMS");

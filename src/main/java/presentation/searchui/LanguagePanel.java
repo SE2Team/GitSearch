@@ -1,8 +1,10 @@
 package presentation.searchui;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import presentation.common.MyButton;
+import presentation.common.MyFont;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 
@@ -20,7 +22,8 @@ public class LanguagePanel extends MyPanel{
 		super(x, y, w, h);
 		FlowLayout flow = new FlowLayout(FlowLayout.LEFT,15,5);
 		this.setLayout(flow);
-		jl_language = new MyLabel("语言");
+		jl_language = new MyLabel("Language ");
+		jl_language.setFont(MyFont.Calibri2);
 		jb1 = new MyButton("all");
 		jb2 = new MyButton("Java");
 		jb3 = new MyButton("C++");
@@ -28,6 +31,8 @@ public class LanguagePanel extends MyPanel{
 		jb5 = new MyButton("Python");
 		jb6 = new MyButton("Ruby");
 		
+		this.setBackground(Color.WHITE);
+
 		this.add(jl_language);
 		this.add(jb1);
 		this.add(jb2);

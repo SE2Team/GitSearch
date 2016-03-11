@@ -35,7 +35,7 @@ public class UserRepo extends MyPanel{
 
         this.setAlignmentY(50);
         more=new JLabel("more...");
-        title=new JLabel("Owning Repositoty");
+        title=new JLabel("Owning Repository");
         title.setFont(MyFont.Comic2);
 
         repos =new ArrayList<JLabel>();
@@ -45,7 +45,7 @@ public class UserRepo extends MyPanel{
         //
 
         //根据vo的内容来决定显示多少个repo，最多显示5个
-//<<<<<<< HEAD
+
 //        for(RepositoryVO rvo:vo.getRepos()){
 //            repos.add(new JLabel(rvo.getName()));
 //            System.out.println(rvo.getName());
@@ -54,7 +54,7 @@ public class UserRepo extends MyPanel{
 //                break;
 //            }
 //        }
-//=======
+//
 //        for(RepositoryVO rvo:vo.getRepos()){
 //            repos.add(new JLabel(rvo.getName()));
 //            System.out.println(rvo.getName());

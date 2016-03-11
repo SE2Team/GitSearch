@@ -37,18 +37,18 @@ public class Contributors extends MyPanel{
         more=new JLabel("More...");
         more.setBounds(marX,5*20,WIDTH,20);
         int count=0;//不能显示超过5个
-        for(UserVO vo:vos){
-            jLabels.add(new JLabel(vo.getName()));
-            if(jLabels.size()>=5){
-                break;
-            }
-        }
-        for(int i=0;i<jLabels.size();i++){
-            jLabels.get(i).setBounds(marX,30*(i+1),WIDTH,30);
-            this.add(jLabels.get(i));
-            if(i>=5){
-                this.add(more);
-            }
-        }
+//        for(UserVO vo:vos){
+//            jLabels.add(new JLabel(vo.getName()));
+//            if(jLabels.size()>=5){
+//                break;
+//            }
+//        }
+//        for(int i=0;i<jLabels.size();i++){
+//            jLabels.get(i).setBounds(marX,30*(i+1),WIDTH,30);
+//            this.add(jLabels.get(i));
+//            if(i>=5){
+//                this.add(more);
+//            }
+//        }
     }
 }

@@ -1,10 +1,10 @@
 package businesslogicService;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 
 import Util.UserInfo;
-import businesslogic.userBL.User;
 import vo.UserVO;
 
 /**
@@ -70,4 +70,15 @@ public interface UserBLService {
      */
     Iterator<String> NamesOfSubscriber(String userName, String reponame) throws IOException;
 
+    /**
+     * 按关键字搜索用户
+     *
+     * @param name 关键字
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    Iterator<UserVO> search(String name) throws FileNotFoundException, IOException;
+
+    Iterator<UserVO> getUser() throws IOException;
 }

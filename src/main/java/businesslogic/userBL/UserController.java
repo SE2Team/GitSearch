@@ -4,6 +4,7 @@ import Util.UserInfo;
 import businesslogicService.UserBLService;
 import vo.UserVO;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -36,5 +37,14 @@ public class UserController implements UserBLService{
     public Iterator<String> NamesOfSubscriber(String userName, String reponame) throws IOException {
         return user.NamesOfSubscriber(userName,reponame);
     }
+
+    public Iterator<UserVO> search(String name) throws FileNotFoundException, IOException {
+        return user.search(name);
+    }
+
+    public Iterator<UserVO> getUser() throws IOException {
+        return user.getUser();
+    }
+
 
 }

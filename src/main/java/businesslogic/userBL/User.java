@@ -8,6 +8,7 @@ import po.UserPO;
 import vo.PO2VO;
 import vo.UserVO;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -50,4 +51,28 @@ public class User {
         return data.NamesOfSubscriber(userName, reponame).iterator();
     }
 
+    /**
+     * 按关键字搜索用户
+     *
+     * @param name 关键字
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
+    Iterator<UserVO> search(String name) throws FileNotFoundException, IOException {
+        ArrayList<UserPO> pos = data.search(name);
+        ArrayList<UserVO> vos = new ArrayList<UserVO>();
+        for (UserPO po : pos) {
+            vos.add(PO2VO.convert(po));
+        }
+        return vos.iterator();
+    }
+
+    Iterator<UserVO> getUser() throws IOException {
+        ArrayList<UserVO> vos = new ArrayList<UserVO>();
+        for (UserPO po : data.getUser()) {
+            vos.add(PO2VO.convert(po));
+        }
+        return vos.iterator();
+    }
 }

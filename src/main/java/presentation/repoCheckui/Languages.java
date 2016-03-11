@@ -31,11 +31,14 @@ public class Languages extends MyPanel{
         title=new JLabel("Language static");
         title.setFont(MyFont.Comic2);
         title.setBounds(marX,5,WIDTH,30);
+        
         mainLang=new JLabel("Main Language:"+vo.getLanguage());
-        mainLang.setFont(MyFont.Shruti18);
-        mainLang.setBounds(marX,50,WIDTH,20);
+        mainLang.setFont(MyFont.Calibri2);
+        mainLang.setBounds(30,50,WIDTH,20);
+        
+        
         this.add(title);
-//        this.add(mainLang);
+        this.add(mainLang);
         this.setBorder(BorderFactory.createEtchedBorder());
 
     }

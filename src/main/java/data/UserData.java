@@ -2,7 +2,6 @@ package data;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,21 +9,21 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import businesslogic.userBL.User;
+
 import dataService.UserDataService;
-import po.RepositoryPO;
+
 import po.UserPO;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
-public class UserData implements UserDataService{
+public class UserData implements UserDataService {
 
 	static String string = "http://www.gitmining.net/api/user";
 
 	public UserPO CheckUser(String user) throws IOException {
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
@@ -62,7 +61,7 @@ public class UserData implements UserDataService{
 	public String UserInfo(String user, Util.UserInfo info) throws IOException {
 		// TODO Auto-generated method stub
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String string = br.readLine();
 		String s1 = "";
@@ -85,37 +84,57 @@ public class UserData implements UserDataService{
 		return s1;
 	}
 
-	public ArrayList<String> getStargazers( String userName, String reponame) throws IOException {
+	public ArrayList<String> getStargazers(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-			String str1=string+"/"+userName+"/"+reponame;
-			ArrayList<String> list=new ArrayList<String>();
-			list = new GetData().getString(str1);
-			return list;
-		
-	}
-
-	public ArrayList<String> getStargazerNames( String userName, String reponame) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
-		
-	}
-
-	public ArrayList<UserPO> getSubscribers( String userName, String reponame) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public ArrayList<String> NamesOfSubscriber( String userName, String reponame) throws IOException {
-		// TODO Auto-generated method stub
-		String str1=string+"/"+userName+"/"+reponame;
-		ArrayList<String> list=new ArrayList<String>();
+		String str1 = string + "/" + userName + "/" + reponame;
+		ArrayList<String> list = new ArrayList<String>();
 		list = new GetData().getString(str1);
 		return list;
-		
+
 	}
 
-	public ArrayList<UserPO> search(String name) {
-        // TODO 缺少查找所有用户的方法
-        return null;
+	public ArrayList<String> getStargazerNames(String userName, String reponame) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+
+	}
+
+	public ArrayList<UserPO> getSubscribers(String userName, String reponame) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	// TODO Auto-generated method stub
+
+	public ArrayList<UserPO> search(String name) throws IOException {
+		// TODO Auto-generated method stub
+		FileReader fr = new FileReader(new File("/src/main/java/txtData/user_names.txt"));
+		BufferedReader br = new BufferedReader(fr);
+		String temp;
+		ArrayList<UserPO> list = new ArrayList<UserPO>();
+		while ((temp = br.readLine()) != null) {
+			if (temp.contains(name)) {
+				list.add(new UserData().CheckUser(temp));
+			}
+		}
+		return list;
+	}
+
+	public ArrayList<UserPO> getUser() throws IOException {
+		// TODO Auto-generated method stub
+		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
+		BufferedReader br = new BufferedReader(fr);
+		String temp;
+		ArrayList<UserPO> list = new ArrayList<UserPO>();
+		while ((temp = br.readLine()) != null) {
+			list.add(new UserData().CheckUser(temp));
+		}
+
+		return list;
+	}
+
+	public ArrayList<String> NamesOfSubscriber(String userName, String reponame) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

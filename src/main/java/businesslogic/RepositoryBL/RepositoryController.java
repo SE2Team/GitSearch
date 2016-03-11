@@ -1,6 +1,7 @@
 package businesslogic.RepositoryBL;
 
 import Util.RepositoryInfo;
+import Util.Repository_Sort;
 import businesslogicService.RepositoryBLService;
 import vo.RepositoryVO;
 
@@ -35,6 +36,10 @@ public class RepositoryController implements RepositoryBLService {
 
     public Iterator<RepositoryVO> Search(String name) throws IOException {
         return repository.Search(name);
+    }
+
+    public Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException {
+        return repository.sort(sort);
     }
 
 

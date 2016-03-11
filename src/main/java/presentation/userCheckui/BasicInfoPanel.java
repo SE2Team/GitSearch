@@ -36,57 +36,53 @@ public class BasicInfoPanel extends MyPanel {
 
     private void init(){
     	this.setLayout(null);
-    	basicInfoLabel = new JLabel("Basic Infomation",JLabel.CENTER);
+    	String name;
+		if(vo.getName().equals(""))
+			name = "Unknown";
+		else
+			name = vo.getName();
+    	basicInfoLabel = new JLabel("Basic Information",JLabel.CENTER);
     	basicInfoLabel.setFont(MyFont.Comic);
     	basicInfoLabel.setBounds(bx, 15, width, height);
     	photoLabel = new JLabel(new ImageIcon("Images/头像.JPG"),JLabel.CENTER);
     	photoLabel.setBounds(50, 50, 100, 100);
-//    	photoLabel = new JLabel("a");
-        nameLabel=new JLabel("John",JLabel.CENTER);
-        nameLabel.setFont(MyFont.Arial22);
+        nameLabel=new JLabel(name,JLabel.CENTER);
+        nameLabel.setFont(MyFont.Calibri2);
         nameLabel.setBounds(bx, by+5, width, height);
 //        desLabel=new JLabel(); 
         
         followers=new JLabel("Following "+vo.getFollowing(),JLabel.CENTER);
-        followers.setFont(MyFont.Shruti18);
+        followers.setFont(MyFont.Calibri);
         followers.setBounds(bx, by+height+addy-5, width, height);
         
         following=new JLabel("Followers "+vo.getFollowers(),JLabel.CENTER);
-        following.setFont(MyFont.Shruti18);
-        following.setBounds(bx, by+2*height+15, width, height);
+        following.setFont(MyFont.Calibri);
+        following.setBounds(bx, by+2*height+18, width, height);
         
 //        followers.setText();
 //        following.setText();
         
-        regTimeLabel=new JLabel("Joined on 2011/11/11"+vo.getCreated_at(),JLabel.CENTER);
-        regTimeLabel.setFont(MyFont.Shruti18);
+        regTimeLabel=new JLabel("Joined on "+vo.getCreated_at().substring(0, 10),JLabel.CENTER);
+        regTimeLabel.setFont(MyFont.Calibri);
         regTimeLabel.setBounds(bx, by+3*height+addy, width, height);
        
-        emailLabel=new JLabel("jakewharton@gmail.com"+vo.getEmail(),JLabel.CENTER);
-        emailLabel.setFont(MyFont.Shruti18);
+        emailLabel=new JLabel(vo.getEmail(),JLabel.CENTER);
+        emailLabel.setFont(MyFont.Calibri);
         emailLabel.setBounds(bx, by+4*height+addy+10, width, height);
         
-        companyLabel=new JLabel("Company:"+vo.getCompany(),JLabel.CENTER);
-        companyLabel.setFont(MyFont.Shruti20);
+        String compony;
+        if(vo.getCompany().equals(" "))
+        	compony="Unknown";
+        else
+        	compony = vo.getCompany();
+        companyLabel=new JLabel("Company:"+compony,JLabel.CENTER);
+        companyLabel.setFont(MyFont.Calibri);
         companyLabel.setBounds(bx, by+5*height+2*addy, width, height);
         
-        
-//        regTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//        nameLabel.setText();
-//        nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//        desLabel.setText("user info here!");
-//        desLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//        companyLabel.setText(vo.getCompany());
-//        companyLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        
-//        emailLabel.setText();
-
-//        regTimeLabel.setText("注册时间：2012-2-22");
 
         this.add(basicInfoLabel);
         this.add(photoLabel);
         this.add(nameLabel);
-//        this.add(desLabel);
         this.add(followers);
         this.add(following);
         this.add(companyLabel);

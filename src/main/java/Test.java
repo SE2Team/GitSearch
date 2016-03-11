@@ -20,6 +20,7 @@ public class Test extends JFrame{
     public static void main(String[] args) {
 //    	new SearchFrame();
         new HomeFrame();
+
 //        try {
 //            UIManager.setLookAndFeel(new WindowsLookAndFeel());
 //        } catch (UnsupportedLookAndFeelException e) {
@@ -27,5 +28,12 @@ public class Test extends JFrame{
 //        }
 //        new RepCheckFrame();
 //        new Test();
+
+        try {
+            UIManager.setLookAndFeel(new WindowsLookAndFeel());
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+//        new RepCheckFrame();
     }
 }

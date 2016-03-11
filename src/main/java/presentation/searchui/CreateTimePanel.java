@@ -1,8 +1,10 @@
 package presentation.searchui;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import presentation.common.MyButton;
+import presentation.common.MyFont;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 
@@ -17,8 +19,10 @@ public class CreateTimePanel extends MyPanel{
 		super(x, y, w, h);
 		FlowLayout flow = new FlowLayout(FlowLayout.LEFT,15,5);
 		this.setLayout(flow);
-		
-		jl_createTime = new MyLabel("创建时间");
+		this.setBackground(Color.WHITE);
+
+		jl_createTime = new MyLabel("Creat Time ");
+		jl_createTime.setFont(MyFont.Calibri2);
 		jb1 = new MyButton("all");
 		jb2 = new MyButton("2007");
 		jb3 = new MyButton("2008");

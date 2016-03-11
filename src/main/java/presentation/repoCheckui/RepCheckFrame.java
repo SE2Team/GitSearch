@@ -43,7 +43,7 @@ public class RepCheckFrame extends JFrame{
         title=new JLabel("Meng");
         repoInfo=new RepoInfo(ax,ay,WIDTH,HEIGHT/3,vo);
         languages=new Languages(0,HEIGHT/3,WIDTH,HEIGHT/3,vo);
-//        contributors=new Contributors(0,2*HEIGHT/3,WIDTH,HEIGHT/3,vo.getContributors());
+        contributors=new Contributors(0,2*HEIGHT/3,WIDTH,HEIGHT/3,null);
         this.add(repoInfo);
         this.add(languages);
         this.add(contributors);

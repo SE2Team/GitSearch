@@ -35,7 +35,7 @@ public class UserCheckFrame extends JFrame{
 //        FlowLayout layout=new FlowLayout();
 		basicInfoPanel=new BasicInfoPanel(ax,ay,width/3,400,vo);
 		userRepo=new UserRepo(width/3,ay,width-width/3,h/2,vo);
-//TODO        crepo=new ContributeRepo(width/3,h/2,width-width/3,h/2,vo.get);
+		crepo=new ContributeRepo(width/3,h/2,width-width/3,h/2,null);
 
 		this.add(basicInfoPanel);
 		this.add(userRepo);

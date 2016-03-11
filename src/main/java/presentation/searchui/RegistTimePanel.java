@@ -1,5 +1,6 @@
 package presentation.searchui;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import presentation.common.MyButton;
@@ -19,8 +20,8 @@ public class RegistTimePanel extends MyPanel{
 	public void init(){
 		FlowLayout flow = new FlowLayout(FlowLayout.LEFT,15,5);
 		this.setLayout(flow);
-		
-		jl_registTime = new MyLabel("注册时间");
+		this.setBackground(Color.white);
+		jl_registTime = new MyLabel("RegistTime ");
 		jb1 = new MyButton("all");
 		jb2 = new MyButton("2007");
 		jb3 = new MyButton("2008");

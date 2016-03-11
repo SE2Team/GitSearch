@@ -24,7 +24,7 @@ public interface RepositoryBLService {
     Iterator<RepositoryVO> Search(String name) throws IOException;
 
 
-
+    Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException;
 
 
 
