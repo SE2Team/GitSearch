@@ -23,14 +23,15 @@ public class UserData implements UserDataService {
 
 	public UserPO CheckUser(String user) throws IOException {
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
+		
 		for (int j = 0; j < obj1.length(); j++) {
 			obj = obj1.getJSONObject(j);
 			if (user.equals(obj.getString("login"))) {
-				String s1, s2, s3;
+				String s1, s2, s3,s4;
 
 				if (obj.has("company")) {
 					s1 = obj.getString("company");
@@ -49,8 +50,14 @@ public class UserData implements UserDataService {
 					s3 = "";
 				}
 
+				if (obj.has("name")) {
+					s4 = obj.getString("name");
+				} else {
+					s4 = "";
+				}
+				
 				return new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"),
-						obj.getString("name"), s1, s2, s3, obj.getInt("public_gists"), obj.getInt("followers"),
+						s4, s1, s2, s3, obj.getInt("public_gists"), obj.getInt("followers"),
 						obj.getInt("following"), obj.getString("created_at"), obj.getString("updated_at"));
 			}
 		}
@@ -61,7 +68,7 @@ public class UserData implements UserDataService {
 	public String UserInfo(String user, Util.UserInfo info) throws IOException {
 		// TODO Auto-generated method stub
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String string = br.readLine();
 		String s1 = "";
@@ -122,13 +129,45 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> getUser() throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File("/src/main/java/txtData/users.json"));
-		BufferedReader br = new BufferedReader(fr);
-		String temp;
+		
 		ArrayList<UserPO> list = new ArrayList<UserPO>();
-		while ((temp = br.readLine()) != null) {
-			list.add(new UserData().CheckUser(temp));
-		}
+		JSONObject obj = new JSONObject();
+		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
+		BufferedReader br = new BufferedReader(fr);
+		String string = br.readLine();
+		JSONArray obj1 = new JSONArray(string);
+		for (int j = 0; j < obj1.length(); j++) {
+			obj = obj1.getJSONObject(j);
+			String s1, s2, s3,s4;
+
+				if (obj.has("company")) {
+					s1 = obj.getString("company");
+				} else {
+					s1 = " ";
+				}
+				if (obj.has("email")) {
+					s2 = obj.getString("email");
+				} else {
+					s2 = "";
+				}
+
+				if (obj.has("repos_url")) {
+					s3 = obj.getString("repos_url");
+				} else {
+					s3 = "";
+				}
+
+				if (obj.has("name")) {
+					s4 = obj.getString("name");
+				} else {
+					s4 = "";
+				}
+				
+				list.add(new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"),
+						s4, s1, s2, s3, obj.getInt("public_gists"), obj.getInt("followers"),
+						obj.getInt("following"), obj.getString("created_at"), obj.getString("updated_at")));
+			}
+		
 
 		return list;
 	}
