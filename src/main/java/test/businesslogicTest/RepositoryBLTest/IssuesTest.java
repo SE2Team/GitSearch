@@ -1,15 +1,57 @@
 package test.businesslogicTest.RepositoryBLTest;
+
+import businesslogic.RepositoryBL.Issues;
+import junit.framework.TestCase;
+
 /** 
  * @author 
  * @date 
-2016Äê3ÔÂ10ÈÕ 
-ÏÂÎç11:23:13 
+2016ï¿½ï¿½3ï¿½ï¿½10ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½11:23:13 
  * @version 1.0 
  * @parameter  
  * @since  
  * @return  
- *@throws Òì³£Àà¼°Å×³öÌõ¼ş
+ *@throws ï¿½ì³£ï¿½à¼°ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½
  */
-public class IssuesTest {
+public class IssuesTest extends TestCase{
 
+	private static Issues testIssues=new Issues();
+	
+	public IssuesTest(){
+		super();
+	}
+	
+	protected void setUp() {
+		/*åˆå§‹åŒ–*/
+	}
+	
+	protected void tearDown(){
+		/*å›æ”¶èµ„æº*/
+	}
+	
+	/*æµ‹è¯•getIssuesæ–¹æ³•*/
+	public void testgetIssues(){
+		
+	}
+	
+	/*æµ‹è¯•getIssueNumæ–¹æ³•*/
+	public void testgetIssueNum(){
+		
+	}
+	
+	/*æµ‹è¯•getIssueæ–¹æ³•*/
+	public void testgetIssue(){
+		
+	}
+	
+	/*æµ‹è¯•IssueInfoæ–¹æ³•*/
+	public void testIssueInfo(){
+		
+	}
+	
+	/*æµ‹è¯•getIssueCommentæ–¹æ³•*/
+	public void testgetIssueComment(){
+		
+	}
 }

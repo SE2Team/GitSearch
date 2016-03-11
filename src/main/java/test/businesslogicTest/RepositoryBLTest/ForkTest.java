@@ -34,4 +34,19 @@ public class ForkTest extends TestCase{
 	public void testgetForks(){
 		
 	}
+	
+	/*测试NamesOfForks方法*/
+	public void testNamesOfForks(){
+		
+	}
+	
+	/*测试checkForks方法*/
+	public void testcheckForks(){
+		
+	}
+	
+	/*测试ForkInfo方法*/
+	public void testForkInfo(){
+		
+	}
 }

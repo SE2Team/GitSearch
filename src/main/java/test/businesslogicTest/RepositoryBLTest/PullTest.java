@@ -1,15 +1,58 @@
 package test.businesslogicTest.RepositoryBLTest;
+
+import businesslogic.RepositoryBL.Pull;
+import junit.framework.TestCase;
+
 /** 
  * @author 
  * @date 
-2016Äê3ÔÂ10ÈÕ 
-ÏÂÎç11:23:33 
+2016ï¿½ï¿½3ï¿½ï¿½10ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ï¿½11:23:33 
  * @version 1.0 
  * @parameter  
  * @since  
  * @return  
- *@throws Òì³£Àà¼°Å×³öÌõ¼ş
+ *@throws ï¿½ì³£ï¿½à¼°ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½
  */
-public class PullTest {
+public class PullTest extends TestCase{
+
+	private static Pull testpPull=new Pull();
+	
+	public PullTest(){
+		super();
+	}
+	
+	protected void setUp(){
+		/*åˆå§‹åŒ–*/
+	}
+	
+	protected void tearDown() {
+		/*å›æ”¶èµ„æº*/
+	}
+	
+	/*æµ‹è¯•getPullsæ–¹æ³•*/
+	public void testsetgetPulls(){
+		
+	}
+	
+	/*æµ‹è¯•getPullNumæ–¹æ³•*/
+	public void testgetPullNum(){
+		
+	}
+	
+	/*æµ‹è¯•PullInfoæ–¹æ³•*/
+	public void testPullInfo(){
+		
+	}
+	
+	/*æµ‹è¯•getPullæ–¹æ³•*/
+	public void testgetPull(){
+		
+	}
+	
+	/*æµ‹è¯•getPullInfoæ–¹æ³•*/
+	public void testgetPullInfo(){
+		
+	}
 
 }
