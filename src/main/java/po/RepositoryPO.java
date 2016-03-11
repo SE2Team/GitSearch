@@ -5,7 +5,7 @@ package po;
  * Created by moeyui on 2016/3/4 0004.
  */
 
-/**owner_name:项目所有者登录名 owner_id:所有者的id owner_type:所有者的用户类型（分为User和Organization）
+/**owner_name:项目所有者登录名/项目名 owner_id:所有者的id owner_type:所有者的用户类型（分为User和Organization）
 
 html_url:项目主页url description:项目描述 fork:是否是fork了他人项目所产生的项目
 
