@@ -117,6 +117,11 @@ public class RepositoryPO {
 	public  String getDescription(){
 		return this.description;
 	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return this.name;
+	}
 	
    
 }

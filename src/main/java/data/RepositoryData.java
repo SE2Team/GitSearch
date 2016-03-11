@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.ls.LSInput;
 
+import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
 
@@ -140,8 +141,58 @@ public class RepositoryData implements RepositoryDataService {
 		return null;
 	}
 
-	public ArrayList<RepositoryPO> Search(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<RepositoryPO> Search(String name) throws IOException {
+		 ArrayList<RepositoryPO> pos=new ArrayList<RepositoryPO>();
+			for(RepositoryPO po:getRepositories()){
+	            if(po.getName().contains(name)){
+	                pos.add(po);
+	            }
+	        }
+			return pos;
+		
 	}
+
+	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		if(sort==Repository_Sort.contributor){
+		
+		for(int j=0;j<list.size();j++){
+			for(int i=j;i<list.size();i++){
+				if(list.get(i).getContributor()<=list.get(i+1).getContributor()){
+					RepositoryPO temp=list.get(i);
+					list.set(i, list.get(i+1));
+					list.set(i+1, temp);
+					
+					}
+				}
+			}
+		}else if(sort==Repository_Sort.fork){
+			for(int j=0;j<list.size();j++){
+				for(int i=j;i<list.size();i++){
+					if(list.get(i).getForks()<=list.get(i+1).getForks()){
+						RepositoryPO temp=list.get(i);
+						list.set(i, list.get(i+1));
+						list.set(i+1, temp);
+						
+					}
+					}
+				}
+		}else if(sort==Repository_Sort.star){
+			for(int j=0;j<list.size();j++){
+				for(int i=j;i<list.size();i++){
+					if(list.get(i).getStargazers()<=list.get(i+1).getStargazers()){
+						RepositoryPO temp=list.get(i);
+						list.set(i, list.get(i+1));
+						list.set(i+1, temp);
+						
+						}
+					}
+				}
+		}
+		
+		return list;
+	}
+
+	
 }

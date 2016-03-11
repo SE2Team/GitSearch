@@ -105,16 +105,37 @@ public class UserData implements UserDataService{
 		return null;
 	}
 
-	public ArrayList<String> NamesOfSubscriber( String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		String str1=string+"/"+userName+"/"+reponame;
-		ArrayList<String> list=new ArrayList<String>();
-		list = new GetData().getString(str1);
+
+
+	public ArrayList<UserPO> search(String name) throws IOException {
+		// TODO Auto-generated method stub
+		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/user_names.txt"));
+		BufferedReader br = new BufferedReader(fr);
+		String temp ;
+		ArrayList<UserPO> list=new ArrayList<UserPO>();
+		while((temp=br.readLine())!=null){
+			if(temp.contains(name)){
+				list.add(new UserData().CheckUser(temp));
+			}
+		}
 		return list;
-		
 	}
 
-	public ArrayList<UserPO> search(String name) {
+	public ArrayList<UserPO> getUser() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/users.json"));
+		BufferedReader br = new BufferedReader(fr);
+		String temp;
+		ArrayList<UserPO> list=new ArrayList<UserPO>();
+		while((temp=br.readLine())!=null){
+			list.add(new UserData().CheckUser(temp));
+		}
+		
+		return list;
+	}
+
+	public ArrayList<String> NamesOfSubscriber(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
