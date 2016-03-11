@@ -21,7 +21,7 @@ public class RepositoryPO {
    String owner_type;
    String html_url;
    String description;
-   String fork;
+   boolean fork;
    String created;
    String updated;
    String pushed;
@@ -35,11 +35,12 @@ public class RepositoryPO {
    
    
    
-	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, String fork,
+	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
 			String created, String updated, String pushed, int size, int stargazers_count, String language,
 			int forks, int open_issues, int subscribers_count,   int contributor)
 
-	{
+	{	
+		this.name=name;
 		this.subscribers_count = subscribers_count;//订阅者
 		this.open_issues = open_issues;
 		this.forks = forks;
@@ -98,7 +99,7 @@ public class RepositoryPO {
 		return this.created;
 	}
 	
-	public String getFork(){
+	public boolean getFork(){
 		return this.fork;
 	}
 	
