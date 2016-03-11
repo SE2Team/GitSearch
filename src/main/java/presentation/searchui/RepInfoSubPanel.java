@@ -1,16 +1,20 @@
 package presentation.searchui;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import presentation.common.MyFont;
+import presentation.repoCheckui.RepCheckFrame;
 import vo.RepositoryVO;
 
 public class RepInfoSubPanel extends JPanel{
 
 	private JLabel jl_repName,jl_star,jl_fork,jl_contributors,star_num,fork_num,contri_num;
-	public RepInfoSubPanel(RepositoryVO rvo,int w,int h) {
+	public RepInfoSubPanel(final RepositoryVO rvo,int w,int h) {
 		this.setLayout(null);
 		this.setSize(w,h);
 		int x=105,y=h/3,jl_w=50,jl_h=30,addx=5,addy=20;
@@ -18,6 +22,11 @@ public class RepInfoSubPanel extends JPanel{
 		jl_repName = new JLabel(rvo.getName());
 		jl_repName.setFont(MyFont.Arial20);
 		jl_repName.setBounds(x, y, w, jl_h);
+		jl_repName.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e){
+				new RepCheckFrame(rvo);
+			}
+		});
 		
 		jl_contributors = new JLabel("contributors",JLabel.CENTER);
 		jl_contributors.setFont(MyFont.Shruti18);

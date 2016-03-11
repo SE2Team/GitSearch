@@ -22,7 +22,7 @@ public class UserCheckFrame extends JFrame{
 		ax=0;
 		ay=0;
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
+//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
 		this.setSize(width, height);// 设置窗体大小
 		this.setResizable(false);// 不允许用户改变窗体大小
 		Toolkit toolkit = Toolkit.getDefaultToolkit();

@@ -21,8 +21,8 @@ public class RepCheckFrame extends JFrame{
     RepositoryVO vo;
     JLabel title;
 
-	public RepCheckFrame() {
-//		this.vo =test_getRepo();
+	public RepCheckFrame(RepositoryVO rvo) {
+		this.vo =rvo;
 //        vo = test_getRepo();
         ax = 0;
         ay = 0;
@@ -30,7 +30,7 @@ public class RepCheckFrame extends JFrame{
 
 
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
+//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 设置默认关闭属性
 		this.setSize(WIDTH, HEIGHT);// 设置窗体大小
 		this.setResizable(false);// 不允许用户改变窗体大小
 		Toolkit toolkit = Toolkit.getDefaultToolkit();

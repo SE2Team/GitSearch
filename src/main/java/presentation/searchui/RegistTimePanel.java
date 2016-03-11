@@ -13,6 +13,10 @@ public class RegistTimePanel extends MyPanel{
 	
 	public RegistTimePanel(int x, int y, int w, int h) {
 		super(x, y, w, h);
+		init();
+	}
+	
+	public void init(){
 		FlowLayout flow = new FlowLayout(FlowLayout.LEFT,15,5);
 		this.setLayout(flow);
 		
@@ -31,6 +35,7 @@ public class RegistTimePanel extends MyPanel{
 		this.add(jb4);
 		this.add(jb5);
 		this.add(jb6);
+		this.repaint();
+//		System.out.println("run");
 	}
-
 }
