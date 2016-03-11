@@ -225,11 +225,10 @@ public class RepositoryData implements RepositoryDataService {
 		}else if(sort==Repository_Sort.star){
 			for(int j=0;j<list.size()-1;j++){
 				for(int i=j;i<list.size()-1;i++){
-					if(list.get(i).getStargazers()<=list.get(i+1).getStargazers()){
-						RepositoryPO temp=list.get(i);
-						list.set(i, list.get(i+1));
+					if(list.get(j).getStargazers()<=list.get(i+1).getStargazers()){
+						RepositoryPO temp=list.get(j);
+						list.set(j, list.get(i+1));
 						list.set(i+1, temp);
-						
 						}
 					}
 				}

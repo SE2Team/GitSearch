@@ -115,7 +115,7 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> search(String name) throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File("/src/main/java/txtData/user_names.txt"));
+		FileReader fr = new FileReader(new File("src/main/java/txtData/user_names.txt"));
 		BufferedReader br = new BufferedReader(fr);
 		String temp;
 		ArrayList<UserPO> list = new ArrayList<UserPO>();
