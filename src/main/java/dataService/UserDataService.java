@@ -82,6 +82,10 @@ public interface UserDataService {
      * 按关键字搜索用户
      * @param name 关键字
      * @return
+     * @throws FileNotFoundException 
+     * @throws IOException 
      */
-    ArrayList<UserPO> search(String name);
+    ArrayList<UserPO> search(String name) throws FileNotFoundException, IOException;
+    
+    ArrayList<UserPO> getUser() throws IOException;
 }

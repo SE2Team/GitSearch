@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.ls.LSInput;
 
+import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
 
@@ -31,7 +32,7 @@ public class RepositoryData implements RepositoryDataService {
 		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File( "src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String string = br.readLine();
 		String s1 ,s2,s3,s4,name;
@@ -90,8 +91,8 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			if(obj.has("name")){
-				name=obj.getString("name");
+			if(obj.has("full_name")){
+				name=obj.getString("full_name");
 			}else{
 				name="";
 			}
@@ -112,7 +113,7 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File("D:/软件工程与计算3/GitSearch" + "/src/main/java/txtData/users.json"));
+		FileReader fr = new FileReader(new File( "/src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(fr);
 		String temp ;
 		ArrayList<String> list=new ArrayList<String>();
@@ -124,10 +125,15 @@ public class RepositoryData implements RepositoryDataService {
 
 	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		String str1=string+"/"+userName+"/"+reponame;
-		ArrayList<String> list=new ArrayList<String>();
-		list = new GetData().getString(str1);
-		return null;
+	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+	
+	for(int j=0;j<list.size();j++){
+		String[] s=list.get(j).getName().split("/");
+		if(s[0].equals(userName)&&s[1].equals(reponame)){
+				return list.get(j);
+			}
+		}
+	return null;
 	}
 
 	public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
@@ -141,12 +147,57 @@ public class RepositoryData implements RepositoryDataService {
 	}
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
-		ArrayList<RepositoryPO> pos = new ArrayList<RepositoryPO>();
-		for (RepositoryPO po : getRepositories()) {
-			if (po.getName().contains(name)) {
-				pos.add(po);
-			}
-		}
-		return pos;
+		 ArrayList<RepositoryPO> pos=new ArrayList<RepositoryPO>();
+			for(RepositoryPO po:getRepositories()){
+	            if(po.getName().contains(name)){
+	                pos.add(po);
+	            }
+	        }
+			return pos;
+		
 	}
+
+	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		if(sort==Repository_Sort.contributor){
+		
+		for(int j=0;j<list.size();j++){
+			for(int i=j;i<list.size();i++){
+				if(list.get(i).getContributor()<=list.get(i+1).getContributor()){
+					RepositoryPO temp=list.get(i);
+					list.set(i, list.get(i+1));
+					list.set(i+1, temp);
+					
+					}
+				}
+			}
+		}else if(sort==Repository_Sort.fork){
+			for(int j=0;j<list.size();j++){
+				for(int i=j;i<list.size();i++){
+					if(list.get(i).getForks()<=list.get(i+1).getForks()){
+						RepositoryPO temp=list.get(i);
+						list.set(i, list.get(i+1));
+						list.set(i+1, temp);
+						
+					}
+					}
+				}
+		}else if(sort==Repository_Sort.star){
+			for(int j=0;j<list.size();j++){
+				for(int i=j;i<list.size();i++){
+					if(list.get(i).getStargazers()<=list.get(i+1).getStargazers()){
+						RepositoryPO temp=list.get(i);
+						list.set(i, list.get(i+1));
+						list.set(i+1, temp);
+						
+						}
+					}
+				}
+		}
+		
+		return list;
+	}
+
+	
 }
