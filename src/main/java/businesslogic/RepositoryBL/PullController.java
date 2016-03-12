@@ -1,6 +1,5 @@
 package businesslogic.RepositoryBL;
 
-import Util.Item;
 import Util.PullInfo;
 import businesslogicService.PullBLService;
 
@@ -26,7 +25,7 @@ public class PullController implements PullBLService{
         return null;
     }
 
-    public String getPullInfo(String userName, String reponame, int number, Item item) {
+    public String getPullInfo(String userName, String reponame, int number, PullInfo info) {
         return null;
     }
 }
