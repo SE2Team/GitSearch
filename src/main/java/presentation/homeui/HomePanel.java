@@ -72,4 +72,12 @@ public class HomePanel extends JPanel{
 		return searchUser;
 	}
 	
+	/***
+	 * 获取搜索栏
+	 * @return
+	 */
+	public MyJTextField getTextField(){
+		return jtf_search;
+	}
+	
 }
