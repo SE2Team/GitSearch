@@ -1,1 +1,1 @@
-This is our SE3 program.
+This is  SE3 program of 吉特Fan team.

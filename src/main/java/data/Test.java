@@ -3,16 +3,19 @@ package data;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Util.Repository_Sort;
+import Util.UserInfo;
 import po.RepositoryPO;
 import po.UserPO;
 
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-	ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
-	list=new RepositoryData().getRepositories();
-	for(int j=0;j<list.size();j++){
-		System.out.println(list.get(j).getId());
-	}
-	}
+		RepositoryData testRepository=new RepositoryData();
+		ArrayList<String> a=testRepository.getRepositoriesNames();
+		for(int i=0;i<a.size();i++){
+			System.out.println(a.get(i));
+		}
+		
+				}
 }
