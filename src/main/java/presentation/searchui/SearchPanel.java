@@ -232,4 +232,18 @@ public class SearchPanel extends JPanel {
 		jp_userFiltrate.repaint();
 	}
 	
+	/***
+	 * 获取项目排序的面板
+	 * @return
+	 */
+	public RepSortPanel getRepSortPanel(){
+		return jp_repSort;
+	}
+	/***
+	 * 获取用户排序的面板
+	 * @return
+	 */
+	public UserSortPanel getUserSortPanel(){
+		return jp_userSort;
+	}
 }
