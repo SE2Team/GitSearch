@@ -30,7 +30,6 @@ public class User {
     }
 
     public Iterator<String> getStargazers(String userName, String reponame) throws IOException {
-        ArrayList<UserVO> vos=new ArrayList<UserVO>();
 
         return data.getStargazers(userName, reponame).iterator();
     }
