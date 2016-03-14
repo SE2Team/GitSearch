@@ -32,11 +32,11 @@ public class RepositoryPO {
     int contributor = 0;
     int open_issues = 0;
     int subscribers_count = 0;
-
+    int collaborators_count=0;
 
     public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
                         String created, String updated, String pushed, int size, int stargazers_count, String language,
-                        int forks, int open_issues, int subscribers_count, int contributor)
+                        int forks, int open_issues, int subscribers_count, int contributor, int collaborators_count)
 
     {
         this.name = name;
@@ -55,6 +55,7 @@ public class RepositoryPO {
         this.html_url = html_url;
         this.description = description;
         this.contributor = contributor;
+        this.collaborators_count=collaborators_count;
 
     }
 
@@ -122,5 +123,8 @@ public class RepositoryPO {
         return this.name;
     }
 
-
+    public int  getCollaborators(){
+    	return this.collaborators_count;
+    }
+    
 }
