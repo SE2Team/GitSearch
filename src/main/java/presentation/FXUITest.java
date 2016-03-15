@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import presentation.repoCheckui.CheckRepoController;
+import presentation.userCheckui.CheckUserController;
 import vo.RepositoryVO;
 
 import java.io.IOException;
@@ -19,13 +20,19 @@ import java.io.IOException;
 public class FXUITest extends Application {
     private Stage primaryStage;
     private BorderPane homeLayout;
+    private static FXUITest fxuiTest;
+
+    public FXUITest() {
+        this.fxuiTest=this;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage=primaryStage;
         primaryStage.setTitle("GitSearch");
         initHome();
-        initCheckRepo();
+        checkRepo();
+        checkUser();
     }
 
     private void initHome(){
@@ -42,7 +49,19 @@ public class FXUITest extends Application {
         primaryStage.show();
     }
 
-    private void initCheckRepo(){
+
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    public RepositoryVO test_getrepo() throws IOException {
+        RepositoryBLService bl=new RepositoryController();
+//        return bl.checkRepository("mojombo","grit");
+        return bl.checkRepository("technoweenie","restful-authentication");
+    }
+
+    public void checkRepo(){
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -51,23 +70,28 @@ public class FXUITest extends Application {
             anchorPane = (AnchorPane)loader.load();
             CheckRepoController controller=loader.getController();
             controller.setFxui(this);
-//            controller.setVo(test_getrepo());
+            controller.setVo(test_getrepo());
             homeLayout.setCenter(anchorPane);
-
+            controller.repaint();
 
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
+    public void checkUser(){
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("userCheckui/CheckUser.fxml"));
 
-    public RepositoryVO test_getrepo() throws IOException {
-        RepositoryBLService bl=new RepositoryController();
-        return bl.checkRepository("mojombo","grit");
+        AnchorPane anchorPane;
+        try {
+            anchorPane=(AnchorPane) loader.load();
+            CheckUserController controller=loader.getController();
+            controller.setFxui(this);
+            homeLayout.setCenter(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

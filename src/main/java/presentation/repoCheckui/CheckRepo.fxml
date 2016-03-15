@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.CheckRepoController">
    <children>
-      <SplitPane dividerPositions="0.21282798833819241" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="688.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.2128" focusTraversable="false" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="688.0" prefWidth="1080.0" stylesheets="@../common/GitSearch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="1078.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <Label fx:id="reponame" layoutX="14.0" layoutY="14.0" text="GitFan/GitSearch">
+                  <Label fx:id="reponame" layoutX="14.0" prefHeight="61.0" prefWidth="826.0" text="GitFan/GitSearchlllllllllllllllllllllllll" wrapText="true">
                      <font>
                         <Font name="System Bold" size="48.0" />
                      </font>
@@ -47,17 +51,9 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane focusTraversable="true" prefHeight="451.0" prefWidth="1278.0" snapToPixel="false">
                <children>
-                  <ScrollPane layoutX="189.0" layoutY="107.0" prefHeight="536.0" prefWidth="1078.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="680.0" prefWidth="1074.0">
-                           <children>
-                              <Button layoutX="428.0" layoutY="606.0" mnemonicParsing="false" text="Button" />
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
+                  <ScrollPane layoutX="189.0" layoutY="107.0" prefHeight="536.0" prefWidth="1078.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
         </items>
       </SplitPane>

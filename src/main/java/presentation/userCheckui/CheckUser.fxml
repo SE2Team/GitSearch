@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.CheckUserController">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="272.0" layoutY="168.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="100.0" layoutX="640.0" layoutY="355.0" startX="-100.0" AnchorPane.rightAnchor="539.5" />
+      <Circle fill="DODGERBLUE" layoutX="1018.0" layoutY="168.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
