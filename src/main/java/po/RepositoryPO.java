@@ -1,5 +1,6 @@
 package po;
 
+import java.util.ArrayList;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -32,11 +33,15 @@ public class RepositoryPO {
     int contributor = 0;
     int open_issues = 0;
     int subscribers_count = 0;
-    int collaborators_count=0;
+    int collaborators_count=0;//合作者
+    ArrayList<String> collaborators;
+    ArrayList<String> contributors;
 
     public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
                         String created, String updated, String pushed, int size, int stargazers_count, String language,
-                        int forks, int open_issues, int subscribers_count, int contributor, int collaborators_count)
+                        int forks, int open_issues, int subscribers_count, int contributor, int collaborators_count,
+                        ArrayList<String> collaborators, ArrayList<String> contributors) {
+	}
 
     {
         this.name = name;
@@ -56,7 +61,17 @@ public class RepositoryPO {
         this.description = description;
         this.contributor = contributor;
         this.collaborators_count=collaborators_count;
+        this.collaborators=collaborators;
+        this.contributors=collaborators;
 
+    }
+    
+    public ArrayList<String> getContributors(){
+    	return this.contributors;
+    }
+    
+    public ArrayList<String> getCollaborators(){
+    	return this.collaborators;
     }
 
     public int getContributor() {
@@ -123,7 +138,7 @@ public class RepositoryPO {
         return this.name;
     }
 
-    public int  getCollaborators(){
+    public int  getCollaborators_count(){
     	return this.collaborators_count;
     }
     

@@ -7,14 +7,16 @@ import po.UserPO;
 
 public class CollaboratorsData implements CollaboratorsDataService {
 
-	public ArrayList<UserPO> NamesOfCollaborators(String userName, String reponame) {
+	public ArrayList<UserPO> NamesOfCollaborators(String url) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ArrayList<String> getCollaborators(String userName, String reponame) {
+	public ArrayList<String> getCollaborators(String url) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

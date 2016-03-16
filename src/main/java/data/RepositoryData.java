@@ -30,6 +30,11 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<RepositoryPO> getRepositories() throws IOException{
 		// TODO Auto-generated method stub
+		CollaboratorsData collaData=new CollaboratorsData();
+		ContributorsData contrData= new ContributorsData();
+		String collaUrl="";
+		String	contrUrl="";
+		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
 		FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
@@ -49,7 +54,6 @@ public class RepositoryData implements RepositoryDataService {
 			}else{
 				s1="";
 			}
-			
 			if(obj.has("fork")){
 				fork=obj.getBoolean("fork");
 			}else{
@@ -112,7 +116,8 @@ public class RepositoryData implements RepositoryDataService {
 			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
 					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
-					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count);
+					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count,
+					collaData.getCollaborators(collaUrl),contrData.getContributors(contrUrl));
 			list.add(po);
 			}
 		return list;
