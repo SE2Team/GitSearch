@@ -5,7 +5,6 @@ import presentation.common.MyPanel;
 import vo.UserVO;
 
 import javax.swing.*;
-
 import java.awt.*;
 
 /**
@@ -44,7 +43,7 @@ public class BasicInfoPanel extends MyPanel {
     	basicInfoLabel = new JLabel("Basic Information",JLabel.CENTER);
     	basicInfoLabel.setFont(MyFont.Comic);
     	basicInfoLabel.setBounds(bx, 15, width, height);
-    	photoLabel = new JLabel(new ImageIcon("Images/头像.JPG"),JLabel.CENTER);
+    	photoLabel = new JLabel(new ImageIcon(this.getClass().getResource("/Images/头像.JPG")),JLabel.CENTER);
     	photoLabel.setBounds(50, 50, 100, 100);
         nameLabel=new JLabel(name,JLabel.CENTER);
         nameLabel.setFont(MyFont.Calibri2);

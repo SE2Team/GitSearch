@@ -1,18 +1,15 @@
 package data;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-
+import dataService.UserDataService;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-
-import dataService.UserDataService;
-
 import po.UserPO;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -23,8 +20,15 @@ public class UserData implements UserDataService {
 
 	public UserPO CheckUser(String user) throws IOException {
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
-		BufferedReader br = new BufferedReader(fr);
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+                this.getClass().getResourceAsStream("/txtData/users.json")
+        ));
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
 		
@@ -68,8 +72,14 @@ public class UserData implements UserDataService {
 	public String UserInfo(String user, Util.UserInfo info) throws IOException {
 		// TODO Auto-generated method stub
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
-		BufferedReader br = new BufferedReader(fr);
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(
+                new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
 		String string = br.readLine();
 		String s1 = "";
 		JSONArray obj1 = new JSONArray(string);
@@ -115,16 +125,28 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> search(String name) throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File("src/main/java/txtData/user_names.txt"));
-		BufferedReader br = new BufferedReader(fr);
-		String temp;
-		ArrayList<UserPO> list = new ArrayList<UserPO>();
-		while ((temp = br.readLine()) != null) {
-			if (temp.contains(name)) {
-				list.add(new UserData().CheckUser(temp));
+//		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/user_names.txt").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+//		BufferedReader br = new BufferedReader(fr);
+//		String temp;
+//		ArrayList<UserPO> list = new ArrayList<UserPO>();
+//		while ((temp = br.readLine()) != null) {
+//			if (temp.contains(name)) {
+//				list.add(new UserData().CheckUser(temp));
+//			}
+//		}
+		ArrayList<UserPO> list1=new ArrayList<>();
+		ArrayList<UserPO> list=this.getUser();
+		for(UserPO po:list){
+			if(po.getLogin().contains(name)){
+				list1.add(po);
 			}
 		}
-		return list;
+		return list1;
 	}
 
 	public ArrayList<UserPO> getUser() throws IOException {
@@ -132,8 +154,14 @@ public class UserData implements UserDataService {
 		
 		ArrayList<UserPO> list = new ArrayList<UserPO>();
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
-		BufferedReader br = new BufferedReader(fr);
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
 		for (int j = 0; j < obj1.length(); j++) {
