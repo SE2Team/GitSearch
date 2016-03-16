@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+
 <BorderPane layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <AnchorPane maxHeight="-Infinity" prefHeight="26.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
-            <Button layoutX="301.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="118.0" text="Button" />
-            <TextField layoutX="1010.0" prefHeight="30.0" prefWidth="222.0" promptText="Search" />
-            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="167.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="167.0">
+            <MenuBar layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" />
+            <Button layoutX="200.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="搜索">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <TextField layoutX="881.0" layoutY="11.0" prefHeight="30.0" prefWidth="222.0" promptText="Search" />
+            <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="818.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="818.0">
                <image>
                   <Image url="@../../../../../Images/home.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="351.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="项目统计">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="502.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" text="用户统计">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+            <ComboBox layoutX="1102.0" layoutY="11.0" prefHeight="30.0" prefWidth="84.0" promptText="项目" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1187.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../皮克切儿/搜索.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../皮克切儿/后退.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="59.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../皮克切儿/Home.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="107.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../皮克切儿/前进.png" />
                </image>
             </ImageView>
          </children>
