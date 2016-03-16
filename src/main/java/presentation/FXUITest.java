@@ -1,7 +1,9 @@
 package presentation;
 
 import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
+import businesslogicService.UserBLService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +13,7 @@ import javafx.stage.Stage;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.userCheckui.CheckUserController;
 import vo.RepositoryVO;
+import vo.UserVO;
 
 import java.io.IOException;
 
@@ -61,6 +64,11 @@ public class FXUITest extends Application {
         return bl.checkRepository("technoweenie","restful-authentication");
     }
 
+    public UserVO test_getuser() throws IOException {
+        UserBLService bl=new UserController();
+        return bl.CheckUser("technoweenie");
+    }
+
     public void checkRepo(){
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
@@ -89,9 +97,15 @@ public class FXUITest extends Application {
             anchorPane=(AnchorPane) loader.load();
             CheckUserController controller=loader.getController();
             controller.setFxui(this);
+            controller.setVo(test_getuser());
+            controller.repaint();
             homeLayout.setCenter(anchorPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void repoStatistics(){
+
     }
 }
