@@ -41,9 +41,7 @@ public class RepositoryPO {
                         String created, String updated, String pushed, int size, int stargazers_count, String language,
                         int forks, int open_issues, int subscribers_count, int contributor, int collaborators_count,
                         ArrayList<String> collaborators, ArrayList<String> contributors) {
-	}
-
-    {
+	
         this.name = name;
         this.subscribers_count = subscribers_count;//订阅者
         this.open_issues = open_issues;
