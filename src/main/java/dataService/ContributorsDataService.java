@@ -1,6 +1,7 @@
 package dataService;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import po.UserPO;
@@ -11,5 +12,5 @@ import po.UserPO;
 public interface ContributorsDataService {
     ArrayList<UserPO> NamesOfContributors(String url);
 
-    ArrayList<String> getContributors(String url);
+    ArrayList<String> getContributors(String url) throws IOException;
 }

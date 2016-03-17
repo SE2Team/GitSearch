@@ -17,129 +17,128 @@ import java.util.ArrayList;
  * open_issues:open的issue数 subscribers_count:关注者数量
  **/
 public class RepositoryPO {
-    String name;
-    int id;
-    String owner_type;
-    String html_url;
-    String description;
-    boolean fork;
-    String created;
-    String updated;
-    String pushed;
-    int size = 0;
-    int stargazers_count = 0;
-    String language;
-    int forks;
-    int contributor = 0;
-    int open_issues = 0;
-    int subscribers_count = 0;
-    int collaborators_count=0;//合作者
-    ArrayList<String> collaborators;
-    ArrayList<String> contributors;
+	String name;
+	int id;
+	String owner_type;
+	String html_url;
+	String description;
+	boolean fork;
+	String created;
+	String updated;
+	String pushed;
+	int size = 0;
+	int stargazers_count = 0;
+	String language;
+	int forks;
+	int contributor = 0;
+	int open_issues = 0;
+	int subscribers_count = 0;
+	int collaborators_count = 0;// 合作者
+	ArrayList<String> collaborators;
+	ArrayList<String> contributors;
 
-    public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
-                        String created, String updated, String pushed, int size, int stargazers_count, String language,
-                        int forks, int open_issues, int subscribers_count, int contributor, int collaborators_count,
-                        ArrayList<String> collaborators, ArrayList<String> contributors) {
+	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
+			String created, String updated, String pushed, int size, int stargazers_count, String language, int forks,
+			int open_issues, int subscribers_count, int contributor, int collaborators_count,
+			ArrayList<String> collaborators, ArrayList<String> contributors) {
+
+		this.name = name;
+		this.subscribers_count = subscribers_count;// 订阅者
+		this.open_issues = open_issues;
+		this.forks = forks;
+		this.language = language;
+		this.stargazers_count = stargazers_count;// 点赞者
+		this.size = size;
+		this.pushed = pushed;
+		this.updated = updated;
+		this.created = created;
+		this.fork = fork;
+		this.id = id;
+		this.owner_type = owner_type;
+		this.html_url = html_url;
+		this.description = description;
+		this.contributor = contributor;
+		this.collaborators_count = collaborators_count;
+		this.collaborators = collaborators;
+		this.contributors = collaborators;
+
 	}
 
-    {
-        this.name = name;
-        this.subscribers_count = subscribers_count;//订阅者
-        this.open_issues = open_issues;
-        this.forks = forks;
-        this.language = language;
-        this.stargazers_count = stargazers_count;//点赞者
-        this.size = size;
-        this.pushed = pushed;
-        this.updated = updated;
-        this.created = created;
-        this.fork = fork;
-        this.id = id;
-        this.owner_type = owner_type;
-        this.html_url = html_url;
-        this.description = description;
-        this.contributor = contributor;
-        this.collaborators_count=collaborators_count;
-        this.collaborators=collaborators;
-        this.contributors=collaborators;
+	
+	public ArrayList<String> getContributors() {
+		return this.contributors;
+	}
 
-    }
-    
-    public ArrayList<String> getContributors(){
-    	return this.contributors;
-    }
-    
-    public ArrayList<String> getCollaborators(){
-    	return this.collaborators;
-    }
+	public ArrayList<String> getCollaborators() {
+		return this.collaborators;
+	}
 
-    public int getContributor() {
-        return this.contributor;
-    }
+	public int getContributor() {
+		return this.contributor;
+	}
 
-    public int getSubscribers_count() {
-        return this.subscribers_count;
-    }
+	public int getSubscribers_count() {
+		return this.subscribers_count;
+	}
 
-    public int getOpen_issues() {
-        return this.open_issues;
-    }
+	public int getOpen_issues() {
+		return this.open_issues;
+	}
 
-    public int getForks() {
-        return this.forks;
-    }
+	public int getForks() {
+		return this.forks;
+	}
 
-    public String getLanguage() {
-        return this.language;
-    }
+	public String getLanguage() {
+		return this.language;
+	}
 
-    public int getStargazers() {
-        return this.stargazers_count;
-    }
+	public int getStargazers() {
+		return this.stargazers_count;
+	}
 
-    public int getSize() {
-        return this.size;
-    }
+	public int getSize() {
+		return this.size;
+	}
 
-    public String getPushed() {
-        return this.pushed;
-    }
+	public String getPushed() {
+		return this.pushed;
+	}
 
-    public String getUpdated() {
-        return this.updated;
-    }
+	public String getUpdated() {
+		return this.updated;
+	}
 
-    public String getCreated() {
-        return this.created;
-    }
+	public String getCreated() {
+		return this.created;
+	}
 
-    public boolean getFork() {
-        return this.fork;
-    }
+	public boolean getFork() {
+		return this.fork;
+	}
 
-    public int getId() {
-        return this.id;
-    }
+	public int getId() {
+		return this.id;
+	}
 
-    public String getOwner_type() {
-        return this.owner_type;
-    }
+	public String getOwner_type() {
+		return this.owner_type;
+	}
 
-    public String getHtml_url() {
-        return this.html_url;
-    }
+	public String getHtml_url() {
+		return this.html_url;
+	}
 
-    public String getDescription() {
-        return this.description;
-    }
+	public String getDescription() {
+		return this.description;
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	public String getName() {
+		return this.name;
+	}
 
-    public int  getCollaborators_count(){
-    	return this.collaborators_count;
-    }
-    
+	public int getCollaborators_count() {
+		return this.collaborators_count;
+	}
+
 }

@@ -49,6 +49,15 @@ public class RepositoryData implements RepositoryDataService {
 		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
 		for (int j = 0; j < obj1.length(); j++) {
 			obj = obj1.getJSONObject(j);
+			
+			if(obj.has("collaborators_url")){
+				collaUrl=obj.getString("collaborators_url");
+			}
+			
+			if(obj.has("contributors_url")){
+				contrUrl=obj.getString("contributors_url");
+			}
+			
 			if(obj.has("description")){
 				s1=obj.getString("description");
 			}else{

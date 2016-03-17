@@ -2,6 +2,7 @@ package dataService;
 
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import po.UserPO;
 
@@ -11,5 +12,5 @@ import po.UserPO;
 public interface CollaboratorsDataService {
     ArrayList<UserPO> NamesOfCollaborators(String url);
 
-    ArrayList<String> getCollaborators(String url);
+    ArrayList<String> getCollaborators(String url) throws IOException;
 }
