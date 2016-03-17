@@ -112,8 +112,8 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			if(obj.has(" int collaborators_count")){
-				 collaborators_count=obj.getInt(" int collaborators_count");
+			if(obj.has("collaborators_count")){
+				 collaborators_count=obj.getInt("collaborators_count");
 			}
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
@@ -126,7 +126,7 @@ public class RepositoryData implements RepositoryDataService {
 					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
 					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count,
-					collaData.getCollaborators(collaUrl),contrData.getContributors(contrUrl));
+					null,null);
 			list.add(po);
 			}
 		return list;
