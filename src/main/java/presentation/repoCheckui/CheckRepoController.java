@@ -6,8 +6,6 @@ import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
 
-import java.io.IOException;
-
 /**
  * Created by moeyui on 2016/3/14 0014.
  */
@@ -27,6 +25,10 @@ public class CheckRepoController implements MyController{
     private Label description;
     @FXML
     private Label reponame;
+
+    @FXML
+    private Label language;
+
 
     private RepositoryVO vo;
 
@@ -49,6 +51,7 @@ public class CheckRepoController implements MyController{
         subscribers.setText(String.valueOf(vo.getSubscribers_count()));
         collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
+        language.setText(vo.getLanguage());
     }
 
     @FXML

@@ -23,18 +23,14 @@ import java.io.IOException;
 public class FXUITest extends Application {
     private Stage primaryStage;
     private BorderPane homeLayout;
-    private static FXUITest fxuiTest;
 
-    public FXUITest() {
-        this.fxuiTest=this;
-    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage=primaryStage;
         primaryStage.setTitle("GitSearch");
         initHome();
-        checkRepo();
+//        checkRepo();
         checkUser();
     }
 
@@ -60,8 +56,8 @@ public class FXUITest extends Application {
 
     public RepositoryVO test_getrepo() throws IOException {
         RepositoryBLService bl=new RepositoryController();
-//        return bl.checkRepository("mojombo","grit");
-        return bl.checkRepository("technoweenie","restful-authentication");
+        return bl.checkRepository("mojombo","grit");
+//        return bl.checkRepository("technoweenie","restful-authentication");
     }
 
     public UserVO test_getuser() throws IOException {
@@ -107,5 +103,10 @@ public class FXUITest extends Application {
 
     public void repoStatistics(){
 
+    }
+
+
+    public BorderPane getHomeLayout() {
+        return homeLayout;
     }
 }
