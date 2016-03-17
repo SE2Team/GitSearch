@@ -12,19 +12,38 @@ package vo;
  */
 public class StatisticsVO {
 
-	String name;
-	String number;
+	double issues_num=0;
+	double stars_num=0;
+	double forks_num=0;
+	double contributors_num=0;
+	double collaborators_num=0;	
 	
-	public StatisticsVO(String name,String number){
-		this.name=name;
-		this.number=number;
+	public StatisticsVO(double issues_num, double stars_num, double forks_num, double contributors_num,
+			double collaborators_num){
+		this.issues_num=issues_num;
+		this.stars_num=stars_num;
+		this.forks_num=forks_num;
+		this.contributors_num=contributors_num;
+		this.collaborators_num=collaborators_num;
 	}
 	
-	public String getName(){
-		return this.name;
+	public double geIssues_num(){
+		return this.issues_num;
 	}
 	
-	public String getNumber(){
-		return this.number;
+	public double getStars_num(){
+		return this.stars_num;
+	}
+	
+	public double getForks_num(){
+		return this.forks_num;
+	}
+	
+	public double getContributors_num(){
+		return this.contributors_num;
+	}
+	
+	public double getCollaborators_num(){
+		return this.collaborators_num;
 	}
 }

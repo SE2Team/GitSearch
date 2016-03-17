@@ -24,6 +24,6 @@ public class PO2VO {
     }
 
     public static StatisticsVO convert(StatisticsPO po){
-    	return new StatisticsVO(po.getName(), po.getNumber());
+    	return new StatisticsVO(po.getIssues_num(),po.getStars_num(),po.getForks_num(),po.getContributors_num(),po.getCollaborators_num());
     }
 }
