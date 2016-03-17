@@ -26,10 +26,13 @@ public class RepositoryVO {
     int contributor = 0;
     int open_issues = 0;
     int subscribers_count = 0;
+    ArrayList<String> collaborators;
+    ArrayList<String> contirbutors;
 
     public RepositoryVO(String name, int id, String owner_type, String html_url, String description, boolean fork,
                         String created, String updated, String pushed, int size, int stargazers_count,
-                        String language, int forks, int contributor, int open_issues, int subscribers_count) {
+                        String language, int forks, int contributor, int open_issues, int subscribers_count,
+                        ArrayList<String> collaborators,ArrayList<String> contributors) {
         this.name = name;
         this.id = id;
         this.owner_type = owner_type;
@@ -46,8 +49,18 @@ public class RepositoryVO {
         this.contributor = contributor;
         this.open_issues = open_issues;
         this.subscribers_count = subscribers_count;
+        this.collaborators=collaborators;
+        this.contirbutors=contributors;
     }
 
+    public ArrayList<String> getCollaborators(){
+    	return this.collaborators;
+    }
+    
+    public ArrayList<String> getContributors(){
+    	return this.contirbutors;
+    }
+    
     public String getName() {
         return name;
     }

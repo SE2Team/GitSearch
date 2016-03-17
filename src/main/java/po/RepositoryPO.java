@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * open_issues:open的issue数 subscribers_count:关注者数量
  **/
 public class RepositoryPO {
+
 	String name;
 	int id;
 	String owner_type;
@@ -140,5 +141,6 @@ public class RepositoryPO {
 	public int getCollaborators_count() {
 		return this.collaborators_count;
 	}
+
 
 }
