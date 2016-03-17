@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="8.0" layoutY="1.0" text="RepName" textFill="#60bde8">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="648.0" layoutY="8.0" prefHeight="58.0" prefWidth="241.0" vgap="8.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="80.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="70.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="158.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="15.0" minHeight="8.0" prefHeight="15.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Star" textFill="#00000097">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label text="Fork" textFill="#00000097" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label text="0" textFill="#00000097" GridPane.rowIndex="1" />
+            <Label text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="26.0" prefWidth="113.0" text="Contributor" textFill="#00000097" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Label>
+            <Label text="0" textFill="#00000097" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="8.0" layoutY="26.0" prefHeight="41.0" prefWidth="618.0" text="Description here" textFill="#00000097" wrapText="true">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
