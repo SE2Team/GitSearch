@@ -130,13 +130,17 @@ public class SearchPanel extends JPanel {
 	 * 用户搜索按钮监听事件
 	 */
 	public void performUserSearch(){
-		initUserFilPanel();
-		SearchPanel.this.remove(jl_repSort);
-		SearchPanel.this.remove(jp_repFiltrate);
-		SearchPanel.this.remove(jp_repSort);
-		SearchPanel.this.add(jp_userFiltrate);
-		SearchPanel.this.add(jl_userSort);
-		
+
+		removeAll();
+		repaint();
+		add(jtf_search);
+		add(userSearch);
+		add(repSearch);
+		add(jl_filtrate);
+		add(jp_userFiltrate);
+		add(jl_userSort);
+		repaint();
+
 		if(jtf_search.getText().trim().equals("")){
 			SearchPanel.this.add(jp_userSort);
 		}
@@ -157,7 +161,7 @@ public class SearchPanel extends JPanel {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 		
 		jp_userFiltrate.repaint();
@@ -169,14 +173,17 @@ public class SearchPanel extends JPanel {
 	 * 项目搜索按钮监听事件
 	 */
 	public void performRepSearch(){
-		initRepFilPanel();
-		SearchPanel.this.remove(jl_userSort);
-		SearchPanel.this.remove(jp_userFiltrate);
-		SearchPanel.this.remove(jp_userSort);
-		
-		SearchPanel.this.add(jp_repFiltrate);
-		SearchPanel.this.add(jl_repSort);
-		
+
+		removeAll();
+		repaint();
+		add(jtf_search);
+		add(userSearch);
+		add(repSearch);
+		add(jl_filtrate);
+		add(jp_repFiltrate);
+		add(jl_repSort);
+		repaint();
+
 		if(jtf_search.getText().trim().equals("")){
 			SearchPanel.this.add(jp_repSort);
 		}
@@ -197,10 +204,10 @@ public class SearchPanel extends JPanel {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 		
-		jp_userFiltrate.repaint();
+		jp_repFiltrate.repaint();
 		repaint();
 		SearchFrame.getSearch().setVisible(true);
 	}
@@ -216,6 +223,7 @@ public class SearchPanel extends JPanel {
 		jp_repFiltrate.add(new LanguagePanel(1, h + 5, jp_w-3, h));
 		jp_repFiltrate.add(new CreateTimePanel(1, 2 * h + 10, jp_w-3, h));
 		jp_repFiltrate.repaint();
+		SearchFrame.getSearch().setVisible(true);
 	}
 
 	/***
@@ -226,10 +234,10 @@ public class SearchPanel extends JPanel {
 		jp_userFiltrate.setLayout(null);
 		jp_userFiltrate.setBorder(BorderFactory.createEtchedBorder());
 		jp_userFiltrate.setBackground(Color.white);
-		RegistTimePanel r = new RegistTimePanel(1, 1, jp_w-3, h);
 
-		jp_userFiltrate.add(r);
+		jp_userFiltrate.add( new RegistTimePanel(1, 1, jp_w-3, h));
 		jp_userFiltrate.repaint();
+		SearchFrame.getSearch().setVisible(true);
 	}
 	
 	/***
