@@ -458,22 +458,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="391.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Images/上一页.jpg" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="493.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <image>
-                        <Image url="@../../../../../Images/下一页.jpg" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="616.0" layoutY="628.0" text="共    页">
                      <font>
                         <Font size="16.0" />
@@ -487,7 +471,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label layoutX="528.0" layoutY="629.0" text="最后一页">
+                  <Label layoutX="533.0" layoutY="629.0" text="最后一页">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -508,6 +492,8 @@
                         <Font name="Calibri" size="20.0" />
                      </font>
                   </Button>
+                  <Button layoutX="390.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
+                  <Button layoutX="495.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" />
                </children>
             </AnchorPane>
         </items>
