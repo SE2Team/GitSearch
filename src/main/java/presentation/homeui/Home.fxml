@@ -35,26 +35,10 @@
                </font>
             </Button>
             <ComboBox layoutX="1102.0" layoutY="11.0" prefHeight="30.0" prefWidth="84.0" promptText="项目" />
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1187.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../皮克切儿/搜索.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="9.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../皮克切儿/后退.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="59.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../皮克切儿/Home.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="107.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../皮克切儿/前进.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="15.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button" />
+            <Button layoutX="111.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button" />
+            <Button layoutX="60.0" layoutY="9.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" text="Button" />
+            <Button layoutX="1186.0" layoutY="11.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="Button" />
          </children>
       </AnchorPane>
    </top>
