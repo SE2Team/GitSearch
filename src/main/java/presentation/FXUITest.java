@@ -10,7 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
+import presentation.searchui.RepSearchController;
+import presentation.searchui.UserSearchController;
 import presentation.userCheckui.CheckUserController;
 import vo.RepositoryVO;
 import vo.UserVO;
@@ -23,6 +26,10 @@ import java.io.IOException;
 public class FXUITest extends Application {
     private Stage primaryStage;
     private BorderPane homeLayout;
+    private AnchorPane searchRepoPane;
+    private AnchorPane searchUserPane;
+    private RepSearchController repSearchController;
+    private UserSearchController userSearchController;
 
 
     @Override
@@ -39,6 +46,7 @@ public class FXUITest extends Application {
         loader.setLocation(this.getClass().getResource("homeui/Home.fxml"));
         try {
             homeLayout=(BorderPane) loader.load();
+            HomeController controller=loader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,7 +73,7 @@ public class FXUITest extends Application {
         return bl.CheckUser("technoweenie");
     }
 
-    public void checkRepo(){
+    public void checkRepo(RepositoryVO vo){
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -74,17 +82,22 @@ public class FXUITest extends Application {
             anchorPane = (AnchorPane)loader.load();
             CheckRepoController controller=loader.getController();
             controller.setFxui(this);
-            controller.setVo(test_getrepo());
+            controller.setVo(vo);
             homeLayout.setCenter(anchorPane);
             controller.repaint();
-
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void checkRepo(){
+        try {
+            checkRepo(test_getrepo());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void checkUser(){
+    public void checkUser(UserVO vo){
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("userCheckui/CheckUser.fxml"));
 
@@ -93,18 +106,61 @@ public class FXUITest extends Application {
             anchorPane=(AnchorPane) loader.load();
             CheckUserController controller=loader.getController();
             controller.setFxui(this);
-            controller.setVo(test_getuser());
+            controller.setVo(vo);
             controller.repaint();
             homeLayout.setCenter(anchorPane);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public void checkUser(){
+        try {
+            checkUser(test_getuser());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void searchRepo(){
+        if (searchRepoPane==null){
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
+            repSearchController=loader.getController();
+            repSearchController.setFxui(this);
+            try {
+                searchRepoPane=(AnchorPane) loader.load();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(searchRepoPane!=null) {
+        }
+        homeLayout.setCenter(searchRepoPane);
+
+
+    }
+
+    public void searchUser(){
+        if (searchUserPane==null){
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(this.getClass().getResource("searchui/UserSearch.fxml"));
+            userSearchController=loader.getController();
+            userSearchController.setFxui(this);
+            try {
+                searchUserPane=(AnchorPane)loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            homeLayout.setCenter(searchUserPane);
+        }
+    }
     public void repoStatistics(){
 
     }
 
+    public void userStatistics(){
+
+    }
 
     public BorderPane getHomeLayout() {
         return homeLayout;
