@@ -3,12 +3,15 @@ package presentation.searchui;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
+import vo.UserVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,16 +65,9 @@ public class RepSearchController implements MyController{
     private ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
     private FXUITest fxuiTest;
     private String key="";//搜索关键字
+    private int page_max=0;
 
     public void initialize() {
-        try {
-            Iterator<RepositoryVO> itr=bl.getRepositories();
-            while (itr.hasNext()){
-                vos.add(itr.next());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -80,7 +76,31 @@ public class RepSearchController implements MyController{
     }
 
     public void repaint() {
+        try {
+            Iterator<RepositoryVO> itr=bl.Search(key);
+            while (itr.hasNext()){
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        page_max=(int)(vos.size()/8);//计算最大页数
+        updatePage();
+    }
 
+    private void updatePage() {
+        flowPane=new FlowPane();//指定一个新的pane
+
+        for(int i=0;i<8;i++){
+            if(((page-1)*8+i)>=vos.size()){
+                break;
+            }
+            try {
+                flowPane.getChildren().add(getSub(vos.get((page-1)*8+i)));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void repaint(ArrayList<RepositoryVO> vos){
@@ -127,5 +147,14 @@ public class RepSearchController implements MyController{
     @FXML
     private void handlePgNum(){
 
+    }
+    private AnchorPane getSub(RepositoryVO vo) throws IOException {
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubRepInfo.fxml"));
+        SubRepInfoController controller=loader.getController();
+        controller.setFxui(fxuiTest);
+        controller.setVo(vo);
+        controller.repaint();
+        return loader.load();
     }
 }

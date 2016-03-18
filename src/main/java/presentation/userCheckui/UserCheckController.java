@@ -9,7 +9,7 @@ import vo.UserVO;
 /**
  * Created by moeyui on 2016/3/15 0015.
  */
-public class UserCheckController implements MyController{
+public class CheckUserController implements MyController{
     private UserVO vo;
     @FXML
     private Label name;
@@ -27,7 +27,6 @@ public class UserCheckController implements MyController{
     private Label following;
     @FXML
     private Label login;
-
 
 
 
@@ -50,6 +49,7 @@ public class UserCheckController implements MyController{
         email.setText(vo.getEmail());
         updateTime.setText(vo.getUpdated_at());
         following.setText(String.valueOf(vo.getFollowing()));
+        login.setText(vo.getLogin());
         // TODO: 2016/3/16 0016   need more...
     }
 
