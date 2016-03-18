@@ -40,6 +40,7 @@ public class RepositoryData implements RepositoryDataService {
 		JSONArray obj1 = new JSONArray(string);
 		int size=0;
 		int stargazers_count=0;
+		int collaborators_count=0;
 		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
 		for (int j = 0; j < obj1.length(); j++) {
 			obj = obj1.getJSONObject(j);
@@ -98,15 +99,20 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
+			if(obj.has(" int collaborators_count")){
+				 collaborators_count=obj.getInt(" int collaborators_count");
+			}
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
 			}else{
 				name="";
 			}
+			
+			
 			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
 					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
-					s4,forks ,issues_count,subscribers_count ,contributor);
+					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count);
 			list.add(po);
 			}
 		return list;

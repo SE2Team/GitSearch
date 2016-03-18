@@ -3,14 +3,13 @@ package presentation.repoCheckui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import presentation.FXUITest;
+import presentation.common.MyController;
 import vo.RepositoryVO;
-
-import java.io.IOException;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
  */
-public class CheckRepoController {
+public class CheckRepoController implements MyController{
     private FXUITest fxui;
     @FXML
     private Label stars;
@@ -27,17 +26,20 @@ public class CheckRepoController {
     @FXML
     private Label reponame;
 
+    @FXML
+    private Label language;
+
+
     private RepositoryVO vo;
 
 
 
     public void setFxui(FXUITest fxui) {
         this.fxui = fxui;
-        try {
-            this.vo=fxui.test_getrepo();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+    }
+
+    public void repaint() {
         if (vo==null){
             return;
         }
@@ -47,11 +49,13 @@ public class CheckRepoController {
         stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
         subscribers.setText(String.valueOf(vo.getSubscribers_count()));
-//        collaborator.setText(vo.getC);
+        collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
+        language.setText(vo.getLanguage());
     }
+
     @FXML
-    private void initialize(){
+    public void initialize(){
 
     }
 

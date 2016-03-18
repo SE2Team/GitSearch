@@ -41,6 +41,7 @@ public class UserPO {
 			this.following=following;
 			this.created_at=created_at;
 			this.updated_at=updated_at;
+
 	}
 	
 	public String getUpdated(){
@@ -93,5 +94,7 @@ public class UserPO {
 	public int getId(){
 		return this.id;
 	}
-	
+
+
+
 }
