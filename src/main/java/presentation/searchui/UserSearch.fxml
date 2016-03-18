@@ -103,22 +103,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="403.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../皮克切儿/上一页.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="497.0" layoutY="630.0" pickOnBounds="true" preserveRatio="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <image>
-                        <Image url="@../../../../../../皮克切儿/下一页.png" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="616.0" layoutY="628.0" text="共    页">
                      <font>
                         <Font size="16.0" />
@@ -145,6 +129,8 @@
                         <Font size="14.0" />
                      </font>
                   </TextField>
+                  <Button layoutX="493.0" layoutY="624.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+                  <Button layoutX="386.0" layoutY="624.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
                </children>
             </AnchorPane>
         </items>
