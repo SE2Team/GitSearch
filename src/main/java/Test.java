@@ -30,6 +30,6 @@ public class Test extends JFrame{
             e.printStackTrace();
         }
 //        new RepCheckFrame();
-//        System.out.println(Integer.MAX_VALUE);
+//        System.out.println((int)19/8);
     }
 }

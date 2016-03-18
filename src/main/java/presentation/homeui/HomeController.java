@@ -69,9 +69,9 @@ public class HomeController implements MyController{
     @FXML
     private void handleSearch_b(){
         if(comboBox.getValue()=="项目"){
-
+            fxui.searchRepo(searchText.getText().trim());
         }else if(comboBox.getValue()=="用户"){
-
+            fxui.searchUser(searchText.getText().trim());
         }
     }
 

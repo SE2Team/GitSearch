@@ -10,11 +10,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
+import sun.rmi.runtime.Log;
 import vo.UserVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Logger;
 
 /**
  * Created by moeyui on 2016/3/17 0017.
@@ -59,6 +61,7 @@ public class UserSearchController implements MyController {
     private ArrayList<UserVO> vos;
     private UserBLService bl = new UserController();
     private String key="";//搜索关键字
+    private int page_max=0;
 
     public void initialize() {
     }
@@ -68,9 +71,6 @@ public class UserSearchController implements MyController {
     }
 
     public void repaint() {
-        int cout=0;
-        flowPane=new FlowPane();//指定一个新的pane
-        pgNum.setText(String.valueOf(page));
         try {
             Iterator<UserVO> itr=bl.search(key);
 
@@ -80,19 +80,31 @@ public class UserSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(UserVO temp:vos){
+        page_max=(int)(vos.size()/8);//计算最大页数
+
+       updatePage();
+
+
+    }
+
+    /**
+     * 用于本地更新页面（翻页）的方法
+     */
+    private void updatePage(){
+        flowPane=new FlowPane();//指定一个新的pane
+
+        for(int i=0;i<8;i++){
             try {
-                flowPane.getChildren().add(getSub(temp));
-                cout++;
+                if(((page-1)*8+i)>=vos.size()){
+                    break;
+                }
+                flowPane.getChildren().add(getSub(vos.get((page-1)*8+i)));//根据页数获取对应的VO
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if(cout>=8){
-                break;
-            }
         }
 
-
+        pgNum.setText(String.valueOf(page));
     }
 
     private AnchorPane getSub(UserVO vo) throws IOException {
@@ -106,32 +118,59 @@ public class UserSearchController implements MyController {
     }
     @FXML
     private void handlePgUp() {
-
+        if(page<=1){
+            return;
+        }else {
+            page--;
+            updatePage();
+        }
     }
 
     @FXML
     private void handlePgDn() {
-
+        if (page+1>page_max){
+            return;
+        }else {
+            page++;
+            updatePage();
+        }
     }
 
     @FXML
     private void handleFpg() {
-
+        page=1;
+        updatePage();
     }
 
     @FXML
     private void handleLpg() {
-
+        page=page_max;
+        updatePage();
     }
 
     @FXML
     private void handlePgNum() {
-
+        try {
+            page= Integer.parseInt(pgNum.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("页数格式错误");
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleGeneral() {
-
+//        try {
+//            Iterator<UserVO> itr=bl.s
+//            while (itr.hasNext()){
+//                vos.add(itr.next());
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        page_max=(int)(vos.size()/8);//计算最大页数
+//
+//        updatePage();
     }
 
     @FXML
@@ -145,4 +184,7 @@ public class UserSearchController implements MyController {
 
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

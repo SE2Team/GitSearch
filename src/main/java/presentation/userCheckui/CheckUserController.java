@@ -25,7 +25,8 @@ public class CheckUserController implements MyController{
     private Label updateTime;
     @FXML
     private Label following;
-
+    @FXML
+    private Label login;
 
 
 
@@ -48,6 +49,7 @@ public class CheckUserController implements MyController{
         email.setText(vo.getEmail());
         updateTime.setText(vo.getUpdated_at());
         following.setText(String.valueOf(vo.getFollowing()));
+        login.setText(vo.getLogin());
         // TODO: 2016/3/16 0016   need more...
     }
 
