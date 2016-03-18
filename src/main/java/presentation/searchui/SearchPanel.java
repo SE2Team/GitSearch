@@ -1,37 +1,25 @@
 package presentation.searchui;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
+import Util.SearchType;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
-import Util.SearchType;
 import presentation.common.MyButton;
 import presentation.common.MyJTextField;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
-import presentation.repoCheckui.RepCheckFrame;
-import presentation.userCheckui.UserCheckFrame;
 import vo.RepositoryVO;
 import vo.UserVO;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class SearchPanel extends JPanel {
 	
@@ -142,7 +130,23 @@ public class SearchPanel extends JPanel {
 		repaint();
 
 		if(jtf_search.getText().trim().equals("")){
-			SearchPanel.this.add(jp_userSort);
+//			SearchPanel.this.add(jp_userSort);
+			uvos = new ArrayList<UserVO>();
+			Iterator<UserVO> itr = null;
+			try {
+				itr = userBL.getUser();
+				while(itr.hasNext()){
+					uvos.add(itr.next());
+				}
+				jp_userSort.performUserSearch(uvos);
+				SearchPanel.this.add(jp_userSort);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else{
 			uvos = new ArrayList<UserVO>();
@@ -185,7 +189,23 @@ public class SearchPanel extends JPanel {
 		repaint();
 
 		if(jtf_search.getText().trim().equals("")){
-			SearchPanel.this.add(jp_repSort);
+//			SearchPanel.this.add(jp_repSort);
+			rvos = new ArrayList<RepositoryVO>();
+			Iterator<RepositoryVO> itr = null;
+			try {
+				itr = repBL.getRepositories();
+				while(itr.hasNext()){
+					rvos.add(itr.next());
+				}
+				jp_repSort.performRepSearch(rvos);
+				SearchPanel.this.add(jp_repSort);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		else{
 			rvos = new ArrayList<RepositoryVO>();
@@ -253,5 +273,13 @@ public class SearchPanel extends JPanel {
 	 */
 	public UserSortPanel getUserSortPanel(){
 		return jp_userSort;
+	}
+
+	/***
+	 * 获取搜索框
+	 * @return
+     */
+	public MyJTextField getJtf_search(){
+		return jtf_search;
 	}
 }

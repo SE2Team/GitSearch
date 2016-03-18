@@ -15,6 +15,7 @@ public class BasicInfoPanel extends MyPanel {
 	JLabel basicInfoLabel;
 	JLabel photoLabel;
     JLabel nameLabel;
+    JLabel loginLabel;
 //    JLabel desLabel;//description label
     JLabel regTimeLabel;//注册时间
     JLabel companyLabel;
@@ -36,10 +37,17 @@ public class BasicInfoPanel extends MyPanel {
     private void init(){
     	this.setLayout(null);
     	String name;
+        String login;
 		if(vo.getName().equals(""))
 			name = "Unknown";
 		else
 			name = vo.getName();
+
+        if(vo.getLogin().equals(""))
+            login = "Unknown";
+        else
+            login = vo.getLogin();
+
     	basicInfoLabel = new JLabel("Basic Information",JLabel.CENTER);
     	basicInfoLabel.setFont(MyFont.Comic);
     	basicInfoLabel.setBounds(bx, 15, width, height);
@@ -48,8 +56,13 @@ public class BasicInfoPanel extends MyPanel {
         nameLabel=new JLabel(name,JLabel.CENTER);
         nameLabel.setFont(MyFont.Calibri2);
         nameLabel.setBounds(bx, by+5, width, height);
-//        desLabel=new JLabel(); 
-        
+//        desLabel=new JLabel();
+
+        loginLabel = new JLabel(login,JLabel.CENTER);
+        loginLabel.setFont(MyFont.Calibri);
+        loginLabel.setForeground(Color.gray);
+        loginLabel.setBounds(bx, by+height, width, height);
+
         followers=new JLabel("Following "+vo.getFollowing(),JLabel.CENTER);
         followers.setFont(MyFont.Calibri);
         followers.setBounds(bx, by+height+addy-5, width, height);
@@ -82,6 +95,7 @@ public class BasicInfoPanel extends MyPanel {
         this.add(basicInfoLabel);
         this.add(photoLabel);
         this.add(nameLabel);
+        this.add(loginLabel);
         this.add(followers);
         this.add(following);
         this.add(companyLabel);

@@ -1,25 +1,5 @@
 package presentation.searchui;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-
-import org.omg.Messaging.SyncScopeHelper;
-
 import Util.Repository_Sort;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
@@ -28,6 +8,16 @@ import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.common.MyRecButton;
 import vo.RepositoryVO;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /***
  * 项目排序面板
@@ -215,6 +205,7 @@ public class RepSortPanel extends MyPanel {
 				vos.add(vo);
 			}
 			sum.setText("共" + vos.size() + "项");
+			num.setText(n+"");
 			System.out.println(vos.size());
 			System.out.println();
 		} catch (IOException e) {
@@ -240,11 +231,13 @@ public class RepSortPanel extends MyPanel {
 				vos.add(vo);
 			}
 			sum.setText("共"+vos.size()+"项");
+
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -263,11 +256,13 @@ public class RepSortPanel extends MyPanel {
 				vos.add(vo);
 			}
 			sum.setText("共"+vos.size()+"项");
+
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -291,6 +286,7 @@ public class RepSortPanel extends MyPanel {
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -362,6 +358,7 @@ public class RepSortPanel extends MyPanel {
 		this.vos = rvos;
 		n=1;
 		sum.setText("共"+vos.size()+"项");
+		num.setText(n+"");
 		this.setSortPanel(vos, n);	
 	}
 }

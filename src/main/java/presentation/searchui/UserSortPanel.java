@@ -1,33 +1,20 @@
 package presentation.searchui;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-
-import businesslogic.RepositoryBL.Repository;
-import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
-import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import presentation.common.MyColor;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.common.MyRecButton;
-import presentation.repoCheckui.Contributors;
-import presentation.userCheckui.UserCheckFrame;
-import vo.RepositoryVO;
 import vo.UserVO;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class UserSortPanel extends MyPanel{
 	
@@ -220,6 +207,7 @@ public class UserSortPanel extends MyPanel{
 		this.vos = uvos;
 		n=1;
 		sum.setText("共"+vos.size()+"项");
+		num.setText(n+"");
 		this.setSortPanel(uvos,n);
 	}
 }
