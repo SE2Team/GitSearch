@@ -3,3 +3,11 @@
     -fx-background-size: 50%;
     -fx-background-repeat: no-repeat;
 }
+#back{
+    -fx-background-image: url("home.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}

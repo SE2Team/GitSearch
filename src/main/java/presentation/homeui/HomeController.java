@@ -1,5 +1,9 @@
 package presentation.homeui;
 
+import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.userBL.UserController;
+import businesslogicService.RepositoryBLService;
+import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -30,6 +34,9 @@ public class HomeController implements MyController{
     private TextField searchText;
     @FXML
     private ComboBox comboBox;
+
+    private RepositoryBLService rbl=new RepositoryController();
+    private UserBLService ubl=new UserController();
 
     private FXUITest fxui;
 
