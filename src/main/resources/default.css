@@ -1,0 +1,82 @@
+#repoPane,#relaPane{
+    -fx-border-width:1;
+    -fx-border-insets:0;
+    -fx-border-color:GRAY;
+}
+.split-pane:vertical .split-pane-divider,.split-pane:horizontal .split-pane-divider{
+    /*-fx-position-shape: false;*/
+    /*visibility: hidden;*/
+}
+
+#back{
+    -fx-background-image: url("Images/后退.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#home{
+    -fx-background-image: url("Images/Home.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#advance{
+    -fx-background-image: url("Images/前进.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#search_button{
+    -fx-background-image: url("Images/搜索.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#PageUp{
+    -fx-background-image: url("Images/上一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#PageDown{
+    -fx-background-image: url("Images/下一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#RepFlowPane{
+    -fx-vgap:8;
+    -fx-hgap:5;
+}
+#timePane{
+    -fx-vgap:8;
+    -fx-hgap:24;
+}
+#FirstPage{
+    -fx-background-image: url("Images/上一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
+#LastPage{
+    -fx-background-image: url("Images/下一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: Background;
+
+}
