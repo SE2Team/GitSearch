@@ -9,7 +9,7 @@ import vo.UserVO;
 /**
  * Created by moeyui on 2016/3/15 0015.
  */
-public class CheckUserController implements MyController{
+public class UserCheckController implements MyController{
     private UserVO vo;
     @FXML
     private Label name;
@@ -25,6 +25,8 @@ public class CheckUserController implements MyController{
     private Label updateTime;
     @FXML
     private Label following;
+    @FXML
+    private Label login;
 
 
 

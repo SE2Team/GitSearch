@@ -14,7 +14,7 @@ import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
 import presentation.searchui.UserSearchController;
-import presentation.userCheckui.CheckUserController;
+import presentation.userCheckui.UserCheckController;
 import vo.RepositoryVO;
 import vo.UserVO;
 
@@ -104,7 +104,7 @@ public class FXUITest extends Application {
         AnchorPane anchorPane;
         try {
             anchorPane=(AnchorPane) loader.load();
-            CheckUserController controller=loader.getController();
+            UserCheckController controller=loader.getController();
             controller.setFxui(this);
             controller.setVo(vo);
             controller.repaint();
