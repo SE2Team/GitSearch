@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.SubUserInfoController">
    <children>
-      <Label layoutX="8.0" layoutY="1.0" text="UserName" textFill="#60bde8">
+      <Label fx:id="name" layoutX="8.0" layoutY="1.0" prefHeight="29.0" prefWidth="622.0" text="UserName" textFill="#60bde8">
          <font>
             <Font size="22.0" />
          </font>
@@ -33,13 +30,13 @@
                   <Font name="Calibri" size="22.0" />
                </font>
             </Label>
-            <Label text="0" textFill="#00000097" GridPane.rowIndex="1" />
-            <Label text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="followers" text="0" textFill="#00000097" GridPane.rowIndex="1" />
+            <Label fx:id="following" text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label layoutX="8.0" layoutY="26.0" prefHeight="41.0" prefWidth="600.0" text="Description here" textFill="#00000097" wrapText="true">
+      <Label fx:id="id" layoutX="14.0" layoutY="34.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="20.0" />
          </font>
       </Label>
    </children>

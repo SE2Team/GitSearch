@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@UserSearch.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../../resources/default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.RepSearchController">
    <children>
       <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -26,7 +23,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="200.0">
                                  <children>
-                                    <FlowPane layoutX="14.0" layoutY="19.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@RepSearch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" layoutX="14.0" layoutY="19.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../../resources/default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="103.0" text="ActiveRecord">
                                              <font>
@@ -172,7 +169,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="200.0">
                                  <children>
-                                    <FlowPane layoutX="-13.0" prefHeight="280.0" prefWidth="201.0" stylesheets="@RepSearch.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" layoutX="-13.0" prefHeight="280.0" prefWidth="201.0" stylesheets="@../../../resources/default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="41.0" text="all">
                                              <cursor>
@@ -363,7 +360,7 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="201.0">
                                  <children>
-                                    <FlowPane layoutX="-7.0" layoutY="-10.0" prefHeight="180.0" prefWidth="201.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" layoutX="-7.0" layoutY="-10.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../../resources/default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
                                           <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2007">
                                              <cursor>
@@ -428,13 +425,13 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <FlowPane layoutX="58.0" layoutY="71.0" prefHeight="544.0" prefWidth="954.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="71.0" />
+                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="71.0" prefHeight="544.0" prefWidth="954.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="71.0" />
                   <Label layoutX="17.0" layoutY="3.0" text="Repository Sort">
                      <font>
                         <Font name="Calibri Light" size="26.0" />
                      </font>
                   </Label>
-                  <Button layoutX="58.0" layoutY="34.0" mnemonicParsing="false" text="General">
+                  <Button fx:id="general" layoutX="58.0" layoutY="34.0" mnemonicParsing="false" text="General">
                      <font>
                         <Font name="Calibri" size="20.0" />
                      </font>
@@ -442,7 +439,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="152.0" layoutY="34.0" mnemonicParsing="false" text="Star">
+                  <Button fx:id="star" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" text="Star">
                      <font>
                         <Font name="Calibri" size="20.0" />
                      </font>
@@ -450,7 +447,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="214.0" layoutY="34.0" mnemonicParsing="false" text="Fork">
+                  <Button fx:id="fork" layoutX="214.0" layoutY="34.0" mnemonicParsing="false" text="Fork">
                      <font>
                         <Font name="Calibri" size="20.0" />
                      </font>
@@ -458,49 +455,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="391.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Images/上一页.jpg" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="493.0" layoutY="629.0" pickOnBounds="true" preserveRatio="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <image>
-                        <Image url="@../../../../../Images/下一页.jpg" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="616.0" layoutY="628.0" text="共    页">
+                  <Label layoutX="581.0" layoutY="628.0" prefHeight="22.0" prefWidth="93.0" text="共           页">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="331.0" layoutY="628.0" text="第一页">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <Label layoutX="528.0" layoutY="629.0" text="最后一页">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
-                  <TextField alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Button layoutX="279.0" layoutY="34.0" mnemonicParsing="false" text="Contributor">
+                  <Button fx:id="contributor" layoutX="279.0" layoutY="34.0" mnemonicParsing="false" text="Contributor">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -508,6 +473,15 @@
                         <Font name="Calibri" size="20.0" />
                      </font>
                   </Button>
+                  <Button id="PageUp" fx:id="pgUp" layoutX="390.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../../resources/default.css" />
+                  <Button id="PageDown" fx:id="pgDn" layoutX="495.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../../resources/default.css" />
+                  <StackPane layoutX="636.0" layoutY="628.0" prefHeight="22.0" prefWidth="48.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="48.0" />
+                     </children>
+                  </StackPane>
+                  <Button id="FirstPage" fx:id="fpg" layoutX="351.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../../resources/default.css" />
+                  <Button id="LastPage" fx:id="lpg" layoutX="535.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../../resources/default.css" />
                </children>
             </AnchorPane>
         </items>
