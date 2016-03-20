@@ -1,8 +1,5 @@
 package data;
 
-import java.util.ArrayList;
-
-import Util.BranchInfo;
 import dataService.BranchDataService;
 import dataService.CollaboratorsDataService;
 import dataService.CommitDataService;

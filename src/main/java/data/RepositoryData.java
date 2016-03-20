@@ -30,6 +30,11 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<RepositoryPO> getRepositories() throws IOException{
 		// TODO Auto-generated method stub
+		CollaboratorsData collaData=new CollaboratorsData();
+		ContributorsData contrData= new ContributorsData();
+		String collaUrl="";
+		String	contrUrl="";
+		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
 		FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
@@ -44,12 +49,20 @@ public class RepositoryData implements RepositoryDataService {
 		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
 		for (int j = 0; j < obj1.length(); j++) {
 			obj = obj1.getJSONObject(j);
+			
+			if(obj.has("collaborators_url")){
+				collaUrl=obj.getString("collaborators_url");
+			}
+			
+			if(obj.has("contributors_url")){
+				contrUrl=obj.getString("contributors_url");
+			}
+			
 			if(obj.has("description")){
 				s1=obj.getString("description");
 			}else{
 				s1="";
 			}
-			
 			if(obj.has("fork")){
 				fork=obj.getBoolean("fork");
 			}else{
@@ -99,8 +112,8 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			if(obj.has(" int collaborators_count")){
-				 collaborators_count=obj.getInt(" int collaborators_count");
+			if(obj.has("collaborators_count")){
+				 collaborators_count=obj.getInt("collaborators_count");
 			}
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
@@ -112,7 +125,8 @@ public class RepositoryData implements RepositoryDataService {
 			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
 					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
-					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count);
+					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count,
+					null,null);
 			list.add(po);
 			}
 		return list;

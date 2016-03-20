@@ -1,6 +1,7 @@
 package dataService;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import po.UserPO;
@@ -9,7 +10,7 @@ import po.UserPO;
  * Created by moeyui on 2016/3/6 0006.
  */
 public interface ContributorsDataService {
-    ArrayList<UserPO> NamesOfContributors(String userName, String reponame);
+    ArrayList<UserPO> NamesOfContributors(String url);
 
-    ArrayList<String> getContributors(String userName, String reponame);
+    ArrayList<String> getContributors(String url) throws IOException;
 }
