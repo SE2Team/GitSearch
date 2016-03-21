@@ -31,5 +31,6 @@ public class Test extends JFrame{
         }
 //        new RepCheckFrame();
 //        System.out.println((int)19/8);
+        System.out.println("i n".replaceAll(" ",""));
     }
 }

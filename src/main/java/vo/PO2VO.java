@@ -14,7 +14,9 @@ public class PO2VO {
     public static RepositoryVO convert(RepositoryPO po){
         return new RepositoryVO(po.getName(), po.getId(), po.getOwner_type(), po.getHtml_url(), po.getDescription(),
                 po.getFork(), po.getCreated(), po.getUpdated(), po.getPushed(), po.getSize(), po.getStargazers(),
-                po.getLanguage(), po.getForks(), po.getContributor(), po.getOpen_issues(), po.getSubscribers_count(),po.getCollaborators(),po.getContributors());
+                po.getLanguage(), po.getForks(), po.getOpen_issues(), po.getSubscribers_count(),po.getContributor(),
+                po.getCollaborators_count(),
+                po.getCollaborators(),po.getContributors());
     }
 
     public static  UserVO convert (UserPO po){

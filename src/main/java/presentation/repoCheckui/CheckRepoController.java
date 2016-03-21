@@ -46,12 +46,12 @@ public class CheckRepoController implements MyController{
         reponame.setText(vo.getName());
         description.setText(vo.getDescription());
 //        System.out.println(vo.getDescription());
-        stars.setText(String.valueOf(vo.getStargazers_count()));
-        forks.setText(String.valueOf(vo.getForks()));
-        subscribers.setText(String.valueOf(vo.getSubscribers_count()));
-        collaborator.setText(String.valueOf(vo.getContributor()));
-        contributors.setText(String.valueOf(vo.getContributor()));
-        language.setText(vo.getLanguage());
+//        stars.setText(String.valueOf(vo.getStargazers_count()));
+//        forks.setText(String.valueOf(vo.getForks()));
+//        subscribers.setText(String.valueOf(vo.getSubscribers_count()));
+//        collaborator.setText(String.valueOf(vo.getContributor()));
+//        contributors.setText(String.valueOf(vo.getContributor()));
+//        language.setText(vo.getLanguage());
     }
 
     @FXML

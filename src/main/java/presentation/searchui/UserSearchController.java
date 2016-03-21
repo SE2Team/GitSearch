@@ -56,12 +56,14 @@ public class UserSearchController implements MyController {
      */
     private FXUITest fxuiTest;
     private int page = 1;
-    private ArrayList<UserVO> vos;
+    private ArrayList<UserVO> vos=new ArrayList<UserVO>();
     private UserBLService bl = new UserController();
     private String key = "";//搜索关键字
     private int page_max = 0;
+    private FlowPane defaultFlow;
 
     public void initialize() {
+        defaultFlow=flowPane;
     }
 
     public void setFxui(FXUITest fxui) {
@@ -76,7 +78,6 @@ public class UserSearchController implements MyController {
         try {
             Iterator<UserVO> itr = bl.search(key);
             while (itr.hasNext()) {
-                System.out.println("ccc");
                 vos.add(itr.next());
             }
         } catch (IOException e) {
@@ -96,13 +97,18 @@ public class UserSearchController implements MyController {
      * 用于本地更新页面（翻页）的方法
      */
     private void updatePage() {
-        flowPane = new FlowPane();//指定一个新的pane
+//        flowPane = new FlowPane();//指定一个新的pane
+        flowPane=defaultFlow;
+        if(flowPane.getChildren().size()!=0)
+            flowPane.getChildren().remove(0,flowPane.getChildren().size());
 
         for (int i = 0; i < 8; i++) {
             try {
                 if (((page - 1) * 8 + i) >= vos.size()) {
                     break;
                 }
+                System.out.println("add");
+//                flowPane.getChildren().add(getSub(vos.get(0)));
                 flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));//根据页数获取对应的VO
             } catch (IOException e) {
                 e.printStackTrace();
@@ -114,12 +120,14 @@ public class UserSearchController implements MyController {
 
     private AnchorPane getSub(UserVO vo) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("SubRepinfo.fxml"));
+        loader.setLocation(this.getClass().getResource("SubUserInfo.fxml"));
+        AnchorPane anchorPane=loader.load();
         SubUserInfoController controller = loader.getController();
+
         controller.setFxui(fxuiTest);
         controller.setVo(vo);
         controller.repaint();
-        return loader.load();
+        return anchorPane;
     }
 
     @FXML

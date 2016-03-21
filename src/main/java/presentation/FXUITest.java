@@ -112,7 +112,7 @@ public class FXUITest extends Application {
 
     public void checkUser(UserVO vo) {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("userCheckui/CheckUser.fxml"));
+        loader.setLocation(this.getClass().getResource("userCheckui/UserCheck.fxml"));
 
         AnchorPane anchorPane;
         try {

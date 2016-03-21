@@ -2,6 +2,7 @@ package presentation.userCheckui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.UserVO;
@@ -22,11 +23,11 @@ public class UserCheckController implements MyController{
     @FXML
     private Label email;
     @FXML
-    private Label updateTime;
-    @FXML
     private Label following;
     @FXML
     private Label login;
+    @FXML
+    private GridPane poprepo;
 
 
 
@@ -43,14 +44,16 @@ public class UserCheckController implements MyController{
 
     public void repaint() {
         name.setText(vo.getName());
-        regTime.setText(vo.getCreated_at());
-        company.setText(vo.getCompany());
+        regTime.setText(vo.getCreated());
+        String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
+        //// TODO: 2016/3/22 0022 卧槽这里怎么判断公司是不是空的啊？！！
+        System.out.println(vo.getCompany().length());
+        company.setText(comp);
         followers.setText(String.valueOf(vo.getFollowers()));
         email.setText(vo.getEmail());
-        updateTime.setText(vo.getUpdated_at());
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
-        // TODO: 2016/3/16 0016   need more...
+//        poprepo.getChildren().set(0,vo.get)
     }
 
     public void setVo(UserVO vo) {

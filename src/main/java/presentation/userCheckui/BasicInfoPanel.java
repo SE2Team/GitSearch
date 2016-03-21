@@ -62,9 +62,9 @@ public class BasicInfoPanel extends MyPanel {
 //        followers.setText();
 //        following.setText();
         
-        regTimeLabel=new JLabel("Joined on "+vo.getCreated_at().substring(0, 10),JLabel.CENTER);
-        regTimeLabel.setFont(MyFont.Calibri);
-        regTimeLabel.setBounds(bx, by+3*height+addy, width, height);
+//        regTimeLabel=new JLabel("Joined on "+vo.getCreated_at().substring(0, 10),JLabel.CENTER);
+//        regTimeLabel.setFont(MyFont.Calibri);
+//        regTimeLabel.setBounds(bx, by+3*height+addy, width, height);
        
         emailLabel=new JLabel(vo.getEmail(),JLabel.CENTER);
         emailLabel.setFont(MyFont.Calibri);

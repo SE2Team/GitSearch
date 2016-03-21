@@ -33,9 +33,11 @@ public class SubUserInfoController implements MyController {
     }
 
     public void repaint() {
-        name.setText(vo.getName());
+        String nameText=vo.getName()!=""?vo.getName():"Unknown";
+        name.setText(nameText);
         followers.setText(String.valueOf(vo.getFollowers()));
         following.setText(String.valueOf(vo.getFollowing()));
+        id.setText(vo.getLogin());
 
     }
 

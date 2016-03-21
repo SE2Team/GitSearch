@@ -36,7 +36,7 @@ public class SubRepInfoController  implements MyController{
         name.setText(vo.getName());
         description.setText(vo.getDescription());
         forks.setText(String.valueOf(vo.getForks()));
-        stars.setText(String.valueOf(vo.getStargazers_count()));
+//        stars.setText(String.valueOf(vo.getStargazers_count()));
         contributors.setText(String.valueOf(vo.getContributor()));
     }
 
