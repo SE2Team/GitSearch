@@ -151,10 +151,11 @@ public class RepSearchController implements MyController{
     private AnchorPane getSub(RepositoryVO vo) throws IOException {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepInfo.fxml"));
+        AnchorPane anchorPane=loader.load();
         SubRepInfoController controller=loader.getController();
         controller.setFxui(fxuiTest);
         controller.setVo(vo);
         controller.repaint();
-        return loader.load();
+        return anchorPane;
     }
 }

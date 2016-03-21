@@ -19,6 +19,8 @@ import vo.RepositoryVO;
 import vo.UserVO;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -37,15 +39,23 @@ public class FXUITest extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
         initHome();
+        searchRepo("");
 //        checkRepo();
-        checkUser();
+//        checkUser();
     }
 
     private void initHome() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("homeui/Home.fxml"));
+        loader.setLocation(this.getClass().getResource("./homeui/Home.fxml"));
+//        try {
+//            loader.setLocation(new URL("/homeui/Home.fxml"));
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+
         try {
             homeLayout = (BorderPane) loader.load();
+//            homeLayout.
             HomeController controller = loader.getController();
             controller.setFxui(this);
             controller.repaint();
@@ -132,10 +142,11 @@ public class FXUITest extends Application {
         if (searchRepoPane == null) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
-            repSearchController = loader.getController();
-            repSearchController.setFxui(this);
+
             try {
                 searchRepoPane = (AnchorPane) loader.load();
+                repSearchController = loader.getController();
+                repSearchController.setFxui(this);
             } catch (IOException e) {
                 e.printStackTrace();
             }
