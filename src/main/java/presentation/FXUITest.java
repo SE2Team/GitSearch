@@ -39,7 +39,8 @@ public class FXUITest extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
         initHome();
-        searchRepo("");
+//        searchRepo("");
+        searchUser("");
 //        checkRepo();
 //        checkUser();
     }
@@ -163,10 +164,12 @@ public class FXUITest extends Application {
         if (searchUserPane == null) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("searchui/UserSearch.fxml"));
-            userSearchController = loader.getController();
-            userSearchController.setFxui(this);
+
             try {
                 searchUserPane = (AnchorPane) loader.load();
+                userSearchController = loader.getController();
+                userSearchController.setFxui(this);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
