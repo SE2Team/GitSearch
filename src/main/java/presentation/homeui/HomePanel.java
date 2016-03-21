@@ -3,19 +3,14 @@ package presentation.homeui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import presentation.common.MyButton;
 import presentation.common.MyFont;
 import presentation.common.MyJTextField;
-import presentation.common.MyLabel;
 
 public class HomePanel extends JPanel{
 

@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../../resources/default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.UserCheckController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.UserCheckController">
    <children>
       <SplitPane dividerPositions="0.29264475743348983" layoutX="47.0" layoutY="127.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -13,7 +13,7 @@
                <children>
                   <ImageView fitHeight="178.0" fitWidth="209.0" layoutX="103.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../resources/Images/头像.JPG" />
+                        <Image url="@../../Images/头像.JPG" />
                      </image>
                   </ImageView>
                   <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="198.0" prefHeight="41.0" prefWidth="373.0" text="Mirriam Suzanne" textAlignment="CENTER">
@@ -28,12 +28,12 @@
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="42.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../resources/Images/邮箱.jpg" />
+                        <Image url="@../../Images/邮箱.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="41.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../resources/Images/日期.jpg" />
+                        <Image url="@../../Images/日期.jpg" />
                      </image>
                   </ImageView>
                   <Label fx:id="email" layoutX="95.0" layoutY="317.0" prefHeight="26.0" prefWidth="264.0" text="邮箱地址">
@@ -107,7 +107,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Pane id="repoPane" layoutX="28.0" layoutY="23.0" prefHeight="338.0" prefWidth="368.0" stylesheets="@../../../resources/default.css">
+                  <Pane id="repoPane" layoutX="28.0" layoutY="23.0" prefHeight="338.0" prefWidth="368.0" stylesheets="@../../default.css">
                      <children>
                         <Label layoutX="6.0" layoutY="9.0" text="Popular repositories">
                            <font>
@@ -155,7 +155,7 @@
                         </GridPane>
                      </children>
                   </Pane>
-                  <Pane id="relaPane" layoutX="499.0" layoutY="24.0" prefHeight="338.0" prefWidth="368.0" stylesheets="@../../../resources/default.css">
+                  <Pane id="relaPane" layoutX="499.0" layoutY="24.0" prefHeight="338.0" prefWidth="368.0" stylesheets="@../../default.css">
                      <children>
                         <Label layoutX="6.0" layoutY="9.0" text="Related repositories">
                            <font>

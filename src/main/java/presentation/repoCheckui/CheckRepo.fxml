@@ -5,11 +5,11 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../../resources/default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.CheckRepoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.CheckRepoController">
    <children>
       <SplitPane dividerPositions="0.21282798833819241" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="1280.0" stylesheets="@../../../resources/default.css">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="1280.0" stylesheets="@../../default.css">
                <children>
                   <Label fx:id="reponame" layoutX="14.0" layoutY="2.0" text="GitFan/GitSearch">
                      <font>
@@ -96,11 +96,11 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <SplitPane dividerPositions="0.6473354231974922" layoutX="92.0" layoutY="41.0" prefHeight="524.0" prefWidth="1278.0" stylesheets="@../../../resources/default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <SplitPane dividerPositions="0.6473354231974922" layoutX="92.0" layoutY="41.0" prefHeight="524.0" prefWidth="1278.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="721.0">
                                  <children>
-                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="97.0" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" stylesheets="@../../../resources/default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="97.0" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                              <children>
@@ -151,27 +151,27 @@
                                                    <children>
                                                       <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
-                                                            <Image url="@../../../resources/Images/home.png" />
+                                                            <Image url="@../../Images/home.png" />
                                                          </image>
                                                       </ImageView>
                                                       <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                                                          <image>
-                                                            <Image url="@../../../resources/Images/home.png" />
+                                                            <Image url="@../../Images/home.png" />
                                                          </image>
                                                       </ImageView>
                                                       <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                                                          <image>
-                                                            <Image url="@../../../resources/Images/home.png" />
+                                                            <Image url="@../../Images/home.png" />
                                                          </image>
                                                       </ImageView>
                                                       <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
                                                          <image>
-                                                            <Image url="@../../../resources/Images/home.png" />
+                                                            <Image url="@../../Images/home.png" />
                                                          </image>
                                                       </ImageView>
                                                       <ImageView fitHeight="44.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
                                                          <image>
-                                                            <Image url="@../../../resources/Images/home.png" />
+                                                            <Image url="@../../Images/home.png" />
                                                          </image>
                                                       </ImageView>
                                                       <Label text="Contributor's name" GridPane.columnIndex="1" />
