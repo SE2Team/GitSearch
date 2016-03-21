@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -37,8 +38,9 @@ public class RepositoryData implements RepositoryDataService {
 		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(fr);
+	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+				getResourceAsStream("/txtData/all_repository.json")));
 		String string = br.readLine();
 		String s1 ,s2,s3,s4,name;
 		boolean fork;
@@ -140,8 +142,9 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-		FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
-		BufferedReader br = new BufferedReader(fr);
+	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+				getResourceAsStream("/txtData/repo_names.txt")));
 		String temp ;
 		ArrayList<String> list=new ArrayList<String>();
 		while((temp=br.readLine())!=null){
@@ -176,8 +179,9 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
 		JSONObject obj = new JSONObject();
-		FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(fr);
+	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+				getResourceAsStream("/txtData/all_repository.json")));
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
 		for (int i = 0; i < obj1.length(); i++) {

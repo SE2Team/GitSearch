@@ -1,10 +1,7 @@
 package data;
 
-import java.awt.List;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import org.w3c.dom.ls.LSInput;
 
 import dataService.StatisticsDataService;
 import javafx.collections.ObservableList;
