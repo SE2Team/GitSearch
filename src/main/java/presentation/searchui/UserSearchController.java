@@ -10,13 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
-import sun.rmi.runtime.Log;
 import vo.UserVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.logging.Logger;
 
 /**
  * Created by moeyui on 2016/3/17 0017.
@@ -60,8 +58,8 @@ public class UserSearchController implements MyController {
     private int page = 1;
     private ArrayList<UserVO> vos;
     private UserBLService bl = new UserController();
-    private String key="";//搜索关键字
-    private int page_max=0;
+    private String key = "";//搜索关键字
+    private int page_max = 0;
 
     public void initialize() {
     }
@@ -70,19 +68,26 @@ public class UserSearchController implements MyController {
         fxuiTest = fxui;
     }
 
+    /**
+     * 将结果读进数组来
+     */
     public void repaint() {
+        System.out.println(this.getClass()+" begin repainting");
         try {
-            Iterator<UserVO> itr=bl.search(key);
-
-            while (itr.hasNext()){
+            Iterator<UserVO> itr = bl.search(key);
+            while (itr.hasNext()) {
+                System.out.println("ccc");
                 vos.add(itr.next());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max=(int)(vos.size()/8);//计算最大页数
+        System.out.println("数组长度为"+vos.size());
 
-       updatePage();
+        page_max = (int) (vos.size() / 8);//计算最大页数
+
+
+        updatePage();
 
 
     }
@@ -90,15 +95,15 @@ public class UserSearchController implements MyController {
     /**
      * 用于本地更新页面（翻页）的方法
      */
-    private void updatePage(){
-        flowPane=new FlowPane();//指定一个新的pane
+    private void updatePage() {
+        flowPane = new FlowPane();//指定一个新的pane
 
-        for(int i=0;i<8;i++){
+        for (int i = 0; i < 8; i++) {
             try {
-                if(((page-1)*8+i)>=vos.size()){
+                if (((page - 1) * 8 + i) >= vos.size()) {
                     break;
                 }
-                flowPane.getChildren().add(getSub(vos.get((page-1)*8+i)));//根据页数获取对应的VO
+                flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));//根据页数获取对应的VO
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -108,19 +113,20 @@ public class UserSearchController implements MyController {
     }
 
     private AnchorPane getSub(UserVO vo) throws IOException {
-        FXMLLoader loader=new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepinfo.fxml"));
-        SubUserInfoController controller=loader.getController();
+        SubUserInfoController controller = loader.getController();
         controller.setFxui(fxuiTest);
         controller.setVo(vo);
         controller.repaint();
         return loader.load();
     }
+
     @FXML
     private void handlePgUp() {
-        if(page<=1){
+        if (page <= 1) {
             return;
-        }else {
+        } else {
             page--;
             updatePage();
         }
@@ -128,9 +134,9 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handlePgDn() {
-        if (page+1>page_max){
+        if (page + 1 > page_max) {
             return;
-        }else {
+        } else {
             page++;
             updatePage();
         }
@@ -138,20 +144,20 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handleFpg() {
-        page=1;
+        page = 1;
         updatePage();
     }
 
     @FXML
     private void handleLpg() {
-        page=page_max;
+        page = page_max;
         updatePage();
     }
 
     @FXML
     private void handlePgNum() {
         try {
-            page= Integer.parseInt(pgNum.getText());
+            page = Integer.parseInt(pgNum.getText());
         } catch (NumberFormatException e) {
             System.out.println("页数格式错误");
             e.printStackTrace();
@@ -180,7 +186,7 @@ public class UserSearchController implements MyController {
     }
 
     @FXML
-    private void handleRepo(){
+    private void handleRepo() {
 
     }
 
