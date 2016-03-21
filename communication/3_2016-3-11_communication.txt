@@ -1,0 +1,6 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第2周
+what:迭代一完善与测试
+how long:3h
+arrived solutions:1.修复已发现的问题
+	          2.确定下一阶段任务分配的开会时间

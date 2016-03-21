@@ -1,0 +1,5 @@
+who:金小枫
+when:第四周
+what:用javafx重构界面，完成界面的设计
+problem:对javafx的使用不太熟悉
+todo:预计下周开始写图表

@@ -1,9 +1,11 @@
 package businesslogic.RepositoryBL;
 
 import Util.RepositoryInfo;
+import Util.Repository_Sort;
 import businesslogicService.RepositoryBLService;
 import vo.RepositoryVO;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -11,28 +13,33 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryController implements RepositoryBLService {
-    public Iterator<RepositoryVO> getRepositories() {
-        return null;
+    Repository repository = new Repository();
+    public Iterator<RepositoryVO> getRepositories() throws IOException {
+        return repository.getRepositories();
     }
 
     public Iterator<String> getRepositoriesNames() {
-        return null;
+        return repository.getRepositoriesNames();
     }
 
-    public RepositoryVO checkRepository(String userName, String reponame) {
-        return null;
+    public RepositoryVO checkRepository(String userName, String reponame) throws IOException {
+        return repository.checkRepository(userName, reponame);
     }
 
     public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
-        return null;
+        return repository.languagesOfRepository(userName, reponame);
     }
 
     public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {
-        return null;
+        return repository.RepositoryInfo(userName, reponame, info);
     }
 
-    public RepositoryVO Search(String name) {
-        return null;
+    public Iterator<RepositoryVO> Search(String name) throws IOException {
+        return repository.Search(name);
+    }
+
+    public Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException {
+        return repository.sort(sort);
     }
 
 
