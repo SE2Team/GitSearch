@@ -27,15 +27,20 @@ public class Test {
 //		}
 //		System.out.println(list.size());
 		
-		RepositoryData data=new RepositoryData();
-		ArrayList<RepositoryPO> list=data.getRepositories();
-		StatisticsPO po=new StatisticsData().getScores(list.get(100));
-		System.out.println(po.getCollaborators_num());
-		System.out.println(po.getForks_num());
-		System.out.println(po.getContributors_num());
-		System.out.println(po.getIssues_num());
-		System.out.println(po.getStars_num());
+//		RepositoryData data=new RepositoryData();
+//		ArrayList<RepositoryPO> list=data.getRepositories();
+//		StatisticsPO po=new StatisticsData().getScores(list.get(100));
+//		System.out.println(po.getCollaborators_num());
+//		System.out.println(po.getForks_num());
+//		System.out.println(po.getContributors_num());
+//		System.out.println(po.getIssues_num());
+//		System.out.println(po.getStars_num());
 		
+		ArrayList<UserPO> list=new UserData().search("mojombo");
+//		ArrayList<UserPO> list=new UserData().getUser();
 		
-	}
+		for(int i=0;i<list.size();i++){
+		System.out.println(list.get(i).getLogin());
+		}
+  	}
 }

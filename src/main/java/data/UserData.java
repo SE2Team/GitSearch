@@ -121,14 +121,19 @@ public class UserData implements UserDataService {
 	//	FileReader fr = new FileReader(new File("src/main/java/txtData/user_names.txt"));
 	//	BufferedReader br = new BufferedReader(new Input);
 		ArrayList<UserPO> list = new UserData().getUser();
-		for(UserPO po:list){
+	//	System.out.println(list.size());
+		UserPO po;
+		ArrayList<UserPO> list1=new ArrayList<UserPO>();
+		for(int i=0;i<list.size();i++){
+			po=list.get(i);
 			if(po.getLogin().contains(name)){
-				list.add(po);
+		//		System.out.println(name);
+				list1.add(po);
 			}
 		}
 		
 	
-		return list;
+		return list1;
 	}
 
 	public ArrayList<UserPO> getUser() throws IOException {
