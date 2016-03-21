@@ -61,7 +61,9 @@ public class User {
     Iterator<UserVO> search(String name) throws FileNotFoundException, IOException {
         ArrayList<UserPO> pos = data.search(name);
         ArrayList<UserVO> vos = new ArrayList<UserVO>();
+        int ji=0;
         for (UserPO po : pos) {
+            System.out.println(++ji);
             vos.add(PO2VO.convert(po));
         }
         return vos.iterator();
