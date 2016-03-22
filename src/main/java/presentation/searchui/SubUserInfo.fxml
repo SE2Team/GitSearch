@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -12,6 +13,9 @@
          <font>
             <Font size="22.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
       <GridPane layoutX="676.0" layoutY="13.0" prefHeight="53.0" prefWidth="198.0" vgap="8.0">
         <columnConstraints>

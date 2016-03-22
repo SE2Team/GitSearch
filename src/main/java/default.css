@@ -65,7 +65,7 @@
     -fx-hgap:24;
 }
 #FirstPage{
-    -fx-background-image: url("Images/上一页.jpg");
+    -fx-background-image: url("Images/第一页.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -73,7 +73,7 @@
 
 }
 #LastPage{
-    -fx-background-image: url("Images/下一页.jpg");
+    -fx-background-image: url("Images/LastPage.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
