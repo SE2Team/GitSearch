@@ -31,10 +31,12 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<RepositoryPO> getRepositories() throws IOException{
 		// TODO Auto-generated method stub
-		CollaboratorsData collaData=new CollaboratorsData();
-		ContributorsData contrData= new ContributorsData();
-		String collaUrl="";
-		String	contrUrl="";
+//		
+//		CollaboratorsData collaData=new CollaboratorsData();
+//		ContributorsData contrData= new ContributorsData();
+//		String collaUrl="http://gitmining.net/api/repository/";
+//		String	contrUrl="http://gitmining.net/api/repository/";
+		
 		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
@@ -48,17 +50,11 @@ public class RepositoryData implements RepositoryDataService {
 		int size=0;
 		int stargazers_count=0;
 		int collaborators_count=0;
+	
 		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
 		for (int j = 0; j < obj1.length(); j++) {
 			obj = obj1.getJSONObject(j);
 			
-			if(obj.has("collaborators_url")){
-				collaUrl=obj.getString("collaborators_url");
-			}
-			
-			if(obj.has("contributors_url")){
-				contrUrl=obj.getString("contributors_url");
-			}
 			
 			if(obj.has("description")){
 				s1=obj.getString("description");
@@ -123,7 +119,6 @@ public class RepositoryData implements RepositoryDataService {
 				name="";
 			}
 			
-			
 			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
 					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
 					obj.getString("updated_at"), s3, size, stargazers_count, 
@@ -155,14 +150,27 @@ public class RepositoryData implements RepositoryDataService {
 
 	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-	for(int j=0;j<list.size();j++){
-		String[] s=list.get(j).getName().split("/");
-		if(s[0].equals(userName)&&s[1].equals(reponame)){
+		CollaboratorsData collaData = new CollaboratorsData();
+		ContributorsData contrData = new ContributorsData();
+		String collaUrl = "http://gitmining.net/api/repository/";
+		String contrUrl = "http://gitmining.net/api/repository/";
+		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
+
+		
+		
+		for (int j = 0; j < list.size(); j++) {
+			collaUrl = "http://gitmining.net/api/repository/"+list.get(j).getName()+
+					"/collaborators/login";
+			contrUrl="http://gitmining.net/api/repository/"+list.get(j).getName()+
+					"/contributors/login";
+			String[] s = list.get(j).getName().split("/");
+			if (s[0].equals(userName) && s[1].equals(reponame)) {
+				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+				list.get(j).setContributors(contrData.getContributors(contrUrl));
 				return list.get(j);
 			}
 		}
-	return null;
+		return null;
 	}
 
 	public Map<String, Integer> languagesOfRepository(String userName, String reponame) {

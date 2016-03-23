@@ -23,14 +23,8 @@ public class CollaboratorsData implements CollaboratorsDataService {
 		if(url.equals("")){
 			return null;
 		}
-		String string=data.getString1(url);
-		JSONArray obj1 = new JSONArray(string);
-		JSONObject obj = new JSONObject();
 		ArrayList<String> list=new ArrayList<String>();
-		for(int i=0;i<obj1.length();i++){
-			obj=obj1.getJSONObject(i);
-			list.add(obj.getString("login"));
-		}
+		list=data.getString(url);
 		return list;
 	}
 
