@@ -29,6 +29,9 @@ public class CheckRepoController implements MyController{
     @FXML
     private Label language;
 
+    @FXML
+    private Label owner;
+
 
     private RepositoryVO vo;
 
@@ -59,6 +62,10 @@ public class CheckRepoController implements MyController{
 
     }
 
+    /**
+     * get vo with arrays
+     * @param vo
+     */
     public void setVo(RepositoryVO vo) {
         this.vo = vo;
     }

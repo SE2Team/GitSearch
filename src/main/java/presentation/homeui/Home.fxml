@@ -36,7 +36,7 @@
                </font>
             </Button>
             <ComboBox fx:id="comboBox" layoutX="1102.0" layoutY="11.0" prefHeight="30.0" prefWidth="84.0" promptText="项目" />
-            <Button id="back" fx:id="back" layoutX="15.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
+            <Button id="back" fx:id="back" layoutX="15.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="30.0" prefWidth="30.0" />
             <Button id="advance" fx:id="advance" layoutX="111.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
             <Button id="home" fx:id="home" layoutX="61.0" layoutY="9.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" />
             <Button id="search_button" fx:id="search_button" layoutX="1186.0" layoutY="11.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />

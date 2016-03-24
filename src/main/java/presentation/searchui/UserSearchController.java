@@ -60,10 +60,9 @@ public class UserSearchController implements MyController {
     private UserBLService bl = new UserController();
     private String key = "";//搜索关键字
     private int page_max = 0;
-    private FlowPane defaultFlow;
 
     public void initialize() {
-        defaultFlow=flowPane;
+
     }
 
     public void setFxui(FXUITest fxui) {
@@ -74,7 +73,6 @@ public class UserSearchController implements MyController {
      * 将结果读进数组来
      */
     public void repaint() {
-        System.out.println(this.getClass()+" begin repainting");
         try {
             Iterator<UserVO> itr = bl.search(key);
             while (itr.hasNext()) {
@@ -83,7 +81,6 @@ public class UserSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("数组长度为"+vos.size());
 
         page_max = (int) (vos.size() / 8);//计算最大页数
 
@@ -97,8 +94,9 @@ public class UserSearchController implements MyController {
      * 用于本地更新页面（翻页）的方法
      */
     private void updatePage() {
-//        flowPane = new FlowPane();//指定一个新的pane
-        flowPane=defaultFlow;
+        /**
+         * remove it's small pane
+         */
         if(flowPane.getChildren().size()!=0)
             flowPane.getChildren().remove(0,flowPane.getChildren().size());
 
@@ -107,8 +105,6 @@ public class UserSearchController implements MyController {
                 if (((page - 1) * 8 + i) >= vos.size()) {
                     break;
                 }
-                System.out.println("add");
-//                flowPane.getChildren().add(getSub(vos.get(0)));
                 flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));//根据页数获取对应的VO
             } catch (IOException e) {
                 e.printStackTrace();
@@ -174,22 +170,11 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handleGeneral() {
-//        try {
-//            Iterator<UserVO> itr=bl.s
-//            while (itr.hasNext()){
-//                vos.add(itr.next());
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        page_max=(int)(vos.size()/8);//计算最大页数
-//
-//        updatePage();
+        repaint();
     }
 
     @FXML
     private void handleFollowers() {
-
 
     }
 

@@ -6,6 +6,7 @@ import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -21,6 +22,7 @@ import vo.UserVO;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Stack;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -32,6 +34,11 @@ public class FXUITest extends Application {
     private AnchorPane searchUserPane;
     private RepSearchController repSearchController;
     private UserSearchController userSearchController;
+    /**
+     * 实现前进和后退的两个栈
+     */
+    private Stack<Parent> bpanes=new Stack<Parent>();
+    private Stack<Parent> apanes=new Stack<Parent>();
 
 
     @Override
@@ -189,5 +196,28 @@ public class FXUITest extends Application {
 
     public BorderPane getHomeLayout() {
         return homeLayout;
+    }
+
+    public void push(){
+        bpanes.push((Parent) this.homeLayout.getCenter());
+    }
+
+    public void pop(){
+//        System.out.println(panes.size());
+        if (bpanes.size()<=0){
+            return;
+        }
+        Parent p=bpanes.pop();
+        apanes.push(p);
+        homeLayout.setCenter(p);
+    }
+
+    public void repush(){
+        if (apanes.size()<=0){
+            return;
+        }
+        Parent p=apanes.pop();
+        bpanes.push(p);
+        homeLayout.setCenter(p);
     }
 }
