@@ -11,7 +11,6 @@ import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
-import vo.UserVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.Iterator;
 /**
  * Created by moeyui on 2016/3/17 0017.
  */
-public class RepSearchController implements MyController{
+public class RepSearchController implements MyController {
 
     /**
      * 筛选部件
@@ -60,52 +59,79 @@ public class RepSearchController implements MyController{
     /**
      * 界面无关变量
      */
-    private int page=1;
-    private RepositoryBLService bl=new RepositoryController();
-    private ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
+    private int page = 1;
+    private RepositoryBLService bl = new RepositoryController();
+    private ArrayList<RepositoryVO> vos = new ArrayList<RepositoryVO>();
     private FXUITest fxuiTest;
-    private String key="";//搜索关键字
-    private int page_max=0;
+    private String key = "";//搜索关键字
+    private int page_max = 0;
 
     public void initialize() {
 
     }
 
     public void setFxui(FXUITest fxui) {
-        this.fxuiTest=fxui;
+        this.fxuiTest = fxui;
     }
 
+    /**
+     * 将结果读进数组来
+     */
     public void repaint() {
         try {
-            Iterator<RepositoryVO> itr=bl.Search(key);
-            while (itr.hasNext()){
+            Iterator<RepositoryVO> itr = bl.Search(key);
+            while (itr.hasNext()) {
                 vos.add(itr.next());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max=(int)(vos.size()/8);//计算最大页数
+        page_max = (int) (vos.size() / 8);//计算最大页数
         updatePage();
     }
 
+    /**
+     * 用于本地更新页面（翻页）的方法
+     */
     private void updatePage() {
-        flowPane=new FlowPane();//指定一个新的pane
+        /**
+         * remove it's small pane
+         */
+        if (flowPane.getChildren().size() != 0)
+            flowPane.getChildren().remove(0, flowPane.getChildren().size());
 
-        for(int i=0;i<8;i++){
-            if(((page-1)*8+i)>=vos.size()){
+
+        for (int i = 0; i < 8; i++) {
+            if (((page - 1) * 8 + i) >= vos.size()) {
                 break;
             }
             try {
-                flowPane.getChildren().add(getSub(vos.get((page-1)*8+i)));
+                flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
+        pgNum.setText(String.valueOf(page));
     }
 
-    public void repaint(ArrayList<RepositoryVO> vos){
-        pgNum.setText(String.valueOf(page));
-        flowPane=new FlowPane();
+    /**
+     * construct small pane
+     *
+     * @param vo
+     * @return
+     * @throws IOException
+     */
+    private AnchorPane getSub(RepositoryVO vo) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubRepInfo.fxml"));
+        AnchorPane anchorPane = loader.load();
+        SubRepInfoController controller = loader.getController();
+
+        controller.setFxui(fxuiTest);
+        controller.setVo(vo);
+        controller.repaint();
+        return anchorPane;
     }
 
     public void setKey(String key) {
@@ -113,49 +139,63 @@ public class RepSearchController implements MyController{
     }
 
     @FXML
-    private void handleStar(){
+    private void handleStar() {
 
     }
+
     @FXML
-    private void handleFork(){
-
+    private void handleFork() {
     }
+
     @FXML
-    private void handleGeneral(){
-
+    private void handleGeneral() {
+        repaint();
     }
+
     @FXML
-    private void handleContributor(){
+    private void handleContributor() {
 
     }
+
     @FXML
-    private void handlePgUp(){
-
+    private void handlePgUp() {
+        if (page <= 1) {
+            return;
+        } else {
+            page--;
+            updatePage();
+        }
     }
+
     @FXML
-    private void handlePgDn(){
-
+    private void handlePgDn() {
+        if (page + 1 > page_max) {
+            return;
+        } else {
+            page++;
+            updatePage();
+        }
     }
+
     @FXML
-    private void handleFpg(){
-
+    private void handleFpg() {
+        page = 1;
+        updatePage();
     }
+
     @FXML
-    private void handleLpg(){
-
+    private void handleLpg() {
+        page = page_max;
+        updatePage();
     }
+
     @FXML
-    private void handlePgNum(){
-
-    }
-    private AnchorPane getSub(RepositoryVO vo) throws IOException {
-        FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("SubRepInfo.fxml"));
-        AnchorPane anchorPane=loader.load();
-        SubRepInfoController controller=loader.getController();
-        controller.setFxui(fxuiTest);
-        controller.setVo(vo);
-        controller.repaint();
-        return anchorPane;
+    private void handlePgNum() {
+        try {
+            page = Integer.parseInt(pgNum.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("页数格式错误");
+            e.printStackTrace();
+        }
     }
 }
