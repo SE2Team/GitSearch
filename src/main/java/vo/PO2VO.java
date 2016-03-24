@@ -22,7 +22,7 @@ public class PO2VO {
     public static  UserVO convert (UserPO po){
         return new UserVO(po.getId(), po.getLogin(), po.getType(), po.getName(), po.getCompany()
                 , po.getEmail(), po.getRepos(), po.getGists(), po.getFollowers(), po.getFollowing(), po.getCreated()
-                , po.getUpdated());
+                , po.getUpdated(),po.getRelated(),po.getHas());
     }
 
     public static StatisticsVO convert(StatisticsPO po){
