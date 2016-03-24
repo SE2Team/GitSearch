@@ -9,7 +9,7 @@
 }
 
 #back{
-    -fx-background-image: url("Images/后退.png");
+    -fx-background-image: url("Images/back.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -25,7 +25,7 @@
 
 }
 #advance{
-    -fx-background-image: url("Images/前进.png");
+    -fx-background-image: url("Images/forward.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -33,7 +33,7 @@
 
 }
 #search_button{
-    -fx-background-image: url("Images/搜索.jpg");
+    -fx-background-image: url("Images/search.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -65,7 +65,7 @@
     -fx-hgap:24;
 }
 #FirstPage{
-    -fx-background-image: url("Images/第一页.png");
+    -fx-background-image: url("Images/FirstPage.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;

@@ -88,7 +88,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="followers" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" text="Followers">
+                  <Button fx:id="followers" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleFollowers" text="Followers">
                      <font>
                         <Font name="Calibri" size="20.0" />
                      </font>
@@ -96,7 +96,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="repo" layoutX="262.0" layoutY="34.0" mnemonicParsing="false" text="NumOfOwningRep">
+                  <Button fx:id="repo" layoutX="262.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleRepo" text="NumOfOwningRep">
                      <font>
                         <Font name="Calibri" size="20.0" />
                      </font>
@@ -109,15 +109,15 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" onKeyReleased="#handlePgNum" prefHeight="30.0" prefWidth="60.0" text="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
                   <Button id="PageDown" fx:id="pgDn" layoutX="493.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="30.0" prefWidth="30.0" stylesheets="@../../default.css" />
-                  <Button id="PageUp" fx:id="pgUp" layoutX="389.0" layoutY="624.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" />
-                  <Button id="FirstPage" fx:id="fpg" layoutX="355.0" layoutY="624.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@../../default.css" />
-                  <Button id="LastPage" fx:id="lpg" layoutX="527.0" layoutY="624.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" stylesheets="@../../default.css" />
+                  <Button id="PageUp" fx:id="pgUp" layoutX="389.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="30.0" prefWidth="30.0" />
+                  <Button id="FirstPage" fx:id="fpg" layoutX="356.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                  <Button id="LastPage" fx:id="lpg" layoutX="528.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
                   <StackPane layoutX="589.0" layoutY="626.0" prefHeight="26.0" prefWidth="60.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="20.0" prefWidth="53.0" />
