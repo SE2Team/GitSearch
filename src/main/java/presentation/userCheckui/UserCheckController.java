@@ -57,6 +57,10 @@ public class UserCheckController implements MyController{
         fxui.push();
     }
 
+    /**
+     * get vo with arrays
+     * @param vo
+     */
     public void setVo(UserVO vo) {
         this.vo = vo;
     }

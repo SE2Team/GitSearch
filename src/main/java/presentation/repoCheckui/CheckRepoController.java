@@ -1,10 +1,16 @@
 package presentation.repoCheckui;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
+
+import java.io.IOException;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -30,6 +36,9 @@ public class CheckRepoController implements MyController{
     private Label language;
 
     @FXML
+    private FlowPane flow;
+
+    @FXML
     private Label owner;
 
 
@@ -48,15 +57,20 @@ public class CheckRepoController implements MyController{
         }
         reponame.setText(vo.getName());
         description.setText(vo.getDescription());
-//        System.out.println(vo.getDescription());
-//        stars.setText(String.valueOf(vo.getStargazers_count()));
-//        forks.setText(String.valueOf(vo.getForks()));
-//        subscribers.setText(String.valueOf(vo.getSubscribers_count()));
-//        collaborator.setText(String.valueOf(vo.getContributor()));
-//        contributors.setText(String.valueOf(vo.getContributor()));
-//        language.setText(vo.getLanguage());
+        stars.setText(String.valueOf(vo.getStargazers()));
+        forks.setText(String.valueOf(vo.getForks()));
+        subscribers.setText(String.valueOf(vo.getSubscribers_count()));
+        collaborator.setText(String.valueOf(vo.getContributor()));
+        contributors.setText(String.valueOf(vo.getContributor()));
+        language.setText(vo.getLanguage());
+        
+
+        fxui.push();
     }
 
+    private void setList(){
+
+    }
     @FXML
     public void initialize(){
 
@@ -69,4 +83,17 @@ public class CheckRepoController implements MyController{
     public void setVo(RepositoryVO vo) {
         this.vo = vo;
     }
+
+    public Parent getSub(String str) throws IOException {
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
+        AnchorPane anchorPane=loader.load();
+        SubContriController controller=loader.getController();
+
+        controller.setFxui(fxui);
+        controller.setText(str);
+        controller.repaint();
+        return anchorPane;
+    }
+
 }
