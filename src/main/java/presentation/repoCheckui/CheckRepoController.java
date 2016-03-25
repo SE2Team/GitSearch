@@ -63,13 +63,22 @@ public class CheckRepoController implements MyController{
         collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
         language.setText(vo.getLanguage());
-        
+
 
         fxui.push();
     }
 
-    private void setList(){
-
+    private void setList() throws IOException {
+        for(int i=0;i<vo.getContributors().size();i++){
+            flow.getChildren().add(getSubofCon(vo.getContributors().get(i)));
+            /**
+             * 最多只能放7个+一个more
+             */
+            if(i>=6){
+                flow.getChildren().addAll(getSubofCon("@more"));
+                break;
+            }
+        }
     }
     @FXML
     public void initialize(){
@@ -84,7 +93,7 @@ public class CheckRepoController implements MyController{
         this.vo = vo;
     }
 
-    public Parent getSub(String str) throws IOException {
+    public Parent getSubofCon(String str) throws IOException {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
         AnchorPane anchorPane=loader.load();
@@ -95,5 +104,17 @@ public class CheckRepoController implements MyController{
         controller.repaint();
         return anchorPane;
     }
+
+//    public Parent getSubofColl(String str){
+//        FXMLLoader loader=new FXMLLoader();
+//        loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
+//        AnchorPane anchorPane=loader.load();
+//        SubContriController controller=loader.getController();
+//
+//        controller.setFxui(fxui);
+//        controller.setText(str);
+//        controller.repaint();
+//        return anchorPane;
+//    }
 
 }
