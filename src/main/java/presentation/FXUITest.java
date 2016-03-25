@@ -94,6 +94,7 @@ public class FXUITest extends Application {
     }
 
     public void checkRepo(RepositoryVO vo) {
+        System.out.println("klkl");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
