@@ -24,10 +24,10 @@ public class UserData implements UserDataService {
 	static String string = "http://www.gitmining.net/api/user";
 
 	public UserPO CheckUser(String user) throws IOException {
+		
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<String> list3=new ArrayList<String>();
 		for(int i=0;i<list.size();i++){
-            System.out.println("heere");
 
             ArrayList<RepositoryPO> list2=new RepositoryData().Search(user);
 			for(int j=0;j<list2.size();j++){
