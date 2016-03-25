@@ -9,6 +9,7 @@ import dataService.ForkDataService;
 import dataService.IssuesDataService;
 import dataService.PullDataService;
 import dataService.RepositoryDataService;
+import dataService.StatisticsDataService;
 import dataService.UserDataService;
 
 
@@ -52,4 +53,7 @@ public class DataFactory implements DataFatoryService{
     	return new  PullData();
     }
     
+    public StatisticsDataService getStatisticsDataService(){
+    	return new StatisticsData();
+    }
 }
