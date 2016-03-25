@@ -54,22 +54,12 @@
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="41.0" layoutY="488.0" text="Living in ">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </Label>
                   <Label fx:id="company" layoutX="139.0" layoutY="436.0" prefHeight="28.0" prefWidth="230.0" text="Company">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="125.0" layoutY="488.0" prefHeight="28.0" prefWidth="245.0" text="Someplace">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </Label>
-                  <GridPane layoutX="81.0" layoutY="551.0">
+                  <GridPane layoutX="43.0" layoutY="515.0" prefHeight="60.0" prefWidth="237.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -117,7 +107,7 @@
                               <Font name="Calibri" size="28.0" />
                            </font>
                         </Label>
-                        <FlowPane layoutX="1.0" layoutY="50.0" prefHeight="285.0" prefWidth="365.0" />
+                        <FlowPane fx:id="poprepo" layoutX="1.0" layoutY="50.0" prefHeight="285.0" prefWidth="365.0" />
                      </children>
                   </Pane>
                   <Pane id="relaPane" layoutX="499.0" layoutY="24.0" prefHeight="338.0" prefWidth="368.0" stylesheets="@../../default.css">
@@ -127,7 +117,7 @@
                               <Font name="Calibri" size="28.0" />
                            </font>
                         </Label>
-                        <FlowPane layoutX="1.0" layoutY="51.0" prefHeight="285.0" prefWidth="365.0" />
+                        <FlowPane fx:id="relarepo" layoutX="1.0" layoutY="51.0" prefHeight="285.0" prefWidth="365.0" />
                      </children>
                   </Pane>
                </children>

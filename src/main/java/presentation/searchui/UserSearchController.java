@@ -73,6 +73,7 @@ public class UserSearchController implements MyController {
      * 将结果读进数组来
      */
     public void repaint() {
+        vos.clear();//清空数组
         try {
             Iterator<UserVO> itr = bl.search(key);
             while (itr.hasNext()) {

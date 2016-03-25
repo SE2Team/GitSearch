@@ -6,15 +6,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="365.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.SubRepoController">
    <children>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/home.png" />
          </image>
       </ImageView>
-      <Label layoutX="68.0" layoutY="16.0" text="RepName">
+      <Label fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName">
          <font>
             <Font name="Calibri" size="22.0" />
          </font>

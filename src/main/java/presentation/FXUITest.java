@@ -6,6 +6,7 @@ import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -37,8 +38,8 @@ public class FXUITest extends Application {
     /**
      * 实现前进和后退的两个栈
      */
-    private Stack<Parent> bpanes=new Stack<Parent>();
-    private Stack<Parent> apanes=new Stack<Parent>();
+    private Stack<Node> bpanes=new Stack<Node>();
+    private Stack<Node> apanes=new Stack<Node>();
 
 
     @Override
@@ -93,6 +94,7 @@ public class FXUITest extends Application {
     }
 
     public void checkRepo(RepositoryVO vo) {
+        System.out.println("klkl");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -147,6 +149,7 @@ public class FXUITest extends Application {
      * @param key
      */
     public void searchRepo(String key) {
+        this.push();
         if (searchRepoPane == null) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
@@ -168,6 +171,7 @@ public class FXUITest extends Application {
     }
 
     public void searchUser(String key) {
+        this.push();
         if (searchUserPane == null) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(this.getClass().getResource("searchui/UserSearch.fxml"));
@@ -180,10 +184,11 @@ public class FXUITest extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            userSearchController.setKey(key);
-            userSearchController.repaint();
-            homeLayout.setCenter(searchUserPane);
+
         }
+        userSearchController.setKey(key);
+        userSearchController.repaint();
+        homeLayout.setCenter(searchUserPane);
     }
 
     public void repoStatistics() {
@@ -198,26 +203,40 @@ public class FXUITest extends Application {
         return homeLayout;
     }
 
+    /**
+     * 后退栈压栈，然后清空前进栈
+     */
     public void push(){
         bpanes.push((Parent) this.homeLayout.getCenter());
+        apanes.removeAllElements();
+//        System.out.println("压后退栈");
     }
 
+
+    /**
+     * 后退栈出栈并压到前进栈
+     */
     public void pop(){
-//        System.out.println(panes.size());
+//        System.out.println("出后退栈");
         if (bpanes.size()<=0){
             return;
         }
-        Parent p=bpanes.pop();
-        apanes.push(p);
+        Node p=bpanes.pop();
+        apanes.push(homeLayout.getCenter());
         homeLayout.setCenter(p);
     }
 
+    /**
+     * 前进栈出栈，压进后退栈
+     */
     public void repush(){
         if (apanes.size()<=0){
             return;
         }
-        Parent p=apanes.pop();
-        bpanes.push(p);
+        Node p=apanes.pop();
+        bpanes.push(homeLayout.getCenter());
+//        System.out.println("前进栈出栈");
+
         homeLayout.setCenter(p);
     }
 }

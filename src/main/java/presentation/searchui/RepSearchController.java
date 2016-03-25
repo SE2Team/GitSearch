@@ -5,6 +5,7 @@ import businesslogicService.RepositoryBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -56,6 +57,8 @@ public class RepSearchController implements MyController {
     private TextField pgNum;
     @FXML
     private FlowPane flowPane;
+    @FXML
+    private Label maxPg;
     /**
      * 界面无关变量
      */
@@ -78,6 +81,7 @@ public class RepSearchController implements MyController {
      * 将结果读进数组来
      */
     public void repaint() {
+        vos.clear();
         try {
             Iterator<RepositoryVO> itr = bl.Search(key);
             while (itr.hasNext()) {
@@ -86,7 +90,8 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 8);//计算最大页数
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
         updatePage();
     }
 
@@ -101,12 +106,12 @@ public class RepSearchController implements MyController {
             flowPane.getChildren().remove(0, flowPane.getChildren().size());
 
 
-        for (int i = 0; i < 8; i++) {
-            if (((page - 1) * 8 + i) >= vos.size()) {
+        for (int i = 0; i < 6; i++) {
+            if (((page - 1) * 6 + i) >= vos.size()) {
                 break;
             }
             try {
-                flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));
+                flowPane.getChildren().add(getSub(vos.get((page - 1) * 6 + i)));
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -18,7 +18,7 @@
                         <Font name="System Bold" size="48.0" />
                      </font>
                   </Label>
-                  <Label fx:id="description" layoutX="14.0" layoutY="73.0" prefHeight="61.0" prefWidth="505.0" text="description here" textOverrun="CLIP" wrapText="true">
+                  <Label fx:id="description" layoutX="20.0" layoutY="87.0" prefHeight="39.0" prefWidth="630.0" text="description here" textOverrun="CLIP" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="15.0" />
                      </font>
@@ -79,6 +79,16 @@
                            </font></Label>
                      </children>
                   </GridPane>
+                  <Label layoutX="17.0" layoutY="63.0" text="Creator:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="owner" layoutX="87.0" layoutY="63.0" text="name here">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -104,7 +114,7 @@
                                  <children>
                                     <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="97.0" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="216.0" prefWidth="820.0">
                                              <children>
                                                 <Label layoutX="25.0" layoutY="12.0" text="Language">
                                                    <font>
@@ -133,12 +143,26 @@
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                              <children>
-                                                <Label layoutX="25.0" layoutY="7.0" text="Contributors">
-                                                   <font>
-                                                      <Font size="30.0" />
-                                                   </font>
-                                                </Label>
-                                                <FlowPane layoutX="1.0" layoutY="50.0" prefHeight="220.0" prefWidth="820.0" />
+                                                <TabPane layoutX="-2.0" layoutY="1.0" prefHeight="289.0" prefWidth="823.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE">
+                                                  <tabs>
+                                                    <Tab id="Contributors" text="Contributors">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
+                                                               </children></AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                    <Tab id="Collaborators" text="Collaborators">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <FlowPane fx:id="collaboratorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
+                                                               </children></AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                  </tabs>
+                                                </TabPane>
                                              </children>
                                           </AnchorPane>
                                       </items>
