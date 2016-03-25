@@ -480,7 +480,7 @@
                   <Button id="PageDown" fx:id="pgDn" layoutX="495.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../default.css" />
                   <StackPane layoutX="597.0" layoutY="629.0" prefHeight="22.0" prefWidth="48.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="48.0" />
+                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="48.0" />
                      </children>
                   </StackPane>
                   <Button id="FirstPage" fx:id="fpg" layoutX="353.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
