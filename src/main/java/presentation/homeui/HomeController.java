@@ -41,7 +41,7 @@ public class HomeController implements MyController{
     private FXUITest fxui;
 
     public void initialize() {
-        comboBox.getItems().addAll("用户","项目");
+        comboBox.getItems().addAll("项目","用户");
         comboBox.getSelectionModel().selectFirst();
     }
 
@@ -72,6 +72,7 @@ public class HomeController implements MyController{
         if(comboBox.getValue()=="项目"){
             fxui.searchRepo(searchText.getText().trim());
         }else if(comboBox.getValue()=="用户"){
+            System.out.println(searchText.getText());
             fxui.searchUser(searchText.getText().trim());
         }
     }

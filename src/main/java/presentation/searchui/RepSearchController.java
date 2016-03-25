@@ -5,6 +5,7 @@ import businesslogicService.RepositoryBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -56,6 +57,8 @@ public class RepSearchController implements MyController {
     private TextField pgNum;
     @FXML
     private FlowPane flowPane;
+    @FXML
+    private Label maxPg;
     /**
      * 界面无关变量
      */
@@ -78,6 +81,7 @@ public class RepSearchController implements MyController {
      * 将结果读进数组来
      */
     public void repaint() {
+        vos.clear();
         try {
             Iterator<RepositoryVO> itr = bl.Search(key);
             while (itr.hasNext()) {
@@ -87,6 +91,7 @@ public class RepSearchController implements MyController {
             e.printStackTrace();
         }
         page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
         updatePage();
     }
 

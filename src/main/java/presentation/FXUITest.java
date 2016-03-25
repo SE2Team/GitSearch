@@ -183,10 +183,11 @@ public class FXUITest extends Application {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            userSearchController.setKey(key);
-            userSearchController.repaint();
-            homeLayout.setCenter(searchUserPane);
+
         }
+        userSearchController.setKey(key);
+        userSearchController.repaint();
+        homeLayout.setCenter(searchUserPane);
     }
 
     public void repoStatistics() {
