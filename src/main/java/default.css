@@ -82,13 +82,11 @@
 }
 
 #Contributors{
-    -fx-font-family:System;
-    -fx-font-size:24;
-    -fx-font-style:Bold;
+    -fx-font:System 24px;
+    -fx-cursor:HAND;
 }
 
 #Collaborators{
-     -fx-font-family:System;
-     -fx-font-size:24;
-     -fx-font-style:Bold;
+     -fx-font:System 24px;
+     -fx-cursor:HAND;
 }
