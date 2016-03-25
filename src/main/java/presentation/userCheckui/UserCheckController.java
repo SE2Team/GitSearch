@@ -1,5 +1,7 @@
 package presentation.userCheckui;
 
+import businesslogic.userBL.UserController;
+import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -59,7 +61,11 @@ public class UserCheckController implements MyController{
         email.setText(vo.getEmail());
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
-//        poprepo.getChildren().set(0,vo.get)
+        try {
+            setList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         fxui.push();
     }
 
@@ -68,7 +74,14 @@ public class UserCheckController implements MyController{
      * @param vo
      */
     public void setVo(UserVO vo) {
-        this.vo = vo;
+        UserBLService bl=new UserController();
+        System.out.println("one");
+        try {
+            this.vo = bl.CheckUser(vo.getLogin());
+        } catch (IOException e) {
+            System.out.println("获取详细用户信息失败");
+        }
+        System.out.println("two");
     }
 
     private void setList() throws IOException {
@@ -83,7 +96,7 @@ public class UserCheckController implements MyController{
             }
         }
 
-        
+
         for (int j=0;j<vo.getRelated().size();j++){
             poprepo.getChildren().addAll(getSub(vo.getHas().get(j)));
             /**

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -36,7 +37,17 @@ public class CheckRepoController implements MyController{
     private Label language;
 
     @FXML
-    private FlowPane flow;
+    private FlowPane contributorPane;
+
+    @FXML
+    private FlowPane collaboratorPane;
+
+//    @FXML
+//    private Tab conTab;
+//
+//    @FXML
+//    private Tab colTab;
+
 
     @FXML
     private Label owner;
@@ -63,19 +74,34 @@ public class CheckRepoController implements MyController{
         collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
         language.setText(vo.getLanguage());
-
+        try {
+            setList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         fxui.push();
     }
 
     private void setList() throws IOException {
         for(int i=0;i<vo.getContributors().size();i++){
-            flow.getChildren().add(getSubofCon(vo.getContributors().get(i)));
+            contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
             /**
              * 最多只能放7个+一个more
              */
             if(i>=6){
-                flow.getChildren().addAll(getSubofCon("@more"));
+                contributorPane.getChildren().addAll(getSub("@more"));
+                break;
+            }
+        }
+
+        for(int i=0;i<vo.getCollaborators().size();i++){
+            collaboratorPane.getChildren().add(getSub(vo.getCollaborators().get(i)));
+            /**
+             * 最多只能放7个+一个more
+             */
+            if(i>=6){
+                collaboratorPane.getChildren().addAll(getSub("@more"));
                 break;
             }
         }
@@ -93,7 +119,7 @@ public class CheckRepoController implements MyController{
         this.vo = vo;
     }
 
-    public Parent getSubofCon(String str) throws IOException {
+    public Parent getSub(String str) throws IOException {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
         AnchorPane anchorPane=loader.load();
@@ -105,16 +131,5 @@ public class CheckRepoController implements MyController{
         return anchorPane;
     }
 
-//    public Parent getSubofColl(String str){
-//        FXMLLoader loader=new FXMLLoader();
-//        loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
-//        AnchorPane anchorPane=loader.load();
-//        SubContriController controller=loader.getController();
-//
-//        controller.setFxui(fxui);
-//        controller.setText(str);
-//        controller.repaint();
-//        return anchorPane;
-//    }
 
 }

@@ -27,7 +27,9 @@ public class UserData implements UserDataService {
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<String> list3=new ArrayList<String>();
 		for(int i=0;i<list.size();i++){
-			ArrayList<RepositoryPO> list2=new RepositoryData().Search(user);
+            System.out.println("heere");
+
+            ArrayList<RepositoryPO> list2=new RepositoryData().Search(user);
 			for(int j=0;j<list2.size();j++){
 				list3.add(list2.get(j).getName());
 			}
