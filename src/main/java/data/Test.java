@@ -24,10 +24,14 @@ public class Test {
 	
 		
 //		RepositoryPO po=new RepositoryData().checkRepository("mojombo", "grit");
-		UserPO po=new UserData().CheckUser("mojombo");
-		ArrayList<String> list=po.getHas();
+		ArrayList<UserPO> list=new UserData().getUser();
+	
+	
+//		ArrayList<String> list=po.getHas();
 				for(int i=0;i<list.size();i++){
-					System.out.println(list.get(i));
+//					System.out.println(list.get(i));
+					UserPO po=new UserData().CheckUser(list.get(i).getLogin());
+					System.out.println(po.getLogin());
 				}
 		//	list1.add(list.get(i).getName());
 //		}
