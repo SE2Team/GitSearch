@@ -86,7 +86,7 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 8);//计算最大页数
+        page_max = (int) (vos.size() / 6);//计算最大页数
         updatePage();
     }
 
@@ -101,12 +101,12 @@ public class RepSearchController implements MyController {
             flowPane.getChildren().remove(0, flowPane.getChildren().size());
 
 
-        for (int i = 0; i < 8; i++) {
-            if (((page - 1) * 8 + i) >= vos.size()) {
+        for (int i = 0; i < 6; i++) {
+            if (((page - 1) * 6 + i) >= vos.size()) {
                 break;
             }
             try {
-                flowPane.getChildren().add(getSub(vos.get((page - 1) * 8 + i)));
+                flowPane.getChildren().add(getSub(vos.get((page - 1) * 6 + i)));
             } catch (IOException e) {
                 e.printStackTrace();
             }

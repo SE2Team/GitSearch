@@ -20,6 +20,9 @@ public class SubRepInfoController  implements MyController{
     private Label stars;
     @FXML
     private Label contributors;
+    @FXML
+    private Label updateTime;
+
     private RepositoryVO vo;
 
     private FXUITest fxui;
@@ -36,6 +39,7 @@ public class SubRepInfoController  implements MyController{
         name.setText(vo.getName());
         description.setText(vo.getDescription());
         forks.setText(String.valueOf(vo.getForks()));
+        updateTime.setText(vo.getUpdated());
 //        stars.setText(String.valueOf(vo.getStargazers_count()));
         contributors.setText(String.valueOf(vo.getContributor()));
     }

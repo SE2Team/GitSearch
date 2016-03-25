@@ -42,6 +42,7 @@ public class HomeController implements MyController{
 
     public void initialize() {
         comboBox.getItems().addAll("用户","项目");
+        comboBox.getSelectionModel().selectFirst();
     }
 
     public void setFxui(FXUITest fxui) {

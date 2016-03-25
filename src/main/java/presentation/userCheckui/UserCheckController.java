@@ -75,13 +75,11 @@ public class UserCheckController implements MyController{
      */
     public void setVo(UserVO vo) {
         UserBLService bl=new UserController();
-        System.out.println("one");
         try {
             this.vo = bl.CheckUser(vo.getLogin());
         } catch (IOException e) {
             System.out.println("获取详细用户信息失败");
         }
-        System.out.println("two");
     }
 
     private void setList() throws IOException {
