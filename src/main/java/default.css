@@ -80,3 +80,15 @@
     -fx-background-color: null;
 
 }
+
+#Contributors{
+    -fx-font-family:System;
+    -fx-font-size:24;
+    -fx-font-style:Bold;
+}
+
+#Collaborators{
+     -fx-font-family:System;
+     -fx-font-size:24;
+     -fx-font-style:Bold;
+}
