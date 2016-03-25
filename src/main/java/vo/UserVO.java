@@ -20,10 +20,12 @@ public class UserVO {
     int following=0;
     String created_at="";
     String updated_at="";
+    ArrayList<String> related;
+    ArrayList<String> has;
 
     public UserVO(int id, String login, String type, String name, String company, String email,
                   String public_repos, int public_gists, int followers, int following, String created_at,
-                  String updated_at) {
+                  String updated_at,ArrayList<String> related,ArrayList<String> has) {
         this.id=id;
         this.login=login;
         this.type=type;
@@ -36,6 +38,8 @@ public class UserVO {
         this.following=following;
         this.created_at=created_at;
         this.updated_at=updated_at;
+        this.related=related;
+        this.has=has;
 
     }
 
@@ -90,5 +94,12 @@ public class UserVO {
         return this.id;
     }
 
+    public ArrayList<String> getRelated(){
+    	return this.related;
+    }
+    
+    public ArrayList<String> getHas(){
+    	return this.has;
+    }
 
 }

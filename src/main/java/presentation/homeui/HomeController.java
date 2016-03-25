@@ -41,7 +41,7 @@ public class HomeController implements MyController{
     private FXUITest fxui;
 
     public void initialize() {
-        comboBox.getItems().addAll("用户");
+        comboBox.getItems().addAll("用户","项目");
     }
 
     public void setFxui(FXUITest fxui) {
@@ -53,12 +53,12 @@ public class HomeController implements MyController{
     }
     @FXML
     private void handleBack(){
-
+        fxui.pop();
     }
 
     @FXML
     private void handleAdvance(){
-
+        fxui.repush();
     }
 
     @FXML
@@ -85,5 +85,9 @@ public class HomeController implements MyController{
 
     }
 
+    @FXML
+    private void handleSearch_p(){
+
+    }
 
 }

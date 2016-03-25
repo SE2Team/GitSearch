@@ -75,6 +75,14 @@ public class RepositoryPO {
 	public ArrayList<String> getCollaborators() {
 		return this.collaborators;
 	}
+	
+	public void setContributors(ArrayList<String> list) {
+		this.contributors=list;
+	}
+	
+	public void setCollaborators(ArrayList<String> list) {
+		this.collaborators=list;
+	}
 
 	public int getContributor() {
 		return this.contributor;
@@ -144,6 +152,6 @@ public class RepositoryPO {
 		return this.collaborators_count;
 	}
 
-
+	
 
 }

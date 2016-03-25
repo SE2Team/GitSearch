@@ -48,4 +48,9 @@ public class SubRepInfoController  implements MyController{
     private void HandleCheck(){
         fxui.checkRepo(vo);
     }
+
+    @FXML
+    private void handleCheck(){
+        fxui.checkRepo(vo);
+    }
 }

@@ -54,8 +54,13 @@ public class UserCheckController implements MyController{
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
 //        poprepo.getChildren().set(0,vo.get)
+        fxui.push();
     }
 
+    /**
+     * get vo with arrays
+     * @param vo
+     */
     public void setVo(UserVO vo) {
         this.vo = vo;
     }
