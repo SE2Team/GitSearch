@@ -120,7 +120,7 @@
                   <Button id="LastPage" fx:id="lpg" layoutX="528.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
                   <StackPane layoutX="589.0" layoutY="626.0" prefHeight="26.0" prefWidth="60.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="53.0" />
+                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="53.0" />
                      </children>
                   </StackPane>
                </children>

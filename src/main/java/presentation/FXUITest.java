@@ -47,8 +47,8 @@ public class FXUITest extends Application {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
         initHome();
-//        searchRepo("");
-        searchUser("");
+        searchRepo("");
+//        searchUser("");
 //        checkRepo();
 //        checkUser();
     }
@@ -94,7 +94,6 @@ public class FXUITest extends Application {
     }
 
     public void checkRepo(RepositoryVO vo) {
-        System.out.println("klkl");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -120,6 +119,7 @@ public class FXUITest extends Application {
     }
 
     public void checkUser(UserVO vo) {
+//        this.push();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("userCheckui/UserCheck.fxml"));
 
@@ -209,7 +209,7 @@ public class FXUITest extends Application {
     public void push(){
         bpanes.push((Parent) this.homeLayout.getCenter());
         apanes.removeAllElements();
-//        System.out.println("压后退栈");
+        System.out.println("压后退栈");
     }
 
 
@@ -217,7 +217,7 @@ public class FXUITest extends Application {
      * 后退栈出栈并压到前进栈
      */
     public void pop(){
-//        System.out.println("出后退栈");
+        System.out.println("出后退栈");
         if (bpanes.size()<=0){
             return;
         }
@@ -235,7 +235,7 @@ public class FXUITest extends Application {
         }
         Node p=apanes.pop();
         bpanes.push(homeLayout.getCenter());
-//        System.out.println("前进栈出栈");
+        System.out.println("前进栈出栈");
 
         homeLayout.setCenter(p);
     }

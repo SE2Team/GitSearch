@@ -130,6 +130,4 @@ public class CheckRepoController implements MyController{
         controller.repaint();
         return anchorPane;
     }
-
-
 }
