@@ -150,19 +150,18 @@ public class FXUITest extends Application {
      */
     public void searchRepo(String key) {
         this.push();
-        if (searchRepoPane == null) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
 
-            try {
-                searchRepoPane = (AnchorPane) loader.load();
-                repSearchController = loader.getController();
-                repSearchController.setFxui(this);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (searchRepoPane != null) {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
+
+        try {
+            searchRepoPane = (AnchorPane) loader.load();
+            repSearchController = loader.getController();
+            repSearchController.setFxui(this);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
         repSearchController.setKey(key);
         repSearchController.repaint();
         homeLayout.setCenter(searchRepoPane);
@@ -172,18 +171,19 @@ public class FXUITest extends Application {
 
     public void searchUser(String key) {
         this.push();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("searchui/UserSearch.fxml"));
+
+        try {
+            searchUserPane = (AnchorPane) loader.load();
+            userSearchController = loader.getController();
+            userSearchController.setFxui(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if (searchUserPane == null) {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(this.getClass().getResource("searchui/UserSearch.fxml"));
 
-            try {
-                searchUserPane = (AnchorPane) loader.load();
-                userSearchController = loader.getController();
-                userSearchController.setFxui(this);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
         }
         userSearchController.setKey(key);
