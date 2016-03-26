@@ -41,7 +41,7 @@ public class Repository {
         return PO2VO.convert(factory.getRepositoryDataService().checkRepository(userName, reponame));
     }
 
-    public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
+    public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
         return factory.getRepositoryDataService().languagesOfRepository(userName, reponame);
     }
 
