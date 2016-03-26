@@ -26,7 +26,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.checkRepository(userName, reponame);
     }
 
-    public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
+    public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
         return repository.languagesOfRepository(userName, reponame);
     }
 
