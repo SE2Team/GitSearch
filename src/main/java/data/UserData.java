@@ -27,14 +27,31 @@ public class UserData implements UserDataService {
 		
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<String> list3=new ArrayList<String>();
+		ArrayList<String> relatedRepo=new ArrayList<String>();
 		for(int i=0;i<list.size();i++){
-
-            ArrayList<RepositoryPO> list2=new RepositoryData().Search(user);
-			for(int j=0;j<list2.size();j++){
-				list3.add(list2.get(j).getName());
-			}
-			
-			if(list.get(i).getLogin().equals(user)){
+			if (list.get(i).getLogin().equals(user)) {
+				ArrayList<RepositoryPO> list2 = new RepositoryData().Search(user);
+				for (int j = 0; j < list2.size(); j++) {
+					list3.add(list2.get(j).getName());
+				}
+				
+				ArrayList<String>	related=new GetData("contributor").readData();
+				for(int p=0;p<related.size();p++){
+					if(related.get(p).contains(user)){
+						String[] str=related.get(p).split(";");
+						relatedRepo.add(str[str.length-1]);
+					}
+				}
+				
+				ArrayList<String> colla=new GetData("collaborator").readData();
+				for(int p=0;p<colla.size();p++){
+					if(colla.get(p).contains(user)){
+						String[] str=colla.get(p).split(";");
+						relatedRepo.add(str[str.length-1]);
+					}
+				}
+				
+				list.get(i).setRelated(relatedRepo);
 				list.get(i).setHas(list3);
 				return list.get(i);
 			}
@@ -97,13 +114,12 @@ public class UserData implements UserDataService {
 	//	FileReader fr = new FileReader(new File("src/main/java/txtData/user_names.txt"));
 	//	BufferedReader br = new BufferedReader(new Input);
 		ArrayList<UserPO> list = new UserData().getUser();
-	//	System.out.println(list.size());
+	
 		UserPO po;
 		ArrayList<UserPO> list1=new ArrayList<UserPO>();
 		for(int i=0;i<list.size();i++){
 			po=list.get(i);
 			if(po.getLogin().contains(name)){
-		//		System.out.println(name);
 				list1.add(po);
 			}
 		}

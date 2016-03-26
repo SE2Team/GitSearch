@@ -17,8 +17,15 @@ public interface RepositoryDataService {
     ArrayList<String> getRepositoriesNames() throws IOException;
 
     RepositoryPO checkRepository(String userName, String reponame) throws IOException;
-
-    Map<String, Integer> languagesOfRepository(String userName, String reponame);
+    
+    /**
+     * 
+     * @param userName
+     * @param reponame
+     * @return用<String,Integer>表示的<编程语言,语言使用量>的Map
+     * @throws IOException
+     */
+    Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 

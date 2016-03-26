@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -173,9 +174,18 @@ public class RepositoryData implements RepositoryDataService {
 		return null;
 	}
 
-	public Map<String, Integer> languagesOfRepository(String userName, String reponame) {
+	public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		String str1="http://gitmining.net/api/repository"+userName+"/"
+				+reponame+"languages";
+		ArrayList<String> list=new GetData().getString(str1);
+		Map<String, Integer> map=new HashMap<String, Integer>();
+		for(int i=0;i<list.size()-1;i++){
+			String str[]=list.get(i).split(":");
+			map.put(str[0], Integer.parseInt(str[1]));
+		}
+		
+		return map;
 	}
 	
 	
