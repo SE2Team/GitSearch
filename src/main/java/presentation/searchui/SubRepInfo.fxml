@@ -57,7 +57,7 @@
             <Font name="Calibri" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="updateTime" layoutX="133.0" layoutY="27.0" text="2000-08-01" textFill="#00000097">
+      <Label fx:id="updateTime" layoutX="147.0" layoutY="27.0" text="2000-08-01" textFill="#00000097">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>

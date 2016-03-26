@@ -66,7 +66,7 @@ public class UserCheckController implements MyController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fxui.push();
+//        fxui.push();
     }
 
     /**
@@ -83,26 +83,28 @@ public class UserCheckController implements MyController{
     }
 
     private void setList() throws IOException {
-        for (int i=0;i<vo.getHas().size();i++){
-            poprepo.getChildren().addAll(getSub(vo.getHas().get(i)));
-            /**
-             * 最多放4+1个
-             */
-            if (i>=3){
-                poprepo.getChildren().addAll(getSub("@more"));
-                break;
+        if (vo.getHas()!=null) {
+            for (int i = 0; i < vo.getHas().size(); i++) {
+                poprepo.getChildren().addAll(getSub(vo.getHas().get(i)));
+                /**
+                 * 最多放4+1个
+                 */
+                if (i >= 3) {
+                    poprepo.getChildren().addAll(getSub("@more"));
+                    break;
+                }
             }
         }
-
-
-        for (int j=0;j<vo.getRelated().size();j++){
-            poprepo.getChildren().addAll(getSub(vo.getHas().get(j)));
-            /**
-             * 最多放4+1个
-             */
-            if (j>=3){
-                poprepo.getChildren().addAll(getSub("@more"));
-                break;
+        if(vo.getRelated()!=null) {
+            for (int j = 0; j < vo.getRelated().size(); j++) {
+                poprepo.getChildren().addAll(getSub(vo.getHas().get(j)));
+                /**
+                 * 最多放4+1个
+                 */
+                if (j >= 3) {
+                    poprepo.getChildren().addAll(getSub("@more"));
+                    break;
+                }
             }
         }
     }
