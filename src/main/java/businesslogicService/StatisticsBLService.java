@@ -1,6 +1,9 @@
 package businesslogicService;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Observable;
 
 import po.RepositoryPO;
@@ -20,7 +23,13 @@ import javafx.collections.ObservableList;
  */
 public interface StatisticsBLService {
 
-	ObservableList<StatisticsVO> getScore();
+	Iterator<Integer> getStar() throws IOException;
 	
-	StatisticsVO getScores(RepositoryPO po);
+	StatisticsVO getScores(RepositoryPO po) throws IOException;
+	
+	Iterator<Integer> getForks() throws IOException;
+	
+	Iterator<Integer> getCreated() throws IOException;
+	
+	Map<String, Integer> getLanguage() throws IOException;
 }

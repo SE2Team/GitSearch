@@ -1,6 +1,9 @@
 package businesslogic.RepositoryBL;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 import po.RepositoryPO;
 import po.StatisticsPO;
@@ -20,11 +23,23 @@ import vo.StatisticsVO;
  */
 public class StatisticsController {
 	Statistics statistics=new Statistics();
-	public ObservableList<StatisticsVO> getScore(){
-		return statistics.getScore();
+	public Iterator<Integer> getStar() throws IOException{
+		return statistics.getStar();
 	}
 	
 	public StatisticsVO getScores(RepositoryPO po) throws IOException{
 		return statistics.getScore(po);
+	}
+	
+	public Iterator<Integer> getForks() throws IOException{
+		return statistics.getForks();
+	}
+	
+	public Iterator<Integer> getCreated() throws IOException{
+		return statistics.getCreated();
+	}
+
+	public Map<String, Integer> getLanguage() throws IOException{
+		return statistics.getLanguage();
 	}
 }
