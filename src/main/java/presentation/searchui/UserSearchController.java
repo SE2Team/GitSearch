@@ -5,6 +5,7 @@ import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -37,6 +38,8 @@ public class UserSearchController implements MyController {
     private Button lpg;
     @FXML
     private TextField pgNum;
+    @FXML
+    private Label maxPg;
 
     /**
      * 排序部件
@@ -84,7 +87,7 @@ public class UserSearchController implements MyController {
         }
 
         page_max = (int) (vos.size() / 8);//计算最大页数
-
+        maxPg.setText(String.valueOf(page_max));
 
         updatePage();
 

@@ -66,7 +66,7 @@ public class UserCheckController implements MyController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        fxui.push();
+//        fxui.push();
     }
 
     /**
