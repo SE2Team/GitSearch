@@ -82,11 +82,27 @@
 }
 
 #Contributors{
-    -fx-font:System 24px;
+    -fx-font-size:24px;
     -fx-cursor:HAND;
 }
 
 #Collaborators{
-     -fx-font:System 24px;
+     -fx-font-size:24px;
      -fx-cursor:HAND;
+}
+
+#GitHome{
+    -fx-background-color:white;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( two-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }

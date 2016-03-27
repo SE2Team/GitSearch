@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
@@ -41,10 +42,11 @@
             <Label fx:id="following" text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label fx:id="id" layoutX="10.0" layoutY="34.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
+      <Label fx:id="id" layoutX="10.0" layoutY="31.0" prefHeight="29.0" prefWidth="592.0" text="ID" textFill="#00000097">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
       </Label>
+      <Line endX="935.0" endY="5.0" layoutX="9.0" layoutY="60.0" opacity="0.75" startY="5.0" stroke="#00000097" strokeWidth="0.5" />
    </children>
 </AnchorPane>
