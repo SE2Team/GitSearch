@@ -2,6 +2,9 @@ package data;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.ListResourceBundle;
+import java.util.Map;
 import java.util.Observable;
 
 import dataService.StatisticsDataService;
@@ -107,6 +110,72 @@ public class StatisticsData implements StatisticsDataService{
 		fork.add(twoThousand);
 		fork.add(over);
 		return fork;
+	}
+
+	
+	public ArrayList<Integer> getCreated() throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		int sevenYear=0;
+		int eightYear=0;
+		int nineYear=0;
+		int tenYear=0;
+		ArrayList<Integer> list2=new ArrayList<Integer>();
+		
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getCreated().length()>2){
+			String[] str=list.get(i).getCreated().substring(0, 10).split("-");
+			String str1=str[0]+str[1]+str[2];
+			int year=Integer.parseInt(str1);
+		
+			if(year<=20080000){
+				sevenYear++;
+				}
+			else if(year>=20080000&&year<=20090000){
+					eightYear++;
+					
+				}
+			else if(year<=20100000&&year>=20090000){
+				nineYear++;
+				}
+			else if(year>20100000){
+				tenYear++;
+				}
+			}
+		}
+		list2.add(sevenYear);
+		list2.add(eightYear);
+		list2.add(nineYear);
+		list2.add(tenYear);
+		return list2;
+	}
+
+	
+	public Map<String, Integer> getLanguage() throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> listInt = new ArrayList<Integer>();
+		ArrayList<String> listString = new GetData("languages").readData();
+		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (int j = 0; j < listString.size(); j++) {
+			listInt.add(0);
+		}
+
+		for (int i = 0; i < list.size(); i++) {
+			String language = list.get(i).getLanguage();
+			if (language.equals("")) {
+
+			} else {
+				int n = listInt.get(listString.indexOf(language)) + 1;
+				listInt.set(listString.indexOf(language), n);
+			}
+		}
+
+		for (int j = 0; j < listString.size(); j++) {
+			map.put(listString.get(j), listInt.get(j));
+		}
+
+		return map;
 	}
 
 }
