@@ -22,7 +22,6 @@ public class SubContriController implements MyController{
 
     public void setFxui(FXUITest fxui) {
         this.fxuiTest=fxui;
-        fxuiTest.push();
     }
 
     public void repaint() {

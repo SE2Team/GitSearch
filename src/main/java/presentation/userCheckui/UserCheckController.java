@@ -66,7 +66,6 @@ public class UserCheckController implements MyController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        fxui.push();
     }
 
     /**
@@ -97,12 +96,12 @@ public class UserCheckController implements MyController{
         }
         if(vo.getRelated()!=null) {
             for (int j = 0; j < vo.getRelated().size(); j++) {
-                poprepo.getChildren().addAll(getSub(vo.getHas().get(j)));
+                relarepo.getChildren().addAll(getSub(vo.getRelated().get(j)));
                 /**
                  * 最多放4+1个
                  */
                 if (j >= 3) {
-                    poprepo.getChildren().addAll(getSub("@more"));
+                    relarepo.getChildren().addAll(getSub("@more"));
                     break;
                 }
             }

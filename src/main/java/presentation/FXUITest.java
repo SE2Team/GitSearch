@@ -56,15 +56,9 @@ public class FXUITest extends Application {
     private void initHome() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("./homeui/Home.fxml"));
-//        try {
-//            loader.setLocation(new URL("/homeui/Home.fxml"));
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
 
         try {
             homeLayout = (BorderPane) loader.load();
-//            homeLayout.
             HomeController controller = loader.getController();
             controller.setFxui(this);
             controller.repaint();
@@ -72,6 +66,7 @@ public class FXUITest extends Application {
             e.printStackTrace();
         }
         Scene scene = new Scene(homeLayout);
+        homeLayout.setCenter(null);
         primaryStage.setScene(scene);
 
         primaryStage.show();
@@ -94,6 +89,7 @@ public class FXUITest extends Application {
     }
 
     public void checkRepo(RepositoryVO vo) {
+        this.push();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -119,7 +115,7 @@ public class FXUITest extends Application {
     }
 
     public void checkUser(UserVO vo) {
-//        this.push();
+        this.push();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("userCheckui/UserCheck.fxml"));
 
@@ -207,6 +203,8 @@ public class FXUITest extends Application {
      * 后退栈压栈，然后清空前进栈
      */
     public void push(){
+        if(this.homeLayout.getCenter()==null)
+            return;
         bpanes.push((Parent) this.homeLayout.getCenter());
         apanes.removeAllElements();
         System.out.println("压后退栈");

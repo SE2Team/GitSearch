@@ -21,6 +21,12 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+        <dependency>
+            <groupId>GitSearch</groupId>
+            <artifactId>GitSearch</artifactId>
+            <version>0.1</version>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>

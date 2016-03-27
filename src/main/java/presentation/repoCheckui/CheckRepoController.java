@@ -80,29 +80,32 @@ public class CheckRepoController implements MyController{
             e.printStackTrace();
         }
 
-        fxui.push();
     }
 
     private void setList() throws IOException {
-        for(int i=0;i<vo.getContributors().size();i++){
-            contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
-            /**
-             * 最多只能放7个+一个more
-             */
-            if(i>=6){
-                contributorPane.getChildren().addAll(getSub("@more"));
-                break;
+        if (vo.getContributors()!=null) {
+            for (int i = 0; i < vo.getContributors().size(); i++) {
+                contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
+                /**
+                 * 最多只能放7个+一个more
+                 */
+                if (i >= 6) {
+                    contributorPane.getChildren().addAll(getSub("@more"));
+                    break;
+                }
             }
         }
 
-        for(int i=0;i<vo.getCollaborators().size();i++){
-            collaboratorPane.getChildren().add(getSub(vo.getCollaborators().get(i)));
-            /**
-             * 最多只能放7个+一个more
-             */
-            if(i>=6){
-                collaboratorPane.getChildren().addAll(getSub("@more"));
-                break;
+        if(vo.getCollaborators()!=null) {
+            for (int i = 0; i < vo.getCollaborators().size(); i++) {
+                collaboratorPane.getChildren().add(getSub(vo.getCollaborators().get(i)));
+                /**
+                 * 最多只能放7个+一个more
+                 */
+                if (i >= 6) {
+                    collaboratorPane.getChildren().addAll(getSub("@more"));
+                    break;
+                }
             }
         }
     }

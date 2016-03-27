@@ -98,6 +98,7 @@ public class UserSearchController implements MyController {
      * 用于本地更新页面（翻页）的方法
      */
     private void updatePage() {
+
         /**
          * remove it's small pane
          */

@@ -23,7 +23,6 @@ public class SubRepoController implements MyController {
 
     public void setFxui(FXUITest fxui) {
         fxuiTest=fxui;
-        fxuiTest.push();
     }
 
     public void repaint() {

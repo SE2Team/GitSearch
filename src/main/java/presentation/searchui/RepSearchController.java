@@ -1,5 +1,6 @@
 package presentation.searchui;
 
+import Util.Repository_Sort;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
 import javafx.fxml.FXML;
@@ -99,6 +100,7 @@ public class RepSearchController implements MyController {
      * 用于本地更新页面（翻页）的方法
      */
     private void updatePage() {
+
         /**
          * remove it's small pane
          */
@@ -135,6 +137,7 @@ public class RepSearchController implements MyController {
 
         controller.setFxui(fxuiTest);
         controller.setVo(vo);
+
         controller.repaint();
         return anchorPane;
     }
@@ -145,11 +148,34 @@ public class RepSearchController implements MyController {
 
     @FXML
     private void handleStar() {
-
+        vos.clear();
+        try {
+            Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.star);
+            while (itr.hasNext()) {
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+        updatePage();
     }
 
     @FXML
     private void handleFork() {
+        vos.clear();
+        try {
+            Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.fork);
+            while (itr.hasNext()) {
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+        updatePage();
     }
 
     @FXML
@@ -159,6 +185,18 @@ public class RepSearchController implements MyController {
 
     @FXML
     private void handleContributor() {
+        vos.clear();
+        try {
+            Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.contributor);
+            while (itr.hasNext()) {
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+        updatePage();
 
     }
 
@@ -203,4 +241,5 @@ public class RepSearchController implements MyController {
             e.printStackTrace();
         }
     }
+
 }

@@ -40,17 +40,12 @@ public class SubRepInfoController  implements MyController{
         description.setText(vo.getDescription());
         forks.setText(String.valueOf(vo.getForks()));
         updateTime.setText(vo.getUpdated());
-//        stars.setText(String.valueOf(vo.getStargazers_count()));
+        stars.setText(String.valueOf(vo.getStargazers()));
         contributors.setText(String.valueOf(vo.getContributor()));
     }
 
     public void setVo(RepositoryVO vo) {
         this.vo = vo;
-    }
-
-    @FXML
-    private void HandleCheck(){
-        fxui.checkRepo(vo);
     }
 
     @FXML
