@@ -3,6 +3,7 @@ package presentation.repoCheckui;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.chart.StackedBarChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
@@ -41,6 +42,9 @@ public class CheckRepoController implements MyController{
 
     @FXML
     private FlowPane collaboratorPane;
+
+    @FXML
+    private StackedBarChart langChart;
 
 //    @FXML
 //    private Tab conTab;

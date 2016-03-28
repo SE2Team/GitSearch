@@ -1,5 +1,6 @@
 package presentation.searchui;
 
+import Util.User_Sort;
 import businesslogic.userBL.UserController;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
@@ -180,11 +181,39 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handleFollowers() {
+        vos.clear();//清空数组
+        try {
+            Iterator<UserVO> itr = bl.sortUser(User_Sort.Followers);
+            while (itr.hasNext()) {
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        page_max = (int) (vos.size() / 8);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+
+        updatePage();
 
     }
 
     @FXML
     private void handleRepo() {
+        vos.clear();//清空数组
+        try {
+            Iterator<UserVO> itr = bl.sortUser(User_Sort.Following);
+            while (itr.hasNext()) {
+                vos.add(itr.next());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        page_max = (int) (vos.size() / 8);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+
+        updatePage();
 
     }
 

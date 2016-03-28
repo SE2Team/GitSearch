@@ -58,9 +58,11 @@ public class UserCheckController implements MyController{
         String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
         company.setText(comp);
         followers.setText(String.valueOf(vo.getFollowers()));
-        email.setText(vo.getEmail());
+        String emailText=vo.getEmail()==""?"Unknown":vo.getCompany();
+        email.setText(emailText);
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
+        company.setText(vo.getCompany());
         try {
             setList();
         } catch (IOException e) {
