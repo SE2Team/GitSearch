@@ -1,11 +1,16 @@
 package presentation.homeui;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import presentation.common.MyButton;
 import presentation.common.MyFont;
 import presentation.common.MyJTextField;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class HomePanel extends JPanel{
 
@@ -17,8 +22,7 @@ public class HomePanel extends JPanel{
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-
-		Image logo = new ImageIcon(this.getClass().getResource("/Images/Logo.jpg")).getImage();
+		Image logo = new ImageIcon("Images/Logo.jpg").getImage();
 		g.drawImage(logo, 250, 120, 200,50,this);
 	}
 	

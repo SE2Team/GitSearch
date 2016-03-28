@@ -84,9 +84,9 @@ public class RepoInfo extends MyPanel{
         contributors.setBounds(bx+4*jl_w+3*addx,by,2*jl_w+15,jl_h);
         
        
-        stars_num=new JLabel(vo.getStargazers_count()+"",JLabel.CENTER);
-        stars_num.setFont(MyFont.Calibri);
-        stars_num.setBounds(bx,by+addy,jl_w,jl_h);
+//        stars_num=new JLabel(vo.getStargazers_count()+"",JLabel.CENTER);
+//        stars_num.setFont(MyFont.Calibri);
+//        stars_num.setBounds(bx,by+addy,jl_w,jl_h);
         
         forks_num=new JLabel(vo.getForks()+"",JLabel.CENTER);
         forks_num.setFont(MyFont.Calibri);

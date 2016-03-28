@@ -60,9 +60,9 @@ public class RepInfoSubPanel extends JPanel{
 		fork_num.setFont(MyFont.Calibri);
 		fork_num.setBounds(w-x-jl_w-addx, y+addy, jl_w, jl_h);
 		
-		star_num = new JLabel(rvo.getStargazers_count()+"",JLabel.CENTER);
-		star_num.setFont(MyFont.Calibri);
-		star_num.setBounds(w-x-2*jl_w-2*addx, y+addy, jl_w, jl_h);
+//		star_num = new JLabel(rvo.getStargazers_count()+"",JLabel.CENTER);
+//		star_num.setFont(MyFont.Calibri);
+//		star_num.setBounds(w-x-2*jl_w-2*addx, y+addy, jl_w, jl_h);
         this.setBorder(BorderFactory.createEtchedBorder());
         this.add(jl_repName);
         this.add(jl_star);

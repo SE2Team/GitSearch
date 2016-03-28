@@ -1,0 +1,92 @@
+#repoPane,#relaPane{
+    -fx-border-width:1;
+    -fx-border-insets:0;
+    -fx-border-color:GRAY;
+}
+.split-pane:vertical .split-pane-divider,.split-pane:horizontal .split-pane-divider{
+    /*-fx-position-shape: false;*/
+    /*visibility: hidden;*/
+}
+
+#back{
+    -fx-background-image: url("Images/back.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+}
+#home{
+    -fx-background-image: url("Images/Home.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#advance{
+    -fx-background-image: url("Images/forward.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#search_button{
+    -fx-background-image: url("Images/search.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#PageUp{
+    -fx-background-image: url("Images/上一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#PageDown{
+    -fx-background-image: url("Images/下一页.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#RepFlowPane{
+    -fx-vgap:8;
+    -fx-hgap:5;
+}
+#timePane{
+    -fx-vgap:8;
+    -fx-hgap:24;
+}
+#FirstPage{
+    -fx-background-image: url("Images/FirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+#LastPage{
+    -fx-background-image: url("Images/LastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#Contributors{
+    -fx-font:System 24px;
+    -fx-cursor:HAND;
+}
+
+#Collaborators{
+     -fx-font:System 24px;
+     -fx-cursor:HAND;
+}

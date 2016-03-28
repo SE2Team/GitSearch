@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
+   <children>
+      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="47.0" layoutY="18.0" text="筛选条件">
+                     <font>
+                        <Font name="YouYuan" size="28.0" />
+                     </font>
+                  </Label>
+                  <Accordion layoutX="2.0" layoutY="62.0">
+                    <panes>
+                      <TitledPane animated="false" stylesheets="@../../default.css" text="Regist Time">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <FlowPane id="timePane" columnHalignment="CENTER" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <children>
+                                          <Button mnemonicParsing="false" text="2007">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="2008">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="2009">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="2010">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="2011">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" text="2012">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </FlowPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="80.0" prefHeight="544.0" prefWidth="954.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="17.0" layoutY="3.0" text="User Sort">
+                     <font>
+                        <Font name="Calibri Light" size="26.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="general" layoutX="58.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleGeneral" text="General">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="followers" layoutX="153.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleFollowers" text="Followers">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="repo" layoutX="262.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleRepo" text="NumOfOwningRep">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="574.0" layoutY="628.0" prefHeight="22.0" prefWidth="112.0" text="共            页">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" onKeyReleased="#handlePgNum" prefHeight="30.0" prefWidth="60.0" text="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button id="PageDown" fx:id="pgDn" layoutX="493.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="30.0" prefWidth="30.0" stylesheets="@../../default.css" />
+                  <Button id="PageUp" fx:id="pgUp" layoutX="389.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="30.0" prefWidth="30.0" />
+                  <Button id="FirstPage" fx:id="fpg" layoutX="356.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                  <Button id="LastPage" fx:id="lpg" layoutX="528.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                  <StackPane layoutX="589.0" layoutY="626.0" prefHeight="26.0" prefWidth="60.0">
+                     <children>
+                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="53.0" />
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

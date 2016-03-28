@@ -1,3 +1,4 @@
+
 package businesslogicService;
 
 import Util.*;
@@ -17,7 +18,7 @@ public interface RepositoryBLService {
 
     RepositoryVO checkRepository(String userName, String reponame) throws IOException;
 
-    Map<String, Integer> languagesOfRepository(String userName, String reponame);
+    Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 

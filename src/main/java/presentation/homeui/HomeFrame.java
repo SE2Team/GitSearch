@@ -1,23 +1,27 @@
 package presentation.homeui;
 
-import Util.SearchType;
-import businesslogic.RepositoryBL.RepositoryController;
-import businesslogic.userBL.UserController;
-import businesslogicService.RepositoryBLService;
-import businesslogicService.UserBLService;
-import presentation.searchui.RepSortPanel;
-import presentation.searchui.SearchFrame;
-import presentation.searchui.UserSortPanel;
-import vo.RepositoryVO;
-import vo.UserVO;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import javax.swing.JFrame;
+
+import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.userBL.UserController;
+import businesslogicService.RepositoryBLService;
+import businesslogicService.UserBLService;
+import Util.SearchType;
+import presentation.searchui.RepSortPanel;
+import presentation.searchui.SearchFrame;
+import presentation.searchui.SearchPanel;
+import presentation.searchui.UserSortPanel;
+import vo.RepositoryVO;
+import vo.UserVO;
 
 public class HomeFrame extends JFrame {
 	private HomePanel homePanel;
@@ -52,7 +56,6 @@ public class HomeFrame extends JFrame {
 					repBL = new RepositoryController();
 					try {
 						sf = new SearchFrame(SearchType.SearchRep);
-						sf.getPanel().getJtf_search().setText(name);
 						rvos = new ArrayList<RepositoryVO>();
 						Iterator<RepositoryVO> itr = null;
 						itr=repBL.Search(name);
@@ -85,7 +88,6 @@ public class HomeFrame extends JFrame {
 					userBL = new UserController();
 					try {
 						sf = new SearchFrame(SearchType.SearchUser);
-						sf.getPanel().getJtf_search().setText(name);
 						uvos = new ArrayList<UserVO>();
 						Iterator<UserVO> itr = null;
 						itr=userBL.search(name);

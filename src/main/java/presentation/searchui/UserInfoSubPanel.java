@@ -1,14 +1,19 @@
 package presentation.searchui;
 
-import presentation.common.MyColor;
-import presentation.common.MyFont;
-import presentation.userCheckui.UserCheckFrame;
-import vo.UserVO;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import presentation.common.MyColor;
+import presentation.common.MyFont;
+import presentation.repoCheckui.RepCheckFrame;
+import presentation.userCheckui.UserCheckFrame;
+import vo.UserVO;
 
 public class UserInfoSubPanel extends JPanel{
 	
@@ -20,10 +25,10 @@ public class UserInfoSubPanel extends JPanel{
 		int x=105,y=h/8,jl_w=50,jl_h=30,addx=5,addy=20;
 		
 		String name;
-		if(uvo.getLogin().equals(""))
+		if(uvo.getName().equals(""))
 			name = "Unknown";
 		else
-			name = uvo.getLogin();
+			name = uvo.getName();
 		
 		jl_UserName = new JLabel(name);
 		jl_UserName.setFont(MyFont.Comic2);

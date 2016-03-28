@@ -26,89 +26,116 @@ public class RepositoryVO {
     int contributor = 0;
     int open_issues = 0;
     int subscribers_count = 0;
+    int collaborators_count = 0;// 合作者
+    ArrayList<String> collaborators;
+    ArrayList<String> contributors;
 
-    public RepositoryVO(String name, int id, String owner_type, String html_url, String description, boolean fork,
-                        String created, String updated, String pushed, int size, int stargazers_count,
-                        String language, int forks, int contributor, int open_issues, int subscribers_count) {
+
+    public RepositoryVO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
+                        String created, String updated, String pushed, int size, int stargazers_count, String language, int forks,
+                        int open_issues, int subscribers_count, int contributor, int collaborators_count,
+                        ArrayList<String> collaborators, ArrayList<String> contributors) {
+
         this.name = name;
+        this.subscribers_count = subscribers_count;// 订阅者
+        this.open_issues = open_issues;
+        this.forks = forks;
+        this.language = language;
+        this.stargazers_count = stargazers_count;// 点赞者
+        this.size = size;
+        this.pushed = pushed;
+        this.updated = updated;
+        this.created = created;
+        this.fork = fork;
         this.id = id;
         this.owner_type = owner_type;
         this.html_url = html_url;
         this.description = description;
-        this.fork = fork;
-        this.created = created;
-        this.updated = updated;
-        this.pushed = pushed;
-        this.size = size;
-        this.stargazers_count = stargazers_count;
-        this.language = language;
-        this.forks = forks;
         this.contributor = contributor;
-        this.open_issues = open_issues;
-        this.subscribers_count = subscribers_count;
+        this.collaborators_count = collaborators_count;
+        this.collaborators = collaborators;
+        this.contributors = collaborators;
+
+
     }
 
-    public String getName() {
-        return name;
+
+    public ArrayList<String> getContributors() {
+        return this.contributors;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getOwner_type() {
-        return owner_type;
-    }
-
-    public String getHtml_url() {
-        return html_url;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public boolean getFork() {
-        return fork;
-    }
-
-    public String getCreated() {
-        return created;
-    }
-
-    public String getUpdated() {
-        return updated;
-    }
-
-    public String getPushed() {
-        return pushed;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public int getStargazers_count() {
-        return stargazers_count;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public int getForks() {
-        return forks;
+    public ArrayList<String> getCollaborators() {
+        return this.collaborators;
     }
 
     public int getContributor() {
-        return contributor;
-    }
-
-    public int getOpen_issues() {
-        return open_issues;
+        return this.contributor;
     }
 
     public int getSubscribers_count() {
-        return subscribers_count;
+        return this.subscribers_count;
     }
+
+    public int getOpen_issues() {
+        return this.open_issues;
+    }
+
+    public int getForks() {
+        return this.forks;
+    }
+
+    public String getLanguage() {
+        return this.language;
+    }
+
+    public int getStargazers() {
+        return this.stargazers_count;
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public String getPushed() {
+        return this.pushed;
+    }
+
+    public String getUpdated() {
+        return this.updated;
+    }
+
+    public String getCreated() {
+        return this.created;
+    }
+
+    public boolean getFork() {
+        return this.fork;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String getOwner_type() {
+        return this.owner_type;
+    }
+
+    public String getHtml_url() {
+        return this.html_url;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getCollaborators_count() {
+        return this.collaborators_count;
+    }
+
+
+
 }

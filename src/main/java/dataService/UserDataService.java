@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Util.UserInfo;
+import Util.User_Sort;
 import businesslogic.userBL.User;
 import po.UserPO;
 
@@ -88,4 +89,6 @@ public interface UserDataService {
     ArrayList<UserPO> search(String name) throws FileNotFoundException, IOException;
     
     ArrayList<UserPO> getUser() throws IOException;
+    
+    ArrayList<UserPO> sortUser(User_Sort sort) throws IOException;
 }

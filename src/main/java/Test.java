@@ -1,5 +1,4 @@
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-import presentation.homeui.HomeFrame;
 
 import javax.swing.*;
 
@@ -15,10 +14,7 @@ public class Test extends JFrame{
 //	}
     public static void main(String[] args) {
 //    	new SearchFrame();
-        Test t=new Test();
-//        System.out.println(t.getClass().getResource(""));
-        new HomeFrame();
-
+//        new HomeFrame();
 
 //        try {
 //            UIManager.setLookAndFeel(new WindowsLookAndFeel());
@@ -34,5 +30,7 @@ public class Test extends JFrame{
             e.printStackTrace();
         }
 //        new RepCheckFrame();
+//        System.out.println((int)19/8);
+        System.out.println("i n".replaceAll(" ",""));
     }
 }

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.CheckRepoController">
+   <children>
+      <SplitPane dividerPositions="0.21282798833819241" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="1280.0" stylesheets="@../../default.css">
+               <children>
+                  <Label fx:id="reponame" layoutX="14.0" layoutY="2.0" text="GitFan/GitSearch">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="description" layoutX="20.0" layoutY="87.0" prefHeight="39.0" prefWidth="630.0" text="description here" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Label>
+                  <GridPane alignment="CENTER" layoutX="674.0" layoutY="43.0" prefHeight="78.0" prefWidth="597.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="674.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="43.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="105.33331298828125" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="239.66668701171875" minWidth="10.0" prefWidth="105.33331298828125" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="181.66668701171875" minWidth="10.0" prefWidth="136.3333740234375" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.6666259765625" minWidth="10.0" prefWidth="120.6666259765625" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="118.3333740234375" minWidth="10.0" prefWidth="118.3333740234375" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Stars" textFill="#00000097">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label text="Forks" textFill="#00000097" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label text="Contributors" textFill="#00000097" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label GridPane.columnIndex="4" />
+                        <Label fx:id="stars" text="Label" textFill="#00000097" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label fx:id="forks" text="Label" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label fx:id="contributors" text="Label" textFill="#00000097" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label fx:id="collaborator" text="Label" textFill="#00000097" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" text="Subscribers" textAlignment="CENTER" textFill="#00000097" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label fx:id="subscribers" text="Label" textFill="#00000097" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                        <Label text="Collaborator" textFill="#00000097" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></Label>
+                     </children>
+                  </GridPane>
+                  <Label layoutX="17.0" layoutY="63.0" text="Creator:">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="owner" layoutX="87.0" layoutY="63.0" text="name here">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="1278.0">
+                     <children>
+                        <StackedAreaChart layoutX="525.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </StackedAreaChart>
+                        <Label layoutX="43.0" layoutY="213.0" text="Contributors">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <SplitPane dividerPositions="0.6473354231974922" layoutX="92.0" layoutY="41.0" prefHeight="524.0" prefWidth="1278.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="721.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="97.0" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="216.0" prefWidth="820.0">
+                                             <children>
+                                                <Label layoutX="25.0" layoutY="12.0" text="Language">
+                                                   <font>
+                                                      <Font size="30.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="54.0" layoutY="54.0" text="Main Language:">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="language" layoutX="216.0" layoutY="56.0" text="Java">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </Label>
+                                                <StackedBarChart layoutX="569.0" layoutY="15.0" prefHeight="220.0" prefWidth="220.0">
+                                                  <xAxis>
+                                                    <CategoryAxis side="BOTTOM" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis side="LEFT" />
+                                                  </yAxis>
+                                                </StackedBarChart>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <TabPane layoutX="-2.0" layoutY="1.0" prefHeight="289.0" prefWidth="823.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE">
+                                                  <tabs>
+                                                    <Tab id="Contributors" text="Contributors">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
+                                                               </children></AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                    <Tab id="Collaborators" text="Collaborators">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <FlowPane fx:id="collaboratorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
+                                                               </children></AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                  </tabs>
+                                                </TabPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="841.0">
+                                 <children>
+                                    <StackedBarChart layoutX="7.0" layoutY="43.0" prefHeight="385.0" prefWidth="433.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </StackedBarChart>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -22,10 +22,11 @@
             <version>4.12</version>
         </dependency>
         <dependency>
-	<groupId>junit</groupId>
-	<artifactId>junit</artifactId>
-	<version>4.12</version>
-</dependency>
+            <groupId>GitSearch</groupId>
+            <artifactId>GitSearch</artifactId>
+            <version>0.1</version>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
@@ -71,17 +72,26 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
 
         </plugins>
+
         <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.fxml</include>
+                    <include>**/*.css</include>
+                    <include>**/*.png</include>
+                    <include>**/*.json</include>
+                    <include>**/*.txt</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.icon</include>
+                    <include>**/*.JPG</include>
+                </includes>
+                <!-- 是否替换资源中的属性-->
+                <filtering>false</filtering>
+            </resource>
             <resource>
                 <directory>src/main/resource</directory>
                 <includes>
@@ -91,7 +101,11 @@
                     <include>**/*.jpg</include>
                     <include>**/*.icon</include>
                     <include>**/*.JPG</include>
+                    <include>**/*.fxml</include>
+                    <include>**/*.css</include>
+
                 </includes>
+
             </resource>
         </resources>
 
