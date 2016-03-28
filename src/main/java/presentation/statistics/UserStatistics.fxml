@@ -10,12 +10,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane layoutX="47.0" layoutY="69.0" prefHeight="660.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Language">
+          <Tab text="User Type">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -27,7 +26,7 @@
                             <NumberAxis side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <Label layoutX="388.0" layoutY="44.0" text="Numbers of Repository in Different Languages">
+                        <Label layoutX="589.0" layoutY="38.0" text="User Type">
                            <font>
                               <Font name="Calibri" size="25.0" />
                            </font>
@@ -40,7 +39,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="444.0" layoutY="46.0" text="The Distribution of Create Time">
+                        <Label layoutX="537.0" layoutY="44.0" text="User Create Time">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -57,11 +56,11 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Fork">
+            <Tab text="Related Repositories">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="335.0" layoutY="46.0" text="Numbers of Repository in Different Ranges of Fork">
+                        <Label layoutX="463.0" layoutY="49.0" text="Related Repositories per User">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -78,11 +77,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Star">
+            <Tab text="Owning Repositories">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="324.0" layoutY="38.0" text="Numbers of Repository in Different Ranges of Star">
+                        <Label layoutX="463.0" layoutY="39.0" text="Related Repositories per User">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -99,32 +98,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Contributors">
+            <Tab text="User-in-Company">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="323.0" layoutY="38.0" text="Numbers of Repository in Different Ranges of Contributors">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                        </BarChart>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="Collaborators">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="289.0" layoutY="40.0" text="Numbers of Repository in Different Ranges of Collabotators">
+                        <Label layoutX="431.0" layoutY="38.0" text="Numbers of User in each Company">
                            <font>
                               <Font size="25.0" />
                            </font>
