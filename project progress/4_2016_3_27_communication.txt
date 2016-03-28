@@ -1,5 +1,0 @@
-who:陈欢，奕锟，万兴，金小枫
-when:第4周
-what:一起写代码
-how long:3h
-arrived solution:一起写代码
