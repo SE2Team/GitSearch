@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
+import dataService.StatisticsDataService;
 import po.RepositoryPO;
 import po.StatisticsPO;
 import javafx.collections.ObservableList;
@@ -21,7 +22,7 @@ import vo.StatisticsVO;
  * @return  
  *@throws 寮傚父绫诲強鎶涘嚭鏉′欢
  */
-public class StatisticsController {
+public class StatisticsController implements StatisticsDataService{
 	Statistics statistics=new Statistics();
 	public Map<String,Integer> getStar() throws IOException{
 		return statistics.getStar();
