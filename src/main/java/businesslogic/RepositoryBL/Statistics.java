@@ -26,23 +26,39 @@ import dataService.DataFatoryService;
 public class Statistics {
 
 	private DataFatoryService factory=new DataFactory();
-	public Iterator<Integer> getStar() throws IOException{
-		return factory.getStatisticsDataService().getStar().iterator();
+	public Map<String,Integer> getStar() throws IOException{
+		return factory.getStatisticsDataService().getStar();
 	}
-	public StatisticsVO getScore(RepositoryPO po) throws IOException {
+	public StatisticsVO getScores(RepositoryPO po) throws IOException {
 		// TODO Auto-generated method stub
 		return PO2VO.convert(factory.getStatisticsDataService().getScores(po));
 	}
 	
-	public Iterator<Integer> getForks() throws IOException{
-		return factory.getStatisticsDataService().getForks().iterator();
+	public Map<String,Integer> getForks() throws IOException{
+		return factory.getStatisticsDataService().getForks();
 	}
 	
-	public Iterator<Integer> getCreated() throws IOException{
-		return factory.getStatisticsDataService().getCreated().iterator();
+	public Map<String,Integer> getRepoCreated() throws IOException{
+		return factory.getStatisticsDataService().getRepoCreated();
 	}
 
 	public Map<String, Integer> getLanguage() throws IOException{
 		return factory.getStatisticsDataService().getLanguage();
+	}
+	
+	public Map<String, Integer>  getUserCreated() throws IOException{
+		return factory.getStatisticsDataService().getUserCreated();
+	}
+	
+	public Map<String, Integer> getUserType() throws IOException{
+		return factory.getStatisticsDataService().getUserType();
+	}
+	
+	public Map<Integer, Integer> getUserHas(){
+		return factory.getStatisticsDataService().getUserHas();
+	}
+	
+	public Map<Integer, Integer> getUserRelated(){
+		return factory.getStatisticsDataService().getUserRelated();
 	}
 }
