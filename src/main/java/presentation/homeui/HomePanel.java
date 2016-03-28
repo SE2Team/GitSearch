@@ -1,5 +1,9 @@
 package presentation.homeui;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -11,6 +15,17 @@ import javax.swing.JPanel;
 import presentation.common.MyButton;
 import presentation.common.MyFont;
 import presentation.common.MyJTextField;
+<<<<<<< HEAD
+=======
+=======
+import presentation.common.MyButton;
+import presentation.common.MyFont;
+import presentation.common.MyJTextField;
+
+import javax.swing.*;
+import java.awt.*;
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
 public class HomePanel extends JPanel{
 

@@ -1,11 +1,16 @@
 
 /target/
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982
 /.idea/*
 
 
 *.iml
+<<<<<<< HEAD
 
 /
 bin/
@@ -16,3 +21,8 @@ bin/
 
 .project
 dependency-reduced-pom.xml
+=======
+=======
+.idea/*
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982

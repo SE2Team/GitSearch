@@ -1,4 +1,11 @@
 import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import presentation.homeui.HomeFrame;
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
 import javax.swing.*;
 
@@ -14,7 +21,18 @@ public class Test extends JFrame{
 //	}
     public static void main(String[] args) {
 //    	new SearchFrame();
+<<<<<<< HEAD
 //        new HomeFrame();
+=======
+<<<<<<< HEAD
+//        new HomeFrame();
+=======
+        Test t=new Test();
+//        System.out.println(t.getClass().getResource(""));
+        new HomeFrame();
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
+
+>>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
 //        try {
 //            UIManager.setLookAndFeel(new WindowsLookAndFeel());
