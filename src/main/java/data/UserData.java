@@ -1,12 +1,17 @@
 package data;
 
+import dataService.UserDataService;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import po.UserPO;
+
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -16,6 +21,8 @@ import dataService.UserDataService;
 import po.RepositoryPO;
 import po.UserPO;
 
+=======
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 /**
  * Created by moeyui on 2016/3/4 0004.
  */
@@ -24,6 +31,21 @@ public class UserData implements UserDataService {
 	static String string = "http://www.gitmining.net/api/user";
 
 	public UserPO CheckUser(String user) throws IOException {
+<<<<<<< HEAD
+=======
+		JSONObject obj = new JSONObject();
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+                this.getClass().getResourceAsStream("/txtData/users.json")
+        ));
+		String string = br.readLine();
+		JSONArray obj1 = new JSONArray(string);
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 		
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<String> list3=new ArrayList<String>();
@@ -63,9 +85,20 @@ public class UserData implements UserDataService {
 	public String UserInfo(String user, Util.UserInfo info) throws IOException {
 		// TODO Auto-generated method stub
 		JSONObject obj = new JSONObject();
+<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/users.json")));
+=======
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(
+                new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 		String string = br.readLine();
 		String s1 = "";
 		JSONArray obj1 = new JSONArray(string);
@@ -111,6 +144,7 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> search(String name) throws IOException {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File("src/main/java/txtData/user_names.txt"));
 	//	BufferedReader br = new BufferedReader(new Input);
 		ArrayList<UserPO> list = new UserData().getUser();
@@ -119,12 +153,34 @@ public class UserData implements UserDataService {
 		ArrayList<UserPO> list1=new ArrayList<UserPO>();
 		for(int i=0;i<list.size();i++){
 			po=list.get(i);
+=======
+//		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/user_names.txt").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+//		BufferedReader br = new BufferedReader(fr);
+//		String temp;
+//		ArrayList<UserPO> list = new ArrayList<UserPO>();
+//		while ((temp = br.readLine()) != null) {
+//			if (temp.contains(name)) {
+//				list.add(new UserData().CheckUser(temp));
+//			}
+//		}
+		ArrayList<UserPO> list1=new ArrayList<>();
+		ArrayList<UserPO> list=this.getUser();
+		for(UserPO po:list){
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 			if(po.getLogin().contains(name)){
 				list1.add(po);
 			}
 		}
+<<<<<<< HEAD
 		
 	
+=======
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 		return list1;
 	}
 
@@ -133,10 +189,21 @@ public class UserData implements UserDataService {
 		
 		ArrayList<UserPO> list = new ArrayList<UserPO>();
 		JSONObject obj = new JSONObject();
+<<<<<<< HEAD
 		
 //		FileReader fr = new FileReader(new File("src/main/java/txtData/users.json"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/users.json")));
+=======
+		FileReader fr = null;
+//		try {
+//			fr = new FileReader(new File(this.getClass().getResource("/txtData/users.json").toURI()));
+//		} catch (URISyntaxException e) {
+//			e.printStackTrace();
+//		}
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
+>>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
 		for (int j = 0; j < obj1.length(); j++) {

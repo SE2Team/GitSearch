@@ -1,0 +1,5 @@
+who:金小枫、陈欢、蒙奕锟、万兴
+when:第4周
+what:检查大家工作，要求重做的问题
+how long:2h
+arrived solution：1.明确各层的质量问题，准备重做

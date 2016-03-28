@@ -1,0 +1,5 @@
+who:蒙奕锟
+when:第四周
+what:用javafx重构界面，完成界面的逻辑控制
+problem:javaFX和maven的相性很不好，对资源文件的引用很有问题
+todo:开始完成图表的展示

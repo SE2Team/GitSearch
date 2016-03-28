@@ -1,25 +1,5 @@
 package presentation.searchui;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-
-import org.omg.Messaging.SyncScopeHelper;
-
 import Util.Repository_Sort;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
@@ -28,6 +8,16 @@ import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.common.MyRecButton;
 import vo.RepositoryVO;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /***
  * 项目排序面板
@@ -44,10 +34,12 @@ public class RepSortPanel extends MyPanel {
 	private JLabel front, next, num, sum;
 	private MyPanel sortPanel;
 	int n = 1;// 记录当前页数
+	private int page_num;
 
 	int L_x = 0, L_y = 0, width = 150, height = 30;
 	int sortPanel_h = this.getHeight() - height - 30, subPanel_h = 60;
 	int subPanelNum = sortPanel_h / subPanel_h;
+
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -106,27 +98,11 @@ public class RepSortPanel extends MyPanel {
 		sortPanel.setLayout(new GridLayout(subPanelNum, 1));
 		sortPanel.setBackground(Color.WHITE);
 
-		performGeneSort();
-		// RepositoryBLService bl;
-		// bl = new RepositoryController();
-		// Iterator<RepositoryVO> ite = null;
-		// try {
-		// ite = bl.getRepositories();
-		//
-		// while (ite.hasNext()) {
-		// RepositoryVO vo = ite.next();
-		// vos.add(vo);
-		// }
-		// System.out.println(vos.size());
-		// System.out.println();
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// }
-		//
-		// setSortPanel(n);// 初始化列表
 
 		int jl_h = 20;
 		int addy = (this.getHeight() - sortPanel_h - height - jl_h) / 2;
+
+
 
 		front = new JLabel("上一页");
 		front.setBounds(230, L_y + height + sortPanel_h + addy, 50, jl_h);
@@ -165,7 +141,11 @@ public class RepSortPanel extends MyPanel {
 		// }
 		next.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
-				if (n < vos.size() / subPanelNum + 1) {
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+				if (n < page_num) {
 					n++;
 					num.setText(n + "");
 					setSortPanel(n);
@@ -174,19 +154,29 @@ public class RepSortPanel extends MyPanel {
 
 			public void mouseEntered(MouseEvent e) {
 				next.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				if (n < vos.size() / subPanelNum + 1) {
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+				if (n < page_num) {
 					performMouseEnter(next);
 				}
 			}
 
 			public void mouseExited(MouseEvent e) {
-				if (n != vos.size() / subPanelNum + 1)
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+				if (n != page_num)
 					performMouseExit(next);
 			}
 		});
 
 		sum = new MyLabel("共" + vos.size() + "项");
 		sum.setBounds(400, L_y + height + sortPanel_h + addy, 100, jl_h);
+
+		performGeneSort();
 
 		this.add(general);
 		this.add(star);
@@ -214,11 +204,14 @@ public class RepSortPanel extends MyPanel {
 				RepositoryVO vo = ite.next();
 				vos.add(vo);
 			}
+			sum.setText("共" + vos.size() + "项");
+			num.setText(n+"");
 			System.out.println(vos.size());
 			System.out.println();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		n = 1;
 		setSortPanel(n);// 初始化列表
 	}
@@ -237,11 +230,14 @@ public class RepSortPanel extends MyPanel {
 				RepositoryVO vo = ite.next();
 				vos.add(vo);
 			}
+			sum.setText("共"+vos.size()+"项");
+
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -259,12 +255,14 @@ public class RepSortPanel extends MyPanel {
 				RepositoryVO vo = ite.next();
 				vos.add(vo);
 			}
+			sum.setText("共"+vos.size()+"项");
 
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -282,12 +280,13 @@ public class RepSortPanel extends MyPanel {
 				RepositoryVO vo = ite.next();
 				vos.add(vo);
 			}
-
+		sum.setText("共"+vos.size()+"项");
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		n = 1;
+		num.setText(n+"");
 		setSortPanel(n);
 	}
 
@@ -310,8 +309,16 @@ public class RepSortPanel extends MyPanel {
 	}
 
 	private void setSortPanel(ArrayList<RepositoryVO> vos,int i) {
-		if (i > 0 && i < vos.size() / subPanelNum + 2) {
-			sortPanel.removeAll();
+		if(vos.size() % subPanelNum==0)
+			page_num = vos.size() / subPanelNum;
+		else
+			page_num = vos.size() / subPanelNum+1;
+
+		sortPanel.removeAll();
+		sortPanel.repaint();
+
+		if (i > 0 && i < page_num + 1) {
+
 			for(int j = 0; j < subPanelNum
 					&& (subPanelNum * (i - 1) + j) < vos.size(); j++) {
 				sortPanel.add(new RepInfoSubPanel(vos.get(subPanelNum * (i - 1)
@@ -327,12 +334,21 @@ public class RepSortPanel extends MyPanel {
 	 * @param i
 	 */
 	private void setSortPanel(int i) {
-		if (i > 0 && i < vos.size() / subPanelNum + 2) {
-			sortPanel.removeAll();
+		if(vos.size() % subPanelNum==0)
+			page_num = vos.size() / subPanelNum;
+		else
+			page_num = vos.size() / subPanelNum+1;
+//		System.out.println(page_num);
+
+		sortPanel.removeAll();
+		sortPanel.repaint();
+
+		if (i > 0 && i < page_num+1) {
 			for(int j = 0; j < subPanelNum
 					&& (subPanelNum * (i - 1) + j) < vos.size(); j++) {
 				sortPanel.add(new RepInfoSubPanel(vos.get(subPanelNum * (i - 1)
 						+ j), sortPanel.getWidth(), subPanel_h));
+//				System.out.println(j);
 			}
 		}
 		SearchFrame.getSearch().setVisible(true);
@@ -341,7 +357,8 @@ public class RepSortPanel extends MyPanel {
 	public void performRepSearch(ArrayList<RepositoryVO> rvos){
 		this.vos = rvos;
 		n=1;
-		sum.setText(vos.size()+"");
+		sum.setText("共"+vos.size()+"项");
+		num.setText(n+"");
 		this.setSortPanel(vos, n);	
 	}
 }

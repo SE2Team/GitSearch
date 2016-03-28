@@ -1,33 +1,20 @@
 package presentation.searchui;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JTable;
-
-import businesslogic.RepositoryBL.Repository;
-import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
-import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import presentation.common.MyColor;
 import presentation.common.MyLabel;
 import presentation.common.MyPanel;
 import presentation.common.MyRecButton;
-import presentation.repoCheckui.Contributors;
-import presentation.userCheckui.UserCheckFrame;
-import vo.RepositoryVO;
 import vo.UserVO;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class UserSortPanel extends MyPanel{
 	
@@ -36,7 +23,7 @@ public class UserSortPanel extends MyPanel{
 	private JLabel front,next,num,sum;
 	private MyPanel sortPanel;
 	int n=1;//记录当前页数
-	
+	private int page_num;
 	int L_x=0,L_y=0,width=160,height=30;
 	int sortPanel_h=this.getHeight()-height-30,subPanel_h=40;
 	int subPanelNum = sortPanel_h/subPanel_h;
@@ -113,7 +100,12 @@ public class UserSortPanel extends MyPanel{
 		next.setBounds(320,L_y+height+sortPanel_h+addy,50,jl_h);
 		next.addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e){
-				if(n<vos.size()/subPanelNum+1){
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+
+				if(n<page_num){
 					n++;
 					num.setText(n+"");
 					setSortPanel(n);
@@ -121,21 +113,33 @@ public class UserSortPanel extends MyPanel{
 			}
 			public void mouseEntered(MouseEvent e){
 				next.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				if(n<vos.size()/subPanelNum+1){
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+
+				if(n<page_num){
 					performMouseEnter(next);
 				}
 			}
 			public void mouseExited(MouseEvent e){
-				if(n!=vos.size()/subPanelNum+1)
+				if(vos.size() % subPanelNum==0)
+					page_num = vos.size() / subPanelNum;
+				else
+					page_num = vos.size() / subPanelNum+1;
+
+				if(n!=page_num)
 					performMouseExit(next);
 			}
 		});
 		
 		sum = new MyLabel("共"+vos.size()+"项");
 		sum.setBounds(400,L_y+height+sortPanel_h+addy,100,jl_h);
+
+
 		this.add(general);
-		this.add(followers);
-		this.add(numOfRep);
+//		this.add(followers);
+//		this.add(numOfRep);
 		this.add(sortPanel);
 		this.add(front);
 		this.add(num);
@@ -161,9 +165,16 @@ public class UserSortPanel extends MyPanel{
 	}
 	
 	private void setSortPanel(ArrayList<UserVO> vos,int i) {
-		System.out.println(vos.size());
-		if(i>0&&i<vos.size()/subPanelNum+2){
-			sortPanel.removeAll();
+//		System.out.println(vos.size());
+		if(vos.size() % subPanelNum==0)
+			page_num = vos.size() / subPanelNum;
+		else
+			page_num = vos.size() / subPanelNum+1;
+
+		sortPanel.removeAll();
+		sortPanel.repaint();
+
+		if(i>0&&i<page_num+1){
 			for(int j=0;j<subPanelNum&&(subPanelNum*(i-1)+j)<vos.size();j++){
 				sortPanel.add(new UserInfoSubPanel(vos.get(subPanelNum*(i-1)+j), sortPanel.getWidth(),subPanel_h));
 			}
@@ -176,9 +187,15 @@ public class UserSortPanel extends MyPanel{
 	 * @param i
 	 */
 	private void setSortPanel(int i) {
-		
-		if(i>0&&i<vos.size()/subPanelNum+2){
-			sortPanel.removeAll();
+		if(vos.size() % subPanelNum==0)
+			page_num = vos.size() / subPanelNum;
+		else
+			page_num = vos.size() / subPanelNum+1;
+
+		sortPanel.removeAll();
+		sortPanel.repaint();
+
+		if(i>0&&i<page_num+1){
 			for(int j=0;j<subPanelNum&&(subPanelNum*(i-1)+j)<vos.size();j++){
 				sortPanel.add(new UserInfoSubPanel(vos.get(subPanelNum*(i-1)+j), sortPanel.getWidth(),subPanel_h));
 			}
@@ -189,7 +206,8 @@ public class UserSortPanel extends MyPanel{
 	public void performUserSearch(ArrayList<UserVO> uvos){
 		this.vos = uvos;
 		n=1;
-		sum.setText(vos.size()+"");
+		sum.setText("共"+vos.size()+"项");
+		num.setText(n+"");
 		this.setSortPanel(uvos,n);
 	}
 }

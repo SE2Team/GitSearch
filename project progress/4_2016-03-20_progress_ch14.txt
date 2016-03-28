@@ -1,0 +1,5 @@
+who:陈欢
+when:第四周
+what:完善数据层的代码
+problem:数据层有的数据要直接从github获取
+todo:完成迭代二统计工作
