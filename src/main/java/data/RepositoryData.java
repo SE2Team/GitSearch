@@ -21,6 +21,7 @@ import po.RepositoryPO;
 public class RepositoryData implements RepositoryDataService {
 	
 	static String string="http://www.gitmining.net/api/repository";
+	ArrayList<RepositoryPO> finalList=new ArrayList<RepositoryPO>();
 	/**
 	 * 
 	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
@@ -124,6 +125,7 @@ public class RepositoryData implements RepositoryDataService {
 					null,null);
 			list.add(po);
 			}
+		finalList=list;
 		return list;
 	}
 	
@@ -225,7 +227,7 @@ public class RepositoryData implements RepositoryDataService {
 	}
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
-		 ArrayList<RepositoryPO> pos=new ArrayList<RepositoryPO>();
+		 ArrayList<RepositoryPO> pos=finalList;
 			for(RepositoryPO po:getRepositories()){
 	            if(po.getName().contains(name)){
 	                pos.add(po);
@@ -237,7 +239,7 @@ public class RepositoryData implements RepositoryDataService {
 
 	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=finalList;
 		if(sort==Repository_Sort.contributor){
 		
 		for(int j=0;j<list.size()-1;j++){
