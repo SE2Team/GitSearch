@@ -23,13 +23,21 @@ import javafx.collections.ObservableList;
  */
 public interface StatisticsBLService {
 
-	Iterator<Integer> getStar() throws IOException;
+	Map<String,Integer> getStar() throws IOException;
 	
 	StatisticsVO getScores(RepositoryPO po) throws IOException;
 	
-	Iterator<Integer> getForks() throws IOException;
+	Map<String,Integer> getForks() throws IOException;
 	
-	Iterator<Integer> getCreated() throws IOException;
+	Map<String,Integer> getRepoCreated() throws IOException;
 	
 	Map<String, Integer> getLanguage() throws IOException;
+	
+	Map<String, Integer>  getUserCreated() throws IOException;
+	
+	Map<String, Integer> getUserType() throws IOException;
+	
+	Map<Integer, Integer> getUserHas();
+	
+	Map<Integer, Integer> getUserRelated();
 }

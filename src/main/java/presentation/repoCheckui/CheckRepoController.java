@@ -1,11 +1,17 @@
 package presentation.repoCheckui;
 
+import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.RepositoryBL.Statistics;
+import businesslogic.RepositoryBL.StatisticsController;
+import businesslogicService.RepositoryBLService;
+import businesslogicService.StatisticsBLService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.chart.StackedBarChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -13,6 +19,7 @@ import presentation.common.MyController;
 import vo.RepositoryVO;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -44,7 +51,17 @@ public class CheckRepoController implements MyController{
     private FlowPane collaboratorPane;
 
     @FXML
-    private StackedBarChart langChart;
+    private BarChart langChart;
+    @FXML
+    private CategoryAxis xLang;
+    @FXML
+    private NumberAxis ylang;
+    @FXML
+    private Label owner;
+
+    private XYChart.Series seriesLang=new XYChart.Series<>();
+    private RepositoryBLService bl=new RepositoryController();
+
 
 //    @FXML
 //    private Tab conTab;
@@ -53,12 +70,14 @@ public class CheckRepoController implements MyController{
 //    private Tab colTab;
 
 
-    @FXML
-    private Label owner;
+
 
 
     private RepositoryVO vo;
 
+    private ObservableList<String> langs= FXCollections.observableArrayList();
+
+    private StatisticsBLService sbl;
 
 
     public void setFxui(FXUITest fxui) {
@@ -78,12 +97,16 @@ public class CheckRepoController implements MyController{
         collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
         language.setText(vo.getLanguage());
+//        owner.setText();
         try {
             setList();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+//        langs.addAll(bl.languagesOfRepository(vo.get));
+        xLang.setCategories(langs);
+        langChart.getData().addAll(getdata());
     }
 
     private void setList() throws IOException {
@@ -115,7 +138,9 @@ public class CheckRepoController implements MyController{
     }
     @FXML
     public void initialize(){
-
+//        xLang.setLabel("languages");
+        seriesLang.setName("language");
+//        sbl=new StatisticsController();
     }
 
     /**
@@ -136,5 +161,29 @@ public class CheckRepoController implements MyController{
         controller.setText(str);
         controller.repaint();
         return anchorPane;
+    }
+
+    private void setGraph(){
+
+
+    }
+    private ArrayList<String> getList(){
+        ArrayList<String> a=new ArrayList<String>();
+        a.add("java");
+        a.add("C#");
+        a.add("html");
+        a.add("ruby");
+        a.add("python");
+        return a;
+    }
+
+    private XYChart.Series<String, Integer> getdata(){
+        XYChart.Series<String,Integer> series=new XYChart.Series<>();
+
+        for (int i=0;i<5;i++){
+            series.getData().add(new XYChart.Data<>(langs.get(i),i+70));
+        }
+
+        return series;
     }
 }

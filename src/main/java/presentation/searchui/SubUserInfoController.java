@@ -18,6 +18,8 @@ public class SubUserInfoController implements MyController {
     private Label followers;
     @FXML
     private Label following;
+    @FXML
+    private Label repos;
 
     private FXUITest fxuiTest;
 
