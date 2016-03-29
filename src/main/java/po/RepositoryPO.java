@@ -64,7 +64,7 @@ public class RepositoryPO {
 		this.collaborators = collaborators;
 		this.contributors = collaborators;
 		
-
+		
 	}
 
 	
@@ -152,6 +152,12 @@ public class RepositoryPO {
 		return this.collaborators_count;
 	}
 
-	
+	public String getOwnerName(){
+		if(name.indexOf("/")!=-1){
+			return name.split("/")[0];
+		}else{
+			return null;
+		}
+	}
 
 }
