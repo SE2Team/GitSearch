@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -13,10 +14,11 @@
             <Image url="@../../Images/home.png" />
          </image>
       </ImageView>
-      <Label fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName">
+      <Label fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName" textFill="#5799d3">
          <font>
             <Font name="Calibri" size="22.0" />
          </font>
       </Label>
+      <Line endX="360.0" endY="12.0" layoutX="2.5" layoutY="43.0" opacity="0.8" startY="12.0" stroke="#00000097" strokeWidth="0.5" />
    </children>
 </AnchorPane>
