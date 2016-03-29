@@ -3,14 +3,13 @@ package data;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.ListResourceBundle;
 import java.util.Map;
-import java.util.Observable;
-import java.util.Set;
+
 
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
+import po.StaIntPO;
+import po.StaStrPO;
 import po.StatisticsPO;
 import po.UserPO;
 
@@ -18,6 +17,7 @@ public class StatisticsData implements StatisticsDataService{
 	/**
 	 * 
 	 * 返回的PO数据里如数值为0，则返回NaN
+	 * 雷达图
 	 * 
 	 */
 	public StatisticsPO getScores(RepositoryPO po) throws IOException {
@@ -69,9 +69,9 @@ public class StatisticsData implements StatisticsDataService{
 				po.getContributor()/contributors_num,po.getCollaborators_count()/collaborators_num);
 	}
 
-	public Map<String, Integer> getStar() throws IOException {
+	public ArrayList<StaStrPO> getStar() throws IOException {
 		// TODO Auto-generated method stub
-		Map<String, Integer> map=new HashMap<String, Integer>();
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int thousand=0;
 		int twoThousand=0;
 		int over=0;
@@ -86,15 +86,16 @@ public class StatisticsData implements StatisticsDataService{
 				over++;
 			}
 		}
-		map.put("0-1000", thousand);
-		map.put("1001-2000", twoThousand);
-		map.put("over2000", over);
-		return map;
+		listPO.add(new StaStrPO("0-1000", thousand));
+		listPO.add(new StaStrPO("1001-2000", twoThousand));
+		listPO.add(new StaStrPO("over2000", over));
+		
+		return listPO;
 	}
 
-	public Map<String, Integer> getForks() throws IOException {
+	public ArrayList<StaStrPO> getForks() throws IOException {
 		// TODO Auto-generated method stub
-		Map<String, Integer> map=new HashMap<String, Integer>();
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int thousand=0;
 		int twoThousand=0;
 		int over=0;
@@ -109,57 +110,57 @@ public class StatisticsData implements StatisticsDataService{
 				over++;
 			}
 		}
-		map.put("0-1000", thousand);
-		map.put("1001-2000", twoThousand);
-		map.put("over2000", over);
-		return map;
+		listPO.add(new StaStrPO("0-1000", thousand));
+		listPO.add(new StaStrPO("1001-2000", twoThousand));
+		listPO.add(new StaStrPO("over2000", over));
+		
+		return listPO;
 	}
 
 	
-	public Map<String, Integer> getRepoCreated() throws IOException {
+	public  ArrayList<StaStrPO> getRepoCreated() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		Map<String, Integer> map=new HashMap<String, Integer>();
-		int sevenYear=0;
-		int eightYear=0;
-		int nineYear=0;
-		int tenYear=0;
-		
-		for(int i=0;i<list.size();i++){
-			if(list.get(i).getCreated().length()>2){
-			String[] str=list.get(i).getCreated().substring(0, 10).split("-");
-			String str1=str[0]+str[1]+str[2];
-			int year=Integer.parseInt(str1);
-		
-			if(year<=20080000){
-				sevenYear++;
-				}
-			else if(year>=20080000&&year<=20090000){
+		ArrayList<StaStrPO> listPO = new ArrayList<StaStrPO>();
+		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
+		int sevenYear = 0;
+		int eightYear = 0;
+		int nineYear = 0;
+		int tenYear = 0;
+
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getCreated().length() > 2) {
+				String[] str = list.get(i).getCreated().substring(0, 10).split("-");
+				String str1 = str[0] + str[1] + str[2];
+				int year = Integer.parseInt(str1);
+
+				if (year <= 20080000) {
+					sevenYear++;
+				} else if (year >= 20080000 && year <= 20090000) {
 					eightYear++;
-					
-				}
-			else if(year<=20100000&&year>=20090000){
-				nineYear++;
-				}
-			else if(year>20100000){
-				tenYear++;
+
+				} else if (year <= 20100000 && year >= 20090000) {
+					nineYear++;
+				} else if (year > 20100000) {
+					tenYear++;
 				}
 			}
 		}
-		map.put("2007", sevenYear);
-		map.put("2008", eightYear);
-		map.put("2009", nineYear);
-		map.put("2010", tenYear);
-		return map;
+		listPO.add(new StaStrPO("2007", sevenYear));
+		listPO.add(new StaStrPO("2008", eightYear));
+		listPO.add(new StaStrPO("2009", nineYear));
+		listPO.add(new StaStrPO("2010", tenYear));
+		return listPO;
 	}
 
 	
-	public Map<String, Integer> getLanguage() throws IOException {
+	public ArrayList<StaStrPO> getLanguage() throws IOException {
 		// TODO Auto-generated method stub
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
+		
 		ArrayList<Integer> listInt = new ArrayList<Integer>();
 		ArrayList<String> listString = new GetData("languages").readData();
 		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
-		Map<String, Integer> map = new HashMap<String, Integer>();
+//		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (int j = 0; j < listString.size(); j++) {
 			listInt.add(0);
 		}
@@ -174,32 +175,33 @@ public class StatisticsData implements StatisticsDataService{
 			}
 		}
 		
-		int tempInt = 0;
-		String tempString = "";
-		for (int i = 0; i < listInt.size(); i++) {
-			for (int p = i; p < listInt.size() - 1; p++) {
-				if (listInt.get(i) >= listInt.get(p+1)) {
-					tempInt = listInt.get(p+1);
-					listInt.set(p+1, listInt.get(i));
-					listInt.set(i, tempInt);
-			
-					tempString = listString.get(p+1);
-					listString.set(p+1, listString.get(i));
-					listString.set(i, tempString);
+//		int tempInt = 0;
+//		String tempString = "";
+//		for (int i = 0; i < listInt.size(); i++) {
+//			for (int p = i; p < listInt.size() - 1; p++) {
+//				if (listInt.get(i) >= listInt.get(p+1)) {
+//					tempInt = listInt.get(p+1);
+//					listInt.set(p+1, listInt.get(i));
+//					listInt.set(i, tempInt);
+//			
+//					tempString = listString.get(p+1);
+//					listString.set(p+1, listString.get(i));
+//					listString.set(i, tempString);
+//
+//				}
+//			}
+//		}
+//
+//		for (int j = 0; j < listString.size(); j++) {
+//			map.put(listString.get(j), listInt.get(j));
+//		}
 
-				}
-			}
-		}
-
-		for (int j = 0; j < listString.size(); j++) {
-			map.put(listString.get(j), listInt.get(j));
-		}
-
-		return map;
+		return this.sort(listInt, listString);
 	}
 
-	public Map<String, Integer> getUserCreated() throws IOException {
+	public ArrayList<StaStrPO> getUserCreated() throws IOException {
 		// TODO Auto-generated method stub
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<Integer> list2=new ArrayList<Integer>();
 		ArrayList<String> list3=new ArrayList<String>();
@@ -208,7 +210,6 @@ public class StatisticsData implements StatisticsDataService{
 			list3.add((2007+i)+"");
 			
 		}
-		Map<String, Integer> map = new HashMap<String, Integer>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getCreated().length()>2){
 			String[] str=list.get(i).getCreated().substring(0, 10).split("-");
@@ -250,14 +251,15 @@ public class StatisticsData implements StatisticsDataService{
 			}
 		
 		for(int p=0;p<9;p++){
-			map.put(list3.get(p), list2.get(p));
+			listPO.add(new StaStrPO(list3.get(p), list2.get(p)));
 			
 		}
-		return map;
+		return listPO;
 	}
 
-	public Map<String, Integer> getUserType() throws IOException {
+	public ArrayList<StaStrPO> getUserType() throws IOException {
 		// TODO Auto-generated method stub
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int organization=0;
 		int user=0;
 		ArrayList<UserPO> list=new UserData().getUser();
@@ -270,9 +272,8 @@ public class StatisticsData implements StatisticsDataService{
 				System.out.println("error");
 			}
 		}
-		Map<String, Integer> map=new HashMap<String, Integer>();
-		map.put("User", user);
-		map.put("Organization", organization);
+		listPO.add(new StaStrPO("User", user));
+		listPO.add(new StaStrPO("Organization", organization));
 //		Map<String, Integer> map=new StatisticsData().getUserType();
 //		Set<String> set=map.keySet();
 //		Iterator<String> iterator=set.iterator();
@@ -281,10 +282,10 @@ public class StatisticsData implements StatisticsDataService{
 //			Integer j=map.get(key);
 //			System.out.println(key+":"+j);
 //		}
-		return map;
+		return listPO;
 	}
 
-	public Map<Integer, Integer> getUserHas() {
+	public ArrayList<StaIntPO> getUserHas() {
 		// TODO Auto-generated method stub
 //		UserData userData=new UserData();
 //		UserPO po=null;
@@ -297,11 +298,10 @@ public class StatisticsData implements StatisticsDataService{
 //		}
 //		System.out.println("Success");
 //上面为统计用户拥有项目数的代码	
-		
+		ArrayList<StaIntPO> listPO=new ArrayList<StaIntPO>();
 		ArrayList<String> list = new GetData("has").readData();
 		ArrayList<Integer> list2 = new ArrayList<Integer>();//拥有项目数
 		ArrayList<Integer> list3=new ArrayList<Integer>();//用户数
-		Map<Integer, Integer> map=new HashMap<Integer, Integer>();
 		
 		String[] str = new String[2];
 		int temp = 0;
@@ -335,18 +335,19 @@ public class StatisticsData implements StatisticsDataService{
 		}
 	
 		for(int i=0;i<list2.size();i++){
-			map.put(list2.get(i),list3.get(i));	
+			listPO.add(new StaIntPO(list2.get(i),list3.get(i)));	
 		}
 		
-		return map;
+		return listPO;
 	}
 
-	public Map<Integer, Integer> getUserRelated() {
+	public ArrayList<StaIntPO>getUserRelated() {
 		// TODO Auto-generated method stub
+		
+		ArrayList<StaIntPO> listPO=new ArrayList<StaIntPO>();
 		ArrayList<String> list = new GetData("related").readData();
 		ArrayList<Integer> list2 = new ArrayList<Integer>();//拥有项目数
 		ArrayList<Integer> list3=new ArrayList<Integer>();//用户数
-		Map<Integer, Integer> map=new HashMap<Integer, Integer>();
 		
 		String[] str = new String[2];
 		int temp = 0;
@@ -380,10 +381,66 @@ public class StatisticsData implements StatisticsDataService{
 		}
 	
 		for(int i=0;i<list2.size();i++){
-			map.put(list2.get(i),list3.get(i));	
+			listPO.add(new StaIntPO(list2.get(i),list3.get(i)));	
 		}
 		
-		return map;
+		return listPO;
 	}
 
+	public ArrayList<StaStrPO> getCompany() throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<UserPO> list=new UserData().getUser();
+//		ArrayList<String> list2=new ArrayList<String>();
+//		ArrayList<Integer> list3=new ArrayList<Integer>();
+//		for(int i=0;i<list.size();i++){
+//			if(list2.contains(list.get(i).getCompany())==false){
+//				list2.add(list.get(i).getCompany());
+//			}
+//		}//获取用户所属公司
+		ArrayList<String> list2=new GetData("company").readData();
+		ArrayList<Integer> list3=new ArrayList<Integer>();
+		for(int p=0;p<list2.size();p++){
+			list3.add(0);
+		}
+		String tempStr="";
+		for(int i=0;i<list.size();i++){
+			tempStr=list.get(i).getCompany();
+			if(tempStr.equals("")){
+				tempStr="Unknown";
+			}
+			if(list2.contains(tempStr)){
+				
+				list3.set(list2.indexOf(tempStr), list3.get(list2.indexOf(tempStr))+1);
+			}
+		}
+		return this.sort(list3, list2);
+	}
+	
+	private ArrayList<StaStrPO> sort(ArrayList<Integer> listInt,ArrayList<String> listString){
+
+		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
+		int tempInt = 0;
+		String tempString = "";
+		for (int i = 0; i < listInt.size(); i++) {
+			for (int p = i; p < listInt.size() - 1; p++) {
+				if (listInt.get(i) >= listInt.get(p+1)) {
+					tempInt = listInt.get(p+1);
+					listInt.set(p+1, listInt.get(i));
+					listInt.set(i, tempInt);
+			
+					tempString = listString.get(p+1);
+					listString.set(p+1, listString.get(i));
+					listString.set(i, tempString);
+
+				}
+			}
+		}
+
+		for (int j = 0; j < listString.size(); j++) {
+			listPO.add(new StaStrPO(listString.get(j), listInt.get(j)));
+		//	System.out.println(listString.get(j)+":"+listInt.get(j));
+		}
+
+		return listPO;
+	}
 }

@@ -4,21 +4,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import businesslogic.userBL.User;
+
 import java.util.Set;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import po.RepositoryPO;
+import po.StaIntPO;
+import po.StaStrPO;
+import po.StatisticsPO;
 import po.UserPO;
 
-=======
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
 
 
 public class Test {
-<<<<<<< HEAD
 	public static void main(String[] args) throws IOException{
 		
 //	for(int i=0;i<list2.size();i++){
@@ -32,33 +32,23 @@ public class Test {
 //			}
 //		}
 //	从小到大排序
-		Map<String, Integer> map=new StatisticsData().getLanguage();
-		Set<String> set=map.keySet();
-		Iterator<String> iterator=set.iterator();
-		while(iterator.hasNext()){
-			String key=iterator.next();
-			Integer j=map.get(key);
-			System.out.println(key+":"+j);
+		
+		
+		
+//		ArrayList<UserPO> list=new UserData().getUser();
+//		ArrayList<String> list2=new ArrayList<String>();
+//		for(int i=0;i<list.size();i++){
+//			if(list2.contains(list.get(i).getCompany())==false){
+//				list2.add(list.get(i).getCompany());
+//				System.out.println(list.get(i).getCompany());
+//			}
+//		}
+//		System.out.println(list2.size());
+		
+		ArrayList<RepositoryPO> list=new RepositoryData().Search("ai");
+		for(int i=0;i<list.size();i++){
+			System.out.println(list.get(i).getName());
 		}
 		
 	}
-<<<<<<< HEAD
-=======
-=======
-    public static void main(String[] args) throws IOException {
-//		RepositoryData testRepository=new RepositoryData();
-//		ArrayList<String> a=testRepository.getRepositoriesNames();
-//		for(int i=0;i<a.size();i++){
-//			System.out.println(a.get(i));
-        UserData user = new UserData();
-        ArrayList<UserPO> list = user.search("mojo");
-        for (UserPO po : list) {
-            System.out.print(po.getLogin());
-        }
-        UserBLService bl = new UserController();
-        System.out.println(bl.search("mojo").next().getLogin());;
-
-    }
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import po.RepositoryPO;
+import po.StaIntPO;
+import po.StaStrPO;
 import po.StatisticsPO;
 
 public interface StatisticsDataService {
@@ -19,7 +21,7 @@ public interface StatisticsDataService {
 	 * over2000
 	 * @throws IOException 
 	 */
-	public Map<String, Integer> getStar() throws IOException;
+	public ArrayList<StaStrPO> getStar() throws IOException;
 	
 	public StatisticsPO getScores(RepositoryPO po) throws IOException;
 	
@@ -32,14 +34,14 @@ public interface StatisticsDataService {
 	 * over1000
 	 * @throws IOException 
 	 */
-	public Map<String, Integer> getForks() throws IOException;
+	public ArrayList<StaStrPO> getForks() throws IOException;
 	
 	/*
 	 * list中包含4个值，分别是从07到10每年创建的项目数
 	 * maxYear:20100721
 	 * minYear:20071029
 	 */
-	public Map<String, Integer> getRepoCreated() throws IOException;
+	public ArrayList<StaStrPO> getRepoCreated() throws IOException;
 	
 	/**
 	 *
@@ -49,7 +51,7 @@ public interface StatisticsDataService {
 	 * 
 	 *
 	 */
-	public Map<String, Integer> getLanguage() throws IOException;
+	public ArrayList<StaStrPO> getLanguage() throws IOException;
 	
 	/**
 	 * list中包含9个值，分别是从07到15每年创建的用户数
@@ -58,7 +60,7 @@ public interface StatisticsDataService {
 	 * @return
 	 * @throws IOException 
 	 */
-	public Map<String, Integer>  getUserCreated() throws IOException;
+	public ArrayList<StaStrPO>  getUserCreated() throws IOException;
 	
 	/**
 	 * 
@@ -66,17 +68,24 @@ public interface StatisticsDataService {
 	 * @return 用户类型    数量
 	 * @throws IOException
 	 */
-	public Map<String, Integer> getUserType() throws IOException; 
+	public ArrayList<StaStrPO> getUserType() throws IOException; 
 	
 	/**
 	 * 
 	 * @return 用户拥有的项目数  用户数量
 	 */
-	public Map<Integer, Integer> getUserHas();
+	public ArrayList<StaIntPO> getUserHas();
 	
 	/**
 	 * 
 	 * @return 用户相关的项目数  用户数量
 	 */
-	public Map<Integer, Integer> getUserRelated();
+	public ArrayList<StaIntPO> getUserRelated();
+	
+	/**
+	 * 
+	 * @return 公司名  用户数
+	 * @throws IOException 
+	 */
+	public ArrayList<StaStrPO> getCompany() throws IOException;
 }

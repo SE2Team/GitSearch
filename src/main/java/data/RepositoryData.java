@@ -1,23 +1,12 @@
 package data;
 
 import java.io.BufferedReader;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-import java.io.FileReader;
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,11 +14,6 @@ import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -55,28 +39,9 @@ public class RepositoryData implements RepositoryDataService {
 		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
-<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/all_repository.json")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-=======
-        FileReader fr = null;
-//        try {
-//			System.out.println(this.getClass().getResource("").toURI());
-//            InputStream in=this.getClass().getResourceAsStream("/txtData/all_repository.json");
-//			fr = new FileReader(new File());
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(new InputStreamReader(
-                this.getClass().getResourceAsStream("/txtData/all_repository.json")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 		String string = br.readLine();
 		String s1 ,s2,s3,s4,name;
 		boolean fork;
@@ -172,26 +137,9 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/repo_names.txt")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/repo_names.txt")));
-=======
-        FileReader fr = null;
-//        try {
-//            fr = new FileReader(new File(this.getClass().getResource("/txtData/repo_names.txt").toURI()));
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(new InputStreamReader(
-                this.getClass().getResourceAsStream("/txtData/repo_names.txt")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 		String temp ;
 		ArrayList<String> list=new ArrayList<String>();
 		while((temp=br.readLine())!=null){
@@ -248,26 +196,9 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
 		JSONObject obj = new JSONObject();
-<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/all_repository.json")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-=======
-        FileReader fr = null;
-//        try {
-//            fr = new FileReader(new File(this.getClass().getResource("/txtData/all_repository.json").toURI()));
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(
-                new InputStreamReader(this.getClass().getResourceAsStream("/txtData/all_repository.json")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 		String string = br.readLine();
 		JSONArray obj1 = new JSONArray(string);
 		for (int i = 0; i < obj1.length(); i++) {
