@@ -90,3 +90,10 @@
      -fx-font:System 24px;
      -fx-cursor:HAND;
 }
+
+#testbutton:armed{
+    -fx-color:red;
+}
+#testtoggleb:selected{
+    -fx-color:red;
+}
