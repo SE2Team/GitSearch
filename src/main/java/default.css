@@ -24,6 +24,11 @@
     -fx-background-color: null;
 
 }
+#home:selected{
+    -fx-background-radius: 20%;
+    -fx-color: red;
+    -fx-background-color: aqua;
+}
 #advance{
     -fx-background-image: url("Images/forward.png");
     -fx-background-repeat: no-repeat;
