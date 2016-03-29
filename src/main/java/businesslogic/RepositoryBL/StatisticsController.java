@@ -8,8 +8,11 @@ import java.util.Map;
 import businesslogicService.StatisticsBLService;
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
+import po.StaStrPO;
 import po.StatisticsPO;
 import javafx.collections.ObservableList;
+import vo.StaIntVO;
+import vo.StaStrVO;
 import vo.StatisticsVO;
 
 /** 
@@ -25,7 +28,7 @@ import vo.StatisticsVO;
  */
 public class StatisticsController implements StatisticsBLService{
 	Statistics statistics=new Statistics();
-	public Map<String,Integer> getStar() throws IOException{
+	public Iterator<StaStrVO> getStar() throws IOException{
 		return statistics.getStar();
 	}
 	
@@ -33,31 +36,35 @@ public class StatisticsController implements StatisticsBLService{
 		return statistics.getScores(po);
 	}
 	
-	public Map<String,Integer> getForks() throws IOException{
+	public Iterator<StaStrVO> getForks() throws IOException{
 		return statistics.getForks();
 	}
 	
-	public Map<String,Integer> getRepoCreated() throws IOException{
+	public Iterator<StaStrVO> getRepoCreated() throws IOException{
 		return statistics.getRepoCreated();
 	}
 
-	public Map<String, Integer> getLanguage() throws IOException{
+	public Iterator<StaStrVO> getLanguage() throws IOException{
 		return statistics.getLanguage();
 	}
 	
-	public Map<String, Integer> getUserCreated() throws IOException{
+	public Iterator<StaStrVO> getUserCreated() throws IOException{
 		return statistics.getUserCreated();
 	}
 	
-	public Map<String, Integer> getUserType() throws IOException{
+	public Iterator<StaStrVO> getUserType() throws IOException{
 		return statistics.getUserType();
 	}
 	
-	public Map<Integer, Integer> getUserHas(){
+	public Iterator<StaIntVO> getUserHas(){
 		return statistics.getUserHas();
 	}
 	
-	public Map<Integer, Integer> getUserRelated(){
+	public Iterator<StaIntVO> getUserRelated(){
 		return statistics.getUserRelated();
+	}
+	
+	public Iterator<StaStrVO> getCompany() throws IOException{
+		return statistics.getCompany();
 	}
 }
