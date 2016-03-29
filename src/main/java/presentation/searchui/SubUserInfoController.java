@@ -16,8 +16,8 @@ public class SubUserInfoController implements MyController {
     private Label id;
     @FXML
     private Label followers;
-    @FXML
-    private Label following;
+//    @FXML
+//    private Label following;
     @FXML
     private Label repos;
 
@@ -38,9 +38,8 @@ public class SubUserInfoController implements MyController {
         String nameText=vo.getName()!=""?vo.getName():"Unknown";
         name.setText(nameText);
         followers.setText(String.valueOf(vo.getFollowers()));
-        following.setText(String.valueOf(vo.getFollowing()));
         id.setText(vo.getLogin());
-
+//        repos.setText(vo.getRepos());
     }
 
     @FXML
