@@ -24,17 +24,17 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <FlowPane id="timePane" columnHalignment="CENTER" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="timePane" fx:id="flowPane2" columnHalignment="CENTER" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                        <children>
-                                          <Button mnemonicParsing="false" text="2007">
+                                          <Button fx:id="seven" mnemonicParsing="false" text="2007">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>
                                           </Button>
-                                          <Button mnemonicParsing="false" text="2008">
+                                          <Button fx:id="eight" mnemonicParsing="false" text="2008">
                                              <font>
                                                 <Font size="16.0" />
                                              </font>

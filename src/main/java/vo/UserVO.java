@@ -78,7 +78,7 @@ public class UserVO {
     }
 
     public Integer getHasNum() throws IOException{
-    	return new User().checkUser(name).getHas().size();
+    	return new User().checkUser(login).getHas().size();
     }
     public String getCompany(){
         return this.company;

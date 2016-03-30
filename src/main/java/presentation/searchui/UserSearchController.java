@@ -25,7 +25,21 @@ public class UserSearchController implements MyController {
     /**
      * 筛选部件
      */
-    private ArrayList<Button> time;
+    private ArrayList<Button> time=new ArrayList<>();
+    @FXML
+    private Button seven;
+    @FXML
+    private Button eight;
+    @FXML
+    private Button nine;
+    @FXML
+    private Button ten;
+    @FXML
+    private Button eleven;
+    @FXML
+    private Button twe;
+    @FXML
+    private FlowPane flowPane2;
     /**
      * 翻页部件
      */
@@ -55,6 +69,8 @@ public class UserSearchController implements MyController {
     @FXML
     private FlowPane flowPane;
 
+
+
     /**
      * 界面无关变量
      */
@@ -66,7 +82,12 @@ public class UserSearchController implements MyController {
     private int page_max = 0;
 
     public void initialize() {
-
+//        time.add(seven);
+//        time.add(eight);
+//        time.add(nine);
+//        time.add(ten);
+//        time.add(eleven);
+//        time.add(twe);
     }
 
     public void setFxui(FXUITest fxui) {
@@ -202,7 +223,7 @@ public class UserSearchController implements MyController {
     private void handleRepo() {
         vos.clear();//清空数组
         try {
-            Iterator<UserVO> itr = bl.sortUser(User_Sort.Following);
+            Iterator<UserVO> itr = bl.sortUser(User_Sort.Followers);
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }
