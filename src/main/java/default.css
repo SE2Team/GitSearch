@@ -24,7 +24,6 @@
     -fx-background-color: null;
 
 }
-
 #advance{
     -fx-background-image: url("Images/forward.png");
     -fx-background-repeat: no-repeat;
@@ -42,7 +41,7 @@
 
 }
 #PageUp{
-    -fx-background-image: url("Images/上一页.jpg");
+    -fx-background-image: url("Images/PageUp.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -50,7 +49,7 @@
 
 }
 #PageDown{
-    -fx-background-image: url("Images/下一页.jpg");
+    -fx-background-image: url("Images/PageDown.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -83,28 +82,40 @@
 }
 
 #Contributors{
-    -fx-font:System 24px;
+    -fx-font-size:24px;
     -fx-cursor:HAND;
 }
 
 #Collaborators{
-     -fx-font:System 24px;
+     -fx-font-size:24px;
      -fx-cursor:HAND;
 }
 
 #testbutton:armed{
-    -fx-animated: myfirst 5s;
     -fx-color:red;
-    -animation:myfirst 5s;
 }
 #testtoggleb:selected{
     -fx-color:red;
-    animation:myfirst;
 }
-@keyframes myfirst {
-    from{
-        -fx-background-color: aqua;
-    }to{
-        -fx-background-color: blueviolet;
-         }
+
+.toggle-button: selected{
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(#5f9ea0,#add8e6);
+}
+
+.toggle-button: hover{
+    -fx-background-color: linear-gradient(#d3d3d3,#add8e6);
+}
+
+.button:selected{
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(#d3d3d3,#add8e6);
+}
+
+.button: hover{
+    -fx-background-color: linear-gradient( #d3d3d3,#add8e6);
+}
+
+#wrap label{
+    -fx-graphic-text-gap:0;
 }
