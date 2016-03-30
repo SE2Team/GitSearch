@@ -88,4 +88,6 @@ public interface StatisticsDataService {
 	 * @throws IOException 
 	 */
 	public ArrayList<StaStrPO> getCompany() throws IOException;
+	
+	public Integer getHasNum(String name);
 }

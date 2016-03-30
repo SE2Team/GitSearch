@@ -416,6 +416,18 @@ public class StatisticsData implements StatisticsDataService{
 		return this.sort(list3, list2);
 	}
 	
+	public Integer getHasNum(String name){
+		ArrayList<String> listHas = new GetData("has").readData();
+		String[] str=new String[2];
+		for(int i=0;i<listHas.size();i++){
+			str=listHas.get(i).split(";");
+			if(str[0].equals(name)){
+				return Integer.parseInt(str[1]);
+			}
+		}
+		return 0;
+	}
+	
 	private ArrayList<StaStrPO> sort(ArrayList<Integer> listInt,ArrayList<String> listString){
 
 		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
@@ -443,4 +455,5 @@ public class StatisticsData implements StatisticsDataService{
 
 		return listPO;
 	}
+	
 }

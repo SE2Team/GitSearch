@@ -36,4 +36,10 @@ public interface RepositoryDataService {
     
     ArrayList<RepositoryPO> screenLanguage(String language);
     
+    /**
+     * 根据项目创建时间进行筛选
+     * @param time
+     * @return
+     */
+    ArrayList<RepositoryPO> screenTime(String time);
 }
