@@ -5,8 +5,10 @@ import Util.Repository_Sort;
 import data.DataFactory;
 import dataService.DataFatoryService;
 import po.RepositoryPO;
+import po.StaStrPO;
 import vo.PO2VO;
 import vo.RepositoryVO;
+import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,8 +43,12 @@ public class Repository {
         return PO2VO.convert(factory.getRepositoryDataService().checkRepository(userName, reponame));
     }
 
-    public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
-        return factory.getRepositoryDataService().languagesOfRepository(userName, reponame);
+    public Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException {
+    	ArrayList<StaStrVO> vos=new ArrayList<StaStrVO>();
+		for(StaStrPO po:factory.getRepositoryDataService().languagesOfRepository(userName, reponame)){
+			vos.add(PO2VO.convert(po));
+		}
+		return vos.iterator();
     }
 
     public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {

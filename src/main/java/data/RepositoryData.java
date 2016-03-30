@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
+import po.StaStrPO;
 
 
 /**
@@ -173,18 +174,19 @@ public class RepositoryData implements RepositoryDataService {
 		return null;
 	}
 
-	public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
+	public ArrayList<StaStrPO> languagesOfRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
 		String str1="http://gitmining.net/api/repository"+userName+"/"
 				+reponame+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
+		ArrayList<StaStrPO> listPO=new ArrayList<>();
 		Map<String, Integer> map=new HashMap<String, Integer>();
 		for(int i=0;i<list.size()-1;i++){
 			String str[]=list.get(i).split(":");
-			map.put(str[0], Integer.parseInt(str[1]));
+			listPO.add(new StaStrPO(str[0], Integer.parseInt(str[1])));
 		}
 		
-		return map;
+		return listPO;
 	}
 	
 	
@@ -228,8 +230,10 @@ public class RepositoryData implements RepositoryDataService {
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
 		 ArrayList<RepositoryPO> pos=finalList;
+		 String[]  str=new String[2];
 			for(RepositoryPO po:getRepositories()){
-	            if(po.getName().contains(name)){
+	            str=po.getName().split("/");
+				if(str[1].contains(name)){
 	                pos.add(po);
 	            }
 	        }
@@ -276,6 +280,19 @@ public class RepositoryData implements RepositoryDataService {
 		}
 		
 		return list;
+	}
+
+	@Override
+	public ArrayList<RepositoryPO> screenLanguage(String language) {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getLanguage().equals(language)){
+				list2.add(list.get(i));
+			}
+		}
+		return list2;
 	}
 
 	

@@ -1,6 +1,8 @@
 package vo;
 
 import po.RepositoryPO;
+import po.StaIntPO;
+import po.StaStrPO;
 import po.StatisticsPO;
 import po.UserPO;
 
@@ -27,5 +29,13 @@ public class PO2VO {
 
     public static StatisticsVO convert(StatisticsPO po){
     	return new StatisticsVO(po.getIssues_num(),po.getStars_num(),po.getForks_num(),po.getContributors_num(),po.getCollaborators_num());
+    }
+    
+    public static StaIntVO convert(StaIntPO po){
+    	return new StaIntVO(po.getInt(), po.getInt2());
+    }
+    
+    public static StaStrVO convert(StaStrPO po){
+    	return new StaStrVO(po.getStr(),po.getInt());
     }
 }

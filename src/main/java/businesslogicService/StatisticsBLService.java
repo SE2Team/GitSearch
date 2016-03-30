@@ -7,7 +7,10 @@ import java.util.Map;
 import java.util.Observable;
 
 import po.RepositoryPO;
+import po.StaStrPO;
 import po.StatisticsPO;
+import vo.StaIntVO;
+import vo.StaStrVO;
 import vo.StatisticsVO;
 import javafx.collections.ObservableList;
 /** 
@@ -23,21 +26,23 @@ import javafx.collections.ObservableList;
  */
 public interface StatisticsBLService {
 
-	Map<String,Integer> getStar() throws IOException;
+	Iterator<StaStrVO> getStar() throws IOException;
 	
 	StatisticsVO getScores(RepositoryPO po) throws IOException;
 	
-	Map<String,Integer> getForks() throws IOException;
+	Iterator<StaStrVO> getForks() throws IOException;
 	
-	Map<String,Integer> getRepoCreated() throws IOException;
+	Iterator<StaStrVO> getRepoCreated() throws IOException;
 	
-	Map<String, Integer> getLanguage() throws IOException;
+	Iterator<StaStrVO> getLanguage() throws IOException;
 	
-	Map<String, Integer>  getUserCreated() throws IOException;
+	Iterator<StaStrVO>  getUserCreated() throws IOException;
 	
-	Map<String, Integer> getUserType() throws IOException;
+	Iterator<StaStrVO> getUserType() throws IOException;
 	
-	Map<Integer, Integer> getUserHas();
+	Iterator<StaIntVO> getUserHas();
 	
-	Map<Integer, Integer> getUserRelated();
+	Iterator<StaIntVO> getUserRelated();
+	
+	Iterator<StaStrVO> getCompany() throws IOException;
 }
