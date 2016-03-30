@@ -3,6 +3,7 @@ package data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -203,6 +204,41 @@ public class UserData implements UserDataService {
 					}
 				}
 			}
+		}else if(sort==User_Sort.HAS){
+			ArrayList<String> listHas = new GetData("has").readData();
+			ArrayList<Integer> listInt = new ArrayList<Integer>();//拥有项目数
+			ArrayList<String> listString=new ArrayList<String>();//用户名
+			ArrayList<UserPO> list4=new ArrayList<>();
+			String[] str=new String[2];
+			for(int i=0;i<listHas.size();i++){
+				str=listHas.get(i).split(";");
+				listInt.add(Integer.parseInt(str[1]));
+				listString.add(str[0]);
+			}
+			
+			int tempInt = 0;
+			String tempString = "";
+			for (int i = 0; i < listInt.size(); i++) {
+				for (int p = i; p < listInt.size() - 1; p++) {
+					if (listInt.get(i) >= listInt.get(p+1)) {
+						tempInt = listInt.get(p+1);
+						listInt.set(p+1, listInt.get(i));
+						listInt.set(i, tempInt);
+				
+						tempString = listString.get(p+1);
+						listString.set(p+1, listString.get(i));
+						listString.set(i, tempString);
+					}
+				}
+			}
+			for(int i=0;i<list.size();i++){
+				for(int p=0;p<list.size();p++){
+					if(listString.get(i).equals(list.get(p).getLogin())){
+						list4.add(list.get(p));
+					}
+				}
+			}
+			return list4;
 		}
 
 		return list;

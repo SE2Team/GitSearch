@@ -2,7 +2,10 @@ package vo;
 
 import po.RepositoryPO;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import businesslogic.userBL.User;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -22,6 +25,7 @@ public class UserVO {
     String updated_at="";
     ArrayList<String> related;
     ArrayList<String> has;
+    int hasNum=0;
 
     public UserVO(int id, String login, String type, String name, String company, String email,
                   String public_repos, int public_gists, int followers, int following, String created_at,
@@ -73,7 +77,9 @@ public class UserVO {
         return this.email;
     }
 
-
+    public Integer getHasNum() throws IOException{
+    	return new User().checkUser(name).getHas().size();
+    }
     public String getCompany(){
         return this.company;
     }
