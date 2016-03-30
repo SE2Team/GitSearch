@@ -32,4 +32,8 @@ public interface RepositoryDataService {
     ArrayList<RepositoryPO> Search(String name) throws IOException;
 
     ArrayList<RepositoryPO>  sort(Repository_Sort sort) throws IOException;
+    
+    ArrayList<RepositoryPO> screenLanguage(String language);
+    
+    
 }

@@ -228,8 +228,10 @@ public class RepositoryData implements RepositoryDataService {
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
 		 ArrayList<RepositoryPO> pos=finalList;
+		 String[]  str=new String[2];
 			for(RepositoryPO po:getRepositories()){
-	            if(po.getName().contains(name)){
+	            str=po.getName().split("/");
+				if(str[1].contains(name)){
 	                pos.add(po);
 	            }
 	        }
@@ -276,6 +278,12 @@ public class RepositoryData implements RepositoryDataService {
 		}
 		
 		return list;
+	}
+
+	@Override
+	public ArrayList<RepositoryPO> screenLanguage(String language) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
