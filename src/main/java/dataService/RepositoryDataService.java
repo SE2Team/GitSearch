@@ -2,6 +2,7 @@ package dataService;
 
 import Util.*;
 import po.RepositoryPO;
+import po.StaStrPO;
 import vo.RepositoryVO;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ public interface RepositoryDataService {
      * @return用<String,Integer>表示的<编程语言,语言使用量>的Map
      * @throws IOException
      */
-    Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException;
+    ArrayList<StaStrPO> languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 

@@ -3,6 +3,7 @@ package businesslogicService;
 
 import Util.*;
 import vo.RepositoryVO;
+import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -18,7 +19,7 @@ public interface RepositoryBLService {
 
     RepositoryVO checkRepository(String userName, String reponame) throws IOException;
 
-    Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException;
+   Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 

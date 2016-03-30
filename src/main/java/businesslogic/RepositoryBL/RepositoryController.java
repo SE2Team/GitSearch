@@ -3,7 +3,9 @@ package businesslogic.RepositoryBL;
 import Util.RepositoryInfo;
 import Util.Repository_Sort;
 import businesslogicService.RepositoryBLService;
+import po.StaStrPO;
 import vo.RepositoryVO;
+import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -26,7 +28,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.checkRepository(userName, reponame);
     }
 
-    public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
+    public Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException {
         return repository.languagesOfRepository(userName, reponame);
     }
 
