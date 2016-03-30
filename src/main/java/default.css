@@ -24,11 +24,7 @@
     -fx-background-color: null;
 
 }
-#home:selected{
-    -fx-background-radius: 20%;
-    -fx-color: red;
-    -fx-background-color: aqua;
-}
+
 #advance{
     -fx-background-image: url("Images/forward.png");
     -fx-background-repeat: no-repeat;
@@ -97,8 +93,18 @@
 }
 
 #testbutton:armed{
+    -fx-animated: myfirst 5s;
     -fx-color:red;
+    -animation:myfirst 5s;
 }
 #testtoggleb:selected{
     -fx-color:red;
+    animation:myfirst;
+}
+@keyframes myfirst {
+    from{
+        -fx-background-color: aqua;
+    }to{
+        -fx-background-color: blueviolet;
+         }
 }
