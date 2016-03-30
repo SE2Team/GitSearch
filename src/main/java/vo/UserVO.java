@@ -5,6 +5,7 @@ import po.RepositoryPO;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import businesslogic.RepositoryBL.Statistics;
 import businesslogic.userBL.User;
 
 /**
@@ -77,9 +78,10 @@ public class UserVO {
         return this.email;
     }
 
-    public Integer getHasNum() throws IOException{
-    	return new User().checkUser(login).getHas().size();
+    public Integer getHasNum(){
+    	return new Statistics().getHasNum(login);
     }
+    
     public String getCompany(){
         return this.company;
     }

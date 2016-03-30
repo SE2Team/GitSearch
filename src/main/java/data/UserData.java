@@ -275,4 +275,11 @@ public class UserData implements UserDataService {
 		}
 		return false;
 	}
+
+	@Override
+	public ArrayList<UserPO> screenTime(String time) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
