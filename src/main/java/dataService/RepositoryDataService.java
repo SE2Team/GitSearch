@@ -26,7 +26,7 @@ public interface RepositoryDataService {
      * @return用<String,Integer>表示的<编程语言,语言使用量>的Map
      * @throws IOException
      */
-    ArrayList<StaStrPO> languagesOfRepository(String userName, String reponame) throws IOException;
+    StaStrPO languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 
