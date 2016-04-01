@@ -44,7 +44,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.sort(sort);
     }
     
-    public Iterator<RepositoryVO> screenLanguage(String language){
+    public Iterator<RepositoryVO> screenLanguage(String language) throws IOException {
     	return repository.screenLanguage(language);
     }
     

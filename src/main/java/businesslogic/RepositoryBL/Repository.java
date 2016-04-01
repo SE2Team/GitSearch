@@ -75,7 +75,7 @@ public class Repository {
 
     }
     
-    public Iterator<RepositoryVO> screenLanguage(String language){
+    public Iterator<RepositoryVO> screenLanguage(String language) throws IOException {
     	ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
     	ArrayList<RepositoryPO> pos=factory.getRepositoryDataService().screenLanguage(language);
     	for(RepositoryPO po:pos){

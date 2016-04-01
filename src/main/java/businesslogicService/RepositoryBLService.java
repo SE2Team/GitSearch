@@ -28,7 +28,7 @@ public interface RepositoryBLService {
 
     Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException;
     
-    Iterator<RepositoryVO> screenLanguage(String language);
+    Iterator<RepositoryVO> screenLanguage(String language) throws IOException;
     
     Iterator<RepositoryVO> screenTime(String time);
 }

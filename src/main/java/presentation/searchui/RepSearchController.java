@@ -159,19 +159,23 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     /**
-                     * 如果按钮现在是选中状态，不动直接返回
+                     * 如果按钮被点击后是非选中状态，不动直接返回
                      */
-                    if (t.isSelected()){
+                    if (!t.isSelected()){
                         return;
                     }
-                    handleLanguage(t.getText());
+                    try {
+                        handleLanguage(t.getText());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
             language.add(t);
         }
     }
 
-    private void handleLanguage(String lang) {
+    private void handleLanguage(String lang) throws IOException {
         vos.clear();
         Iterator<RepositoryVO> itr = bl.screenLanguage(lang);
         while (itr.hasNext()) {
