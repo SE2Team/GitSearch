@@ -21,11 +21,12 @@ import po.UserPO;
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-		ArrayList<UserPO> list=new UserData().sortUser(User_Sort.HAS);
-		for(int i=1850;i<list.size();i++){
-			System.out.println(new UserData().CheckUser
-					(list.get(i).getLogin()).getHas().size());
-		}
+//		ArrayList<UserPO> list=new UserData().sortUser(User_Sort.HAS);
+//		for(int i=1850;i<list.size();i++){
+//			System.out.println(new UserData().CheckUser
+//					(list.get(i).getLogin()).getHas().size());
+//		}
+		System.out.println(new StatisticsData().getHasNum("mojombo"));
 		System.out.println("Success");
 		
 	}
