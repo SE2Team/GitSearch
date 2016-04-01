@@ -98,13 +98,23 @@
     -fx-color:red;
 }
 
+.toggle-button{
+    -fx-border-radius: 5;
+    -fx-padding: 3 6 6 6;
+    -fx-background-color: linear-gradient(#add8e6,#fff8dc);
+}
 .toggle-button: selected{
     -fx-text-fill: white;
     -fx-background-color: linear-gradient(#5f9ea0,#add8e6);
 }
 
 .toggle-button: hover{
-    -fx-background-color: linear-gradient(#d3d3d3,#add8e6);
+    -fx-background-color: linear-gradient(#fff8dc,#add8e6);
+}
+
+
+.button{
+    -fx-background-color: linear-gradient(#fff8dc,#add8e6);
 }
 
 .button:selected{
@@ -113,9 +123,23 @@
 }
 
 .button: hover{
-    -fx-background-color: linear-gradient( #d3d3d3,#add8e6);
+    -fx-background-color: linear-gradient(#add8e6,#fff8dc);
 }
 
 #wrap label{
     -fx-graphic-text-gap:0;
+}
+
+#titledPane{
+    -fx-background-color: linear-gradient(#f5f5dc,#deb887);
+}
+
+.combo-box{
+    -fx-border-color: gray;
+    -fx-border-radius: 5;
+    -fx-background-color: linear-gradient(#f5f5dc,#add8e6);
+}
+
+#SortWay{
+     -fx-background-color: linear-gradient(#fff8dc,#add8e6);
 }

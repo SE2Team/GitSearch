@@ -20,7 +20,7 @@
          </image>
       </ImageView>
       <TextField layoutX="242.0" layoutY="299.0" prefHeight="55.0" prefWidth="647.0" promptText="Search" />
-      <ComboBox layoutX="889.0" layoutY="299.0" prefHeight="55.0" prefWidth="94.0" promptText="用户" />
+      <ComboBox layoutX="889.0" layoutY="299.0" prefHeight="55.0" prefWidth="94.0" promptText="用户" stylesheets="@../../default.css" />
       <Button id="search_button" layoutX="983.0" layoutY="300.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" stylesheets="@../../default.css">
          <cursor>
             <Cursor fx:constant="HAND" />
