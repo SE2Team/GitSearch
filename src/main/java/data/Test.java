@@ -21,19 +21,15 @@ import po.UserPO;
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-//		RepositoryData data=new RepositoryData();
-//		RepositoryPO po=data.checkRepository("mojombo","grit");
-//		for(int i=0;i<po.getCollaborators().size();i++){
-//			System.out.print(po.getCollaborators().get(i)+",");
-//		}
-//		System.out.println("");
-//		for(int i=0;i<po.getContributors().size();i++){
-//			System.out.print(po.getContributors().get(i)+",");
-//		}
-		UserData data=new UserData();
-		UserPO po=data.CheckUser("mojombo");
-		for(int i=0;i<po.getRelated().size();i++){
-			System.out.println(po.getRelated().get(i));
+		UserData userData=new UserData();
+		UserPO po=null;
+		ArrayList<UserPO> list=new UserData().getUser();
+		System.out.println("Success");
+		for(int i=0;i<list.size();i++){
+			po=userData.CheckUser(list.get(i).getLogin());
+			new GetData("related").writeDataAdd(list.get(i).getLogin()+";"+po.getRelated().size());
+			
 		}
+		System.out.println("Success");
 	}
 }
