@@ -34,7 +34,7 @@ public interface RepositoryDataService {
 
     ArrayList<RepositoryPO>  sort(Repository_Sort sort) throws IOException;
     
-    ArrayList<RepositoryPO> screenLanguage(String language);
+    ArrayList<RepositoryPO> screenLanguage(String language) throws IOException;
     
     /**
      * 根据项目创建时间进行筛选

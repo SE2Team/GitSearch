@@ -283,9 +283,9 @@ public class RepositoryData implements RepositoryDataService {
 	}
 
 	@Override
-	public ArrayList<RepositoryPO> screenLanguage(String language) {
+	public ArrayList<RepositoryPO> screenLanguage(String language) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		ArrayList<RepositoryPO> list2=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getLanguage().equals(language)){
