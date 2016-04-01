@@ -54,7 +54,7 @@ public class RepositoryVO {
         this.contributor = contributor;
         this.collaborators_count = collaborators_count;
         this.collaborators = collaborators;
-        this.contributors = collaborators;
+        this.contributors = contributors;
 
 
     }

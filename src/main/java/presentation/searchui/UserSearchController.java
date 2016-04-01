@@ -5,9 +5,11 @@ import businesslogic.userBL.UserController;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -25,7 +27,7 @@ public class UserSearchController implements MyController {
     /**
      * 筛选部件
      */
-    private ArrayList<Button> time=new ArrayList<>();
+    private ArrayList<ToggleButton> time=new ArrayList<>();
     @FXML
     private Button seven;
     @FXML
@@ -88,6 +90,11 @@ public class UserSearchController implements MyController {
 //        time.add(ten);
 //        time.add(eleven);
 //        time.add(twe);
+
+        for(Node n:flowPane2.getChildren()){
+            time.add((ToggleButton) n);
+        }
+
     }
 
     public void setFxui(FXUITest fxui) {
@@ -223,7 +230,7 @@ public class UserSearchController implements MyController {
     private void handleRepo() {
         vos.clear();//清空数组
         try {
-            Iterator<UserVO> itr = bl.sortUser(User_Sort.Followers);
+            Iterator<UserVO> itr = bl.sortUser(User_Sort.HAS);
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }

@@ -3,11 +3,12 @@ package presentation.searchui;
 import Util.Repository_Sort;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -26,12 +27,17 @@ public class RepSearchController implements MyController {
     /**
      * 筛选部件
      */
+    private ArrayList<ToggleButton> category = new ArrayList<>();
+    private ArrayList<ToggleButton> time = new ArrayList<>();
+    private ArrayList<ToggleButton> language = new ArrayList<>();
     @FXML
-    private ArrayList<Button> category;
+    private FlowPane categoryPane;
     @FXML
-    private ArrayList<Button> language;
+    private FlowPane timePane;
     @FXML
-    private ArrayList<Button> time;
+    private FlowPane languagePane;
+
+    private ToggleGroup langGroup=new ToggleGroup();
     /**
      * 排序部件
      */
@@ -71,7 +77,8 @@ public class RepSearchController implements MyController {
     private int page_max = 0;
 
     public void initialize() {
-
+        initFilters();
+        langGroup.getToggles().addAll(language);
     }
 
     public void setFxui(FXUITest fxui) {
@@ -140,6 +147,40 @@ public class RepSearchController implements MyController {
 
         controller.repaint();
         return anchorPane;
+    }
+
+    /**
+     * 初始化筛选组件
+     */
+    private void initFilters() {
+        for (Node n : languagePane.getChildren()) {
+            ToggleButton t = (ToggleButton) n;
+            t.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    /**
+                     * 如果按钮现在是选中状态，不动直接返回
+                     */
+                    if (t.isSelected()){
+                        return;
+                    }
+                    handleLanguage(t.getText());
+                }
+            });
+            language.add(t);
+        }
+    }
+
+    private void handleLanguage(String lang) {
+        vos.clear();
+        Iterator<RepositoryVO> itr = bl.screenLanguage(lang);
+        while (itr.hasNext()) {
+            vos.add(itr.next());
+        }
+
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+        updatePage();
     }
 
     public void setKey(String key) {
