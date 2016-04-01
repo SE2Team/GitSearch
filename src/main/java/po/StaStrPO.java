@@ -1,19 +1,21 @@
 package po;
 
+import java.util.ArrayList;
+
 public class StaStrPO {
-	String str;
-	Integer integer;
-	public StaStrPO(String str,
-	Integer integer){
+	ArrayList<String> str;
+	ArrayList<Integer> integer;
+	public StaStrPO(ArrayList<String> str,
+			ArrayList<Integer> integer){
 		this.str=str;
 		this.integer=integer;
 	}
 	
-	public String getStr(){
+	public ArrayList<String> getStr(){
 		return this.str;
 	}
 	
-	public Integer getInt(){
+	public ArrayList<Integer> getInt(){
 		return this.integer;
 	}
 	

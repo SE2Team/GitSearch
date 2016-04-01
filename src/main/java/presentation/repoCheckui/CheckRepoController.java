@@ -1,8 +1,6 @@
 package presentation.repoCheckui;
 
 import businesslogic.RepositoryBL.RepositoryController;
-import businesslogic.RepositoryBL.Statistics;
-import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.StatisticsBLService;
 import javafx.collections.FXCollections;
@@ -10,13 +8,17 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.chart.*;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
+import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 /**
  * Created by moeyui on 2016/3/14 0014.
  */
-public class CheckRepoController implements MyController{
+public class CheckRepoController implements MyController {
     private FXUITest fxui;
     @FXML
     private Label stars;
@@ -59,8 +61,8 @@ public class CheckRepoController implements MyController{
     @FXML
     private Label owner;
 
-    private XYChart.Series seriesLang=new XYChart.Series<>();
-    private RepositoryBLService bl=new RepositoryController();
+    private XYChart.Series seriesLang = new XYChart.Series<>();
+    private RepositoryBLService bl = new RepositoryController();
 
 
 //    @FXML
@@ -70,12 +72,9 @@ public class CheckRepoController implements MyController{
 //    private Tab colTab;
 
 
-
-
-
     private RepositoryVO vo;
 
-    private ObservableList<String> langs= FXCollections.observableArrayList();
+    private ObservableList<String> langs = FXCollections.observableArrayList();
 
     private StatisticsBLService sbl;
 
@@ -86,7 +85,7 @@ public class CheckRepoController implements MyController{
     }
 
     public void repaint() {
-        if (vo==null){
+        if (vo == null) {
             return;
         }
         reponame.setText(vo.getName());
@@ -97,20 +96,24 @@ public class CheckRepoController implements MyController{
         collaborator.setText(String.valueOf(vo.getContributor()));
         contributors.setText(String.valueOf(vo.getContributor()));
         language.setText(vo.getLanguage());
-//        owner.setText();
         try {
             setList();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-//        langs.addAll(bl.languagesOfRepository(vo.get));
-        xLang.setCategories(langs);
-        langChart.getData().addAll(getdata());
+        String[] split = vo.getName().split("/");
+        String username = split[0];
+        String reponame = split[1];
+        owner.setText(username);
+//        StaStrVO staStrVO=bl.languagesOfRepository(username,reponame);
+//        langs.addAll(bl.languagesOfRepository());
+//        xLang.setCategories(langs);
+//        langChart.getData().addAll(getdata());
     }
 
     private void setList() throws IOException {
-        if (vo.getContributors()!=null) {
+        if (vo.getContributors() != null) {
             for (int i = 0; i < vo.getContributors().size(); i++) {
                 contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
                 /**
@@ -123,7 +126,7 @@ public class CheckRepoController implements MyController{
             }
         }
 
-        if(vo.getCollaborators()!=null) {
+        if (vo.getCollaborators() != null) {
             for (int i = 0; i < vo.getCollaborators().size(); i++) {
                 collaboratorPane.getChildren().add(getSub(vo.getCollaborators().get(i)));
                 /**
@@ -136,8 +139,9 @@ public class CheckRepoController implements MyController{
             }
         }
     }
+
     @FXML
-    public void initialize(){
+    public void initialize() {
 //        xLang.setLabel("languages");
         seriesLang.setName("language");
 //        sbl=new StatisticsController();
@@ -145,17 +149,21 @@ public class CheckRepoController implements MyController{
 
     /**
      * get vo with arrays
+     *
      * @param vo
      */
-    public void setVo(RepositoryVO vo) {
-        this.vo = vo;
+    public void setVo(RepositoryVO vo) throws IOException {
+        String[] split = vo.getName().split("/");
+        String username = split[0];
+        String reponame = split[1];
+        this.vo = bl.checkRepository(username,reponame);
     }
 
     public Parent getSub(String str) throws IOException {
-        FXMLLoader loader=new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
-        AnchorPane anchorPane=loader.load();
-        SubContriController controller=loader.getController();
+        AnchorPane anchorPane = loader.load();
+        SubContriController controller = loader.getController();
 
         controller.setFxui(fxui);
         controller.setText(str);
@@ -163,12 +171,13 @@ public class CheckRepoController implements MyController{
         return anchorPane;
     }
 
-    private void setGraph(){
+    private void setGraph() {
 
 
     }
-    private ArrayList<String> getList(){
-        ArrayList<String> a=new ArrayList<String>();
+
+    private ArrayList<String> getList() {
+        ArrayList<String> a = new ArrayList<String>();
         a.add("java");
         a.add("C#");
         a.add("html");
@@ -177,11 +186,11 @@ public class CheckRepoController implements MyController{
         return a;
     }
 
-    private XYChart.Series<String, Integer> getdata(){
-        XYChart.Series<String,Integer> series=new XYChart.Series<>();
+    private XYChart.Series<String, Integer> getdata() {
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
-        for (int i=0;i<5;i++){
-            series.getData().add(new XYChart.Data<>(langs.get(i),i+70));
+        for (int i = 0; i < 5; i++) {
+            series.getData().add(new XYChart.Data<>(langs.get(i), i + 70));
         }
 
         return series;

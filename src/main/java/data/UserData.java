@@ -37,7 +37,9 @@ public class UserData implements UserDataService {
 				for (int p = 0; p < related.size(); p++) {
 					if (this.isEqual(related.get(p), user)) {
 						String[] str = related.get(p).split(";");
+						if(relatedRepo.contains(str[str.length - 1])==false){
 						relatedRepo.add(str[str.length - 1]);
+						}
 					}
 				}
 
@@ -45,7 +47,9 @@ public class UserData implements UserDataService {
 				for (int p = 0; p < colla.size(); p++) {
 					if (this.isEqual(colla.get(p), user)) {
 						String[] str = colla.get(p).split(";");
-						relatedRepo.add(str[str.length - 1]);
+						if(relatedRepo.contains(str[str.length - 1])==false){
+							relatedRepo.add(str[str.length - 1]);
+							}
 					}
 				}
 
@@ -275,4 +279,11 @@ public class UserData implements UserDataService {
 		}
 		return false;
 	}
+
+	@Override
+	public ArrayList<UserPO> screenTime(String time) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

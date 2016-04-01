@@ -174,19 +174,20 @@ public class RepositoryData implements RepositoryDataService {
 		return null;
 	}
 
-	public ArrayList<StaStrPO> languagesOfRepository(String userName, String reponame) throws IOException {
+	public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
 		String str1="http://gitmining.net/api/repository"+userName+"/"
 				+reponame+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
-		ArrayList<StaStrPO> listPO=new ArrayList<>();
-		Map<String, Integer> map=new HashMap<String, Integer>();
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
 		for(int i=0;i<list.size()-1;i++){
 			String str[]=list.get(i).split(":");
-			listPO.add(new StaStrPO(str[0], Integer.parseInt(str[1])));
+			listStr.add(str[0]);
+			listInt.add(Integer.parseInt(str[1]));
 		}
 		
-		return listPO;
+		return new StaStrPO(listStr, listInt);
 	}
 	
 	
@@ -283,9 +284,9 @@ public class RepositoryData implements RepositoryDataService {
 	}
 
 	@Override
-	public ArrayList<RepositoryPO> screenLanguage(String language) {
+	public ArrayList<RepositoryPO> screenLanguage(String language) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		ArrayList<RepositoryPO> list2=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getLanguage().equals(language)){
@@ -293,6 +294,12 @@ public class RepositoryData implements RepositoryDataService {
 			}
 		}
 		return list2;
+	}
+
+	@Override
+	public ArrayList<RepositoryPO> screenTime(String time) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

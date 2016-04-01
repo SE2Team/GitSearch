@@ -74,4 +74,22 @@ public class Repository {
         return vos.iterator();
 
     }
+    
+    public Iterator<RepositoryVO> screenLanguage(String language) throws IOException {
+    	ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
+    	ArrayList<RepositoryPO> pos=factory.getRepositoryDataService().screenLanguage(language);
+    	for(RepositoryPO po:pos){
+    		vos.add(PO2VO.convert(po));
+    	}
+    	return vos.iterator();
+    }
+    
+    public Iterator<RepositoryVO> screenTime(String time){
+    	ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
+    	ArrayList<RepositoryPO> pos=factory.getRepositoryDataService().screenTime(time);
+    	for(RepositoryPO po:pos){
+    		vos.add(PO2VO.convert(po));
+    	}
+    	return vos.iterator();
+    }
 }

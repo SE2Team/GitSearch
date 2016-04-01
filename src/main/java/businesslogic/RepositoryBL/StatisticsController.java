@@ -67,4 +67,8 @@ public class StatisticsController implements StatisticsBLService{
 	public Iterator<StaStrVO> getCompany() throws IOException{
 		return statistics.getCompany();
 	}
+	
+	public Integer getHasNum(String name){
+		return statistics.getHasNum(name);
+	}
 }

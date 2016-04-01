@@ -16,7 +16,7 @@ public class SubUserInfoController implements MyController {
     private Label id;
     @FXML
     private Label followers;
-//    @FXML
+    //    @FXML
 //    private Label following;
     @FXML
     private Label repos;
@@ -35,15 +35,16 @@ public class SubUserInfoController implements MyController {
     }
 
     public void repaint() {
-        String nameText=vo.getName()!=""?vo.getName():"Unknown";
+        String nameText = vo.getName() != "" ? vo.getName() : "Unknown";
         name.setText(nameText);
         followers.setText(String.valueOf(vo.getFollowers()));
+        repos.setText(String.valueOf(vo.getHasNum()));
         id.setText(vo.getLogin());
 //        repos.setText(vo.getRepos());
     }
 
     @FXML
-    private void handleCheck(){
+    private void handleCheck() {
         fxuiTest.checkUser(vo);
     }
 

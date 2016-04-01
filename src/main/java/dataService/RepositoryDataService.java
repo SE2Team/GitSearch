@@ -26,7 +26,7 @@ public interface RepositoryDataService {
      * @return用<String,Integer>表示的<编程语言,语言使用量>的Map
      * @throws IOException
      */
-    ArrayList<StaStrPO> languagesOfRepository(String userName, String reponame) throws IOException;
+    StaStrPO languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 
@@ -34,6 +34,12 @@ public interface RepositoryDataService {
 
     ArrayList<RepositoryPO>  sort(Repository_Sort sort) throws IOException;
     
-    ArrayList<RepositoryPO> screenLanguage(String language);
+    ArrayList<RepositoryPO> screenLanguage(String language) throws IOException;
     
+    /**
+     * 根据项目创建时间进行筛选
+     * @param time
+     * @return
+     */
+    ArrayList<RepositoryPO> screenTime(String time);
 }

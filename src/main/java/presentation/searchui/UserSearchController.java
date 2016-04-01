@@ -5,9 +5,11 @@ import businesslogic.userBL.UserController;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -25,7 +27,21 @@ public class UserSearchController implements MyController {
     /**
      * 筛选部件
      */
-    private ArrayList<Button> time;
+    private ArrayList<ToggleButton> time=new ArrayList<>();
+    @FXML
+    private Button seven;
+    @FXML
+    private Button eight;
+    @FXML
+    private Button nine;
+    @FXML
+    private Button ten;
+    @FXML
+    private Button eleven;
+    @FXML
+    private Button twe;
+    @FXML
+    private FlowPane flowPane2;
     /**
      * 翻页部件
      */
@@ -55,6 +71,8 @@ public class UserSearchController implements MyController {
     @FXML
     private FlowPane flowPane;
 
+
+
     /**
      * 界面无关变量
      */
@@ -66,6 +84,16 @@ public class UserSearchController implements MyController {
     private int page_max = 0;
 
     public void initialize() {
+//        time.add(seven);
+//        time.add(eight);
+//        time.add(nine);
+//        time.add(ten);
+//        time.add(eleven);
+//        time.add(twe);
+
+        for(Node n:flowPane2.getChildren()){
+            time.add((ToggleButton) n);
+        }
 
     }
 
@@ -202,7 +230,7 @@ public class UserSearchController implements MyController {
     private void handleRepo() {
         vos.clear();//清空数组
         try {
-            Iterator<UserVO> itr = bl.sortUser(User_Sort.Following);
+            Iterator<UserVO> itr = bl.sortUser(User_Sort.HAS);
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }

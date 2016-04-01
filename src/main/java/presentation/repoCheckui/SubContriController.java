@@ -33,7 +33,10 @@ public class SubContriController implements MyController{
             setMore();
             return;
         }
-        this.label.setText(str);
+        /**
+         * 去掉双引号
+         */
+        this.label.setText(str.replace("\"",""));
     }
 
     public void setMore(){

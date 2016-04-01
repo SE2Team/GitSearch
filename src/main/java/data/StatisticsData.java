@@ -69,9 +69,8 @@ public class StatisticsData implements StatisticsDataService{
 				po.getContributor()/contributors_num,po.getCollaborators_count()/collaborators_num);
 	}
 
-	public ArrayList<StaStrPO> getStar() throws IOException {
+	public StaStrPO getStar() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int thousand=0;
 		int twoThousand=0;
 		int over=0;
@@ -86,16 +85,20 @@ public class StatisticsData implements StatisticsDataService{
 				over++;
 			}
 		}
-		listPO.add(new StaStrPO("0-1000", thousand));
-		listPO.add(new StaStrPO("1001-2000", twoThousand));
-		listPO.add(new StaStrPO("over2000", over));
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		listStr.add("0-1000");
+		listStr.add("1001-2000");
+		listStr.add("over2000");
+		listInt.add(thousand);
+		listInt.add(twoThousand);
+		listInt.add(over);
 		
-		return listPO;
+		return new StaStrPO(listStr, listInt);
 	}
 
-	public ArrayList<StaStrPO> getForks() throws IOException {
+	public StaStrPO getForks() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int thousand=0;
 		int twoThousand=0;
 		int over=0;
@@ -110,17 +113,21 @@ public class StatisticsData implements StatisticsDataService{
 				over++;
 			}
 		}
-		listPO.add(new StaStrPO("0-1000", thousand));
-		listPO.add(new StaStrPO("1001-2000", twoThousand));
-		listPO.add(new StaStrPO("over2000", over));
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		listStr.add("0-1000");
+		listStr.add("1001-2000");
+		listStr.add("over2000");
+		listInt.add(thousand);
+		listInt.add(twoThousand);
+		listInt.add(over);
 		
-		return listPO;
+		return new StaStrPO(listStr, listInt);
 	}
 
 	
-	public  ArrayList<StaStrPO> getRepoCreated() throws IOException {
+	public  StaStrPO getRepoCreated() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO = new ArrayList<StaStrPO>();
 		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
 		int sevenYear = 0;
 		int eightYear = 0;
@@ -145,17 +152,22 @@ public class StatisticsData implements StatisticsDataService{
 				}
 			}
 		}
-		listPO.add(new StaStrPO("2007", sevenYear));
-		listPO.add(new StaStrPO("2008", eightYear));
-		listPO.add(new StaStrPO("2009", nineYear));
-		listPO.add(new StaStrPO("2010", tenYear));
-		return listPO;
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		listStr.add("2007");
+		listStr.add("2008");
+		listStr.add("2009");
+		listStr.add("20010");
+		listInt.add(sevenYear);
+		listInt.add(eightYear);
+		listInt.add(nineYear);
+		listInt.add(tenYear);
+		return new StaStrPO(listStr, listInt);
 	}
 
 	
-	public ArrayList<StaStrPO> getLanguage() throws IOException {
+	public StaStrPO getLanguage() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		
 		ArrayList<Integer> listInt = new ArrayList<Integer>();
 		ArrayList<String> listString = new GetData("languages").readData();
@@ -199,9 +211,8 @@ public class StatisticsData implements StatisticsDataService{
 		return this.sort(listInt, listString);
 	}
 
-	public ArrayList<StaStrPO> getUserCreated() throws IOException {
+	public StaStrPO getUserCreated() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		ArrayList<UserPO> list=new UserData().getUser();
 		ArrayList<Integer> list2=new ArrayList<Integer>();
 		ArrayList<String> list3=new ArrayList<String>();
@@ -250,16 +261,13 @@ public class StatisticsData implements StatisticsDataService{
 				}
 			}
 		
-		for(int p=0;p<9;p++){
-			listPO.add(new StaStrPO(list3.get(p), list2.get(p)));
-			
-		}
-		return listPO;
+	
+		
+		return new StaStrPO(list3,list2);
 	}
 
-	public ArrayList<StaStrPO> getUserType() throws IOException {
+	public StaStrPO getUserType() throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
 		int organization=0;
 		int user=0;
 		ArrayList<UserPO> list=new UserData().getUser();
@@ -272,8 +280,12 @@ public class StatisticsData implements StatisticsDataService{
 				System.out.println("error");
 			}
 		}
-		listPO.add(new StaStrPO("User", user));
-		listPO.add(new StaStrPO("Organization", organization));
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		listStr.add("User");
+		listStr.add("Organization");
+		listInt.add(user);
+		listInt.add(organization);
 //		Map<String, Integer> map=new StatisticsData().getUserType();
 //		Set<String> set=map.keySet();
 //		Iterator<String> iterator=set.iterator();
@@ -282,10 +294,11 @@ public class StatisticsData implements StatisticsDataService{
 //			Integer j=map.get(key);
 //			System.out.println(key+":"+j);
 //		}
-		return listPO;
+		
+		return new StaStrPO(listStr, listInt);
 	}
 
-	public ArrayList<StaIntPO> getUserHas() {
+	public StaIntPO getUserHas() {
 		// TODO Auto-generated method stub
 //		UserData userData=new UserData();
 //		UserPO po=null;
@@ -298,7 +311,6 @@ public class StatisticsData implements StatisticsDataService{
 //		}
 //		System.out.println("Success");
 //上面为统计用户拥有项目数的代码	
-		ArrayList<StaIntPO> listPO=new ArrayList<StaIntPO>();
 		ArrayList<String> list = new GetData("has").readData();
 		ArrayList<Integer> list2 = new ArrayList<Integer>();//拥有项目数
 		ArrayList<Integer> list3=new ArrayList<Integer>();//用户数
@@ -334,17 +346,12 @@ public class StatisticsData implements StatisticsDataService{
 			list3.set(list2.indexOf(temp), list3.get(list2.indexOf(temp))+1);
 		}
 	
-		for(int i=0;i<list2.size();i++){
-			listPO.add(new StaIntPO(list2.get(i),list3.get(i)));	
-		}
-		
-		return listPO;
+		return new StaIntPO(list2, list3);
 	}
 
-	public ArrayList<StaIntPO>getUserRelated() {
+	public StaIntPO getUserRelated() {
 		// TODO Auto-generated method stub
 		
-		ArrayList<StaIntPO> listPO=new ArrayList<StaIntPO>();
 		ArrayList<String> list = new GetData("related").readData();
 		ArrayList<Integer> list2 = new ArrayList<Integer>();//拥有项目数
 		ArrayList<Integer> list3=new ArrayList<Integer>();//用户数
@@ -380,14 +387,12 @@ public class StatisticsData implements StatisticsDataService{
 			list3.set(list2.indexOf(temp), list3.get(list2.indexOf(temp))+1);
 		}
 	
-		for(int i=0;i<list2.size();i++){
-			listPO.add(new StaIntPO(list2.get(i),list3.get(i)));	
-		}
+	
 		
-		return listPO;
+		return new StaIntPO(list2, list3);
 	}
 
-	public ArrayList<StaStrPO> getCompany() throws IOException {
+	public StaStrPO getCompany() throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<UserPO> list=new UserData().getUser();
 //		ArrayList<String> list2=new ArrayList<String>();
@@ -416,9 +421,19 @@ public class StatisticsData implements StatisticsDataService{
 		return this.sort(list3, list2);
 	}
 	
-	private ArrayList<StaStrPO> sort(ArrayList<Integer> listInt,ArrayList<String> listString){
-
-		ArrayList<StaStrPO> listPO=new ArrayList<StaStrPO>();
+	public Integer getHasNum(String name){
+		ArrayList<String> listHas = new GetData("has").readData();
+		String[] str=new String[2];
+		for(int i=0;i<listHas.size();i++){
+			str=listHas.get(i).split(";");
+			if(str[0].equals(name)){
+				return Integer.parseInt(str[1]);
+			}
+		}
+		return 0;
+	}
+	
+	private StaStrPO sort(ArrayList<Integer> listInt,ArrayList<String> listString){
 		int tempInt = 0;
 		String tempString = "";
 		for (int i = 0; i < listInt.size(); i++) {
@@ -436,11 +451,8 @@ public class StatisticsData implements StatisticsDataService{
 			}
 		}
 
-		for (int j = 0; j < listString.size(); j++) {
-			listPO.add(new StaStrPO(listString.get(j), listInt.get(j)));
-		//	System.out.println(listString.get(j)+":"+listInt.get(j));
-		}
-
-		return listPO;
+		
+		return new StaStrPO(listString, listInt);
 	}
+	
 }

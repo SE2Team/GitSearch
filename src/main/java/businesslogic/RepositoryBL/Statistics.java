@@ -105,4 +105,8 @@ public class Statistics {
 		}
 		return vos.iterator();
 	}
+	
+	public Integer getHasNum(String name){
+		return factory.getStatisticsDataService().getHasNum(name);
+	}
 }
