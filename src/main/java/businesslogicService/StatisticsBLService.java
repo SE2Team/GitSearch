@@ -45,4 +45,6 @@ public interface StatisticsBLService {
 	Iterator<StaIntVO> getUserRelated();
 	
 	Iterator<StaStrVO> getCompany() throws IOException;
+	
+	Integer getHasNum(String name);
 }

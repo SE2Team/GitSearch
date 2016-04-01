@@ -6,6 +6,8 @@ import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.UserVO;
 
+import java.io.IOException;
+
 /**
  * Created by moeyui on 2016/3/17 0017.
  */
@@ -38,6 +40,11 @@ public class SubUserInfoController implements MyController {
         String nameText=vo.getName()!=""?vo.getName():"Unknown";
         name.setText(nameText);
         followers.setText(String.valueOf(vo.getFollowers()));
+        try {
+            repos.setText(String.valueOf(vo.getHasNum()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         id.setText(vo.getLogin());
 //        repos.setText(vo.getRepos());
     }

@@ -84,4 +84,11 @@ public class User {
     	return vos.iterator();
     }
     
+    public Iterator<UserVO> screenTime(String time){
+    	ArrayList<UserVO> vos=new ArrayList<UserVO>();
+    	for(UserPO po:data.screenTime(time)){
+    		vos.add(PO2VO.convert(po));
+    	}
+    	return vos.iterator();
+    }
 }
