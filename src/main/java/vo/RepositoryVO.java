@@ -136,6 +136,12 @@ public class RepositoryVO {
         return this.collaborators_count;
     }
 
-
+    public String getOwnerName(){
+    	if(this.name.indexOf("/")!=-1){
+    		return this.name.split("/")[0];
+    	}else{
+    		return null;
+    	}
+    }
 
 }
