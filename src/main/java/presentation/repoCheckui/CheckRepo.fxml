@@ -131,14 +131,7 @@
                                                       <Font size="21.0" />
                                                    </font>
                                                 </Label>
-                                                <BarChart fx:id="langChart" layoutX="504.0" layoutY="9.0" prefHeight="218.0" prefWidth="294.0">
-                                                  <xAxis>
-                                                    <CategoryAxis side="BOTTOM" fx:id="xLang" />
-                                                  </xAxis>
-                                                  <yAxis>
-                                                    <NumberAxis side="LEFT" />
-                                                  </yAxis>
-                                                </BarChart>
+                                                <PieChart fx:id="langChart" layoutX="515.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" />
                                              </children>
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

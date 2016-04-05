@@ -143,3 +143,13 @@
 #SortWay{
      -fx-background-color: linear-gradient(#fff8dc,#add8e6);
 }
+
+#RepName:hover{
+     -fx-text-fill:#4094b9;
+     -fx-underline:true
+}
+
+#UserName:hover{
+     -fx-text-fill:#4094b9;
+     -fx-underline:true
+}
