@@ -15,7 +15,7 @@ public class StaIntVO {
 		return this.integer;
 	}
 	
-	public ArrayList<Integer> getint2(){
+	public ArrayList<Integer> getInt2(){
 		return this.integer2;
 	}
 }
