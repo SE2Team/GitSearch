@@ -48,8 +48,12 @@ public class RepositoryController implements RepositoryBLService {
     	return repository.screenLanguage(language);
     }
     
-    public Iterator<RepositoryVO> screenTime(String time){
+    public Iterator<RepositoryVO> screenTime(String time) throws IOException{
     	return repository.screenTime(time);
+    }
+    
+    public Iterator<RepositoryVO> screenCategory(String key) throws IOException{
+    	return repository.screenCategory(key);
     }
 
 }

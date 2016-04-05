@@ -30,5 +30,7 @@ public interface RepositoryBLService {
     
     Iterator<RepositoryVO> screenLanguage(String language) throws IOException;
     
-    Iterator<RepositoryVO> screenTime(String time);
+    Iterator<RepositoryVO> screenTime(String time) throws IOException;
+    
+    Iterator<RepositoryVO> screenCategory(String key) throws IOException;
 }
