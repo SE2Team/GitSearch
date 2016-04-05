@@ -22,13 +22,11 @@ import po.UserPO;
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		list=new RepositoryData().screenTime("200900");
-		list=new RepositoryData().screenLanguage("Ruby");
-	
-		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getStargazers());
-			
+		StaStrPO po=new RepositoryData().languagesOfRepository("mojombo", "grit");
+		ArrayList<String> strings=po.getStr();
+		for(int i=0;i<strings.size();i++){
+			System.out.println(strings.get(i));
 		}
+		
 	}
 }
