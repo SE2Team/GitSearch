@@ -72,10 +72,6 @@
                     </execution>
                 </executions>
             </plugin>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
         </plugins>
 
@@ -97,9 +93,7 @@
                 <filtering>false</filtering>
             </resource>
             <resource>
-<<<<<<< HEAD
-=======
-=======
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -112,8 +106,6 @@
         </plugins>
         <resources>
             <resource>
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
                 <directory>src/main/resource</directory>
                 <includes>
                     <include>**/*.png</include>
@@ -122,21 +114,10 @@
                     <include>**/*.jpg</include>
                     <include>**/*.icon</include>
                     <include>**/*.JPG</include>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
                     <include>**/*.fxml</include>
                     <include>**/*.css</include>
 
                 </includes>
-
-<<<<<<< HEAD
-=======
-=======
-                </includes>
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
             </resource>
         </resources>
 
