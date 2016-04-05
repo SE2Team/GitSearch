@@ -15,17 +15,6 @@ import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.StatisticsVO;
 
-/** 
- * @author 
- * @date 
-2016骞�3鏈�16鏃� 
-涓嬪崍11:40:22 
- * @version 1.0 
- * @parameter  
- * @since  
- * @return  
- *@throws 寮傚父绫诲強鎶涘嚭鏉′欢
- */
 public class StatisticsController implements StatisticsBLService{
 	Statistics statistics=new Statistics();
 	public StaStrVO getStar() throws IOException{
