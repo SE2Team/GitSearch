@@ -21,9 +21,9 @@
                      </font>
                   </Label>
                   <Accordion layoutX="2.0" layoutY="62.0" />
-                  <Accordion layoutX="2.0" layoutY="54.0">
+                  <Accordion layoutX="2.0" layoutY="54.0" prefHeight="425.0" prefWidth="203.0">
                     <panes>
-                      <TitledPane animated="false" text="Category">
+                      <TitledPane animated="false" prefHeight="278.0" prefWidth="203.0" text="Category">
                         <content>
                           <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="200.0">
                                  <children>
@@ -114,12 +114,12 @@
                                  <children>
                                     <FlowPane id="RepFlowPane" fx:id="languagePane" layoutX="-13.0" prefHeight="280.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <ToggleButton mnemonicParsing="false" text="all">
+                                          <ToggleButton mnemonicParsing="false" text="All">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
                                           </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="java">
+                                          <ToggleButton mnemonicParsing="false" text="Java">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
@@ -208,9 +208,9 @@
                               <Font name="Comic Sans MS" size="24.0" />
                            </font>
                       </TitledPane>
-                      <TitledPane animated="false" prefHeight="202.0" prefWidth="203.0" text="Create Time">
+                      <TitledPane animated="false" prefHeight="301.0" prefWidth="203.0" text="Create Time">
                         <content>
-                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="218.0" prefWidth="201.0">
+                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="201.0">
                                  <children>
                                     <FlowPane id="RepFlowPane" layoutX="-7.0" layoutY="-10.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>

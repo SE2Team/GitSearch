@@ -1,14 +1,15 @@
-#repoPane,#relaPane{
-    -fx-border-width:1;
-    -fx-border-insets:0;
-    -fx-border-color:GRAY;
+#repoPane, #relaPane {
+    -fx-border-width: 1;
+    -fx-border-insets: 0;
+    -fx-border-color: GRAY;
 }
-.split-pane:vertical .split-pane-divider,.split-pane:horizontal .split-pane-divider{
+
+.split-pane:vertical .split-pane-divider, .split-pane:horizontal .split-pane-divider {
     /*-fx-position-shape: false;*/
     /*visibility: hidden;*/
 }
 
-#back{
+#back {
     -fx-background-image: url("Images/back.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -16,7 +17,28 @@
     -fx-border-style: hidden;
     -fx-background-color: null;
 }
-#home{
+
+#back:hover {
+    -fx-background-image: url("Images/FocusBack.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+
+
+}
+
+#back:armed {
+    -fx-background-image: url("Images/ClickBack.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+}
+
+#home {
     -fx-background-image: url("Images/Home.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -24,7 +46,17 @@
     -fx-background-color: null;
 
 }
-#advance{
+
+#home:hover {
+    -fx-background-color: lavender;
+
+}
+
+#home:armed {
+    -fx-background-color: lightgrey;
+}
+
+#advance {
     -fx-background-image: url("Images/forward.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -32,7 +64,25 @@
     -fx-background-color: null;
 
 }
-#search_button{
+
+#advance:hover {
+    -fx-background-image: url("Images/FocusForward.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#advance:armed {
+    -fx-background-image: url("Images/ClickForward.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+}
+
+#search_button {
     -fx-background-image: url("Images/search.jpg");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -40,7 +90,8 @@
     -fx-background-color: null;
 
 }
-#PageUp{
+
+#PageUp {
     -fx-background-image: url("Images/PageUp.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -48,7 +99,26 @@
     -fx-background-color: null;
 
 }
-#PageDown{
+
+#PageUp:hover {
+    -fx-background-image: url("Images/FocusPageUp.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+    /*-fx-background-color:rgb(201,200,200);*/
+}
+
+#PageUp:armed {
+    -fx-background-image: url("Images/ClickPageUp.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+    /*-fx-background-color:rgb(155,153,153);*/
+}
+
+#PageDown {
     -fx-background-image: url("Images/PageDown.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -56,15 +126,36 @@
     -fx-background-color: null;
 
 }
-#RepFlowPane{
-    -fx-vgap:8;
-    -fx-hgap:5;
+
+#PageDown:hover {
+    -fx-background-image: url("Images/FocusPageDown.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
 }
-#timePane{
-    -fx-vgap:8;
-    -fx-hgap:24;
+
+#PageDown:armed {
+    -fx-background-image: url("Images/ClickPageDown.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
 }
-#FirstPage{
+
+#RepFlowPane {
+    -fx-vgap: 8;
+    -fx-hgap: 5;
+}
+
+#timePane {
+    -fx-vgap: 8;
+    -fx-hgap: 24;
+}
+
+#FirstPage {
     -fx-background-image: url("Images/FirstPage.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -72,7 +163,26 @@
     -fx-background-color: null;
 
 }
-#LastPage{
+
+#FirstPage:hover {
+    -fx-background-image: url("Images/FocusFirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#FirstPage:armed {
+    -fx-background-image: url("Images/ClickFirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#LastPage {
     -fx-background-image: url("Images/LastPage.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
@@ -81,75 +191,88 @@
 
 }
 
-#Contributors{
-    -fx-font-size:24px;
-    -fx-cursor:HAND;
+#LastPage:hover {
+    -fx-background-image: url("Images/FocusLastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
 }
 
-#Collaborators{
-     -fx-font-size:24px;
-     -fx-cursor:HAND;
+#LastPage:armed {
+    -fx-background-image: url("Images/ClickLastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
 }
 
-#testbutton:armed{
-    -fx-color:red;
-}
-#testtoggleb:selected{
-    -fx-color:red;
+#Contributors {
+    -fx-font-size: 24px;
+    -fx-cursor: HAND;
 }
 
-.toggle-button{
+#Collaborators {
+    -fx-font-size: 24px;
+    -fx-cursor: HAND;
+}
+
+
+.toggle-button {
     -fx-border-radius: 5;
     -fx-padding: 3 6 6 6;
-    -fx-background-color: linear-gradient(#add8e6,#fff8dc);
+    -fx-background-color: linear-gradient(#add8e6, #fff8dc);
 }
-.toggle-button: selected{
+
+.toggle-button:selected {
     -fx-text-fill: white;
-    -fx-background-color: linear-gradient(#5f9ea0,#add8e6);
+    -fx-background-color: linear-gradient(#5f9ea0, #add8e6);
 }
 
-.toggle-button: hover{
-    -fx-background-color: linear-gradient(#fff8dc,#add8e6);
+.toggle-button:hover {
+    -fx-background-color: linear-gradient(#fff8dc, #add8e6);
 }
 
-
-.button{
-    -fx-background-color: linear-gradient(#fff8dc,#add8e6);
+.button {
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
 }
 
-.button:selected{
+.button:selected {
     -fx-text-fill: white;
-    -fx-background-color: linear-gradient(#d3d3d3,#add8e6);
+    -fx-background-color: linear-gradient(#d3d3d3, #add8e6);
 }
 
-.button: hover{
-    -fx-background-color: linear-gradient(#add8e6,#fff8dc);
+.button:hover {
+    -fx-background-color: linear-gradient(#add8e6, #f5f5dc);
 }
 
-#wrap label{
-    -fx-graphic-text-gap:0;
+#wrap label {
+    -fx-graphic-text-gap: 0;
 }
 
-#titledPane{
-    -fx-background-color: linear-gradient(#f5f5dc,#deb887);
+#titledPane {
+    -fx-background-color: linear-gradient(#f5f5dc, #deb887);
 }
 
-.combo-box{
+.combo-box {
     -fx-border-color: gray;
     -fx-border-radius: 5;
-    -fx-background-color: linear-gradient(#f5f5dc,#add8e6);
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
 }
 
-#SortWay{
-     -fx-background-color: linear-gradient(#fff8dc,#add8e6);
+#SortWay {
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
 }
 
-#RepName:hover{
-     -fx-text-fill:#4094b9;
-     -fx-underline:true
+#RepName:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true
 }
 
-#UserName:hover{
-     -fx-text-fill:#4094b9;
-     -fx-underline:true
+#UserName:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+
 }

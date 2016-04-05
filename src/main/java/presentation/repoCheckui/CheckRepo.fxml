@@ -13,9 +13,9 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="1280.0" stylesheets="@../../default.css">
                <children>
-                  <Label fx:id="reponame" layoutX="14.0" layoutY="2.0" text="GitFan/GitSearch">
+                  <Label fx:id="reponame" layoutX="14.0" layoutY="2.0" prefHeight="53.0" prefWidth="1259.0" text="GitFan/GitSearch">
                      <font>
-                        <Font name="Bell MT Bold" size="48.0" />
+                        <Font name="Bell MT Bold" size="42.0" />
                      </font>
                   </Label>
                   <Label fx:id="description" layoutX="20.0" layoutY="86.0" prefHeight="39.0" prefWidth="630.0" text="description here" textOverrun="CLIP" wrapText="true">
@@ -36,15 +36,15 @@
                       <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Stars" textFill="#00000097">
+                        <Label text="Stars" textFill="#55c3e196">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label text="Forks" textFill="#00000097" GridPane.columnIndex="1">
+                        <Label text="Forks" textFill="#55c3e196" GridPane.columnIndex="1">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label text="Contributors" textFill="#00000097" GridPane.columnIndex="2">
+                        <Label text="Contributors" textFill="#55c3e196" GridPane.columnIndex="2">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
@@ -65,7 +65,7 @@
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label alignment="CENTER" text="Subscribers" textAlignment="CENTER" textFill="#00000097" GridPane.columnIndex="3">
+                        <Label alignment="CENTER" text="Subscribers" textAlignment="CENTER" textFill="#55c3e196" GridPane.columnIndex="3">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
@@ -73,7 +73,7 @@
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label text="Collaborator" textFill="#00000097" GridPane.columnIndex="4">
+                        <Label text="Collaborator" textFill="#55c3e196" GridPane.columnIndex="4">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
@@ -84,7 +84,7 @@
                         <Font name="Comic Sans MS" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="owner" layoutX="84.0" layoutY="57.0" text="name here" textFill="#4ebce4">
+                  <Label fx:id="owner" layoutX="84.0" layoutY="57.0" text="name here" textFill="#51c7ee">
                      <font>
                         <Font name="Comic Sans MS" size="20.0" />
                      </font>
@@ -131,7 +131,7 @@
                                                       <Font size="21.0" />
                                                    </font>
                                                 </Label>
-                                                <PieChart fx:id="langChart" layoutX="515.0" layoutY="5.0" prefHeight="200.0" prefWidth="200.0" />
+                                                <PieChart fx:id="langChart" layoutX="382.0" layoutY="5.0" prefHeight="228.0" prefWidth="428.0" />
                                              </children>
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
