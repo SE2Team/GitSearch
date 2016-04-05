@@ -90,4 +90,6 @@ public interface StatisticsDataService {
 	public StaStrPO getCompany() throws IOException;
 	
 	public Integer getHasNum(String name);
+	
+	
 }

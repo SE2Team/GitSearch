@@ -8,10 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -53,11 +50,13 @@ public class CheckRepoController implements MyController {
     private FlowPane collaboratorPane;
 
     @FXML
-    private BarChart langChart;
+    private BarChart poiChart;
     @FXML
-    private CategoryAxis xLang;
+    private PieChart langChart;
     @FXML
-    private NumberAxis ylang;
+    private CategoryAxis xpoi;
+    @FXML
+    private NumberAxis ypoi;
     @FXML
     private Label owner;
 
@@ -73,8 +72,10 @@ public class CheckRepoController implements MyController {
 
 
     private RepositoryVO vo;
+    private StaStrVO staStrVO;
 
-    private ObservableList<String> langs = FXCollections.observableArrayList();
+    private ObservableList<PieChart.Data> langs = FXCollections.observableArrayList();
+    private ObservableList<String> pois=FXCollections.observableArrayList();
 
     private StatisticsBLService sbl;
 
@@ -106,10 +107,8 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         owner.setText(username);
-//        StaStrVO staStrVO=bl.languagesOfRepository(username,reponame);
-//        langs.addAll(bl.languagesOfRepository());
-//        xLang.setCategories(langs);
-//        langChart.getData().addAll(getdata());
+        setGraph();
+
     }
 
     private void setList() throws IOException {
@@ -142,7 +141,7 @@ public class CheckRepoController implements MyController {
 
     @FXML
     public void initialize() {
-//        xLang.setLabel("languages");
+//        xpoi.setLabel("languages");
         seriesLang.setName("language");
 //        sbl=new StatisticsController();
     }
@@ -172,7 +171,28 @@ public class CheckRepoController implements MyController {
     }
 
     private void setGraph() {
+        //---------------set language graph-------------
+        try {
+            staStrVO=bl.languagesOfRepository(vo.getOwnerName(),vo.getRepoName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        double sum=0;
+        for(int j=0;j<staStrVO.getInt().size();j++){
+            sum+=staStrVO.getInt().get(j);
+        }
+        double temp=0;
+        for (int i=0;i<staStrVO.getInt().size()&&i<staStrVO.getStr().size()&&i<5;i++){
+            temp+=staStrVO.getInt().get(i);
+            langs.addAll(new PieChart.Data(staStrVO.getStr().get(i),staStrVO.getInt().get(i)));
+        }
+        langs.addAll(new PieChart.Data("Others",sum-temp));
+        langChart.setData(langs);
+        //---------------set point graph
 
+//        langs.addAll(bl.languagesOfRepository());
+//        xpoi.setCategories(langs);
+//        poiChart.getData().addAll(getdata());
 
     }
 
@@ -186,13 +206,13 @@ public class CheckRepoController implements MyController {
         return a;
     }
 
-    private XYChart.Series<String, Integer> getdata() {
-        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-
-        for (int i = 0; i < 5; i++) {
-            series.getData().add(new XYChart.Data<>(langs.get(i), i + 70));
-        }
-
-        return series;
-    }
+//    private XYChart.Series<String, Integer> getdata() {
+//        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+//
+//        for (int i = 0; i < 5; i++) {
+//            series.getData().add(new XYChart.Data<>(langs.get(i), i + 70));
+//        }
+//
+//        return series;
+//    }
 }

@@ -40,6 +40,9 @@ public interface RepositoryDataService {
      * 根据项目创建时间进行筛选
      * @param time
      * @return
+     * @throws IOException 
      */
-    ArrayList<RepositoryPO> screenTime(String time);
+    ArrayList<RepositoryPO> screenTime(String time) throws IOException;
+    
+    ArrayList<RepositoryPO> screenCategory(String key) throws IOException;
 }

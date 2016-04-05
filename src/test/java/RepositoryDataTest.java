@@ -30,13 +30,13 @@ public class RepositoryDataTest extends TestCase {
 		assertTrue(po3.getName().equals(testRepository.checkRepository("macournoyer", "thin").getName()));
 	}
 	
-//	/*测试getRepositoriesNames方法*/
-//	public void testgetRepositoriesNames() throws IOException{
-//		ArrayList<String> a=testRepository.getRepositoriesNames();
-//		assertEquals(po1.getName(), a.get(0));
-////		assertEquals(po2.getName(), a.get(1));
-////		assertEquals(po3.getName(), a.get(4));
-//	}
+	/*测试getRepositoriesNames方法*/
+	public void testgetRepositoriesNames() throws IOException{
+		ArrayList<String> a=testRepository.getRepositoriesNames();
+		assertEquals(po1.getName(), a.get(0));
+		assertEquals(po2.getName(), a.get(1));
+		assertEquals(po3.getName(), a.get(4));
+	}
 
 	/*测试languagesOfRepository方法*/
 	public void testlanguagesOfRepository() throws IOException{

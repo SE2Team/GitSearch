@@ -143,5 +143,13 @@ public class RepositoryVO {
     		return null;
     	}
     }
+    
+    public String getRepoName(){
+    	if(this.name.indexOf("/")!=-1){
+    		return this.name.split("/")[1];
+    	}else{
+    		return null;
+    	}
+    }
 
 }
