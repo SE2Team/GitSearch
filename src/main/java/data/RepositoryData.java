@@ -22,7 +22,7 @@ import po.StaStrPO;
 public class RepositoryData implements RepositoryDataService {
 	
 	static String string="http://www.gitmining.net/api/repository";
-	ArrayList<RepositoryPO> finalList=new ArrayList<RepositoryPO>();
+	static ArrayList<RepositoryPO> finalList=new ArrayList<>();
 	/**
 	 * 
 	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
@@ -238,6 +238,7 @@ public class RepositoryData implements RepositoryDataService {
 	                pos.add(po);
 	            }
 	        }
+			finalList=pos;
 			return pos;
 		
 	}
@@ -279,27 +280,56 @@ public class RepositoryData implements RepositoryDataService {
 					}
 				}
 		}
-		
+		finalList=list;
 		return list;
 	}
 
 	@Override
 	public ArrayList<RepositoryPO> screenLanguage(String language) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=finalList;
 		ArrayList<RepositoryPO> list2=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getLanguage().equals(language)){
 				list2.add(list.get(i));
 			}
 		}
+		finalList=list2;
 		return list2;
 	}
 
 	@Override
-	public ArrayList<RepositoryPO> screenTime(String time) {
+	public ArrayList<RepositoryPO> screenTime(String time) throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<RepositoryPO> list1=new ArrayList<>();
+		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=finalList;//有bug
+		
+		for(int i=0;i<list.size();i++){
+			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
+			String str1 = str[0];
+			int year = Integer.parseInt(str1);
+			if(Integer.parseInt(time.substring(0,4))==year){
+				list1.add(list.get(i));
+			}
+		}
+		finalList=list1;
+		return list1;
+	}
+
+	@Override
+	public ArrayList<RepositoryPO> screenCategory(String key) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getDescription().contains(key)){
+				list2.add(list.get(i));
+			}
+		}
+		finalList=list2;
+		return list2;
 	}
 
 	
