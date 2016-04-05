@@ -1,4 +1,7 @@
 package vo;
+
+import java.util.ArrayList;
+
 /** 
  * @author 
  * @date 
@@ -11,19 +14,19 @@ package vo;
  *@throws 异常类及抛出条件
  */
 public class StaIntVO {
-	Integer integer;
-	Integer integer2;
+	ArrayList<Integer> integer;
+	ArrayList<Integer> integer2;
 	
-	public StaIntVO(Integer integer,Integer integer2){
+	public StaIntVO(ArrayList<Integer> integer,ArrayList<Integer> integer2){
 		this.integer=integer;
 		this.integer2=integer2;
 	}
 	
-	public Integer getInt(){
+	public ArrayList<Integer> getInt(){
 		return this.integer;
 	}
 	
-	public Integer getint2(){
+	public ArrayList<Integer> getint2(){
 		return this.integer2;
 	}
 }

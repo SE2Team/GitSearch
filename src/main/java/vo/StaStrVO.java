@@ -1,4 +1,7 @@
 package vo;
+
+import java.util.ArrayList;
+
 /** 
  * @author 
  * @date 
@@ -12,19 +15,19 @@ package vo;
  */
 public class StaStrVO {
 
-	String str;
-	Integer integer;
-	public StaStrVO(String str,
-	Integer integer){
+	ArrayList<String> str;
+	ArrayList<Integer> integer;
+	public StaStrVO(ArrayList<String> str,
+			ArrayList<Integer> integer){
 		this.str=str;
 		this.integer=integer;
 	}
 	
-	public String getStr(){
+	public ArrayList<String> getStr(){
 		return this.str;
 	}
 	
-	public Integer getInt(){
+	public ArrayList<Integer> getInt(){
 		return this.integer;
 	}
 }

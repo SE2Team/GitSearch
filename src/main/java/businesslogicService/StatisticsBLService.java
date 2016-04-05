@@ -26,25 +26,25 @@ import javafx.collections.ObservableList;
  */
 public interface StatisticsBLService {
 
-	Iterator<StaStrVO> getStar() throws IOException;
+	StaStrVO getStar() throws IOException;
 	
 	StatisticsVO getScores(RepositoryPO po) throws IOException;
 	
-	Iterator<StaStrVO> getForks() throws IOException;
+	StaStrVO getForks() throws IOException;
 	
-	Iterator<StaStrVO> getRepoCreated() throws IOException;
+	StaStrVO getRepoCreated() throws IOException;
 	
-	Iterator<StaStrVO> getLanguage() throws IOException;
+	StaStrVO getLanguage() throws IOException;
 	
-	Iterator<StaStrVO>  getUserCreated() throws IOException;
+	StaStrVO  getUserCreated() throws IOException;
 	
-	Iterator<StaStrVO> getUserType() throws IOException;
+	StaStrVO getUserType() throws IOException;
 	
-	Iterator<StaIntVO> getUserHas();
+	StaIntVO getUserHas();
 	
-	Iterator<StaIntVO> getUserRelated();
+	StaIntVO getUserRelated();
 	
-	Iterator<StaStrVO> getCompany() throws IOException;
+	StaStrVO getCompany() throws IOException;
 	
 	Integer getHasNum(String name);
 }

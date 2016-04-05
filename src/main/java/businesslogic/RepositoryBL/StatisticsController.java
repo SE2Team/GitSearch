@@ -28,7 +28,7 @@ import vo.StatisticsVO;
  */
 public class StatisticsController implements StatisticsBLService{
 	Statistics statistics=new Statistics();
-	public Iterator<StaStrVO> getStar() throws IOException{
+	public StaStrVO getStar() throws IOException{
 		return statistics.getStar();
 	}
 	
@@ -36,35 +36,35 @@ public class StatisticsController implements StatisticsBLService{
 		return statistics.getScores(po);
 	}
 	
-	public Iterator<StaStrVO> getForks() throws IOException{
+	public StaStrVO getForks() throws IOException{
 		return statistics.getForks();
 	}
 	
-	public Iterator<StaStrVO> getRepoCreated() throws IOException{
+	public StaStrVO getRepoCreated() throws IOException{
 		return statistics.getRepoCreated();
 	}
 
-	public Iterator<StaStrVO> getLanguage() throws IOException{
+	public StaStrVO getLanguage() throws IOException{
 		return statistics.getLanguage();
 	}
 	
-	public Iterator<StaStrVO> getUserCreated() throws IOException{
+	public StaStrVO getUserCreated() throws IOException{
 		return statistics.getUserCreated();
 	}
 	
-	public Iterator<StaStrVO> getUserType() throws IOException{
+	public StaStrVO getUserType() throws IOException{
 		return statistics.getUserType();
 	}
 	
-	public Iterator<StaIntVO> getUserHas(){
+	public StaIntVO getUserHas(){
 		return statistics.getUserHas();
 	}
 	
-	public Iterator<StaIntVO> getUserRelated(){
+	public StaIntVO getUserRelated(){
 		return statistics.getUserRelated();
 	}
 	
-	public Iterator<StaStrVO> getCompany() throws IOException{
+	public StaStrVO getCompany() throws IOException{
 		return statistics.getCompany();
 	}
 	

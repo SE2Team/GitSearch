@@ -19,7 +19,7 @@ public interface RepositoryBLService {
 
     RepositoryVO checkRepository(String userName, String reponame) throws IOException;
 
-   Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException;
+   StaStrVO languagesOfRepository(String userName, String reponame) throws IOException;
 
     String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 

@@ -28,7 +28,7 @@ public class RepositoryController implements RepositoryBLService {
         return repository.checkRepository(userName, reponame);
     }
 
-    public Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException {
+    public StaStrVO languagesOfRepository(String userName, String reponame) throws IOException {
         return repository.languagesOfRepository(userName, reponame);
     }
 

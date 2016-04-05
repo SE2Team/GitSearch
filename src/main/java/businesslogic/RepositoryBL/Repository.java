@@ -43,12 +43,8 @@ public class Repository {
         return PO2VO.convert(factory.getRepositoryDataService().checkRepository(userName, reponame));
     }
 
-    public Iterator<StaStrVO> languagesOfRepository(String userName, String reponame) throws IOException {
-    	ArrayList<StaStrVO> vos=new ArrayList<StaStrVO>();
-		for(StaStrPO po:factory.getRepositoryDataService().languagesOfRepository(userName, reponame)){
-			vos.add(PO2VO.convert(po));
-		}
-		return vos.iterator();
+    public StaStrVO languagesOfRepository(String userName, String reponame) throws IOException {
+		return PO2VO.convert(factory.getRepositoryDataService().languagesOfRepository(userName, reponame));
     }
 
     public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {
