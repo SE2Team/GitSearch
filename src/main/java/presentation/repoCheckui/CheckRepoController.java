@@ -8,10 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -53,7 +50,9 @@ public class CheckRepoController implements MyController {
     private FlowPane collaboratorPane;
 
     @FXML
-    private BarChart langChart;
+    private BarChart poiChart;
+    @FXML
+    private PieChart langChart;
     @FXML
     private CategoryAxis xLang;
     @FXML
@@ -75,6 +74,7 @@ public class CheckRepoController implements MyController {
     private RepositoryVO vo;
 
     private ObservableList<String> langs = FXCollections.observableArrayList();
+    private ObservableList<String> pois=FXCollections.observableArrayList();
 
     private StatisticsBLService sbl;
 
@@ -106,10 +106,15 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         owner.setText(username);
-//        StaStrVO staStrVO=bl.languagesOfRepository(username,reponame);
+        try {
+            StaStrVO staStrVO=bl.languagesOfRepository(username,reponame);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        pois.addAll();
 //        langs.addAll(bl.languagesOfRepository());
 //        xLang.setCategories(langs);
-//        langChart.getData().addAll(getdata());
+//        poiChart.getData().addAll(getdata());
     }
 
     private void setList() throws IOException {
