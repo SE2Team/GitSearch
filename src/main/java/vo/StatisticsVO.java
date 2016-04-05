@@ -27,7 +27,7 @@ public class StatisticsVO {
 		this.collaborators_num=collaborators_num;
 	}
 	
-	public double geIssues_num(){
+	public double getssues_num(){
 		return this.issues_num;
 	}
 	
