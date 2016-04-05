@@ -176,8 +176,8 @@ public class RepositoryData implements RepositoryDataService {
 
 	public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		String str1="http://gitmining.net/api/repository"+userName+"/"
-				+reponame+"languages";
+		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
+				+reponame+"/"+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
