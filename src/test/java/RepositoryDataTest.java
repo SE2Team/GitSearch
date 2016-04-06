@@ -5,6 +5,8 @@ import po.RepositoryPO;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Util.RepositoryInfo;
+
 public class RepositoryDataTest extends TestCase {
 	
 	private static RepositoryData testRepository=new RepositoryData();
@@ -46,7 +48,5 @@ public class RepositoryDataTest extends TestCase {
 	}
 
 	/*测试RepositoryInfo方法*/
-	public void testRepositoryInfo(){
-		
-	}
+	
 }
