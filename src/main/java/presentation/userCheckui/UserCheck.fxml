@@ -25,7 +25,7 @@
                         <Font name="Calibri" size="28.0" />
                      </font>
                      <tooltip>
-                        <Tooltip text="Empty Tooltip" />
+                        <Tooltip fx:id="fullUserName" text="Empty Tooltip" />
                      </tooltip>
                   </Label>
                   <Label fx:id="login" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="199.0" prefHeight="57.0" prefWidth="371.0" text="Mirisuzanne" textAlignment="CENTER" textFill="#00000097" wrapText="true">
@@ -33,7 +33,7 @@
                         <Font name="Calibri" size="26.0" />
                      </font>
                      <tooltip>
-                        <Tooltip text="Empty Tooltip" />
+                        <Tooltip fx:id="FullLogin" text="Empty Tooltip" />
                      </tooltip>
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="40.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
