@@ -48,12 +48,5 @@ public class RepositoryDataTest extends TestCase {
 	}
 
 	/*测试RepositoryInfo方法*/
-	public void testRepositoryInfo() throws IOException{
-		System.out.println(po1.getDescription());
-		System.out.println(testRepository.RepositoryInfo("mojombo","grit",RepositoryInfo.description));
-		
-		assertTrue((po1.getFork()+"").equals(testRepository.RepositoryInfo("mojombo","grit",RepositoryInfo.fork)));
-		assertTrue(po2.getLanguage().equals(testRepository.RepositoryInfo("mojombo", "god",RepositoryInfo.language)));
-		assertTrue(po3.getCreated().equals(testRepository.RepositoryInfo("macournoyer", "thin",RepositoryInfo.created_at)));
-	}
+	
 }

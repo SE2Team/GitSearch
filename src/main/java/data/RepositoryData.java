@@ -197,37 +197,37 @@ public class RepositoryData implements RepositoryDataService {
 	 * @throws IOException 
 	 * 
 	 */
-	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
-		JSONObject obj = new JSONObject();
-	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-		String string = br.readLine();
-		JSONArray obj1 = new JSONArray(string);
-		for (int i = 0; i < obj1.length(); i++) {
-			obj = (JSONObject) obj1.get(i);
-			if (obj.has("full_name")) {
-				if (obj.getString("full_name").equals(userName + "/" + reponame)) {
-					if (info.toString().equals("fork") && obj.has("fork")) {
-						return obj.getBoolean("fork") + "";
-					}
-				} else if (info.toString().equals("id") || info.toString().equals("size")
-						|| info.toString().equals("forks") || info.toString().equals("stargazers_count")
-						|| info.toString().equals("open_issues") || info.toString().equals("subscribers_count")) {
-					if (obj.has(info.toString())) {
-						return obj.getInt(info.toString()) + "";
-					}
-				} else {
-					if (obj.has(info.toString())) {
-						return obj.getString(info.toString());
-					}
-				}
-			}
-
-		}
-
-		return null;
-	}
+//	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
+//		JSONObject obj = new JSONObject();
+//	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+//				getResourceAsStream("/txtData/all_repository.json")));
+//		String string = br.readLine();
+//		JSONArray obj1 = new JSONArray(string);
+//		for (int i = 0; i < obj1.length(); i++) {
+//			obj = (JSONObject) obj1.get(i);
+//			if (obj.has("full_name")) {
+//				if (obj.getString("full_name").equals(userName + "/" + reponame)) {
+//					if (info.toString().equals("fork") && obj.has("fork")) {
+//						return obj.getBoolean("fork") + "";
+//					}
+//				} else if (info.toString().equals("id") || info.toString().equals("size")
+//						|| info.toString().equals("forks") || info.toString().equals("stargazers_count")
+//						|| info.toString().equals("open_issues") || info.toString().equals("subscribers_count")) {
+//					if (obj.has(info.toString())) {
+//						return obj.getInt(info.toString()) + "";
+//					}
+//				} else {
+//					if (obj.has(info.toString())) {
+//						return obj.getString(info.toString());
+//					}
+//				}
+//			}
+//
+//		}
+//
+//		return null;
+//	}
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
 		 ArrayList<RepositoryPO> pos=finalList;
