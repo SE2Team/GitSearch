@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -38,7 +39,10 @@ public class UserCheckController implements MyController{
     private FlowPane poprepo;
     @FXML
     private FlowPane relarepo;
-
+    @FXML
+    private Tooltip fullUserName;
+    @FXML
+    private Tooltip FullLogin;
 
 
 

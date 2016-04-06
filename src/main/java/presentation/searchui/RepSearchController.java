@@ -154,7 +154,7 @@ public class RepSearchController implements MyController {
      */
     private void initFilters() {
         for (Node n : languagePane.getChildren()) {
-            ToggleButton t = (ToggleButton) n;
+            final ToggleButton t = (ToggleButton) n;
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {

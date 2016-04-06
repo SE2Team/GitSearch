@@ -28,7 +28,7 @@ public interface RepositoryDataService {
      */
     StaStrPO languagesOfRepository(String userName, String reponame) throws IOException;
 
-    String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
+ //   String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
 
     ArrayList<RepositoryPO> Search(String name) throws IOException;
 
@@ -45,4 +45,5 @@ public interface RepositoryDataService {
     ArrayList<RepositoryPO> screenTime(String time) throws IOException;
     
     ArrayList<RepositoryPO> screenCategory(String key) throws IOException;
+    
 }
