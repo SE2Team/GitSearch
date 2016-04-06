@@ -40,8 +40,9 @@ public class UserCheckController implements MyController{
     @FXML
     private FlowPane relarepo;
     @FXML
-    private Tooltip fullRepoName;
-
+    private Tooltip fullUserName;
+    @FXML
+    private Tooltip FullLogin;
 
 
 
