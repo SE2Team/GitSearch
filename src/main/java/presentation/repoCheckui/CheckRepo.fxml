@@ -172,19 +172,19 @@
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="841.0">
                                  <children>
-                                    <StackedBarChart fx:id="poiChart" layoutX="8.0" layoutY="93.0" prefHeight="385.0" prefWidth="433.0">
+                                    <Label layoutX="111.0" layoutY="33.0" text="Score of Reposotory">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <BarChart fx:id="poiChart" layoutY="94.0" prefHeight="356.0" prefWidth="437.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" fx:id="xpoi" />
                                       </xAxis>
                                       <yAxis>
                                         <NumberAxis fx:id="ypoi" side="LEFT" />
                                       </yAxis>
-                                    </StackedBarChart>
-                                    <Label layoutX="111.0" layoutY="33.0" text="Score of Reposotory">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
+                                    </BarChart>
                                  </children>
                               </AnchorPane>
                           </items>
