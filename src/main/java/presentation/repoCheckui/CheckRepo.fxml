@@ -121,17 +121,17 @@
                                                       <Font name="Calibri" size="30.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="54.0" layoutY="54.0" text="Main Language:">
+                                                <Label layoutX="54.0" layoutY="58.0" text="Main Language:">
                                                    <font>
-                                                      <Font size="21.0" />
+                                                      <Font name="Calibri Italic" size="22.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="language" layoutX="216.0" layoutY="56.0" text="Java">
+                                                <Label fx:id="language" layoutX="209.0" layoutY="58.0" text="Java">
                                                    <font>
-                                                      <Font size="21.0" />
+                                                      <Font name="Calibri" size="22.0" />
                                                    </font>
                                                 </Label>
-                                                <PieChart fx:id="langChart" layoutX="382.0" layoutY="5.0" prefHeight="228.0" prefWidth="428.0" />
+                                                <PieChart fx:id="langChart" layoutX="337.0" layoutY="5.0" legendSide="RIGHT" prefHeight="228.0" prefWidth="473.0" />
                                              </children>
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -172,14 +172,19 @@
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="841.0">
                                  <children>
-                                    <StackedBarChart layoutX="7.0" layoutY="43.0" prefHeight="385.0" prefWidth="433.0">
+                                    <StackedBarChart fx:id="poiChart" layoutX="8.0" layoutY="93.0" prefHeight="385.0" prefWidth="433.0">
                                       <xAxis>
-                                        <CategoryAxis side="BOTTOM" />
+                                        <CategoryAxis side="BOTTOM" fx:id="xpoi" />
                                       </xAxis>
                                       <yAxis>
-                                        <NumberAxis side="LEFT" />
+                                        <NumberAxis fx:id="ypoi" side="LEFT" />
                                       </yAxis>
                                     </StackedBarChart>
+                                    <Label layoutX="111.0" layoutY="33.0" text="Score of Reposotory">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                           </items>

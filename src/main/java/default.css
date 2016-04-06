@@ -210,11 +210,13 @@
 }
 
 #Contributors {
+    -fx-font-family:"Calibri";
     -fx-font-size: 24px;
     -fx-cursor: HAND;
 }
 
 #Collaborators {
+    -fx-font-family:"Calibri";
     -fx-font-size: 24px;
     -fx-cursor: HAND;
 }
@@ -268,11 +270,22 @@
 
 #RepName:hover {
     -fx-text-fill: #4094b9;
-    -fx-underline: true
+    -fx-underline: true;
 }
+
+#RepName:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
 
 #UserName:hover {
     -fx-text-fill: #4094b9;
     -fx-underline: true;
 
+}
+
+#UserName:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
 }
