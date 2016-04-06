@@ -24,10 +24,7 @@ import po.UserPO;
 public class Test {
 	public static void main(String[] args) throws IOException{
 	//	StaStrPO po=new RepositoryData().languagesOfRepository("mojombo", "grit");
-		ArrayList<RepositoryPO> list2=new RepositoryData().getRepositories();
-	ArrayList<RepositoryPO> list=new RepositoryData().screenLanguage("Java");
-	for(int i=0;i<list.size();i++){
-		System.out.println(list.get(i).getLanguage());
-	}
+	RepositoryPO po=new RepositoryData().checkRepository("mojombo", "grit");
+	System.out.println(po.getCollaborators());
 	}
 }
