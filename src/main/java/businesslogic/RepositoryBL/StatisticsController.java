@@ -11,6 +11,7 @@ import po.RepositoryPO;
 import po.StaStrPO;
 import po.StatisticsPO;
 import javafx.collections.ObservableList;
+import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.StatisticsVO;
@@ -21,8 +22,8 @@ public class StatisticsController implements StatisticsBLService{
 		return statistics.getStar();
 	}
 	
-	public StatisticsVO getScores(RepositoryPO po) throws IOException{
-		return statistics.getScores(po);
+	public StatisticsVO getScores(RepositoryVO vo) throws IOException{
+		return statistics.getScores(vo);
 	}
 	
 	public StaStrVO getForks() throws IOException{

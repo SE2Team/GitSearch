@@ -11,9 +11,11 @@ import po.StaStrPO;
 import po.StatisticsPO;
 import javafx.collections.ObservableList;
 import vo.PO2VO;
+import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.StatisticsVO;
+import vo.VO2PO;
 import data.DataFactory;
 import dataService.DataFatoryService;
 
@@ -23,9 +25,9 @@ public class Statistics {
 	public StaStrVO getStar() throws IOException{
 		return PO2VO.convert(factory.getStatisticsDataService().getStar());
 	}
-	public StatisticsVO getScores(RepositoryPO po) throws IOException {
+	public StatisticsVO getScores(RepositoryVO vo) throws IOException {
 		// TODO Auto-generated method stub
-		return PO2VO.convert(factory.getStatisticsDataService().getScores(po));
+		return PO2VO.convert(factory.getStatisticsDataService().getScores(VO2PO.convert(vo)));
 	}
 	
 	public StaStrVO getForks() throws IOException{

@@ -9,6 +9,7 @@ import java.util.Observable;
 import po.RepositoryPO;
 import po.StaStrPO;
 import po.StatisticsPO;
+import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.StatisticsVO;
@@ -28,7 +29,7 @@ public interface StatisticsBLService {
 
 	StaStrVO getStar() throws IOException;
 	
-	StatisticsVO getScores(RepositoryPO po) throws IOException;
+	StatisticsVO getScores(RepositoryVO vo) throws IOException;
 	
 	StaStrVO getForks() throws IOException;
 	
