@@ -179,6 +179,7 @@ public class RepositoryData implements RepositoryDataService {
 		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
 				+reponame+"/"+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
+		
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
 		for(int i=0;i<list.size()-1;i++){
@@ -186,7 +187,7 @@ public class RepositoryData implements RepositoryDataService {
 			listStr.add(str[0]);
 			listInt.add(Integer.parseInt(str[1]));
 		}
-		
+		listStr=this.remove(listStr);
 		return new StaStrPO(listStr, listInt);
 	}
 	
@@ -332,5 +333,19 @@ public class RepositoryData implements RepositoryDataService {
 		return list2;
 	}
 
+	@Override
+	public ArrayList<RepositoryPO> back() throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private ArrayList<String> remove(ArrayList<String> list){
+		ArrayList<String> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			list2.add(list.get(i).substring(1, list.get(i).length()-1));
+		}
+		
+		return list2;
+	} 
 	
 }

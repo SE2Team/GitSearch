@@ -46,4 +46,5 @@ public interface RepositoryDataService {
     
     ArrayList<RepositoryPO> screenCategory(String key) throws IOException;
     
+    ArrayList<RepositoryPO> back() throws IOException;
 }
