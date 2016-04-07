@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -7,21 +8,24 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.SubRepoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="442.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.SubRepoController">
    <children>
       <ImageView fx:id="imageView" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/home.png" />
          </image>
       </ImageView>
-      <Label fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName" textFill="#5799d3">
+      <Label id="RepName" fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName" textFill="#5799d3">
          <font>
             <Font name="Calibri" size="22.0" />
          </font>
          <tooltip>
-            <Tooltip text="Empty Tooltip" />
+            <Tooltip fx:id="fullName" text="Empty Tooltip" />
          </tooltip>
       </Label>
       <Line endX="437.0" endY="12.0" layoutX="2.5" layoutY="43.0" opacity="0.8" startY="12.0" stroke="#00000097" strokeWidth="0.5" />
    </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </AnchorPane>

@@ -2,6 +2,7 @@ package presentation.userCheckui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import presentation.FXUITest;
 import presentation.common.MyController;
@@ -15,6 +16,8 @@ public class SubRepoController implements MyController {
     private Label label;
     @FXML
     private ImageView imageView;
+    @FXML
+    private Tooltip fullName;
 
 
     public FXUITest fxuiTest;
