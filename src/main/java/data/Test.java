@@ -24,9 +24,11 @@ import po.UserPO;
 public class Test {
 	public static void main(String[] args) throws IOException{
 	//	StaStrPO po=new RepositoryData().languagesOfRepository("mojombo", "grit");
-	ArrayList<RepositoryPO> list=new RepositoryData().Search("mo");
-	for(int i=0;i<list.size();i++){
-		System.out.println(list.get(i).getName());
-	}
+		StaStrPO po=new StatisticsData().getLanguage();
+		for(int i=0;i<po.getInt().size();i++){
+			
+		System.out.println(po.getInt().get(i));
+			
+		}
 	}
 }
