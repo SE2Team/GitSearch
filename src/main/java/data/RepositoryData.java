@@ -231,9 +231,11 @@ public class RepositoryData implements RepositoryDataService {
 //	}
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
-		 ArrayList<RepositoryPO> pos=finalList;
+		 ArrayList<RepositoryPO> pos=new ArrayList<>();
+		ArrayList<RepositoryPO> pos1=new RepositoryData().getRepositories();
+		// ArrayList<RepositoryPO> pos1=finalList;
 		 String[]  str=new String[2];
-			for(RepositoryPO po:getRepositories()){
+			for(RepositoryPO po:pos1){
 	            str=po.getName().split("/");
 				if(str[1].contains(name)){
 	                pos.add(po);
