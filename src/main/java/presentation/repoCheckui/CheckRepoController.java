@@ -18,7 +18,6 @@ import vo.RepositoryVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -75,7 +74,7 @@ public class CheckRepoController implements MyController {
     private StaStrVO staStrVO;
 
     private ObservableList<PieChart.Data> langs = FXCollections.observableArrayList();
-    private ObservableList<String> pois=FXCollections.observableArrayList();
+    private ObservableList<String> pois = FXCollections.observableArrayList();
 
     private StatisticsBLService sbl;
 
@@ -155,7 +154,7 @@ public class CheckRepoController implements MyController {
         String[] split = vo.getName().split("/");
         String username = split[0];
         String reponame = split[1];
-        this.vo = bl.checkRepository(username,reponame);
+        this.vo = bl.checkRepository(username, reponame);
     }
 
     public Parent getSub(String str) throws IOException {
@@ -173,20 +172,20 @@ public class CheckRepoController implements MyController {
     private void setGraph() {
         //---------------set language graph-------------
         try {
-            staStrVO=bl.languagesOfRepository(vo.getOwnerName(),vo.getRepoName());
+            staStrVO = bl.languagesOfRepository(vo.getOwnerName(), vo.getRepoName());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        double sum=0;
-        for(int j=0;j<staStrVO.getInt().size();j++){
-            sum+=staStrVO.getInt().get(j);
+        double sum = 0;
+        for (int j = 0; j < staStrVO.getInt().size(); j++) {
+            sum += staStrVO.getInt().get(j);
         }
-        double temp=0;
-        for (int i=0;i<staStrVO.getInt().size()&&i<staStrVO.getStr().size()&&i<5;i++){
-            temp+=staStrVO.getInt().get(i);
-            langs.addAll(new PieChart.Data(staStrVO.getStr().get(i),staStrVO.getInt().get(i)));
+        double temp = 0;
+        for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
+            temp += staStrVO.getInt().get(i);
+            langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
         }
-        langs.addAll(new PieChart.Data("Others",sum-temp));
+        langs.addAll(new PieChart.Data("Others", sum - temp));
         langChart.setData(langs);
         //---------------set point graph
 
@@ -196,23 +195,5 @@ public class CheckRepoController implements MyController {
 
     }
 
-    private ArrayList<String> getList() {
-        ArrayList<String> a = new ArrayList<String>();
-        a.add("java");
-        a.add("C#");
-        a.add("html");
-        a.add("ruby");
-        a.add("python");
-        return a;
-    }
 
-//    private XYChart.Series<String, Integer> getdata() {
-//        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-//
-//        for (int i = 0; i < 5; i++) {
-//            series.getData().add(new XYChart.Data<>(langs.get(i), i + 70));
-//        }
-//
-//        return series;
-//    }
 }
