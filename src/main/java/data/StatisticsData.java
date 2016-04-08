@@ -142,12 +142,15 @@ public class StatisticsData implements StatisticsDataService{
 
 				if (year <= 20080000) {
 					sevenYear++;
-				} else if (year >= 20080000 && year <= 20090000) {
+				}  
+				if (year >20080000 && year <= 20090000) {
 					eightYear++;
 
-				} else if (year <= 20100000 && year >= 20090000) {
+				} 
+				 if (year <= 20100000 && year > 20090000) {
 					nineYear++;
-				} else if (year > 20100000) {
+				} 
+				 if (year > 20100000) {
 					tenYear++;
 				}
 			}
@@ -157,7 +160,7 @@ public class StatisticsData implements StatisticsDataService{
 		listStr.add("2007");
 		listStr.add("2008");
 		listStr.add("2009");
-		listStr.add("20010");
+		listStr.add("2010");
 		listInt.add(sevenYear);
 		listInt.add(eightYear);
 		listInt.add(nineYear);

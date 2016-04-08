@@ -49,9 +49,14 @@ public class RepositoryDataTest extends TestCase {
 
 	/*测试search方法*/
 	public void testSearch() throws IOException{
-//		assertEquals(po1, testRepository.Search("mo").get(0));
-//		assertEquals(po2, testRepository.Search("mo").get(1));
-//		assertEquals(po3, testRepository.Search("macournoyer").get(1));
+		
+		assertEquals(po1.getName(), testRepository.Search("grit").get(0).getName());
+		assertEquals(po2.getDescription(), testRepository.Search("god").get(0).getDescription());
+		assertEquals(po3.getForks(), testRepository.Search("thin").get(0).getForks());
 	}
 	
+	/*测试sort方法*/
+	public void testSort() throws IOException{
+		
+	}
 }

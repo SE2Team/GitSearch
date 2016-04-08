@@ -14,6 +14,7 @@ import businesslogic.userBL.User;
 import java.util.Set;
 
 import po.RepositoryPO;
+import po.ScreenPO;
 import po.StaIntPO;
 import po.StaStrPO;
 import po.StatisticsPO;
@@ -23,12 +24,10 @@ import po.UserPO;
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-	//	StaStrPO po=new RepositoryData().languagesOfRepository("mojombo", "grit");
-		StaStrPO po=new StatisticsData().getLanguage();
-		for(int i=0;i<po.getInt().size();i++){
-			
-		System.out.println(po.getInt().get(i));
-			
-		}
+		
+//		ArrayList<RepositoryPO> list=new RepositoryData().screen(new ScreenPO("2008", "Ruby", ""));
+//		for(int i=0;i<list.size();i++){
+//			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getCreated());
+//		}
 	}
 }

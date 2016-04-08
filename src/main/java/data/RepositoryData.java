@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
+import po.ScreenPO;
 import po.StaStrPO;
 
 
@@ -287,27 +288,27 @@ public class RepositoryData implements RepositoryDataService {
 		return list;
 	}
 
-	@Override
-	public ArrayList<RepositoryPO> screenLanguage(String language) throws IOException {
+	
+	private ArrayList<RepositoryPO> screenLanguage(String language,ArrayList<RepositoryPO> listPO) throws IOException {
 		// TODO Auto-generated method stub
 		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list=listPO;
 		ArrayList<RepositoryPO> list2=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getLanguage().equals(language)){
 				list2.add(list.get(i));
 			}
 		}
-		finalList=list2;
+		//finalList=list2;
 		return list2;
 	}
 
-	@Override
-	public ArrayList<RepositoryPO> screenTime(String time) throws IOException {
+	
+	private ArrayList<RepositoryPO> screenTime(String time,ArrayList<RepositoryPO> listPO) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list1=new ArrayList<>();
 		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list=finalList;//有bug
+		ArrayList<RepositoryPO> list=listPO;//有bug
 		
 		for(int i=0;i<list.size();i++){
 			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
@@ -317,28 +318,45 @@ public class RepositoryData implements RepositoryDataService {
 				list1.add(list.get(i));
 			}
 		}
-		finalList=list1;
+		//finalList=list1;
 		return list1;
 	}
 
-	@Override
-	public ArrayList<RepositoryPO> screenCategory(String key) throws IOException {
+	
+	private ArrayList<RepositoryPO> screenCategory(String key,ArrayList<RepositoryPO> listPO) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> list=listPO;
 		ArrayList<RepositoryPO> list2=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
 			if(list.get(i).getDescription().contains(key)){
 				list2.add(list.get(i));
 			}
 		}
-		finalList=list2;
 		return list2;
 	}
 
 	@Override
-	public ArrayList<RepositoryPO> back() throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		if(po.getLanguage().equals("")){
+			
+		}else{
+			list=this.screenLanguage(po.getLanguage(), list);
+		}
+		
+		if(po.getTime().equals("")){
+			
+		}else{
+			list=this.screenTime(po.getTime(), list);
+		}
+		
+		if(po.getCategory().equals("")){
+			
+		}else{
+			list=this.screenCategory(po.getCategory(), list);
+		}
+		finalList=list;
+		return list;
 	}
 	
 	private ArrayList<String> remove(ArrayList<String> list){

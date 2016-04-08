@@ -3,6 +3,7 @@ package businesslogicService;
 
 import Util.*;
 import vo.RepositoryVO;
+import vo.ScreenVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
@@ -28,9 +29,11 @@ public interface RepositoryBLService {
 
     Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException;
     
-    Iterator<RepositoryVO> screenLanguage(String language) throws IOException;
+//    Iterator<RepositoryVO> screenLanguage(String language) throws IOException;
+//    
+//    Iterator<RepositoryVO> screenTime(String time) throws IOException;
+//    
+//    Iterator<RepositoryVO> screenCategory(String key) throws IOException;
     
-    Iterator<RepositoryVO> screenTime(String time) throws IOException;
-    
-    Iterator<RepositoryVO> screenCategory(String key) throws IOException;
+    Iterator<RepositoryVO> screen(ScreenVO vo)throws IOException;
 }

@@ -1,6 +1,7 @@
 package vo;
 
 import po.RepositoryPO;
+import po.ScreenPO;
 import po.StaIntPO;
 import po.StaStrPO;
 import po.StatisticsPO;
@@ -42,5 +43,9 @@ public class VO2PO {
     
     public static StaStrPO convert(StaStrVO vo){
     	return new StaStrPO(vo.getStr(),vo.getInt());
+    }
+    
+    public static ScreenPO convert(ScreenVO vo){
+    	return new ScreenPO(vo.getTime(), vo.getLanguage(), vo.getCategory());
     }
 }
