@@ -80,7 +80,7 @@ public class HomeController implements MyController{
 
     @FXML
     private void handleUStatistics(){
-
+        fxui.userStatistics();
     }
 
     @FXML

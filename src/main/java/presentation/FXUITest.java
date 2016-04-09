@@ -18,6 +18,7 @@ import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
 import presentation.searchui.UserSearchController;
 import presentation.statistics.RepoStatisticsController;
+import presentation.statistics.UserStatisticsController;
 import presentation.userCheckui.UserCheckController;
 import vo.RepositoryVO;
 import vo.UserVO;
@@ -204,13 +205,22 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-
 
     }
 
     public void userStatistics() {
-
+        this.push();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("statistics/UserStatistics.fxml"));
+        try {
+            AnchorPane userStatisticPane=(AnchorPane)loader.load();
+            UserStatisticsController controller=loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(userStatisticPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public BorderPane getHomeLayout() {
