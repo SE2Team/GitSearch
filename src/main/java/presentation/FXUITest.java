@@ -5,6 +5,7 @@ import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
 import presentation.searchui.UserSearchController;
+import presentation.statistics.RepoStatisticsController;
 import presentation.userCheckui.UserCheckController;
 import vo.RepositoryVO;
 import vo.UserVO;
@@ -179,16 +181,27 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (searchUserPane == null) {
-
-
-        }
         userSearchController.setKey(key);
         userSearchController.repaint();
         homeLayout.setCenter(searchUserPane);
     }
 
     public void repoStatistics() {
+        this.push();
+        FXMLLoader loader =new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("statistics/RepoStatistics.fxml"));
+
+        try {
+            AnchorPane repoStatisticsPane=(AnchorPane) loader.load();
+            RepoStatisticsController controller=loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(repoStatisticsPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+
 
     }
 
