@@ -29,13 +29,22 @@ public class RepoStatisticsController implements MyController {
     @FXML
     private BarChart<String,Integer> forkChart;
     @FXML
+    private BarChart<String,Integer> starChart;
+    @FXML
+    private BarChart<String,Integer> contributorsChart;
+    @FXML
+    private BarChart<String,Integer> collaboratorsChart;
+    @FXML
     private CategoryAxis xlang;
+
 
     public void initialize() {
         bl=new StatisticsController();
         try {
             langChart.setData(getData(bl.getLanguage()));
             creatTimeChart.setData(getPieData(bl.getRepoCreated()));
+            forkChart.setData(getData(bl.getForks()));
+            starChart.setData(getData(bl.getStar()));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,7 +66,6 @@ public class RepoStatisticsController implements MyController {
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
             if(i==7){
                 series.getData().add(new XYChart.Data<>("Others",vo.getSum(8)));
-
             }
         }
         observableList.add(series);
@@ -74,6 +82,8 @@ public class RepoStatisticsController implements MyController {
         }
         return observableList;
     }
+
+
 
 
 }

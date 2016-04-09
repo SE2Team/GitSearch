@@ -37,6 +37,8 @@ public class FXUITest extends Application {
     private AnchorPane searchUserPane;
     private RepSearchController repSearchController;
     private UserSearchController userSearchController;
+    private static int WIDTH=1280;
+    private static int HEIGHT=720;
     /**
      * 实现前进和后退的两个栈
      */
@@ -48,7 +50,11 @@ public class FXUITest extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.primaryStage = primaryStage;
-        primaryStage.setTitle("GitSearch");
+//        primaryStage.setTitle("GitSearch");
+//        primaryStage.setMaxHeight(HEIGHT);
+//        primaryStage.setMinHeight(HEIGHT);
+//        primaryStage.setMinWidth(WIDTH);
+//        primaryStage.setMaxWidth(WIDTH);
         initHome();
         searchRepo("");
 //        searchUser("");
@@ -164,8 +170,6 @@ public class FXUITest extends Application {
         repSearchController.setKey(key);
         repSearchController.repaint();
         homeLayout.setCenter(searchRepoPane);
-
-
     }
 
     public void searchUser(String key) {
