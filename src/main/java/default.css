@@ -312,3 +312,10 @@
     -fx-font-size: 24px;
     -fx-cursor: HAND;
 }
+
+#MenuBar{
+    /*-fx-background-color: linear-gradient();*/
+}
+#MainButton{
+
+}
