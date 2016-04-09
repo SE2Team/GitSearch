@@ -84,7 +84,7 @@ public class HomeController implements MyController{
 
     @FXML
     private void handleRStatistics(){
-
+        fxui.repoStatistics();
     }
 
     @FXML

@@ -18,12 +18,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="589.0" layoutY="38.0" text="User Type">
-                           <font>
-                              <Font name="Calibri" size="25.0" />
-                           </font>
-                        </Label>
-                        <PieChart layoutX="66.0" layoutY="70.0" legendSide="LEFT" prefHeight="521.0" prefWidth="1148.0" />
+                        <PieChart layoutX="66.0" layoutY="22.0" legendSide="LEFT" prefHeight="569.0" prefWidth="1148.0" title="用户类型分布图" />
                      </children>
                   </AnchorPane>
             </content>
@@ -32,17 +27,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="537.0" layoutY="44.0" text="User Create Time">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="150.0" layoutY="42.0" legendVisible="false" prefHeight="528.0" prefWidth="999.0" title="用户-时间分布图">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis label="时间" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis label="用户数" side="LEFT" />
                           </yAxis>
                         </BarChart>
                      </children>
@@ -53,17 +43,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="463.0" layoutY="33.0" text="Related Repositories per User">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <LineChart layoutX="96.0" layoutY="90.0" prefHeight="495.0" prefWidth="1057.0">
+                        <LineChart layoutX="96.0" layoutY="35.0" prefHeight="550.0" prefWidth="1076.0" title="相关项目数-用户数分布图">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis label="用户数" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis label="项目数" side="LEFT" />
                           </yAxis>
                         </LineChart>
                      </children>
@@ -74,17 +59,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="463.0" layoutY="39.0" text="Related Repositories per User">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <LineChart layoutX="130.0" layoutY="88.0" prefHeight="495.0" prefWidth="1057.0">
+                        <LineChart layoutX="124.0" layoutY="49.0" prefHeight="534.0" prefWidth="1057.0" title="拥有项目数-用户数分布图">
                            <xAxis>
-                              <CategoryAxis side="BOTTOM" />
+                              <CategoryAxis label="项目数量" side="BOTTOM" />
                            </xAxis>
                            <yAxis>
-                              <NumberAxis side="LEFT" />
+                              <NumberAxis label="用户数量" side="LEFT" />
                            </yAxis>
                         </LineChart>
                      </children>
@@ -95,17 +75,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="431.0" layoutY="38.0" text="Numbers of User in each Company">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="118.0" layoutY="49.0" legendVisible="false" prefHeight="522.0" prefWidth="1031.0" title="用户数-公司分布图">
                            <xAxis>
-                              <CategoryAxis side="BOTTOM" />
+                              <CategoryAxis label="公司名" side="BOTTOM" />
                            </xAxis>
                            <yAxis>
-                              <NumberAxis side="LEFT" />
+                              <NumberAxis label="用户数" side="LEFT" />
                            </yAxis>
                         </BarChart>
                      </children>

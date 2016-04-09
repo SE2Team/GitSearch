@@ -14,6 +14,7 @@ import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
+import vo.ScreenVO;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import java.util.Iterator;
  * Created by moeyui on 2016/3/17 0017.
  */
 public class RepSearchController implements MyController {
+    private enum Filters {LANGUAGE, TIME, CATEGORY}
 
     /**
      * 筛选部件
@@ -37,7 +39,8 @@ public class RepSearchController implements MyController {
     @FXML
     private FlowPane languagePane;
 
-    private ToggleGroup langGroup=new ToggleGroup();
+    private ToggleGroup langGroup = new ToggleGroup();
+    private ToggleGroup TimeGroup = new ToggleGroup();
     /**
      * 排序部件
      */
@@ -158,26 +161,68 @@ public class RepSearchController implements MyController {
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    /**
-                     * 如果按钮被点击后是非选中状态，不动直接返回
-                     */
-                    if (!t.isSelected()){
-                        return;
-                    }
                     try {
-                        handleLanguage(t.getText());
+                        /**
+                         * 如果按钮被点击后是非选中状态，不动直接返回
+                         */
+
+                        if (!t.isSelected()) {
+                            handleScreen(Filters.LANGUAGE, "");
+                        } else {
+                            handleScreen(Filters.LANGUAGE, t.getText());
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
+            language.add(t);
+        }
+
+        for (Node n : timePane.getChildren()) {
+            final ToggleButton t = (ToggleButton) n;
+            t.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    try {
+                        if (!t.isSelected()) {
+                            handleScreen(Filters.TIME, "");
+                        }else {
+                            handleScreen(Filters.TIME,t.getText());
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             });
-            language.add(t);
         }
     }
 
-    private void handleLanguage(String lang) throws IOException {
+    /**
+     * 筛选语言处理
+     */
+//    private void handleLanguage(String lang) throws IOException {
+//        vos.clear();
+//        Iterator<RepositoryVO> itr = bl.screen();
+//        while (itr.hasNext()) {
+//            vos.add(itr.next());
+//        }
+//
+//        page_max = (int) (vos.size() / 6);//计算最大页数
+//        maxPg.setText(String.valueOf(page_max));
+//        updatePage();
+//    }
+    private void getPresentFilter() {
+
+    }
+
+    private void handleScreen(Filters f, String str) throws IOException {
         vos.clear();
-        Iterator<RepositoryVO> itr = bl.screenLanguage(lang);
+//        ToggleButton langB= (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
+//        String langtxt=langB.getText();
+
+        Iterator<RepositoryVO> itr = bl.screen(new ScreenVO("", str, ""));
         while (itr.hasNext()) {
             vos.add(itr.next());
         }
@@ -186,6 +231,7 @@ public class RepSearchController implements MyController {
         maxPg.setText(String.valueOf(page_max));
         updatePage();
     }
+
 
     public void setKey(String key) {
         this.key = key;
@@ -287,4 +333,7 @@ public class RepSearchController implements MyController {
         }
     }
 
+    private ScreenVO getScreen(Filters f, String str) {
+        return new ScreenVO("", "", "");
+    }
 }

@@ -289,3 +289,17 @@
     -fx-text-fill: #5799d3;
     -fx-underline: false;
 }
+
+/*#GitHome{*/
+    /*-fx-background-image: url("Images/xk.png");*/
+/*}*/
+
+/*#MenuBar{*/
+    /*-fx-background-image: url("Images/MenuBar.png");*/
+/*}*/
+
+.bar-chart:vertical {
+    -fx-font-family:"Calibri";
+    -fx-font-size: 24px;
+    -fx-cursor: HAND;
+}
