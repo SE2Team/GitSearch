@@ -17,11 +17,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <GridPane layoutX="663.0" layoutY="22.0" prefHeight="58.0" prefWidth="268.0" vgap="8.0">
+      <GridPane layoutX="646.0" layoutY="22.0" prefHeight="58.0" prefWidth="309.0" vgap="8.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="72.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="64.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="136.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="101.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="131.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />

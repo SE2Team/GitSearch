@@ -94,11 +94,6 @@
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
                                           </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Others">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
                                        </children>
                                     </FlowPane>
                                  </children>
@@ -169,7 +164,7 @@
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
                                           </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="Viml">
+                                          <ToggleButton mnemonicParsing="false" text="VimL">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
@@ -190,11 +185,6 @@
                                              </font>
                                           </ToggleButton>
                                           <ToggleButton mnemonicParsing="false" text="Erlang">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="Others">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
@@ -312,36 +302,36 @@
                   <Line endX="946.0" layoutX="56.0" layoutY="80.0" opacity="0.8" startX="10.0" stroke="#00000097" strokeWidth="0.5" />
                   <AnchorPane id="SortWay" layoutX="61.0" layoutY="35.0" prefHeight="43.0" prefWidth="945.0">
                      <children>
-                        <Button fx:id="general" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleGeneral" prefHeight="40.0" prefWidth="111.0" text="General ">
+                        <Button fx:id="general" layoutX="1.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleGeneral" prefHeight="40.0" prefWidth="120.0" text="General ↓">
                            <font>
-                              <Font name="Calibri" size="20.0" />
+                              <Font name="Calibri" size="19.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="star" layoutX="661.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleStar" prefHeight="40.0" text="Star ">
+                        <Button fx:id="star" layoutX="652.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleStar" prefHeight="40.0" text="Star ">
                            <font>
-                              <Font name="Calibri" size="20.0" />
+                              <Font name="Calibri" size="19.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="fork" layoutX="727.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleFork" prefHeight="40.0" prefWidth="71.0" text="Fork ">
+                        <Button fx:id="fork" layoutX="723.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleFork" prefHeight="40.0" prefWidth="85.0" text="Fork ">
                            <font>
-                              <Font name="Calibri" size="20.0" />
+                              <Font name="Calibri" size="19.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="contributor" layoutX="798.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleContributor" prefHeight="40.0" prefWidth="129.0" text="Contributor ">
+                        <Button fx:id="contributor" layoutX="807.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleContributor" prefHeight="40.0" prefWidth="138.0" text="Contributor ">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                            <font>
-                              <Font name="Calibri" size="20.0" />
+                              <Font name="Calibri" size="19.0" />
                            </font>
                         </Button>
                         <Line endX="935.0" layoutX="5.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
