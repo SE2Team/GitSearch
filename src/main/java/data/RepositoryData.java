@@ -337,7 +337,8 @@ public class RepositoryData implements RepositoryDataService {
 
 	@Override
 	public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+	//	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=finalList;
 		if(po.getLanguage().equals("")){
 			
 		}else{

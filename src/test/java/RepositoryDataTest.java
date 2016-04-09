@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Util.RepositoryInfo;
+import Util.Repository_Sort;
 
 public class RepositoryDataTest extends TestCase {
 	
@@ -55,8 +56,5 @@ public class RepositoryDataTest extends TestCase {
 		assertEquals(po3.getForks(), testRepository.Search("thin").get(0).getForks());
 	}
 	
-	/*测试sort方法*/
-	public void testSort() throws IOException{
-		
-	}
+	
 }
