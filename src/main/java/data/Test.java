@@ -29,9 +29,9 @@ public class Test {
 //		for(int i=0;i<list.size();i++){
 //			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getCreated());
 //		}
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list1=new RepositoryData().sort(Repository_Sort.fork);
-		System.out.println(list1.get(0).getCreated());
-		System.out.println(list.get(0).getCreated());
+	StaStrPO po=new StatisticsData().getLanguage();
+	for(int i=0;i<po.getInt().size();i++){
+		System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
+	}
 	}
 }
