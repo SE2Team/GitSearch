@@ -40,7 +40,8 @@ public class RepSearchController implements MyController {
     private FlowPane languagePane;
 
     private ToggleGroup langGroup = new ToggleGroup();
-    private ToggleGroup TimeGroup = new ToggleGroup();
+    private ToggleGroup timeGroup = new ToggleGroup();
+    private ToggleGroup categoryGroup=new ToggleGroup();
     /**
      * 排序部件
      */
@@ -82,6 +83,8 @@ public class RepSearchController implements MyController {
     public void initialize() {
         initFilters();
         langGroup.getToggles().addAll(language);
+        timeGroup.getToggles().addAll(time);
+        categoryGroup.getToggles().addAll(category);
     }
 
     public void setFxui(FXUITest fxui) {
@@ -162,19 +165,10 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        /**
-                         * 如果按钮被点击后是非选中状态，不动直接返回
-                         */
-
-                        if (!t.isSelected()) {
-                            handleScreen(Filters.LANGUAGE, "");
-                        } else {
-                            handleScreen(Filters.LANGUAGE, t.getText());
-                        }
+                        handleScreen(getPresentFilter());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
                 }
             });
             language.add(t);
@@ -186,16 +180,27 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        if (!t.isSelected()) {
-                            handleScreen(Filters.TIME, "");
-                        }else {
-                            handleScreen(Filters.TIME,t.getText());
-                        }
+                        handleScreen(getPresentFilter());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             });
+            time.add(t);
+        }
+        for (Node n : categoryPane.getChildren()) {
+            final ToggleButton t = (ToggleButton) n;
+            t.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    try {
+                        handleScreen(getPresentFilter());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            category.add(t);
         }
     }
 
@@ -213,16 +218,31 @@ public class RepSearchController implements MyController {
 //        maxPg.setText(String.valueOf(page_max));
 //        updatePage();
 //    }
-    private void getPresentFilter() {
+    private ScreenVO getPresentFilter() {
+        String langtxt="";
+        String timetxt="";
+        String categorytxt="";
+        if(langGroup.getSelectedToggle()!=null){
+            ToggleButton langB= (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
+            langtxt=langB.getText();
+        }
+        if (timeGroup.getSelectedToggle()!=null){
+            ToggleButton timeB= (ToggleButton) timeGroup.getSelectedToggle().selectedProperty().getBean();
+            timetxt=timeB.getText();
+        }
 
+        if (categoryGroup.getSelectedToggle()!=null){
+            ToggleButton categoryB= (ToggleButton) categoryGroup.getSelectedToggle().selectedProperty().getBean();
+            categorytxt=categoryB.getText();
+        }
+        return new ScreenVO(timetxt,langtxt,categorytxt);
     }
 
-    private void handleScreen(Filters f, String str) throws IOException {
+    private void handleScreen(ScreenVO vo) throws IOException {
         vos.clear();
-//        ToggleButton langB= (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
-//        String langtxt=langB.getText();
 
-        Iterator<RepositoryVO> itr = bl.screen(new ScreenVO("", str, ""));
+
+        Iterator<RepositoryVO> itr = bl.screen(getPresentFilter());
         while (itr.hasNext()) {
             vos.add(itr.next());
         }
