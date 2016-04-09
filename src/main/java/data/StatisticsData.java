@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
@@ -80,11 +81,14 @@ public class StatisticsData implements StatisticsDataService{
 			int n=list.get(i).getStargazers();
 			if(n<=500){
 				int1++;
-			}else if(n<=1000&&n>500){
-				int1++;
-			}else if(n>1000&&n<=1500){
+			} 
+			if(n<=1000&&n>500){
 				int2++;
-			}else{
+			} 
+			if(n>1000&&n<=1500){
+				int3++;
+			}
+			if(n>1500){
 				over++;
 			}
 		}
@@ -113,11 +117,14 @@ public class StatisticsData implements StatisticsDataService{
 			int n=list.get(i).getForks();
 			if(n<=500){
 				int1++;
-			}else if(n<=1000&&n>500){
-				int1++;
-			}else if(n>1000&&n<=1500){
+			} 
+			if(n<=1000&&n>500){
 				int2++;
-			}else{
+			} 
+			if(n>1000&&n<=1500){
+				int3++;
+			}
+			if(n>1500){
 				over++;
 			}
 		}
