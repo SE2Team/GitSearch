@@ -71,27 +71,32 @@ public class StatisticsData implements StatisticsDataService{
 
 	public StaStrPO getStar() throws IOException {
 		// TODO Auto-generated method stub
-		int thousand=0;
-		int twoThousand=0;
+		int int1=0;
+		int int2=0;
+		int int3=0;
 		int over=0;
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		for(int i=0;i<list.size();i++){
 			int n=list.get(i).getStargazers();
-			if(n<=1000){
-				thousand++;
-			}else if(n<=2000){
-				twoThousand++;
-			}else if(n>2000){
+			if(n<=500){
+				int1++;
+			}else if(n<=1000&&n>500){
+				int1++;
+			}else if(n>1000&&n<=1500){
+				int2++;
+			}else{
 				over++;
 			}
 		}
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
-		listStr.add("0-1000");
-		listStr.add("1001-2000");
+		listStr.add("0-500");
+		listStr.add("501-1000");
+		listStr.add("1001-1500");
 		listStr.add("over2000");
-		listInt.add(thousand);
-		listInt.add(twoThousand);
+		listInt.add(int1);
+		listInt.add(int2);
+		listInt.add(int3);
 		listInt.add(over);
 		
 		return new StaStrPO(listStr, listInt);
@@ -99,27 +104,32 @@ public class StatisticsData implements StatisticsDataService{
 
 	public StaStrPO getForks() throws IOException {
 		// TODO Auto-generated method stub
-		int thousand=0;
-		int twoThousand=0;
+		int int1=0;
+		int int2=0;
+		int int3=0;
 		int over=0;
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		for(int i=0;i<list.size();i++){
 			int n=list.get(i).getForks();
-			if(n<=100){
-				thousand++;
-			}else if(n<=1000){
-				twoThousand++;
-			}else if(n>1000){
+			if(n<=500){
+				int1++;
+			}else if(n<=1000&&n>500){
+				int1++;
+			}else if(n>1000&&n<=1500){
+				int2++;
+			}else{
 				over++;
 			}
 		}
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
-		listStr.add("0-1000");
-		listStr.add("1001-2000");
+		listStr.add("0-500");
+		listStr.add("501-1000");
+		listStr.add("1001-1500");
 		listStr.add("over2000");
-		listInt.add(thousand);
-		listInt.add(twoThousand);
+		listInt.add(int1);
+		listInt.add(int2);
+		listInt.add(int3);
 		listInt.add(over);
 		
 		return new StaStrPO(listStr, listInt);
