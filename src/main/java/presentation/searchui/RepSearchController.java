@@ -165,7 +165,7 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        handleScreen(getPresentFilter());
+                        handleScreen();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -180,7 +180,7 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        handleScreen(getPresentFilter());
+                        handleScreen();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -194,7 +194,7 @@ public class RepSearchController implements MyController {
                 @Override
                 public void handle(ActionEvent event) {
                     try {
-                        handleScreen(getPresentFilter());
+                        handleScreen();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -242,7 +242,7 @@ public class RepSearchController implements MyController {
         return new ScreenVO(timetxt,langtxt,categorytxt);
     }
 
-    private void handleScreen(ScreenVO vo) throws IOException {
+    private void handleScreen() throws IOException {
         vos.clear();
 
 
