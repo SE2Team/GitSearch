@@ -25,9 +25,6 @@
                           <yAxis>
                             <NumberAxis side="LEFT" />
                           </yAxis>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
                         </BarChart>
                      </children>
                   </AnchorPane>

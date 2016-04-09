@@ -21,7 +21,7 @@
                      </font>
                   </Label>
                   <Accordion layoutX="2.0" layoutY="62.0" />
-                  <Accordion layoutX="2.0" layoutY="54.0" prefHeight="425.0" prefWidth="203.0">
+                  <Accordion layoutX="2.0" layoutY="54.0" prefHeight="602.0" prefWidth="203.0">
                     <panes>
                       <TitledPane animated="false" prefHeight="278.0" prefWidth="203.0" text="Category">
                         <content>
@@ -189,6 +189,66 @@
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
                                           </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Emacs Lisp">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="CSS">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Clojure">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Lua">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Go">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Common Lisp">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="R">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="OCaml">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Groovy">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Perl6">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="TeX">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Puppet">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
                                        </children>
                                     </FlowPane>
                                  </children>
@@ -220,31 +280,6 @@
                                              </font>
                                           </ToggleButton>
                                           <ToggleButton mnemonicParsing="false" text="2010">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="2011">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="2012">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="2013">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="2014">
-                                             <font>
-                                                <Font name="Calibri" size="16.0" />
-                                             </font>
-                                          </ToggleButton>
-                                          <ToggleButton mnemonicParsing="false" text="2015">
                                              <font>
                                                 <Font name="Calibri" size="16.0" />
                                              </font>
