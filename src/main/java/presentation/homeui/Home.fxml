@@ -15,27 +15,12 @@
       <AnchorPane maxHeight="-Infinity" prefHeight="26.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
             <MenuBar id="MenuBar" layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.leftAnchor="0.0" />
-            <Button fx:id="search_pane" layoutX="200.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" text="搜索">
-               <font>
-                  <Font name="Microsoft YaHei" size="25.0" />
-               </font>
-            </Button>
             <TextField fx:id="searchText" layoutX="881.0" layoutY="11.0" prefHeight="32.0" prefWidth="222.0" promptText="Search" />
             <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="818.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="818.0">
                <image>
                   <Image url="@../../Images/home.png" />
                </image>
             </ImageView>
-            <Button fx:id="rstatistics" layoutX="351.0" mnemonicParsing="false" onMouseClicked="#handleRStatistics" prefHeight="56.0" prefWidth="150.0" text="项目统计">
-               <font>
-                  <Font name="Microsoft YaHei" size="25.0" />
-               </font>
-            </Button>
-            <Button fx:id="ustatistics" layoutX="502.0" mnemonicParsing="false" onMouseClicked="#handleUStatistics" prefHeight="56.0" prefWidth="150.0" text="用户统计">
-               <font>
-                  <Font name="Microsoft YaHei" size="25.0" />
-               </font>
-            </Button>
             <ComboBox fx:id="comboBox" layoutX="1102.0" layoutY="10.0" prefHeight="32.0" prefWidth="93.0" promptText="项目" />
             <Button id="back" fx:id="back" layoutX="15.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="35.0" prefWidth="35.0" />
             <Button id="advance" fx:id="advance" layoutX="111.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleAdvance" prefHeight="35.0" prefWidth="35.0" />
@@ -44,6 +29,21 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <ToggleButton fx:id="search_pane" layoutX="199.0" mnemonicParsing="false" onMouseClicked="#handleSearch_p" prefHeight="56.0" prefWidth="150.0" text="搜索">
+               <font>
+                  <Font name="Microsoft YaHei" size="25.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="rstatistics" layoutX="350.0" mnemonicParsing="false" onMouseClicked="#handleRStatistics" prefHeight="56.0" prefWidth="150.0" text="项目统计">
+               <font>
+                  <Font name="Microsoft YaHei" size="25.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton fx:id="ustatistics" layoutX="501.0" mnemonicParsing="false" onMouseClicked="#handleUStatistics" prefHeight="56.0" prefWidth="150.0" text="项目统计">
+               <font>
+                  <Font name="Microsoft YaHei" size="25.0" />
+               </font>
+            </ToggleButton>
          </children>
       </AnchorPane>
    </top>
