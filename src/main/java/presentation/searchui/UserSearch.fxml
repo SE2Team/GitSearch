@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
+<AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
    <children>
       <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -150,9 +150,9 @@
                      </children>
                   </StackPane>
                   <Line endX="935.0" layoutX="68.0" layoutY="79.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
-                  <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Sort">
+                  <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User List">
                      <font>
-                        <Font name="Calibri" size="23.0" />
+                        <Font name="Calibri Light" size="26.0" />
                      </font></Text>
                   <AnchorPane id="SortWay" layoutX="65.0" layoutY="36.0" prefHeight="40.0" prefWidth="942.0">
                      <children>
