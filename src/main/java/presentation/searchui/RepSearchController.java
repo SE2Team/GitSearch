@@ -218,6 +218,10 @@ public class RepSearchController implements MyController {
 //        maxPg.setText(String.valueOf(page_max));
 //        updatePage();
 //    }
+    /**
+     * 获取现在各筛选条件情况
+     * @return 一个反映现在筛选情况的ScreenVO
+     */
     private ScreenVO getPresentFilter() {
         String langtxt="";
         String timetxt="";

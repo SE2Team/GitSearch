@@ -3,17 +3,17 @@ package presentation.searchui;
 import Util.User_Sort;
 import businesslogic.userBL.UserController;
 import businesslogicService.UserBLService;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
+import vo.ScreenVO;
 import vo.UserVO;
 
 import java.io.IOException;
@@ -28,6 +28,7 @@ public class UserSearchController implements MyController {
      * 筛选部件
      */
     private ArrayList<ToggleButton> time=new ArrayList<>();
+    private ToggleGroup timeGroup =new ToggleGroup();
     @FXML
     private Button seven;
     @FXML
@@ -84,17 +85,18 @@ public class UserSearchController implements MyController {
     private int page_max = 0;
 
     public void initialize() {
-//        time.add(seven);
-//        time.add(eight);
-//        time.add(nine);
-//        time.add(ten);
-//        time.add(eleven);
-//        time.add(twe);
 
         for(Node n:flowPane2.getChildren()){
+            final ToggleButton t= (ToggleButton) n;
+            t.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+
+                }
+            });
             time.add((ToggleButton) n);
         }
-
+        timeGroup.getToggles().addAll(time);
     }
 
     public void setFxui(FXUITest fxui) {
@@ -159,6 +161,13 @@ public class UserSearchController implements MyController {
         controller.repaint();
         return anchorPane;
     }
+//    private ScreenVO getPresentFilter(){
+//        String timetxt="";
+//        if (timeGroup.getSelectedToggle()!=null){
+//
+//        }
+//
+//    }
 
     @FXML
     private void handlePgUp() {
