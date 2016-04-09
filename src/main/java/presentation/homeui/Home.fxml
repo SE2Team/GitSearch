@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -13,7 +14,7 @@
    <top>
       <AnchorPane maxHeight="-Infinity" prefHeight="26.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" />
+            <MenuBar id="MenuBar" layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.leftAnchor="0.0" />
             <Button fx:id="search_pane" layoutX="200.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" text="搜索">
                <font>
                   <Font name="Microsoft YaHei" size="25.0" />
@@ -39,7 +40,10 @@
             <Button id="back" fx:id="back" layoutX="15.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="35.0" prefWidth="35.0" />
             <Button id="advance" fx:id="advance" layoutX="111.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleAdvance" prefHeight="35.0" prefWidth="35.0" />
             <Button id="home" fx:id="home" layoutX="61.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#handleHome" prefHeight="35.0" prefWidth="35.0" />
-            <Button id="search_button" fx:id="search_button" layoutX="1196.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleSearch_b" prefHeight="30.0" prefWidth="30.0" />
+            <Button id="search_button" fx:id="search_button" layoutX="1196.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleSearch_b" prefHeight="30.0" prefWidth="30.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </AnchorPane>
    </top>

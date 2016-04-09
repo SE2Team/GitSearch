@@ -18,19 +18,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <BarChart layoutX="145.0" layoutY="117.0" prefHeight="400.0" prefWidth="960.0">
+                        <BarChart layoutX="145.0" layoutY="28.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="Numbers of Repository in Different Languages">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
                           <yAxis>
                             <NumberAxis side="LEFT" />
                           </yAxis>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
                         </BarChart>
-                        <Label layoutX="388.0" layoutY="44.0" text="Numbers of Repository in Different Languages">
-                           <font>
-                              <Font name="Calibri" size="25.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
             </content>
@@ -48,12 +46,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="335.0" layoutY="46.0" text="Numbers of Repository in Different Ranges of Fork">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="150.0" layoutY="47.0" legendVisible="false" prefHeight="511.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Fork">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -69,12 +62,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="324.0" layoutY="38.0" text="Numbers of Repository in Different Ranges of Star">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="150.0" layoutY="38.0" legendVisible="false" prefHeight="529.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Star">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -90,12 +78,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="323.0" layoutY="38.0" text="Numbers of Repository in Different Ranges of Contributors">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="150.0" layoutY="38.0" legendVisible="false" prefHeight="541.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Contributors">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -111,12 +94,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="289.0" layoutY="40.0" text="Numbers of Repository in Different Ranges of Collabotators">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <BarChart layoutX="150.0" layoutY="118.0" prefHeight="400.0" prefWidth="999.0">
+                        <BarChart layoutX="150.0" layoutY="36.0" legendVisible="false" prefHeight="535.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Collabotators">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
