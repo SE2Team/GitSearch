@@ -185,12 +185,14 @@ public class RepSearchController implements MyController {
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if (!t.isSelected()) {
-                        try {
+                    try {
+                        if (!t.isSelected()) {
                             handleScreen(Filters.TIME, "");
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                        }else {
+                            handleScreen(Filters.TIME,t.getText());
                         }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
                 }
             });
@@ -211,16 +213,23 @@ public class RepSearchController implements MyController {
 //        maxPg.setText(String.valueOf(page_max));
 //        updatePage();
 //    }
-    private void handleTime(String str) {
+    private void getPresentFilter() {
 
     }
 
     private void handleScreen(Filters f, String str) throws IOException {
         vos.clear();
+//        ToggleButton langB= (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
+//        String langtxt=langB.getText();
 
+        Iterator<RepositoryVO> itr = bl.screen(new ScreenVO("", str, ""));
+        while (itr.hasNext()) {
+            vos.add(itr.next());
+        }
 
-        Iterator<RepositoryVO> itr = bl.screen(new ScreenVO("", "", ""));
-
+        page_max = (int) (vos.size() / 6);//计算最大页数
+        maxPg.setText(String.valueOf(page_max));
+        updatePage();
     }
 
 
