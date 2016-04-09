@@ -310,7 +310,7 @@
 .bar-chart:vertical {
     -fx-font-family:"Calibri";
     -fx-font-size: 24px;
-    -fx-cursor: HAND;
+    /*-fx-cursor: HAND;*/
 }
 
 #MenuBar{
@@ -318,4 +318,8 @@
 }
 #MainButton{
 
+}
+
+.axis:bottom .axis-label{
+    -fx-wrap-text: true;
 }
