@@ -339,6 +339,7 @@ public class RepositoryData implements RepositoryDataService {
 	public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
 	//	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		ArrayList<RepositoryPO> list=finalList;
+		System.out.println(po.getLanguage());
 		if(po.getLanguage().equals("")){
 			
 		}else{
@@ -356,7 +357,6 @@ public class RepositoryData implements RepositoryDataService {
 		}else{
 			list=this.screenCategory(po.getCategory(), list);
 		}
-		finalList=list;
 		return list;
 	}
 	
