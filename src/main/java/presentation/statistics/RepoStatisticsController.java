@@ -45,10 +45,13 @@ public class RepoStatisticsController implements MyController {
             creatTimeChart.setData(getPieData(bl.getRepoCreated()));
             forkChart.setData(getData(bl.getForks()));
             starChart.setData(getData(bl.getStar()));
+//            contributorsChart.setData(getData(bl.));
+//            collaboratorsChart.setData(getData(bl.));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public void setFxui(FXUITest fxui) {
@@ -61,11 +64,11 @@ public class RepoStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<8;i++){
+        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
 
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==7){
-                series.getData().add(new XYChart.Data<>("Others",vo.getSum(8)));
+            if(i==9){
+                series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));
             }
         }
         observableList.add(series);
