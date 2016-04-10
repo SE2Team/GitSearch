@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
+
 import Util.User_Sort;
 import dataService.UserDataService;
 import po.RepositoryPO;
@@ -281,9 +283,25 @@ public class UserData implements UserDataService {
 	}
 
 	@Override
-	public ArrayList<UserPO> screenTime(String time) {
+	public ArrayList<UserPO> screenTime(String time) throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<UserPO> list1=new ArrayList<>();
+		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<UserPO> list=new UserData().getUser();//有bug
+		if(time.equals("")){
+			return list;
+		}
+		
+		for(int i=0;i<list.size();i++){
+			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
+			String str1 = str[0];
+			int year = Integer.parseInt(str1);
+			if(Integer.parseInt(time.substring(0,4))==year){
+				list1.add(list.get(i));
+			}
+		}
+		//finalList=list1;
+		return list1;
 	}
 	
 }

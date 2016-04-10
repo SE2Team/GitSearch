@@ -79,25 +79,25 @@ public class StatisticsData implements StatisticsDataService{
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		for(int i=0;i<list.size();i++){
 			int n=list.get(i).getStargazers();
-			if(n<=500){
+			if(n<=50){
 				int1++;
 			} 
-			if(n<=1000&&n>500){
+			else if(n<=200&&n>50){
 				int2++;
 			} 
-			if(n>1000&&n<=1500){
+			else if(n>200&&n<=500){
 				int3++;
 			}
-			if(n>1500){
+			else if(n>500){
 				over++;
 			}
 		}
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
-		listStr.add("0-500");
-		listStr.add("501-1000");
-		listStr.add("1001-1500");
-		listStr.add("over2000");
+		listStr.add("0-50");
+		listStr.add("50-200");
+		listStr.add("200-500");
+		listStr.add("over500");
 		listInt.add(int1);
 		listInt.add(int2);
 		listInt.add(int3);
@@ -115,25 +115,25 @@ public class StatisticsData implements StatisticsDataService{
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		for(int i=0;i<list.size();i++){
 			int n=list.get(i).getForks();
-			if(n<=50){
+			if(n<=25){
 				int1++;
 			} 
-			else if(n<=100&&n>200){
+			else if(n<=50&&n>25){
 				int2++;
 			} 
-			else if(n>1000&&n<=1500){
+			else if(n>50&&n<=75){
 				int3++;
 			}
-			else if(n>1500){
+			else if(n>75){
 				over++;
 			}
 		}
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
-		listStr.add("0-500");
-		listStr.add("501-1000");
-		listStr.add("1001-1500");
-		listStr.add("over2000");
+		listStr.add("0-25");
+		listStr.add("25-50");
+		listStr.add("50-75");
+		listStr.add("over75");
 		listInt.add(int1);
 		listInt.add(int2);
 		listInt.add(int3);

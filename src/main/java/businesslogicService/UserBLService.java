@@ -85,5 +85,5 @@ public interface UserBLService {
     
     Iterator<UserVO> sortUser(User_Sort sort) throws IOException;
     
-    Iterator<UserVO> screenTime(String time);
+    Iterator<UserVO> screenTime(String time) throws IOException;
 }

@@ -96,6 +96,7 @@ public interface UserDataService {
      * 根据用户创建时间进行筛选
      * @param time
      * @return
+     * @throws IOException 
      */
-    ArrayList<UserPO> screenTime(String time);
+    ArrayList<UserPO> screenTime(String time) throws IOException;
 }

@@ -29,7 +29,7 @@ public class Test {
 //		for(int i=0;i<list.size();i++){
 //			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getCreated());
 //		}
-	StaStrPO po=new StatisticsData().getForks();
+	StaStrPO po=new StatisticsData().getStar();
 	for(int i=0;i<po.getInt().size();i++){
 		System.out.println(po.getInt().get(i));
 		}
