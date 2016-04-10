@@ -20,7 +20,7 @@
                      <children>
                         <BarChart fx:id="langChart" layoutX="145.0" layoutY="28.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="Numbers of Repository in Different Languages">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" fx:id="xlang" />
+                            <CategoryAxis side="BOTTOM" stylesheets="@../../default.css" fx:id="xlang" />
                           </xAxis>
                           <yAxis>
                             <NumberAxis side="LEFT" />

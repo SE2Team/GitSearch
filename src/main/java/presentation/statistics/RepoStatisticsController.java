@@ -2,6 +2,10 @@ package presentation.statistics;
 
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,6 +13,8 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.shape.Path;
+import javafx.util.Duration;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.StaStrVO;
@@ -38,6 +44,7 @@ public class RepoStatisticsController implements MyController {
     private CategoryAxis xlang;
 
 
+
     public void initialize() {
         bl=new StatisticsController();
         try {
@@ -45,10 +52,23 @@ public class RepoStatisticsController implements MyController {
             creatTimeChart.setData(getPieData(bl.getRepoCreated()));
             forkChart.setData(getData(bl.getForks()));
             starChart.setData(getData(bl.getStar()));
+//            contributorsChart.setData(getData(bl.));
+//            collaboratorsChart.setData(getData(bl.));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        /**
+         * 第一个表格淡入淡出
+         */
+        FadeTransition ft=new FadeTransition(javafx.util.Duration.millis(2000),langChart);
+        ft.setFromValue(0.05);
+        ft.setToValue(1.0);
+        ft.setCycleCount(0);
+        ft.setAutoReverse(true);
+//        ft.play();
+
     }
 
     public void setFxui(FXUITest fxui) {
@@ -61,11 +81,11 @@ public class RepoStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<8;i++){
+        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
 
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==7){
-                series.getData().add(new XYChart.Data<>("Others",vo.getSum(8)));
+            if(i==9){
+                series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));
             }
         }
         observableList.add(series);

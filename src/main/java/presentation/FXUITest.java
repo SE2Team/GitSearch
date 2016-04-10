@@ -18,6 +18,7 @@ import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
 import presentation.searchui.UserSearchController;
 import presentation.statistics.RepoStatisticsController;
+import presentation.statistics.UserStatisticsController;
 import presentation.userCheckui.UserCheckController;
 import vo.RepositoryVO;
 import vo.UserVO;
@@ -50,11 +51,12 @@ public class FXUITest extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.primaryStage = primaryStage;
-//        primaryStage.setTitle("GitSearch");
+        primaryStage.setTitle("GitSearch");
 //        primaryStage.setMaxHeight(HEIGHT);
 //        primaryStage.setMinHeight(HEIGHT);
 //        primaryStage.setMinWidth(WIDTH);
 //        primaryStage.setMaxWidth(WIDTH);
+        primaryStage.setResizable(false);
         initHome();
         searchRepo("");
 //        searchUser("");
@@ -204,13 +206,22 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-
 
     }
 
     public void userStatistics() {
-
+        this.push();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("statistics/UserStatistics.fxml"));
+        try {
+            AnchorPane userStatisticPane=(AnchorPane)loader.load();
+            UserStatisticsController controller=loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(userStatisticPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public BorderPane getHomeLayout() {
