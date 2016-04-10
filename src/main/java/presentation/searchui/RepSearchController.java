@@ -41,7 +41,7 @@ public class RepSearchController implements MyController {
 
     private ToggleGroup langGroup = new ToggleGroup();
     private ToggleGroup timeGroup = new ToggleGroup();
-    private ToggleGroup categoryGroup=new ToggleGroup();
+    private ToggleGroup categoryGroup = new ToggleGroup();
     /**
      * 排序部件
      */
@@ -104,8 +104,7 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 6);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+        updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -218,28 +217,30 @@ public class RepSearchController implements MyController {
 //        maxPg.setText(String.valueOf(page_max));
 //        updatePage();
 //    }
+
     /**
      * 获取现在各筛选条件情况
+     *
      * @return 一个反映现在筛选情况的ScreenVO
      */
     private ScreenVO getPresentFilter() {
-        String langtxt="";
-        String timetxt="";
-        String categorytxt="";
-        if(langGroup.getSelectedToggle()!=null){
-            ToggleButton langB= (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
-            langtxt=langB.getText();
+        String langtxt = "";
+        String timetxt = "";
+        String categorytxt = "";
+        if (langGroup.getSelectedToggle() != null) {
+            ToggleButton langB = (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
+            langtxt = langB.getText();
         }
-        if (timeGroup.getSelectedToggle()!=null){
-            ToggleButton timeB= (ToggleButton) timeGroup.getSelectedToggle().selectedProperty().getBean();
-            timetxt=timeB.getText();
+        if (timeGroup.getSelectedToggle() != null) {
+            ToggleButton timeB = (ToggleButton) timeGroup.getSelectedToggle().selectedProperty().getBean();
+            timetxt = timeB.getText();
         }
 
-        if (categoryGroup.getSelectedToggle()!=null){
-            ToggleButton categoryB= (ToggleButton) categoryGroup.getSelectedToggle().selectedProperty().getBean();
-            categorytxt=categoryB.getText();
+        if (categoryGroup.getSelectedToggle() != null) {
+            ToggleButton categoryB = (ToggleButton) categoryGroup.getSelectedToggle().selectedProperty().getBean();
+            categorytxt = categoryB.getText();
         }
-        return new ScreenVO(timetxt,langtxt,categorytxt);
+        return new ScreenVO(timetxt, langtxt, categorytxt);
     }
 
     private void handleScreen() throws IOException {
@@ -251,8 +252,7 @@ public class RepSearchController implements MyController {
             vos.add(itr.next());
         }
 
-        page_max = (int) (vos.size() / 6);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+       updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -272,8 +272,7 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 6);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+        updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -288,8 +287,7 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 6);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -309,8 +307,8 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        page_max = (int) (vos.size() / 6);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+        updateMaxPages(vos.size());
+
         updatePage();
 
     }
@@ -359,5 +357,18 @@ public class RepSearchController implements MyController {
 
     private ScreenVO getScreen(Filters f, String str) {
         return new ScreenVO("", "", "");
+    }
+
+    private void updateMaxPages(int i) {
+        if (i == 0) {
+            page_max = 0;
+        } else {
+            page_max = (int) (i / 6);//计算最大页数
+            if (page_max == 0) {
+                page_max = 1;
+            }
+        }
+        maxPg.setText(String.valueOf(page_max));
+
     }
 }

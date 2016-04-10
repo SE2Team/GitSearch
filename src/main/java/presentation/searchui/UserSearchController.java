@@ -13,7 +13,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
 import presentation.common.MyController;
-import vo.ScreenVO;
 import vo.UserVO;
 
 import java.io.IOException;
@@ -27,8 +26,8 @@ public class UserSearchController implements MyController {
     /**
      * 筛选部件
      */
-    private ArrayList<ToggleButton> time=new ArrayList<>();
-    private ToggleGroup timeGroup =new ToggleGroup();
+    private ArrayList<ToggleButton> time = new ArrayList<>();
+    private ToggleGroup timeGroup = new ToggleGroup();
     @FXML
     private Button seven;
     @FXML
@@ -73,25 +72,24 @@ public class UserSearchController implements MyController {
     private FlowPane flowPane;
 
 
-
     /**
      * 界面无关变量
      */
     private FXUITest fxuiTest;
     private int page = 1;
-    private ArrayList<UserVO> vos=new ArrayList<UserVO>();
+    private ArrayList<UserVO> vos = new ArrayList<UserVO>();
     private UserBLService bl = new UserController();
     private String key = "";//搜索关键字
     private int page_max = 0;
 
     public void initialize() {
 
-        for(Node n:flowPane2.getChildren()){
-            final ToggleButton t= (ToggleButton) n;
+        for (Node n : flowPane2.getChildren()) {
+            final ToggleButton t = (ToggleButton) n;
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if(t.isSelected()==false)
+                    if (t.isSelected() == false)
                         handleScreen("");
                     else
                         handleScreen(t.getText());
@@ -120,9 +118,7 @@ public class UserSearchController implements MyController {
             e.printStackTrace();
         }
 
-        page_max = (int) (vos.size() / 8);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
-
+        updateMaxPages(vos.size());
         updatePage();
 
 
@@ -131,7 +127,7 @@ public class UserSearchController implements MyController {
     /**
      * 处理筛选方法
      */
-    private void handleScreen(String str){
+    private void handleScreen(String str) {
         vos.clear();//清空数组
         Iterator<UserVO> itr = null;
         try {
@@ -143,17 +139,11 @@ public class UserSearchController implements MyController {
             vos.add(itr.next());
         }
 
-        page_max = (int) (vos.size() / 8);//计算最大页数
-        /**
-         * 最少也有一页
-         */
-        if (page_max==0){
-            page_max=1;
-        }
-        maxPg.setText(String.valueOf(page_max));
+       updateMaxPages(vos.size());
 
         updatePage();
     }
+
     /**
      * 用于本地更新页面（翻页）的方法
      */
@@ -162,8 +152,8 @@ public class UserSearchController implements MyController {
         /**
          * remove it's small pane
          */
-        if(flowPane.getChildren().size()!=0)
-            flowPane.getChildren().remove(0,flowPane.getChildren().size());
+        if (flowPane.getChildren().size() != 0)
+            flowPane.getChildren().remove(0, flowPane.getChildren().size());
 
         for (int i = 0; i < 8; i++) {
             try {
@@ -182,7 +172,7 @@ public class UserSearchController implements MyController {
     private AnchorPane getSub(UserVO vo) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubUserInfo.fxml"));
-        AnchorPane anchorPane=loader.load();
+        AnchorPane anchorPane = loader.load();
         SubUserInfoController controller = loader.getController();
 
         controller.setFxui(fxuiTest);
@@ -257,8 +247,8 @@ public class UserSearchController implements MyController {
             e.printStackTrace();
         }
 
-        page_max = (int) (vos.size() / 8);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
+        updateMaxPages(vos.size());
+
 
         updatePage();
 
@@ -275,9 +265,8 @@ public class UserSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        updateMaxPages(vos.size());
 
-        page_max = (int) (vos.size() / 8);//计算最大页数
-        maxPg.setText(String.valueOf(page_max));
 
         updatePage();
 
@@ -285,5 +274,18 @@ public class UserSearchController implements MyController {
 
     public void setKey(String key) {
         this.key = key;
+    }
+
+    private void updateMaxPages(int i) {
+        if (i == 0) {
+            page_max = 0;
+        } else {
+            page_max = (int) (i / 6);//计算最大页数
+            if (page_max == 0) {
+                page_max = 1;
+            }
+        }
+        maxPg.setText(String.valueOf(page_max));
+
     }
 }
