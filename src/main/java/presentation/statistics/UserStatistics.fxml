@@ -18,7 +18,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <PieChart fx:id="typeChart" layoutX="66.0" layoutY="22.0" legendSide="LEFT" prefHeight="569.0" prefWidth="1148.0" title="用户类型分布图" />
+                        <PieChart fx:id="typeChart" layoutX="66.0" layoutY="22.0" legendSide="RIGHT" prefHeight="569.0" prefWidth="1148.0" title="用户类型分布图" />
                      </children>
                   </AnchorPane>
             </content>
@@ -43,7 +43,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <LineChart fx:id="relatedChart" layoutX="96.0" layoutY="35.0" prefHeight="550.0" prefWidth="1076.0" title="相关项目数-用户数分布图">
+                        <LineChart fx:id="relatedChart" layoutX="96.0" layoutY="35.0" legendVisible="false" prefHeight="550.0" prefWidth="1076.0" title="相关项目数-用户数分布图">
                           <xAxis>
                             <CategoryAxis label="用户数" side="BOTTOM" />
                           </xAxis>
@@ -59,7 +59,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <LineChart fx:id="OwnChart" layoutX="124.0" layoutY="49.0" prefHeight="534.0" prefWidth="1057.0" title="拥有项目数-用户数分布图">
+                        <LineChart fx:id="OwnChart" layoutX="124.0" layoutY="49.0" legendVisible="false" prefHeight="534.0" prefWidth="1057.0" title="拥有项目数-用户数分布图">
                            <xAxis>
                               <CategoryAxis label="项目数量" side="BOTTOM" />
                            </xAxis>
