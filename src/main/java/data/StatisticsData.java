@@ -482,6 +482,8 @@ public class StatisticsData implements StatisticsDataService{
 		ArrayList<String> listStr = new ArrayList<String>();
 		ArrayList<Integer> listInt=new ArrayList<Integer>();
 		ArrayList<Integer> listInt1=new ArrayList<Integer>();
+		ArrayList<String> listStr2 = new ArrayList<String>();
+		ArrayList<Integer> listInt2=new ArrayList<Integer>();
 		for(int i=0;i<list.size();i++){
 			String[] str=list.get(i).split(";");
 			if(listInt.contains(str.length-1)){
@@ -493,7 +495,7 @@ public class StatisticsData implements StatisticsDataService{
 		for(int i=0;i<listInt.size();i++ ){
 			listInt1.add(0);
 		}
-		for(int i=0;i<listInt1.size();i++){
+		for(int i=0;i<list.size();i++){
 			String[] str=list.get(i).split(";");
 			if(listInt.contains(str.length-1)){
 				listInt1.set(listInt.indexOf(str.length-1),listInt1.get(listInt.indexOf(str.length-1))+1);
@@ -506,7 +508,15 @@ public class StatisticsData implements StatisticsDataService{
 			listStr.add(listInt1.get(i)+"");
 		}
 		
-		return this.sort(listInt, listStr);
+		StaStrPO po= this.sort(listInt, listStr);
+		
+		for(int i=0;i<listInt1.size();i++){
+			listStr2.add(po.getInt().get(i)+"");
+			listInt2.add(Integer.parseInt(po.getStr().get(i)));
+			
+			
+		}
+		return new StaStrPO(listStr2, listInt2);
 	}
 
 	@Override
@@ -516,6 +526,8 @@ public class StatisticsData implements StatisticsDataService{
 		ArrayList<String> listStr = new ArrayList<String>();
 		ArrayList<Integer> listInt=new ArrayList<Integer>();
 		ArrayList<Integer> listInt1=new ArrayList<Integer>();
+		ArrayList<String> listStr2 = new ArrayList<String>();
+		ArrayList<Integer> listInt2=new ArrayList<Integer>();
 		for(int i=0;i<list.size();i++){
 			String[] str=list.get(i).split(";");
 			if(listInt.contains(str.length-1)){
@@ -527,7 +539,7 @@ public class StatisticsData implements StatisticsDataService{
 		for(int i=0;i<listInt.size();i++ ){
 			listInt1.add(0);
 		}
-		for(int i=0;i<listInt1.size();i++){
+		for(int i=0;i<list.size();i++){
 			String[] str=list.get(i).split(";");
 			if(listInt.contains(str.length-1)){
 				listInt1.set(listInt.indexOf(str.length-1),listInt1.get(listInt.indexOf(str.length-1))+1);
@@ -540,7 +552,15 @@ public class StatisticsData implements StatisticsDataService{
 			listStr.add(listInt1.get(i)+"");
 		}
 		
-		return this.sort(listInt, listStr);
+		StaStrPO po= this.sort(listInt, listStr);
+		
+		for(int i=0;i<listInt1.size();i++){
+			listStr2.add(po.getInt().get(i)+"");
+			listInt2.add(Integer.parseInt(po.getStr().get(i)));
+			
+			
+		}
+		return new StaStrPO(listStr2, listInt2);
 	}
 	
 	

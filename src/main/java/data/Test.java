@@ -32,7 +32,7 @@ public class Test {
 	StaStrPO po=new StatisticsData().getCollaborator();
 	
 	for(int i=0;i<po.getInt().size();i++){
-		System.out.println(po.getInt().get(i));
+		System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
 		}	
 	}
 }
