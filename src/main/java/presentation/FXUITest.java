@@ -52,10 +52,7 @@ public class FXUITest extends Application {
 
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
-//        primaryStage.setMaxHeight(HEIGHT);
-//        primaryStage.setMinHeight(HEIGHT);
-//        primaryStage.setMinWidth(WIDTH);
-//        primaryStage.setMaxWidth(WIDTH);
+
         primaryStage.setResizable(false);
         initHome();
         searchRepo("");

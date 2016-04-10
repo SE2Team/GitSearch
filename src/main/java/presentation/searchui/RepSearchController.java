@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -24,7 +26,6 @@ import java.util.Iterator;
  * Created by moeyui on 2016/3/17 0017.
  */
 public class RepSearchController implements MyController {
-    private enum Filters {LANGUAGE, TIME, CATEGORY}
 
     /**
      * 筛选部件
@@ -45,6 +46,8 @@ public class RepSearchController implements MyController {
     /**
      * 排序部件
      */
+    private enum buttonState{UNCLICK,UP,DOWN}
+    private ArrayList<Button> bs=new ArrayList<>();
     @FXML
     private Button star;
     @FXML
@@ -53,6 +56,8 @@ public class RepSearchController implements MyController {
     private Button general;
     @FXML
     private Button contributor;
+    @FXML
+    private AnchorPane buttons_p;
     /**
      * 翻页部件
      */
@@ -85,6 +90,14 @@ public class RepSearchController implements MyController {
         langGroup.getToggles().addAll(language);
         timeGroup.getToggles().addAll(time);
         categoryGroup.getToggles().addAll(category);
+        pgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode()== KeyCode.ENTER){
+                    handlePgNum();
+                }
+            }
+        });
     }
 
     public void setFxui(FXUITest fxui) {
@@ -252,7 +265,7 @@ public class RepSearchController implements MyController {
             vos.add(itr.next());
         }
 
-       updateMaxPages(vos.size());
+        updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -287,7 +300,7 @@ public class RepSearchController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-updateMaxPages(vos.size());
+        updateMaxPages(vos.size());
         updatePage();
     }
 
@@ -348,15 +361,14 @@ updateMaxPages(vos.size());
     @FXML
     private void handlePgNum() {
         try {
+            if(Integer.parseInt(pgNum.getText())>page_max||Integer.parseInt(pgNum.getText())<=0)
+                throw new NumberFormatException();
             page = Integer.parseInt(pgNum.getText());
+            updatePage();
         } catch (NumberFormatException e) {
             System.out.println("页数格式错误");
             e.printStackTrace();
         }
-    }
-
-    private ScreenVO getScreen(Filters f, String str) {
-        return new ScreenVO("", "", "");
     }
 
     private void updateMaxPages(int i) {
