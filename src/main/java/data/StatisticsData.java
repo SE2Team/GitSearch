@@ -115,16 +115,16 @@ public class StatisticsData implements StatisticsDataService{
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		for(int i=0;i<list.size();i++){
 			int n=list.get(i).getForks();
-			if(n<=500){
+			if(n<=50){
 				int1++;
 			} 
-			if(n<=1000&&n>500){
+			else if(n<=100&&n>200){
 				int2++;
 			} 
-			if(n>1000&&n<=1500){
+			else if(n>1000&&n<=1500){
 				int3++;
 			}
-			if(n>1500){
+			else if(n>1500){
 				over++;
 			}
 		}
