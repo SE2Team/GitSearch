@@ -22,7 +22,7 @@ public interface RepositoryBLService {
 
    StaStrVO languagesOfRepository(String userName, String reponame) throws IOException;
 
-    String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
+//    String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 
     Iterator<RepositoryVO> Search(String name) throws IOException;
 

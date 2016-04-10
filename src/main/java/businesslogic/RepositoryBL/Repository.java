@@ -50,10 +50,6 @@ public class Repository {
 		return PO2VO.convert(factory.getRepositoryDataService().languagesOfRepository(userName, reponame));
     }
 
-    public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {
-        return null;
-    }
-
     public Iterator<RepositoryVO> Search(String name) throws IOException {
         ArrayList<RepositoryPO> pos = factory.getRepositoryDataService().Search(name);
         ArrayList<RepositoryVO> vos = new ArrayList<RepositoryVO>();
