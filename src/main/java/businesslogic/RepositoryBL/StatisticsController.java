@@ -61,4 +61,15 @@ public class StatisticsController implements StatisticsBLService{
 	public Integer getHasNum(String name){
 		return statistics.getHasNum(name);
 	}
+
+	@Override
+	public StaStrVO getCollaborator() {
+		return statistics.getCollaborator();
+	}
+
+	@Override
+	public StaStrVO getContributor() {
+		// TODO Auto-generated method stub
+		return statistics.getContributor();
+	}
 }

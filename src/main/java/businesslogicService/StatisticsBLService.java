@@ -48,4 +48,8 @@ public interface StatisticsBLService {
 	StaStrVO getCompany() throws IOException;
 	
 	Integer getHasNum(String name);
+	
+	StaStrVO getCollaborator();
+	
+	StaStrVO getContributor();
 }
