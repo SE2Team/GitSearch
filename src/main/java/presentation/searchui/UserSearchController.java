@@ -91,7 +91,10 @@ public class UserSearchController implements MyController {
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    handleScreen(t.getText());
+                    if(t.isSelected()==false)
+                        handleScreen("");
+                    else
+                        handleScreen(t.getText());
                 }
             });
             time.add((ToggleButton) n);
@@ -130,12 +133,23 @@ public class UserSearchController implements MyController {
      */
     private void handleScreen(String str){
         vos.clear();//清空数组
-        Iterator<UserVO> itr = bl.screenTime(str);
+        Iterator<UserVO> itr = null;
+        try {
+            itr = bl.screenTime(str);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         while (itr.hasNext()) {
             vos.add(itr.next());
         }
 
         page_max = (int) (vos.size() / 8);//计算最大页数
+        /**
+         * 最少也有一页
+         */
+        if (page_max==0){
+            page_max=1;
+        }
         maxPg.setText(String.valueOf(page_max));
 
         updatePage();

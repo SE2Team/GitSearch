@@ -52,7 +52,7 @@ public class RepoStatisticsController implements MyController {
             creatTimeChart.setData(getPieData(bl.getRepoCreated()));
             forkChart.setData(getData(bl.getForks()));
             starChart.setData(getData(bl.getStar()));
-//            contributorsChart.setData(getData(bl.));
+//            contributorsChart.setData(getData(bl.ge));
 //            collaboratorsChart.setData(getData(bl.));
 
         } catch (IOException e) {
