@@ -64,4 +64,12 @@ public class Statistics {
 	public Integer getHasNum(String name){
 		return factory.getStatisticsDataService().getHasNum(name);
 	}
+	
+	public StaStrVO getCollaborator(){
+		return PO2VO.convert(factory.getStatisticsDataService().getCollaborator());
+	}
+	
+	public StaStrVO getContributor(){
+		return PO2VO.convert(factory.getStatisticsDataService().getContributor());
+	}
 }
