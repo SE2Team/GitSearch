@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.*?>
@@ -8,9 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
+<AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
    <children>
-      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
                <children>
@@ -19,7 +21,7 @@
                         <Font name="YouYuan" size="28.0" />
                      </font>
                   </Label>
-                  <Accordion layoutX="2.0" layoutY="62.0">
+                  <Accordion layoutY="62.0" prefHeight="596.0" prefWidth="202.0" stylesheets="@../../default.css">
                     <panes>
                       <TitledPane animated="false" stylesheets="@../../default.css" text="Regist Time">
                         <content>
@@ -123,7 +125,7 @@
                         <Font name="Microsoft YaHei" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" onKeyReleased="#handlePgNum" prefHeight="30.0" prefWidth="60.0" text="1">
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -132,7 +134,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="PageUp" fx:id="pgUp" layoutX="393.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="30.0" prefWidth="20.0">
+                  <Button id="PageUp" fx:id="pgUp" layoutX="393.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
@@ -150,37 +152,47 @@
                      </children>
                   </StackPane>
                   <Line endX="935.0" layoutX="68.0" layoutY="79.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
-                  <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User List">
+                  <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User List">
                      <font>
                         <Font name="Calibri Light" size="26.0" />
-                     </font></Text>
-                  <AnchorPane id="SortWay" layoutX="65.0" layoutY="36.0" prefHeight="40.0" prefWidth="942.0">
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#f84b3c" offset="0.909375" />
+                              <Stop color="#f5f5f5" offset="0.95625" />
+                              <Stop color="#f5f5f5" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill></Text>
+                  <AnchorPane id="SortWay" layoutX="65.0" layoutY="36.0" prefHeight="40.0" prefWidth="942.0" stylesheets="@../../default.css">
                      <children>
-                        <Button fx:id="general" layoutX="1.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#handleGeneral" prefHeight="40.0" prefWidth="101.0" text="General ">
-                           <font>
-                              <Font name="Calibri" size="20.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button fx:id="repo" layoutX="779.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#handleRepo" prefHeight="40.0" prefWidth="162.0" text="Repositories ">
-                           <font>
-                              <Font name="Calibri" size="20.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button fx:id="followers" layoutX="651.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#handleFollowers" prefHeight="40.0" prefWidth="128.0" text="Followers ">
-                           <font>
-                              <Font name="Calibri" size="20.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
                         <Line endX="940.0" layoutX="1.0" layoutY="-3.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
+                        <JFXButton fx:id="general" layoutX="1.0" onMouseClicked="#handleGeneral" stylesheets="@../../default.css" text="General" textFill="#f8f7f7">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="followers" layoutX="679.0" onMouseClicked="#handleFollowers" text="Followers" textFill="#f5f3f3">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="repo" layoutX="804.0" onMouseClicked="#handleRepo" text="Repositories" textFill="#f5f3f3">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
                </children>
