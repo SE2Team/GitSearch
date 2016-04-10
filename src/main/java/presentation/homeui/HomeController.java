@@ -76,6 +76,7 @@ public class HomeController implements MyController{
             System.out.println(searchText.getText());
             fxui.searchUser(searchText.getText().trim());
         }
+        top.getToggles().get(0).setSelected(true);
     }
 
     @FXML
@@ -93,7 +94,7 @@ public class HomeController implements MyController{
         if(comboBox.getValue()=="项目"){
             fxui.searchRepo("");
         }else if(comboBox.getValue()=="用户"){
-            System.out.println(searchText.getText());
+//            System.out.println(searchText.getText());
             fxui.searchUser("");
         }
     }

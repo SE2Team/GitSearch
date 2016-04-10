@@ -87,7 +87,7 @@ public class UserStatisticsController implements MyController {
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
         for (int i=0;i<vo.getInt().size()&&i<vo.getInt2().size()&&i<10;i++){
 
-            series.getData().add(new XYChart.Data<>(String.valueOf(vo.getInt().get(i)),vo.getInt2().get(i)));
+            series.getData().add(new XYChart.Data<>(String.valueOf(vo.getInt2().get(i)),vo.getInt().get(i)));
             if(i==9){
                 series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));
             }
