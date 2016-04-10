@@ -35,10 +35,6 @@ public class RepositoryController implements RepositoryBLService {
         return repository.languagesOfRepository(userName, reponame);
     }
 
-    public String RepositoryInfo(String userName, String reponame, RepositoryInfo info) {
-        return repository.RepositoryInfo(userName, reponame, info);
-    }
-
     public Iterator<RepositoryVO> Search(String name) throws IOException {
         return repository.Search(name);
     }

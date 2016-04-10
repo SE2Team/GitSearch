@@ -29,12 +29,11 @@ public interface RepositoryDataService {
      */
     StaStrPO languagesOfRepository(String userName, String reponame) throws IOException;
 
- //   String RepositoryInfo(String userName, String reponame, RepositoryInfo info) throws IOException;
-
     ArrayList<RepositoryPO> Search(String name) throws IOException;
 
     ArrayList<RepositoryPO>  sort(Repository_Sort sort) throws IOException;
     
+//	String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException;
     
     ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException;
 }
