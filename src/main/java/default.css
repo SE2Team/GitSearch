@@ -238,15 +238,18 @@
 }
 
 .button {
-    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
+    -fx-text-fill: white;
+    /*-fx-background-color: linear-gradient(#f5f5dc, #add8e6);*/
 }
 
-.button:selected {
-    -fx-text-fill: white;
-    -fx-background-color: linear-gradient(#d3d3d3, #add8e6);
-}
 
 .button:hover {
+    -fx-text-fill: linear-gradient(#add8e6, #f5f5dc);
+    /*-fx-background-color: linear-gradient(#add8e6, #f5f5dc);*/
+}
+
+.button:left{
+    -fx-text-fill: white;
     -fx-background-color: linear-gradient(#add8e6, #f5f5dc);
 }
 
@@ -265,7 +268,8 @@
 }
 
 #SortWay {
-    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
+    -fx-background-color: linear-gradient( #2f4f4f, #696969);
+    /*-fx-background-color: linear-gradient(#f5f5dc, #add8e6);*/
 }
 
 #RepName {
@@ -322,4 +326,12 @@
 
 .axis:bottom .axis-label{
     -fx-wrap-text: true;
+}
+
+/*.accordion{*/
+    /*-fx-background-color: linear-gradient( #2f4f4f, #696969);*/
+/*}*/
+
+.first-titled-pane:expanded{
+    -fx-background-color: white;
 }
