@@ -91,5 +91,7 @@ public interface StatisticsDataService {
 	
 	public Integer getHasNum(String name);
 	
+	public StaStrPO getCollaborator();
 	
+	public StaStrPO getContributor();
 }

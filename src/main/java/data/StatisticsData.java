@@ -456,8 +456,8 @@ public class StatisticsData implements StatisticsDataService{
 	private StaStrPO sort(ArrayList<Integer> listInt,ArrayList<String> listString){
 		int tempInt = 0;
 		String tempString = "";
-		for (int i = 0; i < listInt.size(); i++) {
-			for (int p = i; p < listInt.size() - 1; p++) {
+		for (int i = 0; i < listString.size(); i++) {
+			for (int p = i; p < listString.size() - 1; p++) {
 				if (listInt.get(i) <= listInt.get(p+1)) {
 					tempInt = listInt.get(p+1);
 					listInt.set(p+1, listInt.get(i));
@@ -474,5 +474,74 @@ public class StatisticsData implements StatisticsDataService{
 		
 		return new StaStrPO(listString, listInt);
 	}
+
+	@Override
+	public StaStrPO getCollaborator() {
+		// TODO Auto-generated method stub
+		ArrayList<String> list=new GetData("Collaborator").readData();
+		ArrayList<String> listStr = new ArrayList<String>();
+		ArrayList<Integer> listInt=new ArrayList<Integer>();
+		ArrayList<Integer> listInt1=new ArrayList<Integer>();
+		for(int i=0;i<list.size();i++){
+			String[] str=list.get(i).split(";");
+			if(listInt.contains(str.length-1)){
+				
+			}else{
+				listInt.add(str.length-1);
+			}
+		}
+		for(int i=0;i<listInt.size();i++ ){
+			listInt1.add(0);
+		}
+		for(int i=0;i<listInt1.size();i++){
+			String[] str=list.get(i).split(";");
+			if(listInt.contains(str.length-1)){
+				listInt1.set(listInt.indexOf(str.length-1),listInt1.get(listInt.indexOf(str.length-1))+1);
+			}else{
+				System.out.println("error");
+			}
+		}
+		
+		for(int i=0;i<listInt1.size();i++){
+			listStr.add(listInt1.get(i)+"");
+		}
+		
+		return this.sort(listInt, listStr);
+	}
+
+	@Override
+	public StaStrPO getContributor() {
+		// TODO Auto-generated method stub
+		ArrayList<String> list=new GetData("Contributor").readData();
+		ArrayList<String> listStr = new ArrayList<String>();
+		ArrayList<Integer> listInt=new ArrayList<Integer>();
+		ArrayList<Integer> listInt1=new ArrayList<Integer>();
+		for(int i=0;i<list.size();i++){
+			String[] str=list.get(i).split(";");
+			if(listInt.contains(str.length-1)){
+				
+			}else{
+				listInt.add(str.length-1);
+			}
+		}
+		for(int i=0;i<listInt.size();i++ ){
+			listInt1.add(0);
+		}
+		for(int i=0;i<listInt1.size();i++){
+			String[] str=list.get(i).split(";");
+			if(listInt.contains(str.length-1)){
+				listInt1.set(listInt.indexOf(str.length-1),listInt1.get(listInt.indexOf(str.length-1))+1);
+			}else{
+				System.out.println("error");
+			}
+		}
+		
+		for(int i=0;i<listInt1.size();i++){
+			listStr.add(listInt1.get(i)+"");
+		}
+		
+		return this.sort(listInt, listStr);
+	}
+	
 	
 }
