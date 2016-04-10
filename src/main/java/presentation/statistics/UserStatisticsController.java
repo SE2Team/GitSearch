@@ -42,7 +42,7 @@ public class UserStatisticsController implements MyController {
             creatTimeChart.setData(getData(bl.getUserCreated()));
             relatedChart.setData(getData(bl.getUserRelated()));
             OwnChart.setData(getData(bl.getUserHas()));
-            companyChart.setData(getData(bl.getCompany()));
+            companyChart.setData(getData(bl.getCompany(),false));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,29 +70,43 @@ public class UserStatisticsController implements MyController {
         return observableList;
     }
     private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
+        return getData(vo,true);
+    }
+    private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo,Boolean b){
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
         for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
-
+            if (vo.getStr().get(i).equalsIgnoreCase("Unknown")){
+                System.out.println("llll");
+                continue;
+            }
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==9){
-                series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));
+            if(i==9&&b){
+                series=addOthers(series,vo.getSum(10));
             }
         }
         observableList.add(series);
         return observableList;
     }
     private ObservableList<XYChart.Series<String,Integer>> getData(StaIntVO vo){
+        return getData(vo,true);
+    }
+    private ObservableList<XYChart.Series<String,Integer>> getData(StaIntVO vo,Boolean b){
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
         for (int i=0;i<vo.getInt().size()&&i<vo.getInt2().size()&&i<10;i++){
 
-            series.getData().add(new XYChart.Data<>(String.valueOf(vo.getInt2().get(i)),vo.getInt().get(i)));
-            if(i==9){
-                series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));
+            series.getData().add(new XYChart.Data<>(String.valueOf(vo.getInt().get(i)),vo.getInt2().get(i)));
+            if(i==9&&b){
+                series=addOthers(series,vo.getSum(10));
             }
         }
         observableList.add(series);
         return observableList;
+    }
+
+    private XYChart.Series addOthers(XYChart.Series series,Integer i){
+        series.getData().add(new XYChart.Data<>("Others",i));
+        return series;
     }
 }

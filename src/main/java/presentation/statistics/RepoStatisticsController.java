@@ -52,8 +52,8 @@ public class RepoStatisticsController implements MyController {
             creatTimeChart.setData(getPieData(bl.getRepoCreated()));
             forkChart.setData(getData(bl.getForks()));
             starChart.setData(getData(bl.getStar()));
-//            contributorsChart.setData(getData(bl.ge));
-//            collaboratorsChart.setData(getData(bl.));
+            contributorsChart.setData(getData(bl.getContributor()));
+            collaboratorsChart.setData(getData(bl.getCollaborator()));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +82,6 @@ public class RepoStatisticsController implements MyController {
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
         for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
-
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
             if(i==9){
                 series.getData().add(new XYChart.Data<>("Others",vo.getSum(10)));

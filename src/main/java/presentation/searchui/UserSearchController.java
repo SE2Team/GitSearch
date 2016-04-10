@@ -61,6 +61,8 @@ public class UserSearchController implements MyController {
 
     @FXML
     private FlowPane flowPane;
+    @FXML
+    private AnchorPane buttons_p;
 
 
     /**
@@ -229,7 +231,7 @@ public class UserSearchController implements MyController {
             updatePage();
         } catch (NumberFormatException e) {
             System.out.println("页数格式错误");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
