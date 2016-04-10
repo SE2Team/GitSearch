@@ -29,9 +29,9 @@ public class Test {
 //		for(int i=0;i<list.size();i++){
 //			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getCreated());
 //		}
-	StaStrPO po=new StatisticsData().getLanguage();
+	StaStrPO po=new StatisticsData().getForks();
 	for(int i=0;i<po.getInt().size();i++){
-		System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
-	}
+		System.out.println(po.getInt().get(i));
+		}
 	}
 }
