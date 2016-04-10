@@ -51,11 +51,12 @@ public class FXUITest extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         this.primaryStage = primaryStage;
-//        primaryStage.setTitle("GitSearch");
+        primaryStage.setTitle("GitSearch");
 //        primaryStage.setMaxHeight(HEIGHT);
 //        primaryStage.setMinHeight(HEIGHT);
 //        primaryStage.setMinWidth(WIDTH);
 //        primaryStage.setMaxWidth(WIDTH);
+        primaryStage.setResizable(false);
         initHome();
         searchRepo("");
 //        searchUser("");

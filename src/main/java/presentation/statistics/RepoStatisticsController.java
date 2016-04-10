@@ -2,6 +2,10 @@ package presentation.statistics;
 
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.PathTransition;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -9,6 +13,8 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.shape.Path;
+import javafx.util.Duration;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.StaStrVO;
@@ -38,6 +44,7 @@ public class RepoStatisticsController implements MyController {
     private CategoryAxis xlang;
 
 
+
     public void initialize() {
         bl=new StatisticsController();
         try {
@@ -51,6 +58,16 @@ public class RepoStatisticsController implements MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        /**
+         * 第一个表格淡入淡出
+         */
+        FadeTransition ft=new FadeTransition(javafx.util.Duration.millis(2000),langChart);
+        ft.setFromValue(0.05);
+        ft.setToValue(1.0);
+        ft.setCycleCount(0);
+        ft.setAutoReverse(true);
+//        ft.play();
 
     }
 
