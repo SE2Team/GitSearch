@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -28,18 +30,7 @@ public class UserSearchController implements MyController {
      */
     private ArrayList<ToggleButton> time = new ArrayList<>();
     private ToggleGroup timeGroup = new ToggleGroup();
-    @FXML
-    private Button seven;
-    @FXML
-    private Button eight;
-    @FXML
-    private Button nine;
-    @FXML
-    private Button ten;
-    @FXML
-    private Button eleven;
-    @FXML
-    private Button twe;
+
     @FXML
     private FlowPane flowPane2;
     /**
@@ -98,6 +89,15 @@ public class UserSearchController implements MyController {
             time.add((ToggleButton) n);
         }
         timeGroup.getToggles().addAll(time);
+
+        pgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                if(event.getCode()== KeyCode.ENTER){
+                    handlePgNum();
+                }
+            }
+        });
     }
 
     public void setFxui(FXUITest fxui) {
@@ -223,7 +223,10 @@ public class UserSearchController implements MyController {
     @FXML
     private void handlePgNum() {
         try {
+            if(Integer.parseInt(pgNum.getText())>page_max||Integer.parseInt(pgNum.getText())<=0)
+                throw new NumberFormatException();
             page = Integer.parseInt(pgNum.getText());
+            updatePage();
         } catch (NumberFormatException e) {
             System.out.println("页数格式错误");
             e.printStackTrace();
@@ -276,6 +279,10 @@ public class UserSearchController implements MyController {
         this.key = key;
     }
 
+    /**
+     * 更新最大页数
+     * @param i
+     */
     private void updateMaxPages(int i) {
         if (i == 0) {
             page_max = 0;
@@ -287,5 +294,10 @@ public class UserSearchController implements MyController {
         }
         maxPg.setText(String.valueOf(page_max));
 
+    }
+
+    @FXML
+    private void handleJumpPage(){
+        System.out.println("jiji");
     }
 }
