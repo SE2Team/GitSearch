@@ -67,7 +67,7 @@ public class RepoStatisticsController implements MyController {
         ft.setToValue(1.0);
         ft.setCycleCount(0);
         ft.setAutoReverse(true);
-//        ft.play();
+        ft.play();
 
     }
 
