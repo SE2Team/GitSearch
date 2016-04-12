@@ -1,0 +1,5 @@
+who:金小枫
+when:第六周
+what:设计图表
+problem:CSS改变图表属性
+todo:重新设计一些功能的实现方式并美化界面
