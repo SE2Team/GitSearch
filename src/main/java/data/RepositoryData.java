@@ -167,8 +167,27 @@ public class RepositoryData implements RepositoryDataService {
 					"/contributors/login";
 			String[] s = list.get(j).getName().split("/");
 			if (s[0].equals(userName) && s[1].equals(reponame)) {
-				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
-				list.get(j).setContributors(contrData.getContributors(contrUrl));
+				try {
+					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+					list.get(j).setContributors(contrData.getContributors(contrUrl));
+				} catch (Exception IOException) {
+					ArrayList<String> listColla=new GetData("collaborator").readData();
+					ArrayList<String> listContr=new GetData("contributor").readData();
+					ArrayList<String> strings=new ArrayList<>();
+					for(int i=0;i<listColla.size();i++){
+						strings=this.splitStr(listColla.get(i));
+						if(strings.contains(userName+"/"+reponame)){
+							strings.remove(userName+"/"+reponame);
+							list.get(j).setCollaborators(strings);
+						}
+						strings=this.splitStr(listContr.get(i));
+						if(strings.contains(userName+"/"+reponame)){
+							strings.remove(userName+"/"+reponame);
+							list.get(j).setContributors(strings);
+						}
+					}
+					
+				}
 				return list.get(j);
 			}
 		}
@@ -180,7 +199,11 @@ public class RepositoryData implements RepositoryDataService {
 		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
 				+reponame+"/"+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
-		
+//		try {
+//			 list=new GetData().getString(str1);
+//		} catch (Exception IOException) {
+//		
+//		}
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
 		for(int i=0;i<list.size()-1;i++){
@@ -367,5 +390,14 @@ public class RepositoryData implements RepositoryDataService {
 		
 		return list2;
 	} 
+	
+	public ArrayList<String> splitStr(String string){
+		String[] str=string.split(";");
+		ArrayList<String> list=new ArrayList<>();
+		for(int i=0;i<str.length;i++){
+			list.add(str[i]);
+		}
+		return list;
+	}
 	
 }

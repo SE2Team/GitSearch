@@ -29,10 +29,27 @@ public class Test {
 //		for(int i=0;i<list.size();i++){
 //			System.out.println(list.get(i).getLanguage()+":"+list.get(i).getCreated());
 //		}
-	StaStrPO po=new StatisticsData().getCollaborator();
-	
-	for(int i=0;i<po.getInt().size();i++){
-		System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
-		}	
+//		RepositoryData data=new RepositoryData();
+//		GetData data2=new GetData("LanguageSituation");
+//	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+//	for(int i=0;i<list.size();i++){
+//		String[] str=list.get(i).getName().split("/");
+//		StaStrPO po=data.languagesOfRepository(str[0], str[1]);
+//		String string="";
+//		for(int j=0;j<po.getInt().size();j++){
+//			string=string+";"+po.getInt();
+//		}
+//		string=string+":";
+//		for(int j=0;j<po.getStr().size();j++){
+//			string=string+";"+po.getStr();
+//		}
+//		string=string+":";
+//		string=string+list.get(i).getName();
+//		data2.writeDataAdd(string);
+//		}
+	ArrayList<UserPO> po=new UserData().sortUser(User_Sort.HAS);
+	for(int i=0;i<100;i++){
+		System.out.println(new UserData().CheckUser(po.get(i).getLogin()).getHas().size());
+	}
 	}
 }

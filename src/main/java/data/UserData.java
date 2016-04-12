@@ -226,7 +226,7 @@ public class UserData implements UserDataService {
 			String tempString = "";
 			for (int i = 0; i < listInt.size(); i++) {
 				for (int p = i; p < listInt.size() - 1; p++) {
-					if (listInt.get(i) >= listInt.get(p+1)) {
+					if (listInt.get(i) <= listInt.get(p+1)) {
 						tempInt = listInt.get(p+1);
 						listInt.set(p+1, listInt.get(i));
 						listInt.set(i, tempInt);
