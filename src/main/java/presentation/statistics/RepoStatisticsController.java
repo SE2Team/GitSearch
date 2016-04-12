@@ -40,9 +40,9 @@ public class RepoStatisticsController implements MyController {
     @FXML
     private BarChart<String,Integer> starChart;
     @FXML
-    private BarChart<String,Integer> contributorsChart;
+    private LineChart<String,Integer> contributorsChart;
     @FXML
-    private BarChart<String,Integer> collaboratorsChart;
+    private LineChart<String,Integer> collaboratorsChart;
     @FXML
     private CategoryAxis xlang;
 
@@ -86,8 +86,8 @@ public class RepoStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo,Boolean b){
         ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
-            if (vo.getStr().get(i).equalsIgnoreCase("Unknown")){
+        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<500;i++){
+            if (vo.getStr().get(vo.getStr().size()-1-i).equalsIgnoreCase("Unknown")){
                 continue;
             }
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));

@@ -9,11 +9,19 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@myk.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.testController">
+<AnchorPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@myk.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.testController">
    <children>
       <Button id="testbutton" layoutX="99.0" layoutY="130.0" mnemonicParsing="false" stylesheets="@myk.css" text="Button" />
       <Button layoutX="231.0" layoutY="130.0" mnemonicParsing="false" text="Button" />
       <ToggleButton id="testtoggleb" fx:id="t1" layoutX="231.0" layoutY="245.0" mnemonicParsing="false" text="ToggleButton" />
       <ToggleButton fx:id="t2" layoutX="366.0" layoutY="245.0" mnemonicParsing="false" text="ToggleButton" />
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="47.0" layoutY="165.0" prefHeight="160.0" prefWidth="200.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+      <JFXToggleButton layoutX="391.0" layoutY="87.0" />
+      <JFXButton buttonType="RAISED" layoutX="308.0" layoutY="311.0" />
    </children>
 </AnchorPane>

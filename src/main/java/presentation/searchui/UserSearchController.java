@@ -58,6 +58,8 @@ public class UserSearchController implements MyController {
     private Button followers;
     @FXML
     private Button repo;
+    @FXML
+    private ToggleButton upOrDown;
 
     @FXML
     private FlowPane flowPane;

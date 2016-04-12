@@ -27,6 +27,7 @@ public class SubRepoController implements MyController {
     private RepositoryBLService bl=new RepositoryController();
 
     public FXUITest fxuiTest;
+
     public void initialize() {
     }
 

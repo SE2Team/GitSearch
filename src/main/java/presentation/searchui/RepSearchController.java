@@ -58,6 +58,8 @@ public class RepSearchController implements MyController {
     @FXML
     private Button contributor;
     @FXML
+    private ToggleButton upOrDown;
+    @FXML
     private AnchorPane buttons_p;
     /**
      * 翻页部件
