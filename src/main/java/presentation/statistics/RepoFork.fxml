@@ -11,9 +11,9 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="langChart" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="Numbers of Repository in Different Languages">
+                  <BarChart fx:id="forkChart" layoutX="8.0" layoutY="13.0" legendVisible="false" prefHeight="567.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Fork">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" stylesheets="@../../default.css" fx:id="xlang" />
+                        <CategoryAxis side="BOTTOM" />
                      </xAxis>
                      <yAxis>
                         <NumberAxis side="LEFT" />
