@@ -15,7 +15,5 @@
       <Button layoutX="231.0" layoutY="130.0" mnemonicParsing="false" text="Button" />
       <ToggleButton id="testtoggleb" fx:id="t1" layoutX="231.0" layoutY="245.0" mnemonicParsing="false" text="ToggleButton" />
       <ToggleButton fx:id="t2" layoutX="366.0" layoutY="245.0" mnemonicParsing="false" text="ToggleButton" />
-      <JFXButton defaultButton="true" layoutX="70.0" layoutY="200.0" text="hellojavafx" />
-      <JFXProgressBar layoutX="120.0" layoutY="81.0" />
    </children>
 </AnchorPane>

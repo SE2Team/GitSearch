@@ -112,7 +112,7 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="721.0">
                                  <children>
-                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="97.0" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="6.0" orientation="VERTICAL" prefHeight="516.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
                                       <items>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="216.0" prefWidth="820.0">
                                              <children>

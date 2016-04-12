@@ -4,6 +4,8 @@ import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
+import com.aquafx_project.AquaFx;
+import com.aquafx_project.controls.skin.AquaButtonSkin;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,11 +75,13 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         Scene scene = new Scene(homeLayout);
         homeLayout.setCenter(null);
         primaryStage.setScene(scene);
 
         primaryStage.show();
+//        AquaFx.style();
     }
 
 

@@ -1,6 +1,8 @@
 package presentation.userCheckui;
 
+import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
+import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,8 +44,7 @@ public class UserCheckController implements MyController{
     @FXML
     private Tooltip fullUserName;
     @FXML
-    private Tooltip FullLogin;
-
+    private Tooltip fullLogin;
 
 
     private FXUITest fxui;
@@ -73,6 +74,9 @@ public class UserCheckController implements MyController{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        fullUserName.setText(vo.getName());
+        fullLogin.setText(vo.getLogin());
+        name.requestFocus();//把焦点拿走
     }
 
     /**

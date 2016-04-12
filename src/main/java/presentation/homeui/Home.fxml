@@ -29,17 +29,17 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <ToggleButton id="MainButton" fx:id="search_pane" layoutX="199.0" mnemonicParsing="false" onMouseClicked="#handleSearch_p" prefHeight="56.0" prefWidth="150.0" text="搜索">
+            <ToggleButton id="MainButton" fx:id="search_pane" layoutX="209.0" mnemonicParsing="false" onMouseClicked="#handleSearch_p" prefHeight="56.0" prefWidth="150.0" text="搜索">
                <font>
                   <Font name="Microsoft YaHei" size="25.0" />
                </font>
             </ToggleButton>
-            <ToggleButton id="MainButton" fx:id="rstatistics" layoutX="350.0" mnemonicParsing="false" onMouseClicked="#handleRStatistics" prefHeight="56.0" prefWidth="150.0" text="项目统计">
+            <ToggleButton id="MainButton" fx:id="rstatistics" layoutX="360.0" mnemonicParsing="false" onMouseClicked="#handleRStatistics" prefHeight="56.0" prefWidth="150.0" text="项目统计">
                <font>
                   <Font name="Microsoft YaHei" size="25.0" />
                </font>
             </ToggleButton>
-            <ToggleButton id="MainButton" fx:id="ustatistics" layoutX="501.0" mnemonicParsing="false" onMouseClicked="#handleUStatistics" prefHeight="56.0" prefWidth="150.0" text="用户统计">
+            <ToggleButton id="MainButton" fx:id="ustatistics" layoutX="511.0" mnemonicParsing="false" onMouseClicked="#handleUStatistics" prefHeight="56.0" prefWidth="150.0" text="用户统计">
                <font>
                   <Font name="Microsoft YaHei" size="25.0" />
                </font>

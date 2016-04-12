@@ -15,7 +15,7 @@
             <Image url="@../../Images/home.png" />
          </image>
       </ImageView>
-      <Label id="RepName" fx:id="label" layoutX="64.0" layoutY="16.0" text="RepName" textFill="#5799d3">
+      <Label id="RepName" fx:id="label" layoutX="64.0" layoutY="16.0" onMouseClicked="#checkRepo" text="RepName" textFill="#5799d3">
          <font>
             <Font name="Calibri" size="22.0" />
          </font>
