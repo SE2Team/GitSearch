@@ -11,12 +11,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <LineChart fx:id="collaboratorsChart" layoutX="10.0" layoutY="11.0" prefHeight="576.0" prefWidth="999.0">
+                  <LineChart fx:id="collaboratorsChart" layoutX="10.0" layoutY="11.0" prefHeight="576.0" prefWidth="999.0" title="项目数-合作者分布图">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" />
+                        <CategoryAxis label="合作者数量" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" />
+                        <NumberAxis label="项目数" side="LEFT" />
                      </yAxis>
                   </LineChart>
                </children>

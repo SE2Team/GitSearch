@@ -11,7 +11,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <PieChart fx:id="creatTimeChart" layoutX="16.0" layoutY="16.0" legendSide="RIGHT" prefHeight="567.0" prefWidth="985.0" title="The Distribution of Create Time" />
+                  <PieChart fx:id="creatTimeChart" layoutX="16.0" layoutY="16.0" legendSide="RIGHT" prefHeight="567.0" prefWidth="985.0" title="项目创建时间分布图" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

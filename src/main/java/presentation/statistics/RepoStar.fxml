@@ -11,12 +11,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="starChart" layoutX="9.0" layoutY="12.0" legendVisible="false" prefHeight="564.0" prefWidth="999.0" title="Numbers of Repository in Different Ranges of Star">
+                  <BarChart fx:id="starChart" layoutX="9.0" layoutY="12.0" legendVisible="false" prefHeight="564.0" prefWidth="999.0" title="不同star量上的项目数分布图">
                      <xAxis>
-                        <CategoryAxis side="BOTTOM" />
+                        <CategoryAxis label="star量" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
-                        <NumberAxis side="LEFT" />
+                        <NumberAxis label="项目数" side="LEFT" />
                      </yAxis>
                   </BarChart>
                </children>
