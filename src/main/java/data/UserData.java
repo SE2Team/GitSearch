@@ -22,7 +22,9 @@ import po.UserPO;
 public class UserData implements UserDataService {
 
 	static String string = "http://www.gitmining.net/api/user";
-
+	
+	static ArrayList<UserPO> userList=new ArrayList<>(); 
+		
 	public UserPO CheckUser(String user) throws IOException {
 
 		ArrayList<UserPO> list = new UserData().getUser();
@@ -176,7 +178,8 @@ public class UserData implements UserDataService {
 					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
 					obj.getString("created_at"), obj.getString("updated_at"), null, null));
 		}
-
+		
+		userList=list;
 		return list;
 	}
 
@@ -187,7 +190,7 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> sortUser(User_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
-		ArrayList<UserPO> list = new UserData().getUser();
+		ArrayList<UserPO> list = userList;
 		if (sort == User_Sort.Followers) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				for (int i = j; i < list.size() - 1; i++) {
@@ -237,7 +240,8 @@ public class UserData implements UserDataService {
 					}
 				}
 			}
-			for(int i=0;i<list.size();i++){
+			
+			for(int i=0;i<listString.size();i++){
 				for(int p=0;p<list.size();p++){
 					if(listString.get(i).equals(list.get(p).getLogin())){
 						list4.add(list.get(p));
@@ -300,7 +304,7 @@ public class UserData implements UserDataService {
 				list1.add(list.get(i));
 			}
 		}
-		//finalList=list1;
+		userList=list1;
 		return list1;
 	}
 	
