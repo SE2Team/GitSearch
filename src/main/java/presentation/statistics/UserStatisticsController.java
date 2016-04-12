@@ -77,7 +77,6 @@ public class UserStatisticsController implements MyController {
         XYChart.Series<String,Integer> series=new XYChart.Series<>();
         for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
             if (vo.getStr().get(i).equalsIgnoreCase("Unknown")){
-                System.out.println("llll");
                 continue;
             }
             series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));

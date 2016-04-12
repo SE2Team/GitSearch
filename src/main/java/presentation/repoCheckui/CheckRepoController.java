@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import presentation.FXUITest;
@@ -113,6 +114,7 @@ public class CheckRepoController implements MyController {
     private void setList() throws IOException {
         if (vo.getContributors() != null) {
             for (int i = 0; i < vo.getContributors().size(); i++) {
+
                 contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
                 /**
                  * 最多只能放7个+一个more
@@ -194,6 +196,7 @@ public class CheckRepoController implements MyController {
 //        poiChart.getData().addAll(getdata());
 
     }
+
 
 
 }

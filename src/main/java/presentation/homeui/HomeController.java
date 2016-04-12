@@ -44,6 +44,7 @@ public class HomeController implements MyController{
         comboBox.getItems().addAll("项目","用户");
         comboBox.getSelectionModel().selectFirst();
         top.getToggles().addAll(search_pane,ustatistics,rstatistics);
+
     }
 
     public void setFxui(FXUITest fxui) {

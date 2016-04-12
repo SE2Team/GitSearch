@@ -33,7 +33,7 @@
                         <Font name="Calibri" size="26.0" />
                      </font>
                      <tooltip>
-                        <Tooltip fx:id="FullLogin" text="Empty Tooltip" />
+                        <Tooltip fx:id="fullLogin" text="Empty Tooltip" />
                      </tooltip>
                   </Label>
                   <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="40.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">

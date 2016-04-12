@@ -3,6 +3,7 @@ package presentation.searchui;
 import Util.Repository_Sort;
 import businesslogic.RepositoryBL.RepositoryController;
 import businesslogicService.RepositoryBLService;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -143,8 +144,30 @@ public class RepSearchController implements MyController {
                 e.printStackTrace();
             }
         }
-
         pgNum.setText(String.valueOf(page));
+
+        /**
+         * 淡入淡出列表特效
+         */
+//        FadeTransition ft=new FadeTransition(javafx.util.Duration.millis(1500),flowPane);
+//        ft.setFromValue(0.05);
+//        ft.setToValue(1.0);
+//        ft.setCycleCount(0);
+//        ft.setAutoReverse(true);
+//        ft.play();
+        playList();
+    }
+
+    private void playList(){
+        for (int i=0;i<flowPane.getChildren().size();i++){
+            Node n=flowPane.getChildren().get(i);
+            FadeTransition ft=new FadeTransition(javafx.util.Duration.millis(1000+i*200),n);
+            ft.setFromValue(0.05);
+            ft.setToValue(1.0);
+            ft.setCycleCount(0);
+            ft.setAutoReverse(true);
+            ft.play();
+        }
     }
 
     /**
