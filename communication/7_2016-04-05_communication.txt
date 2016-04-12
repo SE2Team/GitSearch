@@ -1,0 +1,5 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第7周
+what:写代码，修bug
+how long:3h
+arrived solutions:修复了一些bug,为实现搜索后筛选添加接口
