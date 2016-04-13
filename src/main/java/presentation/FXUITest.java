@@ -213,7 +213,7 @@ public class FXUITest extends Application {
     public void userStatistics() {
         this.push();
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("statistics/UserStatistics.fxml"));
+        loader.setLocation(this.getClass().getResource("statistics/UserStatisticsAnc.fxml"));
         try {
             AnchorPane userStatisticPane=(AnchorPane)loader.load();
             UserStatisticsController controller=loader.getController();

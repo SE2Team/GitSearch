@@ -9,7 +9,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.UserStatisticsController">
    <children>
-      <JFXComboBox layoutX="1027.0" layoutY="9.0" prefHeight="40.0" prefWidth="247.0" promptText="Callobrators" styleClass="jfx-combo-box" />
+      <JFXComboBox fx:id="chartType" layoutX="1027.0" layoutY="9.0" onAction="#handleChange" prefHeight="40.0" prefWidth="247.0" promptText="Callobrators" styleClass="jfx-combo-box" />
       <Line endX="1280.0" layoutY="60.0" stroke="#00000097" strokeWidth="0.5" />
+      <AnchorPane fx:id="chartPane" layoutY="59.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0" />
    </children>
 </AnchorPane>

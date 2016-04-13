@@ -321,8 +321,11 @@
     -fx-font-family:"Calibri";
     -fx-font-size: 24px;
     /*-fx-cursor: HAND;*/
+    -fx-content-display: bottom;
 }
-
+.bar-chart:vertical .chart-content .plot-content{
+    -fx-animated: true;
+}
 #MenuBar{
     -fx-background-color: linear-gradient(#696969,#2f4f4f);
 }
