@@ -45,11 +45,15 @@ public class RepSearchController implements MyController {
     private ToggleGroup langGroup = new ToggleGroup();
     private ToggleGroup timeGroup = new ToggleGroup();
     private ToggleGroup categoryGroup = new ToggleGroup();
+
     /**
      * 排序部件
      */
-    private enum buttonState{UNCLICK,UP,DOWN}
-    private ArrayList<Button> bs=new ArrayList<>();
+    private enum buttonState {
+        UNCLICK, UP, DOWN
+    }
+
+    private ArrayList<Button> bs = new ArrayList<>();
     @FXML
     private Button star;
     @FXML
@@ -93,7 +97,7 @@ public class RepSearchController implements MyController {
 
 
     public void initialize() {
-        buttons = new Button[]{star,fork,contributor};
+        buttons = new Button[]{star, fork, contributor};
         initFilters();
         langGroup.getToggles().addAll(language);
         timeGroup.getToggles().addAll(time);
@@ -101,7 +105,7 @@ public class RepSearchController implements MyController {
         pgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(event.getCode()== KeyCode.ENTER){
+                if (event.getCode() == KeyCode.ENTER) {
                     handlePgNum();
                 }
             }
@@ -165,10 +169,13 @@ public class RepSearchController implements MyController {
         playList();
     }
 
-    private void playList(){
-        for (int i=0;i<flowPane.getChildren().size();i++){
-            Node n=flowPane.getChildren().get(i);
-            FadeTransition ft=new FadeTransition(javafx.util.Duration.millis(1000+i*200),n);
+    /**
+     * 列表变换动画特效
+     */
+    private void playList() {
+        for (int i = 0; i < flowPane.getChildren().size(); i++) {
+            Node n = flowPane.getChildren().get(i);
+            FadeTransition ft = new FadeTransition(javafx.util.Duration.millis(1000 + i * 200), n);
             ft.setFromValue(0.05);
             ft.setToValue(1.0);
             ft.setCycleCount(0);
@@ -304,6 +311,23 @@ public class RepSearchController implements MyController {
         this.key = key;
     }
 
+
+    /**
+     * 实现倒序排序
+     *
+     * @param vos
+     * @return
+     */
+    private ArrayList handleUpAndDown(ArrayList vos) {
+
+        ArrayList temp = new ArrayList();
+
+        for (int i = 0; i < vos.size(); i++) {
+            temp.add(vos.get(vos.size() - i - 1));
+        }
+        return temp;
+    }
+
     @FXML
     private void handleStar() {
         setColor(star.getText());
@@ -312,6 +336,9 @@ public class RepSearchController implements MyController {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.star);
             while (itr.hasNext()) {
                 vos.add(itr.next());
+            }
+            if (upOrDown.isSelected()) {
+                vos = handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -328,6 +355,9 @@ public class RepSearchController implements MyController {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.fork);
             while (itr.hasNext()) {
                 vos.add(itr.next());
+            }
+            if (upOrDown.isSelected()) {
+                vos = handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -349,6 +379,9 @@ public class RepSearchController implements MyController {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.contributor);
             while (itr.hasNext()) {
                 vos.add(itr.next());
+            }
+            if (upOrDown.isSelected()) {
+                vos = handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -394,7 +427,7 @@ public class RepSearchController implements MyController {
     @FXML
     private void handlePgNum() {
         try {
-            if(Integer.parseInt(pgNum.getText())>page_max||Integer.parseInt(pgNum.getText())<=0)
+            if (Integer.parseInt(pgNum.getText()) > page_max || Integer.parseInt(pgNum.getText()) <= 0)
                 throw new NumberFormatException();
             page = Integer.parseInt(pgNum.getText());
             updatePage();
@@ -408,7 +441,7 @@ public class RepSearchController implements MyController {
         if (i == 0) {
             page_max = 0;
         } else {
-            page_max = (int) (i / 6);//计算最大页数
+            page_max = (int) (i / 6 + 1);//计算最大页数
             if (page_max == 0) {
                 page_max = 1;
             }
@@ -417,11 +450,11 @@ public class RepSearchController implements MyController {
 
     }
 
-    public void setColor(String text){
-        for(int i=0;i<buttons.length;i++){
-            if(buttons[i].getText().equals(text)){
-                buttons[i].setTextFill(Color.rgb(221,118,118));
-            }else{
+    public void setColor(String text) {
+        for (int i = 0; i < buttons.length; i++) {
+            if (buttons[i].getText().equals(text)) {
+                buttons[i].setTextFill(Color.rgb(221, 118, 118));
+            } else {
                 buttons[i].setTextFill(Color.WHITE);
             }
         }

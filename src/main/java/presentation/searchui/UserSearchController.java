@@ -3,6 +3,7 @@ package presentation.searchui;
 import Util.User_Sort;
 import businesslogic.userBL.UserController;
 import businesslogicService.UserBLService;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -131,6 +132,37 @@ public class UserSearchController implements MyController {
     }
 
     /**
+     * 列表变换动画特效
+     */
+    private void playList() {
+        for (int i = 0; i < flowPane.getChildren().size(); i++) {
+            Node n = flowPane.getChildren().get(i);
+            FadeTransition ft = new FadeTransition(javafx.util.Duration.millis(1000 + i * 200), n);
+            ft.setFromValue(0.05);
+            ft.setToValue(1.0);
+            ft.setCycleCount(0);
+            ft.setAutoReverse(true);
+            ft.play();
+        }
+    }
+
+    /**
+     *
+     * 实现倒序排序
+     * @param vos
+     * @return
+     */
+    private ArrayList handleUpAndDown(ArrayList vos) {
+
+        ArrayList temp = new ArrayList();
+
+        for (int i = 0; i < vos.size(); i++) {
+            temp.add(vos.get(vos.size()-i-1));
+        }
+        return temp;
+    }
+
+    /**
      * 处理筛选方法
      */
     private void handleScreen(String str) {
@@ -253,6 +285,9 @@ public class UserSearchController implements MyController {
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }
+            if (upOrDown.isSelected()){
+                vos=handleUpAndDown(vos);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -272,6 +307,9 @@ public class UserSearchController implements MyController {
             Iterator<UserVO> itr = bl.sortUser(User_Sort.HAS);
             while (itr.hasNext()) {
                 vos.add(itr.next());
+            }
+            if (upOrDown.isSelected()){
+                vos=handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -296,7 +334,7 @@ public class UserSearchController implements MyController {
         if (i == 0) {
             page_max = 0;
         } else {
-            page_max = (int) (i / 8);//计算最大页数
+            page_max = (int) (i / 8 +1);//计算最大页数
             if (page_max == 0) {
                 page_max = 1;
             }
