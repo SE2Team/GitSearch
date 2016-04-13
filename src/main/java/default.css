@@ -387,7 +387,11 @@
     -fx-border-color: #f4f4f4;
 }
 
-.jfx-toggle-button:hover {
+.jfx-toggle-Button:hover {
     -fx-background-color: inherit;
     -fx-border-color: #f4f4f4;
+}
+
+.jfx-combo-box{
+    -fx-background-color: inherit;
 }

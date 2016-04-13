@@ -5,13 +5,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoStatisticsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoStarController">
    <children>
       <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="starChart" layoutX="9.0" layoutY="12.0" legendVisible="false" prefHeight="564.0" prefWidth="999.0" title="不同star量上的项目数分布图">
+                  <BarChart fx:id="starChart" layoutX="9.0" layoutY="12.0" legendVisible="false" prefHeight="564.0" prefWidth="999.0" title="不同star数量对应的项目数分布图">
                      <xAxis>
                         <CategoryAxis label="star量" side="BOTTOM" />
                      </xAxis>

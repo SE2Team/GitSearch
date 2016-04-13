@@ -5,20 +5,20 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoStatisticsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoCollaController">
    <children>
       <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <LineChart fx:id="collaboratorsChart" layoutX="10.0" layoutY="11.0" prefHeight="576.0" prefWidth="999.0" title="项目数-合作者分布图">
-                     <xAxis>
-                        <CategoryAxis label="合作者数量" side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis label="项目数" side="LEFT" />
-                     </yAxis>
-                  </LineChart>
+                  <BarChart fx:id="collaboratorsChart" layoutX="6.0" layoutY="8.0" prefHeight="586.0" prefWidth="1005.0" title="项目数-合作者分布图">
+                    <xAxis>
+                      <CategoryAxis label="合作者数量" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="项目数" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />

@@ -5,20 +5,20 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoStatisticsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoContriController">
    <children>
       <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <LineChart fx:id="contributorsChart" layoutX="9.0" layoutY="16.0" prefHeight="567.0" prefWidth="1002.0" title="项目数-贡献者分布表">
-                     <xAxis>
-                        <CategoryAxis label="贡献者数量" side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis label="项目数" side="LEFT" />
-                     </yAxis>
-                  </LineChart>
+                  <BarChart fx:id="contributorsChart" layoutX="9.0" layoutY="10.0" prefHeight="583.0" prefWidth="1000.0" title="项目数-贡献者分布表">
+                    <xAxis>
+                      <CategoryAxis label="贡献者数量" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="项目数" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
