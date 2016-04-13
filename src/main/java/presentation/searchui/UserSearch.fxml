@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
    <children>
-      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane id="UserSearchLeft" maxHeight="658.0" maxWidth="200.0" minHeight="658.0" minWidth="200.0" prefHeight="160.0" prefWidth="200.0" stylesheets="@../../default.css">
                <children>
@@ -128,6 +128,7 @@
             </AnchorPane>
           <AnchorPane maxHeight="658.0" maxWidth="1070.0" minHeight="658.0" minWidth="1070.0" prefHeight="160.0" prefWidth="100.0">
                <children>
+                  <JFXToggleButton fx:id="upOrDown" layoutX="966.0" layoutY="-13.0" prefHeight="30.0" prefWidth="53.0" unToggleColor="#009688" unToggleLineColor="#77c2bb" />
                   <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="78.0" prefHeight="544.0" prefWidth="954.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="78.0" />
                   <Label layoutX="574.0" layoutY="628.0" prefHeight="22.0" prefWidth="112.0" text="共            页">
                      <font>
@@ -178,14 +179,6 @@
                   <AnchorPane id="SortWay" layoutX="65.0" layoutY="36.0" prefHeight="40.0" prefWidth="942.0" stylesheets="@../../default.css">
                      <children>
                         <Line endX="940.0" layoutX="1.0" layoutY="-3.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
-                        <JFXButton fx:id="general" layoutX="1.0" onMouseClicked="#handleGeneral" stylesheets="@../../default.css" text="General" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="21.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
                         <JFXButton fx:id="followers" layoutX="662.0" onMouseClicked="#handleFollowers" text="Followers" textFill="#f5f3f3">
                            <font>
                               <Font name="Calibri Bold" size="21.0" />
@@ -204,6 +197,16 @@
                         </JFXButton>
                      </children>
                   </AnchorPane>
+                  <Text layoutX="937.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="降序">
+                     <font>
+                        <Font name="Microsoft Tai Le" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="1028.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="升序">
+                     <font>
+                        <Font name="Microsoft Tai Le" size="16.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
         </items>

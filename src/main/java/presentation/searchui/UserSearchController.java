@@ -256,7 +256,7 @@ public class UserSearchController implements MyController {
 
         updateMaxPages(vos.size());
 
-
+        page=1;
         updatePage();
 
     }
@@ -274,6 +274,7 @@ public class UserSearchController implements MyController {
         }
         updateMaxPages(vos.size());
 
+        page=1;
 
         updatePage();
 
@@ -291,7 +292,7 @@ public class UserSearchController implements MyController {
         if (i == 0) {
             page_max = 0;
         } else {
-            page_max = (int) (i / 6);//计算最大页数
+            page_max = (int) (i / 8);//计算最大页数
             if (page_max == 0) {
                 page_max = 1;
             }

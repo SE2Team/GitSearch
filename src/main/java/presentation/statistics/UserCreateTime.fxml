@@ -5,18 +5,18 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoStatisticsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.UserStatisticsController">
    <children>
       <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="langChart" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="语言-项目数分布图">
+                  <BarChart fx:id="creatTimeChart" layoutX="7.0" layoutY="7.0" legendVisible="false" prefHeight="568.0" prefWidth="1002.0" title="用户-时间分布图">
                      <xAxis>
-                        <CategoryAxis label="语言" side="BOTTOM" stylesheets="@../../default.css" fx:id="xlang" />
+                        <CategoryAxis label="时间" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
-                        <NumberAxis label="项目数" side="LEFT" />
+                        <NumberAxis label="用户数" side="LEFT" />
                      </yAxis>
                   </BarChart>
                </children>

@@ -11,9 +11,9 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="langChart" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="语言-项目数分布图">
+                  <BarChart fx:id="starChart" layoutX="9.0" layoutY="12.0" legendVisible="false" prefHeight="564.0" prefWidth="999.0" title="不同star量上的项目数分布图">
                      <xAxis>
-                        <CategoryAxis label="语言" side="BOTTOM" stylesheets="@../../default.css" fx:id="xlang" />
+                        <CategoryAxis label="star量" side="BOTTOM" />
                      </xAxis>
                      <yAxis>
                         <NumberAxis label="项目数" side="LEFT" />
