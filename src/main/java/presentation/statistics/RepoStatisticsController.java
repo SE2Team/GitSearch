@@ -9,7 +9,9 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.*;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
@@ -27,8 +29,10 @@ import java.io.IOException;
  * Created by moeyui on 2016/3/16 0016.
  */
 public class RepoStatisticsController implements MyController {
-    FXUITest fxuiTest;
+    private FXUITest fxuiTest;
     private StatisticsBLService bl=new StatisticsController();
+    @FXML
+    private ComboBox chartType;
     @FXML
     private TabPane tabPane;
     @FXML
@@ -45,6 +49,8 @@ public class RepoStatisticsController implements MyController {
     private LineChart<String,Integer> collaboratorsChart;
     @FXML
     private CategoryAxis xlang;
+    @FXML
+    private AnchorPane chartPane;
 
 
 
@@ -71,6 +77,7 @@ public class RepoStatisticsController implements MyController {
 //        ft.setAutoReverse(true);
 //        ft.play();
 
+
     }
 
     public void setFxui(FXUITest fxui) {
@@ -78,7 +85,17 @@ public class RepoStatisticsController implements MyController {
     }
 
     public void repaint() {
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("RepoLan.fxml"));
+        try {
+            AnchorPane anchorPane=loader.load();
+            RepoLanController controller=loader.getController();
+            controller.getLangChart().setData(getData(bl.getLanguage()));
+            chartPane.getChildren().addAll(anchorPane);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
         return getData(vo,true);

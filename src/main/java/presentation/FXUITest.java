@@ -196,7 +196,7 @@ public class FXUITest extends Application {
     public void repoStatistics() {
         this.push();
         FXMLLoader loader =new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("statistics/RepoStatistics.fxml"));
+        loader.setLocation(this.getClass().getResource("statistics/RepoStatisticsAnc.fxml"));
 
         try {
             AnchorPane repoStatisticsPane=(AnchorPane) loader.load();
