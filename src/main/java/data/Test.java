@@ -47,9 +47,9 @@ public class Test {
 //		string=string+list.get(i).getName();
 //		data2.writeDataAdd(string);
 //		}
-	ArrayList<UserPO> po=new UserData().sortUser(User_Sort.HAS);
-	for(int i=0;i<100;i++){
-		System.out.println(new UserData().CheckUser(po.get(i).getLogin()).getHas().size());
+	StaStrPO po=new StatisticsData().getCollaborator();
+	for(int i=0;i<po.getInt().size();i++){
+		System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
 	}
 	}
 }
