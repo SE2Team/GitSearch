@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.UserVO;
@@ -76,9 +77,10 @@ public class UserSearchController implements MyController {
     private UserBLService bl = new UserController();
     private String key = "";//搜索关键字
     private int page_max = 0;
+    private Button[] buttons;
 
     public void initialize() {
-
+        buttons = new Button[]{followers,repo};
         for (Node n : flowPane2.getChildren()) {
             final ToggleButton t = (ToggleButton) n;
             t.setOnAction(new EventHandler<ActionEvent>() {
@@ -244,6 +246,7 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handleFollowers() {
+        setColor(followers.getText());
         vos.clear();//清空数组
         try {
             Iterator<UserVO> itr = bl.sortUser(User_Sort.Followers);
@@ -263,6 +266,7 @@ public class UserSearchController implements MyController {
 
     @FXML
     private void handleRepo() {
+        setColor(repo.getText());
         vos.clear();//清空数组
         try {
             Iterator<UserVO> itr = bl.sortUser(User_Sort.HAS);
@@ -300,6 +304,15 @@ public class UserSearchController implements MyController {
 
     }
 
+    public void setColor(String text){
+        for(int i=0;i<buttons.length;i++){
+            if(buttons[i].getText().equals(text)){
+                buttons[i].setTextFill(Color.rgb(221,118,118));
+            }else{
+                buttons[i].setTextFill(Color.WHITE);
+            }
+        }
+    }
     @FXML
     private void handleJumpPage(){
         System.out.println("jiji");

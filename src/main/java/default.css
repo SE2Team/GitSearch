@@ -356,3 +356,38 @@
 /*.first-titled-pane .title{*/
     /*-fx-background-color: linear-gradient( black, darkred);*/
 /*}*/
+
+.scroll-pane .scroll-bar:vertical{
+    visibility: hidden;
+}
+
+#decrease{
+    -fx-background-image: url("Images/selectedDecr.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+}
+
+#increase{
+    -fx-background-image: url("Images/UnselectedIncr.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+}
+
+.jfx-toggle-Button{
+    -fx-background-color:inherit;
+    -fx-border-color: #f4f4f4;
+}
+
+.jfx-toggle-Button:selected {
+    -fx-background-color: inherit;
+    -fx-border-color: #f4f4f4;
+}
+
+.jfx-toggle-button:hover {
+    -fx-background-color: inherit;
+    -fx-border-color: #f4f4f4;
+}

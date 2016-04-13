@@ -14,6 +14,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
@@ -61,6 +62,7 @@ public class RepSearchController implements MyController {
     private ToggleButton upOrDown;
     @FXML
     private AnchorPane buttons_p;
+
     /**
      * 翻页部件
      */
@@ -87,8 +89,11 @@ public class RepSearchController implements MyController {
     private FXUITest fxuiTest;
     private String key = "";//搜索关键字
     private int page_max = 0;
+    private Button[] buttons;
+
 
     public void initialize() {
+        buttons = new Button[]{star,fork,contributor};
         initFilters();
         langGroup.getToggles().addAll(language);
         timeGroup.getToggles().addAll(time);
@@ -301,6 +306,7 @@ public class RepSearchController implements MyController {
 
     @FXML
     private void handleStar() {
+        setColor(star.getText());
         vos.clear();
         try {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.star);
@@ -316,6 +322,7 @@ public class RepSearchController implements MyController {
 
     @FXML
     private void handleFork() {
+        setColor(fork.getText());
         vos.clear();
         try {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.fork);
@@ -336,6 +343,7 @@ public class RepSearchController implements MyController {
 
     @FXML
     private void handleContributor() {
+        setColor(contributor.getText());
         vos.clear();
         try {
             Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.contributor);
@@ -407,5 +415,15 @@ public class RepSearchController implements MyController {
         }
         maxPg.setText(String.valueOf(page_max));
 
+    }
+
+    public void setColor(String text){
+        for(int i=0;i<buttons.length;i++){
+            if(buttons[i].getText().equals(text)){
+                buttons[i].setTextFill(Color.rgb(221,118,118));
+            }else{
+                buttons[i].setTextFill(Color.WHITE);
+            }
+        }
     }
 }

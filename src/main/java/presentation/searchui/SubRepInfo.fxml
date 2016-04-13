@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
@@ -17,35 +18,35 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <GridPane layoutX="646.0" layoutY="22.0" prefHeight="58.0" prefWidth="309.0" vgap="8.0">
+      <GridPane layoutX="646.0" layoutY="22.0" prefHeight="58.0" prefWidth="298.0" vgap="8.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="74.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="101.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="131.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="95.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="104.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="15.0" minHeight="8.0" prefHeight="15.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Star" textFill="#00000097">
-               <font>
-                  <Font name="Calibri" size="22.0" />
-               </font>
-            </Label>
-            <Label text="Fork" textFill="#00000097" GridPane.columnIndex="1">
-               <font>
-                  <Font name="Calibri" size="22.0" />
-               </font>
-            </Label>
             <Label fx:id="stars" text="0" textFill="#00000097" GridPane.rowIndex="1" />
-            <Label fx:id="forks" text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label prefHeight="26.0" prefWidth="113.0" text="Contributor" textFill="#00000097" GridPane.columnIndex="2">
-               <font>
-                  <Font name="Calibri" size="22.0" />
-               </font>
-            </Label>
+            <Label fx:id="forks" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="102.0" text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="contributors" text="0" textFill="#00000097" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../../Images/fork.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/star.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@../../Images/Contributors.jpg" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
       <Label fx:id="description" layoutX="9.0" layoutY="44.0" prefHeight="40.0" prefWidth="640.0" text="mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm" textFill="#00000097" wrapText="true">

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
@@ -136,7 +137,7 @@
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                              <children>
-                                                <TabPane layoutX="-2.0" layoutY="1.0" prefHeight="289.0" prefWidth="823.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE">
+                                                <TabPane prefHeight="289.0" prefWidth="823.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE">
                                                   <tabs>
                                                     <Tab id="Contributors" text="Contributors">
                                                       <content>
@@ -147,7 +148,8 @@
                                                                         <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
                                                                      </content>
                                                                   </ScrollPane>
-                                                               </children></AnchorPane>
+                                                               </children>
+                                                            </AnchorPane>
                                                       </content>
                                                     </Tab>
                                                     <Tab id="Collaborators" text="Collaborators">
@@ -159,7 +161,8 @@
                                                                         <FlowPane fx:id="collaboratorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
                                                                      </content>
                                                                   </ScrollPane>
-                                                               </children></AnchorPane>
+                                                               </children>
+                                                            </AnchorPane>
                                                       </content>
                                                     </Tab>
                                                   </tabs>
