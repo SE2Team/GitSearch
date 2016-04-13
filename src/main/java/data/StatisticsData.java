@@ -508,14 +508,38 @@ public class StatisticsData implements StatisticsDataService{
 			listStr.add(listInt1.get(i)+"");
 		}
 		
-		StaStrPO po= this.sort(listInt, listStr);
+	//	StaStrPO po= this.sort(listInt, listStr);
+		listStr2.add("0-25");
+		listStr2.add("25-50");
+		listStr2.add("50-75");
+		listStr2.add("75-100");
+		listStr2.add("over100");
+		for(int i=0;i<5;i++){
+			listInt2.add(0);
+		}
 		
-		for(int i=0;i<listInt1.size();i++){
-			listStr2.add(po.getInt().get(i)+"");
-			listInt2.add(Integer.parseInt(po.getStr().get(i)));
-			
+		
+		
+		for(int i=0;i<listInt.size();i++){
+			if(listInt.get(i)<=25){
+				listInt2.set(0, listInt2.get(0)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=50&&listInt.get(i)>25){
+				listInt2.set(1, listInt2.get(1)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=75&&listInt.get(i)>50){
+				listInt2.set(2, listInt2.get(2)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=100&&listInt.get(i)>75){
+				listInt2.set(3, listInt2.get(3)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)>100){
+				
+				listInt2.set(4, listInt2.get(4)+Integer.parseInt(listStr.get(i)));
+			}
 			
 		}
+		
 		return new StaStrPO(listStr2, listInt2);
 	}
 
@@ -552,12 +576,35 @@ public class StatisticsData implements StatisticsDataService{
 			listStr.add(listInt1.get(i)+"");
 		}
 		
-		StaStrPO po= this.sort(listInt, listStr);
+	//	StaStrPO po= this.sort(listInt, listStr);
+		listStr2.add("0-25");
+		listStr2.add("25-50");
+		listStr2.add("50-75");
+		listStr2.add("75-100");
+		listStr2.add("over100");
+		for(int i=0;i<5;i++){
+			listInt2.add(0);
+		}
 		
-		for(int i=0;i<listInt1.size();i++){
-			listStr2.add(po.getInt().get(i)+"");
-			listInt2.add(Integer.parseInt(po.getStr().get(i)));
-			
+		
+		
+		for(int i=0;i<listInt.size();i++){
+			if(listInt.get(i)<=25){
+				listInt2.set(0, listInt2.get(0)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=50&&listInt.get(i)>25){
+				listInt2.set(1, listInt2.get(1)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=75&&listInt.get(i)>50){
+				listInt2.set(2, listInt2.get(2)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)<=100&&listInt.get(i)>75){
+				listInt2.set(3, listInt2.get(3)+Integer.parseInt(listStr.get(i)));
+			}
+			if(listInt.get(i)>100){
+				
+				listInt2.set(4, listInt2.get(4)+Integer.parseInt(listStr.get(i)));
+			}
 			
 		}
 		return new StaStrPO(listStr2, listInt2);
