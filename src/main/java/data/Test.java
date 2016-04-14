@@ -1,9 +1,12 @@
 package data;
 
+import java.awt.List;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import po.RepositoryPO;
+import po.StaStrPO;
 import po.UserPO;
 
 public class Test {
@@ -22,16 +25,16 @@ public class Test {
 //		new GetData("collaborator").writeData(listColl);
 //		new GetData("contributor").writeData(listCont);
 
-		Refresh refresh=new Refresh();
-//		refresh.updateUser();
-//		refresh.updatedCompany();
-		refresh.updateHas();
-		System.out.println("has");
-		refresh.updateRelated();
-//		System.out.println("Success");
-//		refresh.updatesUser_names();
-//		ArrayList<UserPO> list=new UserData().getUser();
-//		System.out.println(list.size());
+
+//		StatisticsData data=new StatisticsData();
+//		StaStrPO po=data.getCollaborator();
+//		for(int i=0;i<po.getStr().size();i++){
+//			System.out.println(po.getStr().get(i)+":"+po.getInt().get(i));
+//		}
+		
+	Refresh refresh=new Refresh();
+	refresh.updatedC();
+
 		
 	}
 }

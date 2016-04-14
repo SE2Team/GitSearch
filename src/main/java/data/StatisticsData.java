@@ -17,13 +17,15 @@ public class StatisticsData implements StatisticsDataService{
 	 * 雷达图
 	 * 
 	 */
-	public StatisticsPO getScores(RepositoryPO po) throws IOException {
+	public StaStrPO getScores(RepositoryPO po) throws IOException {
 		// TODO Auto-generated method stub
-		double issues_num;
-		double stars_num;
-		double forks_num;
-		double contributors_num;
-		double  collaborators_num;
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		int issues_num=0;
+		int stars_num=0;
+		int forks_num=0;
+		int contributors_num=0;
+		int  collaborators_num=0;
 		RepositoryData data=new RepositoryData();
 		ArrayList<RepositoryPO> list=data.getRepositories();
 		issues_num=list.get(0).getOpen_issues();
@@ -53,16 +55,18 @@ public class StatisticsData implements StatisticsDataService{
 			 }
 			 
 		 }
-//			 score.add(issues_num+"");
-//			 score.add(stars_num+"");
-//			 score.add(forks_num+"");
-//			 score.add(contributors_num+"");
-//			 score.add(collaborators_num+"");
-//			 new GetData("score").writeData(score);
-		
-		 System.out.println(collaborators_num);
-		return new StatisticsPO(po.getOpen_issues()/issues_num, po.getStargazers()/stars_num, po.getForks()/forks_num,
-				po.getContributor()/contributors_num,po.getCollaborators_count()/collaborators_num);
+		 	listStr.add("issues");
+		 	listStr.add("stars");
+		 	listStr.add("forks");
+		 	listStr.add("contributors");
+		 	listStr.add("collaborators");
+		 	listInt.add((po.getOpen_issues()/issues_num)*10);
+		 	listInt.add((po.getStargazers()/stars_num)*10);
+		 	listInt.add((po.getForks()/forks_num)*10);
+		 	listInt.add((po.getContributor()/contributors_num)*10);
+		 	listInt.add((po.getCollaborators_count()/collaborators_num)*10);
+		 	return new StaStrPO(listStr, listInt);
+		 
 	}
 
 	public StaStrPO getStar() throws IOException {

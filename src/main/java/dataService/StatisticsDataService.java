@@ -23,7 +23,7 @@ public interface StatisticsDataService {
 	 */
 	public StaStrPO getStar() throws IOException;
 	
-	public StatisticsPO getScores(RepositoryPO po) throws IOException;
+	public StaStrPO getScores(RepositoryPO po) throws IOException;
 	
 	/**
 	 * 
