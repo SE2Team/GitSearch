@@ -21,50 +21,56 @@ public class StatisticsData implements StatisticsDataService{
 		// TODO Auto-generated method stub
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
-		int issues_num=0;
-		int stars_num=0;
-		int forks_num=0;
-		int contributors_num=0;
-		int  collaborators_num=0;
-		RepositoryData data=new RepositoryData();
-		ArrayList<RepositoryPO> list=data.getRepositories();
-		issues_num=list.get(0).getOpen_issues();
-		stars_num=list.get(0).getStargazers();
-		forks_num=list.get(0).getForks();
-		contributors_num=list.get(0).getContributor();
-		collaborators_num=list.get(0).getCollaborators_count();
-		 for(int j=1;j<list.size()-1;j++){
-			 if(issues_num<list.get(j).getOpen_issues()){
-				 issues_num=list.get(j).getOpen_issues();
-				 }
-			 
-			 if(stars_num<list.get(j).getStargazers()){
-				 stars_num=list.get(j).getStargazers();
-			 }
-			 
-			 if(forks_num<list.get(j).getForks()){
-				 forks_num=list.get(j).getForks();
-			 }
-			 
-			 if(contributors_num<list.get(j).getContributor()){
-				 contributors_num=list.get(j).getContributor();
-			 }
-			
-			 if(collaborators_num<list.get(j).getCollaborators_count()){
-				 collaborators_num=list.get(j).getCollaborators_count();
-			 }
-			 
-		 }
+		int issues_num=1168;
+		int stars_num=36996;
+		int forks_num=9609;
+		int contributors_num=437;
+		int  collaborators_num=677;
+//		RepositoryData data=new RepositoryData();
+//		ArrayList<RepositoryPO> list=data.getRepositories();
+//		issues_num=list.get(0).getOpen_issues();
+//		stars_num=list.get(0).getStargazers();
+//		forks_num=list.get(0).getForks();
+//		contributors_num=list.get(0).getContributor();
+//		collaborators_num=list.get(0).getCollaborators_count();
+//		 for(int j=1;j<list.size()-1;j++){
+//			 if(issues_num<list.get(j).getOpen_issues()){
+//				 issues_num=list.get(j).getOpen_issues();
+//				 }
+//			 
+//			 if(stars_num<list.get(j).getStargazers()){
+//				 stars_num=list.get(j).getStargazers();
+//			 }
+//			 
+//			 if(forks_num<list.get(j).getForks()){
+//				 forks_num=list.get(j).getForks();
+//			 }
+//			 
+//			 if(contributors_num<list.get(j).getContributor()){
+//				 contributors_num=list.get(j).getContributor();
+//			 }
+//			
+//			 if(collaborators_num<list.get(j).getCollaborators_count()){
+//				 collaborators_num=list.get(j).getCollaborators_count();
+//			 }
+//			 
+//		 }
 		 	listStr.add("issues");
 		 	listStr.add("stars");
 		 	listStr.add("forks");
 		 	listStr.add("contributors");
 		 	listStr.add("collaborators");
-		 	listInt.add((po.getOpen_issues()/issues_num)*10);
-		 	listInt.add((po.getStargazers()/stars_num)*10);
-		 	listInt.add((po.getForks()/forks_num)*10);
-		 	listInt.add((po.getContributor()/contributors_num)*10);
-		 	listInt.add((po.getCollaborators_count()/collaborators_num)*10);
+//		 	System.out.println(issues_num);
+//		 	System.out.println(stars_num);
+//		 	System.out.println(forks_num);
+//		 	System.out.println(contributors_num);
+//		 	System.out.println(collaborators_num);
+		 		
+		 	listInt.add((po.getOpen_issues()/issues_num)*10+1);
+		 	listInt.add((po.getStargazers()/stars_num)*10+1);
+		 	listInt.add((po.getForks()/forks_num)*10+1);
+		 	listInt.add((po.getContributor()/contributors_num)*10+1);
+		 	listInt.add((po.getCollaborators_count()/collaborators_num)*10+1);
 		 	return new StaStrPO(listStr, listInt);
 		 
 	}
