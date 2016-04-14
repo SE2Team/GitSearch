@@ -337,6 +337,8 @@ public class UserSearchController implements MyController {
             page_max = 0;
         } else {
             page_max = (int) (i / 8 +1);//计算最大页数
+            if (i%6!=0)
+                page_max++;
             if (page_max == 0) {
                 page_max = 1;
             }

@@ -84,16 +84,19 @@ public class HomeController implements MyController{
 
     @FXML
     private void handleUStatistics(){
+        ustatistics.setSelected(true);
         fxui.userStatistics();
     }
 
     @FXML
     private void handleRStatistics(){
+        rstatistics.setSelected(true);
         fxui.repoStatistics();
     }
 
     @FXML
     private void handleSearch_p(){
+        search_pane.setSelected(true);
         if(comboBox.getValue()=="项目"){
             fxui.searchRepo("");
         }else if(comboBox.getValue()=="用户"){
