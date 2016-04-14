@@ -117,11 +117,35 @@ public class RepositoryPO {
 	}
 
 	public String getUpdated() {
-		return this.updated;
+		String s1="";
+		char[] c=updated.toCharArray();
+		String[] str=new String[c.length];
+		for(int i=0;i<c.length;i++){
+			str[i]=c[i]+"";
+			if(str[i].equals("T")){
+				str[i]="-";
+			}else if(str[i].equals("Z")){
+				str[i]="";
+			}
+			s1=s1+str[i];
+		}
+		return s1;
 	}
 
 	public String getCreated() {
-		return this.created;
+		String s1="";
+		char[] c=created.toCharArray();
+		String[] str=new String[c.length];
+		for(int i=0;i<c.length;i++){
+			str[i]=c[i]+"";
+			if(str[i].equals("T")){
+				str[i]="-";
+			}else if(str[i].equals("Z")){
+				str[i]="";
+			}
+			s1=s1+str[i];
+		}
+		return s1;
 	}
 
 	public boolean getFork() {
