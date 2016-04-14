@@ -28,6 +28,8 @@ import java.io.IOException;
 public class CheckRepoController implements MyController {
     private FXUITest fxui;
     @FXML
+    private CategoryAxis yAxis;
+    @FXML
     private Label stars;
     @FXML
     private Label forks;
@@ -109,7 +111,6 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         owner.setText(username);
-        setGraph();
 
     }
 
@@ -159,6 +160,8 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         this.vo = bl.checkRepository(username, reponame);
+        setGraph();
+
     }
 
     public Parent getSub(String str) throws IOException {

@@ -2,6 +2,7 @@ package presentation.statistics;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import presentation.FXUITest;
 import presentation.common.MyController;
 
@@ -11,10 +12,15 @@ import presentation.common.MyController;
 public class UserTypeController implements MyController{
     private FXUITest fxuiTest;
     @FXML
+    private Label type;
+    @FXML
+    private Label num;
+    @FXML
     private PieChart typeChart;
+
     @Override
     public void initialize() {
-
+//        type.setText(typeChart.getData());
     }
 
     @Override
@@ -24,8 +30,9 @@ public class UserTypeController implements MyController{
 
     @Override
     public void repaint() {
-
+        num.setText(String.valueOf(typeChart.getData().get(0).getPieValue()));
     }
+
 
     public PieChart getTypeChart() {
         return typeChart;

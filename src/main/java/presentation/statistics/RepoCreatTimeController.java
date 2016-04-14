@@ -2,6 +2,7 @@ package presentation.statistics;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import presentation.FXUITest;
 import presentation.common.MyController;
 
@@ -10,6 +11,10 @@ import presentation.common.MyController;
  */
 public class RepoCreatTimeController implements MyController{
     private FXUITest fxuiTest;
+    @FXML
+    private Label year;
+    @FXML
+    private Label num;
     @FXML
     private PieChart creatTimeChart;
     @Override

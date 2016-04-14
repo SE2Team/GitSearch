@@ -140,7 +140,7 @@ public class UserStatisticsController implements MyController {
                     UserTypeController userTypeController=loader.getController();
                     userTypeController.getTypeChart().setData(getPieData(bl.getUserType()));
                     setupAnimation(userTypeController.getTypeChart().getData());
-
+                    userTypeController.repaint();
                     break;
                 case "Create Time":
                     loader.setLocation(this.getClass().getResource("UserCreateTime.fxml"));
