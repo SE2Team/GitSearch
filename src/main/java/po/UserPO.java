@@ -49,35 +49,11 @@ public class UserPO {
 	}
 	
 	public String getUpdated(){
-		String s1="";
-		char[] c=updated_at.toCharArray();
-		String[] str=new String[c.length];
-		for(int i=0;i<c.length;i++){
-			str[i]=c[i]+"";
-			if(str[i].equals("T")){
-				str[i]="-";
-			}else if(str[i].equals("Z")){
-				str[i]="";
-			}
-			s1=s1+str[i];
-		}
-		return s1;
+		 return this.updated_at;
 	}
 	
 	public String getCreated(){
-		String s1="";
-		char[] c=created_at.toCharArray();
-		String[] str=new String[c.length];
-		for(int i=0;i<c.length;i++){
-			str[i]=c[i]+"";
-			if(str[i].equals("T")){
-				str[i]="-";
-			}else if(str[i].equals("Z")){
-				str[i]="";
-			}
-			s1=s1+str[i];
-		}
-		return s1;
+		return this.created_at;
 	}
 	
 	public int getFollowing(){

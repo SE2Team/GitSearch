@@ -29,7 +29,7 @@ public interface StatisticsBLService {
 
 	StaStrVO getStar() throws IOException;
 	
-	StatisticsVO getScores(RepositoryVO vo) throws IOException;
+	StaStrVO getScores(RepositoryVO vo) throws IOException;
 	
 	StaStrVO getForks() throws IOException;
 	

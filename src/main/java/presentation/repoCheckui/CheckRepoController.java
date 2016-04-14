@@ -199,26 +199,26 @@ public class CheckRepoController implements MyController {
 //        xpoi.setCategories(langs);
 //        poiChart.getData().addAll(getdata());
         StatisticsBLService sbl=new StatisticsController();
-//        try {
-//            poiChart.setData(getData(sbl.getScores(vo)));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            poiChart.setData(getData(sbl.getScores(vo)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-//    private ObservableList<XYChart.Series<String, Integer>> getData(StatisticsVO vo) {
-//        ObservableList<XYChart.Series<String, Integer>> observableList = FXCollections.observableArrayList();
-//        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-//        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 500; i++) {
-//            if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
-//                continue;
-//            }
-//            series.getData().add(new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i)));
-//
-//        }
-//        observableList.add(series);
-//        return observableList;
-//    }
+    private ObservableList<XYChart.Series<String, Integer>> getData(StaStrVO vo) {
+        ObservableList<XYChart.Series<String, Integer>> observableList = FXCollections.observableArrayList();
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 500; i++) {
+            if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
+                continue;
+            }
+            series.getData().add(new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i)));
+
+        }
+        observableList.add(series);
+        return observableList;
+    }
 
 }

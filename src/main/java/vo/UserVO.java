@@ -49,11 +49,11 @@ public class UserVO {
     }
 
     public String getUpdated(){
-        return this.updated_at;
+		return this.updated_at.split("T")[0];
     }
 
     public String getCreated(){
-        return this.created_at;
+    	return this.created_at.split("T")[0];
     }
 
     public int getFollowing(){

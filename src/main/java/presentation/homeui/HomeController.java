@@ -41,11 +41,12 @@ public class HomeController implements MyController{
     private FXUITest fxui;
 
     public void initialize() {
+        comboBox.getItems().clear();
         comboBox.getItems().addAll("项目","用户");
         comboBox.getSelectionModel().selectFirst();
         top.getToggles().addAll(search_pane,ustatistics,rstatistics);
         search_pane.setSelected(true);
-
+        searchText.setFocusTraversable(false);
     }
 
     public void setFxui(FXUITest fxui) {
@@ -83,16 +84,19 @@ public class HomeController implements MyController{
 
     @FXML
     private void handleUStatistics(){
+        ustatistics.setSelected(true);
         fxui.userStatistics();
     }
 
     @FXML
     private void handleRStatistics(){
+        rstatistics.setSelected(true);
         fxui.repoStatistics();
     }
 
     @FXML
     private void handleSearch_p(){
+        search_pane.setSelected(true);
         if(comboBox.getValue()=="项目"){
             fxui.searchRepo("");
         }else if(comboBox.getValue()=="用户"){

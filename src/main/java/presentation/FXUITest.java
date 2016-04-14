@@ -6,15 +6,21 @@ import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import com.aquafx_project.AquaFx;
 import com.aquafx_project.controls.skin.AquaButtonSkin;
+import com.jfoenix.controls.JFXProgressBar;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
@@ -102,6 +108,21 @@ public class FXUITest extends Application {
 
     public void checkRepo(RepositoryVO vo) {
         this.push();
+
+        BorderPane loadPane=new BorderPane();
+        ProgressBar jfxBar=new ProgressBar();
+        loadPane.setPrefWidth(1280);
+        loadPane.setPrefHeight(600);
+        jfxBar.setPrefWidth(500);
+        loadPane.setCenter(jfxBar);
+        homeLayout.setCenter(loadPane);
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(jfxBar.progressProperty(), 0)),
+                new KeyFrame(Duration.seconds(2),  new KeyValue(jfxBar.progressProperty(), 1)));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -111,8 +132,9 @@ public class FXUITest extends Application {
             CheckRepoController controller = loader.getController();
             controller.setFxui(this);
             controller.setVo(vo);
-            homeLayout.setCenter(anchorPane);
             controller.repaint();
+            homeLayout.setCenter(anchorPane);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -158,6 +180,13 @@ public class FXUITest extends Application {
      */
     public void searchRepo(String key) {
         this.push();
+        BorderPane loadPane=new BorderPane();
+        ProgressBar progressBar=new ProgressBar();
+        loadPane.setPrefWidth(1280);
+        loadPane.setPrefHeight(600);
+        progressBar.setPrefWidth(500);
+        loadPane.setCenter(progressBar);
+        homeLayout.setCenter(loadPane);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
