@@ -167,27 +167,29 @@ public class RepositoryData implements RepositoryDataService {
 					"/contributors/login";
 			String[] s = list.get(j).getName().split("/");
 			if (s[0].equals(userName) && s[1].equals(reponame)) {
-				try {
-					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
-					list.get(j).setContributors(contrData.getContributors(contrUrl));
-				} catch (Exception IOException) {
-					ArrayList<String> listColla=new GetData("collaborator").readData();
-					ArrayList<String> listContr=new GetData("contributor").readData();
-					ArrayList<String> strings=new ArrayList<>();
-					for(int i=0;i<listColla.size();i++){
-						strings=this.splitStr(listColla.get(i));
-						if(strings.contains(userName+"/"+reponame)){
-							strings.remove(userName+"/"+reponame);
-							list.get(j).setCollaborators(strings);
-						}
-						strings=this.splitStr(listContr.get(i));
-						if(strings.contains(userName+"/"+reponame)){
-							strings.remove(userName+"/"+reponame);
-							list.get(j).setContributors(strings);
-						}
-					}
-					
-				}
+				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+				list.get(j).setContributors(contrData.getContributors(contrUrl));
+//				try {
+//					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+//					list.get(j).setContributors(contrData.getContributors(contrUrl));
+//				} catch (Exception IOException) {
+//					ArrayList<String> listColla=new GetData("collaborator").readData();
+//					ArrayList<String> listContr=new GetData("contributor").readData();
+//					ArrayList<String> strings=new ArrayList<>();
+//					for(int i=0;i<listColla.size();i++){
+//						strings=this.splitStr(listColla.get(i));
+//						if(strings.contains(userName+"/"+reponame)){
+//							strings.remove(userName+"/"+reponame);
+//							list.get(j).setCollaborators(strings);
+//						}
+//						strings=this.splitStr(listContr.get(i));
+//						if(strings.contains(userName+"/"+reponame)){
+//							strings.remove(userName+"/"+reponame);
+//							list.get(j).setContributors(strings);
+//						}
+//					}
+//					
+//				}
 				return list.get(j);
 			}
 		}

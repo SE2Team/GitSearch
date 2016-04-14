@@ -6,13 +6,17 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import javax.print.DocFlavor.STRING;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
 
 import Util.User_Sort;
+import businesslogic.userBL.User;
 import dataService.UserDataService;
+import javafx.scene.chart.PieChart.Data;
 import po.RepositoryPO;
 import po.UserPO;
 
@@ -24,12 +28,85 @@ public class UserData implements UserDataService {
 	static String string = "http://www.gitmining.net/api/user";
 	
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
+	
+	private UserPO CheckUserLine(String user) throws IOException{
+		GetData data=new GetData();
+		UserPO po=null;
+		try {
+			String string=data.getString1("http://www.gitmining.net/api/user/"+user);
+			JSONObject obj=new JSONObject(string);
+			String s1, s2, s3, s4;
+
+			if (obj.has("company")) {
+				s1 = obj.getString("company");
+			} else {
+				s1 = "";
+			}
+			if (obj.has("email")) {
+				s2 = obj.getString("email");
+			} else {
+				s2 = "";
+			}
+
+			if (obj.has("repos_url")) {
+				s3 = obj.getString("repos_url");
+			} else {
+				s3 = "";
+			}
+
+			if (obj.has("name")) {
+				s4 = obj.getString("name");
+
+			} else {
+				s4 = "";
+			}
+
+			po=new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"), s4, s1, s2, s3,
+					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
+					obj.getString("created_at"), obj.getString("updated_at"), null, null);
+			
+			ArrayList<String> relatedRepo = new ArrayList<String>();
+			ArrayList<String> list3 = new ArrayList<String>();
+			ArrayList<RepositoryPO> list2 = this.searchRepoName(user);
+			for (int j = 0; j < list2.size(); j++) {
+				list3.add(list2.get(j).getName());
+			}
+			
+			ArrayList<String> related = new GetData("contributor").readData();
+			for (int p = 0; p < related.size(); p++) {
+				if (this.isEqual(related.get(p), user)) {
+					String[] str = related.get(p).split(";");
+					if (relatedRepo.contains(str[str.length - 1]) == false) {
+						relatedRepo.add(str[str.length - 1]);
+					}
+				}
+			}
+
+			ArrayList<String> colla = new GetData("collaborator").readData();
+			for (int p = 0; p < colla.size(); p++) {
+				if (this.isEqual(colla.get(p), user)) {
+					String[] str = colla.get(p).split(";");
+					if (relatedRepo.contains(str[str.length - 1]) == false) {
+						relatedRepo.add(str[str.length - 1]);
+					}
+				}
+			}
+			po.setHas(list3);
+			po.setRelated(relatedRepo);
+		} catch (Exception IOException) {
+			// TODO: handle exception
+			return null;
+		}
+		return null;
+		
+	}
 		
 	public UserPO CheckUser(String user) throws IOException {
 
 		ArrayList<UserPO> list = new UserData().getUser();
 		ArrayList<String> list3 = new ArrayList<String>();
 		ArrayList<String> relatedRepo = new ArrayList<String>();
+		UserPO po=null;
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getLogin().equals(user)) {
 				ArrayList<RepositoryPO> list2 = this.searchRepoName(user);
@@ -59,10 +136,13 @@ public class UserData implements UserDataService {
 
 				list.get(i).setRelated(relatedRepo);
 				list.get(i).setHas(list3);
-				return list.get(i);
+				po=list.get(i);
 			}
 		}
-		return null;
+		if(po==null){
+			po=this.CheckUserLine(user);
+		}
+		return po;
 
 	}
 
@@ -307,5 +387,7 @@ public class UserData implements UserDataService {
 		userList=list1;
 		return list1;
 	}
+	
+	
 	
 }

@@ -19,6 +19,7 @@ Makefile
 Erlang
 TeX
 Java
+
 C++
 Assembly
 Haskell
@@ -62,3 +63,14 @@ Nimrod
 Ragel in Ruby Host
 Factor
 Haxe
+ColdFusion
+Forth
+FORTRAN
+OpenEdge ABL
+Augeas
+D
+Kotlin
+Batchfile
+ApacheConf
+F#
+Eiffel
