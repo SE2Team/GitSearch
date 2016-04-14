@@ -41,11 +41,12 @@ public class HomeController implements MyController{
     private FXUITest fxui;
 
     public void initialize() {
+        comboBox.getItems().clear();
         comboBox.getItems().addAll("项目","用户");
         comboBox.getSelectionModel().selectFirst();
         top.getToggles().addAll(search_pane,ustatistics,rstatistics);
         search_pane.setSelected(true);
-
+        searchText.setFocusTraversable(false);
     }
 
     public void setFxui(FXUITest fxui) {

@@ -46,12 +46,7 @@ public class RepSearchController implements MyController {
     private ToggleGroup timeGroup = new ToggleGroup();
     private ToggleGroup categoryGroup = new ToggleGroup();
 
-    /**
-     * 排序部件
-     */
-    private enum buttonState {
-        UNCLICK, UP, DOWN
-    }
+
 
     private ArrayList<Button> bs = new ArrayList<>();
     @FXML
