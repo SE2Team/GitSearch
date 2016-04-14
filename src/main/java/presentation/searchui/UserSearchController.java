@@ -81,7 +81,7 @@ public class UserSearchController implements MyController {
     private Button[] buttons;
 
     public void initialize() {
-        buttons = new Button[]{followers,repo};
+        buttons = new Button[]{followers, repo};
         for (Node n : flowPane2.getChildren()) {
             final ToggleButton t = (ToggleButton) n;
             t.setOnAction(new EventHandler<ActionEvent>() {
@@ -100,7 +100,7 @@ public class UserSearchController implements MyController {
         pgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(event.getCode()== KeyCode.ENTER){
+                if (event.getCode() == KeyCode.ENTER) {
                     handlePgNum();
                 }
             }
@@ -147,8 +147,8 @@ public class UserSearchController implements MyController {
     }
 
     /**
-     *
      * 实现倒序排序
+     *
      * @param vos
      * @return
      */
@@ -157,7 +157,7 @@ public class UserSearchController implements MyController {
         ArrayList temp = new ArrayList();
 
         for (int i = 0; i < vos.size(); i++) {
-            temp.add(vos.get(vos.size()-i-1));
+            temp.add(vos.get(vos.size() - i - 1));
         }
         return temp;
     }
@@ -177,8 +177,8 @@ public class UserSearchController implements MyController {
             vos.add(itr.next());
         }
 
-       updateMaxPages(vos.size());
-
+        updateMaxPages(vos.size());
+        page = 1;
         updatePage();
     }
 
@@ -263,7 +263,7 @@ public class UserSearchController implements MyController {
     @FXML
     private void handlePgNum() {
         try {
-            if(Integer.parseInt(pgNum.getText())>page_max||Integer.parseInt(pgNum.getText())<=0)
+            if (Integer.parseInt(pgNum.getText()) > page_max || Integer.parseInt(pgNum.getText()) <= 0)
                 throw new NumberFormatException();
             page = Integer.parseInt(pgNum.getText());
             updatePage();
@@ -287,8 +287,8 @@ public class UserSearchController implements MyController {
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }
-            if (upOrDown.isSelected()){
-                vos=handleUpAndDown(vos);
+            if (upOrDown.isSelected()) {
+                vos = handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -296,7 +296,7 @@ public class UserSearchController implements MyController {
 
         updateMaxPages(vos.size());
 
-        page=1;
+        page = 1;
         updatePage();
 
     }
@@ -310,15 +310,15 @@ public class UserSearchController implements MyController {
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }
-            if (upOrDown.isSelected()){
-                vos=handleUpAndDown(vos);
+            if (upOrDown.isSelected()) {
+                vos = handleUpAndDown(vos);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         updateMaxPages(vos.size());
 
-        page=1;
+        page = 1;
 
         updatePage();
 
@@ -330,14 +330,15 @@ public class UserSearchController implements MyController {
 
     /**
      * 更新最大页数
+     *
      * @param i
      */
     private void updateMaxPages(int i) {
         if (i == 0) {
             page_max = 0;
         } else {
-            page_max = (int) (i / 8 +1);//计算最大页数
-            if (i%6!=0)
+            page_max = (int) (i / 8);//计算最大页数
+            if (i % 6 != 0)
                 page_max++;
             if (page_max == 0) {
                 page_max = 1;
@@ -347,23 +348,24 @@ public class UserSearchController implements MyController {
 
     }
 
-    public void setColor(String text){
-        for(int i=0;i<buttons.length;i++){
-            if(buttons[i].getText().equals(text)){
-                buttons[i].setTextFill(Color.rgb(221,118,118));
-            }else{
+    public void setColor(String text) {
+        for (int i = 0; i < buttons.length; i++) {
+            if (buttons[i].getText().equals(text)) {
+                buttons[i].setTextFill(Color.rgb(221, 118, 118));
+            } else {
                 buttons[i].setTextFill(Color.WHITE);
             }
         }
     }
+
     @FXML
-    private void handleUpDown(){
+    private void handleUpDown() {
         ArrayList temp = new ArrayList();
 
         for (int i = 0; i < vos.size(); i++) {
             temp.add(vos.get(vos.size() - i - 1));
         }
-        vos=temp;
+        vos = temp;
         updatePage();
     }
 

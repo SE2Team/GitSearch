@@ -49,22 +49,22 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label layoutX="21.0" layoutY="319.0" prefHeight="39.0" prefWidth="99.0" text="用户注册数 " textFill="#f5efef" wrapText="true">
+                  <Label layoutX="21.0" layoutY="319.0" prefHeight="39.0" prefWidth="99.0" text="用户类型" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="21.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="注册年份 " textFill="#f5efef" wrapText="true">
+                  <Label layoutX="21.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="用户数量" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="112.0" layoutY="319.0" prefHeight="39.0" prefWidth="99.0" text="num" textFill="#f5efef" wrapText="true">
+                  <Label fx:id="type" layoutX="112.0" layoutY="319.0" prefHeight="39.0" prefWidth="133.0" text="type" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="112.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="year" textFill="#f5efef" wrapText="true">
+                  <Label fx:id="num" layoutX="112.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="num" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>

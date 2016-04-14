@@ -54,7 +54,7 @@
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="119.0" layoutY="338.0" prefHeight="39.0" prefWidth="99.0" text="num" textFill="#f5efef" wrapText="true">
+                  <Label fx:id="num" layoutX="119.0" layoutY="338.0" prefHeight="39.0" prefWidth="99.0" text="num" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Label layoutX="119.0" layoutY="379.0" prefHeight="39.0" prefWidth="99.0" text="year" textFill="#f5efef" wrapText="true">
+                  <Label fx:id="year" layoutX="119.0" layoutY="379.0" prefHeight="39.0" prefWidth="99.0" text="year" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>

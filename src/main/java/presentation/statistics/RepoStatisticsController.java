@@ -148,8 +148,9 @@ public class RepoStatisticsController implements MyController {
                     chartPane.getChildren().addAll(anchorPane);
                     RepoCreatTimeController repoCreatTimeController = loader.getController();
                     repoCreatTimeController.getCreatTimeChart().setData(getPieData(bl.getRepoCreated()));
-                    pieTxt(repoCreatTimeController.getCreatTimeChart());
+//                    pieTxt(repoCreatTimeController.getCreatTimeChart());
                     setupAnimation(repoCreatTimeController.getCreatTimeChart().getData());
+                    repoCreatTimeController.repaint();
 
                     break;
                 case "Fork":

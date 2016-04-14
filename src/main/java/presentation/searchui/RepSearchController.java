@@ -296,6 +296,7 @@ public class RepSearchController implements MyController {
         while (itr.hasNext()) {
             vos.add(itr.next());
         }
+        page=1;
 
         updateMaxPages(vos.size());
         updatePage();
