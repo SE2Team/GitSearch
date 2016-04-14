@@ -11,7 +11,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart id="RepContri" fx:id="contributorsChart" layoutX="9.0" layoutY="10.0" legendVisible="false" prefHeight="583.0" prefWidth="1000.0" title="项目数-贡献者分布表">
+                  <BarChart id="RepContri" fx:id="contributorsChart" barGap="30.0" layoutX="9.0" layoutY="10.0" legendVisible="false" prefHeight="583.0" prefWidth="1000.0" title="项目数-贡献者分布表">
                     <xAxis>
                       <CategoryAxis label="贡献者数量" side="BOTTOM" />
                     </xAxis>

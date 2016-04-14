@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
@@ -10,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="67.5" prefWidth="954.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.SubUserInfoController">
    <children>
-      <Label id="UserName" fx:id="name" layoutX="8.0" layoutY="1.0" onMouseClicked="#handleCheck" prefHeight="29.0" prefWidth="622.0" stylesheets="@../../default.css" text="UserName" textFill="#60bde8">
+      <Label id="UserName" fx:id="name" layoutX="11.0" layoutY="1.0" onMouseClicked="#handleCheck" prefHeight="29.0" prefWidth="622.0" stylesheets="@../../default.css" text="UserName" textFill="#60bde8">
          <font>
             <Font size="22.0" />
          </font>
@@ -25,24 +26,24 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="15.0" minHeight="8.0" prefHeight="15.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="15.0" minHeight="8.0" prefHeight="15.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Followers" textFill="#00000097">
-               <font>
-                  <Font name="Calibri" size="22.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" prefHeight="26.0" prefWidth="191.0" text="Repositories" textFill="#00000097" GridPane.columnIndex="1">
-               <font>
-                  <Font name="Calibri" size="22.0" />
-               </font>
-            </Label>
             <Label fx:id="followers" text="0" textFill="#00000097" GridPane.rowIndex="1" />
             <Label fx:id="repos" text="0" textFill="#00000097" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fitHeight="23.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/contributors.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="23.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../../Images/repository.png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
-      <Label fx:id="id" layoutX="10.0" layoutY="30.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
+      <Label fx:id="id" layoutX="13.0" layoutY="30.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
