@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import po.RepositoryPO;
+import po.StaStrPO;
 
 
 public class Test {
@@ -18,8 +19,8 @@ public class Test {
 //		refresh.updateHas();
 //		refresh.updateRelated();
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		System.out.println(list.get(3200).getCollaborators_count());
-		System.out.println(list.get(3200).getContributor());
+		StaStrPO po=new StatisticsData().getScores(list.get(0));
+		System.out.println(po.getInt().get(2));
 //		
 	}
 }
