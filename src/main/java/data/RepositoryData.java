@@ -98,9 +98,9 @@ public class RepositoryData implements RepositoryDataService {
 			}
 			
 			
-			if(obj.has("contributors_count")){
-				contributor=obj.getInt("contributors_count");
-			}
+			
+				contributor=Integer.parseInt(contrList.get(j));
+			
 			
 			if(obj.has("forks")){
 				forks=obj.getInt("forks");
@@ -114,9 +114,9 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			if(obj.has("collaborators_count")){
-				 collaborators_count=obj.getInt("collaborators_count");
-			}
+			
+			collaborators_count=Integer.parseInt(collaList.get(j));;
+			
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
 			}else{
