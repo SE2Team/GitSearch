@@ -15,7 +15,7 @@
       <AnchorPane maxHeight="-Infinity" prefHeight="26.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
             <MenuBar id="MenuBar" layoutX="14.0" layoutY="-2.0" prefHeight="60.0" prefWidth="1280.0" stylesheets="@../../default.css" AnchorPane.leftAnchor="0.0" />
-            <TextField fx:id="searchText" layoutX="881.0" layoutY="11.0" prefHeight="32.0" prefWidth="222.0" promptText="Search" />
+            <TextField fx:id="searchText" layoutX="881.0" layoutY="11.0" prefHeight="32.0" prefWidth="222.0" promptText="关键字为空时查询所有内容" />
             <ImageView fitHeight="61.0" fitWidth="65.0" layoutX="818.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="818.0">
                <image>
                   <Image url="@../../Images/home.png" />

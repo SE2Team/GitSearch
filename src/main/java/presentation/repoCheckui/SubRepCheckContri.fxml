@@ -15,7 +15,7 @@
             <Image url="@../../Images/home.png" />
          </image>
       </ImageView>
-      <Label id="Contributor" fx:id="label" layoutX="51.0" layoutY="15.0" onMouseClicked="#handleCheck" text="Contributor`s name" textFill="#5799d3">
+      <Label id="Contributors" fx:id="label" layoutX="51.0" layoutY="15.0" onMouseClicked="#handleCheck" stylesheets="@../../default.css" text="Contributor`s name" textFill="#5799d3">
          <font>
             <Font name="Calibri" size="21.0" />
          </font>

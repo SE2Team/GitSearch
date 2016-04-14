@@ -178,6 +178,12 @@ public class RepoStatisticsController implements MyController {
 
                     RepoContriController repoContriController = loader.getController();
                     repoContriController.getContributorsChart().setData(getData(bl.getContributor()));
+//                    ObservableList<XYChart.Series<String, Integer>> data=getData(bl.getContributor());
+//
+//                    for(int i=0;i<data.size();i++){
+//                        data.get(i).setNode(new HoveredThresholdNode(0,));
+//                    }
+
                     break;
                 case "Collaborators":
                     str = "RepoColla.fxml";
