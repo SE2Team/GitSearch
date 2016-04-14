@@ -101,11 +101,11 @@ public class RepositoryVO {
     }
 
     public String getUpdated() {
-        return this.updated;
+    	return this.updated.split("T")[0];
     }
 
     public String getCreated() {
-        return this.created;
+    	return this.created.split("T")[0];
     }
 
     public boolean getFork() {
