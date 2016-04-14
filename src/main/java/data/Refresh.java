@@ -115,30 +115,32 @@ public class Refresh {
 	public void updatedC() throws IOException{
 		RepositoryData data=new RepositoryData();
 		GetData data2=new GetData("contributor");
-	//	GetData data3=new GetData("collaborator");
+		GetData data3=new GetData("collaborator");
 		ArrayList<RepositoryPO> list=data.getRepositories();
 	//	System.out.println(list.size());
 		String str="";
 		RepositoryPO po=null; 
 		String[] split=new String[2];
-		
+		ArrayList<String> listStr=new ArrayList<>();
 		for(int i=0;i<list.size();i++){
-			str="";
+//			str="";
 			split=list.get(i).getName().split("/");
 			po=data.checkRepository(split[0], split[1]);
-			for(int j=0;j<po.getContributors().size();j++){
-				str=po.getContributors().get(j)+";"+str;
-			}
-			str=str+";"+list.get(i).getName();
-			data2.writeDataAdd(str);
-			System.out.println(i);
-//			str="";
-//			for(int j=0;j<po.getCollaborators().size();j++){
-//				str=po.getCollaborators().get(j)+";"+str;
+//			for(int j=0;j<po.getContributors().size();j++){
+//				str=po.getContributors().get(j)+";"+str;
 //			}
 //			str=str+";"+list.get(i).getName();
-//			data3.writeDataAdd(str);
+//			data2.writeDataAdd(str);
+			System.out.println(i);
+			str="";
+			for(int j=0;j<po.getCollaborators().size();j++){
+				str=po.getCollaborators().get(j)+";"+str;
+			}
+			str=str+";"+list.get(i).getName();
+			listStr.add(str);
+			
 		}
+		data3.writeData(listStr);
 	} 
 	
 	public void updatedCompany() throws IOException{

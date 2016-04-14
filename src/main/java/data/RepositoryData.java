@@ -38,6 +38,8 @@ public class RepositoryData implements RepositoryDataService {
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
 		
+		ArrayList<String> collaList=new GetData("collaborator").readData();
+		ArrayList<String> contrList=new GetData("contributor").readData();
 		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
@@ -95,6 +97,7 @@ public class RepositoryData implements RepositoryDataService {
 				s2="";
 			}
 			
+			
 			if(obj.has("contributors_count")){
 				contributor=obj.getInt("contributors_count");
 			}
@@ -118,6 +121,18 @@ public class RepositoryData implements RepositoryDataService {
 				name=obj.getString("full_name");
 			}else{
 				name="";
+			}
+			
+			for(int q=0;q<collaList.size();q++){
+				String[] str=collaList.get(q).split(";");
+				if(str[str.length-1].equals(name)){
+					collaborators_count=str.length-1;
+				}
+				
+				String[] strings=contrList.get(q).split(";");
+				if(str[strings.length-1].equals(name)){
+					collaborators_count=strings.length-1;
+				}		
 			}
 			
 			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
