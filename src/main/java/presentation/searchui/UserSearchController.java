@@ -352,8 +352,4 @@ public class UserSearchController implements MyController {
             }
         }
     }
-    @FXML
-    private void handleJumpPage(){
-        System.out.println("jiji");
-    }
 }

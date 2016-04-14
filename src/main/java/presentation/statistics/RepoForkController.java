@@ -2,6 +2,7 @@ package presentation.statistics;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.Chart;
 import presentation.FXUITest;
 import presentation.common.MyController;
 

@@ -2,27 +2,25 @@ package presentation.statistics;
 
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
-import javafx.animation.Animation;
-import javafx.animation.FadeTransition;
-import javafx.animation.PathTransition;
+import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Path;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.StaStrVO;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 /**
@@ -30,29 +28,27 @@ import java.io.IOException;
  */
 public class RepoStatisticsController implements MyController {
     private FXUITest fxuiTest;
-    private StatisticsBLService bl=new StatisticsController();
+    private StatisticsBLService bl = new StatisticsController();
+
     @FXML
     private ComboBox chartType;
+
     @FXML
-    private TabPane tabPane;
-    @FXML
-    private BarChart<String,Integer> langChart;
+    private BarChart<String, Integer> langChart;
     @FXML
     private PieChart creatTimeChart;
     @FXML
-    private BarChart<String,Integer> forkChart;
+    private BarChart<String, Integer> forkChart;
     @FXML
-    private BarChart<String,Integer> starChart;
+    private BarChart<String, Integer> starChart;
     @FXML
-    private LineChart<String,Integer> contributorsChart;
+    private LineChart<String, Integer> contributorsChart;
     @FXML
-    private LineChart<String,Integer> collaboratorsChart;
+    private LineChart<String, Integer> collaboratorsChart;
     @FXML
     private CategoryAxis xlang;
     @FXML
     private AnchorPane chartPane;
-
-
 
 
     public void initialize() {
@@ -76,99 +72,144 @@ public class RepoStatisticsController implements MyController {
 //        ft.setCycleCount(0);
 //        ft.setAutoReverse(true);
 //        ft.play();
-
-
+        chartType.getItems().clear();
+        chartType.getItems().addAll("Language", "Create Time", "Fork", "Star", "Contributors", "Collaborators");
+        chartType.getSelectionModel().selectFirst();
+        handleChange();
     }
 
     public void setFxui(FXUITest fxui) {
-        this.fxuiTest=fxui;
+        this.fxuiTest = fxui;
     }
 
     public void repaint() {
-        FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("RepoLan.fxml"));
-        try {
-            AnchorPane anchorPane=loader.load();
-            RepoLanController controller=loader.getController();
-            controller.getLangChart().setData(getData(bl.getLanguage()));
-            chartPane.getChildren().addAll(anchorPane);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
-        return getData(vo,true);
+
+    private ObservableList<XYChart.Series<String, Integer>> getData(StaStrVO vo) {
+        return getData(vo, true);
     }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo,Boolean b){
-        ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
-        XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<500;i++){
-            if (vo.getStr().get(vo.getStr().size()-1-i).equalsIgnoreCase("Unknown")){
+
+    private ObservableList<XYChart.Series<String, Integer>> getData(StaStrVO vo, Boolean b) {
+        ObservableList<XYChart.Series<String, Integer>> observableList = FXCollections.observableArrayList();
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 500; i++) {
+            if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-            series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==9&&b){
-                series=addOthers(series,vo.getSum(10));
+            series.getData().add(new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i)));
+            if (i == 9 && b) {
+                series = addOthers(series, vo.getSum(10));
             }
         }
         observableList.add(series);
         return observableList;
     }
 
-    private ObservableList<PieChart.Data> getPieData(StaStrVO vo){
-        ObservableList<PieChart.Data> observableList=FXCollections.observableArrayList();
-        for (int i=0;i<vo.getStr().size()&&i<vo.getInt().size()&&i<7;i++){
-            observableList.addAll(new PieChart.Data(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==6){
-                observableList.addAll(new PieChart.Data("Others",vo.getSum()));
+    private ObservableList<PieChart.Data> getPieData(StaStrVO vo) {
+        ObservableList<PieChart.Data> observableList = FXCollections.observableArrayList();
+        for (int i = 0; i < vo.getStr().size() && i < vo.getInt().size() && i < 7; i++) {
+            observableList.addAll(new PieChart.Data(vo.getStr().get(i), vo.getInt().get(i)));
+            if (i == 6) {
+                observableList.addAll(new PieChart.Data("Others", vo.getSum()));
             }
         }
         return observableList;
     }
 
-    private XYChart.Series addOthers(XYChart.Series series,Integer i){
-        series.getData().add(new XYChart.Data<>("Others",i));
+    private XYChart.Series addOthers(XYChart.Series series, Integer i) {
+        series.getData().add(new XYChart.Data<>("Others", i));
         return series;
     }
 
     @FXML
-    private void handleTab(){
+    private void handleChange() {
+        chartPane.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader();
+        String str = "";
+        AnchorPane anchorPane=new AnchorPane();
+
         try {
-            switch (tabPane.getSelectionModel().getSelectedIndex()){
-                case 0:
-//                    if (langChart.getData().size()==0) {
-                        langChart.setData(getData(bl.getLanguage()));
-//                    }
+            switch (chartType.getSelectionModel().getSelectedItem().toString()) {
+                case "Language":
+                    str = "RepoLan.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+                    RepoLanController controller = loader.getController();
+                    controller.getLangChart().setData(getData(bl.getLanguage()));
                     break;
-                case 1:
-//                    if(creatTimeChart.getData().isEmpty()) {
-                        creatTimeChart.setData(getPieData(bl.getRepoCreated()));
-//                    }
+                case "Create Time":
+                    str = "RepoCreateTime.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+
+                    RepoCreatTimeController repoCreatTimeController = loader.getController();
+                    repoCreatTimeController.getCreatTimeChart().setData(getPieData(bl.getRepoCreated()));
+                    pieTxt(repoCreatTimeController.getCreatTimeChart());
                     break;
-                case 2:
-//                    if(forkChart.getData().isEmpty()){
-                        forkChart.setData(getData(bl.getForks()));
-//                    }
+                case "Fork":
+                    str = "RepoFork.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+
+                    RepoForkController repoForkController = loader.getController();
+                    repoForkController.getForkChart().setData(getData(bl.getForks()));
                     break;
-                case 3:
-//                    if (starChart.getData().isEmpty()){
-                        starChart.setData(getData(bl.getStar()));
-//                    }
+                case "Star":
+                    str = "RepoStar.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+
+                    RepoStarController repoStarController = loader.getController();
+                    repoStarController.getStarChart().setData(getData(bl.getStar()));
                     break;
-                case 4:
-//                    if(contributorsChart.getData().isEmpty()) {
-                        contributorsChart.setData(getData(bl.getContributor(), false));
-//                    }
+                case "Contributors":
+                    str = "RepoContri.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+
+                    RepoContriController repoContriController = loader.getController();
+                    repoContriController.getContributorsChart().setData(getData(bl.getContributor()));
                     break;
-                case 5:
-//                    if (collaboratorsChart.getData().isEmpty()){
-                        collaboratorsChart.setData(getData(bl.getCollaborator(),false));
-//                    }
+                case "Collaborators":
+                    str = "RepoColla.fxml";
+                    loader.setLocation(this.getClass().getResource(str));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+
+                    RepoCollaController repoCollaController = loader.getController();
+                    repoCollaController.getCollaboratorsChart().setData(getData(bl.getCollaborator()));
+                    break;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
+    private void pieTxt(PieChart pieChart){
+        final Label caption = new Label("");
+        caption.setTextFill(Color.DARKORANGE);
+        caption.setStyle("-fx-font: 24 arial;");
+        chartPane.getChildren().addAll(caption);
+        for (final PieChart.Data data : pieChart.getData()) {
+            data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+                    new EventHandler<MouseEvent>() {
+                        @Override public void handle(MouseEvent e) {
+//                            caption.setTranslateX(e.getSceneX());
+//                            caption.setTranslateY(e.getSceneY());
+                            caption.setLayoutX(e.getSceneX());
+                            caption.setLayoutX(e.getSceneY());
+
+                            caption.setText(String.valueOf(data.getPieValue()) + "%");
+                        }
+                    });
+        }
+    }
 }
