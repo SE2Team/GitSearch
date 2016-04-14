@@ -208,6 +208,16 @@ public class Refresh {
 	public void updateCollaCount() throws IOException{
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		ArrayList<String> list2=new ArrayList<>();
+		ArrayList<String> contributor=new GetData("collaborator").readData();
+		for(int i=0;i<list.size();i++){
+			for(int p=0;p<contributor.size();p++){
+				String[] strings=contributor.get(i).split(";");
+				if(strings[strings.length-1].equals(list.get(i).getName())){
+					list.get(i).setCollaborator(strings.length-2);
+				}
+			}
+		}
+		
 		for(int i=0;i<list.size();i++){
 			list2.add(list.get(i).getCollaborators_count()+"");
 		}
@@ -218,6 +228,16 @@ public class Refresh {
 	public void updateContrCount() throws IOException{
 		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
 		ArrayList<String> list2=new ArrayList<>();
+		ArrayList<String> contributor=new GetData("contributor").readData();
+		for(int i=0;i<list.size();i++){
+			for(int p=0;p<contributor.size();p++){
+				String[] strings=contributor.get(i).split(";");
+				if(strings[strings.length-1].equals(list.get(i).getName())){
+					list.get(i).setContributor(strings.length-2);
+				}
+			}
+		}
+		
 		for(int i=0;i<list.size();i++){
 			list2.add(list.get(i).getContributor()+"");
 		}

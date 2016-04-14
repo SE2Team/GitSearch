@@ -99,7 +99,7 @@ public class RepositoryData implements RepositoryDataService {
 			
 			
 			
-				contributor=Integer.parseInt(contrList.get(j));
+				
 			
 			
 			if(obj.has("forks")){
@@ -114,7 +114,7 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			
+			contributor=Integer.parseInt(contrList.get(j));
 			collaborators_count=Integer.parseInt(collaList.get(j));;
 			
 			if(obj.has("full_name")){
