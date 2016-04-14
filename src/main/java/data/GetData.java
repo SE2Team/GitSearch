@@ -145,4 +145,13 @@ public class GetData {
 //			get2.writeDataAdd(po.getLogin()+";"+po.getRelated().size());
 //		}
 //统计用户相关项目与用户拥有项目数	
+		public void clearData(String path) {
+			try {
+				FileWriter fw = new FileWriter(fatherPath + path + ".txt", false);
+				fw.write("");
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 }
