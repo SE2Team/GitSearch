@@ -64,11 +64,10 @@ public class UserCheckController implements MyController{
         String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
         company.setText(comp);
         followers.setText(String.valueOf(vo.getFollowers()));
-        String emailText=vo.getEmail()==""?"Unknown":vo.getCompany();
+        String emailText=vo.getEmail()==""?"Unknown":vo.getEmail();
         email.setText(emailText);
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
-        company.setText(vo.getCompany());
         try {
             setList();
         } catch (IOException e) {
@@ -99,10 +98,10 @@ public class UserCheckController implements MyController{
                 /**
                  * 最多放4+1个
                  */
-                if (i >= 3) {
-                    poprepo.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (i >= 3) {
+//                    poprepo.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
         if(vo.getRelated()!=null) {
@@ -111,10 +110,10 @@ public class UserCheckController implements MyController{
                 /**
                  * 最多放4+1个
                  */
-                if (j >= 3) {
-                    relarepo.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (j >= 3) {
+//                    relarepo.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
     }

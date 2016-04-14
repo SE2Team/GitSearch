@@ -352,4 +352,15 @@ public class UserSearchController implements MyController {
             }
         }
     }
+    @FXML
+    private void handleUpDown(){
+        ArrayList temp = new ArrayList();
+
+        for (int i = 0; i < vos.size(); i++) {
+            temp.add(vos.get(vos.size() - i - 1));
+        }
+        vos=temp;
+        updatePage();
+    }
+
 }
