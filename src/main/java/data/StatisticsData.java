@@ -26,6 +26,36 @@ public class StatisticsData implements StatisticsDataService{
 		int forks_num=9609;
 		int contributors_num=437;
 		int  collaborators_num=677;
+		
+		if(po.getOpen_issues()>=1000){
+			issues_num=10;
+		}else {
+			issues_num=po.getOpen_issues()/100+1;
+		}
+		
+		if(po.getStargazers()>=30000){
+			stars_num=10;
+		}else{
+			stars_num=po.getStargazers()/3000+1;
+		}
+		
+		if(po.getForks()>=9000){
+			forks_num=10;
+		}else{
+			forks_num=po.getForks()/900+1;
+		}
+		
+		if(po.getContributor()>=400){
+			contributors_num=10;
+		}else{
+			contributors_num=po.getContributor()/40+1;
+		}
+		
+		if(po.getCollaborators_count()>=600){
+			collaborators_num=10;
+		}else{
+			collaborators_num=po.getCollaborators_count()/60+1;
+		}
 //		RepositoryData data=new RepositoryData();
 //		ArrayList<RepositoryPO> list=data.getRepositories();
 //		issues_num=list.get(0).getOpen_issues();
@@ -65,12 +95,14 @@ public class StatisticsData implements StatisticsDataService{
 //		 	System.out.println(forks_num);
 //		 	System.out.println(contributors_num);
 //		 	System.out.println(collaborators_num);
-		 		
-		 	listInt.add((po.getOpen_issues()/issues_num)*10+1);
-		 	listInt.add((po.getStargazers()/stars_num)*10+1);
-		 	listInt.add((po.getForks()/forks_num)*10+1);
-		 	listInt.add((po.getContributor()/contributors_num)*10+1);
-		 	listInt.add((po.getCollaborators_count()/collaborators_num)*10+1);
+		 	
+		 	
+		 	
+		 	listInt.add(issues_num);
+		 	listInt.add(stars_num);
+		 	listInt.add(forks_num);
+		 	listInt.add(contributors_num);
+		 	listInt.add(collaborators_num);
 		 	return new StaStrPO(listStr, listInt);
 		 
 	}
