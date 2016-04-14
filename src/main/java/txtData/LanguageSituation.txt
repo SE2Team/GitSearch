@@ -1,0 +1,399 @@
+;[219981]:;[Ruby]:mojombo/grit
+;[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788]:;[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell]:mojombo/god
+;[145649]:;[Ruby]:technoweenie/restful-authentication
+;[132960]:;[Ruby]:technoweenie/attachment_fu
+;[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148]:;[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript]:macournoyer/thin
+;[130047, 20838];[130047, 20838]:;[Ruby, Shell];[Ruby, Shell]:schacon/ruby-git
+;[190560]:;[Ruby]:mojombo/chronic
+;[43495, 19791];[43495, 19791]:;[Ruby, Liquid];[Ruby, Liquid]:cristibalan/braid
+;[42345]:;[Ruby]:engineyard/eycap
+;[64289, 312];[64289, 312]:;[Ruby, HTML];[Ruby, HTML]:sevenwire/forgery
+;[114700]:;[Ruby]:adamwiggins/rush
+;[74135]:;[Ruby]:collectiveidea/audited
+;[37165]:;[Ruby]:collectiveidea/acts_as_geocodable
+;[90413, 927];[90413, 927]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/graticule
+;[35146, 1014];[35146, 1014]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/tinder
+;[162736]:;[Ruby]:toretore/barby
+;[155418]:;[Ruby]:rsl/stringex
+;[129090]:;[Ruby]:collectiveidea/awesome_nested_set
+;[114253, 1371, 674];[114253, 1371, 674];[114253, 1371, 674]:;[Ruby, Groff, Shell];[Ruby, Groff, Shell];[Ruby, Groff, Shell]:mislav/will_paginate
+;[41909, 31649, 14979];[41909, 31649, 14979];[41909, 31649, 14979]:;[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS]:lukeredpath/clickatell
+;[170029]:;[Ruby]:ctran/annotate_models
+;[134701]:;[Ruby]:defunkt/github-gem
+;[264316]:;[Ruby]:aasm/aasm
+;[962316]:;[VimL]:scrooloose/vimfiles
+;[312779, 381];[312779, 381]:;[Ruby, Perl];[Ruby, Perl]:nathansobo/treetop
+;[57396, 721];[57396, 721]:;[JavaScript, Ruby];[JavaScript, Ruby]:osteele/functional-javascript
+;[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211]:;[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript]:jruby/warbler
+;[19548]:;[Ruby]:ci-reporter/ci_reporter
+;[118580]:;[Python]:pingswept/pysolar
+;[113879]:;[Ruby]:seangeo/ratom
+;[57178]:;[Ruby]:ActsAsParanoid/acts_as_paranoid
+;[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146]:;[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile]:yuri/sputnik
+;[24927]:;[Ruby]:JackDanger/permanent_records
+;[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926]:;[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS]:composite-primary-keys/composite_primary_keys
+;[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885]:;[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile]:timburks/nu
+;[67572]:;[Ruby]:minimagick/minimagick
+;[13936]:;[JavaScript]:kemayo/maphilight
+;[36290]:;[Emacs Lisp]:nex3/perspective-el
+;[174622]:;[VimL]:scrooloose/nerdtree
+;[104334, 1887];[104334, 1887]:;[VimL, Ruby];[VimL, Ruby]:scrooloose/nerdcommenter
+;[215083]:;[Ruby]:topfunky/gruff
+;[19467]:;[Ruby]:jackdempsey/acts_as_commentable
+;[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968]:;[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell]:arclanguage/anarki
+;[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434]:;[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS]:timcharper/calendar_date_select
+;[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383]:;[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby]:sunny/edith
+;[59434]:;[Ruby]:schacon/ticgit
+;[176406]:;[Ruby]:mbleigh/acts-as-taggable-on
+;[116759, 33274];[116759, 33274]:;[Ruby, CoffeeScript];[Ruby, CoffeeScript]:nathansobo/hyperarchy
+;[143973, 1752];[143973, 1752]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Cork
+;[15223]:;[Ruby]:mbleigh/princely
+;[200007, 1074];[200007, 1074]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:tsgates/git-emacs
+;[188524, 2769, 1333];[188524, 2769, 1333];[188524, 2769, 1333]:;[C, Shell, Makefile];[C, Shell, Makefile];[C, Shell, Makefile]:kr/beanstalkd
+;[200380]:;[Ruby]:jmettraux/rufus-scheduler
+;[26740]:;[Ruby]:mbleigh/seed-fu
+;[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291]:;[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS]:madrobby/scriptaculous
+;[130198]:;[Ruby]:whomwah/rqrcode
+;[15797]:;[Ruby]:relevance/log_buddy
+;[67695, 15676];[67695, 15676]:;[Ruby, JavaScript];[Ruby, JavaScript]:jmettraux/rufus-decision
+;[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789]:;[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell]:jeremyevans/scaffolding_extensions
+;[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657]:;[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege]:napcs/docbook
+;[237817]:;[Ruby]:ianwhite/resources_controller
+;[220043, 538];[220043, 538]:;[Objective-C, C];[Objective-C, C]:fjolnir/DatabaseKit
+;[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255]:;[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL]:relevance/etc
+;[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831]:;[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java]:DAddYE/lipsiadmin
+;[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378]:;[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML]:ambethia/recaptcha
+;[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248]:;[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf]:xaviershay/enki
+;[94867, 85577, 127];[94867, 85577, 127];[94867, 85577, 127]:;[Ruby, C, Shell];[Ruby, C, Shell];[Ruby, C, Shell]:rowland/fb
+;[20564]:;[Ruby]:tra/spawnling
+;[411459]:;[Ruby]:pat/thinking-sphinx
+;[4406, 2786];[4406, 2786]:;[Ruby, Cucumber];[Ruby, Cucumber]:thoughtbot/shoulda
+;[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476]:;[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl]:medwards/free-library-on-rails
+;[235552, 175969, 1175];[235552, 175969, 1175];[235552, 175969, 1175]:;[PHP, Ruby, HTML];[PHP, Ruby, HTML];[PHP, Ruby, HTML]:pat/riddle
+;[31327, 576];[31327, 576]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Buffet
+;[40502, 712];[40502, 712]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/StealYourCarbon
+;[60664]:;[JavaScript]:draganbabic/uni-form
+;[297391, 284];[297391, 284]:;[Ruby, Shell];[Ruby, Shell]:rsim/ruby-plsql
+;[83096, 7129, 788];[83096, 7129, 788];[83096, 7129, 788]:;[Ruby, C++, C];[Ruby, C++, C];[Ruby, C++, C]:jasonroelofs/rbgccxml
+;[132172, 21172, 69];[132172, 21172, 69];[132172, 21172, 69]:;[Ruby, Yacc, CSS];[Ruby, Yacc, CSS];[Ruby, Yacc, CSS]:sparklemotion/csspool
+;[156178]:;[Ruby]:tapajos/brazilian-rails
+;[21723]:;[Ruby]:joshfrench/rakismet
+;[531838]:;[Ruby]:Shopify/active_shipping
+;[86263, 2038];[86263, 2038]:;[JavaScript, Ruby];[JavaScript, Ruby]:jmettraux/ruote-fluo
+;[192873]:;[Ruby]:krobertson/dm-paperclip
+;[146862]:;[PHP]:speedmax/h2o-php
+;[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150]:;[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL]:jkramer/shell-fm
+;[33446, 398];[33446, 398]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:pezra/rspec-mode
+;[97690, 858];[97690, 858]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Panda
+;[55520]:;[Ruby]:mattetti/googlecharts
+;[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354]:;[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell]:beppu/squatting
+;[260932, 92185, 14680];[260932, 92185, 14680];[260932, 92185, 14680]:;[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby]:madrobby/scripty2
+;[32315, 31];[32315, 31]:;[Clojure, HTML];[Clojure, HTML]:weavejester/compojure
+;[82767, 306];[82767, 306]:;[Ruby, Shell];[Ruby, Shell]:TwP/bones
+;[58031]:;[Ruby]:infused/dbf
+;[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577]:;[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic]:jgm/peg-markdown
+;[21064]:;[Ruby]:purcell/darcs-to-git
+;[90894]:;[Python]:purcell/airspeed
+;[125057, 2456];[125057, 2456]:;[Python, Ruby];[Python, Ruby]:dbr/tvdb_api
+;[45116, 13257];[45116, 13257]:;[R, C];[R, C]:rdpeng/filehash
+;[40639, 33745, 20640];[40639, 33745, 20640];[40639, 33745, 20640]:;[C, Java, Ruby];[C, Java, Ruby];[C, Java, Ruby]:codahale/bcrypt-ruby
+;[280598, 72882];[280598, 72882]:;[Ruby, Liquid];[Ruby, Liquid]:Shopify/liquid
+;[103545]:;[Ruby]:judofyr/ruby-oembed
+;[128931, 53831, 1610];[128931, 53831, 1610];[128931, 53831, 1610]:;[Perl, Puppet, Ruby];[Perl, Puppet, Ruby];[Perl, Puppet, Ruby]:duritong/puppet-nagios
+;[88445, 24315];[88445, 24315]:;[Ruby, JavaScript];[Ruby, JavaScript]:relevance/tarantula
+;[123720, 11573, 1976];[123720, 11573, 1976];[123720, 11573, 1976]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:potionfactory/potionstore
+;[20201]:;[Ruby]:rmm5t/strip_attributes
+;[49035, 28539, 939];[49035, 28539, 939];[49035, 28539, 939]:;[Shell, Ruby, Perl];[Shell, Ruby, Perl];[Shell, Ruby, Perl]:mislav/dotfiles
+;[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528]:;[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal]:duritong/puppet-munin
+;[65441]:;[Python]:duplys/git-issues
+;[107969]:;[Ruby]:Shopify/active_fulfillment
+;[7604]:;[Ruby]:chrislloyd/gravtastic
+;[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875]:;[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript]:blynn/gitmagic
+;[13189, 143];[13189, 143]:;[Erlang, Makefile];[Erlang, Makefile]:tim/erlang-oauth
+;[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476]:;[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl]:erector/erector
+;[33659]:;[R]:hadley/evaluate
+;[176077]:;[Ruby]:Ruleby/ruleby
+;[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075]:;[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile]:hadley/ggplot2-book
+;[22169, 1411, 360];[22169, 1411, 360];[22169, 1411, 360]:;[Ruby, HTML, CSS];[Ruby, HTML, CSS];[Ruby, HTML, CSS]:activescaffold/active_scaffold_sortable
+;[148809, 58];[148809, 58]:;[Ruby, Shell];[Ruby, Shell]:lutzky/ttime
+;[59577, 20105];[59577, 20105]:;[Java, Groovy];[Java, Groovy]:raykrueger/hibernate-memcached
+;[105763, 8756, 885];[105763, 8756, 885];[105763, 8756, 885]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:bostonrb/bostonrb
+;[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545]:;[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS]:svenfuchs/routing-filter
+;[291689, 223];[291689, 223]:;[Ruby, Shell];[Ruby, Shell]:TwP/logging
+;[41031]:;[PHP]:jmathai/epiphany
+;[52403, 4642];[52403, 4642]:;[Ruby, JavaScript];[Ruby, JavaScript]:kbingman/paperclipped
+;[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412]:;[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell]:davidfstr/rdiscount
+;[51023]:;[Ruby]:eagleas/webmoney
+;[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32]:;[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript]:jlong/serve
+;[215796, 1179];[215796, 1179]:;[Perl, Perl6];[Perl, Perl6]:pjf/autodie
+;[53351, 98];[53351, 98]:;[Perl, C];[Perl, C]:pjf/ipc-system-simple
+;[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686]:;[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy]:davidB/scala-maven-plugin
+;[90197]:;[Ruby]:commonthread/flickr_fu
+;[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410]:;[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell]:mutle/fu2
+;[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672]:;[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme]:acangiano/ruby-benchmark-suite
+;[219981]:;[Ruby]:mojombo/grit
+;[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788]:;[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell]:mojombo/god
+;[145649]:;[Ruby]:technoweenie/restful-authentication
+;[132960]:;[Ruby]:technoweenie/attachment_fu
+;[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148]:;[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript]:macournoyer/thin
+;[130047, 20838];[130047, 20838]:;[Ruby, Shell];[Ruby, Shell]:schacon/ruby-git
+;[190560]:;[Ruby]:mojombo/chronic
+;[43495, 19791];[43495, 19791]:;[Ruby, Liquid];[Ruby, Liquid]:cristibalan/braid
+;[42345]:;[Ruby]:engineyard/eycap
+;[64289, 312];[64289, 312]:;[Ruby, HTML];[Ruby, HTML]:sevenwire/forgery
+;[114700]:;[Ruby]:adamwiggins/rush
+;[74135]:;[Ruby]:collectiveidea/audited
+;[37165]:;[Ruby]:collectiveidea/acts_as_geocodable
+;[90413, 927];[90413, 927]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/graticule
+;[35146, 1014];[35146, 1014]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/tinder
+;[162736]:;[Ruby]:toretore/barby
+;[155418]:;[Ruby]:rsl/stringex
+;[129090]:;[Ruby]:collectiveidea/awesome_nested_set
+;[114253, 1371, 674];[114253, 1371, 674];[114253, 1371, 674]:;[Ruby, Groff, Shell];[Ruby, Groff, Shell];[Ruby, Groff, Shell]:mislav/will_paginate
+;[41909, 31649, 14979];[41909, 31649, 14979];[41909, 31649, 14979]:;[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS]:lukeredpath/clickatell
+;[170029]:;[Ruby]:ctran/annotate_models
+;[134701]:;[Ruby]:defunkt/github-gem
+;[264316]:;[Ruby]:aasm/aasm
+;[962316]:;[VimL]:scrooloose/vimfiles
+;[312779, 381];[312779, 381]:;[Ruby, Perl];[Ruby, Perl]:nathansobo/treetop
+;[57396, 721];[57396, 721]:;[JavaScript, Ruby];[JavaScript, Ruby]:osteele/functional-javascript
+;[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211]:;[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript]:jruby/warbler
+;[19548]:;[Ruby]:ci-reporter/ci_reporter
+;[118580]:;[Python]:pingswept/pysolar
+;[113879]:;[Ruby]:seangeo/ratom
+;[57178]:;[Ruby]:ActsAsParanoid/acts_as_paranoid
+;[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146]:;[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile]:yuri/sputnik
+;[24927]:;[Ruby]:JackDanger/permanent_records
+;[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926]:;[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS]:composite-primary-keys/composite_primary_keys
+;[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885]:;[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile]:timburks/nu
+;[67572]:;[Ruby]:minimagick/minimagick
+;[13936]:;[JavaScript]:kemayo/maphilight
+;[36290]:;[Emacs Lisp]:nex3/perspective-el
+;[174622]:;[VimL]:scrooloose/nerdtree
+;[104334, 1887];[104334, 1887]:;[VimL, Ruby];[VimL, Ruby]:scrooloose/nerdcommenter
+;[215083]:;[Ruby]:topfunky/gruff
+;[19467]:;[Ruby]:jackdempsey/acts_as_commentable
+;[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968]:;[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell]:arclanguage/anarki
+;[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434]:;[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS]:timcharper/calendar_date_select
+;[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383]:;[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby]:sunny/edith
+;[59434]:;[Ruby]:schacon/ticgit
+;[176406]:;[Ruby]:mbleigh/acts-as-taggable-on
+;[116759, 33274];[116759, 33274]:;[Ruby, CoffeeScript];[Ruby, CoffeeScript]:nathansobo/hyperarchy
+;[143973, 1752];[143973, 1752]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Cork
+;[15223]:;[Ruby]:mbleigh/princely
+;[200007, 1074];[200007, 1074]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:tsgates/git-emacs
+;[188524, 2769, 1333];[188524, 2769, 1333];[188524, 2769, 1333]:;[C, Shell, Makefile];[C, Shell, Makefile];[C, Shell, Makefile]:kr/beanstalkd
+;[200380]:;[Ruby]:jmettraux/rufus-scheduler
+;[26740]:;[Ruby]:mbleigh/seed-fu
+;[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291]:;[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS]:madrobby/scriptaculous
+;[130198]:;[Ruby]:whomwah/rqrcode
+;[15797]:;[Ruby]:relevance/log_buddy
+;[67695, 15676];[67695, 15676]:;[Ruby, JavaScript];[Ruby, JavaScript]:jmettraux/rufus-decision
+;[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789]:;[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell]:jeremyevans/scaffolding_extensions
+;[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657]:;[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege]:napcs/docbook
+;[237817]:;[Ruby]:ianwhite/resources_controller
+;[220043, 538];[220043, 538]:;[Objective-C, C];[Objective-C, C]:fjolnir/DatabaseKit
+;[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255]:;[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL]:relevance/etc
+;[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831]:;[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java]:DAddYE/lipsiadmin
+;[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378]:;[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML]:ambethia/recaptcha
+;[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248]:;[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf]:xaviershay/enki
+;[94867, 85577, 127];[94867, 85577, 127];[94867, 85577, 127]:;[Ruby, C, Shell];[Ruby, C, Shell];[Ruby, C, Shell]:rowland/fb
+;[20564]:;[Ruby]:tra/spawnling
+;[411459]:;[Ruby]:pat/thinking-sphinx
+;[4406, 2786];[4406, 2786]:;[Ruby, Cucumber];[Ruby, Cucumber]:thoughtbot/shoulda
+;[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476]:;[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl]:medwards/free-library-on-rails
+;[235552, 175969, 1175];[235552, 175969, 1175];[235552, 175969, 1175]:;[PHP, Ruby, HTML];[PHP, Ruby, HTML];[PHP, Ruby, HTML]:pat/riddle
+;[31327, 576];[31327, 576]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Buffet
+;[40502, 712];[40502, 712]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/StealYourCarbon
+;[60664]:;[JavaScript]:draganbabic/uni-form
+;[297391, 284];[297391, 284]:;[Ruby, Shell];[Ruby, Shell]:rsim/ruby-plsql
+;[83096, 7129, 788];[83096, 7129, 788];[83096, 7129, 788]:;[Ruby, C++, C];[Ruby, C++, C];[Ruby, C++, C]:jasonroelofs/rbgccxml
+;[132172, 21172, 69];[132172, 21172, 69];[132172, 21172, 69]:;[Ruby, Yacc, CSS];[Ruby, Yacc, CSS];[Ruby, Yacc, CSS]:sparklemotion/csspool
+;[156178]:;[Ruby]:tapajos/brazilian-rails
+;[21723]:;[Ruby]:joshfrench/rakismet
+;[531838]:;[Ruby]:Shopify/active_shipping
+;[86263, 2038];[86263, 2038]:;[JavaScript, Ruby];[JavaScript, Ruby]:jmettraux/ruote-fluo
+;[192873]:;[Ruby]:krobertson/dm-paperclip
+;[146862]:;[PHP]:speedmax/h2o-php
+;[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150]:;[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL]:jkramer/shell-fm
+;[33446, 398];[33446, 398]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:pezra/rspec-mode
+;[97690, 858];[97690, 858]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Panda
+;[55520]:;[Ruby]:mattetti/googlecharts
+;[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354]:;[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell]:beppu/squatting
+;[260932, 92185, 14680];[260932, 92185, 14680];[260932, 92185, 14680]:;[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby]:madrobby/scripty2
+;[32315, 31];[32315, 31]:;[Clojure, HTML];[Clojure, HTML]:weavejester/compojure
+;[82767, 306];[82767, 306]:;[Ruby, Shell];[Ruby, Shell]:TwP/bones
+;[58031]:;[Ruby]:infused/dbf
+;[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577]:;[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic]:jgm/peg-markdown
+;[21064]:;[Ruby]:purcell/darcs-to-git
+;[90894]:;[Python]:purcell/airspeed
+;[125057, 2456];[125057, 2456]:;[Python, Ruby];[Python, Ruby]:dbr/tvdb_api
+;[45116, 13257];[45116, 13257]:;[R, C];[R, C]:rdpeng/filehash
+;[40639, 33745, 20640];[40639, 33745, 20640];[40639, 33745, 20640]:;[C, Java, Ruby];[C, Java, Ruby];[C, Java, Ruby]:codahale/bcrypt-ruby
+;[280598, 72882];[280598, 72882]:;[Ruby, Liquid];[Ruby, Liquid]:Shopify/liquid
+;[103545]:;[Ruby]:judofyr/ruby-oembed
+;[128931, 53831, 1610];[128931, 53831, 1610];[128931, 53831, 1610]:;[Perl, Puppet, Ruby];[Perl, Puppet, Ruby];[Perl, Puppet, Ruby]:duritong/puppet-nagios
+;[88445, 24315];[88445, 24315]:;[Ruby, JavaScript];[Ruby, JavaScript]:relevance/tarantula
+;[123720, 11573, 1976];[123720, 11573, 1976];[123720, 11573, 1976]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:potionfactory/potionstore
+;[20201]:;[Ruby]:rmm5t/strip_attributes
+;[49035, 28539, 939];[49035, 28539, 939];[49035, 28539, 939]:;[Shell, Ruby, Perl];[Shell, Ruby, Perl];[Shell, Ruby, Perl]:mislav/dotfiles
+;[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528]:;[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal]:duritong/puppet-munin
+;[65441]:;[Python]:duplys/git-issues
+;[107969]:;[Ruby]:Shopify/active_fulfillment
+;[7604]:;[Ruby]:chrislloyd/gravtastic
+;[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875]:;[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript]:blynn/gitmagic
+;[13189, 143];[13189, 143]:;[Erlang, Makefile];[Erlang, Makefile]:tim/erlang-oauth
+;[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476]:;[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl]:erector/erector
+;[33659]:;[R]:hadley/evaluate
+;[176077]:;[Ruby]:Ruleby/ruleby
+;[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075]:;[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile]:hadley/ggplot2-book
+;[22169, 1411, 360];[22169, 1411, 360];[22169, 1411, 360]:;[Ruby, HTML, CSS];[Ruby, HTML, CSS];[Ruby, HTML, CSS]:activescaffold/active_scaffold_sortable
+;[148809, 58];[148809, 58]:;[Ruby, Shell];[Ruby, Shell]:lutzky/ttime
+;[59577, 20105];[59577, 20105]:;[Java, Groovy];[Java, Groovy]:raykrueger/hibernate-memcached
+;[105763, 8756, 885];[105763, 8756, 885];[105763, 8756, 885]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:bostonrb/bostonrb
+;[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545]:;[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS]:svenfuchs/routing-filter
+;[291689, 223];[291689, 223]:;[Ruby, Shell];[Ruby, Shell]:TwP/logging
+;[41031]:;[PHP]:jmathai/epiphany
+;[52403, 4642];[52403, 4642]:;[Ruby, JavaScript];[Ruby, JavaScript]:kbingman/paperclipped
+;[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412]:;[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell]:davidfstr/rdiscount
+;[51023]:;[Ruby]:eagleas/webmoney
+;[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32]:;[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript]:jlong/serve
+;[215796, 1179];[215796, 1179]:;[Perl, Perl6];[Perl, Perl6]:pjf/autodie
+;[53351, 98];[53351, 98]:;[Perl, C];[Perl, C]:pjf/ipc-system-simple
+;[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686]:;[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy]:davidB/scala-maven-plugin
+;[90197]:;[Ruby]:commonthread/flickr_fu
+;[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410]:;[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell]:mutle/fu2
+;[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672]:;[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme]:acangiano/ruby-benchmark-suite
+;[219981]:;[Ruby]:mojombo/grit
+;[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788];[283939, 9261, 6486, 6329, 2576, 788]:;[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell];[Ruby, C, CSS, JavaScript, HTML, Shell]:mojombo/god
+;[145649]:;[Ruby]:technoweenie/restful-authentication
+;[132960]:;[Ruby]:technoweenie/attachment_fu
+;[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148];[228946, 41376, 19495, 5835, 2210, 1251, 867, 489, 148]:;[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript];[Ruby, C, HTML, Ragel in Ruby Host, CSS, ApacheConf, Shell, C++, JavaScript]:macournoyer/thin
+;[130047, 20838];[130047, 20838]:;[Ruby, Shell];[Ruby, Shell]:schacon/ruby-git
+;[190560]:;[Ruby]:mojombo/chronic
+;[43495, 19791];[43495, 19791]:;[Ruby, Liquid];[Ruby, Liquid]:cristibalan/braid
+;[42345]:;[Ruby]:engineyard/eycap
+;[64289, 312];[64289, 312]:;[Ruby, HTML];[Ruby, HTML]:sevenwire/forgery
+;[114700]:;[Ruby]:adamwiggins/rush
+;[74135]:;[Ruby]:collectiveidea/audited
+;[37165]:;[Ruby]:collectiveidea/acts_as_geocodable
+;[90413, 927];[90413, 927]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/graticule
+;[35146, 1014];[35146, 1014]:;[Ruby, CSS];[Ruby, CSS]:collectiveidea/tinder
+;[162736]:;[Ruby]:toretore/barby
+;[155418]:;[Ruby]:rsl/stringex
+;[129090]:;[Ruby]:collectiveidea/awesome_nested_set
+;[114253, 1371, 674];[114253, 1371, 674];[114253, 1371, 674]:;[Ruby, Groff, Shell];[Ruby, Groff, Shell];[Ruby, Groff, Shell]:mislav/will_paginate
+;[41909, 31649, 14979];[41909, 31649, 14979];[41909, 31649, 14979]:;[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS];[Ruby, JavaScript, CSS]:lukeredpath/clickatell
+;[170029]:;[Ruby]:ctran/annotate_models
+;[134701]:;[Ruby]:defunkt/github-gem
+;[264316]:;[Ruby]:aasm/aasm
+;[962316]:;[VimL]:scrooloose/vimfiles
+;[312779, 381];[312779, 381]:;[Ruby, Perl];[Ruby, Perl]:nathansobo/treetop
+;[57396, 721];[57396, 721]:;[JavaScript, Ruby];[JavaScript, Ruby]:osteele/functional-javascript
+;[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211];[189124, 37007, 19098, 1749, 660, 211]:;[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript];[Ruby, Java, HTML, CSS, JavaScript, CoffeeScript]:jruby/warbler
+;[19548]:;[Ruby]:ci-reporter/ci_reporter
+;[118580]:;[Python]:pingswept/pysolar
+;[113879]:;[Ruby]:seangeo/ratom
+;[57178]:;[Ruby]:ActsAsParanoid/acts_as_paranoid
+;[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146];[4697960, 25794, 22811, 4387, 3146]:;[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile];[Lua, Shell, HTML, Python, Makefile]:yuri/sputnik
+;[24927]:;[Ruby]:JackDanger/permanent_records
+;[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926];[175080, 25316, 3976, 1926]:;[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS];[Ruby, JavaScript, HTML, CSS]:composite-primary-keys/composite_primary_keys
+;[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885];[426001, 296150, 63973, 54010, 27641, 16343, 13283, 10162, 2885]:;[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile];[Objective-C, Nu, C, Emacs Lisp, HTML, Assembly, Ruby, Shell, Makefile]:timburks/nu
+;[67572]:;[Ruby]:minimagick/minimagick
+;[13936]:;[JavaScript]:kemayo/maphilight
+;[36290]:;[Emacs Lisp]:nex3/perspective-el
+;[174622]:;[VimL]:scrooloose/nerdtree
+;[104334, 1887];[104334, 1887]:;[VimL, Ruby];[VimL, Ruby]:scrooloose/nerdcommenter
+;[215083]:;[Ruby]:topfunky/gruff
+;[19467]:;[Ruby]:jackdempsey/acts_as_commentable
+;[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968];[476628, 62208, 31352, 27610, 24052, 20459, 2862, 2820, 1968]:;[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell];[Arc, Scheme, Emacs Lisp, Perl6, Perl, VimL, XSLT, Python, Shell]:arclanguage/anarki
+;[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434];[56660, 48403, 36954, 16434]:;[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS];[JavaScript, Ruby, HTML, CSS]:timcharper/calendar_date_select
+;[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383];[99101, 5447, 2330, 383]:;[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby];[PHP, CoffeeScript, CSS, Ruby]:sunny/edith
+;[59434]:;[Ruby]:schacon/ticgit
+;[176406]:;[Ruby]:mbleigh/acts-as-taggable-on
+;[116759, 33274];[116759, 33274]:;[Ruby, CoffeeScript];[Ruby, CoffeeScript]:nathansobo/hyperarchy
+;[143973, 1752];[143973, 1752]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Cork
+;[15223]:;[Ruby]:mbleigh/princely
+;[200007, 1074];[200007, 1074]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:tsgates/git-emacs
+;[188524, 2769, 1333];[188524, 2769, 1333];[188524, 2769, 1333]:;[C, Shell, Makefile];[C, Shell, Makefile];[C, Shell, Makefile]:kr/beanstalkd
+;[200380]:;[Ruby]:jmettraux/rufus-scheduler
+;[26740]:;[Ruby]:mbleigh/seed-fu
+;[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291];[285482, 40029, 7056, 1291]:;[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS];[HTML, JavaScript, Ruby, CSS]:madrobby/scriptaculous
+;[130198]:;[Ruby]:whomwah/rqrcode
+;[15797]:;[Ruby]:relevance/log_buddy
+;[67695, 15676];[67695, 15676]:;[Ruby, JavaScript];[Ruby, JavaScript]:jmettraux/rufus-decision
+;[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789];[232543, 3193, 2857, 861, 789]:;[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell];[Ruby, CSS, JavaScript, Perl, Shell]:jeremyevans/scaffolding_extensions
+;[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657];[7945265, 653152, 55416, 52395, 31405, 9377, 7202, 5465, 4657]:;[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege];[XSLT, JavaScript, Ruby, CSS, Shell, Python, Perl, SystemVerilog, Frege]:napcs/docbook
+;[237817]:;[Ruby]:ianwhite/resources_controller
+;[220043, 538];[220043, 538]:;[Objective-C, C];[Objective-C, C]:fjolnir/DatabaseKit
+;[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255];[21247, 4946, 2726, 2396, 1255]:;[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL];[Shell, Ruby, Emacs Lisp, Nginx, VimL]:relevance/etc
+;[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831];[269898, 129406, 35555, 8831]:;[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java];[Ruby, CSS, JavaScript, Java]:DAddYE/lipsiadmin
+;[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378];[36037, 686, 596, 378]:;[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML];[Ruby, CSS, JavaScript, HTML]:ambethia/recaptcha
+;[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248];[212570, 20643, 15133, 14980, 1795, 1248]:;[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf];[Ruby, HTML, CSS, JavaScript, Cucumber, ApacheConf]:xaviershay/enki
+;[94867, 85577, 127];[94867, 85577, 127];[94867, 85577, 127]:;[Ruby, C, Shell];[Ruby, C, Shell];[Ruby, C, Shell]:rowland/fb
+;[20564]:;[Ruby]:tra/spawnling
+;[411459]:;[Ruby]:pat/thinking-sphinx
+;[4406, 2786];[4406, 2786]:;[Ruby, Cucumber];[Ruby, Cucumber]:thoughtbot/shoulda
+;[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476];[135647, 9834, 6741, 476]:;[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl];[Ruby, JavaScript, CSS, Perl]:medwards/free-library-on-rails
+;[235552, 175969, 1175];[235552, 175969, 1175];[235552, 175969, 1175]:;[PHP, Ruby, HTML];[PHP, Ruby, HTML];[PHP, Ruby, HTML]:pat/riddle
+;[31327, 576];[31327, 576]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Buffet
+;[40502, 712];[40502, 712]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/StealYourCarbon
+;[60664]:;[JavaScript]:draganbabic/uni-form
+;[297391, 284];[297391, 284]:;[Ruby, Shell];[Ruby, Shell]:rsim/ruby-plsql
+;[83096, 7129, 788];[83096, 7129, 788];[83096, 7129, 788]:;[Ruby, C++, C];[Ruby, C++, C];[Ruby, C++, C]:jasonroelofs/rbgccxml
+;[132172, 21172, 69];[132172, 21172, 69];[132172, 21172, 69]:;[Ruby, Yacc, CSS];[Ruby, Yacc, CSS];[Ruby, Yacc, CSS]:sparklemotion/csspool
+;[156178]:;[Ruby]:tapajos/brazilian-rails
+;[21723]:;[Ruby]:joshfrench/rakismet
+;[531838]:;[Ruby]:Shopify/active_shipping
+;[86263, 2038];[86263, 2038]:;[JavaScript, Ruby];[JavaScript, Ruby]:jmettraux/ruote-fluo
+;[192873]:;[Ruby]:krobertson/dm-paperclip
+;[146862]:;[PHP]:speedmax/h2o-php
+;[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150];[164609, 3782, 2634, 2125, 1387, 1229, 1150]:;[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL];[C, Python, Haskell, Shell, Perl, C++, VimL]:jkramer/shell-fm
+;[33446, 398];[33446, 398]:;[Emacs Lisp, Makefile];[Emacs Lisp, Makefile]:pezra/rspec-mode
+;[97690, 858];[97690, 858]:;[Lua, TeX];[Lua, TeX]:TekNoLogic/Panda
+;[55520]:;[Ruby]:mattetti/googlecharts
+;[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354];[90338, 30878, 981, 354]:;[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell];[Perl, Perl6, JavaScript, Shell]:beppu/squatting
+;[260932, 92185, 14680];[260932, 92185, 14680];[260932, 92185, 14680]:;[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby];[JavaScript, CSS, Ruby]:madrobby/scripty2
+;[32315, 31];[32315, 31]:;[Clojure, HTML];[Clojure, HTML]:weavejester/compojure
+;[82767, 306];[82767, 306]:;[Ruby, Shell];[Ruby, Shell]:TwP/bones
+;[58031]:;[Ruby]:infused/dbf
+;[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577];[155560, 3865, 3338, 577]:;[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic];[C, Perl, C++, Visual Basic]:jgm/peg-markdown
+;[21064]:;[Ruby]:purcell/darcs-to-git
+;[90894]:;[Python]:purcell/airspeed
+;[125057, 2456];[125057, 2456]:;[Python, Ruby];[Python, Ruby]:dbr/tvdb_api
+;[45116, 13257];[45116, 13257]:;[R, C];[R, C]:rdpeng/filehash
+;[40639, 33745, 20640];[40639, 33745, 20640];[40639, 33745, 20640]:;[C, Java, Ruby];[C, Java, Ruby];[C, Java, Ruby]:codahale/bcrypt-ruby
+;[280598, 72882];[280598, 72882]:;[Ruby, Liquid];[Ruby, Liquid]:Shopify/liquid
+;[103545]:;[Ruby]:judofyr/ruby-oembed
+;[128931, 53831, 1610];[128931, 53831, 1610];[128931, 53831, 1610]:;[Perl, Puppet, Ruby];[Perl, Puppet, Ruby];[Perl, Puppet, Ruby]:duritong/puppet-nagios
+;[88445, 24315];[88445, 24315]:;[Ruby, JavaScript];[Ruby, JavaScript]:relevance/tarantula
+;[123720, 11573, 1976];[123720, 11573, 1976];[123720, 11573, 1976]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:potionfactory/potionstore
+;[20201]:;[Ruby]:rmm5t/strip_attributes
+;[49035, 28539, 939];[49035, 28539, 939];[49035, 28539, 939]:;[Shell, Ruby, Perl];[Shell, Ruby, Perl];[Shell, Ruby, Perl]:mislav/dotfiles
+;[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528];[17331, 15324, 14092, 13502, 11718, 2960, 528]:;[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal];[Puppet, Perl, Python, Ruby, Shell, HTML, Pascal]:duritong/puppet-munin
+;[65441]:;[Python]:duplys/git-issues
+;[107969]:;[Ruby]:Shopify/active_fulfillment
+;[7604]:;[Ruby]:chrislloyd/gravtastic
+;[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875];[5395, 2286, 1855, 1347, 875]:;[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript];[Makefile, XSLT, CSS, Shell, JavaScript]:blynn/gitmagic
+;[13189, 143];[13189, 143]:;[Erlang, Makefile];[Erlang, Makefile]:tim/erlang-oauth
+;[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476];[1149803, 152674, 7352, 6146, 1283, 1251, 476]:;[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl];[Ruby, HTML, CSS, JavaScript, Shell, ApacheConf, Perl]:erector/erector
+;[33659]:;[R]:hadley/evaluate
+;[176077]:;[Ruby]:Ruleby/ruleby
+;[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075];[718692, 322892, 4077, 1075]:;[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile];[TeX, Perl, R, Makefile]:hadley/ggplot2-book
+;[22169, 1411, 360];[22169, 1411, 360];[22169, 1411, 360]:;[Ruby, HTML, CSS];[Ruby, HTML, CSS];[Ruby, HTML, CSS]:activescaffold/active_scaffold_sortable
+;[148809, 58];[148809, 58]:;[Ruby, Shell];[Ruby, Shell]:lutzky/ttime
+;[59577, 20105];[59577, 20105]:;[Java, Groovy];[Java, Groovy]:raykrueger/hibernate-memcached
+;[105763, 8756, 885];[105763, 8756, 885];[105763, 8756, 885]:;[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript];[Ruby, CSS, JavaScript]:bostonrb/bostonrb
+;[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545];[44461, 2325, 641, 545]:;[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS];[Ruby, HTML, JavaScript, CSS]:svenfuchs/routing-filter
+;[291689, 223];[291689, 223]:;[Ruby, Shell];[Ruby, Shell]:TwP/logging
+;[41031]:;[PHP]:jmathai/epiphany
+;[52403, 4642];[52403, 4642]:;[Ruby, JavaScript];[Ruby, JavaScript]:kbingman/paperclipped
+;[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412];[126153, 99732, 29119, 7208, 5412]:;[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell];[C, HTML, Ruby, Perl, PowerShell]:davidfstr/rdiscount
+;[51023]:;[Ruby]:eagleas/webmoney
+;[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32];[86001, 35216, 20935, 38, 32]:;[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript];[Ruby, CSS, HTML, ApacheConf, CoffeeScript]:jlong/serve
+;[215796, 1179];[215796, 1179]:;[Perl, Perl6];[Perl, Perl6]:pjf/autodie
+;[53351, 98];[53351, 98]:;[Perl, C];[Perl, C]:pjf/ipc-system-simple
+;[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686];[197525, 21114, 8764, 7686]:;[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy];[Java, Scala, CSS, Groovy]:davidB/scala-maven-plugin
+;[90197]:;[Ruby]:commonthread/flickr_fu
+;[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410];[156467, 93588, 31208, 13979, 8453, 1251, 410]:;[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell];[Ruby, JavaScript, CSS, HTML, CoffeeScript, ApacheConf, Shell]:mutle/fu2
+;[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672];[6924694, 6484749, 92544, 77414, 44698, 21878, 18975, 18201, 6690, 6086, 5253, 1127, 871, 753, 672]:;[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme];[C, Ruby, Emacs Lisp, Java, CSS, JavaScript, Ragel in Ruby Host, Shell, C++, Perl, Erlang, Assembly, Python, Awk, Scheme]:acangiano/ruby-benchmark-suite

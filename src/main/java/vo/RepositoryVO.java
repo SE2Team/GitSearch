@@ -54,7 +54,7 @@ public class RepositoryVO {
         this.contributor = contributor;
         this.collaborators_count = collaborators_count;
         this.collaborators = collaborators;
-        this.contributors = collaborators;
+        this.contributors = contributors;
 
 
     }
@@ -101,11 +101,11 @@ public class RepositoryVO {
     }
 
     public String getUpdated() {
-        return this.updated;
+    	return this.updated.split("T")[0];
     }
 
     public String getCreated() {
-        return this.created;
+    	return this.created.split("T")[0];
     }
 
     public boolean getFork() {
@@ -136,6 +136,20 @@ public class RepositoryVO {
         return this.collaborators_count;
     }
 
-
+    public String getOwnerName(){
+    	if(this.name.indexOf("/")!=-1){
+    		return this.name.split("/")[0];
+    	}else{
+    		return null;
+    	}
+    }
+    
+    public String getRepoName(){
+    	if(this.name.indexOf("/")!=-1){
+    		return this.name.split("/")[1];
+    	}else{
+    		return null;
+    	}
+    }
 
 }

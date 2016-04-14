@@ -13,7 +13,7 @@ import vo.UserVO;
  */
 public interface UserBLService {
     /**
-     * 鏌ヨ鏌愪釜user鐨勮缁嗕俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛�
+     * 鏌ヨ鏌愪釜user鐨勮缁嗕俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛?
      *
      * @param user
      * @return
@@ -22,7 +22,7 @@ public interface UserBLService {
 
 
     /**
-     * 鏌ヨ鏌愪釜user鐨勬煇椤逛俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛�
+     * 鏌ヨ鏌愪釜user鐨勬煇椤逛俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛?
      *
      * @param name
      * @param info item鍙帴鍙楃殑鍙傛暟鏈夛細
@@ -35,7 +35,7 @@ public interface UserBLService {
     String UserInfo(String name, UserInfo info) throws IOException;
 
     /**
-     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶��,涓�椤�50涓�
+     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶??,涓?椤?50涓?
      *
      * @param userName
      * @param reponame String stargazers
@@ -44,7 +44,7 @@ public interface UserBLService {
     Iterator<String> getStargazers(String userName, String reponame) throws IOException;
 
     /**
-     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶�呯櫥褰曞悕,涓�椤�50涓�
+     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶?呯櫥褰曞悕,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -54,7 +54,7 @@ public interface UserBLService {
     Iterator<String> getStargazerNames(String userName, String reponame) throws IOException;
 
     /**
-     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰��,涓�椤�50涓�
+     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰??,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -63,7 +63,7 @@ public interface UserBLService {
     Iterator<UserVO> getSubscribers(String userName, String reponame);
 
     /**
-     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰�呯櫥褰曞悕,涓�椤�50涓�
+     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰?呯櫥褰曞悕,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -74,7 +74,7 @@ public interface UserBLService {
     /**
      * 鎸夊叧閿瓧鎼滅储鐢ㄦ埛
      *
-     * @param name 鍏抽敭瀛�
+     * @param name 鍏抽敭瀛?
      * @return
      * @throws FileNotFoundException
      * @throws IOException
@@ -84,4 +84,6 @@ public interface UserBLService {
     Iterator<UserVO> getUser() throws IOException;
     
     Iterator<UserVO> sortUser(User_Sort sort) throws IOException;
+    
+    Iterator<UserVO> screenTime(String time) throws IOException;
 }

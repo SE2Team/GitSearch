@@ -49,7 +49,7 @@ public class UserPO {
 	}
 	
 	public String getUpdated(){
-		return this.updated_at;
+		 return this.updated_at;
 	}
 	
 	public String getCreated(){

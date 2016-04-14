@@ -51,4 +51,7 @@ public class UserController implements UserBLService{
     	return user.sortUser(sort);
     }
 
+    public Iterator<UserVO> screenTime(String time) throws IOException{
+    	return user.screenTime(time);
+    }
 }

@@ -1,11 +1,14 @@
 package presentation.userCheckui;
 
+import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
+import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -38,7 +41,10 @@ public class UserCheckController implements MyController{
     private FlowPane poprepo;
     @FXML
     private FlowPane relarepo;
-
+    @FXML
+    private Tooltip fullUserName;
+    @FXML
+    private Tooltip fullLogin;
 
 
     private FXUITest fxui;
@@ -58,16 +64,18 @@ public class UserCheckController implements MyController{
         String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
         company.setText(comp);
         followers.setText(String.valueOf(vo.getFollowers()));
-        String emailText=vo.getEmail()==""?"Unknown":vo.getCompany();
+        String emailText=vo.getEmail()==""?"Unknown":vo.getEmail();
         email.setText(emailText);
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
-        company.setText(vo.getCompany());
         try {
             setList();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        fullUserName.setText(vo.getName());
+        fullLogin.setText(vo.getLogin());
+        name.requestFocus();//把焦点拿走
     }
 
     /**
@@ -90,10 +98,10 @@ public class UserCheckController implements MyController{
                 /**
                  * 最多放4+1个
                  */
-                if (i >= 3) {
-                    poprepo.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (i >= 3) {
+//                    poprepo.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
         if(vo.getRelated()!=null) {
@@ -102,10 +110,10 @@ public class UserCheckController implements MyController{
                 /**
                  * 最多放4+1个
                  */
-                if (j >= 3) {
-                    relarepo.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (j >= 3) {
+//                    relarepo.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
     }

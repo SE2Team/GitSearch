@@ -1,35 +1,21 @@
 package data;
 
 import java.io.BufferedReader;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-import java.io.FileReader;
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
+import po.ScreenPO;
+import po.StaStrPO;
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -37,7 +23,7 @@ import po.RepositoryPO;
 public class RepositoryData implements RepositoryDataService {
 	
 	static String string="http://www.gitmining.net/api/repository";
-	ArrayList<RepositoryPO> finalList=new ArrayList<RepositoryPO>();
+	static ArrayList<RepositoryPO> finalList=new ArrayList<>();
 	/**
 	 * 
 	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
@@ -52,31 +38,14 @@ public class RepositoryData implements RepositoryDataService {
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
 		
+		ArrayList<String> collaList=new GetData("collaborator_count").readData();
+		ArrayList<String> contrList=new GetData("contributor_count").readData();
 		
 		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
 		JSONObject obj = new JSONObject();
-<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/all_repository.json")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-=======
-        FileReader fr = null;
-//        try {
-//			System.out.println(this.getClass().getResource("").toURI());
-//            InputStream in=this.getClass().getResourceAsStream("/txtData/all_repository.json");
-//			fr = new FileReader(new File());
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(new InputStreamReader(
-                this.getClass().getResourceAsStream("/txtData/all_repository.json")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 		String string = br.readLine();
 		String s1 ,s2,s3,s4,name;
 		boolean fork;
@@ -128,9 +97,10 @@ public class RepositoryData implements RepositoryDataService {
 				s2="";
 			}
 			
-			if(obj.has("contributors_count")){
-				contributor=obj.getInt("contributors_count");
-			}
+			
+			
+				
+			
 			
 			if(obj.has("forks")){
 				forks=obj.getInt("forks");
@@ -144,9 +114,9 @@ public class RepositoryData implements RepositoryDataService {
 				subscribers_count=obj.getInt("subscribers_count");
 			}
 			
-			if(obj.has("collaborators_count")){
-				 collaborators_count=obj.getInt("collaborators_count");
-			}
+			contributor=Integer.parseInt(contrList.get(j));
+			collaborators_count=Integer.parseInt(collaList.get(j));;
+			
 			if(obj.has("full_name")){
 				name=obj.getString("full_name");
 			}else{
@@ -172,26 +142,9 @@ public class RepositoryData implements RepositoryDataService {
 	 */
 	public ArrayList<String> getRepositoriesNames() throws IOException {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
 	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
 				getResourceAsStream("/txtData/repo_names.txt")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/repo_names.txt")));
-=======
-        FileReader fr = null;
-//        try {
-//            fr = new FileReader(new File(this.getClass().getResource("/txtData/repo_names.txt").toURI()));
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(new InputStreamReader(
-                this.getClass().getResourceAsStream("/txtData/repo_names.txt")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
 		String temp ;
 		ArrayList<String> list=new ArrayList<String>();
 		while((temp=br.readLine())!=null){
@@ -217,26 +170,54 @@ public class RepositoryData implements RepositoryDataService {
 					"/contributors/login";
 			String[] s = list.get(j).getName().split("/");
 			if (s[0].equals(userName) && s[1].equals(reponame)) {
-				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
-				list.get(j).setContributors(contrData.getContributors(contrUrl));
+//				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+//				list.get(j).setContributors(contrData.getContributors(contrUrl));
+				try {
+					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+					list.get(j).setContributors(contrData.getContributors(contrUrl));
+				} catch (Exception IOException) {
+					ArrayList<String> listColla=new GetData("collaborator").readData();
+					ArrayList<String> listContr=new GetData("contributor").readData();
+					ArrayList<String> strings=new ArrayList<>();
+					for(int i=0;i<listColla.size();i++){
+						strings=this.splitStr(listColla.get(i));
+						if(strings.contains(userName+"/"+reponame)){
+							strings.remove(userName+"/"+reponame);
+							list.get(j).setCollaborators(strings);
+						}
+						strings=this.splitStr(listContr.get(i));
+						if(strings.contains(userName+"/"+reponame)){
+							strings.remove(userName+"/"+reponame);
+							list.get(j).setContributors(strings);
+						}
+					}
+					
+				}
 				return list.get(j);
 			}
 		}
 		return null;
 	}
 
-	public Map<String, Integer> languagesOfRepository(String userName, String reponame) throws IOException {
+	public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		String str1="http://gitmining.net/api/repository"+userName+"/"
-				+reponame+"languages";
+		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
+				+reponame+"/"+"languages";
 		ArrayList<String> list=new GetData().getString(str1);
-		Map<String, Integer> map=new HashMap<String, Integer>();
+//		try {
+//			 list=new GetData().getString(str1);
+//		} catch (Exception IOException) {
+//		
+//		}
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
 		for(int i=0;i<list.size()-1;i++){
 			String str[]=list.get(i).split(":");
-			map.put(str[0], Integer.parseInt(str[1]));
+			listStr.add(str[0]);
+			listInt.add(Integer.parseInt(str[1]));
 		}
-		
-		return map;
+		listStr=this.remove(listStr);
+		return new StaStrPO(listStr, listInt);
 	}
 	
 	
@@ -246,62 +227,50 @@ public class RepositoryData implements RepositoryDataService {
 	 * @throws IOException 
 	 * 
 	 */
-	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
-		JSONObject obj = new JSONObject();
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-=======
-<<<<<<< HEAD
-	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-=======
-        FileReader fr = null;
-//        try {
-//            fr = new FileReader(new File(this.getClass().getResource("/txtData/all_repository.json").toURI()));
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-        BufferedReader br = new BufferedReader(
-                new InputStreamReader(this.getClass().getResourceAsStream("/txtData/all_repository.json")));
->>>>>>> e88f5669b851aaefa624d09113f26340c244a214
->>>>>>> dedf045e1437715347a0a50de993be571c0da982
-		String string = br.readLine();
-		JSONArray obj1 = new JSONArray(string);
-		for (int i = 0; i < obj1.length(); i++) {
-			obj = (JSONObject) obj1.get(i);
-			if (obj.has("full_name")) {
-				if (obj.getString("full_name").equals(userName + "/" + reponame)) {
-					if (info.toString().equals("fork") && obj.has("fork")) {
-						return obj.getBoolean("fork") + "";
-					}
-				} else if (info.toString().equals("id") || info.toString().equals("size")
-						|| info.toString().equals("forks") || info.toString().equals("stargazers_count")
-						|| info.toString().equals("open_issues") || info.toString().equals("subscribers_count")) {
-					if (obj.has(info.toString())) {
-						return obj.getInt(info.toString()) + "";
-					}
-				} else {
-					if (obj.has(info.toString())) {
-						return obj.getString(info.toString());
-					}
-				}
-			}
-
-		}
-
-		return null;
-	}
+//	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
+//		JSONObject obj = new JSONObject();
+//	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+//				getResourceAsStream("/txtData/all_repository.json")));
+//		String string = br.readLine();
+//		JSONArray obj1 = new JSONArray(string);
+//		for (int i = 0; i < obj1.length(); i++) {
+//			obj = (JSONObject) obj1.get(i);
+//			if (obj.has("full_name")) {
+//				if (obj.getString("full_name").equals(userName + "/" + reponame)) {
+//					if (info.toString().equals("fork") && obj.has("fork")) {
+//						return obj.getBoolean("fork") + "";
+//					}
+//				} else if (info.toString().equals("id") || info.toString().equals("size")
+//						|| info.toString().equals("forks") || info.toString().equals("stargazers_count")
+//						|| info.toString().equals("open_issues") || info.toString().equals("subscribers_count")) {
+//					if (obj.has(info.toString())) {
+//						return obj.getInt(info.toString()) + "";
+//					}
+//				} else {
+//					if (obj.has(info.toString())) {
+//						return obj.getString(info.toString());
+//					}
+//				}
+//			}
+//
+//		}
+//
+//		return null;
+//	}
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
-		 ArrayList<RepositoryPO> pos=finalList;
-			for(RepositoryPO po:getRepositories()){
-	            if(po.getName().contains(name)){
+		 ArrayList<RepositoryPO> pos=new ArrayList<>();
+		ArrayList<RepositoryPO> pos1=new RepositoryData().getRepositories();
+		// ArrayList<RepositoryPO> pos1=finalList;
+		 String[]  str=new String[2];
+			for(RepositoryPO po:pos1){
+	            str=po.getName().split("/");
+				if(str[1].contains(name)){
 	                pos.add(po);
 	            }
 	        }
+			finalList=pos;
 			return pos;
 		
 	}
@@ -343,9 +312,97 @@ public class RepositoryData implements RepositoryDataService {
 					}
 				}
 		}
-		
+		finalList=list;
 		return list;
 	}
 
+	
+	private ArrayList<RepositoryPO> screenLanguage(String language,ArrayList<RepositoryPO> listPO) throws IOException {
+		// TODO Auto-generated method stub
+		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=listPO;
+		ArrayList<RepositoryPO> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getLanguage().equals(language)){
+				list2.add(list.get(i));
+			}
+		}
+		//finalList=list2;
+		return list2;
+	}
+
+	
+	private ArrayList<RepositoryPO> screenTime(String time,ArrayList<RepositoryPO> listPO) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list1=new ArrayList<>();
+		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=listPO;//有bug
+		
+		for(int i=0;i<list.size();i++){
+			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
+			String str1 = str[0];
+			int year = Integer.parseInt(str1);
+			if(Integer.parseInt(time.substring(0,4))==year){
+				list1.add(list.get(i));
+			}
+		}
+		//finalList=list1;
+		return list1;
+	}
+
+	
+	private ArrayList<RepositoryPO> screenCategory(String key,ArrayList<RepositoryPO> listPO) throws IOException {
+		// TODO Auto-generated method stub
+		ArrayList<RepositoryPO> list=listPO;
+		ArrayList<RepositoryPO> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			if(list.get(i).getDescription().contains(key)){
+				list2.add(list.get(i));
+			}
+		}
+		return list2;
+	}
+
+	@Override
+	public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
+	//	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list=finalList;
+		if(po.getLanguage().equals("")){
+			
+		}else{
+			list=this.screenLanguage(po.getLanguage(), list);
+		}
+		
+		if(po.getTime().equals("")){
+			
+		}else{
+			list=this.screenTime(po.getTime(), list);
+		}
+		
+		if(po.getCategory().equals("")){
+			
+		}else{
+			list=this.screenCategory(po.getCategory(), list);
+		}
+		return list;
+	}
+	
+	private ArrayList<String> remove(ArrayList<String> list){
+		ArrayList<String> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			list2.add(list.get(i).substring(1, list.get(i).length()-1));
+		}
+		
+		return list2;
+	} 
+	
+	public ArrayList<String> splitStr(String string){
+		String[] str=string.split(";");
+		ArrayList<String> list=new ArrayList<>();
+		for(int i=0;i<str.length;i++){
+			list.add(str[i]);
+		}
+		return list;
+	}
 	
 }

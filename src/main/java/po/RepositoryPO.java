@@ -123,7 +123,14 @@ public class RepositoryPO {
 	public String getCreated() {
 		return this.created;
 	}
-
+	public void setContributor(int contributor){
+		this.contributor=contributor;
+	}
+	
+	public void setCollaborator(int collaborators_count){
+		this.collaborators_count=collaborators_count;
+	}
+	
 	public boolean getFork() {
 		return this.fork;
 	}

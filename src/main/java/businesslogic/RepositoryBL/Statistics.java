@@ -1,48 +1,75 @@
 package businesslogic.RepositoryBL;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
 import po.RepositoryPO;
+import po.StaIntPO;
+import po.StaStrPO;
 import po.StatisticsPO;
 import javafx.collections.ObservableList;
 import vo.PO2VO;
+import vo.RepositoryVO;
+import vo.StaIntVO;
+import vo.StaStrVO;
 import vo.StatisticsVO;
+import vo.VO2PO;
 import data.DataFactory;
 import dataService.DataFatoryService;
 
-/** 
- * @author 
- * @date 
-2016骞�3鏈�16鏃� 
-涓嬪崍11:40:02 
- * @version 1.0 
- * @parameter  
- * @since  
- * @return  
- *@throws 寮傚父绫诲強鎶涘嚭鏉′欢
- */
 public class Statistics {
 
 	private DataFatoryService factory=new DataFactory();
-	public Iterator<Integer> getStar() throws IOException{
-		return factory.getStatisticsDataService().getStar().iterator();
+	public StaStrVO getStar() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getStar());
 	}
-	public StatisticsVO getScore(RepositoryPO po) throws IOException {
+	public StaStrVO getScores(RepositoryVO vo) throws IOException {
 		// TODO Auto-generated method stub
-		return PO2VO.convert(factory.getStatisticsDataService().getScores(po));
+		return PO2VO.convert(factory.getStatisticsDataService().getScores(VO2PO.convert(vo)));
 	}
 	
-	public Iterator<Integer> getForks() throws IOException{
-		return factory.getStatisticsDataService().getForks().iterator();
+	public StaStrVO getForks() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getForks());
 	}
 	
-	public Iterator<Integer> getCreated() throws IOException{
-		return factory.getStatisticsDataService().getCreated().iterator();
+	public StaStrVO getRepoCreated() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getRepoCreated());
 	}
 
-	public Map<String, Integer> getLanguage() throws IOException{
-		return factory.getStatisticsDataService().getLanguage();
+	public StaStrVO getLanguage() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getLanguage());
+	}
+	
+	public StaStrVO  getUserCreated() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getUserCreated());
+	}
+	
+	public StaStrVO getUserType() throws IOException{
+		return PO2VO.convert(factory.getStatisticsDataService().getUserType());
+	}
+	
+	public StaIntVO getUserHas(){
+		return PO2VO.convert(factory.getStatisticsDataService().getUserHas());
+	}
+	
+	public StaIntVO getUserRelated(){
+		return PO2VO.convert(factory.getStatisticsDataService().getUserRelated());
+	}
+	public StaStrVO getCompany() throws IOException {
+		return PO2VO.convert(factory.getStatisticsDataService().getCompany());
+	}
+	
+	public Integer getHasNum(String name){
+		return factory.getStatisticsDataService().getHasNum(name);
+	}
+	
+	public StaStrVO getCollaborator(){
+		return PO2VO.convert(factory.getStatisticsDataService().getCollaborator());
+	}
+	
+	public StaStrVO getContributor(){
+		return PO2VO.convert(factory.getStatisticsDataService().getContributor());
 	}
 }

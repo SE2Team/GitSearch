@@ -4,18 +4,29 @@ import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
+import com.aquafx_project.AquaFx;
+import com.aquafx_project.controls.skin.AquaButtonSkin;
+import com.jfoenix.controls.JFXProgressBar;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
 import presentation.searchui.UserSearchController;
+import presentation.statistics.RepoStatisticsController;
+import presentation.statistics.UserStatisticsController;
 import presentation.userCheckui.UserCheckController;
 import vo.RepositoryVO;
 import vo.UserVO;
@@ -35,6 +46,8 @@ public class FXUITest extends Application {
     private AnchorPane searchUserPane;
     private RepSearchController repSearchController;
     private UserSearchController userSearchController;
+    private static int WIDTH=1280;
+    private static int HEIGHT=720;
     /**
      * 实现前进和后退的两个栈
      */
@@ -44,8 +57,11 @@ public class FXUITest extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
+
+        primaryStage.setResizable(false);
         initHome();
         searchRepo("");
 //        searchUser("");
@@ -65,11 +81,13 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         Scene scene = new Scene(homeLayout);
         homeLayout.setCenter(null);
         primaryStage.setScene(scene);
 
         primaryStage.show();
+//        AquaFx.style();
     }
 
 
@@ -90,6 +108,21 @@ public class FXUITest extends Application {
 
     public void checkRepo(RepositoryVO vo) {
         this.push();
+
+        BorderPane loadPane=new BorderPane();
+        ProgressBar jfxBar=new ProgressBar();
+        loadPane.setPrefWidth(1280);
+        loadPane.setPrefHeight(600);
+        jfxBar.setPrefWidth(500);
+        loadPane.setCenter(jfxBar);
+        homeLayout.setCenter(loadPane);
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.ZERO, new KeyValue(jfxBar.progressProperty(), 0)),
+                new KeyFrame(Duration.seconds(2),  new KeyValue(jfxBar.progressProperty(), 1)));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("repoCheckui/CheckRepo.fxml"));
 
@@ -99,8 +132,9 @@ public class FXUITest extends Application {
             CheckRepoController controller = loader.getController();
             controller.setFxui(this);
             controller.setVo(vo);
-            homeLayout.setCenter(anchorPane);
             controller.repaint();
+            homeLayout.setCenter(anchorPane);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -146,6 +180,13 @@ public class FXUITest extends Application {
      */
     public void searchRepo(String key) {
         this.push();
+        BorderPane loadPane=new BorderPane();
+        ProgressBar progressBar=new ProgressBar();
+        loadPane.setPrefWidth(1280);
+        loadPane.setPrefHeight(600);
+        progressBar.setPrefWidth(500);
+        loadPane.setCenter(progressBar);
+        homeLayout.setCenter(loadPane);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));
@@ -161,8 +202,6 @@ public class FXUITest extends Application {
         repSearchController.setKey(key);
         repSearchController.repaint();
         homeLayout.setCenter(searchRepoPane);
-
-
     }
 
     public void searchUser(String key) {
@@ -178,21 +217,41 @@ public class FXUITest extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (searchUserPane == null) {
-
-
-        }
         userSearchController.setKey(key);
         userSearchController.repaint();
         homeLayout.setCenter(searchUserPane);
     }
 
     public void repoStatistics() {
+        this.push();
+        FXMLLoader loader =new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("statistics/RepoStatisticsAnc.fxml"));
+
+        try {
+            AnchorPane repoStatisticsPane=(AnchorPane) loader.load();
+            RepoStatisticsController controller=loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(repoStatisticsPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public void userStatistics() {
-
+        this.push();
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("statistics/UserStatisticsAnc.fxml"));
+        try {
+            AnchorPane userStatisticPane=(AnchorPane)loader.load();
+            UserStatisticsController controller=loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(userStatisticPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public BorderPane getHomeLayout() {
@@ -207,7 +266,7 @@ public class FXUITest extends Application {
             return;
         bpanes.push((Parent) this.homeLayout.getCenter());
         apanes.removeAllElements();
-        System.out.println("压后退栈");
+//        System.out.println("压后退栈");
     }
 
 
@@ -215,7 +274,7 @@ public class FXUITest extends Application {
      * 后退栈出栈并压到前进栈
      */
     public void pop(){
-        System.out.println("出后退栈");
+//        System.out.println("出后退栈");
         if (bpanes.size()<=0){
             return;
         }
@@ -233,7 +292,7 @@ public class FXUITest extends Application {
         }
         Node p=apanes.pop();
         bpanes.push(homeLayout.getCenter());
-        System.out.println("前进栈出栈");
+//        System.out.println("前进栈出栈");
 
         homeLayout.setCenter(p);
     }

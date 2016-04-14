@@ -91,4 +91,12 @@ public interface UserDataService {
     ArrayList<UserPO> getUser() throws IOException;
     
     ArrayList<UserPO> sortUser(User_Sort sort) throws IOException;
+    
+    /**
+     * 根据用户创建时间进行筛选
+     * @param time
+     * @return
+     * @throws IOException 
+     */
+    ArrayList<UserPO> screenTime(String time) throws IOException;
 }

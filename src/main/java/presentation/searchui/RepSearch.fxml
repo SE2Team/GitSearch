@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
@@ -8,418 +12,297 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.RepSearchController">
+<AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.RepSearchController">
    <children>
       <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0">
+          <AnchorPane id="RepSearchLeft" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="200.0" stylesheets="@../../default.css">
                <children>
-                  <Label layoutX="47.0" layoutY="18.0" text="筛选条件">
+                  <Label layoutX="44.0" layoutY="14.0" text="筛选条件">
                      <font>
                         <Font name="YouYuan" size="28.0" />
                      </font>
+                     <textFill>
+                        <LinearGradient endX="0.2524271844660194" endY="1.0" startX="0.2621359223300971">
+                           <stops>
+                              <Stop color="#eedddd" />
+                              <Stop color="#ddaaaa" offset="0.9448275862068966" />
+                              <Stop color="#b9a6a6" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
                   </Label>
                   <Accordion layoutX="2.0" layoutY="62.0" />
-                  <Accordion layoutX="2.0" layoutY="54.0">
+                  <Accordion layoutX="2.0" layoutY="54.0" prefHeight="602.0" prefWidth="203.0">
                     <panes>
-                      <TitledPane animated="false" text="Category">
+                      <TitledPane animated="false" prefHeight="278.0" prefWidth="203.0" text="Category" textFill="#eeeaea">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="200.0">
+                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="200.0">
                                  <children>
-                                    <FlowPane id="RepFlowPane" layoutX="14.0" layoutY="19.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" fx:id="categoryPane" layoutX="14.0" layoutY="19.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="103.0" text="ActiveRecord">
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="ActiveRecord">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                             <opaqueInsets>
-                                                <Insets />
-                                             </opaqueInsets>
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="21.0" prefWidth="40.0" text="API">
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="API">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="45.0" text="app">
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="app">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="49.0" text="CMS">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="CMS">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="39.0" text="OS">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Mac">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="64.0" text="Django">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Django">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="74.0" text="interface">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Emacs">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="59.0" text="server">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="JSON">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="88.0" text="framework">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="OS">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="41.0" text="IRC">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Web">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="49.0" text="Web">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="plugin">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="47.0" text="Mac">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="Linux">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="52.0" text="JSON">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" stylesheets="@../../default.css" text="website">
                                              <font>
-                                                <Font name="Calibri Light" size="15.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="management">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Calibri Light" size="15.0" />
-                                             </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="49.0" text="tool">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Calibri Light" size="15.0" />
-                                             </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="61.0" text="Others">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Calibri Light" size="15.0" />
-                                             </font>
-                                          </Button>
+                                          </ToggleButton>
                                        </children>
                                     </FlowPane>
                                  </children>
                               </AnchorPane>
                         </content>
                            <font>
-                              <Font name="Comic Sans MS" size="24.0" />
+                              <Font name="Calibri Bold" size="24.0" />
                            </font>
                       </TitledPane>
-                      <TitledPane animated="false" text="Language">
+                      <TitledPane animated="false" prefHeight="350.0" text="Language" textFill="#f2ecec">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="200.0">
+                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="200.0">
                                  <children>
-                                    <FlowPane id="RepFlowPane" layoutX="-13.0" prefHeight="280.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" fx:id="languagePane" layoutX="-13.0" prefHeight="280.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="41.0" text="all">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          <ToggleButton mnemonicParsing="false" text="All">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="54.0" text="java">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Java">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="22.0" text="C">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Ruby">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="61.0" text="Ruby">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Python">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="78.0" text="Python">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="JavaScript">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="98.0" text="JavaScript">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="PHP">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="56.0" text="C++">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="C">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="54.0" text="Perl">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Perl">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="54.0" text="PHP">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="C++">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="44.0" text="C#">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="HTML">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="67.0" text="HTML">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="C#">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="73.0" text="Erlang">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="VimL">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="22.0" text="R">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Objective-C">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="60.0" text="Shell">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Shell">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="56.0" text="Lua">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Haskell">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="56.0" text="CSS">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Erlang">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="86.0" text="Clojure">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Emacs Lisp">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="64.0" text="Viml">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="CSS">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="64.0" text="Scala">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Clojure">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="114.0" text="Objective-C">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Lua">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="61.0" text="Web">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Go">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="74.0" text="Others">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Common Lisp">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="R">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="OCaml">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Groovy">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Perl6">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="TeX">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="Puppet">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </ToggleButton>
                                        </children>
                                     </FlowPane>
                                  </children>
                               </AnchorPane>
                         </content>
                            <font>
-                              <Font name="Comic Sans MS" size="24.0" />
+                              <Font name="Calibri Bold" size="24.0" />
                            </font>
                       </TitledPane>
-                      <TitledPane animated="false" text="Create Time">
+                      <TitledPane animated="false" prefHeight="301.0" prefWidth="203.0" text="Create Time" textFill="#fcf8f8">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="201.0">
+                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="201.0">
                                  <children>
-                                    <FlowPane id="RepFlowPane" layoutX="-7.0" layoutY="-10.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <FlowPane id="RepFlowPane" fx:id="timePane" layoutX="-7.0" layoutY="-10.0" prefHeight="180.0" prefWidth="201.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2007">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          <ToggleButton mnemonicParsing="false" text="2007">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2008">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2008">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2009">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2009">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2010">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2010">
                                              <font>
-                                                <Font name="Calibri Light" size="18.0" />
+                                                <Font name="Calibri" size="16.0" />
                                              </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2011">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Calibri Light" size="18.0" />
-                                             </font>
-                                          </Button>
-                                          <Button mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" text="2012">
-                                             <cursor>
-                                                <Cursor fx:constant="HAND" />
-                                             </cursor>
-                                             <font>
-                                                <Font name="Calibri Light" size="18.0" />
-                                             </font>
-                                          </Button>
+                                          </ToggleButton>
                                        </children>
                                     </FlowPane>
                                  </children>
                               </AnchorPane>
                         </content>
                            <font>
-                              <Font name="Comic Sans MS" size="24.0" />
+                              <Font name="Calibri Bold" size="24.0" />
                            </font>
                       </TitledPane>
                     </panes>
@@ -428,63 +311,102 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="76.0" prefHeight="540.0" prefWidth="954.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="76.0" />
-                  <Label layoutX="17.0" layoutY="3.0" text="Repository Sort">
+                  <JFXToggleButton id="sortToggle" fx:id="upOrDown" layoutX="951.0" layoutY="-12.0" onMouseClicked="#handleUpDown" prefHeight="22.0" prefWidth="68.0" styleClass="jfx-toggle-Button" unToggleColor="#009688" unToggleLineColor="#77c2bb" />
+                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="81.0" prefHeight="540.0" prefWidth="954.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="81.0" />
+                  <Label layoutX="581.0" layoutY="625.0" prefHeight="28.0" prefWidth="104.0" text="共           页">
                      <font>
-                        <Font name="Calibri Light" size="26.0" />
+                        <Font name="Microsoft YaHei" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="general" layoutX="58.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleGeneral" text="General">
-                     <font>
-                        <Font name="Calibri" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="star" layoutX="152.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleStar" text="Star">
-                     <font>
-                        <Font name="Calibri" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button fx:id="fork" layoutX="214.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleFork" text="Fork">
-                     <font>
-                        <Font name="Calibri" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Label layoutX="581.0" layoutY="628.0" prefHeight="22.0" prefWidth="93.0" text="共           页">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" onKeyReleased="#handlePgNum" prefHeight="30.0" prefWidth="60.0" text="1">
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Button fx:id="contributor" layoutX="279.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#handleContributor" text="Contributor">
+                  <Button id="PageUp" fx:id="pgUp" layoutX="391.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="25.0" prefWidth="20.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <StackPane layoutX="604.0" layoutY="629.0" prefHeight="22.0" prefWidth="48.0">
+                     <children>
+                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="61.0" />
+                     </children></StackPane>
+                  <Button id="FirstPage" fx:id="fpg" layoutX="356.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="25.0" prefWidth="25.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="LastPage" fx:id="lpg" layoutX="531.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                  <Button id="PageDown" fx:id="pgDn" layoutX="500.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="27.0" prefWidth="20.0" stylesheets="@../../default.css">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
-                     <font>
-                        <Font name="Calibri" size="20.0" />
-                     </font>
                   </Button>
-                  <Button id="PageUp" fx:id="pgUp" layoutX="390.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../default.css" />
-                  <Button id="PageDown" fx:id="pgDn" layoutX="495.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="25.0" prefWidth="30.0" stylesheets="@../../default.css" />
-                  <StackPane layoutX="597.0" layoutY="629.0" prefHeight="22.0" prefWidth="48.0">
+                  <Line endX="946.0" layoutX="56.0" layoutY="80.0" opacity="0.8" startX="10.0" stroke="#00000097" strokeWidth="0.5" />
+                  <AnchorPane id="SortWay" layoutX="61.0" layoutY="36.0" prefHeight="43.0" prefWidth="937.0" stylesheets="@../../default.css">
                      <children>
-                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="48.0" />
+                        <Line endX="945.0" layoutX="2.0" layoutY="-1.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
+                        <JFXButton fx:id="star" buttonType="RAISED" layoutX="660.0" layoutY="2.0" onMouseClicked="#handleStar" text="Star" textFill="#fffbfb">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="fork" layoutX="749.0" layoutY="3.0" onMouseClicked="#handleFork" text="Fork" textFill="#fffbfb">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="contributor" layoutX="820.0" layoutY="2.0" onMouseClicked="#handleContributor" prefHeight="40.0" prefWidth="132.0" text="Contributor" textFill="#fffbfb">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="2.0" layoutY="8.0" text="Reposotories" textFill="#fcf9f9">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                        </Label>
                      </children>
-                  </StackPane>
-                  <Button id="FirstPage" fx:id="fpg" layoutX="353.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
-                  <Button id="LastPage" fx:id="lpg" layoutX="534.0" layoutY="625.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                  </AnchorPane>
+                  <Text layoutX="14.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reposotory List">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.8009708737864077" startX="1.0" startY="0.024271844660194164">
+                           <stops>
+                              <Stop color="#282727" />
+                              <Stop color="#282727" offset="0.05" />
+                              <Stop color="#e81d1d" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Calibri Light" size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="920.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="降序">
+                     <fill>
+                        <LinearGradient endX="0.2184466019417476" endY="0.30097087378640774" startX="1.0" startY="0.014563106796116505">
+                           <stops>
+                              <Stop color="#1b1a1a" />
+                              <Stop color="#e83535" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Microsoft Tai Le Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="1011.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="升序">
+                     <fill>
+                        <LinearGradient endX="0.2184466019417476" endY="0.30097087378640774" startX="1.0" startY="0.014563106796116505">
+                           <stops>
+                              <Stop color="#1b1a1a" />
+                              <Stop color="#e83535" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Microsoft Tai Le Bold" size="18.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
         </items>

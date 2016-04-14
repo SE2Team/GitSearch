@@ -15,7 +15,7 @@ public class ttttt extends Application{
     private Stage stage=new Stage();
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader=new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("./test.fxml"));
+        loader.setLocation(this.getClass().getResource("./test2.fxml"));
         AnchorPane anchorPane=(AnchorPane) loader.load();
         testController controller=loader.getController();
         Scene scene=new Scene(anchorPane);

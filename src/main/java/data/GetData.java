@@ -129,4 +129,29 @@ public class GetData {
 			}
 			return lists;
 		}
+		
+//		ArrayList<UserPO> list=new UserData().getUser();
+//		UserPO po=null;
+//		GetData get=new GetData("has");
+//		UserData data=new UserData();
+//		for(int i=0;i<list.size();i++){
+//			po=data.CheckUser(list.get(i).getLogin());
+//			get.writeDataAdd(po.getLogin()+";"+po.getHas().size());
+//		}
+//		
+//		GetData get2=new GetData("related");
+//		for(int i=0;i<list.size();i++){
+//			po=data.CheckUser(list.get(i).getLogin());
+//			get2.writeDataAdd(po.getLogin()+";"+po.getRelated().size());
+//		}
+//统计用户相关项目与用户拥有项目数	
+		public void clearData(String path) {
+			try {
+				FileWriter fw = new FileWriter(fatherPath + path + ".txt", false);
+				fw.write("");
+				fw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 }
