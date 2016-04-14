@@ -205,6 +205,8 @@ public class UserSearchController implements MyController {
         }
 
         pgNum.setText(String.valueOf(page));
+        playList();
+
     }
 
     private AnchorPane getSub(UserVO vo) throws IOException {
