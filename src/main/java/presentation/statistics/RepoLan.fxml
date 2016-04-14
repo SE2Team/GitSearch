@@ -11,7 +11,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="langChart" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="语言-项目数分布图">
+                  <BarChart fx:id="langChart" categoryGap="6.0" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="语言-项目数分布图">
                      <xAxis>
                         <CategoryAxis label="语言" side="BOTTOM" stylesheets="@../../default.css" />
                      </xAxis>
