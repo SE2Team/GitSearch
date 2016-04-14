@@ -205,6 +205,8 @@ public class UserSearchController implements MyController {
         }
 
         pgNum.setText(String.valueOf(page));
+        playList();
+
     }
 
     private AnchorPane getSub(UserVO vo) throws IOException {
@@ -352,4 +354,15 @@ public class UserSearchController implements MyController {
             }
         }
     }
+    @FXML
+    private void handleUpDown(){
+        ArrayList temp = new ArrayList();
+
+        for (int i = 0; i < vos.size(); i++) {
+            temp.add(vos.get(vos.size() - i - 1));
+        }
+        vos=temp;
+        updatePage();
+    }
+
 }

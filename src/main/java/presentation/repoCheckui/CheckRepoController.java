@@ -1,6 +1,7 @@
 package presentation.repoCheckui;
 
 import businesslogic.RepositoryBL.RepositoryController;
+import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.StatisticsBLService;
 import javafx.collections.FXCollections;
@@ -17,6 +18,7 @@ import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
 import vo.StaStrVO;
+import vo.StatisticsVO;
 
 import java.io.IOException;
 
@@ -119,10 +121,10 @@ public class CheckRepoController implements MyController {
                 /**
                  * 最多只能放7个+一个more
                  */
-                if (i >= 6) {
-                    contributorPane.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (i >= 6) {
+//                    contributorPane.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
 
@@ -132,10 +134,10 @@ public class CheckRepoController implements MyController {
                 /**
                  * 最多只能放7个+一个more
                  */
-                if (i >= 6) {
-                    collaboratorPane.getChildren().addAll(getSub("@more"));
-                    break;
-                }
+//                if (i >= 6) {
+//                    collaboratorPane.getChildren().addAll(getSub("@more"));
+//                    break;
+//                }
             }
         }
     }
@@ -186,17 +188,37 @@ public class CheckRepoController implements MyController {
         for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
             temp += staStrVO.getInt().get(i);
             langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
+            if (i==4){
+                langs.addAll(new PieChart.Data("Others", sum - temp));
+            }
         }
-        langs.addAll(new PieChart.Data("Others", sum - temp));
         langChart.setData(langs);
         //---------------set point graph
 
 //        langs.addAll(bl.languagesOfRepository());
 //        xpoi.setCategories(langs);
 //        poiChart.getData().addAll(getdata());
+        StatisticsBLService sbl=new StatisticsController();
+//        try {
+//            poiChart.setData(getData(sbl.getScores(vo)));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
-
+//    private ObservableList<XYChart.Series<String, Integer>> getData(StatisticsVO vo) {
+//        ObservableList<XYChart.Series<String, Integer>> observableList = FXCollections.observableArrayList();
+//        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+//        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 500; i++) {
+//            if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
+//                continue;
+//            }
+//            series.getData().add(new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i)));
+//
+//        }
+//        observableList.add(series);
+//        return observableList;
+//    }
 
 }

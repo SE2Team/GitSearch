@@ -2,23 +2,29 @@ package presentation.statistics;
 
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.SplitPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.StaIntVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 /**
  * Created by moeyui on 2016/4/9 0009.
@@ -133,6 +139,8 @@ public class UserStatisticsController implements MyController {
                     chartPane.getChildren().addAll(anchorPane);
                     UserTypeController userTypeController=loader.getController();
                     userTypeController.getTypeChart().setData(getPieData(bl.getUserType()));
+                    setupAnimation(userTypeController.getTypeChart().getData());
+
                     break;
                 case "Create Time":
                     loader.setLocation(this.getClass().getResource("UserCreateTime.fxml"));
@@ -140,6 +148,7 @@ public class UserStatisticsController implements MyController {
                     chartPane.getChildren().addAll(anchorPane);
                     UserCreateTimeController userCreateTimeController=loader.getController();
                     userCreateTimeController.getCreatTimeChart().setData(getData(bl.getUserCreated()));
+//                    setupBarAnimation(userCreateTimeController.getCreatTimeChart().getData());
                     break;
                 case "Related Repositories":
                     loader.setLocation(this.getClass().getResource("UserRelatedRep.fxml"));
@@ -167,5 +176,76 @@ public class UserStatisticsController implements MyController {
             e.printStackTrace();
         }
     }
+    /**
+     * 很带感的饼状图互动
+     * @param pcData
+     */
+    private void setupAnimation(ObservableList<PieChart.Data> pcData) {
+        pcData.stream().forEach(pieData -> {
+//            System.out.println(pieData.getName() + ": " + pieData.getPieValue());
+            pieData.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bounds b1 = pieData.getNode().getBoundsInLocal();
+                    double newX = (b1.getWidth()) / 2 + b1.getMinX();
+                    double newY = (b1.getHeight()) / 2 + b1.getMinY();
+                    // Make sure pie wedge location is reset
+                    pieData.getNode().setTranslateX(0);
+                    pieData.getNode().setTranslateY(0);
 
+                    // Show the BoundsInLocal of the selected wedge with a rectangle
+//                rectangle.setTranslateX(newX);
+//                rectangle.setTranslateY(newY);
+//                rectangle.setWidth(b1.getWidth());
+//                rectangle.setHeight(b1.getHeight());
+
+                    // Create the animation
+                    TranslateTransition tt = new TranslateTransition(
+                            Duration.millis(1500), pieData.getNode());
+                    tt.setByX(newX);
+                    tt.setByY(newY);
+                    tt.setAutoReverse(true);
+                    tt.setCycleCount(2);
+                    tt.play();
+                }
+            });
+        });
+    }
+    /**
+     * 很带感的柱状图互动
+     * @param pcData
+     */
+    private void setupBarAnimation(ObservableList<XYChart.Series<String,Integer>> pcData) {
+        pcData.stream().forEach(new Consumer<XYChart.Series<String, Integer>>() {
+            @Override
+            public void accept(XYChart.Series<String, Integer> pieData) {
+                pieData.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        Bounds b1 = pieData.getNode().getBoundsInLocal();
+                        double newX = (b1.getWidth()) / 2 + b1.getMinX();
+                        double newY = (b1.getHeight()) / 2 + b1.getMinY();
+                        // Make sure pie wedge location is reset
+                        pieData.getNode().setTranslateX(0);
+                        pieData.getNode().setTranslateY(0);
+
+                        // Show the BoundsInLocal of the selected wedge with a rectangle
+//                rectangle.setTranslateX(newX);
+//                rectangle.setTranslateY(newY);
+//                rectangle.setWidth(b1.getWidth());
+//                rectangle.setHeight(b1.getHeight());
+
+                        // Create the animation
+                        TranslateTransition tt = new TranslateTransition(
+                                Duration.millis(1500), pieData.getNode());
+                        tt.setByX(newX);
+                        tt.setByY(newY);
+                        tt.setAutoReverse(true);
+                        tt.setCycleCount(2);
+                        tt.play();
+                    }
+                });
+            }
+        });
+    }
 }

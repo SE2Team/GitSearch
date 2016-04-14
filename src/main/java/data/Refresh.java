@@ -121,6 +121,7 @@ public class Refresh {
 		String str="";
 		RepositoryPO po=null; 
 		String[] split=new String[2];
+		
 		for(int i=0;i<list.size();i++){
 			str="";
 			split=list.get(i).getName().split("/");
@@ -130,7 +131,7 @@ public class Refresh {
 			}
 			str=str+";"+list.get(i).getName();
 			data2.writeDataAdd(str);
-			
+			System.out.println(i);
 //			str="";
 //			for(int j=0;j<po.getCollaborators().size();j++){
 //				str=po.getCollaborators().get(j)+";"+str;

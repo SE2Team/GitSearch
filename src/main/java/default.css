@@ -370,9 +370,9 @@
     /*-fx-background-color: linear-gradient( black, darkred);*/
 /*}*/
 
-.scroll-pane .scroll-bar:vertical{
-    visibility: hidden;
-}
+/*.scroll-pane .scroll-bar:vertical{*/
+    /*visibility: hidden;*/
+/*}*/
 
 
 .jfx-toggle-Button{
@@ -392,6 +392,16 @@
 }
 
 
-#RepContri{
-    -fx-bar-gap:10;
+/*#RepContri{*/
+    /*-fx-bar-gap:20;*/
+/*}*/
+
+/*#RepColla{*/
+    /*-fx-bar-gap:20;*/
+/*}*/
+
+.chart .chart-content{
+    -fx-display-caret: true;
+    -fx-focus-traversable: true;
+    -fx-show-tick-labels: true;
 }

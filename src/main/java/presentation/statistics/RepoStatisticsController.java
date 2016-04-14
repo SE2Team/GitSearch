@@ -4,12 +4,14 @@ import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -109,9 +111,9 @@ public class RepoStatisticsController implements MyController {
     private ObservableList<PieChart.Data> getPieData(StaStrVO vo) {
         ObservableList<PieChart.Data> observableList = FXCollections.observableArrayList();
         for (int i = 0; i < vo.getStr().size() && i < vo.getInt().size() && i < 7; i++) {
-            observableList.addAll(new PieChart.Data(vo.getStr().get(i), vo.getInt().get(i)));
+            observableList.add(new PieChart.Data(vo.getStr().get(i), vo.getInt().get(i)));
             if (i == 6) {
-                observableList.addAll(new PieChart.Data("Others", vo.getSum()));
+                observableList.add(new PieChart.Data("Others", vo.getSum()));
             }
         }
         return observableList;
@@ -144,10 +146,11 @@ public class RepoStatisticsController implements MyController {
                     loader.setLocation(this.getClass().getResource(str));
                     anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-
                     RepoCreatTimeController repoCreatTimeController = loader.getController();
                     repoCreatTimeController.getCreatTimeChart().setData(getPieData(bl.getRepoCreated()));
                     pieTxt(repoCreatTimeController.getCreatTimeChart());
+                    setupAnimation(repoCreatTimeController.getCreatTimeChart().getData());
+
                     break;
                 case "Fork":
                     str = "RepoFork.fxml";
@@ -211,5 +214,41 @@ public class RepoStatisticsController implements MyController {
                         }
                     });
         }
+    }
+
+    /**
+     * 很带感的饼状图互动
+     * @param pcData
+     */
+    private void setupAnimation(ObservableList<PieChart.Data> pcData) {
+        pcData.stream().forEach(pieData -> {
+//            System.out.println(pieData.getName() + ": " + pieData.getPieValue());
+            pieData.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    Bounds b1 = pieData.getNode().getBoundsInLocal();
+                    double newX = (b1.getWidth()) / 2 + b1.getMinX();
+                    double newY = (b1.getHeight()) / 2 + b1.getMinY();
+                    // Make sure pie wedge location is reset
+                    pieData.getNode().setTranslateX(0);
+                    pieData.getNode().setTranslateY(0);
+
+                    // Show the BoundsInLocal of the selected wedge with a rectangle
+//                rectangle.setTranslateX(newX);
+//                rectangle.setTranslateY(newY);
+//                rectangle.setWidth(b1.getWidth());
+//                rectangle.setHeight(b1.getHeight());
+
+                    // Create the animation
+                    TranslateTransition tt = new TranslateTransition(
+                            Duration.millis(1500), pieData.getNode());
+                    tt.setByX(newX);
+                    tt.setByY(newY);
+                    tt.setAutoReverse(true);
+                    tt.setCycleCount(2);
+                    tt.play();
+                }
+            });
+        });
     }
 }
