@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -14,7 +16,60 @@
                   <PieChart fx:id="typeChart" layoutX="8.0" layoutY="6.0" legendSide="RIGHT" prefHeight="576.0" prefWidth="1003.0" stylesheets="@../../default.css" title="用户类型分布图" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane id="rightPane" maxHeight="598.0" maxWidth="251.0" minHeight="598.0" minWidth="251.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@../../default.css">
+               <children>
+                  <Label prefHeight="39.0" prefWidth="188.0" text="图表信息概述" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.7815533980582524" endY="1.0" startX="0.7718446601941747" startY="0.412621359223301">
+                           <stops>
+                              <Stop color="#e8dada" />
+                              <Stop color="#dd6060" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="39.0" prefHeight="60.0" prefWidth="230.0" text="图表显示了所有用户用户类型的基本情况。" textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="280.0" prefHeight="39.0" prefWidth="188.0" text="详细数据" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.7815533980582524" endY="1.0" startX="0.7718446601941747" startY="0.412621359223301">
+                           <stops>
+                              <Stop color="#e8dada" />
+                              <Stop color="#dd6060" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="319.0" prefHeight="39.0" prefWidth="99.0" text="用户注册数 " textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="注册年份 " textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="112.0" layoutY="319.0" prefHeight="39.0" prefWidth="99.0" text="num" textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="112.0" layoutY="358.0" prefHeight="39.0" prefWidth="99.0" text="year" textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
         </items>
       </SplitPane>
    </children>

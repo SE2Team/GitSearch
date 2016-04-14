@@ -233,10 +233,30 @@
     -fx-cursor: HAND;
 }
 
+#Contributors:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+}
+
+#Contributors:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
 #Collaborators {
     -fx-font-family:"Calibri";
     -fx-font-size: 24px;
     -fx-cursor: HAND;
+}
+
+#Collaborators:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+}
+
+#Collaborators:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
 }
 
 
@@ -404,4 +424,12 @@
     -fx-display-caret: true;
     -fx-focus-traversable: true;
     -fx-show-tick-labels: true;
+}
+
+#typeCombo{
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
+}
+
+#rightPane{
+    -fx-background-color: linear-gradient(#696969,#2f4f4f);
 }
