@@ -22,7 +22,7 @@ public class StatisticsController implements StatisticsBLService{
 		return statistics.getStar();
 	}
 	
-	public StatisticsVO getScores(RepositoryVO vo) throws IOException{
+	public StaStrVO getScores(RepositoryVO vo) throws IOException{
 		return statistics.getScores(vo);
 	}
 	

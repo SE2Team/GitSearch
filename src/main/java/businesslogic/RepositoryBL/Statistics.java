@@ -25,7 +25,7 @@ public class Statistics {
 	public StaStrVO getStar() throws IOException{
 		return PO2VO.convert(factory.getStatisticsDataService().getStar());
 	}
-	public StatisticsVO getScores(RepositoryVO vo) throws IOException {
+	public StaStrVO getScores(RepositoryVO vo) throws IOException {
 		// TODO Auto-generated method stub
 		return PO2VO.convert(factory.getStatisticsDataService().getScores(VO2PO.convert(vo)));
 	}
