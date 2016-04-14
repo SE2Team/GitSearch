@@ -88,11 +88,12 @@ public class Refresh {
 		UserPO po=null;
 		ArrayList<UserPO> list=new UserData().getUser();
 		GetData data= new GetData("has");
+		GetData data2= new GetData("related");
 		System.out.println("Success");
 		for(int i=0;i<list.size();i++){
 			po=userData.CheckUser(list.get(i).getLogin());
 			data.writeDataAdd(list.get(i).getLogin()+";"+po.getHas().size());
-			
+			data2.writeDataAdd(list.get(i).getLogin()+";"+po.getRelated().size());
 		}
 		System.out.println("Success");
 	} 
@@ -201,6 +202,26 @@ public class Refresh {
 			
 		}
 		new GetData("user_names").writeData(list2);
+		System.out.println("Success");
+	}
+	ArrayList<String> list=new ArrayList<>();
+	public void updateCollaCount() throws IOException{
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<String> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			list2.add(list.get(i).getCollaborators_count()+"");
+		}
+		new GetData("collaborator_count").writeData(list2);
+		System.out.println("Success");
+	}
+	
+	public void updateContrCount() throws IOException{
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+		ArrayList<String> list2=new ArrayList<>();
+		for(int i=0;i<list.size();i++){
+			list2.add(list.get(i).getContributor()+"");
+		}
+		new GetData("contributor_count").writeData(list2);
 		System.out.println("Success");
 	}
 }
