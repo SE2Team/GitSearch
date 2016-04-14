@@ -44,7 +44,7 @@
             </ImageView>
             <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
-                  <Image url="@../../Images/Contributors.jpg" />
+                  <Image url="@../../Images/contributors.png" />
                </image>
             </ImageView>
          </children>

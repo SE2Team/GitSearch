@@ -21,11 +21,11 @@
                   <Image url="@../../Images/home.png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="comboBox" layoutX="1102.0" layoutY="10.0" prefHeight="32.0" prefWidth="93.0" promptText="项目" />
-            <Button id="back" fx:id="back" layoutX="15.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="35.0" prefWidth="35.0" />
-            <Button id="advance" fx:id="advance" layoutX="111.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleAdvance" prefHeight="35.0" prefWidth="35.0" />
-            <Button id="home" fx:id="home" layoutX="61.0" layoutY="9.0" mnemonicParsing="false" onMouseClicked="#handleHome" prefHeight="35.0" prefWidth="35.0" />
-            <Button id="search_button" fx:id="search_button" layoutX="1196.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#handleSearch_b" prefHeight="30.0" prefWidth="30.0">
+            <ComboBox id="HomeCombo" fx:id="comboBox" layoutX="1104.0" layoutY="11.0" prefHeight="31.0" prefWidth="93.0" promptText="项目" />
+            <Button id="back" fx:id="back" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#handleBack" prefHeight="30.0" prefWidth="30.0" />
+            <Button id="advance" fx:id="advance" layoutX="109.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#handleAdvance" prefHeight="30.0" prefWidth="30.0" />
+            <Button id="home" fx:id="home" layoutX="61.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#handleHome" prefHeight="35.0" prefWidth="35.0" />
+            <Button id="search_button" fx:id="search_button" layoutX="1203.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#handleSearch_b" prefHeight="25.0" prefWidth="25.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

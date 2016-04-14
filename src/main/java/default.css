@@ -20,7 +20,7 @@
 }
 
 #back:hover {
-    -fx-background-image: url("Images/FocusBack.png");
+    -fx-background-image: url("Images/BackHover.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -31,7 +31,7 @@
 }
 
 #back:armed {
-    -fx-background-image: url("Images/ClickBack.png");
+    -fx-background-image: url("Images/BackClick.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -40,7 +40,7 @@
 }
 
 #home {
-    -fx-background-image: url("Images/Home.jpg");
+    -fx-background-image: url("Images/House.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -49,16 +49,24 @@
 }
 
 #home:hover {
-    -fx-background-color: lavender;
+    -fx-background-image: url("Images/homeHover.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
 
 }
 
 #home:armed {
-    -fx-background-color: lightgrey;
+    -fx-background-image: url("Images/homeClick.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
 }
 
 #advance {
-    -fx-background-image: url("Images/forward.png");
+    -fx-background-image: url("Images/advance.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -67,7 +75,7 @@
 }
 
 #advance:hover {
-    -fx-background-image: url("Images/FocusForward.png");
+    -fx-background-image: url("Images/AdvanceHover.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -76,7 +84,7 @@
 }
 
 #advance:armed {
-    -fx-background-image: url("Images/ClickForward.png");
+    -fx-background-image: url("Images/AdvanceClick.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -84,7 +92,16 @@
 }
 
 #search_button {
-    -fx-background-image: url("Images/search.jpg");
+    -fx-background-image: url("Images/search.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#search_button:hover {
+    -fx-background-image: url("Images/SearchHover.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: contain;
     -fx-background-insets: 0;
@@ -267,9 +284,9 @@
     -fx-background-color: linear-gradient(#696969,#2f4f4f);
 }
 
-.combo-box {
-    -fx-border-color: gray;
-    -fx-border-radius: 5;
+#HomeCombo {
+    /*-fx-border-color: gray;*/
+    /*-fx-border-radius: 5;*/
     -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
 }
 
@@ -309,13 +326,6 @@
     -fx-underline: false;
 }
 
-/*#GitHome{*/
-    /*-fx-background-image: url("Images/xk.png");*/
-/*}*/
-
-/*#MenuBar{*/
-    /*-fx-background-image: url("Images/MenuBar.png");*/
-/*}*/
 
 .bar-chart:vertical {
     -fx-font-family:"Calibri";
@@ -361,26 +371,12 @@
     visibility: hidden;
 }
 
-#decrease{
-    -fx-background-image: url("Images/selectedDecr.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: contain;
-    -fx-background-insets: 0;
-    -fx-background-color: null;
-}
-
-#increase{
-    -fx-background-image: url("Images/UnselectedIncr.png");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: contain;
-    -fx-background-insets: 0;
-    -fx-background-color: null;
-}
 
 .jfx-toggle-Button{
     -fx-background-color:inherit;
     -fx-border-color: #f4f4f4;
 }
+
 
 .jfx-toggle-Button:selected {
     -fx-background-color: inherit;
@@ -392,6 +388,7 @@
     -fx-border-color: #f4f4f4;
 }
 
-.jfx-combo-box{
-    -fx-background-color: inherit;
+
+#RepContri{
+    -fx-bar-gap:10;
 }
