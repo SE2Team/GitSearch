@@ -2,10 +2,6 @@ package data;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
@@ -28,7 +24,6 @@ public class StatisticsData implements StatisticsDataService{
 		double forks_num;
 		double contributors_num;
 		double  collaborators_num;
-		ArrayList<String> score = null;
 		RepositoryData data=new RepositoryData();
 		ArrayList<RepositoryPO> list=data.getRepositories();
 		issues_num=list.get(0).getOpen_issues();
