@@ -97,7 +97,7 @@ public class UserData implements UserDataService {
 			// TODO: handle exception
 			return null;
 		}
-		return null;
+		return po;
 		
 	}
 		
@@ -271,6 +271,11 @@ public class UserData implements UserDataService {
 	public ArrayList<UserPO> sortUser(User_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<UserPO> list = userList;
+		ArrayList<UserPO> listPO=new UserData().getUser();
+		if(list.size()==listPO.size()){
+			listPO=list;
+		}
+		
 		if (sort == User_Sort.Followers) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				for (int i = j; i < list.size() - 1; i++) {

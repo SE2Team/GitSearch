@@ -1,27 +1,25 @@
 package businesslogic.RepositoryBL;
 
-import java.util.Iterator;
-
 import vo.UserVO;
 
-/** 
- * @author 
- * @date 
-2016Äê3ÔÂ24ÈÕ 
-ÉÏÎç10:21:06 
- * @version 1.0 
- * @parameter  
- * @since  
- * @return  
- *@throws Òì³£Àà¼°Å×³öÌõ¼ş
+import java.util.Iterator;
+
+/**
+ * @author
+ * @version 1.0
+ * @date 2016å¹´3æœˆ24æ—¥
+ * ä¸Šåˆ10:21:06
+ * @parameter
+ * @return
  */
 public class ContributorsController {
-	Contributors contributors=new Contributors();
-	public Iterator<UserVO> NamesOfContributors(String userName, String reponame){
-		return null;
-	}
-	
-	public Iterator<String> getContributors(String userName, String reponame){
-		return contributors.getContributors(userName, reponame);
-	}
+    Contributors contributors = new Contributors();
+
+    public Iterator<UserVO> NamesOfContributors(String userName, String reponame) {
+        return null;
+    }
+
+    public Iterator<String> getContributors(String userName, String reponame) {
+        return contributors.getContributors(userName, reponame);
+    }
 }
