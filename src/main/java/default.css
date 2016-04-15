@@ -433,3 +433,26 @@
 #rightPane{
     -fx-background-color: linear-gradient(#696969,#2f4f4f);
 }
+
+#search_b{
+     -fx-background-image: url("Images/searchRep.png");
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: contain;
+     -fx-background-insets: 0;
+     /*-fx-border-style: hidden;*/
+     /*-fx-background-color: null;*/
+ }
+
+#repChart{
+    -fx-background-image: url("Images/repChart.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+}
+
+#userChart{
+    -fx-background-image: url("Images/userChart.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+}

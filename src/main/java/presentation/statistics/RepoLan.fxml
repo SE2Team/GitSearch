@@ -13,7 +13,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
                <children>
-                  <BarChart fx:id="langChart" categoryGap="6.0" layoutX="31.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="960.0" stylesheets="@../../default.css" title="语言-项目数分布图">
+                  <BarChart fx:id="langChart" categoryGap="6.0" layoutX="4.0" layoutY="24.0" legendVisible="false" prefHeight="552.0" prefWidth="1011.0" stylesheets="@../../default.css" title="语言-项目数分布图">
                      <xAxis>
                         <CategoryAxis label="语言" side="BOTTOM" stylesheets="@../../default.css" />
                      </xAxis>
@@ -25,7 +25,7 @@
             </AnchorPane>
           <AnchorPane id="rightPane" maxHeight="598.0" maxWidth="251.0" minHeight="598.0" minWidth="251.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@../../default.css">
                <children>
-                  <Label prefHeight="39.0" prefWidth="188.0" text="图表信息概述" wrapText="true">
+                  <Label layoutX="4.0" prefHeight="39.0" prefWidth="188.0" text="图表信息概述" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="18.0" />
                      </font>
@@ -38,7 +38,7 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label layoutX="11.0" layoutY="39.0" prefHeight="120.0" prefWidth="230.0" text="图表显示了所有项目使用语言的基本情况。根据统计结果，项目使用最多的是Ruby语言，部分项目使用PHP语言、Java语言、C#语言。" textFill="#f5efef" wrapText="true">
+                  <Label layoutX="14.0" layoutY="39.0" prefHeight="120.0" prefWidth="230.0" text="图表显示了所有项目使用语言的基本情况。根据统计结果，项目使用最多的是Ruby语言，部分项目使用PHP语言、Java语言、C#语言。" textFill="#f5efef" wrapText="true">
                      <font>
                         <Font name="Microsoft YaHei Bold" size="17.0" />
                      </font>

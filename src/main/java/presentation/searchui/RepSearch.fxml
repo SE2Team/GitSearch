@@ -312,7 +312,6 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <JFXToggleButton id="sortToggle" fx:id="upOrDown" layoutX="951.0" layoutY="-12.0" onMouseClicked="#handleUpDown" prefHeight="22.0" prefWidth="68.0" styleClass="jfx-toggle-Button" unToggleColor="#009688" unToggleLineColor="#77c2bb" />
-                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="81.0" prefHeight="540.0" prefWidth="954.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="81.0" />
                   <Label layoutX="581.0" layoutY="625.0" prefHeight="28.0" prefWidth="104.0" text="共           页">
                      <font>
                         <Font name="Microsoft YaHei" size="18.0" />
@@ -342,7 +341,7 @@
                      </cursor>
                   </Button>
                   <Line endX="946.0" layoutX="56.0" layoutY="80.0" opacity="0.8" startX="10.0" stroke="#00000097" strokeWidth="0.5" />
-                  <AnchorPane id="SortWay" layoutX="61.0" layoutY="36.0" prefHeight="43.0" prefWidth="937.0" stylesheets="@../../default.css">
+                  <AnchorPane id="SortWay" layoutX="61.0" layoutY="34.0" prefHeight="43.0" prefWidth="937.0" stylesheets="@../../default.css">
                      <children>
                         <Line endX="945.0" layoutX="2.0" layoutY="-1.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
                         <JFXButton fx:id="star" buttonType="RAISED" layoutX="660.0" layoutY="2.0" onMouseClicked="#handleStar" text="Star" textFill="#fffbfb">
@@ -407,6 +406,7 @@
                         <Font name="Microsoft Tai Le Bold" size="18.0" />
                      </font>
                   </Text>
+                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="83.0" prefHeight="540.0" prefWidth="954.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="83.0" />
                </children>
             </AnchorPane>
         </items>
