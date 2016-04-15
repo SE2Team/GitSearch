@@ -1,17 +1,11 @@
-
 /target/
-
 /.idea/*
 /.vscode/*
 *.iml
 /out/
-/
 bin/
-
 /.settings/*
-
 .classpath
-
 .project
 dependency-reduced-pom.xml
 
