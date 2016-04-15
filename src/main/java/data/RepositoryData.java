@@ -278,6 +278,11 @@ public class RepositoryData implements RepositoryDataService {
 	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list=finalList;
+		ArrayList<RepositoryPO> listpo=new ArrayList<>();
+		if(list.size()==listpo.size()){
+			list=listpo;
+		}
+		
 		if(sort==Repository_Sort.contributor){
 		
 		for(int j=0;j<list.size()-1;j++){
