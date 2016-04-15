@@ -7,9 +7,15 @@ import java.util.ArrayList;
 import com.sun.xml.internal.ws.api.pipe.ThrowableContainerPropertySet;
 
 import po.RepositoryPO;
+import po.StaStrPO;
 import po.UserPO;
 
 public class Refresh {
+	ArrayList<RepositoryPO> listRepo=new ArrayList<>();
+	public Refresh() throws IOException{
+		 listRepo=new RepositoryData().getRepositories();
+	}
+	
 	public void updateRepositor() throws IOException{
 		GetData data=new GetData();
 		String str="]";
@@ -243,5 +249,25 @@ public class Refresh {
 		}
 		new GetData("contributor_count").writeData(list2);
 		System.out.println("Success");
+	}
+	
+	public void updatedLanguageSituation()throws IOException{
+		
+		RepositoryData data=new RepositoryData();
+		StaStrPO po=null;
+		String string="";
+		GetData data2=new GetData("langeuagSituation");
+		for(int i=0;i<listRepo.size();i++){
+			System.out.println(i);
+			String[] str=listRepo.get(i).getName().split("/");
+			po=data.languagesOfRepository(str[0], str[1]);
+			if(po!=null){
+			for(int q=0;q<po.getInt().size();q++){
+				string=po.getStr().get(q)+":"+po.getInt().get(q)+";"+string;
+			}
+			}
+			string=string+";"+listRepo.get(i).getName();
+			data2.writeDataAdd(string);
+		}
 	}
 }
