@@ -186,7 +186,7 @@ public class FXUITest extends Application {
         loadPane.setPrefHeight(600);
         progressBar.setPrefWidth(500);
         loadPane.setCenter(progressBar);
-        homeLayout.setCenter(loadPane);
+//        homeLayout.setCenter(loadPane);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("searchui/RepSearch.fxml"));

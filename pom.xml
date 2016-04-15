@@ -71,9 +71,35 @@
                 </executions>
             </plugin>
 
-        </plugins>
 
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
         <resources>
+            <resource>
+
+                <directory>src/main/resource</directory>
+                <includes>
+                    <include>**/*.png</include>
+                    <include>**/*.json</include>
+                    <include>**/*.txt</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.icon</include>
+                    <include>**/*.JPG</include>
+                    <include>**/*.fxml</include>
+                    <include>**/*.css</include>
+
+                </includes>
+
+            </resource>
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
@@ -90,21 +116,7 @@
                 <!-- 是否替换资源中的属性-->
                 <filtering>false</filtering>
             </resource>
-            <resource>
-                <directory>src/main/resource</directory>
-                <includes>
-                    <include>**/*.png</include>
-                    <include>**/*.json</include>
-                    <include>**/*.txt</include>
-                    <include>**/*.jpg</include>
-                    <include>**/*.icon</include>
-                    <include>**/*.JPG</include>
-                    <include>**/*.fxml</include>
-                    <include>**/*.css</include>
 
-                </includes>
-
-            </resource>
         </resources>
 
 

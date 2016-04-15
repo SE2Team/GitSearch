@@ -6,6 +6,7 @@ import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import presentation.FXUITest;
 import presentation.common.MyController;
 
@@ -73,11 +74,16 @@ public class HomeController implements MyController{
 
     @FXML
     private void handleSearch_b(){
+        String str="";
         if(comboBox.getValue()=="项目"){
             fxui.searchRepo(searchText.getText().trim());
+
+            search_pane.setStyle("-fx-background-image: url(\"Images/searchRep.png\");");
         }else if(comboBox.getValue()=="用户"){
 //            System.out.println(searchText.getText());
             fxui.searchUser(searchText.getText().trim());
+            search_pane.setStyle("-fx-background-image: url(\"Images/searchUser.png\");");
+
         }
         top.getToggles().get(0).setSelected(true);
     }

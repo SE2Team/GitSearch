@@ -28,7 +28,7 @@ import java.io.IOException;
 public class CheckRepoController implements MyController {
     private FXUITest fxui;
     @FXML
-    private CategoryAxis yAxis;
+    private NumberAxis yAxis;
     @FXML
     private Label stars;
     @FXML
@@ -59,8 +59,6 @@ public class CheckRepoController implements MyController {
     private PieChart langChart;
     @FXML
     private CategoryAxis xpoi;
-    @FXML
-    private NumberAxis ypoi;
     @FXML
     private Label owner;
 
@@ -148,6 +146,9 @@ public class CheckRepoController implements MyController {
 //        xpoi.setLabel("languages");
         seriesLang.setName("language");
 //        sbl=new StatisticsController();
+
+        yAxis.setAutoRanging(false);
+        yAxis.setUpperBound(10);
     }
 
     /**

@@ -2,6 +2,7 @@ package presentation.statistics;
 
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -12,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.scene.Cursor;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -129,7 +131,7 @@ public class RepoStatisticsController implements MyController {
         chartPane.getChildren().clear();
         FXMLLoader loader = new FXMLLoader();
         String str = "";
-        AnchorPane anchorPane=new AnchorPane();
+        AnchorPane anchorPane = new AnchorPane();
 
         try {
             switch (chartType.getSelectionModel().getSelectedItem().toString()) {
@@ -140,6 +142,7 @@ public class RepoStatisticsController implements MyController {
                     chartPane.getChildren().addAll(anchorPane);
                     RepoLanController controller = loader.getController();
                     controller.getLangChart().setData(getData(bl.getLanguage()));
+                    barTxt(controller.getLangChart());
                     break;
                 case "Create Time":
                     str = "RepoCreateTime.fxml";
@@ -161,6 +164,8 @@ public class RepoStatisticsController implements MyController {
 
                     RepoForkController repoForkController = loader.getController();
                     repoForkController.getForkChart().setData(getData(bl.getForks()));
+                    barTxt(repoForkController.getForkChart());
+//                    setupAnimation(repoForkController.getForkChart());
                     break;
                 case "Star":
                     str = "RepoStar.fxml";
@@ -170,6 +175,7 @@ public class RepoStatisticsController implements MyController {
 
                     RepoStarController repoStarController = loader.getController();
                     repoStarController.getStarChart().setData(getData(bl.getStar()));
+                    barTxt(repoStarController.getStarChart());
                     break;
                 case "Contributors":
                     str = "RepoContri.fxml";
@@ -184,7 +190,7 @@ public class RepoStatisticsController implements MyController {
 //                    for(int i=0;i<data.size();i++){
 //                        data.get(i).setNode(new HoveredThresholdNode(0,));
 //                    }
-
+                    barTxt(repoContriController.getContributorsChart());
                     break;
                 case "Collaborators":
                     str = "RepoColla.fxml";
@@ -194,6 +200,7 @@ public class RepoStatisticsController implements MyController {
 
                     RepoCollaController repoCollaController = loader.getController();
                     repoCollaController.getCollaboratorsChart().setData(getData(bl.getCollaborator()));
+                    barTxt(repoCollaController.getCollaboratorsChart());
                     break;
             }
         } catch (IOException e) {
@@ -203,7 +210,7 @@ public class RepoStatisticsController implements MyController {
 
     }
 
-    private void pieTxt(PieChart pieChart){
+    private void pieTxt(PieChart pieChart) {
         final Label caption = new Label("");
         caption.setTextFill(Color.DARKORANGE);
         caption.setStyle("-fx-font: 24 arial;");
@@ -211,7 +218,8 @@ public class RepoStatisticsController implements MyController {
         for (final PieChart.Data data : pieChart.getData()) {
             data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
                     new EventHandler<MouseEvent>() {
-                        @Override public void handle(MouseEvent e) {
+                        @Override
+                        public void handle(MouseEvent e) {
 //                            caption.setTranslateX(e.getSceneX());
 //                            caption.setTranslateY(e.getSceneY());
                             caption.setLayoutX(e.getSceneX());
@@ -224,7 +232,40 @@ public class RepoStatisticsController implements MyController {
     }
 
     /**
+     * 实现在柱状图上显示文字
+     * @param c
+     */
+    private void barTxt(XYChart<String,Integer> c){
+        for (XYChart.Series<String,Integer> series:c.getData()){
+            for (XYChart.Data<String,Integer> data:series.getData()){
+                final Label[] label = new Label[1];
+                data.getNode().addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        double x=data.getNode().getLayoutX();
+                        double y=data.getNode().getLayoutY();
+                        label[0] =new Label(String.valueOf(data.getYValue()));
+                        label[0].setLayoutX(x+c.getLayoutX()+70+100);
+                        label[0].setLayoutY(y+c.getLayoutY()+30);
+
+                        chartPane.getChildren().addAll(label[0]);
+
+                    }
+                });
+                data.getNode().addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        chartPane.getChildren().remove(label[0]);
+                    }
+                });
+            }
+        }
+    }
+
+
+    /**
      * 很带感的饼状图互动
+     *
      * @param pcData
      */
     private void setupAnimation(ObservableList<PieChart.Data> pcData) {
@@ -258,4 +299,29 @@ public class RepoStatisticsController implements MyController {
             });
         });
     }
+
+    /**
+     *
+     */
+    private void setupAnimation(XYChart<String, Integer> xyChart) {
+        Timeline tl = new Timeline();
+        tl.getKeyFrames().add(
+                new KeyFrame(Duration.millis(500),
+                        new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent actionEvent) {
+                                for (XYChart.Series<String, Integer> series : xyChart.getData()) {
+                                    for (XYChart.Data<String, Integer> data : series.getData()) {
+                                        data.setXValue(String.valueOf(Math.random() * 1000));
+                                    }
+                                }
+                            }
+                        }
+                ));
+        tl.setCycleCount(Animation.INDEFINITE);
+        tl.setAutoReverse(true);
+        tl.play();
+    }
+
+
 }
