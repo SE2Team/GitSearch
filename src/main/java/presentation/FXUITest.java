@@ -4,14 +4,10 @@ import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
-import com.aquafx_project.AquaFx;
-import com.aquafx_project.controls.skin.AquaButtonSkin;
-import com.jfoenix.controls.JFXProgressBar;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -32,8 +28,6 @@ import vo.RepositoryVO;
 import vo.UserVO;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Stack;
 
 /**
@@ -71,9 +65,10 @@ public class FXUITest extends Application {
 
     private void initHome() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("./homeui/Home.fxml"));
+        loader.setLocation(this.getClass().getResource("homeui/Home.fxml"));
 
         try {
+//            System.out.println(this.getClass().getResource("homeui/Home.fxml"));
             homeLayout = (BorderPane) loader.load();
             HomeController controller = loader.getController();
             controller.setFxui(this);
