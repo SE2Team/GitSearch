@@ -120,7 +120,7 @@
                                  <children>
                                     <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="6.0" orientation="VERTICAL" prefHeight="516.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
                                       <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="216.0" prefWidth="820.0">
+                                        <AnchorPane maxHeight="232.0" maxWidth="820.0" minHeight="232.0" minWidth="820.0" prefHeight="216.0" prefWidth="820.0">
                                              <children>
                                                 <Label layoutX="19.0" layoutY="12.0" text="Language" textFill="#4ebce4">
                                                    <font>
@@ -185,7 +185,7 @@
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <BarChart fx:id="poiChart" layoutY="94.0" prefHeight="356.0" prefWidth="437.0">
+                                    <BarChart fx:id="poiChart" layoutY="94.0" legendVisible="false" prefHeight="356.0" prefWidth="437.0">
                                       <xAxis>
                                         <CategoryAxis side="BOTTOM" fx:id="xpoi" />
                                       </xAxis>
