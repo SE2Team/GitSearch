@@ -10,6 +10,8 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.sun.xml.internal.org.jvnet.fastinfoset.stax.LowLevelFastInfosetStreamWriter;
+
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
 import po.RepositoryPO;
@@ -203,14 +205,15 @@ public class RepositoryData implements RepositoryDataService {
 		// TODO Auto-generated method stub
 		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
 				+reponame+"/"+"languages";
-		ArrayList<String> list=new GetData().getString(str1);
-//		try {
-//			 list=new GetData().getString(str1);
-//		} catch (Exception IOException) {
-//		
-//		}
+		ArrayList<String> list=new ArrayList<>();
 		ArrayList<String> listStr=new ArrayList<>();
 		ArrayList<Integer> listInt=new ArrayList<>();
+		try {
+			list=new GetData().getString(str1);
+		} catch (Exception IOException) {
+			return new StaStrPO(listStr, listInt);
+		}
+		
 		for(int i=0;i<list.size()-1;i++){
 			String str[]=list.get(i).split(":");
 			listStr.add(str[0]);
@@ -278,7 +281,7 @@ public class RepositoryData implements RepositoryDataService {
 	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list=finalList;
-		ArrayList<RepositoryPO> listpo=new ArrayList<>();
+		ArrayList<RepositoryPO> listpo=new RepositoryData().getRepositories();
 		if(list.size()==listpo.size()){
 			list=listpo;
 		}
