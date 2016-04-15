@@ -116,7 +116,7 @@ public class GetData {
 		public ArrayList<String> readData() {
 			ArrayList<String> lists = new ArrayList<String>();
 			try {
-				BufferedReader br = new BufferedReader(new FileReader(new File(fatherPath + path + ".txt")));
+				BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream(path+".txt")));
 				String temp = null;
 				while((temp = br.readLine()) != null) {
 					lists.add(temp);
