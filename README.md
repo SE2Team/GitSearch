@@ -10,8 +10,8 @@ master分支是成品分支，其它分支都是开发用的分支，项目目�
 > 迭代二说明：GitSearch-1.2.jar可以运行，相关依赖为项目目录下的lib目录下的所有jar包，部署的时候需要将GitSearch-1.2.jar和lib文件夹及其中文件放在同一
 目录下。具体使用请参照document目录下的部署文档。
 
-项目源代码在src目录下，为maven项目结构，通过将项目目录下的jfoenix-1.0.jar（maven库中没有的第三方jar包）
-添加到本地maven仓库，就可以通过maven install来打包。GitSearch-1.2.jar及lib目录下的
+项目源代码在src目录下，为maven项目结构，通过将项目目录下的**jfoenix-1.0.jar**（maven库中没有的第三方jar包）
+添加到本地maven仓库，就可以通过`maven install`来打包。GitSearch-1.2.jar及lib目录下的
 依赖jar文件就是这样生成的。
 
 
