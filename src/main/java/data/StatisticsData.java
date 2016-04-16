@@ -1,14 +1,13 @@
 package data;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
 import po.StaIntPO;
 import po.StaStrPO;
-import po.StatisticsPO;
 import po.UserPO;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class StatisticsData implements StatisticsDataService{
 	/**
@@ -515,7 +514,7 @@ public class StatisticsData implements StatisticsDataService{
 	@Override
 	public StaStrPO getCollaborator() {
 		// TODO Auto-generated method stub
-		ArrayList<String> list=new GetData("Collaborator").readData();
+		ArrayList<String> list=new GetData("collaborator").readData();
 		ArrayList<String> listStr = new ArrayList<String>();
 		ArrayList<Integer> listInt=new ArrayList<Integer>();
 		ArrayList<Integer> listInt1=new ArrayList<Integer>();
@@ -583,7 +582,7 @@ public class StatisticsData implements StatisticsDataService{
 	@Override
 	public StaStrPO getContributor() {
 		// TODO Auto-generated method stub
-		ArrayList<String> list=new GetData("Contributor").readData();
+		ArrayList<String> list=new GetData("contributor").readData();
 		ArrayList<String> listStr = new ArrayList<String>();
 		ArrayList<Integer> listInt=new ArrayList<Integer>();
 		ArrayList<Integer> listInt1=new ArrayList<Integer>();
