@@ -11,7 +11,7 @@ import presentation.common.MyController;
 public class RepoStarController implements MyController{
     private FXUITest fxuiTest;
     @FXML
-    private BarChart<String,Integer> starChart;
+    private BarChart<String,Number> starChart;
     @Override
     public void initialize() {
 
@@ -27,11 +27,11 @@ public class RepoStarController implements MyController{
 
     }
 
-    public BarChart<String, Integer> getStarChart() {
+    public BarChart<String, Number> getStarChart() {
         return starChart;
     }
 
-    public void setStarChart(BarChart<String, Integer> starChart) {
+    public void setStarChart(BarChart<String, Number> starChart) {
         this.starChart = starChart;
     }
 }
