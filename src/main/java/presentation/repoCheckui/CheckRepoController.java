@@ -65,6 +65,8 @@ public class CheckRepoController implements MyController {
     private CategoryAxis xpoi;
     @FXML
     private Label owner;
+    @FXML
+    private AnchorPane noNetWork;
 
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
@@ -186,22 +188,31 @@ public class CheckRepoController implements MyController {
         //---------------set language graph-------------
         try {
             staStrVO = bl.languagesOfRepository(vo.getOwnerName(), vo.getRepoName());
+            if (staStrVO.getStr().size()!=0) {
+
+
+                double sum = 0;
+                for (int j = 0; j < staStrVO.getInt().size(); j++) {
+                    sum += staStrVO.getInt().get(j);
+                }
+                double temp = 0;
+                for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
+                    temp += staStrVO.getInt().get(i);
+                    langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
+                    if (i==4){
+                        langs.addAll(new PieChart.Data("Others", sum - temp));
+                    }
+                }
+                langChart.setData(langs);
+                noNetWork.setVisible(false);
+            } else {
+                langChart.setVisible(false);
+                noNetWork.setVisible(true);
+
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        double sum = 0;
-        for (int j = 0; j < staStrVO.getInt().size(); j++) {
-            sum += staStrVO.getInt().get(j);
-        }
-        double temp = 0;
-        for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
-            temp += staStrVO.getInt().get(i);
-            langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
-            if (i==4){
-                langs.addAll(new PieChart.Data("Others", sum - temp));
-            }
-        }
-        langChart.setData(langs);
         //---------------set point graph-------------
 
         StatisticsBLService sbl=new StatisticsController();
