@@ -1,0 +1,5 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第8周
+what:讨论如何设计统计图更能展现数据价值
+how long:2h
+arrived solutions:基本确定各统计图的展现方式

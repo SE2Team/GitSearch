@@ -1,0 +1,5 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第8周
+what:写代码，修bug，进入维护阶段
+how long:2h
+arrived solutions:修复了一些bug，项目停止添加新功能，进入维护阶段

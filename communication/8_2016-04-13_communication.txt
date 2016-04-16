@@ -1,0 +1,5 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第8周
+what:测试项目，为明天的展示做最后的准备
+how long:2h
+arrived solutions:修复了一些小bug，计划了展示的演示流程
