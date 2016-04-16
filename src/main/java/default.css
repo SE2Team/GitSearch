@@ -1,0 +1,458 @@
+#repoPane, #relaPane {
+    -fx-border-width: 1;
+    -fx-border-insets: 0;
+    -fx-border-color: GRAY;
+}
+
+.split-pane:vertical .split-pane-divider, .split-pane:horizontal .split-pane-divider {
+    /*-fx-position-shape: false;*/
+    /*visibility: hidden;*/
+
+}
+
+#back {
+    -fx-background-image: url("Images/back.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+}
+
+#back:hover {
+    -fx-background-image: url("Images/BackHover.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+
+
+}
+
+#back:armed {
+    -fx-background-image: url("Images/BackClick.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-border-style: hidden;
+    -fx-background-color: null;
+}
+
+#home {
+    -fx-background-image: url("Images/House.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#home:hover {
+    -fx-background-image: url("Images/homeHover.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#home:armed {
+    -fx-background-image: url("Images/homeClick.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+}
+
+#advance {
+    -fx-background-image: url("Images/advance.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#advance:hover {
+    -fx-background-image: url("Images/AdvanceHover.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#advance:armed {
+    -fx-background-image: url("Images/AdvanceClick.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+}
+
+#search_button {
+    -fx-background-image: url("Images/search.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#search_button:hover {
+    -fx-background-image: url("Images/SearchHover.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#PageUp {
+    -fx-background-image: url("Images/PageUp.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#PageUp:hover {
+    -fx-background-image: url("Images/FocusPageUp.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+    /*-fx-background-color:rgb(201,200,200);*/
+}
+
+#PageUp:armed {
+    -fx-background-image: url("Images/ClickPageUp.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+    /*-fx-background-color:rgb(155,153,153);*/
+}
+
+#PageDown {
+    -fx-background-image: url("Images/PageDown.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#PageDown:hover {
+    -fx-background-image: url("Images/FocusPageDown.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#PageDown:armed {
+    -fx-background-image: url("Images/ClickPageDown.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#RepFlowPane {
+    -fx-vgap: 8;
+    -fx-hgap: 5;
+}
+
+#timePane {
+    -fx-vgap: 8;
+    -fx-hgap: 5;
+}
+
+#FirstPage {
+    -fx-background-image: url("Images/FirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#FirstPage:hover {
+    -fx-background-image: url("Images/FocusFirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#FirstPage:armed {
+    -fx-background-image: url("Images/ClickFirstPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#LastPage {
+    -fx-background-image: url("Images/LastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#LastPage:hover {
+    -fx-background-image: url("Images/FocusLastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#LastPage:armed {
+    -fx-background-image: url("Images/ClickLastPage.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+    -fx-background-color: null;
+
+}
+
+#Contributors {
+    -fx-font-family:"Calibri";
+    -fx-font-size: 24px;
+    -fx-cursor: HAND;
+}
+
+#Contributors:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+}
+
+#Contributors:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+#Collaborators {
+    -fx-font-family:"Calibri";
+    -fx-font-size: 24px;
+    -fx-cursor: HAND;
+}
+
+#Collaborators:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+}
+
+#Collaborators:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+
+.toggle-button {
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-padding: 3 6 6 6;
+    -fx-background-color:linear-gradient(#cd5c5c,#ffa07a);
+    /*-fx-background-color: linear-gradient(#add8e6, #fff8dc);*/
+    /*-fx-background-color: linear-gradient(red,black);*/
+}
+
+.toggle-button:selected {
+    -fx-text-fill: white;
+    -fx-background-color: linear-gradient(#ff4500,#cd5c5c);
+    /*-fx-background-color: linear-gradient(#5f9ea0, #add8e6);*/
+}
+
+.toggle-button:hover {
+    -fx-background-color: linear-gradient(#ffa07a,#cd5c5c);
+    /*-fx-background-color: linear-gradient(#fff8dc, #add8e6);*/
+}
+
+/*.button {*/
+    /*-fx-text-fill: white;*/
+    /*!*-fx-background-color: linear-gradient(#f5f5dc, #add8e6);*!*/
+/*}*/
+
+
+/*.button:hover {*/
+    /*-fx-text-fill: linear-gradient(#add8e6, #f5f5dc);*/
+    /*!*-fx-background-color: linear-gradient(#add8e6, #f5f5dc);*!*/
+/*}*/
+
+/*.button:left{*/
+    /*-fx-text-fill: white;*/
+    /*-fx-background-color: linear-gradient(#add8e6, #f5f5dc);*/
+/*}*/
+
+#wrap label {
+    -fx-graphic-text-gap: 0;
+}
+
+#titledPane {
+    -fx-background-color: linear-gradient(#696969,#2f4f4f);
+}
+
+#HomeCombo {
+    /*-fx-border-color: gray;*/
+    /*-fx-border-radius: 5;*/
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
+}
+
+#SortWay {
+    -fx-background-color: linear-gradient( #2f4f4f, #696969);
+    /*-fx-background-color: linear-gradient(#f5f5dc, #add8e6);*/
+}
+
+#RepName {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+#RepName:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+}
+
+#RepName:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+#UserName {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+#UserName:hover {
+    -fx-text-fill: #4094b9;
+    -fx-underline: true;
+
+}
+
+#UserName:left {
+    -fx-text-fill: #5799d3;
+    -fx-underline: false;
+}
+
+
+.bar-chart:vertical {
+    -fx-font-family:"Calibri";
+    -fx-font-size: 24px;
+    /*-fx-cursor: HAND;*/
+    -fx-content-display: bottom;
+}
+.bar-chart:vertical .chart-content .plot-content{
+    -fx-animated: true;
+}
+#MenuBar{
+    -fx-background-color: linear-gradient(#696969,#2f4f4f);
+}
+#MainButton{
+
+}
+
+.axis:bottom .axis-label{
+    -fx-wrap-text: true;
+}
+
+#UserSearchLeft{
+    -fx-background-color: linear-gradient( #696969,#2f4f4f);
+}
+
+#RepSearchLeft{
+    -fx-background-color: linear-gradient(#696969,#2f4f4f);
+}
+
+.titled-pane .title{
+    -fx-background-color: linear-gradient(#ffa07a,darkred);
+}
+
+.titled-pane .title:hover{
+    -fx-background-color: linear-gradient(black, #800000);
+}
+
+/*.first-titled-pane .title{*/
+    /*-fx-background-color: linear-gradient( black, darkred);*/
+/*}*/
+/*.first-titled-pane .title{*/
+    /*-fx-background-color: linear-gradient( black, darkred);*/
+/*}*/
+
+/*.scroll-pane .scroll-bar:vertical{*/
+    /*visibility: hidden;*/
+/*}*/
+
+
+.jfx-toggle-Button{
+    -fx-background-color:inherit;
+    -fx-border-color: #f4f4f4;
+}
+
+
+.jfx-toggle-Button:selected {
+    -fx-background-color: inherit;
+    -fx-border-color: #f4f4f4;
+}
+
+.jfx-toggle-Button:hover {
+    -fx-background-color: inherit;
+    -fx-border-color: #f4f4f4;
+}
+
+
+/*#RepContri{*/
+    /*-fx-bar-gap:20;*/
+/*}*/
+
+/*#RepColla{*/
+    /*-fx-bar-gap:20;*/
+/*}*/
+
+.chart .chart-content{
+    -fx-display-caret: true;
+    -fx-focus-traversable: true;
+    -fx-show-tick-labels: true;
+}
+
+#typeCombo{
+    -fx-background-color: linear-gradient(#f5f5dc, #add8e6);
+}
+
+#rightPane{
+    -fx-background-color: linear-gradient(#696969,#2f4f4f);
+}
+
+#search_b{
+     -fx-background-image: url("Images/searchRep.png");
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: contain;
+     -fx-background-insets: 0;
+     /*-fx-border-style: hidden;*/
+     /*-fx-background-color: null;*/
+ }
+
+#repChart{
+    -fx-background-image: url("Images/repChart.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+}
+
+#userChart{
+    -fx-background-image: url("Images/userChart.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: contain;
+    -fx-background-insets: 0;
+}

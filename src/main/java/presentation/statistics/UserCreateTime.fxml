@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.UserCreateTimeController">
+   <children>
+      <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
+               <children>
+                  <BarChart fx:id="creatTimeChart" layoutX="7.0" layoutY="7.0" legendVisible="false" prefHeight="568.0" prefWidth="1002.0" title="用户-时间分布图">
+                     <xAxis>
+                        <CategoryAxis label="时间" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis label="用户数" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+          <AnchorPane id="rightPane" maxHeight="598.0" maxWidth="251.0" minHeight="598.0" minWidth="251.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@../../default.css">
+               <children>
+                  <Label layoutX="6.0" prefHeight="39.0" prefWidth="188.0" text="图表信息概述" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.7815533980582524" endY="1.0" startX="0.7718446601941747" startY="0.412621359223301">
+                           <stops>
+                              <Stop color="#e8dada" />
+                              <Stop color="#dd6060" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="30.0" prefHeight="120.0" prefWidth="230.0" text="图表显示了所有用户注册时间的基本情况。绝大多数用户在2008年和2009年注册，用户主要于2008年后注册。" textFill="#f5efef" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,20 +1,31 @@
 package data;
 
+
+import java.io.IOException;
 import java.util.ArrayList;
+
 
 import dataService.CollaboratorsDataService;
 import po.UserPO;
 
 public class CollaboratorsData implements CollaboratorsDataService {
 
-	public ArrayList<UserPO> NamesOfCollaborators(String userName, String reponame) {
+	public ArrayList<UserPO> NamesOfCollaborators(String url) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public ArrayList<String> getCollaborators(String userName, String reponame) {
+	public ArrayList<String> getCollaborators(String url) throws IOException {
 		// TODO Auto-generated method stub
-		return null;
+		GetData data=new GetData();
+		if(url.equals("")){
+			return null;
+		}
+		ArrayList<String> list=new ArrayList<String>();
+		list=data.getString(url);
+		return list;
 	}
+
+	
 
 }

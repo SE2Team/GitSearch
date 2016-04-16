@@ -5,6 +5,9 @@ import po.RepositoryPO;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Util.RepositoryInfo;
+import Util.Repository_Sort;
+
 public class RepositoryDataTest extends TestCase {
 	
 	private static RepositoryData testRepository=new RepositoryData();
@@ -30,23 +33,28 @@ public class RepositoryDataTest extends TestCase {
 		assertTrue(po3.getName().equals(testRepository.checkRepository("macournoyer", "thin").getName()));
 	}
 	
-//	/*测试getRepositoriesNames方法*/
-//	public void testgetRepositoriesNames() throws IOException{
-//		ArrayList<String> a=testRepository.getRepositoriesNames();
-//		assertEquals(po1.getName(), a.get(0));
-////		assertEquals(po2.getName(), a.get(1));
-////		assertEquals(po3.getName(), a.get(4));
-//	}
+	/*测试getRepositoriesNames方法*/
+	public void testGetRepositoriesNames() throws IOException{
+		ArrayList<String> a=testRepository.getRepositoriesNames();
+		assertEquals(po1.getName(), a.get(0));
+		assertEquals(po2.getName(), a.get(1));
+		assertEquals(po3.getName(), a.get(4));
+	}
 
 	/*测试languagesOfRepository方法*/
-	public void testlanguagesOfRepository() throws IOException{
+	public void testLanguagesOfRepository() throws IOException{
 		assertTrue(po1.getLanguage().equals(testRepository.checkRepository("mojombo","grit").getLanguage()));
 		assertTrue(po2.getLanguage().equals(testRepository.checkRepository("mojombo", "god").getLanguage()));
 		assertTrue(po3.getLanguage().equals(testRepository.checkRepository("macournoyer", "thin").getLanguage()));
 	}
 
-	/*测试RepositoryInfo方法*/
-	public void testRepositoryInfo(){
+	/*测试search方法*/
+	public void testSearch() throws IOException{
 		
+		assertEquals(po1.getName(), testRepository.Search("grit").get(0).getName());
+		assertEquals(po2.getDescription(), testRepository.Search("god").get(0).getDescription());
+		assertEquals(po3.getForks(), testRepository.Search("thin").get(0).getForks());
 	}
+	
+	
 }

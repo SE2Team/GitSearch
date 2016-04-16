@@ -1,8 +1,5 @@
 package data;
 
-import java.util.ArrayList;
-
-import Util.BranchInfo;
 import dataService.BranchDataService;
 import dataService.CollaboratorsDataService;
 import dataService.CommitDataService;
@@ -12,6 +9,7 @@ import dataService.ForkDataService;
 import dataService.IssuesDataService;
 import dataService.PullDataService;
 import dataService.RepositoryDataService;
+import dataService.StatisticsDataService;
 import dataService.UserDataService;
 
 
@@ -55,4 +53,7 @@ public class DataFactory implements DataFatoryService{
     	return new  PullData();
     }
     
+    public StatisticsDataService getStatisticsDataService(){
+    	return new StatisticsData();
+    }
 }

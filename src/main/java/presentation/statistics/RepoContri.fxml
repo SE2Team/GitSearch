@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.RepoContriController">
+   <children>
+      <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1054.0">
+               <children>
+                  <BarChart id="RepContri" fx:id="contributorsChart" barGap="30.0" layoutX="9.0" layoutY="10.0" legendVisible="false" prefHeight="583.0" prefWidth="1000.0" title="项目数-贡献者分布表">
+                    <xAxis>
+                      <CategoryAxis label="贡献者数量" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis label="项目数" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+          <AnchorPane id="rightPane" maxHeight="598.0" maxWidth="251.0" minHeight="598.0" minWidth="251.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@../../default.css">
+               <children>
+                  <Label layoutX="3.0" prefHeight="39.0" prefWidth="188.0" text="图表信息概述" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="18.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.7815533980582524" endY="1.0" startX="0.7718446601941747" startY="0.412621359223301">
+                           <stops>
+                              <Stop color="#e8dada" />
+                              <Stop color="#dd6060" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="24.0" prefHeight="110.0" prefWidth="231.0" text="图表显示了所有项目贡献者数量的基本情况。大部分项目拥有25~50个贡献者。" textFill="#f2f0f0" wrapText="true">
+                     <font>
+                        <Font name="Microsoft YaHei Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

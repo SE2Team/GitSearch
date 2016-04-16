@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="58.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.SubContriController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="50.0" fitWidth="50.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/home.png" />
+         </image>
+      </ImageView>
+      <Label id="Contributors" fx:id="label" layoutX="51.0" layoutY="15.0" onMouseClicked="#handleCheck" stylesheets="@../../default.css" text="Contributor`s name" textFill="#5799d3">
+         <font>
+            <Font name="Calibri" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Line endX="400.0" endY="12.0" layoutX="5.0" layoutY="44.0" opacity="0.8" startY="12.0" stroke="#00000097" strokeWidth="0.5" />
+   </children>
+</AnchorPane>

@@ -1,6 +1,6 @@
 package po;
 
-
+import java.util.ArrayList;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -25,10 +25,14 @@ public class UserPO {
 	int following=0;
 	String created_at="";
 	String updated_at="";
+	ArrayList<String> related;
+	ArrayList<String> has;
 
 	public UserPO(int id, String login, String type, String name, String company, String email,
 			 String public_repos, int public_gists, int followers, int following, String created_at,
-			String updated_at) {
+			String updated_at,ArrayList<String> related,ArrayList<String> has) {
+			this.related=related;
+			this.has=has;
 			this.id=id;
 			this.login=login;
 			this.type=type;
@@ -41,10 +45,11 @@ public class UserPO {
 			this.following=following;
 			this.created_at=created_at;
 			this.updated_at=updated_at;
+
 	}
 	
 	public String getUpdated(){
-		return this.updated_at;
+		 return this.updated_at;
 	}
 	
 	public String getCreated(){
@@ -93,5 +98,19 @@ public class UserPO {
 	public int getId(){
 		return this.id;
 	}
+
+	public ArrayList<String> getRelated(){
+		return this.related;
+	}
+	public ArrayList<String> getHas(){
+		return this.has;
+	}
 	
+	public void setHas( ArrayList<String> has){
+		this.has=has;
+	}
+	
+	public void setRelated( ArrayList<String> related){
+		this.related=related;
+	}
 }

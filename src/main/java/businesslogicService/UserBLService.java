@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 import Util.UserInfo;
+import Util.User_Sort;
 import vo.UserVO;
 
 /**
@@ -12,7 +13,7 @@ import vo.UserVO;
  */
 public interface UserBLService {
     /**
-     * 查询某个user的详细信息（这里的user是项目中contributor或collaborator的登录名）
+     * 鏌ヨ鏌愪釜user鐨勮缁嗕俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛?
      *
      * @param user
      * @return
@@ -21,10 +22,10 @@ public interface UserBLService {
 
 
     /**
-     * 查询某个user的某项信息（这里的user是项目中contributor或collaborator的登录名）
+     * 鏌ヨ鏌愪釜user鐨勬煇椤逛俊鎭紙杩欓噷鐨剈ser鏄」鐩腑contributor鎴朿ollaborator鐨勭櫥褰曞悕锛?
      *
      * @param name
-     * @param info item可接受的参数有：
+     * @param info item鍙帴鍙楃殑鍙傛暟鏈夛細
      *             id,login,type,name
      *             company,blog,location,email,bio
      *             public_repos,public_gists,followers,following
@@ -34,7 +35,7 @@ public interface UserBLService {
     String UserInfo(String name, UserInfo info) throws IOException;
 
     /**
-     * 查询单个项目的点赞者,一页50个
+     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶??,涓?椤?50涓?
      *
      * @param userName
      * @param reponame String stargazers
@@ -43,7 +44,7 @@ public interface UserBLService {
     Iterator<String> getStargazers(String userName, String reponame) throws IOException;
 
     /**
-     * 查询单个项目的点赞者登录名,一页50个
+     * 鏌ヨ鍗曚釜椤圭洰鐨勭偣璧炶?呯櫥褰曞悕,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -53,7 +54,7 @@ public interface UserBLService {
     Iterator<String> getStargazerNames(String userName, String reponame) throws IOException;
 
     /**
-     * 查询单个项目的订阅者,一页50个
+     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰??,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -62,7 +63,7 @@ public interface UserBLService {
     Iterator<UserVO> getSubscribers(String userName, String reponame);
 
     /**
-     * 查询单个项目的订阅者登录名,一页50个
+     * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰?呯櫥褰曞悕,涓?椤?50涓?
      *
      * @param userName
      * @param reponame
@@ -71,9 +72,9 @@ public interface UserBLService {
     Iterator<String> NamesOfSubscriber(String userName, String reponame) throws IOException;
 
     /**
-     * 按关键字搜索用户
+     * 鎸夊叧閿瓧鎼滅储鐢ㄦ埛
      *
-     * @param name 关键字
+     * @param name 鍏抽敭瀛?
      * @return
      * @throws FileNotFoundException
      * @throws IOException
@@ -81,4 +82,8 @@ public interface UserBLService {
     Iterator<UserVO> search(String name) throws FileNotFoundException, IOException;
 
     Iterator<UserVO> getUser() throws IOException;
+    
+    Iterator<UserVO> sortUser(User_Sort sort) throws IOException;
+    
+    Iterator<UserVO> screenTime(String time) throws IOException;
 }

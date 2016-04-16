@@ -21,4 +21,6 @@ public interface DataFatoryService {
     public IssuesDataService getIssuesDataService();
 
     public PullDataService getPullDataService();
+    
+    public StatisticsDataService getStatisticsDataService();
 }

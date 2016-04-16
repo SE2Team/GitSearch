@@ -1,26 +1,26 @@
 package data;
 
-import businesslogic.userBL.UserController;
-import businesslogicService.UserBLService;
-import po.UserPO;
+
+import po.RepositoryPO;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class Test {
-    public static void main(String[] args) throws IOException {
-//		RepositoryData testRepository=new RepositoryData();
-//		ArrayList<String> a=testRepository.getRepositoriesNames();
-//		for(int i=0;i<a.size();i++){
-//			System.out.println(a.get(i));
-        UserData user = new UserData();
-        ArrayList<UserPO> list = user.search("mojo");
-        for (UserPO po : list) {
-            System.out.print(po.getLogin());
-        }
-        UserBLService bl = new UserController();
-        System.out.println(bl.search("mojo").next().getLogin());;
+	public static void main(String[] args) throws IOException{
 
-    }
+		
+//		Refresh refresh=new Refresh();
+//		refresh.updatedLanguageSituation();
+//		refresh.updateCollaCount();
+//		refresh.updateContrCount();
+//		refresh.updatedC();
+//		refresh.updateHas();
+//		refresh.updateRelated();
+		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+//		StaStrPO po=new StatisticsData().getScores(list.get(0));
+//		System.out.println(po.getInt().get(2));
+		System.out.println(list.get(0).getCollaborators_count());
+	}
 }

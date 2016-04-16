@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="660.0" maxWidth="1280.0" minHeight="660.0" minWidth="1280.0" prefHeight="660.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.searchui.UserSearchController">
+   <children>
+      <SplitPane dividerPositions="0.1596244131455399" layoutX="33.0" layoutY="72.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane id="UserSearchLeft" maxHeight="658.0" maxWidth="200.0" minHeight="658.0" minWidth="200.0" prefHeight="160.0" prefWidth="200.0" stylesheets="@../../default.css">
+               <children>
+                  <Label layoutX="47.0" layoutY="18.0" text="筛选条件">
+                     <font>
+                        <Font name="YouYuan" size="28.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="0.9320388349514563" endY="1.0" startX="0.9077669902912622" startY="0.18932038834951456">
+                           <stops>
+                              <Stop color="#f5f5f5" />
+                              <Stop color="#cd6d6d" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <Accordion layoutY="62.0" prefHeight="596.0" prefWidth="202.0" stylesheets="@../../default.css">
+                    <panes>
+                      <TitledPane animated="false" stylesheets="@../../default.css" text="Regist Time" textFill="#e1d7d7">
+                        <content>
+                          <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="225.0" prefWidth="200.0">
+                                 <children>
+                                    <FlowPane id="timePane" fx:id="flowPane2" columnHalignment="CENTER" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <children>
+                                          <ToggleButton mnemonicParsing="false" text="2007">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2008">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2009">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2010">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2011">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2012">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2013">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2014">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                          <ToggleButton mnemonicParsing="false" text="2015">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ToggleButton>
+                                       </children>
+                                    </FlowPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxHeight="658.0" maxWidth="1070.0" minHeight="658.0" minWidth="1070.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <JFXToggleButton fx:id="upOrDown" layoutX="966.0" layoutY="-13.0" onMouseClicked="#handleUpDown" prefHeight="30.0" prefWidth="53.0" styleClass="jfx-toggle-Button" stylesheets="@../../default.css" unToggleColor="#009688" unToggleLineColor="#77c2bb" />
+                  <FlowPane fx:id="flowPane" layoutX="58.0" layoutY="78.0" prefHeight="544.0" prefWidth="954.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="78.0" />
+                  <Label layoutX="574.0" layoutY="628.0" prefHeight="22.0" prefWidth="112.0" text="共            页">
+                     <font>
+                        <Font name="Microsoft YaHei" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="pgNum" alignment="CENTER" layoutX="427.0" layoutY="625.0" prefHeight="30.0" prefWidth="60.0" text="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button id="PageDown" fx:id="pgDn" layoutX="496.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#handlePgDn" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="PageUp" fx:id="pgUp" layoutX="393.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#handlePgUp" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="FirstPage" fx:id="fpg" layoutX="356.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#handleFpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="LastPage" fx:id="lpg" layoutX="528.0" layoutY="627.0" mnemonicParsing="false" onMouseClicked="#handleLpg" prefHeight="20.0" prefWidth="25.0" stylesheets="@../../default.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <StackPane layoutX="589.0" layoutY="626.0" prefHeight="26.0" prefWidth="60.0">
+                     <children>
+                        <Label fx:id="maxPg" alignment="CENTER" prefHeight="20.0" prefWidth="53.0" />
+                     </children>
+                  </StackPane>
+                  <Line endX="935.0" layoutX="68.0" layoutY="79.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
+                  <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User List">
+                     <font>
+                        <Font name="Calibri Light" size="26.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#f84b3c" offset="0.909375" />
+                              <Stop color="WHITESMOKE" offset="0.95625" />
+                              <Stop color="#e1d7d7" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill></Text>
+                  <AnchorPane id="SortWay" layoutX="65.0" layoutY="36.0" prefHeight="40.0" prefWidth="942.0" stylesheets="@../../default.css">
+                     <children>
+                        <Line endX="940.0" layoutX="1.0" layoutY="-3.0" opacity="0.8" stroke="#00000097" strokeWidth="0.5" />
+                        <JFXButton fx:id="followers" layoutX="662.0" onMouseClicked="#handleFollowers" text="Followers" textFill="#f5f3f3">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="repo" layoutX="786.0" onMouseClicked="#handleRepo" text="Repositories" textFill="#f5f3f3">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="8.0" layoutY="7.0" text="Users" textFill="#f2efef">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="936.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="降序">
+                     <fill>
+                        <LinearGradient endX="0.2184466019417476" endY="0.30097087378640774" startX="1.0" startY="0.014563106796116505">
+                           <stops>
+                              <Stop color="#1b1a1a" />
+                              <Stop color="#e83535" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Microsoft Tai Le Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="1025.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="升序">
+                     <fill>
+                        <LinearGradient endX="0.2184466019417476" endY="0.30097087378640774" startX="1.0" startY="0.014563106796116505">
+                           <stops>
+                              <Stop color="#1b1a1a" />
+                              <Stop color="#e83535" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <font>
+                        <Font name="Microsoft Tai Le Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

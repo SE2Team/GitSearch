@@ -1,7 +1,10 @@
+
 package businesslogicService;
 
 import Util.*;
 import vo.RepositoryVO;
+import vo.ScreenVO;
+import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -17,17 +20,20 @@ public interface RepositoryBLService {
 
     RepositoryVO checkRepository(String userName, String reponame) throws IOException;
 
-    Map<String, Integer> languagesOfRepository(String userName, String reponame);
+   StaStrVO languagesOfRepository(String userName, String reponame) throws IOException;
 
-    String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
+//    String RepositoryInfo(String userName, String reponame, RepositoryInfo info);
 
     Iterator<RepositoryVO> Search(String name) throws IOException;
 
 
     Iterator<RepositoryVO> sort(Repository_Sort sort) throws IOException;
-
-
-
-
-
+    
+//    Iterator<RepositoryVO> screenLanguage(String language) throws IOException;
+//    
+//    Iterator<RepositoryVO> screenTime(String time) throws IOException;
+//    
+//    Iterator<RepositoryVO> screenCategory(String key) throws IOException;
+    
+    Iterator<RepositoryVO> screen(ScreenVO vo)throws IOException;
 }

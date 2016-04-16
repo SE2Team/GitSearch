@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Util.UserInfo;
+import Util.User_Sort;
 import businesslogic.userBL.User;
 import po.UserPO;
 
@@ -88,4 +89,14 @@ public interface UserDataService {
     ArrayList<UserPO> search(String name) throws FileNotFoundException, IOException;
     
     ArrayList<UserPO> getUser() throws IOException;
+    
+    ArrayList<UserPO> sortUser(User_Sort sort) throws IOException;
+    
+    /**
+     * 根据用户创建时间进行筛选
+     * @param time
+     * @return
+     * @throws IOException 
+     */
+    ArrayList<UserPO> screenTime(String time) throws IOException;
 }

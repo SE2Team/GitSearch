@@ -1,6 +1,7 @@
 package businesslogic.userBL;
 
 import Util.UserInfo;
+import Util.User_Sort;
 import data.DataFactory;
 import dataService.DataFatoryService;
 import dataService.UserDataService;
@@ -51,9 +52,9 @@ public class User {
     }
 
     /**
-     * 按关键字搜索用户
+     * 鎸夊叧閿瓧鎼滅储鐢ㄦ埛
      *
-     * @param name 关键字
+     * @param name 鍏抽敭瀛�
      * @return
      * @throws FileNotFoundException
      * @throws IOException
@@ -73,5 +74,21 @@ public class User {
             vos.add(PO2VO.convert(po));
         }
         return vos.iterator();
+    }
+    
+    public Iterator<UserVO> sortUser(User_Sort sort) throws IOException{
+    	ArrayList<UserVO> vos=new ArrayList<UserVO>();
+    	for(UserPO po:data.sortUser(sort)){
+    		vos.add(PO2VO.convert(po));
+    	}
+    	return vos.iterator();
+    }
+    
+    public Iterator<UserVO> screenTime(String time) throws IOException{
+    	ArrayList<UserVO> vos=new ArrayList<UserVO>();
+    	for(UserPO po:data.screenTime(time)){
+    		vos.add(PO2VO.convert(po));
+    	}
+    	return vos.iterator();
     }
 }

@@ -1,6 +1,7 @@
 package businesslogic.userBL;
 
 import Util.UserInfo;
+import Util.User_Sort;
 import businesslogicService.UserBLService;
 import vo.UserVO;
 
@@ -46,5 +47,11 @@ public class UserController implements UserBLService{
         return user.getUser();
     }
 
+    public Iterator<UserVO> sortUser(User_Sort sort) throws IOException{
+    	return user.sortUser(sort);
+    }
 
+    public Iterator<UserVO> screenTime(String time) throws IOException{
+    	return user.screenTime(time);
+    }
 }

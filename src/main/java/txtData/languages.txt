@@ -1,0 +1,76 @@
+Ruby
+VimL
+JavaScript
+Python
+Lua
+Objective-C
+Emacs Lisp
+Arc
+PHP
+C
+HTML
+XSLT
+Shell
+Perl
+Clojure
+R
+Puppet
+Makefile
+Erlang
+TeX
+Java
+
+C++
+Assembly
+Haskell
+Common Lisp
+Racket
+Scheme
+Self
+Yacc
+SQL
+AGS Script
+Cucumber
+CSS
+Prolog
+Nemerle
+Perl6
+Scala
+C#
+PLpgSQL
+Standard ML
+AppleScript
+Groovy
+Objective-C++
+CoffeeScript
+ActionScript
+PowerShell
+REALbasic
+OCaml
+ooc
+Vala
+Go
+PLSQL
+Matlab
+Hack
+Rebol
+Tcl
+CMake
+Objective-J
+Protocol Buffer
+KiCad
+Nimrod
+Ragel in Ruby Host
+Factor
+Haxe
+ColdFusion
+Forth
+FORTRAN
+OpenEdge ABL
+Augeas
+D
+Kotlin
+Batchfile
+ApacheConf
+F#
+Eiffel
