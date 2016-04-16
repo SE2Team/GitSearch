@@ -6,7 +6,7 @@
 
     <groupId>GitSearch</groupId>
     <artifactId>GitSearch</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <dependencies>
         <dependency>
             <groupId>org.json</groupId>
