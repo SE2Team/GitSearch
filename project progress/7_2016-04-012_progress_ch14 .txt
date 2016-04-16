@@ -1,5 +1,5 @@
 who:陈欢
-when:第五周
+when:第七周
 what:在写相关统计的代码
 problem:需要统计的东西很多
-todo:继续写统计代码
+todo:修复bug
