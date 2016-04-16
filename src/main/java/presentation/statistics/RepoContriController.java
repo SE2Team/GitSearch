@@ -2,7 +2,6 @@ package presentation.statistics;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.LineChart;
 import presentation.FXUITest;
 import presentation.common.MyController;
 
@@ -12,7 +11,7 @@ import presentation.common.MyController;
 public class RepoContriController implements MyController{
     private FXUITest fxuiTest;
     @FXML
-    private BarChart<String,Integer> contributorsChart;
+    private BarChart<String,Number> contributorsChart;
 
     @Override
     public void initialize() {
@@ -29,11 +28,11 @@ public class RepoContriController implements MyController{
 
     }
 
-    public BarChart<String, Integer> getContributorsChart() {
+    public BarChart<String, Number> getContributorsChart() {
         return contributorsChart;
     }
 
-    public void setContributorsChart(BarChart<String, Integer> contributorsChart) {
+    public void setContributorsChart(BarChart<String, Number> contributorsChart) {
         this.contributorsChart = contributorsChart;
     }
 }

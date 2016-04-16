@@ -11,7 +11,7 @@ import presentation.common.MyController;
 public class UserCreateTimeController implements MyController{
     private FXUITest fxuiTest;
     @FXML
-    private BarChart<String, Integer> creatTimeChart;
+    private BarChart<String, Number> creatTimeChart;
     @Override
     public void initialize() {
 
@@ -27,11 +27,11 @@ public class UserCreateTimeController implements MyController{
 
     }
 
-    public BarChart<String, Integer> getCreatTimeChart() {
+    public BarChart<String, Number> getCreatTimeChart() {
         return creatTimeChart;
     }
 
-    public void setCreatTimeChart(BarChart<String, Integer> creatTimeChart) {
+    public void setCreatTimeChart(BarChart<String, Number> creatTimeChart) {
         this.creatTimeChart = creatTimeChart;
     }
 }

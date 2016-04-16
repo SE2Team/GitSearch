@@ -456,3 +456,18 @@
     -fx-background-size: contain;
     -fx-background-insets: 0;
 }
+
+/*.bar-chart:vertical .chart-content .plot-content:hover{*/
+    /*-fx-cursor: hand;*/
+    /*-fx-effect: dropshadow(one-pass-box, #ca7d61, 0, 1.0, 3, 1);*/
+    /*-fx-border-color: #5799d3;*/
+    /*!*-fx-background-color: black;*!*/
+    /*!*-fx-tooltip-visible: true;*!*/
+
+/*}*/
+
+.bar-chart:vertical .chart-content .chart-plot-background{
+    -fx-tooltip-visible: true;
+
+    /*-fx-background-color: black;*/
+}
