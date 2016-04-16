@@ -71,16 +71,6 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Followers" textFill="#00000098">
-                           <font>
-                              <Font name="Calibri Light" size="22.0" />
-                           </font>
-                        </Label>
-                        <Label text="Following" textFill="#00000098" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="Calibri Light" size="22.0" />
-                           </font>
-                        </Label>
                         <Label fx:id="followers" text="0" textFill="#00000098" GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri Light" size="22.0" />
@@ -91,6 +81,16 @@
                               <Font name="Calibri Light" size="22.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="25.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/followers.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../../Images/following.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </GridPane>
                   <Label fx:id="regTime" layoutX="194.0" layoutY="354.0" prefHeight="28.0" prefWidth="170.0" text="Date">
