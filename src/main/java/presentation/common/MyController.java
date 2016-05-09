@@ -8,6 +8,9 @@ import presentation.FXUITest;
  */
 public interface MyController {
 
+    /**
+     * 构造方法，在绑定组件之前
+     */
     @FXML
     void initialize();
 
