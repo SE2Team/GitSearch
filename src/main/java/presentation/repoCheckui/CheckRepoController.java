@@ -4,21 +4,25 @@ import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.StatisticsBLService;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Bounds;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
 import vo.StaStrVO;
-import vo.StatisticsVO;
 
 import java.io.IOException;
 
@@ -61,6 +65,8 @@ public class CheckRepoController implements MyController {
     private CategoryAxis xpoi;
     @FXML
     private Label owner;
+    @FXML
+    private AnchorPane noNetWork;
 
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
@@ -149,6 +155,7 @@ public class CheckRepoController implements MyController {
 
         yAxis.setAutoRanging(false);
         yAxis.setUpperBound(10);
+        yAxis.setTickUnit(1);
     }
 
     /**
@@ -181,27 +188,33 @@ public class CheckRepoController implements MyController {
         //---------------set language graph-------------
         try {
             staStrVO = bl.languagesOfRepository(vo.getOwnerName(), vo.getRepoName());
+            if (staStrVO.getStr().size()!=0) {
+
+
+                double sum = 0;
+                for (int j = 0; j < staStrVO.getInt().size(); j++) {
+                    sum += staStrVO.getInt().get(j);
+                }
+                double temp = 0;
+                for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
+                    temp += staStrVO.getInt().get(i);
+                    langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
+                    if (i==4){
+                        langs.addAll(new PieChart.Data("Others", sum - temp));
+                    }
+                }
+                langChart.setData(langs);
+                noNetWork.setVisible(false);
+            } else {
+                langChart.setVisible(false);
+                noNetWork.setVisible(true);
+
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        double sum = 0;
-        for (int j = 0; j < staStrVO.getInt().size(); j++) {
-            sum += staStrVO.getInt().get(j);
-        }
-        double temp = 0;
-        for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
-            temp += staStrVO.getInt().get(i);
-            langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
-            if (i==4){
-                langs.addAll(new PieChart.Data("Others", sum - temp));
-            }
-        }
-        langChart.setData(langs);
-        //---------------set point graph
+        //---------------set point graph-------------
 
-//        langs.addAll(bl.languagesOfRepository());
-//        xpoi.setCategories(langs);
-//        poiChart.getData().addAll(getdata());
         StatisticsBLService sbl=new StatisticsController();
         try {
             poiChart.setData(getData(sbl.getScores(vo)));
@@ -218,11 +231,48 @@ public class CheckRepoController implements MyController {
             if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-            series.getData().add(new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i)));
+            XYChart.Data<String,Integer> data=new XYChart.Data<String,Integer>(vo.getStr().get(i), vo.getInt().get(i));
+            data.nodeProperty().addListener(new ChangeListener<Node>() {
+                @Override
+                public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
+                    if (node != null) {
+//                        setNodeStyle(data);
+                        displayLabelForData(data);
+                    }
+                }
+            });
+            series.getData().add(data);
 
         }
         observableList.add(series);
         return observableList;
+    }
+
+    /** places a text label with a bar's value above a bar node for a given XYChart.Data */
+    private void displayLabelForData(XYChart.Data<String, Integer> data) {
+        final Node node = data.getNode();
+        final Text dataText = new Text(data.getYValue() + "");
+        node.parentProperty().addListener(new ChangeListener<Parent>() {
+            @Override public void changed(ObservableValue<? extends Parent> ov, Parent oldParent, Parent parent) {
+                Group parentGroup = (Group) parent;
+                parentGroup.getChildren().add(dataText);
+            }
+        });
+
+        node.boundsInParentProperty().addListener(new ChangeListener<Bounds>() {
+            @Override public void changed(ObservableValue<? extends Bounds> ov, Bounds oldBounds, Bounds bounds) {
+                dataText.setLayoutX(
+                        Math.round(
+                                bounds.getMinX() + bounds.getWidth() / 2 - dataText.prefWidth(-1) / 2
+                        )
+                );
+                dataText.setLayoutY(
+                        Math.round(
+                                bounds.getMinY() - dataText.prefHeight(-1) * 0.5
+                        )
+                );
+            }
+        });
     }
 
 }

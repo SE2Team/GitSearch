@@ -12,7 +12,7 @@ public class UserCompanyController implements MyController{
     private FXUITest fxuiTest;
 
     @FXML
-    private BarChart<String, Integer> companyChart;
+    private BarChart<String, Number> companyChart;
     @Override
     public void initialize() {
 
@@ -28,11 +28,11 @@ public class UserCompanyController implements MyController{
 
     }
 
-    public BarChart<String, Integer> getCompanyChart() {
+    public BarChart<String, Number> getCompanyChart() {
         return companyChart;
     }
 
-    public void setCompanyChart(BarChart<String, Integer> companyChart) {
+    public void setCompanyChart(BarChart<String, Number> companyChart) {
         this.companyChart = companyChart;
     }
 }

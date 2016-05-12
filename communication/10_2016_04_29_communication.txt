@@ -1,0 +1,8 @@
+who:金小枫，陈欢，蒙奕锟，万兴
+when:第周
+what:讨论迭代三新加功能、数据库使用、分工
+how long:1.5h
+arrived solutioan:1.新功能：①先完成changing的部分
+		    	    ②推荐follower的关注圈
+		  2.数据库按原计划
+		  3.分工基本不变，预设添加数据层人员

@@ -1,14 +1,13 @@
 package data;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import dataService.StatisticsDataService;
 import po.RepositoryPO;
 import po.StaIntPO;
 import po.StaStrPO;
-import po.StatisticsPO;
 import po.UserPO;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class StatisticsData implements StatisticsDataService{
 	/**

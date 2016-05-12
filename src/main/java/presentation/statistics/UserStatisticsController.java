@@ -3,20 +3,25 @@ package presentation.statistics;
 import businesslogic.RepositoryBL.StatisticsController;
 import businesslogicService.StatisticsBLService;
 import javafx.animation.TranslateTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.SplitPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 import presentation.FXUITest;
 import presentation.common.MyController;
@@ -40,13 +45,13 @@ public class UserStatisticsController implements MyController {
     @FXML
     private PieChart typeChart;
     @FXML
-    private BarChart<String, Integer> creatTimeChart;
+    private BarChart<String, Number> creatTimeChart;
     @FXML
     private LineChart relatedChart;
     @FXML
     private LineChart OwnChart;
     @FXML
-    private BarChart<String, Integer> companyChart;
+    private BarChart<String, Number> companyChart;
 
     @Override
     public void initialize() {
@@ -87,97 +92,186 @@ public class UserStatisticsController implements MyController {
         }
         return observableList;
     }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo){
-        return getData(vo,true);
+
+    private ObservableList<XYChart.Series<String, Number>> getData(StaStrVO vo) {
+        return getData(vo, true);
     }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaStrVO vo,Boolean b){
-        ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
-        XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getStr().size()&&i<10;i++){
-            if (vo.getStr().get(i).equalsIgnoreCase("Unknown")){
+
+    private ObservableList<XYChart.Series<String, Number>> getData(StaStrVO vo, Boolean b) {
+        ObservableList<XYChart.Series<String, Number>> observableList = FXCollections.observableArrayList();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 10; i++) {
+            if (vo.getStr().get(i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-            series.getData().add(new XYChart.Data<>(vo.getStr().get(i),vo.getInt().get(i)));
-            if(i==9&&b){
-                series=addOthers(series,vo.getSum(10));
-            }
-        }
-        observableList.add(series);
-        return observableList;
-    }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaIntVO vo){
-        return getData(vo,true);
-    }
-    private ObservableList<XYChart.Series<String,Integer>> getData(StaIntVO vo,Boolean b){
-        ObservableList<XYChart.Series<String,Integer>> observableList= FXCollections.observableArrayList();
-        XYChart.Series<String,Integer> series=new XYChart.Series<>();
-        for (int i=0;i<vo.getInt().size()&&i<vo.getInt2().size()&&i<10;i++){
-
-            series.getData().add(new XYChart.Data<>(String.valueOf(vo.getInt().get(i)),vo.getInt2().get(i)));
-            if(i==9&&b){
-                series=addOthers(series,vo.getSum(10));
+/**
+ * 添加互动和文字
+ */
+            XYChart.Data<String, Number> data = new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i));
+            data.nodeProperty().addListener(new ChangeListener<Node>() {
+                @Override
+                public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
+                    if (node != null) {
+                        displayLabelForData(data);
+                    }
+                }
+            });
+            series.getData().add(data);
+            if (i == 9 && b) {
+                series = addOthers(series, vo.getSum(10));
             }
         }
         observableList.add(series);
         return observableList;
     }
 
-    private XYChart.Series addOthers(XYChart.Series series,Integer i){
-        series.getData().add(new XYChart.Data<>("Others",i));
+    private ObservableList<XYChart.Series<String, Number>> getData(StaIntVO vo) {
+        return getData(vo, true);
+    }
+
+    private ObservableList<XYChart.Series<String, Number>> getData(StaIntVO vo, Boolean b) {
+        ObservableList<XYChart.Series<String, Number>> observableList = FXCollections.observableArrayList();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        for (int i = 0; i < vo.getInt().size() && i < vo.getInt2().size() && i < 10; i++) {
+
+/**
+ * 添加互动和文字
+ */
+            XYChart.Data<String, Number> data = new XYChart.Data<>(String.valueOf(vo.getInt().get(i)), vo.getInt2().get(i));
+            data.nodeProperty().addListener(new ChangeListener<Node>() {
+                @Override
+                public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
+                    if (node != null) {
+                        displayLabelForData(data);
+                    }
+                }
+            });
+            series.getData().add(data);
+            if (i == 9 && b) {
+                series = addOthers(series, vo.getSum(10));
+            }
+        }
+        observableList.add(series);
+        return observableList;
+    }
+
+    private XYChart.Series addOthers(XYChart.Series series, Number i) {
+        XYChart.Data<String, Number> data = new XYChart.Data<>("Others", i);
+        data.nodeProperty().addListener(new ChangeListener<Node>() {
+            @Override
+            public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
+                if (node != null) {
+                    displayLabelForData(data);
+                }
+            }
+        });
+        series.getData().add(data);
         return series;
     }
+
+    /**
+     * 在柱状图上显示数字并添加鼠标互动事件
+     *
+     * @param data
+     */
+    private void displayLabelForData(XYChart.Data<String, Number> data) {
+        final Node node = data.getNode();
+        final Text dataText = new Text(data.getYValue() + "");
+        node.parentProperty().addListener(new ChangeListener<Parent>() {
+            @Override
+            public void changed(ObservableValue<? extends Parent> ov, Parent oldParent, Parent parent) {
+                Group parentGroup = (Group) parent;
+                parentGroup.getChildren().add(dataText);
+            }
+        });
+
+        node.boundsInParentProperty().addListener(new ChangeListener<Bounds>() {
+            @Override
+            public void changed(ObservableValue<? extends Bounds> ov, Bounds oldBounds, Bounds bounds) {
+                dataText.setLayoutX(
+                        Math.round(
+                                bounds.getMinX() + bounds.getWidth() / 2 - dataText.prefWidth(-1) / 2
+                        )
+                );
+                dataText.setLayoutY(
+                        Math.round(
+                                bounds.getMinY() //+ dataText.prefHeight(-1) * 0.5
+                        )
+                );
+            }
+        });
+
+        data.getNode().addEventHandler(MouseEvent.MOUSE_ENTERED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                data.getNode().setStyle(
+                        "-fx-cursor: hand; -fx-border-width: 3;-fx-border-color: gray;");
+
+            }
+        });
+        data.getNode().addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                data.getNode().setStyle("");
+            }
+        });
+
+    }
+
     @FXML
     private void handleChange() {
         chartPane.getChildren().clear();
         FXMLLoader loader = new FXMLLoader();
-        AnchorPane anchorPane=new AnchorPane();
+        AnchorPane anchorPane = new AnchorPane();
         try {
-            switch (chartType.getSelectionModel().getSelectedItem().toString()){
+            switch (chartType.getSelectionModel().getSelectedItem().toString()) {
                 case "User Type":
                     loader.setLocation(this.getClass().getResource("UserType.fxml"));
-                    anchorPane=loader.load();
+                    anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-                    UserTypeController userTypeController=loader.getController();
+                    UserTypeController userTypeController = loader.getController();
                     userTypeController.getTypeChart().setData(getPieData(bl.getUserType()));
                     setupAnimation(userTypeController.getTypeChart().getData());
                     userTypeController.repaint();
                     break;
                 case "Create Time":
                     loader.setLocation(this.getClass().getResource("UserCreateTime.fxml"));
-                    anchorPane=loader.load();
+                    anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-                    UserCreateTimeController userCreateTimeController=loader.getController();
+                    UserCreateTimeController userCreateTimeController = loader.getController();
                     userCreateTimeController.getCreatTimeChart().setData(getData(bl.getUserCreated()));
 //                    setupBarAnimation(userCreateTimeController.getCreatTimeChart().getData());
                     break;
                 case "Related Repositories":
                     loader.setLocation(this.getClass().getResource("UserRelatedRep.fxml"));
-                    anchorPane=loader.load();
+                    anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-                    UserRelatedRepController userRelatedRepController=loader.getController();
+                    UserRelatedRepController userRelatedRepController = loader.getController();
                     userRelatedRepController.getRelatedChart().setData(getData(bl.getUserRelated()));
                     break;
                 case "Owning Repositories":
                     loader.setLocation(this.getClass().getResource("UserOwningRep.fxml"));
-                    anchorPane=loader.load();
+                    anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-                    UserOwningRepController userOwningRepController=loader.getController();
+                    UserOwningRepController userOwningRepController = loader.getController();
                     userOwningRepController.getOwnChart().setData(getData(bl.getUserHas()));
                     break;
                 case "Company":
                     loader.setLocation(this.getClass().getResource("UserCompany.fxml"));
-                    anchorPane=loader.load();
+                    anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
-                    UserCompanyController userCompanyController=loader.getController();
-                    userCompanyController.getCompanyChart().setData(getData(bl.getCompany(),false));
+                    UserCompanyController userCompanyController = loader.getController();
+                    userCompanyController.getCompanyChart().setData(getData(bl.getCompany(), false));
                     break;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     /**
      * 很带感的饼状图互动
+     *
      * @param pcData
      */
     private void setupAnimation(ObservableList<PieChart.Data> pcData) {
@@ -211,14 +305,16 @@ public class UserStatisticsController implements MyController {
             });
         });
     }
+
     /**
      * 很带感的柱状图互动
+     *
      * @param pcData
      */
-    private void setupBarAnimation(ObservableList<XYChart.Series<String,Integer>> pcData) {
-        pcData.stream().forEach(new Consumer<XYChart.Series<String, Integer>>() {
+    private void setupBarAnimation(ObservableList<XYChart.Series<String, Number>> pcData) {
+        pcData.stream().forEach(new Consumer<XYChart.Series<String, Number>>() {
             @Override
-            public void accept(XYChart.Series<String, Integer> pieData) {
+            public void accept(XYChart.Series<String, Number> pieData) {
                 pieData.getNode().addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
