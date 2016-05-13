@@ -9,18 +9,12 @@ import java.util.ArrayList;
 
 public class Test {
 	public static void main(String[] args) throws IOException{
-
+		System.out.println("ccccccccc");
+		RepositoryData data=new RepositoryData();
+		ArrayList<RepositoryPO> list=data.getRepositories();
+		System.out.println("ccccccccc");
+		System.out.println(list.get(0).getLanguage());
 		
-//		Refresh refresh=new Refresh();
-//		refresh.updatedLanguageSituation();
-//		refresh.updateCollaCount();
-//		refresh.updateContrCount();
-//		refresh.updatedC();
-//		refresh.updateHas();
-//		refresh.updateRelated();
-		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-//		StaStrPO po=new StatisticsData().getScores(list.get(0));
-//		System.out.println(po.getInt().get(2));
-		System.out.println(list.get(0).getCollaborators_count());
+
 	}
 }

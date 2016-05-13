@@ -35,100 +35,102 @@ public class RepositoryData implements RepositoryDataService {
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
 		
-		ArrayList<String> collaList=new GetData("collaborator_count").readData();
-		ArrayList<String> contrList=new GetData("contributor_count").readData();
-		
-		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
-		JSONObject obj = new JSONObject();
-	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/all_repository.json")));
-		String string = br.readLine();
-		String s1 ,s2,s3,s4,name;
-		boolean fork;
-		JSONArray obj1 = new JSONArray(string);
-		int size=0;
-		int stargazers_count=0;
-		int collaborators_count=0;
-	
-		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
-		for (int j = 0; j < obj1.length(); j++) {
-			obj = obj1.getJSONObject(j);
-			
-			
-			if(obj.has("description")){
-				s1=obj.getString("description");
-			}else{
-				s1="";
-			}
-			if(obj.has("fork")){
-				fork=obj.getBoolean("fork");
-			}else{
-				fork=true;
-			}
-			
-			if(obj.has("pushed_at")){
-				s3=obj.getString("pushed_at");
-			}
-			else{
-				s3="";
-			}
-			
-			if(obj.has("size")){
-				size=obj.getInt("size");
-			}
-			
-			if(obj.has("stargazers_count")){
-				stargazers_count=obj.getInt("stargazers_count");
-			}
-			
-			if(obj.has("language")){
-				s4=obj.getString("language");
-			}else{
-				s4="";
-			}
-			
-			if(obj.has("type")){
-				s2=obj.getString("type");
-			}else{
-				s2="";
-			}
-			
-			
-			
-				
-			
-			
-			if(obj.has("forks")){
-				forks=obj.getInt("forks");
-			}
-			
-			if(obj.has("open_issues_count")){
-				issues_count=obj.getInt("open_issues_count");
-			}
-			
-			if(obj.has("subscribers_count")){
-				subscribers_count=obj.getInt("subscribers_count");
-			}
-			
-			contributor=Integer.parseInt(contrList.get(j));
-			collaborators_count=Integer.parseInt(collaList.get(j));;
-			
-			if(obj.has("full_name")){
-				name=obj.getString("full_name");
-			}else{
-				name="";
-			}
-			
-			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
-					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
-					obj.getString("updated_at"), s3, size, stargazers_count, 
-					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count,
-					null,null);
-			list.add(po);
-			}
-		finalList=list;
-		return list;
+		JDBCHelper helper=new JDBCHelper();
+		return helper.getRepositories();
+//		ArrayList<String> collaList=new GetData("collaborator_count").readData();
+//		ArrayList<String> contrList=new GetData("contributor_count").readData();
+//		
+//		ArrayList<RepositoryPO> list=new ArrayList<RepositoryPO>();
+//		JSONObject obj = new JSONObject();
+//	//	FileReader fr = new FileReader(new File( "src/main/java/txtData/all_repository.json"));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+//				getResourceAsStream("/txtData/all_repository.json")));
+//		String string = br.readLine();
+//		String s1 ,s2,s3,s4,name;
+//		boolean fork;
+//		JSONArray obj1 = new JSONArray(string);
+//		int size=0;
+//		int stargazers_count=0;
+//		int collaborators_count=0;
+//	
+//		int forks = 0,issues_count=0,subscribers_count=0,contributor=0;
+//		for (int j = 0; j < obj1.length(); j++) {
+//			obj = obj1.getJSONObject(j);
+//			
+//			
+//			if(obj.has("description")){
+//				s1=obj.getString("description");
+//			}else{
+//				s1="";
+//			}
+//			if(obj.has("fork")){
+//				fork=obj.getBoolean("fork");
+//			}else{
+//				fork=true;
+//			}
+//			
+//			if(obj.has("pushed_at")){
+//				s3=obj.getString("pushed_at");
+//			}
+//			else{
+//				s3="";
+//			}
+//			
+//			if(obj.has("size")){
+//				size=obj.getInt("size");
+//			}
+//			
+//			if(obj.has("stargazers_count")){
+//				stargazers_count=obj.getInt("stargazers_count");
+//			}
+//			
+//			if(obj.has("language")){
+//				s4=obj.getString("language");
+//			}else{
+//				s4="";
+//			}
+//			
+//			if(obj.has("type")){
+//				s2=obj.getString("type");
+//			}else{
+//				s2="";
+//			}
+//			
+//			
+//			
+//				
+//			
+//			
+//			if(obj.has("forks")){
+//				forks=obj.getInt("forks");
+//			}
+//			
+//			if(obj.has("open_issues_count")){
+//				issues_count=obj.getInt("open_issues_count");
+//			}
+//			
+//			if(obj.has("subscribers_count")){
+//				subscribers_count=obj.getInt("subscribers_count");
+//			}
+//			
+//			contributor=Integer.parseInt(contrList.get(j));
+//			collaborators_count=Integer.parseInt(collaList.get(j));;
+//			
+//			if(obj.has("full_name")){
+//				name=obj.getString("full_name");
+//			}else{
+//				name="";
+//			}
+//			
+//			RepositoryPO po=new RepositoryPO(name,obj.getInt("id") ,s2, 
+//					obj.getString("html_url"), s1, fork, obj.getString("created_at"),
+//					obj.getString("updated_at"), s3, size, stargazers_count, 
+//					s4,forks ,issues_count,subscribers_count ,contributor,  collaborators_count,
+//					null,null);
+//			list.add(po);
+//			}
+//		finalList=list;
+//		return list;
 	}
 	
 	/**
