@@ -14,7 +14,7 @@ public class JDBCHelper {
 			"&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	public static final String driver = "com.mysql.cj.jdbc.Driver";
 	public static final String user = "root";  
-	public static final String password = "";
+	public static final String password = "15120341049ASD";
 
 	private Connection conn = null;  
 	private PreparedStatement pStatement = null;
@@ -42,7 +42,7 @@ public class JDBCHelper {
 			pStatement = conn.prepareStatement(sql);
 			rs = pStatement.executeQuery();
 			while(rs.next()){
-			list.add(new RepositoryPO(rs.getString("name"), rs.getInt("Id"), null, rs.getString("html_url"),
+			list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("Id"), null, rs.getString("html_url"),
 					rs.getString("description"), rs.getBoolean("fork"), rs.getString("created"), rs.getString("updated"), rs.getString("pushed"),
 					rs.getInt("size"), 0, rs.getString("language"), rs.getInt("forks"), rs.getInt("open_issues"), 
 					rs.getInt("subscribers_count"), 0, 0, null,null));
