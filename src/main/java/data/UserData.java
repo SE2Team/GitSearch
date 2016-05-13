@@ -1,24 +1,16 @@
 package data;
 
+import Util.User_Sort;
+import dataService.UserDataService;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import po.RepositoryPO;
+import po.UserPO;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-
-import javax.print.DocFlavor.STRING;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
-
-import Util.User_Sort;
-import businesslogic.userBL.User;
-import dataService.UserDataService;
-import javafx.scene.chart.PieChart.Data;
-import po.RepositoryPO;
-import po.UserPO;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -215,52 +207,53 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> getUser() throws IOException {
 		// TODO Auto-generated method stub
-
-		ArrayList<UserPO> list = new ArrayList<UserPO>();
-		JSONObject obj = new JSONObject();
-
-		// FileReader fr = new FileReader(new
-		// File("src/main/java/txtData/users.json"));
-		BufferedReader br = new BufferedReader(
-				new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
-		String string = br.readLine();
-		JSONArray obj1 = new JSONArray(string);
-		for (int j = 0; j < obj1.length(); j++) {
-
-			obj = obj1.getJSONObject(j);
-			String s1, s2, s3, s4;
-
-			if (obj.has("company")) {
-				s1 = obj.getString("company");
-			} else {
-				s1 = "";
-			}
-			if (obj.has("email")) {
-				s2 = obj.getString("email");
-			} else {
-				s2 = "";
-			}
-
-			if (obj.has("repos_url")) {
-				s3 = obj.getString("repos_url");
-			} else {
-				s3 = "";
-			}
-
-			if (obj.has("name")) {
-				s4 = obj.getString("name");
-
-			} else {
-				s4 = "";
-			}
-
-			list.add(new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"), s4, s1, s2, s3,
-					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
-					obj.getString("created_at"), obj.getString("updated_at"), null, null));
-		}
-		
-		userList=list;
-		return list;
+		JDBCHelper helper=new JDBCHelper();
+		return helper.getUsers();
+//		ArrayList<UserPO> list = new ArrayList<UserPO>();
+//		JSONObject obj = new JSONObject();
+//
+//		// FileReader fr = new FileReader(new
+//		// File("src/main/java/txtData/users.json"));
+//		BufferedReader br = new BufferedReader(
+//				new InputStreamReader(this.getClass().getResourceAsStream("/txtData/users.json")));
+//		String string = br.readLine();
+//		JSONArray obj1 = new JSONArray(string);
+//		for (int j = 0; j < obj1.length(); j++) {
+//
+//			obj = obj1.getJSONObject(j);
+//			String s1, s2, s3, s4;
+//
+//			if (obj.has("company")) {
+//				s1 = obj.getString("company");
+//			} else {
+//				s1 = "";
+//			}
+//			if (obj.has("email")) {
+//				s2 = obj.getString("email");
+//			} else {
+//				s2 = "";
+//			}
+//
+//			if (obj.has("repos_url")) {
+//				s3 = obj.getString("repos_url");
+//			} else {
+//				s3 = "";
+//			}
+//
+//			if (obj.has("name")) {
+//				s4 = obj.getString("name");
+//
+//			} else {
+//				s4 = "";
+//			}
+//
+//			list.add(new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"), s4, s1, s2, s3,
+//					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
+//					obj.getString("created_at"), obj.getString("updated_at"), null, null));
+//		}
+//
+//		userList=list;
+//		return list;
 	}
 
 	public ArrayList<String> NamesOfSubscriber(String userName, String reponame) throws IOException {
