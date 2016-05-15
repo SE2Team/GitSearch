@@ -94,4 +94,8 @@ public interface StatisticsDataService {
 	public StaStrPO getCollaborator();
 	
 	public StaStrPO getContributor();
+	
+	public String userTrending();
+	
+	public String repoTrending();
 }

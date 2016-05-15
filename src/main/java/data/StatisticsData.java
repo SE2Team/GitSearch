@@ -645,6 +645,18 @@ public class StatisticsData implements StatisticsDataService{
 		}
 		return new StaStrPO(listStr2, listInt2);
 	}
+
+	@Override
+	public String userTrending() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String repoTrending() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

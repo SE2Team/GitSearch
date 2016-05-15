@@ -4,6 +4,9 @@ import Util.User_Sort;
 import dataService.UserDataService;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.sun.prism.Image;
+
 import po.RepositoryPO;
 import po.UserPO;
 
@@ -52,11 +55,11 @@ public class UserData implements UserDataService {
 			} else {
 				s4 = "";
 			}
-
-			po=new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"), s4, s1, s2, s3,
-					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
-					obj.getString("created_at"), obj.getString("updated_at"), null, null);
-			
+//			javafx.scene.image.Image userImage=new javafx.scene.image.Image(obj.getString("avatar_url"));
+//			po=new UserPO(obj.getInt("id"), obj.getString("login"), obj.getString("type"), s4, s1, s2, s3,
+//					obj.getInt("public_gists"), obj.getInt("followers"), obj.getInt("following"),
+//					obj.get("created_at"), obj.getString("updated_at"), null, null,userImage);
+//			
 			ArrayList<String> relatedRepo = new ArrayList<String>();
 			ArrayList<String> list3 = new ArrayList<String>();
 			ArrayList<RepositoryPO> list2 = this.searchRepoName(user);

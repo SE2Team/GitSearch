@@ -1,5 +1,6 @@
 package po;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -24,9 +25,9 @@ public class RepositoryPO {
 	String html_url;
 	String description;
 	boolean fork;
-	String created;
-	String updated;
-	String pushed;
+	Date created;
+	Date updated;
+	Date pushed;
 	int size = 0;
 	int stargazers_count = 0;
 	String language;
@@ -40,7 +41,7 @@ public class RepositoryPO {
 	
 
 	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
-			String created, String updated, String pushed, int size, int stargazers_count, String language, int forks,
+			Date created, Date updated, Date pushed, int size, int stargazers_count, String language, int forks,
 			int open_issues, int subscribers_count, int contributor, int collaborators_count,
 			ArrayList<String> collaborators, ArrayList<String> contributors) {
 
@@ -112,15 +113,15 @@ public class RepositoryPO {
 		return this.size;
 	}
 
-	public String getPushed() {
+	public Date getPushed() {
 		return this.pushed;
 	}
 
-	public String getUpdated() {
+	public Date getUpdated() {
 		return this.updated;
 	}
 
-	public String getCreated() {
+	public Date getCreated() {
 		return this.created;
 	}
 	public void setContributor(int contributor){

@@ -1,6 +1,9 @@
 package po;
 
+import java.sql.Date;
 import java.util.ArrayList;
+
+import com.sun.prism.Image;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -23,14 +26,15 @@ public class UserPO {
 	int public_gists=0;
 	int  followers=0;
 	int following=0;
-	String created_at="";
-	String updated_at="";
+	Date created_at;
+	Date updated_at;
 	ArrayList<String> related;
 	ArrayList<String> has;
+	javafx.scene.image.Image userImage;
 
 	public UserPO(int id, String login, String type, String name, String company, String email,
-			 String public_repos, int public_gists, int followers, int following, String created_at,
-			String updated_at,ArrayList<String> related,ArrayList<String> has) {
+			 String public_repos, int public_gists, int followers, int following, Date created_at,
+			 Date updated_at,ArrayList<String> related,ArrayList<String> has,javafx.scene.image.Image userImage) {
 			this.related=related;
 			this.has=has;
 			this.id=id;
@@ -45,14 +49,20 @@ public class UserPO {
 			this.following=following;
 			this.created_at=created_at;
 			this.updated_at=updated_at;
+			this.userImage=userImage;
 
 	}
 	
-	public String getUpdated(){
+	
+	public Date getUpdated(){
 		 return this.updated_at;
 	}
 	
-	public String getCreated(){
+	public javafx.scene.image.Image getUserImage(){
+		return this.userImage;
+	}
+	
+	public Date getCreated(){
 		return this.created_at;
 	}
 	
