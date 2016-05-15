@@ -169,4 +169,32 @@ public class JDBCHelper {
 		}
 		return new StaStrPO(listStr, listInt);
 	}
+	
+	public StaStrPO getFork(){
+		ArrayList<String> listStr=new ArrayList<>();
+		ArrayList<Integer> listInt=new ArrayList<>();
+		String sql = "select * from forkstatistics";
+		ResultSet rs = null;
+		try {
+
+			pStatement = conn.prepareStatement(sql);
+			rs = pStatement.executeQuery();
+			while (rs.next()) {
+				listInt.add(rs.getInt("num"));
+				listStr.add(rs.getString("xs"));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return new StaStrPO(listStr, listInt);
+	}
+	
+	public StaStrPO getUserCreated(){
+		return null;
+	}
+	
+	public  StaStrPO getRepoCreated(){
+		return null;
+	}
 }
