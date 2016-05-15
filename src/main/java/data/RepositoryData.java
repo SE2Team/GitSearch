@@ -21,6 +21,7 @@ public class RepositoryData implements RepositoryDataService {
 	
 	static String string="http://www.gitmining.net/api/repository";
 	static ArrayList<RepositoryPO> finalList=new ArrayList<>();
+	JDBCHelper helper=new JDBCHelper();
 	/**
 	 * 
 	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
@@ -35,7 +36,7 @@ public class RepositoryData implements RepositoryDataService {
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
 		
-		JDBCHelper helper=new JDBCHelper();
+		helper=new JDBCHelper();
 		return helper.getRepositories();
 //		ArrayList<String> collaList=new GetData("collaborator_count").readData();
 //		ArrayList<String> contrList=new GetData("contributor_count").readData();
@@ -344,9 +345,9 @@ public class RepositoryData implements RepositoryDataService {
 		ArrayList<RepositoryPO> list=listPO;//有bug
 		
 		for(int i=0;i<list.size();i++){
-			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
-			String str1 = str[0];
-			int year = Integer.parseInt(str1);
+
+			@SuppressWarnings("deprecation")
+			int year = list.get(i).getCreated().getYear();
 			if(Integer.parseInt(time.substring(0,4))==year){
 				list1.add(list.get(i));
 			}

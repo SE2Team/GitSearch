@@ -378,9 +378,8 @@ public class UserData implements UserDataService {
 		}
 		
 		for(int i=0;i<list.size();i++){
-			String[] str = list.get(i).getCreated().substring(0, 10).split("-");
-			String str1 = str[0];
-			int year = Integer.parseInt(str1);
+			@SuppressWarnings("deprecation")
+			int year = list.get(i).getCreated().getYear();
 			if(Integer.parseInt(time.substring(0,4))==year){
 				list1.add(list.get(i));
 			}
