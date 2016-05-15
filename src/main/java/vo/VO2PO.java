@@ -33,7 +33,7 @@ public class VO2PO {
     	}else{
     		return new UserPO(vo.getId(), vo.getLogin(), vo.getType(), vo.getName(), vo.getCompany()
                     , vo.getEmail(), vo.getRepos(), vo.getGists(), vo.getFollowers(), vo.getFollowing(), vo.getCreated()
-                    , vo.getUpdated(),vo.getRelated(),vo.getHas());
+                    , vo.getUpdated(),vo.getRelated(),vo.getHas(),vo.getUserImage());
     	}
         
     }
