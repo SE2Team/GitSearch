@@ -23,7 +23,6 @@ public class UserData implements UserDataService {
 	static String string = "http://www.gitmining.net/api/user";
 	
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
-	JDBCHelper helper=new JDBCHelper();
 	
 	private UserPO CheckUserLine(String user) throws IOException{
 		GetData data=new GetData();
@@ -211,6 +210,7 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> getUser() throws IOException {
 		// TODO Auto-generated method stub
+		JDBCHelper helper=new JDBCHelper();
 		return helper.getUsers();
 //		ArrayList<UserPO> list = new ArrayList<UserPO>();
 //		JSONObject obj = new JSONObject();

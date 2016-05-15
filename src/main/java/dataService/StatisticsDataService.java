@@ -98,6 +98,4 @@ public interface StatisticsDataService {
 	public String userTrending();
 	
 	public String repoTrending();
-	
-	
 }
