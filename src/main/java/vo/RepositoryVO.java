@@ -17,9 +17,9 @@ public class RepositoryVO {
     String html_url;
     String description;
     boolean fork;
-    Date created;
-    Date updated;
-    Date pushed;
+    String created="";
+    String updated="";
+    String pushed="";
     int size = 0;
     int stargazers_count = 0;
     String language;
@@ -33,7 +33,7 @@ public class RepositoryVO {
 
 
     public RepositoryVO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
-                        Date created, Date updated, Date pushed, int size, int stargazers_count, String language, int forks,
+                        String created, String updated, String pushed, int size, int stargazers_count, String language, int forks,
                         int open_issues, int subscribers_count, int contributor, int collaborators_count,
                         ArrayList<String> collaborators, ArrayList<String> contributors) {
 
@@ -97,15 +97,15 @@ public class RepositoryVO {
         return this.size;
     }
 
-    public Date getPushed() {
+    public String getPushed() {
         return this.pushed;
     }
 
-    public Date getUpdated() {
+    public String getUpdated() {
     	return this.updated;
     }
 
-    public Date getCreated() {
+    public String getCreated() {
     	return this.created;
     }
 

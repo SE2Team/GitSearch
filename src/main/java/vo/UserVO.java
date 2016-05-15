@@ -23,16 +23,16 @@ public class UserVO {
     int public_gists=0;
     int  followers=0;
     int following=0;
-    Date created_at;
-    Date updated_at;
+    String created_at = "";
+    String  updated_at = "";
     ArrayList<String> related;
     ArrayList<String> has;
     javafx.scene.image.Image userImage;
     int hasNum=0;
 
     public UserVO(int id, String login, String type, String name, String company, String email,
-                  String public_repos, int public_gists, int followers, int following, Date created_at,
-                  Date updated_at,ArrayList<String> related,ArrayList<String> has,javafx.scene.image.Image userImage) {
+                  String public_repos, int public_gists, int followers, int following, String created_at,
+                  String updated_at,ArrayList<String> related,ArrayList<String> has,javafx.scene.image.Image userImage) {
         this.id=id;
         this.login=login;
         this.type=type;
@@ -50,11 +50,11 @@ public class UserVO {
         this.userImage=userImage;
     }
 
-    public Date getUpdated(){
+    public String getUpdated(){
 		return this.updated_at;
     }
 
-    public Date getCreated(){
+    public String getCreated(){
     	return this.created_at;
     }
 

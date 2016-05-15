@@ -2,24 +2,22 @@ package vo;
 
 import po.*;
 
-/** 
- * @author 
- * @date 
-2016骞�4鏈�5鏃� 
-涓嬪崍8:48:40 
- * @version 1.0 
- * @parameter  
- * @since  
- * @return  
- *@throws 寮傚父绫诲強鎶涘嚭鏉′欢
- */
+import java.sql.Date;
+
+
 public class VO2PO {
     public static RepositoryPO convert(RepositoryVO vo){
     	if(vo==null){
     		return null;
     	}else{
+			String create_str = vo.getCreated();
+			String update_str = vo.getUpdated();
+			String push_str = vo.getPushed();
+			Date create = convert(create_str);
+			Date update = convert(update_str);
+			Date push = convert(push_str);
     		return new RepositoryPO(vo.getName(), vo.getId(), vo.getOwner_type(), vo.getHtml_url(), vo.getDescription(),
-                    vo.getFork(), vo.getCreated(), vo.getUpdated(), vo.getPushed(), vo.getSize(), vo.getStargazers(),
+                    vo.getFork(), create, update, push, vo.getSize(), vo.getStargazers(),
                     vo.getLanguage(), vo.getForks(), vo.getOpen_issues(), vo.getSubscribers_count(),vo.getContributor(),
                     vo.getCollaborators_count(),
                     vo.getCollaborators(),vo.getContributors());
@@ -31,9 +29,13 @@ public class VO2PO {
     	if(vo==null){
     		return null;
     	}else{
+			String create_str = vo.getCreated();
+			String update_str = vo.getUpdated();
+			Date create = convert(create_str);
+			Date update = convert(update_str);
     		return new UserPO(vo.getId(), vo.getLogin(), vo.getType(), vo.getName(), vo.getCompany()
-                    , vo.getEmail(), vo.getRepos(), vo.getGists(), vo.getFollowers(), vo.getFollowing(), vo.getCreated()
-                    , vo.getUpdated(),vo.getRelated(),vo.getHas(),vo.getUserImage());
+                    , vo.getEmail(), vo.getRepos(), vo.getGists(), vo.getFollowers(), vo.getFollowing(), create
+                    , update,vo.getRelated(),vo.getHas(),vo.getUserImage());
     	}
         
     }
@@ -73,4 +75,10 @@ public class VO2PO {
     	}
     	
     }
+
+	public static Date convert(String date_str){
+		String[] split = date_str.split("-");
+		Date date = new Date(Integer.parseInt(split[0]),Integer.parseInt(split[1]),Integer.parseInt(split[2]));
+		return date;
+	}
 }
