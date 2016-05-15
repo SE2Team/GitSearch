@@ -4,6 +4,7 @@ import po.RepositoryPO;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.sql.Date;
 
 import businesslogic.RepositoryBL.Statistics;
 import businesslogic.userBL.User;
@@ -22,15 +23,16 @@ public class UserVO {
     int public_gists=0;
     int  followers=0;
     int following=0;
-    String created_at="";
-    String updated_at="";
+    Date created_at;
+    Date updated_at;
     ArrayList<String> related;
     ArrayList<String> has;
+    javafx.scene.image.Image userImage;
     int hasNum=0;
 
     public UserVO(int id, String login, String type, String name, String company, String email,
-                  String public_repos, int public_gists, int followers, int following, String created_at,
-                  String updated_at,ArrayList<String> related,ArrayList<String> has) {
+                  String public_repos, int public_gists, int followers, int following, Date created_at,
+                  Date updated_at,ArrayList<String> related,ArrayList<String> has,javafx.scene.image.Image userImage) {
         this.id=id;
         this.login=login;
         this.type=type;
@@ -45,15 +47,19 @@ public class UserVO {
         this.updated_at=updated_at;
         this.related=related;
         this.has=has;
-
+        this.userImage=userImage;
     }
 
-    public String getUpdated(){
-		return this.updated_at.split("T")[0];
+    public Date getUpdated(){
+		return this.updated_at;
     }
 
-    public String getCreated(){
-    	return this.created_at.split("T")[0];
+    public Date getCreated(){
+    	return this.created_at;
+    }
+
+    public javafx.scene.image.Image getUserImage(){
+        return this.userImage;
     }
 
     public int getFollowing(){

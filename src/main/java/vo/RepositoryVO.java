@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import po.UserPO;
 
 import java.util.ArrayList;
+import java.sql.Date;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -16,9 +17,9 @@ public class RepositoryVO {
     String html_url;
     String description;
     boolean fork;
-    String created;
-    String updated;
-    String pushed;
+    Date created;
+    Date updated;
+    Date pushed;
     int size = 0;
     int stargazers_count = 0;
     String language;
@@ -32,7 +33,7 @@ public class RepositoryVO {
 
 
     public RepositoryVO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
-                        String created, String updated, String pushed, int size, int stargazers_count, String language, int forks,
+                        Date created, Date updated, Date pushed, int size, int stargazers_count, String language, int forks,
                         int open_issues, int subscribers_count, int contributor, int collaborators_count,
                         ArrayList<String> collaborators, ArrayList<String> contributors) {
 
@@ -96,16 +97,16 @@ public class RepositoryVO {
         return this.size;
     }
 
-    public String getPushed() {
+    public Date getPushed() {
         return this.pushed;
     }
 
-    public String getUpdated() {
-    	return this.updated.split("T")[0];
+    public Date getUpdated() {
+    	return this.updated;
     }
 
-    public String getCreated() {
-    	return this.created.split("T")[0];
+    public Date getCreated() {
+    	return this.created;
     }
 
     public boolean getFork() {
