@@ -2,8 +2,6 @@ package data;
 
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import po.RepositoryPO;
 import po.ScreenPO;
 import po.StaStrPO;
@@ -35,8 +33,6 @@ public class RepositoryData implements RepositoryDataService {
 //		ContributorsData contrData= new ContributorsData();
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
-		
-		helper=new JDBCHelper();
 		return helper.getRepositories();
 //		ArrayList<String> collaList=new GetData("collaborator_count").readData();
 //		ArrayList<String> contrList=new GetData("contributor_count").readData();
