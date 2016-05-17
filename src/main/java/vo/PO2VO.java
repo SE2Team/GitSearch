@@ -2,6 +2,8 @@ package vo;
 
 import po.*;
 
+import java.sql.Date;
+
 /**
  * Created by moeyui on 2016/3/10 0010.
  */
@@ -10,8 +12,14 @@ public class PO2VO {
     	if(po==null){
     		return null;
     	}else{
+			Date update = po.getUpdated();
+			Date create = po.getCreated();
+			Date push = po.getPushed();
+			String update_str = convert(update);
+			String create_str = convert(create);
+			String push_str = convert(push);
     		 return new RepositoryVO(po.getName(), po.getId(), po.getOwner_type(), po.getHtml_url(), po.getDescription(),
-    	                po.getFork(), po.getCreated(), po.getUpdated(), po.getPushed(), po.getSize(), po.getStargazers(),
+    	                po.getFork(),create_str, update_str, push_str, po.getSize(), po.getStargazers(),
     	                po.getLanguage(), po.getForks(), po.getOpen_issues(), po.getSubscribers_count(),po.getContributor(),
     	                po.getCollaborators_count(),
     	                po.getCollaborators(),po.getContributors());
@@ -22,10 +30,17 @@ public class PO2VO {
     public static  UserVO convert (UserPO po){
     	if(po==null){
     		return null;
-    	}else
-        return new UserVO(po.getId(), po.getLogin(), po.getType(), po.getName(), po.getCompany()
-                , po.getEmail(), po.getRepos(), po.getGists(), po.getFollowers(), po.getFollowing(), po.getCreated()
-                , po.getUpdated(),po.getRelated(),po.getHas(),po.getUserImage());
+    	}else{
+			Date update = po.getUpdated();
+			Date create = po.getCreated();
+			String update_str = convert(update);
+			String create_str = convert(create);
+
+			return new UserVO(po.getId(), po.getLogin(), po.getType(), po.getName(), po.getCompany()
+					, po.getEmail(), po.getRepos(), po.getGists(), po.getFollowers(), po.getFollowing(), create_str
+					, update_str,po.getRelated(),po.getHas(),po.getUserImage());
+		}
+
     }
 
     public static StatisticsVO convert(StatisticsPO po){
@@ -55,4 +70,9 @@ public class PO2VO {
     	}else
     	return new ScreenVO(po.getTime(), po.getLanguage(), po.getCategory());
     }
+
+	public static String convert(Date date){
+		return date.getYear()+""+"-"+date.getMonth()+""+"-"+date.getDay()+"";
+	}
 }
+

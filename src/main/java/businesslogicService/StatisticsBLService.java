@@ -52,4 +52,6 @@ public interface StatisticsBLService {
 	StaStrVO getCollaborator();
 	
 	StaStrVO getContributor();
+	
+	StaStrVO getFollowers();
 }

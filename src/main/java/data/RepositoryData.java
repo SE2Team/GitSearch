@@ -159,7 +159,7 @@ public class RepositoryData implements RepositoryDataService {
 		ContributorsData contrData = new ContributorsData();
 		String collaUrl = "http://gitmining.net/api/repository/";
 		String contrUrl = "http://gitmining.net/api/repository/";
-		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> list = helper.getRepositories();
 
 		
 		
@@ -262,7 +262,7 @@ public class RepositoryData implements RepositoryDataService {
 
 	public ArrayList<RepositoryPO> Search(String name) throws IOException {
 		 ArrayList<RepositoryPO> pos=new ArrayList<>();
-		ArrayList<RepositoryPO> pos1=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> pos1=helper.getRepositories();
 		// ArrayList<RepositoryPO> pos1=finalList;
 		 String[]  str=new String[2];
 			for(RepositoryPO po:pos1){
@@ -279,7 +279,7 @@ public class RepositoryData implements RepositoryDataService {
 	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<RepositoryPO> list=finalList;
-		ArrayList<RepositoryPO> listpo=new RepositoryData().getRepositories();
+		ArrayList<RepositoryPO> listpo=helper.getRepositories();
 		if(list.size()==listpo.size()){
 			list=listpo;
 		}

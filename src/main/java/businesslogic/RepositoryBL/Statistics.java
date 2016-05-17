@@ -72,4 +72,8 @@ public class Statistics {
 	public StaStrVO getContributor(){
 		return PO2VO.convert(factory.getStatisticsDataService().getContributor());
 	}
+	
+	public StaStrVO getFollowers(){
+		return PO2VO.convert(factory.getStatisticsDataService().getFollowers());
+	}
 }

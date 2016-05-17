@@ -664,5 +664,8 @@ public class StatisticsData implements StatisticsDataService{
 		return null;
 	}
 	
+	public StaStrPO getFollowers(){
+		return helper.getFollowers();
+	}
 	
 }

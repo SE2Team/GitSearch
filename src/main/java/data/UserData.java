@@ -23,6 +23,8 @@ public class UserData implements UserDataService {
 	
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
 	
+	UserData data=new UserData();
+	
 	private UserPO CheckUserLine(String user) throws IOException{
 		GetData data=new GetData();
 		UserPO po=null;
