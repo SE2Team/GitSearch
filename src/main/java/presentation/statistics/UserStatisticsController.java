@@ -67,7 +67,7 @@ public class UserStatisticsController implements MyController {
 //            e.printStackTrace();
 //        }
         chartType.getItems().clear();
-        chartType.getItems().addAll("User Type", "Create Time", "Related Repositories", "Owning Repositories", "Company");
+        chartType.getItems().addAll("Folowers", "Company");
         chartType.getSelectionModel().selectFirst();
         handleChange();
     }

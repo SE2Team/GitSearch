@@ -67,7 +67,7 @@ public class RepoStatisticsController implements MyController {
 //        ft.setAutoReverse(true);
 //        ft.play();
         chartType.getItems().clear();
-        chartType.getItems().addAll("Language", "Create Time", "Fork", "Star", "Contributors", "Collaborators");
+        chartType.getItems().addAll("Language", "Create Time", "Fork", "Star");
         chartType.getSelectionModel().selectFirst();
         handleChange();
     }

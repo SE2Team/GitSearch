@@ -14,10 +14,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1280.0">
                      <children>
-                        <FlowPane fx:id="RepoPane" layoutY="16.0" prefHeight="541.0" prefWidth="1060.0">
-                           <children>
-                              <JFXComboBox fx:id="LangCombo" prefHeight="30.0" prefWidth="196.0" promptText="All languages" />
-                           </children></FlowPane>
+                        <FlowPane fx:id="RepoPane" layoutY="16.0" prefHeight="541.0" prefWidth="1060.0" />
                         <Button id="FirstPage" fx:id="rfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
                         <Button id="PageUp" fx:id="rpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css" />
                         <TextField fx:id="rpgNum" alignment="CENTER" layoutX="495.0" layoutY="575.0" prefHeight="30.0" prefWidth="60.0" text="1" />
@@ -41,12 +38,12 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <FlowPane fx:id="UserPane" layoutX="5.0" layoutY="15.0" prefHeight="540.0" prefWidth="1060.0" />
-                        <Button id="FirstPage" fx:id="Userfpg" layoutX="430.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
-                        <Button id="PageUp" fx:id="UserpgUp" layoutX="470.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
-                        <Button id="PageDown" fx:id="UserpgDn" layoutX="580.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
-                        <Button id="LastPage" fx:id="Userlpg" layoutX="615.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
-                        <TextField fx:id="UserpgNum" alignment="CENTER" layoutX="505.0" layoutY="575.0" prefHeight="30.0" prefWidth="60.0" text="1" />
-                        <Label layoutX="670.0" layoutY="576.0" prefHeight="28.0" prefWidth="104.0" text="共            页">
+                        <Button id="FirstPage" fx:id="Userfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <Button id="PageUp" fx:id="UserpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="PageDown" fx:id="UserpgDn" layoutX="570.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="LastPage" fx:id="Userlpg" layoutX="605.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <TextField fx:id="UserpgNum" alignment="CENTER" layoutX="495.0" layoutY="575.0" prefHeight="30.0" prefWidth="60.0" text="1" />
+                        <Label layoutX="660.0" layoutY="576.0" prefHeight="28.0" prefWidth="104.0" text="共            页">
                            <font>
                               <Font name="Microsoft YaHei" size="18.0" />
                            </font>
@@ -63,7 +60,7 @@
       </TabPane>
       <StackPane layoutX="869.0" layoutY="3.0" prefHeight="38.0" prefWidth="200.0">
          <children>
-            <JFXComboBox fx:id="RepoTrendCombo" prefHeight="31.0" prefWidth="182.0" promptText="this week" />
+            <JFXComboBox fx:id="TimeCombo" prefHeight="31.0" prefWidth="182.0" promptText="this week" />
          </children></StackPane>
       <AnchorPane id="RepSearchLeft" layoutX="1075.0" stylesheets="@../../default.css">
          <children>

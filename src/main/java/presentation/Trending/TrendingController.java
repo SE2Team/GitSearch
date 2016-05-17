@@ -19,10 +19,7 @@ import vo.UserVO;
 public class TrendingController implements MyController{
 
     @FXML
-    private ComboBox RepoTrendCombo;
-
-    @FXML
-    private ComboBox UserTrendCombo;
+    private ComboBox TimeCombo;
 
     @FXML
     private ComboBox LangCombo;
@@ -68,8 +65,8 @@ public class TrendingController implements MyController{
     private FXUITest fxuiTest;
 
     public void initialize() {
-        RepoTrendCombo.getItems().addAll("today","this week");
-        UserTrendCombo.getItems().addAll("today","this week");
+        TimeCombo.getItems().addAll("today","this week");
+        TimeCombo.getItems().addAll("today","this week");
         LangCombo.getItems().addAll("Java","Ruby","Python","CSS");
     }
 
