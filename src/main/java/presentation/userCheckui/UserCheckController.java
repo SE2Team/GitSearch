@@ -7,8 +7,10 @@ import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -45,7 +47,10 @@ public class UserCheckController implements MyController{
     private Tooltip fullUserName;
     @FXML
     private Tooltip fullLogin;
-
+    @FXML
+    private LineChart contriChart;
+    @FXML
+    private ImageView imageView;
 
     private FXUITest fxui;
 
