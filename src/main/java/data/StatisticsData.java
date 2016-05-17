@@ -19,44 +19,44 @@ public class StatisticsData implements StatisticsDataService{
 	
 	JDBCHelper helper=new JDBCHelper();
 	public StaStrPO getScores(RepositoryPO po) throws IOException {
-		// TODO Auto-generated method stub
-		ArrayList<String> listStr=new ArrayList<>();
-		ArrayList<Integer> listInt=new ArrayList<>();
-		int issues_num=1168;
-		int stars_num=36996;
-		int forks_num=9609;
-		int contributors_num=437;
-		int  collaborators_num=677;
-		
-		if(po.getOpen_issues()>=1000){
-			issues_num=10;
-		}else {
-			issues_num=po.getOpen_issues()/100+1;
-		}
-		
-		if(po.getStargazers()>=30000){
-			stars_num=10;
-		}else{
-			stars_num=po.getStargazers()/3000+1;
-		}
-		
-		if(po.getForks()>=9000){
-			forks_num=10;
-		}else{
-			forks_num=po.getForks()/900+1;
-		}
-		
-		if(po.getContributor()>=400){
-			contributors_num=10;
-		}else{
-			contributors_num=po.getContributor()/40+1;
-		}
-		
-		if(po.getCollaborators_count()>=600){
-			collaborators_num=10;
-		}else{
-			collaborators_num=po.getCollaborators_count()/60+1;
-		}
+//		// TODO Auto-generated method stub
+//		ArrayList<String> listStr=new ArrayList<>();
+//		ArrayList<Integer> listInt=new ArrayList<>();
+//		int issues_num=1168;
+//		int stars_num=36996;
+//		int forks_num=9609;
+//		int contributors_num=437;
+//		int  collaborators_num=677;
+//		
+//		if(po.getOpen_issues()>=1000){
+//			issues_num=10;
+//		}else {
+//			issues_num=po.getOpen_issues()/100+1;
+//		}
+//		
+//		if(po.getStargazers()>=30000){
+//			stars_num=10;
+//		}else{
+//			stars_num=po.getStargazers()/3000+1;
+//		}
+//		
+//		if(po.getForks()>=9000){
+//			forks_num=10;
+//		}else{
+//			forks_num=po.getForks()/900+1;
+//		}
+//		
+//		if(po.getContributor()>=400){
+//			contributors_num=10;
+//		}else{
+//			contributors_num=po.getContributor()/40+1;
+//		}
+//		
+//		if(po.getCollaborators_count()>=600){
+//			collaborators_num=10;
+//		}else{
+//			collaborators_num=po.getCollaborators_count()/60+1;
+//		}
 //		RepositoryData data=new RepositoryData();
 //		ArrayList<RepositoryPO> list=data.getRepositories();
 //		issues_num=list.get(0).getOpen_issues();
@@ -86,11 +86,11 @@ public class StatisticsData implements StatisticsDataService{
 //			 }
 //			 
 //		 }
-		 	listStr.add("issues");
-		 	listStr.add("stars");
-		 	listStr.add("forks");
-		 	listStr.add("contributors");
-		 	listStr.add("collaborators");
+//		 	listStr.add("issues");
+//		 	listStr.add("stars");
+//		 	listStr.add("forks");
+//		 	listStr.add("contributors");
+//		 	listStr.add("collaborators");
 //		 	System.out.println(issues_num);
 //		 	System.out.println(stars_num);
 //		 	System.out.println(forks_num);
@@ -99,12 +99,12 @@ public class StatisticsData implements StatisticsDataService{
 		 	
 		 	
 		 	
-		 	listInt.add(issues_num);
-		 	listInt.add(stars_num);
-		 	listInt.add(forks_num);
-		 	listInt.add(contributors_num);
-		 	listInt.add(collaborators_num);
-		 	return new StaStrPO(listStr, listInt);
+//		 	listInt.add(issues_num);
+//		 	listInt.add(stars_num);
+//		 	listInt.add(forks_num);
+//		 	listInt.add(contributors_num);
+//		 	listInt.add(collaborators_num);
+		 	return null;
 		 
 	}
 
@@ -330,24 +330,24 @@ public class StatisticsData implements StatisticsDataService{
 
 	public StaStrPO getUserType() throws IOException {
 		// TODO Auto-generated method stub
-		int organization=0;
-		int user=0;
-		ArrayList<UserPO> list=new UserData().getUser();
-		for(int i=0;i<list.size();i++){
-			if(list.get(i).getType().equals("User")){
-				user++;
-			}else if(list.get(i).getType().equals("Organization")){
-				organization++;
-			}else {
-				System.out.println("error");
-			}
-		}
-		ArrayList<String> listStr=new ArrayList<>();
-		ArrayList<Integer> listInt=new ArrayList<>();
-		listStr.add("User");
-		listStr.add("Organization");
-		listInt.add(user);
-		listInt.add(organization);
+//		int organization=0;
+//		int user=0;
+//		ArrayList<UserPO> list=new UserData().getUser();
+//		for(int i=0;i<list.size();i++){
+//			if(list.get(i).getType().equals("User")){
+//				user++;
+//			}else if(list.get(i).getType().equals("Organization")){
+//				organization++;
+//			}else {
+//				System.out.println("error");
+//			}
+//		}
+//		ArrayList<String> listStr=new ArrayList<>();
+//		ArrayList<Integer> listInt=new ArrayList<>();
+//		listStr.add("User");
+//		listStr.add("Organization");
+//		listInt.add(user);
+//		listInt.add(organization);
 //		Map<String, Integer> map=new StatisticsData().getUserType();
 //		Set<String> set=map.keySet();
 //		Iterator<String> iterator=set.iterator();
@@ -357,7 +357,8 @@ public class StatisticsData implements StatisticsDataService{
 //			System.out.println(key+":"+j);
 //		}
 		
-		return new StaStrPO(listStr, listInt);
+//		return new StaStrPO(listStr, listInt);
+		return null;
 	}
 
 	public StaIntPO getUserHas() {

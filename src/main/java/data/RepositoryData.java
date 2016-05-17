@@ -155,48 +155,48 @@ public class RepositoryData implements RepositoryDataService {
 
 	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
 		// TODO Auto-generated method stub
-		CollaboratorsData collaData = new CollaboratorsData();
-		ContributorsData contrData = new ContributorsData();
-		String collaUrl = "http://gitmining.net/api/repository/";
-		String contrUrl = "http://gitmining.net/api/repository/";
-		ArrayList<RepositoryPO> list = helper.getRepositories();
-
-		
-		
-		for (int j = 0; j < list.size(); j++) {
-			collaUrl = "http://gitmining.net/api/repository/"+list.get(j).getName()+
-					"/collaborators/login";
-			contrUrl="http://gitmining.net/api/repository/"+list.get(j).getName()+
-					"/contributors/login";
-			String[] s = list.get(j).getName().split("/");
-			if (s[0].equals(userName) && s[1].equals(reponame)) {
-//				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
-//				list.get(j).setContributors(contrData.getContributors(contrUrl));
-				try {
-					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
-					list.get(j).setContributors(contrData.getContributors(contrUrl));
-				} catch (Exception IOException) {
-					ArrayList<String> listColla=new GetData("collaborator").readData();
-					ArrayList<String> listContr=new GetData("contributor").readData();
-					ArrayList<String> strings=new ArrayList<>();
-					for(int i=0;i<listColla.size();i++){
-						strings=this.splitStr(listColla.get(i));
-						if(strings.contains(userName+"/"+reponame)){
-							strings.remove(userName+"/"+reponame);
-							list.get(j).setCollaborators(strings);
-						}
-						strings=this.splitStr(listContr.get(i));
-						if(strings.contains(userName+"/"+reponame)){
-							strings.remove(userName+"/"+reponame);
-							list.get(j).setContributors(strings);
-						}
-					}
-					
-				}
-				return list.get(j);
-			}
-		}
-		return null;
+//		CollaboratorsData collaData = new CollaboratorsData();
+//		ContributorsData contrData = new ContributorsData();
+//		String collaUrl = "http://gitmining.net/api/repository/";
+//		String contrUrl = "http://gitmining.net/api/repository/";
+//		ArrayList<RepositoryPO> list = helper.getRepositories();
+//
+//		
+//		
+//		for (int j = 0; j < list.size(); j++) {
+//			collaUrl = "http://gitmining.net/api/repository/"+list.get(j).getName()+
+//					"/collaborators/login";
+//			contrUrl="http://gitmining.net/api/repository/"+list.get(j).getName()+
+//					"/contributors/login";
+//			String[] s = list.get(j).getName().split("/");
+//			if (s[0].equals(userName) && s[1].equals(reponame)) {
+////				list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+////				list.get(j).setContributors(contrData.getContributors(contrUrl));
+//				try {
+//					list.get(j).setCollaborators(collaData.getCollaborators(collaUrl));
+//					list.get(j).setContributors(contrData.getContributors(contrUrl));
+//				} catch (Exception IOException) {
+//					ArrayList<String> listColla=new GetData("collaborator").readData();
+//					ArrayList<String> listContr=new GetData("contributor").readData();
+//					ArrayList<String> strings=new ArrayList<>();
+//					for(int i=0;i<listColla.size();i++){
+//						strings=this.splitStr(listColla.get(i));
+//						if(strings.contains(userName+"/"+reponame)){
+//							strings.remove(userName+"/"+reponame);
+//							list.get(j).setCollaborators(strings);
+//						}
+//						strings=this.splitStr(listContr.get(i));
+//						if(strings.contains(userName+"/"+reponame)){
+//							strings.remove(userName+"/"+reponame);
+//							list.get(j).setContributors(strings);
+//						}
+//					}
+//					
+//				}
+//				return list.get(j);
+//			}
+//		}
+		return helper.checkRepo(userName, reponame);
 	}
 
 	public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
@@ -284,19 +284,20 @@ public class RepositoryData implements RepositoryDataService {
 			list=listpo;
 		}
 		
-		if(sort==Repository_Sort.contributor){
-		
-		for(int j=0;j<list.size()-1;j++){
-			for(int i=j;i<list.size()-1;i++){
-				if(list.get(j).getContributor()<=list.get(i+1).getContributor()){
-					RepositoryPO temp=list.get(j);
-					list.set(j, list.get(i+1));
-					list.set(i+1, temp);
-					
-					}
-				}
-			}
-		}else if(sort==Repository_Sort.fork){
+//		if(sort==Repository_Sort.contributor){
+//		
+//		for(int j=0;j<list.size()-1;j++){
+//			for(int i=j;i<list.size()-1;i++){
+//				if(list.get(j).getContributor()<=list.get(i+1).getContributor()){
+//					RepositoryPO temp=list.get(j);
+//					list.set(j, list.get(i+1));
+//					list.set(i+1, temp);
+//					
+//					}
+//				}
+//			}
+//		}
+	if(sort==Repository_Sort.fork){
 			for(int j=0;j<list.size()-1;j++){
 				for(int i=j;i<list.size()-1;i++){
 					if(list.get(j).getForks()<=list.get(i+1).getForks()){
