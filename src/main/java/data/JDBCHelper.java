@@ -113,7 +113,7 @@ public class JDBCHelper {
             while (itr.hasNext()){
                 GHUser user=itr.next();
                 if (user.getLogin().equalsIgnoreCase(login)){
-                    return user;
+                    return (UserPO) user;
                 }
                 /**
                  * 找不到对应的po
@@ -121,21 +121,21 @@ public class JDBCHelper {
                 return null;
             }
         }else if(re.getTotalCount()==1){
-            return re.iterator().next();
+            return (UserPO) re.iterator().next();
         }else {
             return null;
         }
         return null;
 	}
 	
-	public RepositoryPO checkRepo(String userName, String reponame){
+	public RepositoryPO checkRepo(String login, String reponame){
         PagedSearchIterable<GHRepository> re=InitConnection.getG().searchRepositories().q(reponame).in("name").list();
         if (re.getTotalCount()>1){
             Iterator<GHRepository> itr=re.iterator();
             while (itr.hasNext()){
                 GHRepository repo=itr.next();
-                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(userName)){
-                    return repo;
+                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(login)){
+                    return (RepositoryPO) repo;
                 }
                 /**
                  * 找不到对应的po
@@ -143,7 +143,7 @@ public class JDBCHelper {
                 return null;
             }
         }else if(re.getTotalCount()==1){
-            return re.iterator().next();
+            return (RepositoryPO) re.iterator().next();
         }else {
             return null;
         }
