@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.web.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.CheckRepoController">
    <children>
-      <SplitPane dividerPositions="0.21282798833819241" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.19756838905775076" layoutX="288.0" layoutY="159.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="136.0" prefWidth="1280.0" stylesheets="@../../default.css">
                <children>
@@ -25,16 +29,13 @@
                     <columnConstraints>
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="68.0" />
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="239.66668701171875" minWidth="10.0" prefWidth="67.0" />
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="139.0" />
                         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="132.0" />
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="142.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label GridPane.columnIndex="4" />
                         <Label fx:id="stars" text="Label" textFill="#00000097" GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri" size="22.0" />
@@ -43,23 +44,10 @@
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label fx:id="contributors" text="Label" textFill="#00000097" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Label fx:id="subscribers" text="Label" textFill="#00000097" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <font>
                               <Font name="Calibri" size="22.0" />
                            </font></Label>
-                        <Label fx:id="collaborator" text="Label" textFill="#00000097" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="Calibri" size="22.0" />
-                           </font></Label>
-                        <Label fx:id="subscribers" text="Label" textFill="#00000097" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="Calibri" size="22.0" />
-                           </font></Label>
-                        <ImageView fitHeight="32.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
-                           <image>
-                              <Image url="@../../Images/Collaborators.png" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../Images/star.png" />
@@ -70,12 +58,7 @@
                               <Image url="@../../Images/fork.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
-                           <image>
-                              <Image url="@../../Images/RepContri.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <ImageView fitHeight="32.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                            <image>
                               <Image url="@../../Images/Subscribers.png" />
                            </image>
@@ -96,120 +79,116 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="1278.0">
-                     <children>
-                        <StackedAreaChart layoutX="525.0" layoutY="11.0" prefHeight="200.0" prefWidth="200.0">
-                          <xAxis>
-                            <NumberAxis side="BOTTOM" />
-                          </xAxis>
-                          <yAxis>
-                            <NumberAxis side="LEFT" />
-                          </yAxis>
-                        </StackedAreaChart>
-                        <Label layoutX="43.0" layoutY="213.0" text="Contributors">
-                           <font>
-                              <Font size="30.0" />
-                           </font>
-                        </Label>
-                        <SplitPane dividerPositions="0.6473354231974922" layoutX="92.0" layoutY="41.0" prefHeight="524.0" prefWidth="1278.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="721.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.4596153846153846" layoutX="58.0" layoutY="6.0" orientation="VERTICAL" prefHeight="516.0" prefWidth="822.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
-                                      <items>
-                                        <AnchorPane maxHeight="232.0" maxWidth="820.0" minHeight="232.0" minWidth="820.0" prefHeight="216.0" prefWidth="820.0">
-                                             <children>
-                                                <Label layoutX="19.0" layoutY="12.0" text="Language" textFill="#4ebce4">
-                                                   <font>
-                                                      <Font name="Calibri" size="30.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="54.0" layoutY="58.0" text="Main Language:">
-                                                   <font>
-                                                      <Font name="Calibri Italic" size="22.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="language" layoutX="209.0" layoutY="58.0" text="Java">
-                                                   <font>
-                                                      <Font name="Calibri" size="22.0" />
-                                                   </font>
-                                                </Label>
-                                                <PieChart fx:id="langChart" layoutX="333.0" layoutY="2.0" legendSide="RIGHT" prefHeight="228.0" prefWidth="473.0" />
-                                                <AnchorPane fx:id="noNetWork" layoutX="567.0" layoutY="13.0" prefHeight="211.0" prefWidth="252.0">
-                                                   <children>
-                                                      <ImageView fitHeight="121.0" fitWidth="149.0" layoutX="44.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../../Images/wifi-not-available-512x512.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                      <Label layoutX="9.0" layoutY="132.0" prefHeight="64.0" prefWidth="235.0" text="PieChart is not available.Please check your network." wrapText="true">
-                                                         <font>
-                                                            <Font name="Calibri" size="18.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </AnchorPane>
-                                             </children>
-                                          </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <TabPane prefHeight="289.0" prefWidth="823.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE">
-                                                  <tabs>
-                                                    <Tab id="Contributors" text="Contributors">
-                                                      <content>
-                                                        <AnchorPane maxHeight="250.0" maxWidth="823.0" minHeight="250.0" minWidth="823.0" prefHeight="180.0" prefWidth="200.0">
+                  <SplitPane dividerPositions="0.6473354231974922" prefHeight="524.0" prefWidth="1278.0" stylesheets="@../../default.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="522.0" prefWidth="721.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5230769230769231" orientation="VERTICAL" prefHeight="522.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TabPane prefHeight="150.0" prefWidth="819.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                                <Tab id="Contributors" text="Language">
+                                                   <content>
+                                                      <AnchorPane maxWidth="823.0" minWidth="823.0" prefHeight="222.0" prefWidth="823.0">
+                                                         <children>
+                                                            <Label layoutX="21.0" layoutY="43.0" text="Main Language:" textFill="#46c7dd">
+                                                               <font>
+                                                                  <Font name="Calibri Italic" size="22.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label fx:id="language" layoutX="172.0" layoutY="44.0" text="Java">
+                                                               <font>
+                                                                  <Font name="Calibri" size="22.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <PieChart fx:id="langChart" layoutX="340.0" layoutY="2.0" legendSide="RIGHT" prefHeight="228.0" prefWidth="473.0" />
+                                                            <AnchorPane fx:id="noNetWork" layoutX="551.0" layoutY="10.0" prefHeight="211.0" prefWidth="252.0">
                                                                <children>
-                                                                  <ScrollPane layoutY="1.0" prefViewportHeight="232.0" prefViewportWidth="820.0">
-                                                                     <content>
-                                                                        <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
-                                                                     </content>
-                                                                  </ScrollPane>
+                                                                  <ImageView fitHeight="121.0" fitWidth="149.0" layoutX="44.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../../Images/wifi-not-available-512x512.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <Label layoutX="9.0" layoutY="132.0" prefHeight="64.0" prefWidth="235.0" text="PieChart is not available.Please check your network." wrapText="true">
+                                                                     <font>
+                                                                        <Font name="Calibri" size="18.0" />
+                                                                     </font>
+                                                                  </Label>
                                                                </children>
                                                             </AnchorPane>
-                                                      </content>
-                                                    </Tab>
-                                                    <Tab id="Collaborators" text="Collaborators">
-                                                      <content>
-                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                               <children>
-                                                                  <ScrollPane layoutY="1.0" prefViewportHeight="232.0" prefViewportWidth="820.0">
-                                                                     <content>
-                                                                        <FlowPane fx:id="collaboratorPane" layoutY="1.0" prefHeight="232.0" prefWidth="820.0" />
-                                                                     </content>
-                                                                  </ScrollPane>
-                                                               </children>
-                                                            </AnchorPane>
-                                                      </content>
-                                                    </Tab>
-                                                  </tabs>
-                                                </TabPane>
-                                             </children>
-                                          </AnchorPane>
-                                      </items>
-                                    </SplitPane>
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane maxHeight="522.0" maxWidth="446.0" minHeight="522.0" minWidth="446.0" prefHeight="522.0" prefWidth="841.0">
-                                 <children>
-                                    <Label layoutX="111.0" layoutY="33.0" text="Score of Reposotory">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <BarChart fx:id="poiChart" layoutY="94.0" legendVisible="false" prefHeight="356.0" prefWidth="437.0">
-                                      <xAxis>
-                                        <CategoryAxis side="BOTTOM" fx:id="xpoi" />
-                                      </xAxis>
-                                      <yAxis>
-                                        <NumberAxis fx:id="yAxis" side="LEFT" />
-                                      </yAxis>
-                                    </BarChart>
-                                 </children>
-                              </AnchorPane>
-                          </items>
-                        </SplitPane>
-                     </children>
-                  </AnchorPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                              <Tab id="Contributors" text="Contributors">
+                                                <content>
+                                                  <AnchorPane maxHeight="250.0" maxWidth="823.0" minHeight="250.0" minWidth="823.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <ScrollPane layoutY="1.0" prefViewportHeight="232.0" prefViewportWidth="820.0">
+                                                               <content>
+                                                                  <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="230.0" prefWidth="820.0" />
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                </content>
+                                              </Tab>
+                                                <Tab id="Collaborators" text="Commit">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="819.0">
+                                                         <children>
+                                                            <LineChart fx:id="commitChart" layoutX="21.0" layoutY="-63.0" legendVisible="false" prefHeight="233.0" prefWidth="779.0" title="The Distribution of Commits" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                                              <xAxis>
+                                                                <CategoryAxis label="Time" side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                <NumberAxis label="Commit Times" side="LEFT" />
+                                                              </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
+                                            </tabs>
+                                          </TabPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <BarChart fx:id="poiChart" layoutX="116.0" layoutY="34.0" prefHeight="210.0" prefWidth="820.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                          <Label layoutX="333.0" layoutY="3.0" text="Score of Repository">
+                                             <font>
+                                                <Font name="Calibri" size="22.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane maxHeight="522.0" maxWidth="446.0" minHeight="522.0" minWidth="446.0" prefHeight="522.0" prefWidth="841.0">
+                           <children>
+                              <MenuBar prefHeight="40.0" prefWidth="446.0" AnchorPane.bottomAnchor="482.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Label layoutY="6.0" text="README.md">
+                                 <font>
+                                    <Font name="Calibri Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane layoutY="41.0" prefHeight="482.0" prefWidth="446.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
                </children></AnchorPane>
         </items>
       </SplitPane>

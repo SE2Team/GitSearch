@@ -55,8 +55,8 @@ public class RepSearchController implements MyController {
     private Button fork;
     @FXML
     private Button general;
-    @FXML
-    private Button contributor;
+//    @FXML
+//    private Button contributor;
     @FXML
     private ToggleButton upOrDown;
     @FXML
@@ -92,7 +92,7 @@ public class RepSearchController implements MyController {
 
 
     public void initialize() {
-        buttons = new Button[]{star, fork, contributor};
+        buttons = new Button[]{star, fork};
         initFilters();
         langGroup.getToggles().addAll(language);
         timeGroup.getToggles().addAll(time);
@@ -378,26 +378,26 @@ public class RepSearchController implements MyController {
         repaint();
     }
 
-    @FXML
-    private void handleContributor() {
-        setColor(contributor.getText());
-        vos.clear();
-        try {
-            Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.contributor);
-            while (itr.hasNext()) {
-                vos.add(itr.next());
-            }
-            if (upOrDown.isSelected()) {
-                vos = handleUpAndDown(vos);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        updateMaxPages(vos.size());
-
-        updatePage();
-
-    }
+//    @FXML
+//    private void handleContributor() {
+//        setColor(contributor.getText());
+//        vos.clear();
+//        try {
+//            Iterator<RepositoryVO> itr = bl.sort(Repository_Sort.contributor);
+//            while (itr.hasNext()) {
+//                vos.add(itr.next());
+//            }
+//            if (upOrDown.isSelected()) {
+//                vos = handleUpAndDown(vos);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        updateMaxPages(vos.size());
+//
+//        updatePage();
+//
+//    }
 
     @FXML
     private void handlePgUp() {
