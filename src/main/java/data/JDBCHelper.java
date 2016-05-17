@@ -24,6 +24,7 @@ public class JDBCHelper {
 	private Connection conn = null;
 	private PreparedStatement pStatement = null;
 	public static boolean isConnection=false;
+	JDBCHelper helper=new JDBCHelper();
 	
 	public JDBCHelper() {
 		if(isConnection==false){
@@ -50,11 +51,7 @@ public class JDBCHelper {
 			pStatement = conn.prepareStatement(sql);
 			rs = pStatement.executeQuery();
 			while (rs.next()) {
-				list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("Id"), null, rs.getString("html_url"),
-						rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"),
-						rs.getDate("updated"), rs.getDate("pushed"), rs.getInt("size"), 0, rs.getString("language"),
-						rs.getInt("forks"), rs.getInt("open_issues"), rs.getInt("subscribers_count"), 0, 0, null,
-						null));
+				list.add(helper.checkRepo(rs.getString("ownerName"), rs.getString("name")));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -74,10 +71,7 @@ public class JDBCHelper {
 			rs = pStatement.executeQuery();
 			while (rs.next()) {
 				//javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
-				list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"), rs.getString("name"),
-						rs.getString("company"), rs.getString("email"), rs.getString("public_repos"),
-						rs.getInt("public_gists"), rs.getInt("followers"), rs.getInt("following"),
-						rs.getDate("created_at"), rs.getDate("updated_at"), null, null, null));
+				list.add(helper.checkUser(rs.getString("login")));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -113,7 +107,7 @@ public class JDBCHelper {
             while (itr.hasNext()){
                 GHUser user=itr.next();
                 if (user.getLogin().equalsIgnoreCase(login)){
-                    return user;
+                    return (UserPO) user;
                 }
                 /**
                  * 找不到对应的po
@@ -121,21 +115,21 @@ public class JDBCHelper {
                 return null;
             }
         }else if(re.getTotalCount()==1){
-            return re.iterator().next();
+            return (UserPO) re.iterator().next();
         }else {
             return null;
         }
         return null;
 	}
 	
-	public RepositoryPO checkRepo(String userName, String reponame){
+	public RepositoryPO checkRepo(String login, String reponame){
         PagedSearchIterable<GHRepository> re=InitConnection.getG().searchRepositories().q(reponame).in("name").list();
         if (re.getTotalCount()>1){
             Iterator<GHRepository> itr=re.iterator();
             while (itr.hasNext()){
                 GHRepository repo=itr.next();
-                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(userName)){
-                    return repo;
+                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(login)){
+                    return (RepositoryPO) repo;
                 }
                 /**
                  * 找不到对应的po
@@ -143,7 +137,7 @@ public class JDBCHelper {
                 return null;
             }
         }else if(re.getTotalCount()==1){
-            return re.iterator().next();
+            return (RepositoryPO) re.iterator().next();
         }else {
             return null;
         }

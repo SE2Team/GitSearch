@@ -58,9 +58,14 @@ public class CheckRepoController implements MyController {
     private FlowPane collaboratorPane;
 
     @FXML
+    private FlowPane commitPane;
+
+    @FXML
     private BarChart poiChart;
     @FXML
     private PieChart langChart;
+    @FXML
+    private LineChart commitChart;
     @FXML
     private CategoryAxis xpoi;
     @FXML

@@ -24,6 +24,7 @@ public class UserData implements UserDataService {
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
 	
 	UserData data=new UserData();
+	JDBCHelper helper=new JDBCHelper();
 	
 	private UserPO CheckUserLine(String user) throws IOException{
 		GetData data=new GetData();
@@ -99,7 +100,7 @@ public class UserData implements UserDataService {
 		
 	public UserPO CheckUser(String user) throws IOException {
 
-		ArrayList<UserPO> list = new UserData().getUser();
+		ArrayList<UserPO> list = data.getUser();
 		ArrayList<String> list3 = new ArrayList<String>();
 		ArrayList<String> relatedRepo = new ArrayList<String>();
 		UserPO po=null;
@@ -195,7 +196,7 @@ public class UserData implements UserDataService {
 		// FileReader fr = new FileReader(new
 		// File("src/main/java/txtData/user_names.txt"));
 		// BufferedReader br = new BufferedReader(new Input);
-		ArrayList<UserPO> list = new UserData().getUser();
+		ArrayList<UserPO> list = helper.getUsers();
 
 		UserPO po;
 		ArrayList<UserPO> list1 = new ArrayList<UserPO>();
@@ -211,7 +212,7 @@ public class UserData implements UserDataService {
 
 	public ArrayList<UserPO> getUser() throws IOException {
 		// TODO Auto-generated method stub
-		JDBCHelper helper=new JDBCHelper();
+		
 		return helper.getUsers();
 //		ArrayList<UserPO> list = new ArrayList<UserPO>();
 //		JSONObject obj = new JSONObject();
@@ -268,7 +269,7 @@ public class UserData implements UserDataService {
 	public ArrayList<UserPO> sortUser(User_Sort sort) throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<UserPO> list = userList;
-		ArrayList<UserPO> listPO=new UserData().getUser();
+		ArrayList<UserPO> listPO=helper.getUsers();
 		if(list.size()==listPO.size()){
 			listPO=list;
 		}
@@ -276,7 +277,7 @@ public class UserData implements UserDataService {
 		if (sort == User_Sort.Followers) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				for (int i = j; i < list.size() - 1; i++) {
-					if (list.get(j).getFollowers() <= list.get(i + 1).getFollowers()) {
+					if (list.get(j).getFollowersCount() <= list.get(i + 1).getFollowersCount()) {
 						UserPO temp = list.get(j);
 						list.set(j, list.get(i + 1));
 						list.set(i + 1, temp);
@@ -287,7 +288,7 @@ public class UserData implements UserDataService {
 		} else if (sort == User_Sort.Following) {
 			for (int j = 0; j < list.size() - 1; j++) {
 				for (int i = j; i < list.size() - 1; i++) {
-					if (list.get(j).getFollowing() <= list.get(i + 1).getFollowing()) {
+					if (list.get(j).getFollowingCount() <= list.get(i + 1).getFollowingCount()) {
 						UserPO temp = list.get(j);
 						list.set(j, list.get(i + 1));
 						list.set(i + 1, temp);
@@ -373,7 +374,7 @@ public class UserData implements UserDataService {
 		// TODO Auto-generated method stub
 		ArrayList<UserPO> list1=new ArrayList<>();
 		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<UserPO> list=new UserData().getUser();//有bug
+		ArrayList<UserPO> list=helper.getUsers();;
 		if(time.equals("")){
 			return list;
 		}
