@@ -1,5 +1,8 @@
 package data;
 
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GHUser;
+import org.kohsuke.github.PagedSearchIterable;
 import po.RepositoryPO;
 import po.StaStrPO;
 import po.UserPO;
@@ -9,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class JDBCHelper {
 	public static final String url = "jdbc:mysql://localhost/gitsearch?useUnicode=true&characterEncoding=UTF-8"
@@ -69,11 +73,11 @@ public class JDBCHelper {
 			pStatement = conn.prepareStatement(sql);
 			rs = pStatement.executeQuery();
 			while (rs.next()) {
-				javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
+				//javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
 				list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"), rs.getString("name"),
 						rs.getString("company"), rs.getString("email"), rs.getString("public_repos"),
 						rs.getInt("public_gists"), rs.getInt("followers"), rs.getInt("following"),
-						rs.getDate("created_at"), rs.getDate("updated_at"), null, null, userImage));
+						rs.getDate("created_at"), rs.getDate("updated_at"), null, null, null));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -102,11 +106,47 @@ public class JDBCHelper {
 		return list;
 	}
 
-	public UserPO checkUser(String name) {
-		return null;
+	public UserPO checkUser(String login) {
+        PagedSearchIterable<GHUser> re=InitConnection.getG().searchUsers().q(login).in("login").list();
+        if (re.getTotalCount()>1){
+            Iterator<GHUser> itr=re.iterator();
+            while (itr.hasNext()){
+                GHUser user=itr.next();
+                if (user.getLogin().equalsIgnoreCase(login)){
+                    return user;
+                }
+                /**
+                 * 找不到对应的po
+                 */
+                return null;
+            }
+        }else if(re.getTotalCount()==1){
+            return re.iterator().next();
+        }else {
+            return null;
+        }
+        return null;
 	}
 	
 	public RepositoryPO checkRepo(String userName, String reponame){
+        PagedSearchIterable<GHRepository> re=InitConnection.getG().searchRepositories().q(reponame).in("name").list();
+        if (re.getTotalCount()>1){
+            Iterator<GHRepository> itr=re.iterator();
+            while (itr.hasNext()){
+                GHRepository repo=itr.next();
+                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(userName)){
+                    return repo;
+                }
+                /**
+                 * 找不到对应的po
+                 */
+                return null;
+            }
+        }else if(re.getTotalCount()==1){
+            return re.iterator().next();
+        }else {
+            return null;
+        }
 		return null;
 	}
 	
