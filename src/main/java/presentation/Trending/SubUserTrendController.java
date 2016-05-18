@@ -39,7 +39,7 @@ public class SubUserTrendController implements MyController{
         name.setText(nameText);
         id.setText(vo.getLogin());
         followers.setText(String.valueOf(vo.getFollowers()));
-        repos.setText(String.valueOf(vo.getHasNum()));
+        repos.setText(String.valueOf(vo.getPublic_repos()));
 
     }
 

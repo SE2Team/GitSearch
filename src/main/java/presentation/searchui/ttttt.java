@@ -1,7 +1,6 @@
 package presentation.searchui;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +19,7 @@ public class ttttt extends Application{
         testController controller=loader.getController();
         Scene scene=new Scene(anchorPane);
         stage.setScene(scene);
+
         stage.show();
     }
 

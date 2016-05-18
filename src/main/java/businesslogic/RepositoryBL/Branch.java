@@ -7,6 +7,7 @@ import po.RepositoryPO;
 import vo.PO2VO;
 import vo.RepositoryVO;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -15,7 +16,7 @@ import java.util.Iterator;
  */
 public class Branch {
     DataFatoryService factory=new DataFactory();
-    public Iterator<RepositoryVO> getBranches(String userName, String reponame) {
+    public Iterator<RepositoryVO> getBranches(String userName, String reponame) throws IOException {
         ArrayList<RepositoryVO> vos=new ArrayList<RepositoryVO>();
         for (RepositoryPO po:factory.getBranchDataService().getBranches(userName, reponame)){
             vos.add(PO2VO.convert(po));

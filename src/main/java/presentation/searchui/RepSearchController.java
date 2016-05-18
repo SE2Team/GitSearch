@@ -117,7 +117,7 @@ public class RepSearchController implements MyController {
     public void repaint() {
         vos.clear();
         try {
-            Iterator<RepositoryVO> itr = bl.Search(key);
+            Iterator<RepositoryVO> itr = bl.search(key);
             while (itr.hasNext()) {
                 vos.add(itr.next());
             }

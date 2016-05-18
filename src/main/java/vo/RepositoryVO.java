@@ -1,10 +1,13 @@
 package vo;
 
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.PagedIterable;
 import po.RepositoryPO;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -35,7 +38,9 @@ public class RepositoryVO {
     int stargazers_count = 0;
     String language;
     int forks;
-//    int contributor = 0;
+    PagedIterable<GHRepository.Contributor> contributors;
+    RepositoryPO dpo;
+
     int open_issues = 0;
     int subscribers_count = 0;
 
@@ -48,6 +53,7 @@ public class RepositoryVO {
     }
 
     public RepositoryVO(RepositoryPO po) throws IOException {
+        dpo=po;
         name=po.getName();
         fullName=po.getFullName();
         id=po.getId();
@@ -64,6 +70,7 @@ public class RepositoryVO {
         forks=po.getForks();
         open_issues=po.getOpen_issues();
         subscribers_count=po.getSubscribersCount();
+        contributors = po.listContributors();
     }
 
     public String getName() {
@@ -128,5 +135,17 @@ public class RepositoryVO {
 
     public int getSubscribers_count() {
         return subscribers_count;
+    }
+
+    public PagedIterable<GHRepository.Contributor> getContributors() {
+        return contributors;
+    }
+
+    public Map<String , Long> listLanguage() throws IOException {
+        return dpo.listLanguages();
+    }
+
+    public RepositoryPO getDpo() {
+        return dpo;
     }
 }

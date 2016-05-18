@@ -1,13 +1,5 @@
 package data;
 
-import po.RepositoryPO;
-import po.StaStrPO;
-import po.UserPO;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-
 public class Refresh {
 //	ArrayList<RepositoryPO> listRepo=new ArrayList<>();
 //	public Refresh() throws IOException{
@@ -261,7 +253,7 @@ public class Refresh {
 //			po=data.languagesOfRepository(str[0], str[1]);
 //			if(po!=null){
 //			for(int q=0;q<po.getInt().size();q++){
-//				string=po.getStr().get(q)+":"+po.getInt().get(q)+";"+string;
+//				string=po.getX().get(q)+":"+po.getInt().get(q)+";"+string;
 //			}
 //			}
 //			string=string+";"+listRepo.get(i).getName();

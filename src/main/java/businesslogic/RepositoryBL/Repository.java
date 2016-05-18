@@ -1,22 +1,17 @@
 package businesslogic.RepositoryBL;
 
-import Util.RepositoryInfo;
 import Util.Repository_Sort;
+import data.APIConnection;
 import data.DataFactory;
 import dataService.DataFatoryService;
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GHSearchBuilder;
 import po.RepositoryPO;
-import po.ScreenPO;
-import po.StaStrPO;
-import vo.PO2VO;
-import vo.RepositoryVO;
-import vo.ScreenVO;
-import vo.StaStrVO;
-import vo.VO2PO;
+import vo.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Map;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -44,6 +39,16 @@ public class Repository {
 
     public RepositoryVO checkRepository(String userName, String reponame) throws IOException {
         return PO2VO.convert(factory.getRepositoryDataService().checkRepository(userName, reponame));
+    }
+
+    public StaStrVO languagesOfRepository(RepositoryVO vo) throws IOException {
+        ArrayList<String> x=new ArrayList<>();
+        ArrayList<Integer> y=new ArrayList<>();
+        for(String key:vo.listLanguage().keySet()){
+            x.add(key);
+            y.add(Math.toIntExact(vo.listLanguage().get(key)));
+        }
+        return new StaStrVO(x,y);
     }
 
     public StaStrVO languagesOfRepository(String userName, String reponame) throws IOException {
@@ -105,4 +110,15 @@ public class Repository {
 //    	}
 //    	return vos.iterator();
 //    }
+
+    public Iterator<GHRepository> get(String name) {
+
+        GHSearchBuilder<GHRepository> builder=APIConnection.getG().searchRepositories().stars(">=0");
+        if(name==""){
+            return builder.list().withPageSize(6).iterator();
+        }else {
+            return builder.q(name).list().withPageSize(6).iterator();
+        }
+
+    }
 }

@@ -16,32 +16,32 @@ public class StatisticsTest extends TestCase{
 	
 	/*测试getStar方法*/
 	public void testgetStar() throws IOException{
-		assertTrue(testsStatistics.getStar().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getStar().getX().get(0)!=null);
 	}
 	
 	/*测试getForks方法*/
 	public void testgetForks() throws IOException{
-		assertTrue(testsStatistics.getForks().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getForks().getX().get(0)!=null);
 	}
 	
 	/*测试getRepoCreated方法*/
 	public void testgetRepoCreated() throws IOException{
-		assertTrue(testsStatistics.getRepoCreated().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getRepoCreated().getX().get(0)!=null);
 	}
 	
 	/*测试getLanguage方法*/
 	public void testgetLanguage() throws IOException{
-		assertTrue(testsStatistics.getLanguage().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getLanguage().getX().get(0)!=null);
 	}
 	
 	/*测试getUserCreated方法*/
 	public void testgetUserCreated() throws IOException{
-		assertTrue(testsStatistics.getUserCreated().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getUserCreated().getX().get(0)!=null);
 	}
 	
 	/*测试getUserType方法*/
 	public void testgetUserType() throws IOException{
-		assertTrue(testsStatistics.getUserType().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getUserType().getX().get(0)!=null);
 	}
 	
 	/*测试getUserHas方法*/
@@ -56,16 +56,16 @@ public class StatisticsTest extends TestCase{
 	
 	/*测试getCompany方法*/
 	public void testgetCompany() throws IOException{
-		assertTrue(testsStatistics.getCompany().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getCompany().getX().get(0)!=null);
 	}
 	
 	/*测试getCollaborator方法*/
 	public void testgetCollaborator() throws IOException{
-		assertTrue(testsStatistics.getCollaborator().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getCollaborator().getX().get(0)!=null);
 	}
 	
 	/*测试getContributor方法*/
 	public void testgetContributor() throws IOException{
-		assertTrue(testsStatistics.getContributor().getStr().get(0)!=null);
+		assertTrue(testsStatistics.getContributor().getX().get(0)!=null);
 	}
 }

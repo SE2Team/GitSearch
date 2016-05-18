@@ -4,6 +4,7 @@ import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
 import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
+import data.APIConnection;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -52,6 +53,7 @@ public class FXUITest extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        APIConnection.initAPIConnection();
         this.primaryStage = primaryStage;
         primaryStage.setTitle("GitSearch");
 

@@ -1,6 +1,8 @@
 package vo;
 
 import javafx.scene.image.Image;
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.PagedIterator;
 import po.UserPO;
 
 import java.io.IOException;
@@ -25,6 +27,7 @@ public class UserVO  {
     String created_at = "";
     String  updated_at = "";
     javafx.scene.image.Image userImage;
+    UserPO dpo;
     @Deprecated
     public UserVO(int id, String login, String type, String name, String company, String email,
                   String public_repos, int public_gists, int followers, int following, Date created_at,
@@ -34,6 +37,7 @@ public class UserVO  {
     }
 
     public UserVO(UserPO po) throws IOException {
+        dpo=po;
         id=po.getId();
         login=po.getLogin();
         type="user";
@@ -99,5 +103,13 @@ public class UserVO  {
 
     public Image getUserImage() {
         return userImage;
+    }
+
+    public PagedIterator<GHRepository> getHas(){
+        return dpo.listRepositories().iterator();
+    }
+
+    public UserPO getDpo() {
+        return dpo;
     }
 }

@@ -38,7 +38,7 @@ public class SubUserInfoController implements MyController {
         String nameText = vo.getName() != "" ? vo.getName() : "Unknown";
         name.setText(nameText);
         followers.setText(String.valueOf(vo.getFollowers()));
-        repos.setText(String.valueOf(vo.getHasNum()));
+        repos.setText(String.valueOf(vo.getPublic_repos()));
         id.setText(vo.getLogin());
 //        repos.setText(vo.getRepos());
     }

@@ -40,8 +40,8 @@ public class SubRepInfoController  implements MyController{
         description.setText(vo.getDescription());
         forks.setText(String.valueOf(vo.getForks()));
         updateTime.setText(vo.getUpdated());
-        stars.setText(String.valueOf(vo.getStargazers()));
-        contributors.setText(String.valueOf(vo.getContributor()));
+        stars.setText(String.valueOf(vo.getStargazers_count()));
+        contributors.setText(String.valueOf(404));
     }
 
     public void setVo(RepositoryVO vo) {

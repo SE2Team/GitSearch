@@ -4,8 +4,6 @@ import Util.User_Sort;
 import dataService.UserDataService;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-
 import po.RepositoryPO;
 import po.UserPO;
 
@@ -23,7 +21,7 @@ public class UserData implements UserDataService {
 	
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
 	
-	UserData data=new UserData();
+//	UserData data=new UserData();
 	JDBCHelper helper=new JDBCHelper();
 	
 		

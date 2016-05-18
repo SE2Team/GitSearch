@@ -19,12 +19,14 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import org.kohsuke.github.GHRepository;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created by moeyui on 2016/3/14 0014.
@@ -104,11 +106,11 @@ public class CheckRepoController implements MyController {
         }
         reponame.setText(vo.getName());
         description.setText(vo.getDescription());
-        stars.setText(String.valueOf(vo.getStargazers()));
+        stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
         subscribers.setText(String.valueOf(vo.getSubscribers_count()));
-        collaborator.setText(String.valueOf(vo.getContributor()));
-        contributors.setText(String.valueOf(vo.getContributor()));
+        collaborator.setText(String.valueOf(888));
+        contributors.setText(String.valueOf(404));
         language.setText(vo.getLanguage());
         try {
             setList();
@@ -124,32 +126,16 @@ public class CheckRepoController implements MyController {
     }
 
     private void setList() throws IOException {
-        if (vo.getContributors() != null) {
-            for (int i = 0; i < vo.getContributors().size(); i++) {
+        Iterator<GHRepository.Contributor> itrcon=vo.getContributors().iterator();
+        while (itrcon.hasNext()) {
 
-                contributorPane.getChildren().add(getSub(vo.getContributors().get(i)));
-                /**
-                 * 最多只能放7个+一个more
-                 */
-//                if (i >= 6) {
-//                    contributorPane.getChildren().addAll(getSub("@more"));
-//                    break;
-//                }
-            }
+
+                contributorPane.getChildren().add(getSub(itrcon.next()));
+
+
         }
 
-        if (vo.getCollaborators() != null) {
-            for (int i = 0; i < vo.getCollaborators().size(); i++) {
-                collaboratorPane.getChildren().add(getSub(vo.getCollaborators().get(i)));
-                /**
-                 * 最多只能放7个+一个more
-                 */
-//                if (i >= 6) {
-//                    collaboratorPane.getChildren().addAll(getSub("@more"));
-//                    break;
-//                }
-            }
-        }
+
     }
 
     @FXML
@@ -177,6 +163,7 @@ public class CheckRepoController implements MyController {
 
     }
 
+    @Deprecated
     public Parent getSub(String str) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
@@ -189,11 +176,32 @@ public class CheckRepoController implements MyController {
         return anchorPane;
     }
 
+    /**
+     * 展示贡献者login的小面板
+     * @param contributor
+     * @return
+     * @throws IOException
+     */
+    public Parent getSub(GHRepository.Contributor contributor) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubRepCheckContri.fxml"));
+        AnchorPane anchorPane = loader.load();
+        SubContriController controller = loader.getController();
+
+        controller.setFxui(fxui);
+        controller.setText(contributor.getLogin());
+        controller.repaint();
+        return anchorPane;
+    }
+
+
+
+
     private void setGraph() {
         //---------------set language graph-------------
         try {
-            staStrVO = bl.languagesOfRepository(vo.getOwnerName(), vo.getRepoName());
-            if (staStrVO.getStr().size()!=0) {
+            staStrVO = bl.languagesOfRepository(vo);
+            if (staStrVO.getX().size()!=0) {
 
 
                 double sum = 0;
@@ -201,9 +209,9 @@ public class CheckRepoController implements MyController {
                     sum += staStrVO.getInt().get(j);
                 }
                 double temp = 0;
-                for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getStr().size() && i < 5; i++) {
+                for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getX().size() && i < 5; i++) {
                     temp += staStrVO.getInt().get(i);
-                    langs.addAll(new PieChart.Data(staStrVO.getStr().get(i), staStrVO.getInt().get(i)));
+                    langs.addAll(new PieChart.Data(staStrVO.getX().get(i), staStrVO.getInt().get(i)));
                     if (i==4){
                         langs.addAll(new PieChart.Data("Others", sum - temp));
                     }
@@ -232,11 +240,11 @@ public class CheckRepoController implements MyController {
     private ObservableList<XYChart.Series<String, Integer>> getData(StaStrVO vo) {
         ObservableList<XYChart.Series<String, Integer>> observableList = FXCollections.observableArrayList();
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 500; i++) {
-            if (vo.getStr().get(vo.getStr().size() - 1 - i).equalsIgnoreCase("Unknown")) {
+        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 500; i++) {
+            if (vo.getX().get(vo.getX().size() - 1 - i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-            XYChart.Data<String,Integer> data=new XYChart.Data<String,Integer>(vo.getStr().get(i), vo.getInt().get(i));
+            XYChart.Data<String,Integer> data=new XYChart.Data<String,Integer>(vo.getX().get(i), vo.getInt().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override
                 public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
