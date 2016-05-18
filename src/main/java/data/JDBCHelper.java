@@ -52,9 +52,9 @@ public class JDBCHelper {
             pStatement = conn.prepareStatement(sql);
             rs = pStatement.executeQuery();
             while (rs.next()) {
-            	list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("id"), rs.getString(""), rs.getString("html_url"), 
-            			rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"), rs.getDate("updated"),rs.getDate(" pushed"),
-            			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("fo"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
+            	list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("id"), "", rs.getString("html_url"), 
+            			rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"), rs.getDate("updated"),rs.getDate("pushed"),
+            			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("fork"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
             			0, 0, null));
 
             }
