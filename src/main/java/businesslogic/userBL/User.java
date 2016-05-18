@@ -39,7 +39,7 @@ public class User {
         return data.getStargazerNames(userName, reponame).iterator();
     }
 
-    public Iterator<UserVO> getSubscribers(String userName, String reponame) {
+    public Iterator<UserVO> getSubscribers(String userName, String reponame) throws IOException {
         ArrayList<UserVO> vos=new ArrayList<UserVO>();
         for (UserPO po:data.getSubscribers(userName, reponame)){
             vos.add(PO2VO.convert(po));

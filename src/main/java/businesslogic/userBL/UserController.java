@@ -31,7 +31,7 @@ public class UserController implements UserBLService{
         return user.getStargazerNames(userName, reponame);
     }
 
-    public Iterator<UserVO> getSubscribers(String userName, String reponame) {
+    public Iterator<UserVO> getSubscribers(String userName, String reponame) throws IOException {
         return user.getSubscribers(userName, reponame);
     }
 

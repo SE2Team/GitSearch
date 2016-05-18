@@ -1,12 +1,12 @@
 package businesslogicService;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Iterator;
-
 import Util.UserInfo;
 import Util.User_Sort;
 import vo.UserVO;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -60,7 +60,7 @@ public interface UserBLService {
      * @param reponame
      * @return
      */
-    Iterator<UserVO> getSubscribers(String userName, String reponame);
+    Iterator<UserVO> getSubscribers(String userName, String reponame) throws IOException;
 
     /**
      * 鏌ヨ鍗曚釜椤圭洰鐨勮闃呰?呯櫥褰曞悕,涓?椤?50涓?

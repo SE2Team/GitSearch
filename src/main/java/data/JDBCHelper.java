@@ -7,6 +7,7 @@ import po.RepositoryPO;
 import po.StaStrPO;
 import po.UserPO;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -121,14 +122,21 @@ public class JDBCHelper {
         }
         return null;
 	}
-	
-	public RepositoryPO checkRepo(String login, String reponame){
+
+	/**
+	 * 验证login和项目名
+	 * @param login
+	 * @param reponame
+	 * @return
+	 * @throws IOException
+     */
+	public RepositoryPO checkRepo(String login, String reponame) throws IOException {
         PagedSearchIterable<GHRepository> re=InitConnection.getG().searchRepositories().q(reponame).in("name").list();
         if (re.getTotalCount()>1){
             Iterator<GHRepository> itr=re.iterator();
             while (itr.hasNext()){
                 GHRepository repo=itr.next();
-                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwnerName().equalsIgnoreCase(login)){
+                if (repo.getName().equalsIgnoreCase(reponame)||repo.getOwner().getLogin().equalsIgnoreCase(login)){
                     return (RepositoryPO) repo;
                 }
                 /**
@@ -137,7 +145,8 @@ public class JDBCHelper {
                 return null;
             }
         }else if(re.getTotalCount()==1){
-            return (RepositoryPO) re.iterator().next();
+			GHRepository repository=re.iterator().next();
+            return repository.getOwner().getLogin()==login? (RepositoryPO) repository :null;
         }else {
             return null;
         }
