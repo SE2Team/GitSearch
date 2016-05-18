@@ -52,7 +52,11 @@ public class JDBCHelper {
             pStatement = conn.prepareStatement(sql);
             rs = pStatement.executeQuery();
             while (rs.next()) {
-                list.add(checkRepo(rs.getString("ownerName"), rs.getString("name")));
+            	list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("id"), rs.getString(""), rs.getString("html_url"), 
+            			rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"), rs.getDate("updated"),rs.getDate(" pushed"),
+            			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("fo"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
+            			0, 0, null));
+
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -72,7 +76,9 @@ public class JDBCHelper {
             rs = pStatement.executeQuery();
             while (rs.next()) {
                 //javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
-                list.add(checkUser(rs.getString("login")));
+                list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"),rs.getString("name"), 
+                		rs.getString("company"), rs.getString("email"),rs.getString(" public_repos"), rs.getInt("public_gists"), 
+                		rs.getInt("followers"), rs.getInt("following"),rs.getDate(" created_at"), rs.getDate("updated_at"), null, null));
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
