@@ -1,6 +1,8 @@
 package businesslogicService;
 
 import Util.CommitInfo;
+import vo.RepositoryVO;
+import vo.StaStrVO;
 
 import java.util.Iterator;
 
@@ -60,4 +62,6 @@ public interface CommitBLService {
      * @return
      */
     String getCommitComment(String userName, String reponame, int num);
+
+    StaStrVO commitstatistic(RepositoryVO vo);
 }

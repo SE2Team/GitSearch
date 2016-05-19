@@ -95,6 +95,22 @@
                                        <children>
                                           <TabPane prefHeight="150.0" prefWidth="819.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                             <tabs>
+                                                <Tab id="Collaborators" fx:id="commitPane" onSelectionChanged="#handleCommit" text="Commit">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="819.0">
+                                                         <children>
+                                                            <LineChart fx:id="commitChart" layoutX="21.0" layoutY="-63.0" legendVisible="false" prefHeight="233.0" prefWidth="779.0" title="The Distribution of Commits" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                                              <xAxis>
+                                                                <CategoryAxis label="Time" side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                <NumberAxis label="Commit Times" side="LEFT" />
+                                                              </yAxis>
+                                                            </LineChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </Tab>
                                                 <Tab id="Contributors" text="Language">
                                                    <content>
                                                       <AnchorPane maxWidth="823.0" minWidth="823.0" prefHeight="222.0" prefWidth="823.0">
@@ -141,43 +157,32 @@
                                                       </AnchorPane>
                                                 </content>
                                               </Tab>
-                                                <Tab id="Collaborators" text="Commit">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="819.0">
-                                                         <children>
-                                                            <LineChart fx:id="commitChart" layoutX="21.0" layoutY="-63.0" legendVisible="false" prefHeight="233.0" prefWidth="779.0" title="The Distribution of Commits" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
-                                                              <xAxis>
-                                                                <CategoryAxis label="Time" side="BOTTOM" />
-                                                              </xAxis>
-                                                              <yAxis>
-                                                                <NumberAxis label="Commit Times" side="LEFT" />
-                                                              </yAxis>
-                                                            </LineChart>
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                </Tab>
                                             </tabs>
                                           </TabPane>
                                        </children>
                                     </AnchorPane>
-                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                       <children>
-                                          <BarChart fx:id="poiChart" layoutX="116.0" layoutY="34.0" prefHeight="210.0" prefWidth="820.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
-                                            <xAxis>
-                                              <CategoryAxis side="BOTTOM" fx:id="xpoi" />
-                                            </xAxis>
-                                            <yAxis>
-                                              <NumberAxis fx:id="yAxis" side="LEFT" />
-                                            </yAxis>
-                                          </BarChart>
-                                          <Label layoutX="333.0" layoutY="3.0" text="Score of Repository">
-                                             <font>
-                                                <Font name="Calibri" size="22.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
+                                    <SplitPane dividerPositions="0.5" prefHeight="244.0" prefWidth="540.0">
+                                       <items>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="183.0">
+                                             <children>
+                                                <BarChart fx:id="poiChart" layoutY="34.0" prefHeight="244.0" prefWidth="406.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <xAxis>
+                                                    <CategoryAxis side="BOTTOM" fx:id="xpoi" />
+                                                  </xAxis>
+                                                  <yAxis>
+                                                    <NumberAxis fx:id="yAxis" side="LEFT" />
+                                                  </yAxis>
+                                                </BarChart>
+                                                <Label layoutX="153.0" layoutY="14.0" text="Score of Repository">
+                                                   <font>
+                                                      <Font name="Calibri" size="22.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
                                 </items>
                               </SplitPane>
                            </children>
@@ -190,7 +195,10 @@
                                     <Font name="Calibri Bold" size="20.0" />
                                  </font>
                               </Label>
-                              <ScrollPane layoutY="41.0" prefHeight="482.0" prefWidth="446.0" />
+                              <ScrollPane layoutY="41.0" prefHeight="482.0" prefWidth="446.0">
+                                 <content>
+                                    <TextArea fx:id="readMe" prefHeight="475.0" prefWidth="439.0" />
+                                 </content></ScrollPane>
                            </children>
                         </AnchorPane>
                     </items>

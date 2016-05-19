@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
@@ -53,9 +54,6 @@ public class CheckRepoController implements MyController {
     private FlowPane contributorPane;
 
     @FXML
-    private FlowPane collaboratorPane;
-
-    @FXML
     private FlowPane commitPane;
 
     @FXML
@@ -70,6 +68,8 @@ public class CheckRepoController implements MyController {
     private Label owner;
     @FXML
     private AnchorPane noNetWork;
+    @FXML
+    private TextArea readMe;
 
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
@@ -117,6 +117,12 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         owner.setText(username);
+        try {
+            readMe.setText(vo.getReadMe().read().toString());
+        } catch (IOException e) {
+            System.out.println("界面层：ReaMe 获取失败！");
+
+        }
 
     }
 
@@ -277,6 +283,10 @@ public class CheckRepoController implements MyController {
                 );
             }
         });
+    }
+    @FXML
+    private void handleCommit(){
+
     }
 
 }

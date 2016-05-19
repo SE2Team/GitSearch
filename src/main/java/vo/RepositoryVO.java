@@ -1,5 +1,6 @@
 package vo;
 
+import org.kohsuke.github.GHContent;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.PagedIterable;
 import po.RepositoryPO;
@@ -147,5 +148,9 @@ public class RepositoryVO {
 
     public RepositoryPO getDpo() {
         return dpo;
+    }
+
+    public GHContent getReadMe() throws IOException {
+        return dpo.getReadme();
     }
 }
