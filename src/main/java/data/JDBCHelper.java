@@ -54,8 +54,8 @@ public class JDBCHelper {
             while (rs.next()) {
             	list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("id"), "", rs.getString("html_url"), 
             			rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"), rs.getDate("updated"),rs.getDate("pushed"),
-            			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("fork"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
-            			0, 0, null));
+            			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("forks"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
+            			0, null));
 
             }
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class JDBCHelper {
                 //javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
                 list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"),rs.getString("name"), 
                 		rs.getString("company"), rs.getString("email"),rs.getString("public_repos"), rs.getInt("public_gists"),
-                		rs.getInt("followers"), rs.getInt("following"),rs.getDate("created_at"), rs.getDate("updated_at"), null, null));
+                		rs.getInt("followers"), rs.getInt("following"),rs.getDate("created_at"), rs.getDate("updated_at")));
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -108,7 +108,7 @@ public class JDBCHelper {
     }
 
     public UserPO checkUser(String login) {
-    	System.out.println("XXXXXXXXX");
+    	
     	PagedSearchIterable<GHUser> re = APIConnection.getG().searchUsers().q(login).in("login").list();
         
         if (re.getTotalCount() > 1) {
@@ -116,7 +116,7 @@ public class JDBCHelper {
             while (itr.hasNext()) {
                 GHUser user = itr.next();
                 if (user.getLogin().equalsIgnoreCase(login)) {
-                	System.out.println("Success");
+      
                 	return new UserPO(user) ;
                     
                 }
@@ -143,7 +143,6 @@ public class JDBCHelper {
      * @throws IOException
      */
     public RepositoryPO checkRepo(String login, String reponame) throws IOException {
-        System.out.println("count");
         PagedSearchIterable<GHRepository> re = APIConnection.getG().searchRepositories().q(reponame).in("name").list();
         if (re.getTotalCount() > 1) {
             Iterator<GHRepository> itr = re.iterator();

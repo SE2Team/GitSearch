@@ -1,10 +1,10 @@
 package po;
 
-import org.kohsuke.github.GHPersonSet;
 import org.kohsuke.github.GHUser;
 
+
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.Date;
 
 /**
@@ -20,20 +20,17 @@ public class UserPO extends GHUser {
 	String name="";
 	String company="";
 	String email="";
-	String public_repos="";
+	String public_repos;
 	int public_gists=0;
 	int  followers=0;
 	int following=0;
 	Date created_at;
 	Date updated_at;
-	ArrayList<String> related;
-	ArrayList<String> has;
+	;
 
     public UserPO(int id, String login, String type, String name, String company, String email,
 			 String public_repos, int public_gists, int followers, int following, Date created_at,
-			Date updated_at,ArrayList<String> related,ArrayList<String> has) {
-			this.related=related;
-			this.has=has;
+			Date updated_at) {
 			this.id=id;
 			this.login=login;
 			this.type=type;
@@ -49,63 +46,92 @@ public class UserPO extends GHUser {
 
 	}
 	
-    public Date getUpdated(){
-		 return this.updated_at;
+    public Date getUpdated() throws IOException{
+    	if(user==null){
+    		return this.updated_at;
+    	}
+		 return user.getUpdatedAt();
 	}
 	
-	public Date getCreated(){
-		return this.created_at;
+	public Date getCreated() throws IOException{
+		if(user==null){
+			return this.created_at;
+    	}
+		return user.getCreatedAt();
 	}
 	
-	public int getFollowing(){
+	public int getFollowing() throws IOException{
+	if(user==null)
 		return this.following;
+	else
+		return user.getFollowingCount();
 	}
 	
-	public int getFollower(){
-		return this.followers;
+	public int getFollower() throws IOException{
+		if(user==null)
+			return this.followers;
+		else 
+			return user.getFollowersCount();
 	}
 	
-	public String getRepos(){
-		return this.public_repos;
+	public String getRepos() throws IOException {
+		if(user==null)
+			return this.public_repos;
+		else
+			return user.getPublicRepoCount()+"";
 	}
 	
-	public int getGists1(){
-		return this.public_gists;
+	public int getGists1() throws IOException{
+		if(user==null)
+			return this.public_gists;
+		else
+			return user.getPublicGistCount();
 	}
 	
 
 	
-	public String getEmail(){
-		return this.email;
+	public String getEmail() throws IOException{
+		if(user==null)
+			return this.email;
+		else 
+			return user.getEmail();
+					
 	}
 	
 	
-	public String getCompany(){
-		return this.company;
+	public String getCompany() throws IOException{
+		if(user==null)
+			return this.company;
+		else
+			return user.getCompany();
 	}
 	
-	public String getName(){
-		return this.name;
+	public String getName() throws IOException{
+		if(user==null)
+			return this.name;
+		else 
+			return user.getName();
 	}
 	
 	public String getType(){
+	
 		return this.type;
 	}
 	
 	public String getLogin(){
+	if(user==null)
 		return this.login;
+	else
+		return user.getLogin();
 	}
 	
 	public int getId(){
-		return this.id;
+		if(user==null)
+			return this.id;
+		else
+			return user.getId();
 	}
 
-	public ArrayList<String> getRelated(){
-		return this.related;
-	}
-	public ArrayList<String> getHas(){
-		return this.has;
-	}
 	
 
 	

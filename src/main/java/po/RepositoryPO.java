@@ -2,6 +2,8 @@ package po;
 
 import org.kohsuke.github.GHRepository;
 
+import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,14 +35,13 @@ public class RepositoryPO  extends GHRepository{
 	int contributor = 0;
 	int open_issues = 0;
 	int subscribers_count = 0;
-	int collaborators_count = 0;// 合作者
-	ArrayList<String> collaborators;
 	ArrayList<String> contributors;
+	
 	
 
 	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
 			Date created, Date  updated, Date  pushed, int size, int stargazers_count, String language, int forks,
-			int open_issues, int subscribers_count, int contributor, int collaborators_count,
+			int open_issues, int subscribers_count, int contributor,
 			 ArrayList<String> contributors) {
 
 		this.name = name;
@@ -59,8 +60,7 @@ public class RepositoryPO  extends GHRepository{
 		this.html_url = html_url;
 		this.description = description;
 		this.contributor = contributor;
-		this.collaborators_count = collaborators_count;
-		this.contributors = collaborators;
+		this.contributors = contributors;
 		
 
 	}
@@ -74,49 +74,75 @@ public class RepositoryPO  extends GHRepository{
 	public void setContributors(ArrayList<String> list) {
 		this.contributors=list;
 	}
-	
-	public void setCollaborators(ArrayList<String> list) {
-		this.collaborators=list;
-	}
+
 
 	public int getContributor() {
-		return this.contributor;
+	
+			return this.contributor;
+		
 	}
 
 	public int getSubscribers_count() {
-		return this.subscribers_count;
+		if(repository==null)
+			return this.subscribers_count;
+		else
+			return repository.getSubscribersCount();
 	}
 
 	public int getOpen_issues() {
-		return this.open_issues;
+		if(repository==null)
+			return this.open_issues;
+		else 
+			return repository.getOpenIssueCount();
 	}
 
 	public int getForks() {
-		return this.forks;
+		if(repository==null)
+			return this.forks;
+		else
+			return repository.getForks();
 	}
 
 	public String getLanguage() {
-		return this.language;
+		if(repository==null)
+			return this.language;
+		else
+			return repository.getLanguage();
 	}
 
 	public int getStargazers() {
-		return this.stargazers_count;
+		if(repository==null)
+			return this.stargazers_count;
+		else
+			 return repository.getWatchers();
 	}
 
 	public int getSize() {
-		return this.size;
+		if(repository==null)
+			return this.size;
+		else
+			return repository.getSize();
 	}
 
 	public Date getPushed() {
-		return this.pushed;
+		if(repository==null)
+			return this.pushed;
+		else
+			return repository.getPushedAt();
 	}
 
-	public Date getUpdated() {
-		return this.updated;
+	public Date getUpdated() throws IOException {
+		if(repository==null)
+			return this.updated;
+		else
+			return repository.getUpdatedAt();
 	}
 
-	public Date getCreated() {
-		return this.created;
+	public Date getCreated() throws IOException {
+		if(repository==null)
+			return this.created;
+		else
+			return repository.getCreatedAt();
 	}
 	public void setContributor(int contributor){
 		this.contributor=contributor;
@@ -124,11 +150,15 @@ public class RepositoryPO  extends GHRepository{
 
 	
 	public boolean getFork() {
-		return this.fork;
+			return this.fork;
+		
 	}
 
 	public int getId() {
-		return this.id;
+		if(repository==null)
+			return this.id;
+		else
+			return repository.getId();
 	}
 
 	public String getOwner_type() {
@@ -136,59 +166,26 @@ public class RepositoryPO  extends GHRepository{
 	}
 
 	public String getHtml_url() {
-		return this.html_url;
+		if(repository==null)
+			return this.html_url;
+		else
+			return repository.getHtmlUrl().toString();
 	}
 
 	public String getDescription() {
-		return this.description;
+		if(repository==null)
+			return this.description;
+		else
+			return repository.getDescription();
 	}
 
 	public String getName() {
-		return this.name;
+		if(repository==null)
+			return this.name;
+		else
+			return repository.getFullName();
 	}
 
-	public int getCollaborators_count() {
-		return this.collaborators_count;
-	}
-
-
-///////////////////////////////////////////////////
-		public int getOpen_issues1() {
-	        return repository.getOpenIssueCount();
-	    }
-
-	    public int getStargazers1() {
-	        return repository.getWatchers();
-	    }
-
-
-
-	    public Date getPushed1() {
-	        return repository.getPushedAt();
-	    }
-
-	    public Date getUpdated1() throws IOException {
-	        return repository.getUpdatedAt();
-	    }
-
-	    public Date getCreated1() throws IOException {
-	        return repository.getCreatedAt();
-	    }
-
-
-
-	    public boolean getFork1() {
-	        return repository.isFork();
-	    }
-
-
-	    public String getOwner_type1() {
-	        return "user";
-	    }
-
-	    public String getHtml_url1() {
-	        return repository.getHtmlUrl().toString();
-	    }
 
  
 }
