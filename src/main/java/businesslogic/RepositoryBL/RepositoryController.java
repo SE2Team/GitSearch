@@ -32,7 +32,7 @@ public class RepositoryController implements RepositoryBLService {
 
     @Override
     public StaStrVO languagesOfRepository(RepositoryVO vo) throws IOException {
-        return null;
+        return repository.languagesOfRepository(vo);
     }
 
     public Iterator<RepositoryVO> search(String name) throws IOException {

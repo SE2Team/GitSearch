@@ -40,11 +40,7 @@ public class CheckRepoController implements MyController {
     @FXML
     private Label forks;
     @FXML
-    private Label contributors;
-    @FXML
     private Label subscribers;
-    @FXML
-    private Label collaborator;
     @FXML
     private Label description;
     @FXML
@@ -109,8 +105,7 @@ public class CheckRepoController implements MyController {
         stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
         subscribers.setText(String.valueOf(vo.getSubscribers_count()));
-        collaborator.setText(String.valueOf(888));
-        contributors.setText(String.valueOf(404));
+
         language.setText(vo.getLanguage());
         try {
             setList();
@@ -128,11 +123,7 @@ public class CheckRepoController implements MyController {
     private void setList() throws IOException {
         Iterator<GHRepository.Contributor> itrcon=vo.getContributors().iterator();
         while (itrcon.hasNext()) {
-
-
                 contributorPane.getChildren().add(getSub(itrcon.next()));
-
-
         }
 
 
@@ -159,7 +150,7 @@ public class CheckRepoController implements MyController {
         String username = split[0];
         String reponame = split[1];
         this.vo = bl.checkRepository(username, reponame);
-        setGraph();
+//        setGraph();
 
     }
 

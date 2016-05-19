@@ -77,8 +77,8 @@ public class JDBCHelper {
             while (rs.next()) {
                 //javafx.scene.image.Image userImage = new javafx.scene.image.Image(rs.getString("avatar_url"));
                 list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"),rs.getString("name"), 
-                		rs.getString("company"), rs.getString("email"),rs.getString(" public_repos"), rs.getInt("public_gists"), 
-                		rs.getInt("followers"), rs.getInt("following"),rs.getDate(" created_at"), rs.getDate("updated_at"), null, null));
+                		rs.getString("company"), rs.getString("email"),rs.getString("public_repos"), rs.getInt("public_gists"),
+                		rs.getInt("followers"), rs.getInt("following"),rs.getDate("created_at"), rs.getDate("updated_at"), null, null));
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
