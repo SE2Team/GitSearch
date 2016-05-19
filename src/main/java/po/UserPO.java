@@ -69,7 +69,7 @@ public class UserPO extends GHUser {
 		return this.public_repos;
 	}
 	
-	public int getGists(){
+	public int getGists1(){
 		return this.public_gists;
 	}
 	
@@ -122,7 +122,7 @@ public class UserPO extends GHUser {
         return getAvatarUrl();
     }
 
-    public int getGists1(){
+    public int getGists(){
         return this.public_gists;
     }
 

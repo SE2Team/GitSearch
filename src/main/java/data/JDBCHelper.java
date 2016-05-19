@@ -108,13 +108,17 @@ public class JDBCHelper {
     }
 
     public UserPO checkUser(String login) {
-        PagedSearchIterable<GHUser> re = APIConnection.getG().searchUsers().q(login).in("login").list();
+    	System.out.println("XXXXXXXXX");
+    	PagedSearchIterable<GHUser> re = APIConnection.getG().searchUsers().q(login).in("login").list();
+        
         if (re.getTotalCount() > 1) {
             Iterator<GHUser> itr = re.iterator();
             while (itr.hasNext()) {
                 GHUser user = itr.next();
                 if (user.getLogin().equalsIgnoreCase(login)) {
-                    return new UserPO(user) ;
+                	System.out.println("Success");
+                	return new UserPO(user) ;
+                    
                 }
                 /**
                  * 找不到对应的po
@@ -126,6 +130,7 @@ public class JDBCHelper {
         } else {
             return null;
         }
+       
         return null;
     }
 
@@ -164,7 +169,7 @@ public class JDBCHelper {
     public StaStrPO getCompany() {
         ArrayList<String> listStr = new ArrayList<>();
         ArrayList<Integer> listInt = new ArrayList<>();
-        String sql = "select * from companystatistics order by num Desc";
+        String sql = "select * from user_statistics_company order by num Desc";
         ResultSet rs = null;
         try {
 
@@ -184,7 +189,7 @@ public class JDBCHelper {
     public StaStrPO getLanguage() {
         ArrayList<String> listStr = new ArrayList<>();
         ArrayList<Integer> listInt = new ArrayList<>();
-        String sql = "select * from languagestatistics order by num Desc";
+        String sql = "select * from repo_statistics_language order by num Desc";
         ResultSet rs = null;
         try {
 
@@ -204,7 +209,7 @@ public class JDBCHelper {
     public StaStrPO getStar() {
         ArrayList<String> listStr = new ArrayList<>();
         ArrayList<Integer> listInt = new ArrayList<>();
-        String sql = "select * from starstatistic";
+        String sql = "select * from repo_statistics_star";
         ResultSet rs = null;
         try {
 
@@ -224,7 +229,7 @@ public class JDBCHelper {
     public StaStrPO getFork() {
         ArrayList<String> listStr = new ArrayList<>();
         ArrayList<Integer> listInt = new ArrayList<>();
-        String sql = "select * from forkstatistics";
+        String sql = "select * from repo_statistics_fork";
         ResultSet rs = null;
         try {
 
@@ -244,7 +249,7 @@ public class JDBCHelper {
     public StaStrPO getFollowers() {
         ArrayList<String> listStr = new ArrayList<>();
         ArrayList<Integer> listInt = new ArrayList<>();
-        String sql = "select * from userflosta";
+        String sql = "select * from user_statistics_followes";
         ResultSet rs = null;
         try {
 
