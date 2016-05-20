@@ -21,7 +21,7 @@ public class VO2PO {
     		return null;
     	}else{
 
-    		return vo.getDpo();
+    		return new UserPO(vo.getDpo());
     	}
         
     }

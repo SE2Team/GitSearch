@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1280.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.UserCheckController">
    <children>
       <SplitPane dividerPositions="0.29264475743348983" layoutX="47.0" layoutY="127.0" prefHeight="660.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -128,16 +127,17 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                        <children>
-                                          <Label text="Related People">
+                                          <Label text="人际关系网">
                                              <font>
-                                                <Font name="Calibri" size="28.0" />
+                                                <Font name="Microsoft YaHei Bold" size="20.0" />
                                              </font>
                                           </Label>
+                                          <ImageView fitHeight="70.0" fitWidth="77.0" layoutX="227.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
                                        </children>
                                     </AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                        <children>
-                                          <LineChart fx:id="contriChart" legendVisible="false" prefHeight="322.0" prefWidth="530.0" title="Public Contributions" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <LineChart fx:id="contriChart" legendVisible="false" prefHeight="322.0" prefWidth="530.0" title="活动情况" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <xAxis>
                                               <CategoryAxis label="Time" side="BOTTOM" />
                                             </xAxis>

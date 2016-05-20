@@ -95,7 +95,7 @@
                                        <children>
                                           <TabPane prefHeight="150.0" prefWidth="819.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                             <tabs>
-                                                <Tab id="Collaborators" fx:id="commitPane" onSelectionChanged="#handleCommit" text="Commit">
+                                                <Tab id="Collaborators" onSelectionChanged="#handleCommit" text="Commit">
                                                    <content>
                                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="819.0">
                                                          <children>

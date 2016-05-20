@@ -22,7 +22,12 @@ public class PO2VO {
     	if(po==null){
     		return null;
     	}else{
-			return new UserVO(po);
+			if(po.getDpo()!=null){
+				return new UserVO(po.getDpo());
+
+			}else {
+				return new UserVO(po);
+			}
 		}
 
     }

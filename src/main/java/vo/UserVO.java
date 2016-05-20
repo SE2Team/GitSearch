@@ -2,6 +2,7 @@ package vo;
 
 import javafx.scene.image.Image;
 import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.GHUser;
 import org.kohsuke.github.PagedIterator;
 import po.UserPO;
 
@@ -27,7 +28,7 @@ public class UserVO  {
     String created_at = "";
     String  updated_at = "";
     javafx.scene.image.Image userImage;
-    UserPO dpo;
+    GHUser dpo;
     @Deprecated
     public UserVO(int id, String login, String type, String name, String company, String email,
                   String public_repos, int public_gists, int followers, int following, Date created_at,
@@ -35,7 +36,7 @@ public class UserVO  {
 
 
     }
-
+    @Deprecated
     public UserVO(UserPO po) throws IOException {
         dpo=po;
         id=po.getId();
@@ -51,6 +52,22 @@ public class UserVO  {
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
 
+    }
+
+    public UserVO(GHUser po) throws IOException {
+        this.dpo = po;
+        id=po.getId();
+        login=po.getLogin();
+        type="user";
+        name=po.getName();
+        company=po.getCompany();
+        email=po.getEmail();
+        public_gists=po.getPublicGistCount();
+        public_repos=po.getPublicRepoCount();
+        followers=po.getFollowersCount();
+        following=po.getFollowingCount();
+        created_at= String.valueOf(po.getCreatedAt());
+        updated_at= String.valueOf(po.getUpdatedAt());
     }
 
     public int getId() {
@@ -109,7 +126,7 @@ public class UserVO  {
         return dpo.listRepositories().iterator();
     }
 
-    public UserPO getDpo() {
+    public GHUser getDpo() {
         return dpo;
     }
 }

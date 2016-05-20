@@ -1,18 +1,10 @@
 package presentation.common;
 
-import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.Shape;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
-
-import javax.swing.JButton;
 
 public class MyButton extends JButton {
 
@@ -100,7 +92,7 @@ public class MyButton extends JButton {
 
 	// public MyButton(String text, int x,int y, int w,int h) {
 	// this.setFont(MyFont.songti16);
-	// this.setText(text);
+	// this.set(text);
 	// this.setBounds(x, y, w, h);
 	// this.setBorderPainted(false);
 	// this.setContentAreaFilled(false);
