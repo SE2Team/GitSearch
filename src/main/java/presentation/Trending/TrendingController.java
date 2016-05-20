@@ -27,7 +27,7 @@ import java.util.Iterator;
 /**
  * Created by Administrator on 2016/5/3.
  */
-public class TrendingController implements MyController{
+public class TrendingController implements MyController {
 
     @FXML
     private ComboBox TimeCombo;
@@ -84,14 +84,14 @@ public class TrendingController implements MyController{
     private Label u_maxPg;
 
     private FXUITest fxuiTest;
-    private int r_pageMax=0;//项目最大页数
-    private int u_pageMax=0;//用户最大页数
+    private int r_pageMax = 0;//项目最大页数
+    private int u_pageMax = 0;//用户最大页数
     private int r_page = 1;
     private int u_page = 1;
     private String key = "";//搜索关键字
 
     public void initialize() {
-        TimeCombo.getItems().addAll("today","this week");
+        TimeCombo.getItems().addAll("today", "this week");
         initFilters();
         langGroup.getToggles().addAll(language);
         rpgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {
@@ -120,12 +120,12 @@ public class TrendingController implements MyController{
     public void repaint() {
         //项目
         rvos.clear();
-        try{
+        try {
             Iterator<RepositoryVO> r_itr = rbl.search("");
-            while(r_itr.hasNext()){
+            while (r_itr.hasNext()) {
                 rvos.add(r_itr.next());
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         updateRepMaxPages(rvos.size());
@@ -133,12 +133,12 @@ public class TrendingController implements MyController{
 
         //用户
         uvos.clear();
-        try{
+        try {
             Iterator<UserVO> u_itr = ubl.search("");
-            while(u_itr.hasNext()){
+            while (u_itr.hasNext()) {
                 uvos.add(u_itr.next());
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         updateUserMaxPages(uvos.size());
@@ -147,13 +147,14 @@ public class TrendingController implements MyController{
 
     /**
      * 获取项目的子面板
+     *
      * @param vo
      * @return
      */
-    private AnchorPane getRepoSub(RepositoryVO vo) throws IOException{
+    private AnchorPane getRepoSub(RepositoryVO vo) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubRepoTrend.fxml"));
-        AnchorPane anchorPane = new AnchorPane();
+        AnchorPane anchorPane = (AnchorPane) loader.load();
         SubRepoTrendController controller = loader.getController();
 
         controller.setFxui(fxuiTest);
@@ -165,13 +166,14 @@ public class TrendingController implements MyController{
 
     /**
      * 获取用户的子面板
+     *
      * @param vo
      * @return
      */
-    private AnchorPane getUserSub(UserVO vo) throws IOException{
+    private AnchorPane getUserSub(UserVO vo) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubUserTrend.fxml"));
-        AnchorPane anchorPane = new AnchorPane();
+        AnchorPane anchorPane = (AnchorPane) loader.load();
         SubUserTrendController controller = loader.getController();
 
         controller.setFxui(fxuiTest);
@@ -183,17 +185,18 @@ public class TrendingController implements MyController{
 
     //项目翻页部件
     @FXML
-    private void handle_rPgup(){
-        if(r_page<=1){
+    private void handle_rPgup() {
+        if (r_page <= 1) {
             return;
-        }else{
+        } else {
             r_page--;
             update_rPage();
         }
 
     }
+
     @FXML
-    private void handle_rPgDn(){
+    private void handle_rPgDn() {
         if (r_page + 1 > r_pageMax) {
             return;
         } else {
@@ -201,18 +204,21 @@ public class TrendingController implements MyController{
             update_rPage();
         }
     }
+
     @FXML
-    private void handle_rFpg(){
+    private void handle_rFpg() {
         r_page = 1;
         update_rPage();
     }
+
     @FXML
-    private void handle_rLpg(){
+    private void handle_rLpg() {
         r_page = r_pageMax;
         update_rPage();
     }
+
     @FXML
-    private void handle_rPgNum(){
+    private void handle_rPgNum() {
         try {
             if (Integer.parseInt(rpgNum.getText()) > r_pageMax || Integer.parseInt(rpgNum.getText()) <= 0)
                 throw new NumberFormatException();
@@ -226,16 +232,17 @@ public class TrendingController implements MyController{
 
     //用户翻页部件
     @FXML
-    private void handle_uPgup(){
-        if(u_page<=1){
+    private void handle_uPgup() {
+        if (u_page <= 1) {
             return;
-        }else{
+        } else {
             u_page--;
             update_uPage();
         }
     }
+
     @FXML
-    private void handle_uPgDn(){
+    private void handle_uPgDn() {
         if (u_page + 1 > u_pageMax) {
             return;
         } else {
@@ -243,18 +250,21 @@ public class TrendingController implements MyController{
             update_uPage();
         }
     }
+
     @FXML
-    private void handle_uFpg(){
+    private void handle_uFpg() {
         u_page = 1;
         update_uPage();
     }
+
     @FXML
-    private void handle_uLpg(){
+    private void handle_uLpg() {
         u_page = u_pageMax;
         update_uPage();
     }
+
     @FXML
-    private void handle_uPgNum(){
+    private void handle_uPgNum() {
         try {
             if (Integer.parseInt(UserpgNum.getText()) > u_pageMax || Integer.parseInt(UserpgNum.getText()) <= 0)
                 throw new NumberFormatException();
@@ -270,15 +280,15 @@ public class TrendingController implements MyController{
     /**
      * 项目翻页
      */
-    private void update_rPage(){
+    private void update_rPage() {
         /**
          * remove it's small pane
          */
-        if(RepoPane.getChildren().size()!=0){
-            RepoPane.getChildren().remove(0,RepoPane.getChildren().size());
+        if (RepoPane.getChildren().size() != 0) {
+            RepoPane.getChildren().remove(0, RepoPane.getChildren().size());
         }
 
-        for(int i=0;i<6;i++){
+        for (int i = 0; i < 6; i++) {
             if (((r_page - 1) * 6 + i) >= rvos.size()) {
                 break;
             }
@@ -294,37 +304,39 @@ public class TrendingController implements MyController{
     /**
      * 用户翻页
      */
-    private void update_uPage(){
+    private void update_uPage() {
         /**
          * remove it's small pane
          */
-        if(UserPane.getChildren().size()!=0){
-            UserPane.getChildren().remove(0,UserPane.getChildren().size());
+        if (UserPane.getChildren().size() != 0) {
+            UserPane.getChildren().remove(0, UserPane.getChildren().size());
         }
 
-        for(int i=0;i<6;i++){
-            if (((u_page - 1) * 6 + i) >= uvos.size()) {
+        for (int i = 0; i < 8; i++) {
+            if (((u_page - 1) * 8 + i) >= uvos.size()) {
                 break;
             }
             try {
-                UserPane.getChildren().add(getUserSub(uvos.get((u_page - 1) * 6 + i)));
+                UserPane.getChildren().add(getUserSub(uvos.get((u_page - 1) * 8 + i)));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
         UserpgNum.setText(String.valueOf(u_page));
     }
+
     /**
      * 更新项目的最大页数
+     *
      * @param i
      */
-    private void updateRepMaxPages(int i){
+    private void updateRepMaxPages(int i) {
         if (i == 0) {
             r_pageMax = 0;
         } else {
 
-            r_pageMax = (int) (i / 6 );//计算最大页数
-            if (i%6!=0)
+            r_pageMax = (int) (i / 6);//计算最大页数
+            if (i % 6 != 0)
                 r_pageMax++;
             if (r_pageMax == 0) {
                 r_pageMax = 1;
@@ -335,15 +347,16 @@ public class TrendingController implements MyController{
 
     /**
      * 更新用户的最大页数
+     *
      * @param i
      */
-    private void updateUserMaxPages(int i){
+    private void updateUserMaxPages(int i) {
         if (i == 0) {
             u_pageMax = 0;
         } else {
 
-            u_pageMax = (int) (i / 6 );//计算最大页数
-            if (i%6!=0)
+            u_pageMax = (int) (i / 8);//计算最大页数
+            if (i % 8 != 0)
                 u_pageMax++;
             if (u_pageMax == 0) {
                 u_pageMax = 1;
@@ -353,7 +366,7 @@ public class TrendingController implements MyController{
     }
 
     //TODO
-    private void handleScreen(String str){
+    private void handleScreen(String str) {
         rvos.clear();
         Iterator<RepositoryVO> RepItr = null;
         try {
@@ -362,7 +375,7 @@ public class TrendingController implements MyController{
                 ToggleButton langB = (ToggleButton) langGroup.getSelectedToggle().selectedProperty().getBean();
                 langtxt = langB.getText();
             }
-            ScreenVO vo = new ScreenVO(langtxt,"","");
+            ScreenVO vo = new ScreenVO(langtxt, "", "");
             RepItr = rbl.screen(vo);
         } catch (IOException e) {
             e.printStackTrace();
@@ -371,7 +384,7 @@ public class TrendingController implements MyController{
             rvos.add(RepItr.next());
         }
         updateRepMaxPages(rvos.size());
-        r_page=1;
+        r_page = 1;
         update_rPage();
 
 //        uvos.clear();
@@ -392,13 +405,13 @@ public class TrendingController implements MyController{
     /**
      * 初始化筛选组件
      */
-    public void initFilters(){
-        for(Node n: languagePane.getChildren()){
+    public void initFilters() {
+        for (Node n : languagePane.getChildren()) {
             final ToggleButton t = (ToggleButton) n;
             t.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if(t.isSelected()==false)
+                    if (t.isSelected() == false)
                         handleScreen("");
                     else {
                         handleScreen(t.getText());
