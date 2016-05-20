@@ -121,7 +121,7 @@ public class TrendingController implements MyController{
         //项目
         rvos.clear();
         try{
-            Iterator<RepositoryVO> r_itr = rbl.Search("");
+            Iterator<RepositoryVO> r_itr = rbl.search("");
             while(r_itr.hasNext()){
                 rvos.add(r_itr.next());
             }
