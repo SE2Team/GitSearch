@@ -43,12 +43,12 @@
             </ImageView>
          </children>
       </GridPane>
-      <Label fx:id="id" layoutX="110.0" layoutY="30.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
+      <Label fx:id="LogIn" layoutX="110.0" layoutY="30.0" prefHeight="29.0" prefWidth="577.0" text="ID" textFill="#00000097">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
       </Label>
       <Line endX="1040.0" endY="10.0" layoutX="10.0" layoutY="54.0" opacity="0.8" startY="10.0" stroke="#00000097" strokeWidth="0.5" />
-      <ImageView fx:id="imageView" fitHeight="60.0" fitWidth="60.0" layoutX="19.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="60.0" fitWidth="60.0" layoutX="23.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
