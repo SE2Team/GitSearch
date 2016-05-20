@@ -1,8 +1,11 @@
 package po;
 
 import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.PagedIterable;
 
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
+
+import businesslogic.userBL.User;
 
 import java.io.IOException;
 import java.net.URL;
@@ -76,12 +79,6 @@ public class RepositoryPO  extends GHRepository{
 		this.contributors=list;
 	}
 
-
-	public int getContributor() {
-	
-			return this.contributor;
-		
-	}
 
 	public int getSubscribersCount() {
 		if(repository==null)
@@ -187,5 +184,11 @@ public class RepositoryPO  extends GHRepository{
 			return repository.getFullName();
 	}
 
+	public PagedIterable<GHRepository.Contributor> listContributors() throws IOException{
+		if(repository==null){
+			return null;
+		}
+		return repository.listContributors();
+	}
  
 }

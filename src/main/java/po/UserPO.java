@@ -1,9 +1,12 @@
 package po;
 
+import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
+import org.kohsuke.github.PagedIterable;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -43,6 +46,11 @@ public class UserPO extends GHUser {
 			this.updated_at=updated_at;
 
 	}
+    
+    public UserPO(GHUser parent) {
+        user=parent;
+	}
+
 	
     public Date getUpdatedAt() throws IOException{
     	if(user==null){
@@ -128,22 +136,26 @@ public class UserPO extends GHUser {
 			return this.id;
 		else
 			return user.getId();
+		
 	}
 
+	public Map<String, GHRepository> getRepositories() throws IOException{
+		return user.getRepositories();
+	}
 	
 
 	
 	///////////////////////////////////
 
 
-	public UserPO(GHUser parent) {
-        user=parent;
-	}
-
+	
 
 
     public String getUserImage(){
-        return getAvatarUrl();
+    	if(user==null)
+    		return null;
+    	else
+    		return user.getAvatarUrl();
     }
 
     public int getGists(){
@@ -153,4 +165,5 @@ public class UserPO extends GHUser {
 	public GHUser getDpo() {
 		return user;
 	}
+	
 }
