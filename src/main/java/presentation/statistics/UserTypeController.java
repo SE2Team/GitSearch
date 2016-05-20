@@ -23,7 +23,7 @@ public class UserTypeController implements MyController{
 
     @Override
     public void initialize() {
-//        type.setText(typeChart.getData());
+//        type.set(typeChart.getData());
     }
 
     @Override

@@ -2,9 +2,7 @@ package po;
 
 import org.kohsuke.github.GHUser;
 
-
 import java.io.IOException;
-
 import java.util.Date;
 
 /**
@@ -152,12 +150,7 @@ public class UserPO extends GHUser {
         return this.public_gists;
     }
 
-
-
-
-
-
-
-
-
+	public GHUser getDpo() {
+		return user;
+	}
 }

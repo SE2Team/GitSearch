@@ -259,7 +259,7 @@ public class RepSearchController implements MyController {
 //        }
 //
 //        page_max = (int) (vos.size() / 6);//计算最大页数
-//        maxPg.setText(String.valueOf(page_max));
+//        maxPg.set(String.valueOf(page_max));
 //        updatePage();
 //    }
 

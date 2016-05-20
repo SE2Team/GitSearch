@@ -65,11 +65,11 @@ public class UserCheckController implements MyController{
     public void repaint() {
         name.setText(vo.getName());
         regTime.setText(vo.getCreated_at());
-        String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
-        company.setText(comp);
+//        String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
+        company.setText(vo.getCompany());
         followers.setText(String.valueOf(vo.getFollowers()));
-        String emailText=vo.getEmail()==""?"Unknown":vo.getEmail();
-        email.setText(emailText);
+//        String emailText=vo.getEmail()==""?"Unknown":vo.getEmail();
+        email.setText(vo.getEmail());
         following.setText(String.valueOf(vo.getFollowing()));
         login.setText(vo.getLogin());
         try {
@@ -113,7 +113,7 @@ public class UserCheckController implements MyController{
         SubRepoController controller=loader.getController();
 
         controller.setFxui(fxui);
-        controller.setText(vo.getName());
+        controller.set(this.vo.getLogin(),vo.getName());
         controller.repaint();
         return anchorPane;
     }

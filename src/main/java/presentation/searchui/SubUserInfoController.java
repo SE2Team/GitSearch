@@ -40,7 +40,7 @@ public class SubUserInfoController implements MyController {
         followers.setText(String.valueOf(vo.getFollowers()));
         repos.setText(String.valueOf(vo.getPublic_repos()));
         id.setText(vo.getLogin());
-//        repos.setText(vo.getRepos());
+//        repos.set(vo.getRepos());
     }
 
     @FXML

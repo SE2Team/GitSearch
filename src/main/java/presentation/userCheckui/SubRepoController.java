@@ -24,6 +24,7 @@ public class SubRepoController implements MyController {
     private Tooltip fullName;
 
     private String name;
+    private String userLogin;
     private RepositoryBLService bl=new RepositoryController();
 
     public FXUITest fxuiTest;
@@ -38,14 +39,20 @@ public class SubRepoController implements MyController {
     public void repaint() {
 
     }
-    public void setText(String str){
-        name=str;
-        if(str=="@more"){
+
+    /**
+     * 设置小面板的各属性
+     * @param userLogin
+     * @param repo
+     */
+    public void set(String userLogin, String repo){
+        name= userLogin;
+        if(userLogin =="@more"){
             setMore();
             return;
         }
-        this.label.setText(str);
-        this.fullName.setText(str);
+        this.label.setText(userLogin);
+        this.fullName.setText(userLogin);
     }
 
     public void setMore(){
@@ -55,9 +62,8 @@ public class SubRepoController implements MyController {
     @FXML
     private void checkRepo(){
         String str1,str2;
-        String str[]=name.split("/");
         try {
-            fxuiTest.checkRepo(bl.checkRepository(str[0],str[1]));
+            fxuiTest.checkRepo(bl.checkRepository(userLogin,name));
         } catch (IOException e) {
             e.printStackTrace();
         }

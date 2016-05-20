@@ -43,7 +43,7 @@ public class SubRepoTrendController implements MyController{
         description.setText(vo.getDescription());
         stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
-//        contributors.setText(String.valueOf(vo.getContributor()));
+//        contributors.set(String.valueOf(vo.getContributor()));
     }
 
     public void setVo(RepositoryVO vo) {
