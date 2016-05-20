@@ -111,7 +111,7 @@ public class JDBCHelper {
     	
     	PagedSearchIterable<GHUser> re = APIConnection.getG().searchUsers().q(login).in("login").list();
         
-        if (re.getTotalCount() > 1) {
+        if (false&&re.getTotalCount() > 1) {
             Iterator<GHUser> itr = re.iterator();
             while (itr.hasNext()) {
                 GHUser user = itr.next();
@@ -125,7 +125,7 @@ public class JDBCHelper {
                  */
                 return null;
             }
-        } else if (re.getTotalCount() == 1) {
+        } else if (re.getTotalCount() >= 1) {
             return new UserPO(re.iterator().next());
         } else {
             return null;

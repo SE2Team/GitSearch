@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -80,7 +79,7 @@ public class UserCheckController implements MyController{
         fullUserName.setText(vo.getName());
         fullLogin.setText(vo.getLogin());
         name.requestFocus();//把焦点拿走
-        imageView.setImage(new Image(vo.getAvatar()));
+//        imageView.setImage(new Image(vo.getAvatar()));
     }
 
     /**

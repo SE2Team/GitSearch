@@ -46,13 +46,13 @@ public class SubRepoController implements MyController {
      * @param repo
      */
     public void set(String userLogin, String repo){
-        name= userLogin;
-        if(userLogin =="@more"){
+        name= repo;
+        if(repo =="@more"){
             setMore();
             return;
         }
-        this.label.setText(userLogin);
-        this.fullName.setText(userLogin);
+        this.label.setText(repo);
+        this.fullName.setText(repo);
     }
 
     public void setMore(){
