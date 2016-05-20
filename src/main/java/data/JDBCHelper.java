@@ -21,12 +21,9 @@ public class JDBCHelper {
 
     private Connection conn = null;
     private PreparedStatement pStatement = null;
-    static boolean isConnection = false;
-//	JDBCHelper helper=new JDBCHelper();
+
 
     public JDBCHelper() {
-        if (isConnection == false||true) {
-            isConnection = true;
 
             try {
                 Class.forName(driver);
@@ -41,7 +38,7 @@ public class JDBCHelper {
 
 
         }
-    }
+    
 
     public ArrayList<RepositoryPO> getRepositories() {
         ArrayList<RepositoryPO> list = new ArrayList<>();
@@ -170,18 +167,26 @@ public class JDBCHelper {
         ArrayList<Integer> listInt = new ArrayList<>();
         String sql = "select * from user_statistics_company order by num Desc";
         ResultSet rs = null;
+        int others=0;
         try {
 
             pStatement = conn.prepareStatement(sql);
             rs = pStatement.executeQuery();
             while (rs.next()) {
+            	if(rs.getString("company")==null){
+            		others=others+rs.getInt("num");
+            	}
+            	else{
                 listInt.add(rs.getInt("num"));
                 listStr.add(rs.getString("company"));
+            	}
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        listInt.add(others);
+        listStr.add("others");
         return new StaStrPO(listStr, listInt);
     }
 
