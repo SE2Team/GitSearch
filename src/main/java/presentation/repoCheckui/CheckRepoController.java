@@ -126,8 +126,8 @@ public class CheckRepoController implements MyController {
 //            System.out.println("界面层：ReaMe 获取失败！");
 //
 //        }
-        WebEngine webEngine=webInfo.getEngine();
-        webEngine.load(vo.getHtml_url().toExternalForm());
+//        WebEngine webEngine=webInfo.getEngine();
+//        webEngine.load(vo.getHtml_url().toExternalForm());
 
     }
 
