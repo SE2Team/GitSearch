@@ -45,7 +45,7 @@ public class UserVO  {
         company=po.getCompany();
         email=po.getEmail();
         public_gists=po.getGists();
-        public_repos=po.getPublicRepoCount();
+        public_repos=Integer.parseInt(po.getRepos());
         followers=po.getFollowersCount();
         following=po.getFollowingCount();
         created_at= String.valueOf(po.getCreatedAt());
