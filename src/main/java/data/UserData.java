@@ -22,7 +22,7 @@ public class UserData implements UserDataService {
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
 	
 //	UserData data=new UserData();
-	JDBCHelper helper=new JDBCHelper();
+	  JDBCHelper helper = GetJDBC.getJDBCHelper();
 	
 		
 	public UserPO CheckUser(String user) throws IOException {

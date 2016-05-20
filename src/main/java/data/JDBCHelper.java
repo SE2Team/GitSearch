@@ -21,7 +21,7 @@ public class JDBCHelper {
 
     private Connection conn = null;
     private PreparedStatement pStatement = null;
-    public static boolean isConnection = false;
+    static boolean isConnection = false;
 //	JDBCHelper helper=new JDBCHelper();
 
     public JDBCHelper() {

@@ -17,7 +17,7 @@ public class StatisticsData implements StatisticsDataService{
 	 * 
 	 */
 	
-	JDBCHelper helper=new JDBCHelper();
+	JDBCHelper helper = GetJDBC.getJDBCHelper();
 	public StaStrPO getScores(RepositoryPO po) throws IOException {
 //		// TODO Auto-generated method stub
 //		ArrayList<String> listStr=new ArrayList<>();
@@ -465,23 +465,24 @@ public class StatisticsData implements StatisticsDataService{
 //				list2.add(list.get(i).getCompany());
 //			}
 //		}//获取用户所属公司
-		ArrayList<String> list2=new GetData("company").readData();
-		ArrayList<Integer> list3=new ArrayList<Integer>();
-		for(int p=0;p<list2.size();p++){
-			list3.add(0);
-		}
-		String tempStr="";
-		for(int i=0;i<list.size();i++){
-			tempStr=list.get(i).getCompany();
-			if(tempStr.equals("")){
-				tempStr="Unknown";
-			}
-			if(list2.contains(tempStr)){
-				
-				list3.set(list2.indexOf(tempStr), list3.get(list2.indexOf(tempStr))+1);
-			}
-		}
-		return this.sort(list3, list2);
+//		ArrayList<String> list2=new GetData("company").readData();
+//		ArrayList<Integer> list3=new ArrayList<Integer>();
+//		for(int p=0;p<list2.size();p++){
+//			list3.add(0);
+//		}
+//		String tempStr="";
+//		for(int i=0;i<list.size();i++){
+//			tempStr=list.get(i).getCompany();
+//			if(tempStr.equals("")){
+//				tempStr="Unknown";
+//			}
+//			if(list2.contains(tempStr)){
+//				
+//				list3.set(list2.indexOf(tempStr), list3.get(list2.indexOf(tempStr))+1);
+//			}
+//		}
+//		return this.sort(list3, list2);
+		return helper.getCompany();
 	}
 	
 	public Integer getHasNum(String name){
