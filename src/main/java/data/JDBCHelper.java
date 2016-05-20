@@ -275,6 +275,23 @@ public class JDBCHelper {
     }
 
     public StaStrPO getRepoCreated() {
-        return null;
+    	ArrayList<String> listStr = new ArrayList<>();
+        ArrayList<Integer> listInt = new ArrayList<>();
+        String sql = "select * from repo_statistics_creattime";
+        ResultSet rs = null;
+        try {
+
+            pStatement = conn.prepareStatement(sql);
+            rs = pStatement.executeQuery();
+            while (rs.next()) {
+                listInt.add(rs.getInt("num"));
+                listStr.add(rs.getString("time"));
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return new StaStrPO(listStr, listInt);
+        
     }
 }
