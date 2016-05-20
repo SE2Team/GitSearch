@@ -66,6 +66,6 @@ public class StatisticsController implements StatisticsBLService{
 
 	@Override
 	public StaStrVO getFollowers() {
-		return null;
+		return statistics.getFollowers();
 	}
 }
