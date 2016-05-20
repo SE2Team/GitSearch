@@ -19,7 +19,7 @@ public class RepositoryData implements RepositoryDataService {
 
     static String string = "http://www.gitmining.net/api/repository";
     static ArrayList<RepositoryPO> finalList = new ArrayList<>();
-    JDBCHelper helper = new JDBCHelper();
+    JDBCHelper helper = GetJDBC.getJDBCHelper();
 
     /**
      * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
