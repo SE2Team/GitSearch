@@ -28,6 +28,8 @@ public class UserVO  {
     String created_at = "";
     String  updated_at = "";
     javafx.scene.image.Image userImage;
+    String avatar;
+
     GHUser dpo;
     @Deprecated
     public UserVO(int id, String login, String type, String name, String company, String email,
@@ -51,7 +53,7 @@ public class UserVO  {
         following=po.getFollowingCount();
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
-
+        avatar=po.getAvatarUrl();
     }
 
     public UserVO(GHUser po) throws IOException {
@@ -124,6 +126,10 @@ public class UserVO  {
 
     public PagedIterator<GHRepository> getHas(){
         return dpo.listRepositories().iterator();
+    }
+
+    public String getAvatar() {
+        return avatar;
     }
 
     public GHUser getDpo() {
