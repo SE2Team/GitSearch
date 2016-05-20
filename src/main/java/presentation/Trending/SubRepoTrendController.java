@@ -2,7 +2,6 @@ package presentation.Trending;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import org.hamcrest.Factory;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
@@ -42,7 +41,7 @@ public class SubRepoTrendController implements MyController{
     public void repaint() {
         name.setText(vo.getName());
         description.setText(vo.getDescription());
-        stars.setText(String.valueOf(vo.getStargazers()));
+        stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
 //        contributors.setText(String.valueOf(vo.getContributor()));
     }

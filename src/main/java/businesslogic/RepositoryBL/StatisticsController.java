@@ -1,20 +1,11 @@
 package businesslogic.RepositoryBL;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
-
 import businesslogicService.StatisticsBLService;
-import dataService.StatisticsDataService;
-import po.RepositoryPO;
-import po.StaStrPO;
-import po.StatisticsPO;
-import javafx.collections.ObservableList;
 import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
-import vo.StatisticsVO;
+
+import java.io.IOException;
 
 public class StatisticsController implements StatisticsBLService{
 	Statistics statistics=new Statistics();
@@ -71,5 +62,10 @@ public class StatisticsController implements StatisticsBLService{
 	public StaStrVO getContributor() {
 		// TODO Auto-generated method stub
 		return statistics.getContributor();
+	}
+
+	@Override
+	public StaStrVO getFollowers() {
+		return null;
 	}
 }

@@ -84,8 +84,8 @@ public class UserStatisticsController implements MyController {
 
     private ObservableList<PieChart.Data> getPieData(StaStrVO vo) {
         ObservableList<PieChart.Data> observableList = FXCollections.observableArrayList();
-        for (int i = 0; i < vo.getStr().size() && i < vo.getInt().size() && i < 7; i++) {
-            observableList.addAll(new PieChart.Data(vo.getStr().get(i), vo.getInt().get(i)));
+        for (int i = 0; i < vo.getX().size() && i < vo.getInt().size() && i < 7; i++) {
+            observableList.addAll(new PieChart.Data(vo.getX().get(i), vo.getInt().get(i)));
             if (i == 6) {
                 observableList.addAll(new PieChart.Data("Others", vo.getSum()));
             }
@@ -100,14 +100,14 @@ public class UserStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String, Number>> getData(StaStrVO vo, Boolean b) {
         ObservableList<XYChart.Series<String, Number>> observableList = FXCollections.observableArrayList();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
-        for (int i = 0; i < vo.getInt().size() && i < vo.getStr().size() && i < 10; i++) {
-            if (vo.getStr().get(i).equalsIgnoreCase("Unknown")) {
+        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 10; i++) {
+            if (vo.getX().get(i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
 /**
  * 添加互动和文字
  */
-            XYChart.Data<String, Number> data = new XYChart.Data<>(vo.getStr().get(i), vo.getInt().get(i));
+            XYChart.Data<String, Number> data = new XYChart.Data<>(vo.getX().get(i), vo.getInt().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override
                 public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {

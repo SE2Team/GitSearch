@@ -10,17 +10,8 @@ public class VO2PO {
     	if(vo==null){
     		return null;
     	}else{
-			String create_str = vo.getCreated();
-			String update_str = vo.getUpdated();
-			String push_str = vo.getPushed();
-			Date create = convert(create_str);
-			Date update = convert(update_str);
-			Date push = convert(push_str);
-    		return new RepositoryPO(vo.getName(), vo.getId(), vo.getOwner_type(), vo.getHtml_url(), vo.getDescription(),
-                    vo.getFork(), create, update, push, vo.getSize(), vo.getStargazers(),
-                    vo.getLanguage(), vo.getForks(), vo.getOpen_issues(), vo.getSubscribers_count(),vo.getContributor(),
-                    vo.getCollaborators_count(),
-                    vo.getCollaborators(),vo.getContributors());
+
+    		return  vo.getDpo();
     	}
         
     }
@@ -29,13 +20,8 @@ public class VO2PO {
     	if(vo==null){
     		return null;
     	}else{
-			String create_str = vo.getCreated();
-			String update_str = vo.getUpdated();
-			Date create = convert(create_str);
-			Date update = convert(update_str);
-    		return new UserPO(vo.getId(), vo.getLogin(), vo.getType(), vo.getName(), vo.getCompany()
-                    , vo.getEmail(), vo.getRepos(), vo.getGists(), vo.getFollowers(), vo.getFollowing(), create
-                    , update,vo.getRelated(),vo.getHas(),vo.getUserImage());
+
+    		return vo.getDpo();
     	}
         
     }
@@ -62,7 +48,7 @@ public class VO2PO {
     	if(vo==null){
     		return null;
     	}else{
-    		return new StaStrPO(vo.getStr(),vo.getInt());
+    		return new StaStrPO(vo.getX(),vo.getInt());
     	}
     	
     }

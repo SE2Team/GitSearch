@@ -1,18 +1,13 @@
 package businesslogic.RepositoryBL;
 
-import Util.RepositoryInfo;
 import Util.Repository_Sort;
 import businesslogicService.RepositoryBLService;
-import po.StaStrPO;
 import vo.RepositoryVO;
 import vo.ScreenVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Map;
-
-import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
 
 /**
  * Created by moeyui on 2016/3/4 0004.
@@ -35,7 +30,12 @@ public class RepositoryController implements RepositoryBLService {
         return repository.languagesOfRepository(userName, reponame);
     }
 
-    public Iterator<RepositoryVO> Search(String name) throws IOException {
+    @Override
+    public StaStrVO languagesOfRepository(RepositoryVO vo) throws IOException {
+        return repository.languagesOfRepository(vo);
+    }
+
+    public Iterator<RepositoryVO> search(String name) throws IOException {
         return repository.Search(name);
     }
 
@@ -58,5 +58,7 @@ public class RepositoryController implements RepositoryBLService {
     public Iterator<RepositoryVO> screen(ScreenVO vo)  throws IOException{
     	return repository.screen(vo);
     }
+
+
 
 }

@@ -1,8 +1,6 @@
 package presentation.userCheckui;
 
-import businesslogic.RepositoryBL.RepositoryController;
 import businesslogic.userBL.UserController;
-import businesslogicService.RepositoryBLService;
 import businesslogicService.UserBLService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,12 +11,13 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
+import org.kohsuke.github.GHRepository;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.UserVO;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Created by moeyui on 2016/3/15 0015.
@@ -65,7 +64,7 @@ public class UserCheckController implements MyController{
 
     public void repaint() {
         name.setText(vo.getName());
-        regTime.setText(vo.getCreated());
+        regTime.setText(vo.getCreated_at());
         String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
         company.setText(comp);
         followers.setText(String.valueOf(vo.getFollowers()));
@@ -97,44 +96,26 @@ public class UserCheckController implements MyController{
     }
 
     private void setList() throws IOException {
-        if (vo.getHas()!=null) {
-            for (int i = 0; i < vo.getHas().size(); i++) {
-                poprepo.getChildren().addAll(getSub(vo.getHas().get(i)));
-                /**
-                 * 最多放4+1个
-                 */
-//                if (i >= 3) {
-//                    poprepo.getChildren().addAll(getSub("@more"));
-//                    break;
-//                }
+        Iterator<GHRepository> itrhas=vo.getHas();
+        if (itrhas!=null) {
+            while (itrhas.hasNext()) {
+                poprepo.getChildren().addAll(getSub(itrhas.next()));
+
             }
         }
-        if(vo.getRelated()!=null) {
-            for (int j = 0; j < vo.getRelated().size(); j++) {
-                relarepo.getChildren().addAll(getSub(vo.getRelated().get(j)));
-                /**
-                 * 最多放4+1个
-                 */
-//                if (j >= 3) {
-//                    relarepo.getChildren().addAll(getSub("@more"));
-//                    break;
-//                }
-            }
-        }
+
     }
 
-    public Parent getSub(String str) throws IOException {
+    public Parent getSub(GHRepository vo) throws IOException {
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubUserCheckRep.fxml"));
         AnchorPane anchorPane=loader.load();
         SubRepoController controller=loader.getController();
 
         controller.setFxui(fxui);
-        controller.setText(str);
+        controller.setText(vo.getName());
         controller.repaint();
         return anchorPane;
     }
-
-
 
 }

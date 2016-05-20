@@ -2,43 +2,27 @@ package vo;
 
 import po.*;
 
-import java.sql.Date;
+import java.io.IOException;
+import java.util.Date;
 
 /**
  * Created by moeyui on 2016/3/10 0010.
  */
 public class PO2VO {
-    public static RepositoryVO convert(RepositoryPO po){
+    public static RepositoryVO convert(RepositoryPO po) throws IOException {
     	if(po==null){
     		return null;
     	}else{
-			Date update = po.getUpdated();
-			Date create = po.getCreated();
-			Date push = po.getPushed();
-			String update_str = convert(update);
-			String create_str = convert(create);
-			String push_str = convert(push);
-    		 return new RepositoryVO(po.getName(), po.getId(), po.getOwner_type(), po.getHtml_url(), po.getDescription(),
-    	                po.getFork(),create_str, update_str, push_str, po.getSize(), po.getStargazers(),
-    	                po.getLanguage(), po.getForks(), po.getOpen_issues(), po.getSubscribers_count(),po.getContributor(),
-    	                po.getCollaborators_count(),
-    	                po.getCollaborators(),po.getContributors());
+    		 return new RepositoryVO(po);
     	}
        
     }
 
-    public static  UserVO convert (UserPO po){
+    public static UserVO convert (UserPO po) throws IOException {
     	if(po==null){
     		return null;
     	}else{
-			Date update = po.getUpdated();
-			Date create = po.getCreated();
-			String update_str = convert(update);
-			String create_str = convert(create);
-
-			return new UserVO(po.getId(), po.getLogin(), po.getType(), po.getName(), po.getCompany()
-					, po.getEmail(), po.getRepos(), po.getGists(), po.getFollowers(), po.getFollowing(), create_str
-					, update_str,po.getRelated(),po.getHas(),po.getUserImage());
+			return new UserVO(po);
 		}
 
     }

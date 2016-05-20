@@ -4,8 +4,6 @@ import Util.User_Sort;
 import dataService.UserDataService;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-
 import po.RepositoryPO;
 import po.UserPO;
 
@@ -23,7 +21,7 @@ public class UserData implements UserDataService {
 	
 	static ArrayList<UserPO> userList=new ArrayList<>(); 
 	
-	UserData data=new UserData();
+//	UserData data=new UserData();
 	JDBCHelper helper=new JDBCHelper();
 	
 		
@@ -310,7 +308,7 @@ public class UserData implements UserDataService {
 		
 		for(int i=0;i<list.size();i++){
 			@SuppressWarnings("deprecation")
-			int year = list.get(i).getCreated().getYear();
+			int year = list.get(i).getCreatedAt().getYear();
 			if(Integer.parseInt(time.substring(0,4))==year){
 				list1.add(list.get(i));
 			}

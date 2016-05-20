@@ -2,8 +2,6 @@ package data;
 
 import Util.Repository_Sort;
 import dataService.RepositoryDataService;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import po.RepositoryPO;
 import po.ScreenPO;
 import po.StaStrPO;
@@ -18,26 +16,26 @@ import java.util.ArrayList;
  * Created by moeyui on 2016/3/4 0004.
  */
 public class RepositoryData implements RepositoryDataService {
-	
-	static String string="http://www.gitmining.net/api/repository";
-	static ArrayList<RepositoryPO> finalList=new ArrayList<>();
-	JDBCHelper helper=new JDBCHelper();
-	/**
-	 * 
-	 * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
-	 * @throws IOException 
-	 * 
-	 */
-	public ArrayList<RepositoryPO> getRepositories() throws IOException{
-		// TODO Auto-generated method stub
+
+    static String string = "http://www.gitmining.net/api/repository";
+    static ArrayList<RepositoryPO> finalList = new ArrayList<>();
+    JDBCHelper helper = new JDBCHelper();
+
+    /**
+     * json格式项目详情列表，一页50个，不加?page=则默认显示第一页内容
+     *
+     * @throws IOException
+     */
+    public ArrayList<RepositoryPO> getRepositories() throws IOException {
+        // TODO Auto-generated method stub
 //		
 //		CollaboratorsData collaData=new CollaboratorsData();
 //		ContributorsData contrData= new ContributorsData();
 //		String collaUrl="http://gitmining.net/api/repository/";
 //		String	contrUrl="http://gitmining.net/api/repository/";
-		
-		helper=new JDBCHelper();
-		return helper.getRepositories();
+
+        helper = new JDBCHelper();
+        return helper.getRepositories();
 //		ArrayList<String> collaList=new GetData("collaborator_count").readData();
 //		ArrayList<String> contrList=new GetData("contributor_count").readData();
 //		
@@ -132,29 +130,28 @@ public class RepositoryData implements RepositoryDataService {
 //			}
 //		finalList=list;
 //		return list;
-	}
-	
-	/**
-	 * 
-	 * 所有项目全称列表（项目全称=owner登录名/项目名），返回值为String类型的数组
-	 * @throws IOException 
-	 * 
-	 */
-	public ArrayList<String> getRepositoriesNames() throws IOException {
-		// TODO Auto-generated method stub
-	//	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
-		BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
-				getResourceAsStream("/txtData/repo_names.txt")));
-		String temp ;
-		ArrayList<String> list=new ArrayList<String>();
-		while((temp=br.readLine())!=null){
-			list.add(temp);
-		}
-		return list;
-	}
+    }
 
-	public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
-		// TODO Auto-generated method stub
+    /**
+     * 所有项目全称列表（项目全称=owner登录名/项目名），返回值为String类型的数组
+     *
+     * @throws IOException
+     */
+    public ArrayList<String> getRepositoriesNames() throws IOException {
+        // TODO Auto-generated method stub
+        //	FileReader fr = new FileReader(new File( "/src/main/java/txtData/repo_names.txt"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().
+                getResourceAsStream("/txtData/repo_names.txt")));
+        String temp;
+        ArrayList<String> list = new ArrayList<String>();
+        while ((temp = br.readLine()) != null) {
+            list.add(temp);
+        }
+        return list;
+    }
+
+    public RepositoryPO checkRepository(String userName, String reponame) throws IOException {
+        // TODO Auto-generated method stub
 //		CollaboratorsData collaData = new CollaboratorsData();
 //		ContributorsData contrData = new ContributorsData();
 //		String collaUrl = "http://gitmining.net/api/repository/";
@@ -196,38 +193,37 @@ public class RepositoryData implements RepositoryDataService {
 //				return list.get(j);
 //			}
 //		}
-		return helper.checkRepo(userName, reponame);
-	}
+        return helper.checkRepo(userName, reponame);
+    }
 
-	public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
-		// TODO Auto-generated method stub
-		String str1="http://gitmining.net/api/repository"+"/"+userName+"/"
-				+reponame+"/"+"languages";
-		ArrayList<String> list=new ArrayList<>();
-		ArrayList<String> listStr=new ArrayList<>();
-		ArrayList<Integer> listInt=new ArrayList<>();
-		try {
-			list=new GetData().getString(str1);
-		} catch (Exception IOException) {
-			return new StaStrPO(listStr, listInt);
-		}
-		
-		for(int i=0;i<list.size()-1;i++){
-			String str[]=list.get(i).split(":");
-			listStr.add(str[0]);
-			listInt.add(Integer.parseInt(str[1]));
-		}
-		listStr=this.remove(listStr);
-		return new StaStrPO(listStr, listInt);
-	}
-	
-	
-	/**
-	 * 
-	 * 查询某个fork项目的某项信息
-	 * @throws IOException 
-	 * 
-	 */
+    public StaStrPO languagesOfRepository(String userName, String reponame) throws IOException {
+        // TODO Auto-generated method stub
+        String str1 = "http://gitmining.net/api/repository" + "/" + userName + "/"
+                + reponame + "/" + "languages";
+        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> listStr = new ArrayList<>();
+        ArrayList<Integer> listInt = new ArrayList<>();
+        try {
+            list = new GetData().getString(str1);
+        } catch (Exception IOException) {
+            return new StaStrPO(listStr, listInt);
+        }
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            String str[] = list.get(i).split(":");
+            listStr.add(str[0]);
+            listInt.add(Integer.parseInt(str[1]));
+        }
+        listStr = this.remove(listStr);
+        return new StaStrPO(listStr, listInt);
+    }
+
+
+    /**
+     * 查询某个fork项目的某项信息
+     *
+     * @throws IOException
+     */
 //	public String RepositoryInfo(String userName, String reponame, Util.RepositoryInfo info) throws IOException {
 //		JSONObject obj = new JSONObject();
 //	//	FileReader fr = new FileReader(new File("src/main/java/txtData/all_repository.json"));
@@ -259,31 +255,30 @@ public class RepositoryData implements RepositoryDataService {
 //
 //		return null;
 //	}
+    public ArrayList<RepositoryPO> Search(String name) throws IOException {
+        ArrayList<RepositoryPO> pos = new ArrayList<>();
+        ArrayList<RepositoryPO> pos1 = helper.getRepositories();
+        // ArrayList<RepositoryPO> pos1=finalList;
+        String[] str = new String[2];
+        for (RepositoryPO po : pos1) {
+            str = po.getFullName().split("/");
+            if (str[1].contains(name)) {
+                pos.add(po);
+            }
+        }
+        finalList = pos;
+        return pos;
 
-	public ArrayList<RepositoryPO> Search(String name) throws IOException {
-		 ArrayList<RepositoryPO> pos=new ArrayList<>();
-		ArrayList<RepositoryPO> pos1=helper.getRepositories();
-		// ArrayList<RepositoryPO> pos1=finalList;
-		 String[]  str=new String[2];
-			for(RepositoryPO po:pos1){
-	            str=po.getName().split("/");
-				if(str[1].contains(name)){
-	                pos.add(po);
-	            }
-	        }
-			finalList=pos;
-			return pos;
-		
-	}
+    }
 
-	public ArrayList<RepositoryPO> sort( Repository_Sort sort) throws IOException {
-		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=finalList;
-		ArrayList<RepositoryPO> listpo=helper.getRepositories();
-		if(list.size()==listpo.size()){
-			list=listpo;
-		}
-		
+    public ArrayList<RepositoryPO> sort(Repository_Sort sort) throws IOException {
+        // TODO Auto-generated method stub
+        ArrayList<RepositoryPO> list = finalList;
+        ArrayList<RepositoryPO> listpo = helper.getRepositories();
+        if (list.size() == listpo.size()) {
+            list = listpo;
+        }
+
 //		if(sort==Repository_Sort.contributor){
 //		
 //		for(int j=0;j<list.size()-1;j++){
@@ -297,119 +292,119 @@ public class RepositoryData implements RepositoryDataService {
 //				}
 //			}
 //		}
-	if(sort==Repository_Sort.fork){
-			for(int j=0;j<list.size()-1;j++){
-				for(int i=j;i<list.size()-1;i++){
-					if(list.get(j).getForks()<=list.get(i+1).getForks()){
-						RepositoryPO temp=list.get(j);
-						list.set(j, list.get(i+1));
-						list.set(i+1, temp);
-						
-						}
-					}
-				}
-		}else if(sort==Repository_Sort.star){
-			for(int j=0;j<list.size()-1;j++){
-				for(int i=j;i<list.size()-1;i++){
-					if(list.get(j).getStargazers()<=list.get(i+1).getStargazers()){
-						RepositoryPO temp=list.get(j);
-						list.set(j, list.get(i+1));
-						list.set(i+1, temp);
-						}
-					}
-				}
-		}
-		finalList=list;
-		return list;
-	}
+        if (sort == Repository_Sort.fork) {
+            for (int j = 0; j < list.size() - 1; j++) {
+                for (int i = j; i < list.size() - 1; i++) {
+                    if (list.get(j).getForks() <= list.get(i + 1).getForks()) {
+                        RepositoryPO temp = list.get(j);
+                        list.set(j, list.get(i + 1));
+                        list.set(i + 1, temp);
 
-	
-	private ArrayList<RepositoryPO> screenLanguage(String language,ArrayList<RepositoryPO> listPO) throws IOException {
-		// TODO Auto-generated method stub
-		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list=listPO;
-		ArrayList<RepositoryPO> list2=new ArrayList<>();
-		for(int i=0;i<list.size();i++){
-			if(list.get(i).getLanguage().equals(language)){
-				list2.add(list.get(i));
-			}
-		}
-		//finalList=list2;
-		return list2;
-	}
+                    }
+                }
+            }
+        } else if (sort == Repository_Sort.star) {
+            for (int j = 0; j < list.size() - 1; j++) {
+                for (int i = j; i < list.size() - 1; i++) {
+                    if (list.get(j).getWatchers()<= list.get(i + 1).getWatchers()) {
+                        RepositoryPO temp = list.get(j);
+                        list.set(j, list.get(i + 1));
+                        list.set(i + 1, temp);
+                    }
+                }
+            }
+        }
+        finalList = list;
+        return list;
+    }
 
-	
-	private ArrayList<RepositoryPO> screenTime(String time,ArrayList<RepositoryPO> listPO) throws IOException {
-		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list1=new ArrayList<>();
-		//ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list=listPO;//有bug
-		
-		for(int i=0;i<list.size();i++){
 
-			@SuppressWarnings("deprecation")
-			int year = list.get(i).getCreated().getYear();
-			if(Integer.parseInt(time.substring(0,4))==year){
-				list1.add(list.get(i));
-			}
-		}
-		//finalList=list1;
-		return list1;
-	}
+    private ArrayList<RepositoryPO> screenLanguage(String language, ArrayList<RepositoryPO> listPO) throws IOException {
+        // TODO Auto-generated method stub
+        //ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+        ArrayList<RepositoryPO> list = listPO;
+        ArrayList<RepositoryPO> list2 = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getLanguage().equals(language)) {
+                list2.add(list.get(i));
+            }
+        }
+        //finalList=list2;
+        return list2;
+    }
 
-	
-	private ArrayList<RepositoryPO> screenCategory(String key,ArrayList<RepositoryPO> listPO) throws IOException {
-		// TODO Auto-generated method stub
-		ArrayList<RepositoryPO> list=listPO;
-		ArrayList<RepositoryPO> list2=new ArrayList<>();
-		for(int i=0;i<list.size();i++){
-			if(list.get(i).getDescription().contains(key)){
-				list2.add(list.get(i));
-			}
-		}
-		return list2;
-	}
 
-	@Override
-	public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
-	//	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-		ArrayList<RepositoryPO> list=finalList;
-		if(po.getLanguage().equals("")){
-			
-		}else{
-			list=this.screenLanguage(po.getLanguage(), list);
-		}
-		
-		if(po.getTime().equals("")){
-			
-		}else{
-			list=this.screenTime(po.getTime(), list);
-		}
-		
-		if(po.getCategory().equals("")){
-			
-		}else{
-			list=this.screenCategory(po.getCategory(), list);
-		}
-		return list;
-	}
-	
-	private ArrayList<String> remove(ArrayList<String> list){
-		ArrayList<String> list2=new ArrayList<>();
-		for(int i=0;i<list.size();i++){
-			list2.add(list.get(i).substring(1, list.get(i).length()-1));
-		}
-		
-		return list2;
-	} 
-	
-	public ArrayList<String> splitStr(String string){
-		String[] str=string.split(";");
-		ArrayList<String> list=new ArrayList<>();
-		for(int i=0;i<str.length;i++){
-			list.add(str[i]);
-		}
-		return list;
-	}
-	
+    private ArrayList<RepositoryPO> screenTime(String time, ArrayList<RepositoryPO> listPO) throws IOException {
+        // TODO Auto-generated method stub
+        ArrayList<RepositoryPO> list1 = new ArrayList<>();
+        //ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+        ArrayList<RepositoryPO> list = listPO;//有bug
+
+        for (int i = 0; i < list.size(); i++) {
+
+            @SuppressWarnings("deprecation")
+            int year = list.get(i).getCreatedAt().getYear();
+            if (Integer.parseInt(time.substring(0, 4)) == year) {
+                list1.add(list.get(i));
+            }
+        }
+        //finalList=list1;
+        return list1;
+    }
+
+
+    private ArrayList<RepositoryPO> screenCategory(String key, ArrayList<RepositoryPO> listPO) throws IOException {
+        // TODO Auto-generated method stub
+        ArrayList<RepositoryPO> list = listPO;
+        ArrayList<RepositoryPO> list2 = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getDescription().contains(key)) {
+                list2.add(list.get(i));
+            }
+        }
+        return list2;
+    }
+
+    @Override
+    public ArrayList<RepositoryPO> screen(ScreenPO po) throws IOException {
+        //	ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
+        ArrayList<RepositoryPO> list = finalList;
+        if (po.getLanguage().equals("")) {
+
+        } else {
+            list = this.screenLanguage(po.getLanguage(), list);
+        }
+
+        if (po.getTime().equals("")) {
+
+        } else {
+            list = this.screenTime(po.getTime(), list);
+        }
+
+        if (po.getCategory().equals("")) {
+
+        } else {
+            list = this.screenCategory(po.getCategory(), list);
+        }
+        return list;
+    }
+
+    private ArrayList<String> remove(ArrayList<String> list) {
+        ArrayList<String> list2 = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            list2.add(list.get(i).substring(1, list.get(i).length() - 1));
+        }
+
+        return list2;
+    }
+
+    public ArrayList<String> splitStr(String string) {
+        String[] str = string.split(";");
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < str.length; i++) {
+            list.add(str[i]);
+        }
+        return list;
+    }
+
 }

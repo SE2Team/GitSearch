@@ -46,7 +46,7 @@ public class RepositoryTest extends TestCase{
 	
 	/*测试languagesOfRepository方法*/
 	public void testlanguagesOfRepository() throws IOException{
-		assertEquals("Ruby", testRepository.languagesOfRepository("mojombo","grit").getStr().get(0));
+		assertEquals("Ruby", testRepository.languagesOfRepository("mojombo","grit").getX().get(0));
 	}
 	
 	/*测试Search方法*/
