@@ -5,6 +5,7 @@ import org.kohsuke.github.GHRepository;
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -22,7 +23,7 @@ public class RepositoryPO  extends GHRepository{
     String name;
     int id;
 	String owner_type;
-	String html_url;
+	URL html_url;
 	String description;
 	boolean fork;
 	Date created;
@@ -39,7 +40,7 @@ public class RepositoryPO  extends GHRepository{
 	
 	
 
-	public RepositoryPO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
+	public RepositoryPO(String name, int id, String owner_type, URL html_url, String description, Boolean fork,
 			Date created, Date  updated, Date  pushed, int size, int stargazers_count, String language, int forks,
 			int open_issues, int subscribers_count, int contributor,
 			 ArrayList<String> contributors) {
@@ -82,14 +83,14 @@ public class RepositoryPO  extends GHRepository{
 		
 	}
 
-	public int getSubscribers_count() {
+	public int getSubscribersCount() {
 		if(repository==null)
 			return this.subscribers_count;
 		else
 			return repository.getSubscribersCount();
 	}
 
-	public int getOpen_issues() {
+	public int getOpenIssueCount() {
 		if(repository==null)
 			return this.open_issues;
 		else 
@@ -110,7 +111,7 @@ public class RepositoryPO  extends GHRepository{
 			return repository.getLanguage();
 	}
 
-	public int getStargazers() {
+	public int getWatchers() {
 		if(repository==null)
 			return this.stargazers_count;
 		else
@@ -124,21 +125,21 @@ public class RepositoryPO  extends GHRepository{
 			return repository.getSize();
 	}
 
-	public Date getPushed() {
+	public Date getPushedAt(){
 		if(repository==null)
 			return this.pushed;
 		else
 			return repository.getPushedAt();
 	}
 
-	public Date getUpdated() throws IOException {
+	public Date getUpdatedAt()throws IOException {
 		if(repository==null)
 			return this.updated;
 		else
 			return repository.getUpdatedAt();
 	}
 
-	public Date getCreated() throws IOException {
+	public Date getCreatedAt() throws IOException {
 		if(repository==null)
 			return this.created;
 		else
@@ -165,11 +166,11 @@ public class RepositoryPO  extends GHRepository{
 		return this.owner_type;
 	}
 
-	public String getHtml_url() {
+	public URL getHtmlUrl() {
 		if(repository==null)
 			return this.html_url;
 		else
-			return repository.getHtmlUrl().toString();
+			return repository.getHtmlUrl();
 	}
 
 	public String getDescription() {
@@ -179,13 +180,12 @@ public class RepositoryPO  extends GHRepository{
 			return repository.getDescription();
 	}
 
-	public String getName() {
+	public String getFullName(){
 		if(repository==null)
 			return this.name;
 		else
 			return repository.getFullName();
 	}
-
 
  
 }

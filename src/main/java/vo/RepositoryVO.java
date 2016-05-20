@@ -55,7 +55,7 @@ public class RepositoryVO {
 
     public RepositoryVO(RepositoryPO po) throws IOException {
         dpo=po;
-        name=po.getName();
+        name=po.getFullName();
         fullName=po.getFullName();
         id=po.getId();
         owner_type=po.getOwner_type();
@@ -69,7 +69,7 @@ public class RepositoryVO {
         stargazers_count=po.getWatchers();
         language=po.getLanguage();
         forks=po.getForks();
-        open_issues=po.getOpen_issues();
+        open_issues=po.getOpenIssueCount();
         subscribers_count=po.getSubscribersCount();
         contributors = po.listContributors();
     }

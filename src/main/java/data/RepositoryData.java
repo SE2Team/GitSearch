@@ -261,7 +261,7 @@ public class RepositoryData implements RepositoryDataService {
         // ArrayList<RepositoryPO> pos1=finalList;
         String[] str = new String[2];
         for (RepositoryPO po : pos1) {
-            str = po.getName().split("/");
+            str = po.getFullName().split("/");
             if (str[1].contains(name)) {
                 pos.add(po);
             }
@@ -306,7 +306,7 @@ public class RepositoryData implements RepositoryDataService {
         } else if (sort == Repository_Sort.star) {
             for (int j = 0; j < list.size() - 1; j++) {
                 for (int i = j; i < list.size() - 1; i++) {
-                    if (list.get(j).getStargazers() <= list.get(i + 1).getStargazers()) {
+                    if (list.get(j).getWatchers()<= list.get(i + 1).getWatchers()) {
                         RepositoryPO temp = list.get(j);
                         list.set(j, list.get(i + 1));
                         list.set(i + 1, temp);
@@ -343,7 +343,7 @@ public class RepositoryData implements RepositoryDataService {
         for (int i = 0; i < list.size(); i++) {
 
             @SuppressWarnings("deprecation")
-            int year = list.get(i).getCreated().getYear();
+            int year = list.get(i).getCreatedAt().getYear();
             if (Integer.parseInt(time.substring(0, 4)) == year) {
                 list1.add(list.get(i));
             }

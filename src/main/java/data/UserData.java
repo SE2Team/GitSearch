@@ -308,7 +308,7 @@ public class UserData implements UserDataService {
 		
 		for(int i=0;i<list.size();i++){
 			@SuppressWarnings("deprecation")
-			int year = list.get(i).getCreated().getYear();
+			int year = list.get(i).getCreatedAt().getYear();
 			if(Integer.parseInt(time.substring(0,4))==year){
 				list1.add(list.get(i));
 			}

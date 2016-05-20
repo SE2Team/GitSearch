@@ -20,7 +20,7 @@ public class Test {
 		UserData data=new UserData();
 		ArrayList<UserPO> list=data.getUser();
 		for(int i=0;i<list.size();i++){
-			System.out.println(list.get(i).getRepos());
+			System.out.println(list.get(i).getPublicRepoCount());
 		}
 
 	}

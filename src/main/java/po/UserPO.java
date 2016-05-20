@@ -20,7 +20,7 @@ public class UserPO extends GHUser {
 	String name="";
 	String company="";
 	String email="";
-	String public_repos;
+	int public_repos;
 	int public_gists=0;
 	int  followers=0;
 	int following=0;
@@ -29,7 +29,7 @@ public class UserPO extends GHUser {
 	;
 
     public UserPO(int id, String login, String type, String name, String company, String email,
-			 String public_repos, int public_gists, int followers, int following, Date created_at,
+			 int public_repos, int public_gists, int followers, int following, Date created_at,
 			Date updated_at) {
 			this.id=id;
 			this.login=login;
@@ -46,42 +46,42 @@ public class UserPO extends GHUser {
 
 	}
 	
-    public Date getUpdated() throws IOException{
+    public Date getUpdatedAt() throws IOException{
     	if(user==null){
     		return this.updated_at;
     	}
 		 return user.getUpdatedAt();
 	}
 	
-	public Date getCreated() throws IOException{
+	public Date getCreatedAt() throws IOException{
 		if(user==null){
 			return this.created_at;
     	}
 		return user.getCreatedAt();
 	}
 	
-	public int getFollowing() throws IOException{
+	public int getFollowingCount() throws IOException{
 	if(user==null)
 		return this.following;
 	else
 		return user.getFollowingCount();
 	}
 	
-	public int getFollower() throws IOException{
+	public int getFollowersCount() throws IOException{
 		if(user==null)
 			return this.followers;
 		else 
 			return user.getFollowersCount();
 	}
 	
-	public String getRepos() throws IOException {
+	public int getPublicRepoCount() throws IOException {
 		if(user==null)
 			return this.public_repos;
 		else
-			return user.getPublicRepoCount()+"";
+			return user.getPublicRepoCount();
 	}
 	
-	public int getGists1() throws IOException{
+	public int getPublicGistCount() throws IOException{
 		if(user==null)
 			return this.public_gists;
 		else
