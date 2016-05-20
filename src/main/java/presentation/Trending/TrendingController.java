@@ -29,8 +29,8 @@ import java.util.Iterator;
  */
 public class TrendingController implements MyController {
 
-    @FXML
-    private ComboBox TimeCombo;
+//    @FXML
+//    private ComboBox TimeCombo;
 
 //    @FXML
 //    private ComboBox LangCombo;
@@ -91,7 +91,7 @@ public class TrendingController implements MyController {
     private String key = "";//搜索关键字
 
     public void initialize() {
-        TimeCombo.getItems().addAll("today", "this week");
+//        TimeCombo.getItems().addAll("today", "this week");
         initFilters();
         langGroup.getToggles().addAll(language);
         rpgNum.addEventFilter(KeyEvent.KEY_RELEASED, new EventHandler<KeyEvent>() {

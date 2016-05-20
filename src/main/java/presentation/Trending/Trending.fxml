@@ -58,10 +58,6 @@
           </Tab>
         </tabs>
       </TabPane>
-      <StackPane layoutX="869.0" layoutY="3.0" prefHeight="38.0" prefWidth="200.0">
-         <children>
-            <JFXComboBox fx:id="TimeCombo" prefHeight="31.0" prefWidth="182.0" promptText="this week" />
-         </children></StackPane>
       <AnchorPane id="RepSearchLeft" layoutX="1075.0" stylesheets="@../../default.css">
          <children>
             <Accordion prefHeight="655.0">

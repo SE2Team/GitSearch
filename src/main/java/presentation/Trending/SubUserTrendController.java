@@ -16,7 +16,7 @@ public class SubUserTrendController implements MyController{
     @FXML
     private Label name;
     @FXML
-    private Label id;
+    private Label LogIn;
     @FXML
     private Label followers;
     @FXML
@@ -37,10 +37,10 @@ public class SubUserTrendController implements MyController{
     public void repaint() {
         String nameText = vo.getName() != "" ? vo.getName() : "Unknown";
         name.setText(nameText);
-        id.setText(vo.getLogin());
+        LogIn.setText(vo.getLogin());
         followers.setText(String.valueOf(vo.getFollowers()));
         repos.setText(String.valueOf(vo.getPublic_repos()));
-
+        imageView.setImage(vo.getUserImage());
     }
 
     @FXML
