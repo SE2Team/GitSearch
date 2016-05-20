@@ -15,11 +15,11 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="1280.0">
                      <children>
                         <FlowPane fx:id="RepoPane" layoutY="16.0" prefHeight="541.0" prefWidth="1060.0" />
-                        <Button id="FirstPage" fx:id="rfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
-                        <Button id="PageUp" fx:id="rpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="FirstPage" fx:id="rfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_rFpg" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <Button id="PageUp" fx:id="rpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_rPgup" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css" />
                         <TextField fx:id="rpgNum" alignment="CENTER" layoutX="495.0" layoutY="575.0" prefHeight="30.0" prefWidth="60.0" text="1" />
-                        <Button id="PageDown" fx:id="rpgDn" layoutX="570.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css" />
-                        <Button id="LastPage" fx:id="rlpg" layoutX="605.0" layoutY="575.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <Button id="PageDown" fx:id="rpgDn" layoutX="570.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_rPgDn" prefHeight="30.0" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="LastPage" fx:id="rlpg" layoutX="605.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_rLpg" prefHeight="30.0" prefWidth="25.0" stylesheets="@../../default.css" />
                         <Label layoutX="654.0" layoutY="576.0" prefHeight="28.0" prefWidth="104.0" text="共            页">
                            <font>
                               <Font name="Microsoft YaHei" size="18.0" />
@@ -27,7 +27,7 @@
                         </Label>
                         <StackPane layoutX="678.0" layoutY="579.0" prefHeight="22.0" prefWidth="48.0">
                            <children>
-                              <Label fx:id="rmaxPg" prefHeight="20.0" prefWidth="48.0" />
+                              <Label fx:id="r_maxPg" prefHeight="20.0" prefWidth="48.0" />
                            </children>
                         </StackPane>
                      </children></AnchorPane>
@@ -38,19 +38,19 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <FlowPane fx:id="UserPane" layoutX="5.0" layoutY="15.0" prefHeight="540.0" prefWidth="1060.0" />
-                        <Button id="FirstPage" fx:id="Userfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
-                        <Button id="PageUp" fx:id="UserpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
-                        <Button id="PageDown" fx:id="UserpgDn" layoutX="570.0" layoutY="575.0" mnemonicParsing="false" prefWidth="20.0" stylesheets="@../../default.css" />
-                        <Button id="LastPage" fx:id="Userlpg" layoutX="605.0" layoutY="575.0" mnemonicParsing="false" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <Button id="FirstPage" fx:id="Userfpg" layoutX="420.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_uFpg" prefWidth="25.0" stylesheets="@../../default.css" />
+                        <Button id="PageUp" fx:id="UserpgUp" layoutX="460.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_uPgup" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="PageDown" fx:id="UserpgDn" layoutX="570.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_uPgDn" prefWidth="20.0" stylesheets="@../../default.css" />
+                        <Button id="LastPage" fx:id="Userlpg" layoutX="605.0" layoutY="575.0" mnemonicParsing="false" onMouseClicked="#handle_uLpg" prefWidth="25.0" stylesheets="@../../default.css" />
                         <TextField fx:id="UserpgNum" alignment="CENTER" layoutX="495.0" layoutY="575.0" prefHeight="30.0" prefWidth="60.0" text="1" />
                         <Label layoutX="660.0" layoutY="576.0" prefHeight="28.0" prefWidth="104.0" text="共            页">
                            <font>
                               <Font name="Microsoft YaHei" size="18.0" />
                            </font>
                         </Label>
-                        <StackPane layoutX="696.0" layoutY="579.0" prefHeight="22.0" prefWidth="48.0">
+                        <StackPane layoutX="685.0" layoutY="579.0" prefHeight="22.0" prefWidth="48.0">
                            <children>
-                              <Label fx:id="UsermaxPg" alignment="CENTER" prefWidth="48.0" />
+                              <Label fx:id="u_maxPg" alignment="CENTER" prefWidth="48.0" />
                            </children>
                         </StackPane>
                      </children></AnchorPane>
@@ -70,7 +70,7 @@
                   <content>
                     <AnchorPane id="titledPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../default.css">
                            <children>
-                              <FlowPane id="RepFlowPane" layoutX="-13.0" layoutY="-10.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <FlowPane id="RepFlowPane" fx:id="languagePane" layoutX="-13.0" layoutY="-10.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <ToggleButton mnemonicParsing="false" text="All" />
                                     <ToggleButton mnemonicParsing="false" text="Java" />
@@ -81,10 +81,6 @@
                                     <ToggleButton mnemonicParsing="false" text="C" />
                                     <ToggleButton mnemonicParsing="false" text="Perl" />
                                     <ToggleButton mnemonicParsing="false" text="C++" />
-                                    <ToggleButton mnemonicParsing="false" text="Java" />
-                                    <ToggleButton mnemonicParsing="false" text="Java" />
-                                    <ToggleButton mnemonicParsing="false" text="Java" />
-                                    <ToggleButton mnemonicParsing="false" text="Java" />
                                  </children>
                               </FlowPane>
                            </children>
