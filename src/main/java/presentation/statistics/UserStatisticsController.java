@@ -67,7 +67,7 @@ public class UserStatisticsController implements MyController {
 //            e.printStackTrace();
 //        }
         chartType.getItems().clear();
-        chartType.getItems().addAll("Folowers", "Company");
+        chartType.getItems().addAll("Followers", "Company");
         chartType.getSelectionModel().selectFirst();
         handleChange();
     }
@@ -263,6 +263,12 @@ public class UserStatisticsController implements MyController {
                     UserCompanyController userCompanyController = loader.getController();
                     userCompanyController.getCompanyChart().setData(getData(bl.getCompany(), false));
                     break;
+                case "Followers":
+                    loader.setLocation(this.getClass().getResource("UserFollowers.fxml"));
+                    anchorPane = loader.load();
+                    chartPane.getChildren().addAll(anchorPane);
+                    UserFollowersController userFollowersController = loader.getController();
+                    userFollowersController.getFollowerChart().setData(getData(bl.getFollowers(),false));
             }
         } catch (IOException e) {
             e.printStackTrace();
