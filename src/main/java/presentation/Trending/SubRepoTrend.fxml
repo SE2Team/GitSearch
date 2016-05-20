@@ -47,7 +47,7 @@
             <Font name="Calibri" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="language" layoutX="14.0" layoutY="22.0" text="language" textFill="#00000097">
+      <Label fx:id="language" layoutX="14.0" layoutY="25.0" text="language" textFill="#00000097">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>

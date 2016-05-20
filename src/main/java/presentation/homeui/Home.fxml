@@ -45,7 +45,7 @@
                   <Font name="Microsoft YaHei" size="25.0" />
                </font>
             </ToggleButton>
-            <ToggleButton layoutX="662.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" text="趋势">
+            <ToggleButton fx:id="trending" layoutX="662.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#handleTrending" prefHeight="56.0" prefWidth="150.0" text="趋势">
                <font>
                   <Font name="Microsoft YaHei" size="25.0" />
                </font>

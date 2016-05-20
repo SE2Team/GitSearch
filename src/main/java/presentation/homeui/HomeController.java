@@ -30,6 +30,8 @@ public class HomeController implements MyController{
     @FXML
     private ToggleButton rstatistics;
     @FXML
+    private ToggleButton trending;
+    @FXML
     private TextField searchText;
     @FXML
     private ComboBox comboBox;
@@ -45,7 +47,7 @@ public class HomeController implements MyController{
         comboBox.getItems().clear();
         comboBox.getItems().addAll("项目","用户");
         comboBox.getSelectionModel().selectFirst();
-        top.getToggles().addAll(search_pane,ustatistics,rstatistics);
+        top.getToggles().addAll(search_pane,ustatistics,rstatistics,trending);
         search_pane.setSelected(true);
         searchText.setFocusTraversable(false);
     }
@@ -100,6 +102,11 @@ public class HomeController implements MyController{
         fxui.repoStatistics();
     }
 
+    @FXML
+    private void handleTrending(){
+        trending.setSelected(true);
+        fxui.trending();
+    }
     @FXML
     private void handleSearch_p(){
         search_pane.setSelected(true);

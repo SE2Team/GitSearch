@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import presentation.Trending.TrendingController;
 import presentation.homeui.HomeController;
 import presentation.repoCheckui.CheckRepoController;
 import presentation.searchui.RepSearchController;
@@ -249,6 +250,20 @@ public class FXUITest extends Application {
         }
     }
 
+    public void trending(){
+        this.push();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("Trending/Trending.fxml"));
+        try{
+            AnchorPane trendingPane = (AnchorPane)loader.load();
+            TrendingController controller = loader.getController();
+            controller.setFxui(this);
+            controller.repaint();
+            homeLayout.setCenter(trendingPane);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
     public BorderPane getHomeLayout() {
         return homeLayout;
     }
