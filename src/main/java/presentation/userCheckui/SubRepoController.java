@@ -61,7 +61,6 @@ public class SubRepoController implements MyController {
     }
     @FXML
     private void check(){
-        String str1,str2;
         try {
             fxuiTest.checkRepo(bl.checkRepository(userLogin,name));
         } catch (IOException e) {

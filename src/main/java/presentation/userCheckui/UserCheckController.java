@@ -12,6 +12,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import org.kohsuke.github.GHEventInfo;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
 import presentation.FXUITest;
@@ -42,7 +43,7 @@ public class UserCheckController implements MyController {
     @FXML
     private Label login;
     @FXML
-    private FlowPane poprepo;
+    private FlowPane showList;
 
     @FXML
     private Tooltip fullUserName;
@@ -55,13 +56,23 @@ public class UserCheckController implements MyController {
     @FXML
     private ComboBox combobox;
 
+    /**
+     * showList默认项目数量
+     */
+    private static int SHOWLISTSIZE;
+
     private FXUITest fxui;
+
+    /**
+     * 缓存列表以加快速度
+     */
     private ArrayList<Parent> followingList = new ArrayList<>();
     private ArrayList<Parent> owningList = new ArrayList<>();
+    private ArrayList<Parent> eventList=new ArrayList<>();
 
     @FXML
     public void initialize() {
-
+        SHOWLISTSIZE = 10;
     }
 
     public void setFxui(FXUITest fxui) {
@@ -87,7 +98,7 @@ public class UserCheckController implements MyController {
         fullLogin.setText(vo.getLogin());
         name.requestFocus();//把焦点拿走
 //        imageView.setImage(new Image(vo.getAvatar()));
-        combobox.getItems().addAll("Repositories", "Following");
+        combobox.getItems().addAll("Repositories", "Following","Event");
         combobox.getSelectionModel().selectFirst();
 
     }
@@ -107,7 +118,7 @@ public class UserCheckController implements MyController {
     }
 
 
-    public Parent getSub(GHRepository vo) throws IOException {
+    private Parent getSub(GHRepository vo) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubUserCheckRep.fxml"));
         AnchorPane anchorPane = loader.load();
@@ -119,7 +130,7 @@ public class UserCheckController implements MyController {
         return anchorPane;
     }
 
-    public Parent getSub(GHUser user) throws IOException {
+    private Parent getSub(GHUser user) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubUserCheckUser.fxml"));
         AnchorPane anchorPane = loader.load();
@@ -131,36 +142,48 @@ public class UserCheckController implements MyController {
         return anchorPane;
     }
 
+    private Parent getSub(GHEventInfo event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubUserCheckEvent.fxml"));
+        AnchorPane anchorPane = loader.load();
+        SubUserEvent controller = loader.getController();
+
+        controller.setFxui(fxui);
+        controller.set(event);
+        controller.repaint();
+        return anchorPane;
+    }
+
     @FXML
     private void handleCheckFollowing() throws IOException {
-        poprepo.getChildren().clear();
+        showList.getChildren().clear();
         if (followingList.size() == 0) {
-            Iterator<GHUser> itr = vo.getDpo().listFollows()._iterator(9);
+            Iterator<GHUser> itr = vo.getDpo().listFollows()._iterator(SHOWLISTSIZE);
             int i = 0;
             if (itr != null) {
-                while (itr.hasNext() && i++ < 9) {
+                while (itr.hasNext() && i++ < SHOWLISTSIZE) {
                     followingList.add(getSub(itr.next()));
                 }
             }
         }
-        poprepo.getChildren().addAll(followingList);
+        showList.getChildren().addAll(followingList);
 
     }
 
     @FXML
     private void handleCheckRepo() throws IOException {
-        poprepo.getChildren().clear();
+        showList.getChildren().clear();
 
         if (owningList.size() == 0) {
             Iterator<GHRepository> itrhas = vo.getHas();
             int i = 0;
             if (itrhas != null) {
-                while (itrhas.hasNext() && i++ < 9) {
+                while (itrhas.hasNext() && i++ < SHOWLISTSIZE) {
                     owningList.add(getSub(itrhas.next()));
                 }
             }
         }
-        poprepo.getChildren().addAll(owningList);
+        showList.getChildren().addAll(owningList);
 
     }
 
@@ -170,7 +193,23 @@ public class UserCheckController implements MyController {
             handleCheckRepo();
         } else if (combobox.getValue() == "Following") {
             handleCheckFollowing();
+        } else if(combobox.getValue() == "Event"){
+            handleUEvent();
         }
+    }
+    @FXML
+    private void handleUEvent() throws IOException {
+        showList.getChildren().clear();
+        if(eventList.size()==0){
+            Iterator<GHEventInfo> itr=vo.getDpo().listEvents().iterator();
+            int i= 0;
+            if(itr!=null){
+                while (itr.hasNext()&&i++<SHOWLISTSIZE){
+                    eventList.add(getSub(itr.next()));
+                }
+            }
+        }
+        showList.getChildren().addAll(eventList);
     }
 
 }

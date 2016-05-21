@@ -3,15 +3,12 @@ package presentation.repoCheckui;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.kohsuke.github.GHCommit;
-import org.kohsuke.github.PagedIterable;
 import presentation.FXUITest;
 import presentation.common.MyController;
-import vo.RepositoryVO;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 
 /**
  * Created by Administrator on 2016/5/20.
