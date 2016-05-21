@@ -66,7 +66,7 @@ public class SubRepoTrendController implements MyController{
         if(vo.getStarDevation()>0){
             change_img.setStyle("-fx-image: url(\"Images/up.png\");");
         }else if(vo.getStarDevation()==0){
-            change_img.setStyle("-fx-image: url(\"Images/no change.png\");");
+            change_img.setStyle("-fx-image: url(\"Images/noChange.png\");");
         }else if(vo.getStarDevation()<0){
             change_img.setStyle("-fx-image: url(\"Images/down.png\");");
 

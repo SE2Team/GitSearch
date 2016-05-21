@@ -47,10 +47,15 @@ public class SubCommitController implements MyController{
 
         try {
             logIn = commit.getCommitter().getLogin();
-            date =commit.getLastStatus().getUpdatedAt();
-            time = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
-            commitInfo.setText(logIn+"committed at"+time);
-            commitDesc.setText(commit.getCommitShortInfo().getMessage());
+            if(commit.getLastStatus()==null){
+                commitInfo.setText(logIn+" committed");
+                commitDesc.setText(commit.getCommitShortInfo().getMessage());
+            }else{
+                date =commit.getLastStatus().getUpdatedAt();
+                time = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
+                commitInfo.setText(logIn+" committed at "+time);
+                commitDesc.setText(commit.getCommitShortInfo().getMessage());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

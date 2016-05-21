@@ -38,11 +38,11 @@
          </image>
       </ImageView>
       <Label fx:id="repos" layoutX="970.0" layoutY="37.0" text="0" textFill="#00000097" />
-      <ImageView fx:id="change_img" fitHeight="20.0" fitWidth="23.0" layoutX="863.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="change_img" fitHeight="20.0" fitWidth="23.0" layoutX="865.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Images/up.png" />
          </image>
       </ImageView>
-      <Label fx:id="changes" layoutX="882.0" layoutY="23.0" text="0" />
+      <Label fx:id="changes" layoutX="884.0" layoutY="21.0" text="0" />
    </children>
 </AnchorPane>
