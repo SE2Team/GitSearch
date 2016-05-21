@@ -669,5 +669,29 @@ public class StatisticsData implements StatisticsDataService{
 	public StaStrPO getFollowers(){
 		return helper.getFollowers();
 	}
+
+	@Override
+	public StaStrPO getAll_RepoCreated() {
+		
+		return helper.getAll_RepoCreated();
+	}
+
+	@Override
+	public StaStrPO getAll_UserCreated() {
+		// TODO Auto-generated method stub
+		return helper.getAll_UserCreated();
+	}
+
+	@Override
+	public StaStrPO getAll_Star() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StaStrPO getAll_Fork() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

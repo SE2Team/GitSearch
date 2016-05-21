@@ -54,4 +54,12 @@ public interface StatisticsBLService {
 	StaStrVO getContributor();
 	
 	StaStrVO getFollowers();
+	
+	StaStrVO getAll_RepoCreated();
+	
+	StaStrVO getAll_UserCreated();
+	
+	StaStrVO getAll_Star(); 
+	
+	StaStrVO getAll_Fork(); 
 }

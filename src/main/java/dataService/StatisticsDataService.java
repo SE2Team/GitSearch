@@ -100,4 +100,13 @@ public interface StatisticsDataService {
 	public String repoTrending();
 	
 	public StaStrPO getFollowers();
+	
+	public StaStrPO getAll_RepoCreated();
+	
+	public StaStrPO getAll_UserCreated();
+	
+	public StaStrPO getAll_Star(); 
+	
+	public StaStrPO getAll_Fork(); 
+	
 }

@@ -68,4 +68,30 @@ public class StatisticsController implements StatisticsBLService{
 	public StaStrVO getFollowers() {
 		return statistics.getFollowers();
 	}
+
+	@Override
+	public StaStrVO getAll_RepoCreated() {
+		// TODO Auto-generated method stub
+		return statistics.getAll_RepoCreated();
+	}
+
+	@Override
+	public StaStrVO getAll_UserCreated() {
+		// TODO Auto-generated method stub
+		return statistics.getAll_UserCreated();
+	}
+
+	@Override
+	public StaStrVO getAll_Star() {
+		// TODO Auto-generated method stub
+		return statistics.getAll_Star();
+	}
+
+	@Override
+	public StaStrVO getAll_Fork() {
+		// TODO Auto-generated method stub
+		return statistics.getAll_Fork();
+	}
+	
+	
 }
