@@ -92,6 +92,18 @@ public class StatisticsController implements StatisticsBLService{
 		// TODO Auto-generated method stub
 		return statistics.getAll_Fork();
 	}
+
+	@Override
+	public StaStrVO getCommit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StaStrVO getUserActivity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
