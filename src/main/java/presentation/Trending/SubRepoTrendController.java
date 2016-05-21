@@ -2,6 +2,8 @@ package presentation.Trending;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
@@ -25,6 +27,8 @@ public class SubRepoTrendController implements MyController{
     private Label stars;
     @FXML
     private Label changes;
+    @FXML
+    private ImageView change_img;
 
     private FXUITest fxui;
 
@@ -40,9 +44,12 @@ public class SubRepoTrendController implements MyController{
 
     public void repaint() {
         name.setText(vo.getName());
+        language.setText(vo.getLanguage());
         description.setText(vo.getDescription());
         stars.setText(String.valueOf(vo.getStargazers_count()));
         forks.setText(String.valueOf(vo.getForks()));
+        handleImg();
+        changes.setText(String.valueOf(vo.getStarDevation()));
 //        contributors.set(String.valueOf(vo.getContributor()));
     }
 
@@ -55,4 +62,14 @@ public class SubRepoTrendController implements MyController{
         fxui.checkRepo(vo);
     }
 
+    private void handleImg(){
+        if(vo.getStarDevation()>0){
+            change_img.setStyle("-fx-image: url(\"Images/up.png\");");
+        }else if(vo.getStarDevation()==0){
+            change_img.setStyle("-fx-image: url(\"Images/no change.png\");");
+        }else if(vo.getStarDevation()<0){
+            change_img.setStyle("-fx-image: url(\"Images/down.png\");");
+
+        }
+    }
 }
