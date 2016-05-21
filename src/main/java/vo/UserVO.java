@@ -43,7 +43,7 @@ public class UserVO  {
 
 
     public UserVO(UserPO po) throws IOException {
-        this.dpo = po;
+        dpo = po.getDpo();
         id=po.getId();
         login=po.getLogin();
         type="user";
