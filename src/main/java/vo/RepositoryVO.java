@@ -40,7 +40,7 @@ public class RepositoryVO {
     String language;
     int forks;
     PagedIterable<GHRepository.Contributor> contributors;
-    RepositoryPO dpo;
+    GHRepository dpo;
 
     int open_issues = 0;
     int subscribers_count = 0;
@@ -56,7 +56,7 @@ public class RepositoryVO {
     }
 
     public RepositoryVO(RepositoryPO po) throws IOException {
-        dpo=po;
+        dpo=po.getRepository();
         name=po.getFullName();
         fullName=po.getFullName();
         id=po.getId();
@@ -158,7 +158,7 @@ public class RepositoryVO {
         return dpo.listLanguages();
     }
 
-    public RepositoryPO getDpo() {
+    public GHRepository getDpo() {
         return dpo;
     }
 
