@@ -44,6 +44,8 @@ public class RepositoryVO {
 
     int open_issues = 0;
     int subscribers_count = 0;
+    int starDeviation;
+	int forkDeviation;
 
     @Deprecated
     public RepositoryVO(String name, int id, String owner_type, String html_url, String description, Boolean fork,
@@ -72,8 +74,18 @@ public class RepositoryVO {
         open_issues=po.getOpenIssueCount();
         subscribers_count=po.getSubscribersCount();
         contributors = po.listContributors();
+        starDeviation=po.getStarDevation();
+        forkDeviation=po.getForkDevation();
     }
 
+	public int getStarDevation(){
+		return this.starDeviation;
+	}
+	
+	public int getForkDevation(){
+		return this.forkDeviation;
+	}
+    
     public String getName() {
         return name;
     }
