@@ -29,6 +29,7 @@ public class UserVO  {
     String  updated_at = "";
     javafx.scene.image.Image userImage;
     String avatar;
+    int followersDeviation;
 
     GHUser dpo;
     @Deprecated
@@ -54,6 +55,7 @@ public class UserVO  {
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
         avatar=po.getAvatarUrl();
+       followersDeviation=po.getFollowersDeviation();
     }
 
     public UserVO(GHUser po) throws IOException {
@@ -70,8 +72,13 @@ public class UserVO  {
         following=po.getFollowingCount();
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
+        followersDeviation=((UserPO) po).getFollowersDeviation();
     }
 
+    public int getFollowersDeviation(){
+    	return this.followersDeviation;
+    }
+    
     public int getId() {
         return id;
     }

@@ -27,11 +27,11 @@ public class UserPO extends GHUser {
 	int following=0;
 	Date created_at;
 	Date updated_at;
-	;
+	int followersDeviation;
 
     public UserPO(int id, String login, String type, String name, String company, String email,
 			 int public_repos, int public_gists, int followers, int following, Date created_at,
-			Date updated_at) {
+			Date updated_at,int followersDeviation) {
 			this.id=id;
 			this.login=login;
 			this.type=type;
@@ -44,13 +44,17 @@ public class UserPO extends GHUser {
 			this.following=following;
 			this.created_at=created_at;
 			this.updated_at=updated_at;
+			this.followersDeviation=followersDeviation;
 
 	}
     
     public UserPO(GHUser parent) {
         user=parent;
 	}
-
+    
+    public int getFollowersDeviation(){
+    	return this.followersDeviation;
+    }
 	
     public Date getUpdatedAt() throws IOException{
     	if(user==null){
