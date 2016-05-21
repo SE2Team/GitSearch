@@ -109,75 +109,13 @@ public class StatisticsData implements StatisticsDataService{
 	}
 
 	public StaStrPO getStar() throws IOException {
-		// TODO Auto-generated method stub
-//		int int1=0;
-//		int int2=0;
-//		int int3=0;
-//		int over=0;
-//		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-//		for(int i=0;i<list.size();i++){
-//			int n=list.get(i).getStargazers();
-//			if(n<=50){
-//				int1++;
-//			} 
-//			else if(n<=200&&n>50){
-//				int2++;
-//			} 
-//			else if(n>200&&n<=500){
-//				int3++;
-//			}
-//			else if(n>500){
-//				over++;
-//			}
-//		}
-//		ArrayList<String> listStr=new ArrayList<>();
-//		ArrayList<Integer> listInt=new ArrayList<>();
-//		listStr.add("0-50");
-//		listStr.add("50-200");
-//		listStr.add("200-500");
-//		listStr.add("over500");
-//		listInt.add(int1);
-//		listInt.add(int2);
-//		listInt.add(int3);
-//		listInt.add(over);
+
 		
 		return helper.getStar();
 	}
 
 	public StaStrPO getForks() throws IOException {
-		// TODO Auto-generated method stub
-//		int int1=0;
-//		int int2=0;
-//		int int3=0;
-//		int over=0;
-//		ArrayList<RepositoryPO> list=new RepositoryData().getRepositories();
-//		for(int i=0;i<list.size();i++){
-//			int n=list.get(i).getForks();
-//			if(n<=25){
-//				int1++;
-//			} 
-//			else if(n<=50&&n>25){
-//				int2++;
-//			} 
-//			else if(n>50&&n<=75){
-//				int3++;
-//			}
-//			else if(n>75){
-//				over++;
-//			}
-//		}
-//		ArrayList<String> listStr=new ArrayList<>();
-//		ArrayList<Integer> listInt=new ArrayList<>();
-//		listStr.add("0-25");
-//		listStr.add("25-50");
-//		listStr.add("50-75");
-//		listStr.add("over75");
-//		listInt.add(int1);
-//		listInt.add(int2);
-//		listInt.add(int3);
-//		listInt.add(over);
-//		
-//		return new StaStrPO(listStr, listInt);
+
 		return helper.getFork();
 	}
 
@@ -185,147 +123,22 @@ public class StatisticsData implements StatisticsDataService{
 	public  StaStrPO getRepoCreated() throws IOException {
 		// TODO Auto-generated method stub
 		return helper.getRepoCreated();
-//		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
-//		int sevenYear = 0;
-//		int eightYear = 0;
-//		int nineYear = 0;
-//		int tenYear = 0;
-//
-//		for (int i = 0; i < list.size(); i++) {
-//			if (list.get(i).getCreated().length() > 2) {
-//				String[] str = list.get(i).getCreated().substring(0, 10).split("-");
-//				String str1 = str[0] + str[1] + str[2];
-//				int year = Integer.parseInt(str1);
-//
-//				if (year <= 20080000) {
-//					sevenYear++;
-//				}  
-//				if (year >20080000 && year <= 20090000) {
-//					eightYear++;
-//
-//				} 
-//				 if (year <= 20100000 && year > 20090000) {
-//					nineYear++;
-//				} 
-//				 if (year > 20100000) {
-//					tenYear++;
-//				}
-//			}
-//		}
-//		ArrayList<String> listStr=new ArrayList<>();
-//		ArrayList<Integer> listInt=new ArrayList<>();
-//		listStr.add("2007");
-//		listStr.add("2008");
-//		listStr.add("2009");
-//		listStr.add("2010");
-//		listInt.add(sevenYear);
-//		listInt.add(eightYear);
-//		listInt.add(nineYear);
-//		listInt.add(tenYear);
-//		return new StaStrPO(listStr, listInt);
+
 	}
 
 	
 	public StaStrPO getLanguage() throws IOException {
 		// TODO Auto-generated method stub
 		
-//		ArrayList<Integer> listInt = new ArrayList<Integer>();
-//		ArrayList<String> listString = new GetData("languages").readData();
-//		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
-////		Map<String, Integer> map = new HashMap<String, Integer>();
-//		for (int j = 0; j < listString.size(); j++) {
-//			listInt.add(0);
-//		}
-//
-//		for (int i = 0; i < list.size(); i++) {
-//			String language = list.get(i).getLanguage();
-//			if (language.equals("")) {
-//
-//			} else {
-//				int n = listInt.get(listString.indexOf(language)) + 1;
-//				listInt.set(listString.indexOf(language), n);
-//			}
-//		}
-//		
-////		int tempInt = 0;
-////		String tempString = "";
-////		for (int i = 0; i < listInt.size(); i++) {
-////			for (int p = i; p < listInt.size() - 1; p++) {
-////				if (listInt.get(i) >= listInt.get(p+1)) {
-////					tempInt = listInt.get(p+1);
-////					listInt.set(p+1, listInt.get(i));
-////					listInt.set(i, tempInt);
-////			
-////					tempString = listString.get(p+1);
-////					listString.set(p+1, listString.get(i));
-////					listString.set(i, tempString);
-////
-////				}
-////			}
-////		}
-////
-////		for (int j = 0; j < listString.size(); j++) {
-////			map.put(listString.get(j), listInt.get(j));
-////		}
-//
-//		return this.sort(listInt, listString);
+
 		return helper.getLanguage();
 	}
 
 	public StaStrPO getUserCreated() throws IOException {
 		// TODO Auto-generated method stub
+		
 		return helper.getUserCreated();
-//		ArrayList<UserPO> list=new UserData().getUser();
-//		ArrayList<Integer> list2=new ArrayList<Integer>();
-//		ArrayList<String> list3=new ArrayList<String>();
-//		for(int i=0;i<9;i++){
-//			list2.add(0);
-//			list3.add((2007+i)+"");
-//			
-//		}
-//		for(int i=0;i<list.size();i++){
-//			if(list.get(i).getCreated().length()>2){
-//			String[] str=list.get(i).getCreated().substring(0, 10).split("-");
-//			String str1=str[0]+str[1]+str[2];
-//			
-//			int year=Integer.parseInt(str1);
-//			if(year<=20080000){
-//				list2.set(0, list2.get(0)+1);
-//				
-//			}
-//			else if(20080000<year&&year<=20090000){
-//				list2.set(1, list2.get(1)+1);
-//				
-//			}
-//			else if(20090000<year&&year<=20100000){
-//				list2.set(2, list2.get(2)+1);
-//			}
-//			else if(20100000<year&&year<=20110000){
-//				list2.set(3, list2.get(3)+1);
-//			}
-//			else if(20110000<year&&year<=20120000){
-//				list2.set(4, list2.get(4)+1);
-//			}
-//			else if(20120000<year&&year<=20130000){
-//				list2.set(5, list2.get(5)+1);
-//			}
-//			else if(20130000<year&&year<=20140000){
-//				list2.set(6, list2.get(6)+1);
-//			}
-//			else if(20140000<year&&year<=20150000){
-//				list2.set(7, list2.get(7)+1);
-//			}
-//			else if(20150000<year){
-//				list2.set(8, list2.get(8)+1);
-//			}
-//			
-//			
-//				}
-//			}
-//		
-//	
-//		
-//		return new StaStrPO(list3,list2);
+
 	}
 
 	public StaStrPO getUserType() throws IOException {
@@ -458,30 +271,7 @@ public class StatisticsData implements StatisticsDataService{
 	public StaStrPO getCompany() throws IOException {
 		// TODO Auto-generated method stub
 		ArrayList<UserPO> list=new UserData().getUser();
-//		ArrayList<String> list2=new ArrayList<String>();
-//		ArrayList<Integer> list3=new ArrayList<Integer>();
-//		for(int i=0;i<list.size();i++){
-//			if(list2.contains(list.get(i).getCompany())==false){
-//				list2.add(list.get(i).getCompany());
-//			}
-//		}//获取用户所属公司
-//		ArrayList<String> list2=new GetData("company").readData();
-//		ArrayList<Integer> list3=new ArrayList<Integer>();
-//		for(int p=0;p<list2.size();p++){
-//			list3.add(0);
-//		}
-//		String tempStr="";
-//		for(int i=0;i<list.size();i++){
-//			tempStr=list.get(i).getCompany();
-//			if(tempStr.equals("")){
-//				tempStr="Unknown";
-//			}
-//			if(list2.contains(tempStr)){
-//				
-//				list3.set(list2.indexOf(tempStr), list3.get(list2.indexOf(tempStr))+1);
-//			}
-//		}
-//		return this.sort(list3, list2);
+
 		return helper.getCompany();
 	}
 	
@@ -497,6 +287,7 @@ public class StatisticsData implements StatisticsDataService{
 		return 0;
 	}
 	
+	@SuppressWarnings("unused")
 	private StaStrPO sort(ArrayList<Integer> listInt,ArrayList<String> listString){
 		int tempInt = 0;
 		String tempString = "";
@@ -685,13 +476,13 @@ public class StatisticsData implements StatisticsDataService{
 	@Override
 	public StaStrPO getAll_Star() {
 		// TODO Auto-generated method stub
-		return null;
+		return helper.getAll_Star();
 	}
 
 	@Override
 	public StaStrPO getAll_Fork() {
 		// TODO Auto-generated method stub
-		return null;
+		return helper.getAll_Fork();
 	}
 	
 }

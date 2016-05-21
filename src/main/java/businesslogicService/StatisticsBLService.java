@@ -62,4 +62,8 @@ public interface StatisticsBLService {
 	StaStrVO getAll_Star(); 
 	
 	StaStrVO getAll_Fork(); 
+	
+	StaStrVO getCommit();
+	
+	StaStrVO getUserActivity();
 }

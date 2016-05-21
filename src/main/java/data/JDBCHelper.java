@@ -394,4 +394,62 @@ public class JDBCHelper {
 		}
 		return new StaStrPO(listStr, listInt);
 	}
+	
+	public ArrayList<Date> getDate(){
+		ArrayList<Date> list=new ArrayList<>();
+		String sql = "select * from operation_date order by date Desc";
+		ResultSet rs = null;
+		try {
+
+			pStatement = conn.prepareStatement(sql);
+			rs = pStatement.executeQuery();
+			while (rs.next()) {
+				list.add(rs.getDate("date"));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	private int getStarDeviation(Date date1,Date date2,String fullname){
+		String sql = "select * from repo where date=? and fullname=?";
+		ResultSet rs1 = null;
+		ResultSet rs2 = null;
+		try {
+
+			pStatement = conn.prepareStatement(sql);
+			pStatement.setDate(1, date1);
+			pStatement.setString(2, fullname);
+			rs1 = pStatement.executeQuery();
+			pStatement.setDate(1, date2);
+			rs2=pStatement.executeQuery();
+			return rs1.getInt("stars")-rs2.getInt("stars");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	private int getForkDeviation(Date date1,Date date2,String fullname){
+		String sql = "select * from repo where date=? and fullname=?";
+		ResultSet rs1 = null;
+		ResultSet rs2 = null;
+		try {
+
+			pStatement = conn.prepareStatement(sql);
+			pStatement.setDate(1, date1);
+			pStatement.setString(2, fullname);
+			rs1 = pStatement.executeQuery();
+			pStatement.setDate(1, date2);
+			rs2=pStatement.executeQuery();
+			return rs1.getInt("forks")-rs2.getInt("forks");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
 }

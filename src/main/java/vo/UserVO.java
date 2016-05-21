@@ -39,26 +39,10 @@ public class UserVO  {
 
 
     }
-    @Deprecated
-    public UserVO(UserPO po) throws IOException {
-        dpo=po;
-        id=po.getId();
-        login=po.getLogin();
-        type="user";
-        name=po.getName();
-        company=po.getCompany();
-        email=po.getEmail();
-        public_gists=po.getGists();
-        public_repos=po.getPublicRepoCount();
-        followers=po.getFollowersCount();
-        following=po.getFollowingCount();
-        created_at= String.valueOf(po.getCreatedAt());
-        updated_at= String.valueOf(po.getUpdatedAt());
-        avatar=po.getAvatarUrl();
-       followersDeviation=po.getFollowersDeviation();
-    }
 
-    public UserVO(GHUser po) throws IOException {
+
+
+    public UserVO(UserPO po) throws IOException {
         this.dpo = po;
         id=po.getId();
         login=po.getLogin();
@@ -72,7 +56,7 @@ public class UserVO  {
         following=po.getFollowingCount();
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
-        followersDeviation=((UserPO) po).getFollowersDeviation();
+        followersDeviation= po.getFollowersDeviation();
     }
 
     public int getFollowersDeviation(){
