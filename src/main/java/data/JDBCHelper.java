@@ -52,7 +52,7 @@ public class JDBCHelper {
             	list.add(new RepositoryPO(rs.getString("fullname"), rs.getInt("id"), "", rs.getURL("html_url"), 
             			rs.getString("description"), rs.getBoolean("fork"), rs.getDate("created"), rs.getDate("updated"),rs.getDate("pushed"),
             			rs.getInt("size"), rs.getInt("stars"), rs.getString("language"), rs.getInt("forks"), rs.getInt("open_issues"), rs.getInt("subscribers_count"),
-            			0, null));
+            			0, null,rs.getInt("stars_Deviation"),rs.getInt("fork_Deviation")));
 
             }
         } catch (Exception e) {
@@ -271,7 +271,23 @@ public class JDBCHelper {
     }
 
     public StaStrPO getUserCreated() {
-        return null;
+    	ArrayList<String> listStr = new ArrayList<>();
+        ArrayList<Integer> listInt = new ArrayList<>();
+        String sql = "select * from user_statistics_creattime";
+        ResultSet rs = null;
+        try {
+
+            pStatement = conn.prepareStatement(sql);
+            rs = pStatement.executeQuery();
+            while (rs.next()) {
+                listInt.add(rs.getInt("num"));
+                listStr.add(rs.getString("time"));
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return new StaStrPO(listStr, listInt);
     }
 
     public StaStrPO getRepoCreated() {
