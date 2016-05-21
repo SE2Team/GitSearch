@@ -397,7 +397,7 @@ public class JDBCHelper {
 	
 	public ArrayList<Date> getDate(){
 		ArrayList<Date> list=new ArrayList<>();
-		String sql = "select * from operation_date order by date Desc";
+		String sql = "select * from operation_date order by time Desc";
 		ResultSet rs = null;
 		try {
 
@@ -446,6 +446,26 @@ public class JDBCHelper {
 			pStatement.setDate(1, date2);
 			rs2=pStatement.executeQuery();
 			return rs1.getInt("forks")-rs2.getInt("forks");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	private int getFollowersDeviation(Date date1,Date date2,String login){
+		String sql = "select * from user where date=? and login=?";
+		ResultSet rs1 = null;
+		ResultSet rs2 = null;
+		try {
+
+			pStatement = conn.prepareStatement(sql);
+			pStatement.setDate(1, date1);
+			pStatement.setString(2, login);
+			rs1 = pStatement.executeQuery();
+			pStatement.setDate(1, date2);
+			rs2=pStatement.executeQuery();
+			return rs1.getInt("followers")-rs2.getInt("followers");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

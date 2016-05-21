@@ -4,9 +4,11 @@ import po.*;
 
 import java.sql.Date;
 
+import org.kohsuke.github.GHRepository;
+
 
 public class VO2PO {
-    public static RepositoryPO convert(RepositoryVO vo){
+    public static GHRepository convert(RepositoryVO vo){
     	if(vo==null){
     		return null;
     	}else{
