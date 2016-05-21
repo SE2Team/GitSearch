@@ -12,7 +12,7 @@ import vo.UserVO;
  */
 public class SubUserTrendController implements MyController{
     @FXML
-    private ImageView imageView;
+    private ImageView portrait;
     @FXML
     private Label name;
     @FXML
@@ -21,6 +21,10 @@ public class SubUserTrendController implements MyController{
     private Label followers;
     @FXML
     private Label repos;
+    @FXML
+    private Label changes;
+    @FXML
+    private ImageView change_img;
 
     private FXUITest fxuiTest;
 
@@ -40,7 +44,9 @@ public class SubUserTrendController implements MyController{
         LogIn.setText(vo.getLogin());
         followers.setText(String.valueOf(vo.getFollowers()));
         repos.setText(String.valueOf(vo.getPublic_repos()));
-        imageView.setImage(vo.getUserImage());
+        portrait.setImage(vo.getUserImage());
+        handleImg();
+        changes.setText(String.valueOf(vo.getFollowersDeviation()));
     }
 
     @FXML
@@ -50,5 +56,16 @@ public class SubUserTrendController implements MyController{
 
     public void setVo(UserVO vo) {
         this.vo = vo;
+    }
+
+    private void handleImg(){
+        if(vo.getFollowersDeviation()>0){
+            change_img.setStyle("-fx-image: url(\"Images/up.png\");");
+        }else if(vo.getFollowersDeviation()==0){
+            change_img.setStyle("-fx-image: url(\"Images/no change.png\");");
+        }else if(vo.getFollowersDeviation()<0){
+            change_img.setStyle("-fx-image: url(\"Images/down.png\");");
+
+        }
     }
 }
