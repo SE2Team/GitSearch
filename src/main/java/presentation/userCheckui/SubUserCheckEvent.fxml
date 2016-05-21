@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="57.0" prefWidth="300.0" stylesheets="@../../default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.userCheckui.SubUserController">
+   <children>
+      <ImageView fx:id="avatar" fitHeight="50.0" fitWidth="50.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/home.png" />
+         </image>
+      </ImageView>
+      <Label id="RepName" fx:id="login" layoutX="64.0" layoutY="4.0" onMouseClicked="#check" prefHeight="26.0" prefWidth="244.0" text="UserLogin" textFill="#5799d3">
+         <font>
+            <Font name="Calibri" size="22.0" />
+         </font>
+         <tooltip>
+            <Tooltip fx:id="fullName" text="Empty Tooltip" />
+         </tooltip>
+      </Label>
+      <Line endX="437.0" endY="12.0" layoutX="2.5" layoutY="43.0" opacity="0.8" startY="12.0" stroke="#00000097" strokeWidth="0.5" />
+      <Label fx:id="username" layoutX="64.0" layoutY="29.0" text="username" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>
