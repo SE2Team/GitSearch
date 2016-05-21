@@ -16,12 +16,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.PagedIterable;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
@@ -55,7 +58,9 @@ public class CheckRepoController implements MyController {
     private FlowPane contributorPane;
 
     @FXML
-    private LineChart commitPane;
+    private ScrollPane scrollPane;
+    @FXML
+    private FlowPane commitPane;
 
     @FXML
     private BarChart poiChart;
@@ -77,7 +82,7 @@ public class CheckRepoController implements MyController {
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
 
-
+    private boolean isChart = false;
 //    @FXML
 //    private Tab conTab;
 //
@@ -103,6 +108,7 @@ public class CheckRepoController implements MyController {
         if (vo == null) {
             return;
         }
+        commitChart.setVisible(false);
         reponame.setText(vo.getName());
         description.setText(vo.getDescription());
         stars.setText(String.valueOf(vo.getStargazers_count()));
@@ -113,6 +119,12 @@ public class CheckRepoController implements MyController {
         try {
             setList();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            setCommitList();
+        }catch (IOException e){
             e.printStackTrace();
         }
 
@@ -138,6 +150,12 @@ public class CheckRepoController implements MyController {
         }
     }
 
+    private void setCommitList() throws IOException{
+        Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
+        while (commit_Itr.hasNext()){
+            commitPane.getChildren().add(getCommitSub(commit_Itr.next()));
+        }
+    }
     @FXML
     public void initialize() {
 //        xpoi.setLabel("languages");
@@ -147,6 +165,7 @@ public class CheckRepoController implements MyController {
         yAxis.setAutoRanging(false);
         yAxis.setUpperBound(10);
         yAxis.setTickUnit(1);
+
     }
 
     /**
@@ -194,8 +213,22 @@ public class CheckRepoController implements MyController {
         return anchorPane;
     }
 
-
-
+    /**
+     * 获取commit信息的子面板
+     * @param commit
+     * @return
+     * @throws IOException
+     */
+    public AnchorPane getCommitSub(GHCommit commit) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("SubCommit.fxml"));
+        AnchorPane anchorPane = loader.load();
+        SubCommitController controller = loader.getController();
+        controller.setFxui(fxui);
+        controller.setCommit(commit);
+        controller.repaint();
+        return anchorPane;
+    }
 
     private void setGraph() {
         //---------------set language graph-------------
@@ -289,7 +322,17 @@ public class CheckRepoController implements MyController {
     }
     @FXML
     private void handleCommit(){
-
+        if(isChart){
+            isChart = false;
+            commitChart.setVisible(false);
+            scrollPane.setVisible(true);
+            commitPane.setVisible(true);
+        }else{
+            isChart = true;
+            scrollPane.setVisible(false);
+            commitPane.setVisible(false);
+            commitChart.setVisible(true);
+        }
     }
 
 }
