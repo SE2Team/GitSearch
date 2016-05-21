@@ -76,7 +76,7 @@ public class JDBCHelper {
 				list.add(new UserPO(rs.getInt("id"), rs.getString("login"), rs.getString("type"), rs.getString("name"),
 						rs.getString("company"), rs.getString("email"), rs.getInt("public_repos"),
 						rs.getInt("public_gists"), rs.getInt("followers"), rs.getInt("following"),
-						rs.getDate("created_at"), rs.getDate("updated_at")));
+						rs.getDate("created_at"), rs.getDate("updated_at"),0));
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
