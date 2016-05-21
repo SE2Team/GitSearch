@@ -76,4 +76,26 @@ public class Statistics {
 	public StaStrVO getFollowers(){
 		return PO2VO.convert(factory.getStatisticsDataService().getFollowers());
 	}
+	
+	public StaStrVO getAll_RepoCreated() {
+		// TODO Auto-generated method stub
+		return PO2VO.convert(factory.getStatisticsDataService().getAll_RepoCreated());
+	}
+
+	public StaStrVO getAll_UserCreated() {
+		// TODO Auto-generated method stub
+		return PO2VO.convert(factory.getStatisticsDataService().getAll_UserCreated());
+	}
+
+	
+	public StaStrVO getAll_Star() {
+		// TODO Auto-generated method stub
+		return PO2VO.convert(factory.getStatisticsDataService().getAll_Star());
+	}
+
+	
+	public StaStrVO getAll_Fork() {
+		// TODO Auto-generated method stub
+		return PO2VO.convert(factory.getStatisticsDataService().getAll_Fork());
+	}
 }

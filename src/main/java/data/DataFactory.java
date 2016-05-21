@@ -1,13 +1,7 @@
 package data;
 
-import dataService.BranchDataService;
-import dataService.CollaboratorsDataService;
-import dataService.CommitDataService;
-import dataService.ContributorsDataService;
+
 import dataService.DataFatoryService;
-import dataService.ForkDataService;
-import dataService.IssuesDataService;
-import dataService.PullDataService;
 import dataService.RepositoryDataService;
 import dataService.StatisticsDataService;
 import dataService.UserDataService;
@@ -17,43 +11,33 @@ import dataService.UserDataService;
  * Created by moeyui on 2016/3/5 0005.
  */
 public class DataFactory implements DataFatoryService{
-    public RepositoryDataService getRepositoryDataService() {
-        return new RepositoryData();
+	public static JDBCHelper helper=null;
+	public RepositoryDataService getRepositoryDataService() {
+       RepositoryData repoData = null;
+       if(repoData==null){
+    	   repoData=new RepositoryData();
+       }
+		return repoData;
     }
 
     public UserDataService getUserDataService() {
-        return new UserData();
+        UserData userData=null;
+        if(userData==null){
+        	userData=new UserData();
+        }		
+    	
+    	return userData;
     }
     
-    public BranchDataService getBranchDataService (){
-    	return new BranchData() ;
-    }
-    
-    public CollaboratorsDataService getCollaboratorsDataService(){
-    	return new CollaboratorsData();
-    }
-    
-    public CommitDataService getCommitDataService(){
-    	return new CommitData();
-    }
-    
-    public ContributorsDataService getContributorsDataService(){
-    	return new ContributorsData();
-    }
-    
-    public ForkDataService getForkDataService(){
-    	return new ForkData();
-    }
-    
-    public IssuesDataService getIssuesDataService(){
-    	return new IssuesData();
-    }
-    
-    public PullDataService getPullDataService(){
-    	return new  PullData();
-    }
-    
+
     public StatisticsDataService getStatisticsDataService(){
-    	return new StatisticsData();
+    	StatisticsData statisticsData=null;
+    	if(statisticsData==null){
+    		statisticsData=new StatisticsData();
+    	}
+    	return statisticsData;
     }
+    
+
+	
 }

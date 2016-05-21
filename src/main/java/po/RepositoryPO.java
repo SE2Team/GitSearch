@@ -40,13 +40,16 @@ public class RepositoryPO  extends GHRepository{
 	int open_issues = 0;
 	int subscribers_count = 0;
 	ArrayList<String> contributors;
+	int starDeviation;
+	int forkDeviation;
 	
 	
 
 	public RepositoryPO(String name, int id, String owner_type, URL html_url, String description, Boolean fork,
 			Date created, Date  updated, Date  pushed, int size, int stargazers_count, String language, int forks,
 			int open_issues, int subscribers_count, int contributor,
-			 ArrayList<String> contributors) {
+			 ArrayList<String> contributors,int starDeviation,
+	int forkDeviation) {
 
 		this.name = name;
 		this.subscribers_count = subscribers_count;// 订阅者
@@ -65,10 +68,19 @@ public class RepositoryPO  extends GHRepository{
 		this.description = description;
 		this.contributor = contributor;
 		this.contributors = contributors;
+		this.starDeviation=starDeviation;
+		this.forkDeviation=forkDeviation;
 		
 
 	}
-
+	
+	public int getStarDevation(){
+		return this.starDeviation;
+	}
+	
+	public int getForkDevation(){
+		return this.forkDeviation;
+	}
 	
 	public ArrayList<String> getContributors() {
 		return this.contributors;
@@ -190,5 +202,7 @@ public class RepositoryPO  extends GHRepository{
 		}
 		return repository.listContributors();
 	}
+	
+	
  
 }

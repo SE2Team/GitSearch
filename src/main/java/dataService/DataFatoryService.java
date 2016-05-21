@@ -9,18 +9,7 @@ public interface DataFatoryService {
     RepositoryDataService getRepositoryDataService();
 
     UserDataService getUserDataService();
-    public CollaboratorsDataService getCollaboratorsDataService();
-
-    public CommitDataService getCommitDataService();
-    public BranchDataService getBranchDataService ();
-
-    public ContributorsDataService getContributorsDataService();
-
-    public ForkDataService getForkDataService();
-
-    public IssuesDataService getIssuesDataService();
-
-    public PullDataService getPullDataService();
     
-    public StatisticsDataService getStatisticsDataService();
+    StatisticsDataService getStatisticsDataService();
+     
 }
