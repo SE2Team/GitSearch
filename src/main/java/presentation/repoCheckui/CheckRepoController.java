@@ -156,8 +156,10 @@ public class CheckRepoController implements MyController {
 
     private void setCommitList() throws IOException{
         Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
-        while (commit_Itr.hasNext()){
+        int i=0;
+        while (commit_Itr.hasNext()&&i<10){
             commitPane.getChildren().add(getCommitSub(commit_Itr.next()));
+            i++;
         }
     }
     @FXML
