@@ -74,7 +74,7 @@
                         <Font name="Comic Sans MS" size="20.0" />
                      </font>
                   </Label>
-                  <Hyperlink fx:id="webInfo" layoutX="10.0" layoutY="87.0" prefHeight="30.0" prefWidth="269.0" text="https://github.com/aasm/aasm.git">
+                  <Hyperlink fx:id="link" layoutX="10.0" layoutY="87.0" prefHeight="30.0" prefWidth="269.0" text="https://github.com/aasm/aasm.git">
                      <font>
                         <Font name="Calibri" size="18.0" />
                      </font>
@@ -133,7 +133,7 @@
                                                                 <NumberAxis label="Commit Times" side="LEFT" />
                                                               </yAxis>
                                                             </LineChart>
-                                                            <ScrollPane prefHeight="228.0" prefWidth="790.0">
+                                                            <ScrollPane fx:id="scrollPane" prefHeight="228.0" prefWidth="790.0">
                                                               <content>
                                                                   <FlowPane fx:id="commitPane" prefHeight="226.0" prefWidth="788.0" />
                                                               </content>

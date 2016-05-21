@@ -15,6 +15,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.chart.*;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
@@ -77,6 +78,8 @@ public class CheckRepoController implements MyController {
 //    private TextArea readMe;
     @FXML
     private WebView webInfo;
+    @FXML
+    private Hyperlink link;
 
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
@@ -114,6 +117,7 @@ public class CheckRepoController implements MyController {
         forks.setText(String.valueOf(vo.getForks()));
         subscribers.setText(String.valueOf(vo.getSubscribers_count()));
 
+        link.setText(vo.getHtml_url().toExternalForm());
         language.setText(vo.getLanguage());
         try {
             setList();
