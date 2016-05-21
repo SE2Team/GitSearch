@@ -87,7 +87,7 @@ public class RepoStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String, Number>> getData(StaStrVO vo, Boolean b) {
         ObservableList<XYChart.Series<String, Number>> observableList = FXCollections.observableArrayList();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
-        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 10; i++) {
+        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 20; i++) {
             if (vo.getX().get(vo.getX().size() - 1 - i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
@@ -104,7 +104,7 @@ public class RepoStatisticsController implements MyController {
                 }
             });
             series.getData().add(data);
-            if (i == 9 && b) {
+            if (i == 19 && b) {
                 series = addOthers(series, vo.getSum(10));
             }
         }

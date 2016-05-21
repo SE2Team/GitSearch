@@ -2,7 +2,6 @@ package po;
 
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
-import org.kohsuke.github.PagedIterable;
 
 import java.io.IOException;
 import java.util.Date;

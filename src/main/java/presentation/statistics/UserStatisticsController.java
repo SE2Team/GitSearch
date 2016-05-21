@@ -100,13 +100,13 @@ public class UserStatisticsController implements MyController {
     private ObservableList<XYChart.Series<String, Number>> getData(StaStrVO vo, Boolean b) {
         ObservableList<XYChart.Series<String, Number>> observableList = FXCollections.observableArrayList();
         XYChart.Series<String, Number> series = new XYChart.Series<>();
-        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 10; i++) {
+        for (int i = 0; i < vo.getInt().size() && i < vo.getX().size() && i < 20; i++) {
             if (vo.getX().get(i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-/**
- * 添加互动和文字
- */
+            /**
+             * 添加互动和文字
+             */
             XYChart.Data<String, Number> data = new XYChart.Data<>(vo.getX().get(i), vo.getInt().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override
@@ -117,7 +117,7 @@ public class UserStatisticsController implements MyController {
                 }
             });
             series.getData().add(data);
-            if (i == 9 && b) {
+            if (i == 19 && b) {
                 series = addOthers(series, vo.getSum(10));
             }
         }
@@ -134,9 +134,9 @@ public class UserStatisticsController implements MyController {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         for (int i = 0; i < vo.getInt().size() && i < vo.getInt2().size() && i < 10; i++) {
 
-/**
- * 添加互动和文字
- */
+            /**
+             * 添加互动和文字
+             */
             XYChart.Data<String, Number> data = new XYChart.Data<>(String.valueOf(vo.getInt().get(i)), vo.getInt2().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override

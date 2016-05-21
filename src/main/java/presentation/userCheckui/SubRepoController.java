@@ -46,13 +46,13 @@ public class SubRepoController implements MyController {
      * @param repo
      */
     public void set(String userLogin, String repo){
-        name= userLogin;
-        if(userLogin =="@more"){
+        name= repo;
+        if(repo =="@more"){
             setMore();
             return;
         }
-        this.label.setText(userLogin);
-        this.fullName.setText(userLogin);
+        this.label.setText(repo);
+        this.fullName.setText(repo);
     }
 
     public void setMore(){
@@ -60,8 +60,7 @@ public class SubRepoController implements MyController {
         imageView.setVisible(false);
     }
     @FXML
-    private void checkRepo(){
-        String str1,str2;
+    private void check(){
         try {
             fxuiTest.checkRepo(bl.checkRepository(userLogin,name));
         } catch (IOException e) {
