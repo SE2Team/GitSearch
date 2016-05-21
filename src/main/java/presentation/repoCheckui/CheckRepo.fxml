@@ -146,11 +146,11 @@
                                                 </Tab>
                                               <Tab id="Contributors" text="Contributors">
                                                 <content>
-                                                  <AnchorPane maxHeight="250.0" maxWidth="823.0" minHeight="250.0" minWidth="823.0" prefHeight="180.0" prefWidth="200.0">
+                                                  <AnchorPane maxHeight="250.0" maxWidth="823.0" minHeight="227.0" minWidth="823.0" prefHeight="227.0" prefWidth="823.0">
                                                          <children>
-                                                            <ScrollPane layoutY="1.0" prefViewportHeight="232.0" prefViewportWidth="820.0">
+                                                            <ScrollPane prefHeight="236.0" prefViewportHeight="232.0" prefViewportWidth="820.0" prefWidth="822.0">
                                                                <content>
-                                                                  <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="230.0" prefWidth="820.0" />
+                                                                  <FlowPane fx:id="contributorPane" layoutY="1.0" prefHeight="224.0" prefWidth="820.0" />
                                                                </content>
                                                             </ScrollPane>
                                                          </children>

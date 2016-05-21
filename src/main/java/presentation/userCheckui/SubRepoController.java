@@ -60,7 +60,7 @@ public class SubRepoController implements MyController {
         imageView.setVisible(false);
     }
     @FXML
-    private void checkRepo(){
+    private void check(){
         String str1,str2;
         try {
             fxuiTest.checkRepo(bl.checkRepository(userLogin,name));

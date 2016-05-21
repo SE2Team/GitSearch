@@ -134,9 +134,9 @@ public class UserStatisticsController implements MyController {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         for (int i = 0; i < vo.getInt().size() && i < vo.getInt2().size() && i < 10; i++) {
 
-/**
- * 添加互动和文字
- */
+            /**
+             * 添加互动和文字
+             */
             XYChart.Data<String, Number> data = new XYChart.Data<>(String.valueOf(vo.getInt().get(i)), vo.getInt2().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override

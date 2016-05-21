@@ -19,7 +19,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.kohsuke.github.GHRepository;
 import presentation.FXUITest;
@@ -133,7 +132,8 @@ public class CheckRepoController implements MyController {
 
     private void setList() throws IOException {
         Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
-        while (itrcon.hasNext()) {
+        int i = 0;
+        while (itrcon.hasNext()&& i++<9) {
             contributorPane.getChildren().add(getSub(itrcon.next()));
         }
     }
