@@ -108,8 +108,8 @@ public class JDBCHelper {
 	public UserPO checkUser(String login) {
 
 		PagedSearchIterable<GHUser> re = APIConnection.getG().searchUsers().q(login).in("login").list();
-
-		if (re.getTotalCount() > 1) {
+		int count=re.getTotalCount();
+		if (count > 1) {
 			Iterator<GHUser> itr = re.iterator();
 			while (itr.hasNext()) {
 				GHUser user = itr.next();
@@ -123,7 +123,7 @@ public class JDBCHelper {
 				 */
 				return null;
 			}
-		} else if (re.getTotalCount() == 1) {
+		} else if ( count== 1) {
 			return new UserPO(re.iterator().next());
 		} else {
 			return null;
@@ -142,7 +142,8 @@ public class JDBCHelper {
 	 */
 	public RepositoryPO checkRepo(String login, String reponame) throws IOException {
 		PagedSearchIterable<GHRepository> re = APIConnection.getG().searchRepositories().q(reponame).in("name").list();
-		if (re.getTotalCount() > 1) {
+		int count=re.getTotalCount();
+		if ( count> 1) {
 			Iterator<GHRepository> itr = re.iterator();
 			while (itr.hasNext()) {
 				GHRepository repo = itr.next();
@@ -154,9 +155,9 @@ public class JDBCHelper {
 				 */
 				return null;
 			}
-		} else if (re.getTotalCount() == 1) {
+		} else if (count == 1) {
 			GHRepository repository = re.iterator().next();
-			return repository.getOwner().getLogin() == login ? (RepositoryPO) repository : null;
+			return repository.getOwner().getLogin() == login ?  new RepositoryPO(repository) : null;
 		} else {
 			return null;
 		}
@@ -413,6 +414,7 @@ public class JDBCHelper {
 		return list;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getStarDeviation(Date date1,Date date2,String fullname){
 		String sql = "select * from repo where date=? and fullname=?";
 		ResultSet rs1 = null;
@@ -433,6 +435,7 @@ public class JDBCHelper {
 		return 0;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getForkDeviation(Date date1,Date date2,String fullname){
 		String sql = "select * from repo where date=? and fullname=?";
 		ResultSet rs1 = null;
@@ -453,6 +456,7 @@ public class JDBCHelper {
 		return 0;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getFollowersDeviation(Date date1,Date date2,String login){
 		String sql = "select * from user where date=? and login=?";
 		ResultSet rs1 = null;

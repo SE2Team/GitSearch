@@ -16,7 +16,7 @@ import java.util.Date;
  * Created by moeyui on 2016/3/4 0004.
  */
 
-public class RepositoryPO  extends GHRepository{
+public class RepositoryPO {
 
     GHRepository repository;
 
@@ -159,9 +159,11 @@ public class RepositoryPO  extends GHRepository{
 	}
 
 	
-	public boolean getFork() {
-			return this.fork;
-		
+	public boolean isFork() {
+	if(repository==null)	
+		return this.fork;
+	else
+		return repository.isFork();
 	}
 
 	public int getId() {
