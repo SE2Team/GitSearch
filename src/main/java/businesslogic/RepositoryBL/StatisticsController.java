@@ -9,6 +9,9 @@ import vo.UserVO;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
 import org.kohsuke.github.GHCommit;
@@ -105,21 +108,33 @@ public class StatisticsController implements StatisticsBLService{
 	@Override
 	public StaStrVO getCommit(RepositoryVO vo) throws ParseException {
 		// TODO Auto-generated method stub
-//		GHRepository dpo=vo.getDpo();
-//		GHCommitQueryBuilder builder=dpo.queryCommits().since(new Time().getNowTime());
-//		GHCommit commit=new GHCommit();
-//		Iterator<GHCommit> iterator=builder.list().iterator();
-//		GHCommitComment comment=new GHCommitComment();
-//		while (iterator.hasNext()) {
-//			commit=iterator.next();
-//			while (commit.listComments().iterator().hasNext()) {
-//				comment=commit.listComments().iterator().next();
-//				
-//			}
-//			System.out.println(commit.listComments());
-//			
-//		}
-		return null;
+		
+		GHRepository dpo = vo.getDpo();
+		ArrayList<Integer> listInt = new ArrayList<>();
+		ArrayList<String> listStr = new ArrayList<>();
+		SimpleDateFormat sdp = new SimpleDateFormat("yyyy-MM-dd");
+		Date day;
+		day = new Time().getNowTime(0);
+		for (int p = 5; p >= 0; p--) {
+			if (Integer.parseInt(sdp.format(day).substring(5, 7)) - p > 0) {
+				listStr.add(Integer.parseInt(sdp.format(day).substring(5, 7)) - p + "");
+			} else {
+				listStr.add(Integer.parseInt(sdp.format(day).substring(5, 7)) - p + 12 + "");
+			}
+
+		}
+		for (int i = 5; i >= 0; i--) {
+			day = (Date) new Time().getNowTime(i);
+			GHCommitQueryBuilder builder = dpo.queryCommits().since(day);
+			ArrayList<GHCommit> list = (ArrayList<GHCommit>) builder.list().asList();
+			listInt.add(list.size());
+
+		}
+		
+		for (int i = 0; i < listInt.size() - 1; i++) {
+			listInt.set(i, listInt.get(i) - listInt.get(i+1) );
+		}
+		return new StaStrVO(listStr, listInt);
 	}
 
 	@Override
