@@ -108,7 +108,7 @@
                                        <children>
                                           <TabPane prefHeight="150.0" prefWidth="819.0" stylesheets="@../../default.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                             <tabs>
-                                              <Tab id="Contributors" text="Contributors">
+                                              <Tab id="Contributors" fx:id="contriTab" onSelectionChanged="#handleCheckContri" text="Contributors">
                                                 <content>
                                                   <AnchorPane maxHeight="250.0" maxWidth="823.0" minHeight="250.0" minWidth="823.0" prefHeight="180.0" prefWidth="200.0">
                                                          <children>
@@ -121,7 +121,7 @@
                                                       </AnchorPane>
                                                 </content>
                                               </Tab>
-                                                <Tab id="Collaborators" onSelectionChanged="#handleCommit" text="Commit">
+                                                <Tab id="Collaborators" fx:id="commitTab" onSelectionChanged="#handleCheckCommit" text="Commit">
                                                    <content>
                                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="820.0">
                                                          <children>
