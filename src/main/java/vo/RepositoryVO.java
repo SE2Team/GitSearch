@@ -41,6 +41,7 @@ public class RepositoryVO {
     int forks;
     PagedIterable<GHRepository.Contributor> contributors;
     GHRepository dpo;
+    String ownerLogin;
 
     int open_issues = 0;
     int subscribers_count = 0;
@@ -76,6 +77,7 @@ public class RepositoryVO {
         contributors = po.listContributors();
         starDeviation=po.getStarDevation();
         forkDeviation=po.getForkDevation();
+        ownerLogin=po.getLogin();
     }
 
 	public int getStarDevation(){

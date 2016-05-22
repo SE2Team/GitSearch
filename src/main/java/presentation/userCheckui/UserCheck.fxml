@@ -163,7 +163,7 @@
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="614.0" prefWidth="357.0">
                                                     <children>
-                                                        <ScrollPane prefHeight="614.0" prefWidth="357.0">
+                                                        <ScrollPane fx:id="scrollPane" onScrollFinished="#handleScroll" prefHeight="614.0" prefWidth="357.0">
                                                             <content>
                                                                 <FlowPane fx:id="showList" prefHeight="609.0" prefWidth="300.0" />
                                                             </content>
