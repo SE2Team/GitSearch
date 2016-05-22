@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.repoCheckui.SubCommitController">
    <children>
-      <Label fx:id="commitDesc" layoutX="24.0" layoutY="3.0" text="Commit Description">
+      <Label fx:id="commitDesc" layoutX="24.0" layoutY="3.0" prefHeight="23.0" prefWidth="737.0" text="Commit Description">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
+         <tooltip>
+            <Tooltip fx:id="fullCommitInfo" />
+         </tooltip>
       </Label>
       <Label fx:id="commitInfo" layoutX="24.0" layoutY="30.0" text="someone commit sometime">
          <font>

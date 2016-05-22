@@ -18,6 +18,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
@@ -31,6 +32,7 @@ import vo.RepositoryVO;
 import vo.StaStrVO;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -81,15 +83,18 @@ public class CheckRepoController implements MyController {
     @FXML
     private Hyperlink link;
 
+    private ArrayList<Parent> commitList = new ArrayList<>();
+    private ArrayList<Parent> contriList = new ArrayList<>();
+
     private XYChart.Series seriesLang = new XYChart.Series<>();
     private RepositoryBLService bl = new RepositoryController();
 
     private boolean isChart = false;
-//    @FXML
-//    private Tab conTab;
-//
-//    @FXML
-//    private Tab colTab;
+    @FXML
+    private Tab contriTab;
+
+    @FXML
+    private Tab commitTab;
 
 
     private RepositoryVO vo;
@@ -119,22 +124,21 @@ public class CheckRepoController implements MyController {
 
         link.setText(vo.getHtml_url().toExternalForm());
         language.setText(vo.getLanguage());
-        try {
-            setList();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try{
-            setCommitList();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+//        try {
+//            setList();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         String[] split = vo.getName().split("/");
         String username = split[0];
         String reponame = split[1];
         owner.setText(username);
+        try {
+            handleCheckContri();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 //        try {
 //            readMe.setText(vo.getReadMe().read().toString());
 //        } catch (IOException e) {
@@ -146,22 +150,22 @@ public class CheckRepoController implements MyController {
 
     }
 
-    private void setList() throws IOException {
-        Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
-        int i = 0;
-        while (itrcon.hasNext()&& i++<9) {
-            contributorPane.getChildren().add(getSub(itrcon.next()));
-        }
-    }
-
-    private void setCommitList() throws IOException{
-        Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
-        int i=0;
-        while (commit_Itr.hasNext()&&i<10){
-            commitPane.getChildren().add(getCommitSub(commit_Itr.next()));
-            i++;
-        }
-    }
+//    private void setList() throws IOException {
+//        Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
+//        int i = 0;
+//        while (itrcon.hasNext()&& i++<9) {
+//            contributorPane.getChildren().add(getSub(itrcon.next()));
+//        }
+//    }
+//
+//    private void setCommitList() throws IOException{
+//        Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
+//        int i=0;
+//        while (commit_Itr.hasNext()&&i<10){
+//            commitPane.getChildren().add(getCommitSub(commit_Itr.next()));
+//            i++;
+//        }
+//    }
     @FXML
     public void initialize() {
 //        xpoi.setLabel("languages");
@@ -326,6 +330,67 @@ public class CheckRepoController implements MyController {
             }
         });
     }
+
+//    @FXML
+//    private void showCommit(){
+//        try{
+//            handleCheckCommit();
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @FXML
+//    private void showContri(){
+//        try{
+//            handleCheckContri();
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+//    }
+
+    @FXML
+    private void handleCheckCommit() throws IOException{
+        if(commitTab.isSelected()==false){
+            return;
+        }else{
+            if(commitList.size()==0){
+                Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
+                int i=0;
+                if(commit_Itr!=null){
+                    while (commit_Itr.hasNext()&&i<10){
+                        commitList.add(getCommitSub(commit_Itr.next()));
+                        i++;
+                    }
+                }
+                commitPane.getChildren().addAll(commitList);
+            }
+
+        }
+
+    }
+
+    @FXML
+    private void handleCheckContri() throws IOException{
+        if(contriTab.isSelected()==false){
+            return;
+        }else{
+            if(contriList.size()==0){
+                Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
+                int i = 0;
+                if(itrcon!=null){
+                    while (itrcon.hasNext()&& i++<9) {
+                        contriList.add(getSub(itrcon.next()));
+                    }
+                    contributorPane.getChildren().addAll(contriList);
+                }
+
+            }
+
+        }
+
+    }
+
     @FXML
     private void handleCommit(){
         if(isChart){

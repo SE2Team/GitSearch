@@ -2,6 +2,7 @@ package presentation.repoCheckui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import org.kohsuke.github.GHCommit;
 import presentation.FXUITest;
 import presentation.common.MyController;
@@ -23,6 +24,8 @@ public class SubCommitController implements MyController{
     String logIn;
     String time;
 
+    @FXML
+    private Tooltip fullCommitInfo;
     @FXML
     private Label commitDesc;
 
@@ -52,6 +55,10 @@ public class SubCommitController implements MyController{
                 time = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date);
                 commitInfo.setText(logIn+" committed at "+time);
                 commitDesc.setText(commit.getCommitShortInfo().getMessage());
+                fullCommitInfo.setText(commit.getCommitShortInfo().getMessage());
+//                System.out.println(commit.getCommitShortInfo().getMessage());
+//                System.out.println(logIn+" committed at "+time);
+//                System.out.println();
             }
         } catch (IOException e) {
             e.printStackTrace();

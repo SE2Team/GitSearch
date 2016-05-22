@@ -6,7 +6,7 @@ import po.UserPO;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class UserTest extends TestCase{
+public class UserTest extends TestCase {
 	private UserData user;
 	ArrayList<UserPO> userPO;
 	private UserPO po1,po2,po3;
