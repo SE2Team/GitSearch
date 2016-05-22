@@ -25,7 +25,6 @@ import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHRepository;
-import org.kohsuke.github.PagedIterable;
 import presentation.FXUITest;
 import presentation.common.MyController;
 import vo.RepositoryVO;
@@ -76,7 +75,7 @@ public class CheckRepoController implements MyController {
     private Label owner;
     @FXML
     private AnchorPane noNetWork;
-//    @FXML
+    //    @FXML
 //    private TextArea readMe;
     @FXML
     private WebView webInfo;
@@ -124,6 +123,11 @@ public class CheckRepoController implements MyController {
 
         link.setText(vo.getHtml_url().toExternalForm());
         language.setText(vo.getLanguage());
+        try {
+            handleCheckContri();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 //        try {
 //            setList();
 //        } catch (IOException e) {
@@ -150,7 +154,7 @@ public class CheckRepoController implements MyController {
 
     }
 
-//    private void setList() throws IOException {
+    //    private void setList() throws IOException {
 //        Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
 //        int i = 0;
 //        while (itrcon.hasNext()&& i++<9) {
@@ -184,11 +188,15 @@ public class CheckRepoController implements MyController {
      * @param vo
      */
     public void setVo(RepositoryVO vo) throws IOException {
-        String[] split = vo.getName().split("/");
-        String username = split[0];
-        String reponame = split[1];
-        this.vo = bl.checkRepository(username, reponame);
+        if (vo.isCheck()) {
+            this.vo=vo;
+        } else {
+            String[] split = vo.getName().split("/");
+            String username = split[0];
+            String reponame = split[1];
+            this.vo = bl.checkRepository(username, reponame);
 //        setGraph();
+        }
 
     }
 
@@ -207,6 +215,7 @@ public class CheckRepoController implements MyController {
 
     /**
      * 展示贡献者login的小面板
+     *
      * @param contributor
      * @return
      * @throws IOException
@@ -225,11 +234,12 @@ public class CheckRepoController implements MyController {
 
     /**
      * 获取commit信息的子面板
+     *
      * @param commit
      * @return
      * @throws IOException
      */
-    public AnchorPane getCommitSub(GHCommit commit) throws IOException{
+    public AnchorPane getCommitSub(GHCommit commit) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("SubCommit.fxml"));
         AnchorPane anchorPane = loader.load();
@@ -244,7 +254,7 @@ public class CheckRepoController implements MyController {
         //---------------set language graph-------------
         try {
             staStrVO = bl.languagesOfRepository(vo);
-            if (staStrVO.getX().size()!=0) {
+            if (staStrVO.getX().size() != 0) {
 
 
                 double sum = 0;
@@ -255,7 +265,7 @@ public class CheckRepoController implements MyController {
                 for (int i = 0; i < staStrVO.getInt().size() && i < staStrVO.getX().size() && i < 5; i++) {
                     temp += staStrVO.getInt().get(i);
                     langs.addAll(new PieChart.Data(staStrVO.getX().get(i), staStrVO.getInt().get(i)));
-                    if (i==4){
+                    if (i == 4) {
                         langs.addAll(new PieChart.Data("Others", sum - temp));
                     }
                 }
@@ -271,7 +281,7 @@ public class CheckRepoController implements MyController {
         }
         //---------------set point graph-------------
 
-        StatisticsBLService sbl=new StatisticsController();
+        StatisticsBLService sbl = new StatisticsController();
         try {
             poiChart.setData(getData(sbl.getScores(vo)));
         } catch (IOException e) {
@@ -287,7 +297,7 @@ public class CheckRepoController implements MyController {
             if (vo.getX().get(vo.getX().size() - 1 - i).equalsIgnoreCase("Unknown")) {
                 continue;
             }
-            XYChart.Data<String,Integer> data=new XYChart.Data<String,Integer>(vo.getX().get(i), vo.getInt().get(i));
+            XYChart.Data<String, Integer> data = new XYChart.Data<String, Integer>(vo.getX().get(i), vo.getInt().get(i));
             data.nodeProperty().addListener(new ChangeListener<Node>() {
                 @Override
                 public void changed(ObservableValue<? extends Node> ov, Node oldNode, final Node node) {
@@ -304,19 +314,23 @@ public class CheckRepoController implements MyController {
         return observableList;
     }
 
-    /** places a text label with a bar's value above a bar node for a given XYChart.Data */
+    /**
+     * places a text label with a bar's value above a bar node for a given XYChart.Data
+     */
     private void displayLabelForData(XYChart.Data<String, Integer> data) {
         final Node node = data.getNode();
         final Text dataText = new Text(data.getYValue() + "");
         node.parentProperty().addListener(new ChangeListener<Parent>() {
-            @Override public void changed(ObservableValue<? extends Parent> ov, Parent oldParent, Parent parent) {
+            @Override
+            public void changed(ObservableValue<? extends Parent> ov, Parent oldParent, Parent parent) {
                 Group parentGroup = (Group) parent;
                 parentGroup.getChildren().add(dataText);
             }
         });
 
         node.boundsInParentProperty().addListener(new ChangeListener<Bounds>() {
-            @Override public void changed(ObservableValue<? extends Bounds> ov, Bounds oldBounds, Bounds bounds) {
+            @Override
+            public void changed(ObservableValue<? extends Bounds> ov, Bounds oldBounds, Bounds bounds) {
                 dataText.setLayoutX(
                         Math.round(
                                 bounds.getMinX() + bounds.getWidth() / 2 - dataText.prefWidth(-1) / 2
@@ -350,15 +364,15 @@ public class CheckRepoController implements MyController {
 //    }
 
     @FXML
-    private void handleCheckCommit() throws IOException{
-        if(commitTab.isSelected()==false){
+    private void handleCheckCommit() throws IOException {
+        if (commitTab.isSelected() == false) {
             return;
-        }else{
-            if(commitList.size()==0){
+        } else {
+            if (commitList.size() == 0) {
                 Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
-                int i=0;
-                if(commit_Itr!=null){
-                    while (commit_Itr.hasNext()&&i<10){
+                int i = 0;
+                if (commit_Itr != null) {
+                    while (commit_Itr.hasNext() && i < 10) {
                         commitList.add(getCommitSub(commit_Itr.next()));
                         i++;
                     }
@@ -371,15 +385,15 @@ public class CheckRepoController implements MyController {
     }
 
     @FXML
-    private void handleCheckContri() throws IOException{
-        if(contriTab.isSelected()==false){
+    private void handleCheckContri() throws IOException {
+        if (contriTab.isSelected() == false||this.vo==null) {
             return;
-        }else{
-            if(contriList.size()==0){
+        } else {
+            if (contriList.size() == 0) {
                 Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
                 int i = 0;
-                if(itrcon!=null){
-                    while (itrcon.hasNext()&& i++<9) {
+                if (itrcon != null) {
+                    while (itrcon.hasNext() && i++ < 9) {
                         contriList.add(getSub(itrcon.next()));
                     }
                     contributorPane.getChildren().addAll(contriList);
@@ -392,13 +406,13 @@ public class CheckRepoController implements MyController {
     }
 
     @FXML
-    private void handleCommit(){
-        if(isChart){
+    private void handleCommit() {
+        if (isChart) {
             isChart = false;
             commitChart.setVisible(false);
             scrollPane.setVisible(true);
             commitPane.setVisible(true);
-        }else{
+        } else {
             isChart = true;
             scrollPane.setVisible(false);
             commitPane.setVisible(false);

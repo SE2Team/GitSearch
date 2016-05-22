@@ -31,6 +31,7 @@ public class UserVO  {
     String avatar;
     int followersDeviation;
     String blog;
+    boolean isCheck=false;
 
     GHUser dpo;
     @Deprecated
@@ -60,6 +61,7 @@ public class UserVO  {
         followersDeviation= po.getFollowersDeviation();
         avatar=po.getAvatarurl();
         blog=po.getBlog();
+        isCheck=po.isCheck();
     }
 
     public int getFollowersDeviation(){
@@ -132,5 +134,9 @@ public class UserVO  {
 
     public String getBlog() {
         return blog;
+    }
+
+    public boolean isCheck() {
+        return isCheck;
     }
 }
