@@ -214,5 +214,13 @@ public class RepositoryPO {
 	public String getLogin(){
 		return repository.getOwnerName();
 	}
+	
+	public boolean isCheck(){
+		if(repository==null){
+			return false;
+		}else{
+			return true;
+		}
+	}
  
 }
