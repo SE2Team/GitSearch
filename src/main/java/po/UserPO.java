@@ -174,4 +174,12 @@ public class UserPO {
 		return user.getBlog();
 	}
 	
+	public boolean isCheck(){
+		if(user==null){
+			return false;
+		}else{
+			return true;
+		}
+	}
+	
 }
