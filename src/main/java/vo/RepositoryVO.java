@@ -42,6 +42,7 @@ public class RepositoryVO {
     PagedIterable<GHRepository.Contributor> contributors;
     GHRepository dpo;
     String ownerLogin;
+    boolean isCheck=false;
 
     int open_issues = 0;
     int subscribers_count = 0;
@@ -78,6 +79,7 @@ public class RepositoryVO {
         starDeviation=po.getStarDevation();
         forkDeviation=po.getForkDevation();
         ownerLogin=po.getLogin();
+        isCheck=po.isCheck();
     }
 
 	public int getStarDevation(){
@@ -166,5 +168,9 @@ public class RepositoryVO {
 
     public GHContent getReadMe() throws IOException {
         return dpo.getReadme();
+    }
+
+    public boolean isCheck() {
+        return isCheck;
     }
 }
