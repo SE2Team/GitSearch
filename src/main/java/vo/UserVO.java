@@ -57,7 +57,7 @@ public class UserVO  {
         created_at= String.valueOf(po.getCreatedAt());
         updated_at= String.valueOf(po.getUpdatedAt());
         followersDeviation= po.getFollowersDeviation();
-        avatar=po.getAvatarUrl();
+        avatar=po.getAvatarurl();
     }
 
     public int getFollowersDeviation(){

@@ -157,7 +157,7 @@ public class JDBCHelper {
 			}
 		} else if (count == 1) {
 			GHRepository repository = re.iterator().next();
-			return repository.getOwner().getLogin() == login ? (RepositoryPO) repository : null;
+			return repository.getOwner().getLogin() == login ?  new RepositoryPO(repository) : null;
 		} else {
 			return null;
 		}
