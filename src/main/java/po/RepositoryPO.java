@@ -43,15 +43,15 @@ public class RepositoryPO {
 	ArrayList<String> contributors;
 	int starDeviation;
 	int forkDeviation;
-	
+	String login;
 	
 
 	public RepositoryPO(String name, int id, String owner_type, URL html_url, String description, Boolean fork,
 			Date created, Date  updated, Date  pushed, int size, int stargazers_count, String language, int forks,
 			int open_issues, int subscribers_count, int contributor,
 			 ArrayList<String> contributors,int starDeviation,
-	int forkDeviation) {
-
+	int forkDeviation,String login) {
+		this.login=login;
 		this.name = name;
 		this.subscribers_count = subscribers_count;// 订阅者
 		this.open_issues = open_issues;
@@ -212,6 +212,9 @@ public class RepositoryPO {
 	}
 	
 	public String getLogin(){
+		if(repository==null){
+			return this.login;
+		}
 		return repository.getOwnerName();
 	}
 	

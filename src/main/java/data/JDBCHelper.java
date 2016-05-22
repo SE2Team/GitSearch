@@ -51,7 +51,7 @@ public class JDBCHelper {
 						rs.getDate("updated"), rs.getDate("pushed"), rs.getInt("size"), rs.getInt("stars"),
 						rs.getString("language"), rs.getInt("forks"), rs.getInt("open_issues"),
 						rs.getInt("subscribers_count"), 0, null, rs.getInt("stars_Deviation"),
-						rs.getInt("fork_Deviation")));
+						rs.getInt("fork_Deviation"),rs.getString("ownerName")));
 
 			}
 		} catch (Exception e) {
