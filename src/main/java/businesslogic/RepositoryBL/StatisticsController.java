@@ -105,20 +105,20 @@ public class StatisticsController implements StatisticsBLService{
 	@Override
 	public StaStrVO getCommit(RepositoryVO vo) throws ParseException {
 		// TODO Auto-generated method stub
-		GHRepository dpo=vo.getDpo();
-		GHCommitQueryBuilder builder=dpo.queryCommits().since(new Time().getNowTime());
-		GHCommit commit=new GHCommit();
-		Iterator<GHCommit> iterator=builder.list().iterator();
-		GHCommitComment comment=new GHCommitComment();
-		while (iterator.hasNext()) {
-			commit=iterator.next();
-			while (commit.listComments().iterator().hasNext()) {
-				comment=commit.listComments().iterator().next();
-				
-			}
-			System.out.println(commit.listComments());
-			
-		}
+//		GHRepository dpo=vo.getDpo();
+//		GHCommitQueryBuilder builder=dpo.queryCommits().since(new Time().getNowTime());
+//		GHCommit commit=new GHCommit();
+//		Iterator<GHCommit> iterator=builder.list().iterator();
+//		GHCommitComment comment=new GHCommitComment();
+//		while (iterator.hasNext()) {
+//			commit=iterator.next();
+//			while (commit.listComments().iterator().hasNext()) {
+//				comment=commit.listComments().iterator().next();
+//				
+//			}
+//			System.out.println(commit.listComments());
+//			
+//		}
 		return null;
 	}
 
