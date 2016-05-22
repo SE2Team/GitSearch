@@ -28,11 +28,13 @@ public class UserPO {
 	Date created_at;
 	Date updated_at;
 	int followersDeviation;
+	String blog;
 
     public UserPO(int id, String login, String type, String name, String company, String email,
 			 int public_repos, int public_gists, int followers, int following, Date created_at,
-			Date updated_at,int followersDeviation) {
-			this.id=id;
+			Date updated_at,int followersDeviation,String blog) {
+			this.blog=blog;
+    		this.id=id;
 			this.login=login;
 			this.type=type;
 			this.name=name;
@@ -171,6 +173,9 @@ public class UserPO {
 	}
 	
 	public String getBlog() throws IOException {
+		if(user==null){
+			return this.blog;
+		}
 		return user.getBlog();
 	}
 	
