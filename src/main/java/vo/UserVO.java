@@ -25,11 +25,12 @@ public class UserVO  {
     int public_gists=0;
     int  followers=0;
     int following=0;
-    String created_at = "";
+    Date created_at ;
     String  updated_at = "";
     javafx.scene.image.Image userImage;
     String avatar;
     int followersDeviation;
+    String blog;
 
     GHUser dpo;
     @Deprecated
@@ -54,10 +55,11 @@ public class UserVO  {
         public_repos=po.getPublicRepoCount();
         followers=po.getFollowersCount();
         following=po.getFollowingCount();
-        created_at= String.valueOf(po.getCreatedAt());
+        created_at= po.getCreatedAt();
         updated_at= String.valueOf(po.getUpdatedAt());
         followersDeviation= po.getFollowersDeviation();
         avatar=po.getAvatarurl();
+        blog=po.getBlog();
     }
 
     public int getFollowersDeviation(){
@@ -104,7 +106,7 @@ public class UserVO  {
         return following;
     }
 
-    public String getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
 
@@ -126,5 +128,9 @@ public class UserVO  {
 
     public GHUser getDpo() {
         return dpo;
+    }
+
+    public String getBlog() {
+        return blog;
     }
 }

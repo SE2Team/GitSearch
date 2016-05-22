@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -56,6 +57,8 @@ public class UserCheckController implements MyController {
     private ImageView imageView;
     @FXML
     private ComboBox combobox;
+    @FXML
+    private ScrollPane scrollPane;
 
     /**
      * showList默认项目数量
@@ -73,7 +76,7 @@ public class UserCheckController implements MyController {
 
     @FXML
     public void initialize() {
-        SHOWLISTSIZE = 10;
+        SHOWLISTSIZE = 20;
     }
 
     public void setFxui(FXUITest fxui) {
@@ -82,7 +85,7 @@ public class UserCheckController implements MyController {
 
     public void repaint() {
         name.setText(vo.getName());
-        regTime.setText(vo.getCreated_at());
+        regTime.setText(vo.getCreated_at().toString());
 //        String comp=vo.getCompany().replaceAll(" ","")==""?"Unknown":vo.getCompany();
         company.setText(vo.getCompany());
         followers.setText(String.valueOf(vo.getFollowers()));
@@ -101,7 +104,7 @@ public class UserCheckController implements MyController {
         imageView.setImage(new Image(vo.getAvatar()));
         combobox.getItems().addAll("Repositories", "Following","Event");
         combobox.getSelectionModel().selectFirst();
-
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
     }
 
     /**
@@ -159,7 +162,7 @@ public class UserCheckController implements MyController {
     private void handleCheckFollowing() throws IOException {
         showList.getChildren().clear();
         if (followingList.size() == 0) {
-            Iterator<GHUser> itr = vo.getDpo().listFollows()._iterator(SHOWLISTSIZE);
+            Iterator<GHUser> itr = vo.getDpo().listFollows().iterator();
             int i = 0;
             if (itr != null) {
                 while (itr.hasNext() && i++ < SHOWLISTSIZE) {
@@ -211,6 +214,13 @@ public class UserCheckController implements MyController {
             }
         }
         showList.getChildren().addAll(eventList);
+    }
+
+    @FXML
+    private void handleScroll(){
+        if(scrollPane.getHvalue()==scrollPane.getHmax()){
+            System.out.println("load");
+        }
     }
 
 }
