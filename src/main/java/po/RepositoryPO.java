@@ -159,9 +159,11 @@ public class RepositoryPO {
 	}
 
 	
-	public boolean getFork() {
-			return this.fork;
-		
+	public boolean isFork() {
+	if(repository==null)	
+		return this.fork;
+	else
+		return repository.isFork();
 	}
 
 	public int getId() {
