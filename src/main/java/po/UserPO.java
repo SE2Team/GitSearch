@@ -2,7 +2,6 @@ package po;
 
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
-import org.kohsuke.github.PagedIterable;
 
 import java.io.IOException;
 import java.util.Date;
@@ -12,7 +11,7 @@ import java.util.Map;
  * Created by moeyui on 2016/3/4 0004.
  */
 
-public class UserPO extends GHUser {
+public class UserPO {
 
     GHUser user;
     int id=0;
@@ -155,7 +154,7 @@ public class UserPO extends GHUser {
 	
 
 
-    public String getUserImage(){
+    public String getAvatarurl(){
     	if(user==null)
     		return null;
     	else

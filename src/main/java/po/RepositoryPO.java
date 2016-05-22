@@ -16,7 +16,7 @@ import java.util.Date;
  * Created by moeyui on 2016/3/4 0004.
  */
 
-public class RepositoryPO  extends GHRepository{
+public class RepositoryPO {
 
     GHRepository repository;
 

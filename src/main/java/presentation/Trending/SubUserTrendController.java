@@ -62,7 +62,7 @@ public class SubUserTrendController implements MyController{
         if(vo.getFollowersDeviation()>0){
             change_img.setStyle("-fx-image: url(\"Images/up.png\");");
         }else if(vo.getFollowersDeviation()==0){
-            change_img.setStyle("-fx-image: url(\"Images/no change.png\");");
+            change_img.setStyle("-fx-image: url(\"Images/noChange.png\");");
         }else if(vo.getFollowersDeviation()<0){
             change_img.setStyle("-fx-image: url(\"Images/down.png\");");
 

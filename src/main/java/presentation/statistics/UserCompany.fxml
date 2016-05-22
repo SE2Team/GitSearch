@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.statistics.UserCompanyController">
    <children>
       <SplitPane dividerPositions="0.8004694835680751" layoutX="276.0" layoutY="69.0" prefHeight="600.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -15,7 +17,7 @@
                <children>
                   <BarChart fx:id="companyChart" layoutX="2.0" layoutY="2.0" legendVisible="false" prefHeight="581.0" prefWidth="1011.0" title="用户数-公司分布图">
                      <xAxis>
-                        <CategoryAxis label="公司名" side="BOTTOM" />
+                        <CategoryAxis label="公司名" side="BOTTOM" startMargin="0.0" />
                      </xAxis>
                      <yAxis>
                         <NumberAxis label="用户数" side="LEFT" />

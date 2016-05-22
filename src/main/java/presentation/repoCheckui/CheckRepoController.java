@@ -21,7 +21,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHRepository;
@@ -149,15 +148,18 @@ public class CheckRepoController implements MyController {
 
     private void setList() throws IOException {
         Iterator<GHRepository.Contributor> itrcon = vo.getContributors().iterator();
-        while (itrcon.hasNext()) {
+        int i = 0;
+        while (itrcon.hasNext()&& i++<9) {
             contributorPane.getChildren().add(getSub(itrcon.next()));
         }
     }
 
     private void setCommitList() throws IOException{
         Iterator<GHCommit> commit_Itr = vo.getDpo().listCommits().iterator();
-        while (commit_Itr.hasNext()){
+        int i=0;
+        while (commit_Itr.hasNext()&&i<10){
             commitPane.getChildren().add(getCommitSub(commit_Itr.next()));
+            i++;
         }
     }
     @FXML

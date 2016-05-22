@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class JDBCHelper {
-	public static final String url = "jdbc:mysql://localhost/gitsearch?useUnicode=true&characterEncoding=UTF-8"
+	public static final String url = "jdbc:mysql://115.159.118.140/gitsearch?useUnicode=true&characterEncoding=UTF-8"
 			+ "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	public static final String driver = "com.mysql.cj.jdbc.Driver";
-	public static final String user = "root";
-	public static final String password = "";
+	public static final String user = "gitfan";
+	public static final String password = "gitfan123";
 
 	private Connection conn = null;
 	private PreparedStatement pStatement = null;
