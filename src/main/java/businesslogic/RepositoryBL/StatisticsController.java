@@ -1,12 +1,20 @@
 package businesslogic.RepositoryBL;
 
 import businesslogicService.StatisticsBLService;
+import data.Time;
 import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.UserVO;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.util.Iterator;
+
+import org.kohsuke.github.GHCommit;
+import org.kohsuke.github.GHCommitComment;
+import org.kohsuke.github.GHCommitQueryBuilder;
+import org.kohsuke.github.GHRepository;
 
 public class StatisticsController implements StatisticsBLService{
 	Statistics statistics=new Statistics();
@@ -95,8 +103,22 @@ public class StatisticsController implements StatisticsBLService{
 	}
 
 	@Override
-	public StaStrVO getCommit(RepositoryVO vo) {
+	public StaStrVO getCommit(RepositoryVO vo) throws ParseException {
 		// TODO Auto-generated method stub
+		GHRepository dpo=vo.getDpo();
+		GHCommitQueryBuilder builder=dpo.queryCommits().since(new Time().getNowTime());
+		GHCommit commit=new GHCommit();
+		Iterator<GHCommit> iterator=builder.list().iterator();
+		GHCommitComment comment=new GHCommitComment();
+		while (iterator.hasNext()) {
+			commit=iterator.next();
+			while (commit.listComments().iterator().hasNext()) {
+				comment=commit.listComments().iterator().next();
+				
+			}
+			System.out.println(commit.listComments());
+			
+		}
 		return null;
 	}
 

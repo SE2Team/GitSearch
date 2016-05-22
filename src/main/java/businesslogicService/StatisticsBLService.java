@@ -1,6 +1,7 @@
 package businesslogicService;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -64,7 +65,7 @@ public interface StatisticsBLService {
 	
 	StaStrVO getAll_Fork(); 
 	
-	StaStrVO getCommit(RepositoryVO vo);
+	StaStrVO getCommit(RepositoryVO vo) throws ParseException;
 	
 	StaStrVO getUserEvent(UserVO vo);
 }

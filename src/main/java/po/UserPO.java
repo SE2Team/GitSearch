@@ -4,6 +4,7 @@ import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GHUser;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Date;
 import java.util.Map;
 
@@ -167,6 +168,10 @@ public class UserPO {
 
 	public GHUser getDpo() {
 		return user;
+	}
+	
+	public String getBlog() throws IOException {
+		return user.getBlog();
 	}
 	
 }

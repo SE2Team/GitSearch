@@ -3,6 +3,7 @@ package po;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.PagedIterable;
 
+import com.sun.org.apache.regexp.internal.recompile;
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import businesslogic.userBL.User;
@@ -197,6 +198,7 @@ public class RepositoryPO {
 		else
 			return repository.getFullName();
 	}
+	
 
 	public PagedIterable<GHRepository.Contributor> listContributors() throws IOException{
 		if(repository==null){
@@ -207,6 +209,10 @@ public class RepositoryPO {
 	
 	public GHRepository getRepository() {
 		return repository;
+	}
+	
+	public String getLogin(){
+		return repository.getOwnerName();
 	}
  
 }
