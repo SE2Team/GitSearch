@@ -413,6 +413,7 @@ public class JDBCHelper {
 		return list;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getStarDeviation(Date date1,Date date2,String fullname){
 		String sql = "select * from repo where date=? and fullname=?";
 		ResultSet rs1 = null;
@@ -433,6 +434,7 @@ public class JDBCHelper {
 		return 0;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getForkDeviation(Date date1,Date date2,String fullname){
 		String sql = "select * from repo where date=? and fullname=?";
 		ResultSet rs1 = null;
@@ -453,6 +455,7 @@ public class JDBCHelper {
 		return 0;
 	}
 	
+	@SuppressWarnings("unused")
 	private int getFollowersDeviation(Date date1,Date date2,String login){
 		String sql = "select * from user where date=? and login=?";
 		ResultSet rs1 = null;
