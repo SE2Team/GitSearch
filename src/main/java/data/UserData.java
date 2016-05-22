@@ -271,12 +271,13 @@ public class UserData implements UserDataService {
 	 * @return
 	 * @throws IOException
 	 */
+	@SuppressWarnings("unused")
 	private ArrayList<RepositoryPO> searchRepoName(String name) throws IOException {
 		ArrayList<RepositoryPO> list = new RepositoryData().getRepositories();
 		ArrayList<RepositoryPO> list2 = new ArrayList<RepositoryPO>();
 		String[] str = new String[2];
 		for (int i = 0; i < list.size(); i++) {
-			str = list.get(i).getName().split("/");
+			str = list.get(i).getFullName().split("/");
 			if (str[0].equals(name)) {
 				list2.add(list.get(i));			
 				}
@@ -284,6 +285,7 @@ public class UserData implements UserDataService {
 		return list2;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isEqual(String str, String user) {
 		String[] strs = str.split(";");
 		for (int i = 0; i < strs.length - 1; i++) {

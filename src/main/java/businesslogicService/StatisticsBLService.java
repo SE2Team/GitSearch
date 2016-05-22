@@ -13,6 +13,7 @@ import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
 import vo.StatisticsVO;
+import vo.UserVO;
 import javafx.collections.ObservableList;
 /** 
  * @author 
@@ -63,7 +64,7 @@ public interface StatisticsBLService {
 	
 	StaStrVO getAll_Fork(); 
 	
-	StaStrVO getCommit();
+	StaStrVO getCommit(RepositoryVO vo);
 	
-	StaStrVO getUserActivity();
+	StaStrVO getUserEvent(UserVO vo);
 }

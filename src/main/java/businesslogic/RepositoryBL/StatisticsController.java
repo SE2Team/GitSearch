@@ -4,6 +4,7 @@ import businesslogicService.StatisticsBLService;
 import vo.RepositoryVO;
 import vo.StaIntVO;
 import vo.StaStrVO;
+import vo.UserVO;
 
 import java.io.IOException;
 
@@ -94,13 +95,13 @@ public class StatisticsController implements StatisticsBLService{
 	}
 
 	@Override
-	public StaStrVO getCommit() {
+	public StaStrVO getCommit(RepositoryVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public StaStrVO getUserActivity() {
+	public StaStrVO getUserEvent(UserVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
