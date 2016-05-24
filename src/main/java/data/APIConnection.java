@@ -14,6 +14,6 @@ public class APIConnection {
         return g;
     }
     public static void  initAPIConnection() throws IOException {
-        g=GitHub.connect("moeyui1", "5fb3a84f2bf21c2913394d3e2f2a6356eaa42386");
+        g=GitHub.connect("moeyui1", "c749ca0690e38c11e859c2b2c59224ca3e6b5abd");
     }
 }

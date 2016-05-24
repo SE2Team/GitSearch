@@ -225,13 +225,14 @@ public class RepoStatisticsController implements MyController {
                     repoForkController.getForkChart().setData(getData(bl.getForks()));
                     break;
                 case "Star":
-                    str = "RepoStar.fxml";
+                    str = "RepoStar_web.fxml";
                     loader.setLocation(this.getClass().getResource(str));
                     anchorPane = loader.load();
                     chartPane.getChildren().addAll(anchorPane);
 
                     RepoStarController repoStarController = loader.getController();
-                    repoStarController.getStarChart().setData(getData(bl.getStar()));
+//                    repoStarController.getStarChart().setData(getData(bl.getStar()));
+                    repoStarController.repaint();
                     break;
                 case "Contributors":
                     str = "RepoContri.fxml";

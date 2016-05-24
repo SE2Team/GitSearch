@@ -130,6 +130,8 @@
                     <include>**/*.fxml</include>
                     <include>**/*.css</include>
                     <include>*.css</include>
+                    <include>**/*.html</include>
+                    <include>src/chart.js/**</include>
                 </includes>
 
             </resource>
@@ -146,6 +148,7 @@
                     <include>**/*.jpg</include>
                     <include>**/*.icon</include>
                     <include>**/*.JPG</include>
+                    <include>**/*.html</include>
                 </includes>
                 <!-- 是否替换资源中的属性-->
                 <filtering>false</filtering>
