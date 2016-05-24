@@ -8,6 +8,8 @@ import javafx.scene.web.WebView;
 import presentation.FXUITest;
 import presentation.common.MyController;
 
+import java.util.ArrayList;
+
 /**
  * Created by moeyui on 2016/4/13 0013.
  */
@@ -50,6 +52,11 @@ public class RepoStarController implements MyController {
     public void setStarChart(BarChart<String, Number> starChart) {
         this.starChart = starChart;
     }
+
+    public void setData(ArrayList<String> labels,ArrayList<String> data){
+
+    }
+
 
     @FXML
     private void handle() {
